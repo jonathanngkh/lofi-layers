@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://boicx6ptu4ixi"]
+
+[ext_resource type="PackedScene" uid="uid://c1tsspqyui758" path="res://midi_listener.tscn" id="1_fbjgj"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="2_sdqeh"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="3_1lbwo"]
+[ext_resource type="Texture2D" uid="uid://qtfk7gne64q3" path="res://icon.svg" id="4_kbk3d"]
+[ext_resource type="Script" path="res://Icon.gd" id="5_ofx4f"]
+
+[node name="Game" type="Node2D"]
+
+[node name="MIDIListener" parent="." instance=ExtResource("1_fbjgj")]
+
+[node name="MidiPlayer" parent="." instance=ExtResource("2_sdqeh")]
+file = "res://addons/midi/midi files/Wii Channels - Mii Channel.mid"
+playing = true
+soundfont = "res://addons/midi/midi files/Aspirin-Stereo.sf2"
+
+[node name="ADSR" parent="." instance=ExtResource("3_1lbwo")]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-1211, 317)
+scale = Vector2(0.546874, 0.550739)
+texture = ExtResource("4_kbk3d")
+script = ExtResource("5_ofx4f")

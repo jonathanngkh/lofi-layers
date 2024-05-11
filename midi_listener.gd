@@ -19,16 +19,19 @@ func get_midi_dictionary():
 func _ready() -> void:
 	OS.open_midi_inputs()
 	print(OS.get_connected_midi_inputs())
-	print(midi_dictionary[61])
 	#print(midi_dictionary)
+
+
+func _process(_delta: float) -> void:
+	pass
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMIDI:
 		if event.message == MIDI_MESSAGE_NOTE_ON:
-			print(midi_dictionary[event.pitch])
+			print(midi_dictionary[event.pitch] + " on")
 		if event.message == MIDI_MESSAGE_NOTE_OFF:
-			print(midi_dictionary[event.pitch])
+			print(midi_dictionary[event.pitch] + " off")
 
 
 func _print_midi_info(midi_event: InputEventMIDI):
@@ -43,8 +46,3 @@ func _print_midi_info(midi_event: InputEventMIDI):
 	#print("Pressure " + str(midi_event.pressure))
 	#print("Controller number: " + str(midi_event.controller_number))
 	#print("Controller value: " + str(midi_event.controller_value))
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
