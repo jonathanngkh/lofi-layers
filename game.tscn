@@ -8,7 +8,13 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="MIDIListener" parent="." instance=ExtResource("1_fbjgj")]
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(559, 287)
+scale = Vector2(0.546874, 0.550739)
+texture = ExtResource("4_kbk3d")
+script = ExtResource("5_ofx4f")
+
+[node name="MidiListener" parent="." instance=ExtResource("1_fbjgj")]
 
 [node name="MidiPlayer" parent="." instance=ExtResource("2_sdqeh")]
 file = "res://addons/midi/midi files/Wii Channels - Mii Channel.mid"
@@ -16,9 +22,3 @@ playing = true
 soundfont = "res://addons/midi/midi files/Aspirin-Stereo.sf2"
 
 [node name="ADSR" parent="." instance=ExtResource("3_1lbwo")]
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-1211, 317)
-scale = Vector2(0.546874, 0.550739)
-texture = ExtResource("4_kbk3d")
-script = ExtResource("5_ofx4f")

@@ -1,25 +1,27 @@
+#scales/arpgeggios practicer
+#
+#1) just the notes, any order.
+#2) the notes in order
+#3) the notes in order at a fixed speed
+#4) the notes in order at an increasing speed
+#5) the notes with dotted rhythm
+#6) the notes with reverse dotted rhythm
+#7) the notes in order in triplets
+#8) the notes but as a lick
+
 extends Control
 
-var midi_dictionary: Dictionary = get_midi_dictionary()
-
-func get_midi_dictionary():
-	# Define the note patterns within an octave
-	var notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
-	# Create the dictionary
-	var midi_dict = {}
-	# Start at MIDI note 21 (A0) and end at MIDI note 108 (C8)
-	for pitch in range(21, 109):
-		var note_index = (pitch - 12) % 12  # Calculate the note index in the 'notes' list
-		var octave = (pitch - 12) / 12  # Calculate the octave
-		var note_name = "%s%d" % [notes[note_index], octave]  # Combine note and octave
-		midi_dict[pitch] = note_name  # Map MIDI number to note name
-	return midi_dict
+var midi_dictionary: Dictionary = MusicTheory.PITCHES
+#@export var required_notes: MusicSegment = generate_music_segment(C_MAJOR_SCALE)
+# where musicsegment is a class which is an array of notes and pace
+# where note is a class with properties for pitch and rhythm
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	OS.open_midi_inputs()
 	print(OS.get_connected_midi_inputs())
-	#print(midi_dictionary)
+	print(midi_dictionary)
+	
 
 
 func _process(_delta: float) -> void:
@@ -46,3 +48,29 @@ func _print_midi_info(midi_event: InputEventMIDI):
 	#print("Pressure " + str(midi_event.pressure))
 	#print("Controller number: " + str(midi_event.controller_number))
 	#print("Controller value: " + str(midi_event.controller_value))
+
+#func _get_midi_dictionary() -> Dictionary:
+	## Define the note patterns within an octave
+	#var notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+	## Create the dictionary
+	#var midi_dict = {}
+	## Start at MIDI note 21 (A0) and end at MIDI note 108 (C8)
+	#for pitch in range(21, 109):
+		#var note_index = (pitch - 12) % 12  # Calculate the note index in the 'notes' list
+		#var octave = (pitch - 12) / 12  # Calculate the octave
+		#var note_name = "%s%d" % [notes[note_index], octave]  # Combine note and octave
+		#midi_dict[pitch] = note_name  # Map MIDI number to note name
+	#return midi_dict
+
+func _get_midi_dictionary() -> Dictionary:
+	# Define the note patterns within an octave
+	var notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+	# Create the dictionary
+	var midi_dict = {}
+	# Start at MIDI note 21 (A0) and end at MIDI note 108 (C8)
+	for pitch in range(21, 109):
+		var note_index = (pitch - 12) % 12  # Calculate the note index in the 'notes' list
+		var octave = (pitch - 12) / 12  # Calculate the octave
+		var note_name = "%s%d" % [notes[note_index], octave]  # Combine note and octave
+		midi_dict[note_name] = pitch  # Map MIDI number to note name
+	return midi_dict
