@@ -324,6 +324,7 @@ signal looped
 ## 終了
 signal finished
 
+
 ## 準備
 func _ready( ):
 	if AudioServer.get_bus_index( self.midi_master_bus_name ) == -1:

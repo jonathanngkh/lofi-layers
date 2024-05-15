@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MusicTheory="*res://music_theory.gd"
+MusicTheoryDB="*res://music_theory_DB.gd"
 
 [editor_plugins]
 

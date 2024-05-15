@@ -22,3 +22,7 @@ playing = true
 soundfont = "res://addons/midi/midi files/Aspirin-Stereo.sf2"
 
 [node name="ADSR" parent="." instance=ExtResource("3_1lbwo")]
+
+[node name="LoadTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true

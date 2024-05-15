@@ -11,7 +11,7 @@
 
 extends Control
 
-var midi_dictionary: Dictionary = MusicTheory.PITCHES
+var midi_dictionary: Dictionary = MusicTheoryDB.PITCHES
 #@export var required_notes: MusicSegment = generate_music_segment(C_MAJOR_SCALE)
 # where musicsegment is a class which is an array of notes and pace
 # where note is a class with properties for pitch and rhythm
