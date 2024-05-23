@@ -1,5 +1,7 @@
 class_name Note
 
+# idea is to be able to drag and drop as resource in inspector later to quickly make segments
+
 extends Control
 
 # set note as str
@@ -8,7 +10,7 @@ extends Control
 
 # set note as int
 @export var pitch: int = 60
-@export var pitch_english: String = MusicTheoryDB.PITCHES[pitch] # exported so that can inspect pitch
+@export var pitch_english: String = MusicTheoryDB.PITCHES[pitch] # exported so that can inspect
 
 @export var length: int = MusicTheoryDB.NOTE_LENGTHS["SEMIBREVE"]
 @export var length_english: String = "SEMIBREVE"

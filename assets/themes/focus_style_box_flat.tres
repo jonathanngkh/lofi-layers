@@ -1,0 +1,19 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://brphnsc1dc24h"]
+
+[resource]
+content_margin_left = 48.0
+content_margin_top = 38.0
+content_margin_right = 48.0
+content_margin_bottom = 32.0
+bg_color = Color(0.0901961, 0.141176, 0.282353, 1)
+skew = Vector2(2.08165e-12, 2.08165e-12)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 12
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_offset = Vector2(2.08165e-12, 2.08165e-12)

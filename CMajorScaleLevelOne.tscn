@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=3 uid="uid://boicx6ptu4ixi"]
+
+[ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_kywhn"]
+[ext_resource type="PackedScene" uid="uid://c1tsspqyui758" path="res://midi_listener.tscn" id="1_ue8xs"]
+[ext_resource type="Shader" path="res://assets/background/sliding_background.gdshader" id="2_mwxum"]
+[ext_resource type="Texture2D" uid="uid://8vbd1upbqxks" path="res://assets/background/bubble_pattern.png" id="3_gxlps"]
+[ext_resource type="Texture2D" uid="uid://behgjeiqg5ojl" path="res://assets/characters/pink.png" id="4_hhiak"]
+[ext_resource type="Texture2D" uid="uid://bqtb64p2by5xs" path="res://assets/characters/expressions/emotion_determined.png" id="6_wuv8d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ay7s"]
+shader = ExtResource("2_mwxum")
+shader_parameter/bg_color = Color(0.490196, 0.776471, 0.768627, 1)
+shader_parameter/pattern_color = Color(0.266667, 0.603922, 0.639216, 1)
+shader_parameter/pattern_size = 333.0
+shader_parameter/pattern_sampler = ExtResource("3_gxlps")
+
+[node name="CMajorScaleLevelOne" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_kywhn")
+metadata/_edit_vertical_guides_ = [1440.0, 644.0, 1064.0, 854.0]
+metadata/_edit_horizontal_guides_ = [768.0]
+
+[node name="MidiListener" parent="." instance=ExtResource("1_ue8xs")]
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_3ay7s")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Character" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0668889
+anchor_top = 1.0
+anchor_right = 0.0668889
+anchor_bottom = 1.0
+offset_left = -0.320004
+offset_top = -640.0
+offset_right = 511.68
+texture = ExtResource("4_hhiak")
+metadata/_edit_use_anchors_ = true
+
+[node name="Expression" type="TextureRect" parent="Character"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.187
+anchor_top = -0.2
+anchor_right = 2.625
+anchor_bottom = 1.0
+offset_left = 95.744
+offset_top = 128.0
+offset_right = -832.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wuv8d")
+
+[node name="TextBox" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.438889
+anchor_top = 0.264323
+anchor_right = 0.438889
+anchor_bottom = 0.401042
+offset_right = 444.0
+offset_bottom = 276.0
+bbcode_enabled = true
+text = "[center][b]C[/b][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.446528
+anchor_top = 0.50651
+anchor_right = 0.713889
+anchor_bottom = 0.579427
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)

@@ -18,6 +18,11 @@ config/icon="res://icon.svg"
 
 MusicTheoryDB="*res://music_theory_DB.gd"
 
+[display]
+
+window/size/viewport_width=1440
+window/size/viewport_height=768
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/midi/plugin.cfg")
