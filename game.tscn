@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c21uvl5iijdfj"]
+
+[ext_resource type="PackedScene" uid="uid://boicx6ptu4ixi" path="res://CMajorScaleLevelOne.tscn" id="1_stp82"]
+
+[node name="Game" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CMajorScaleLevelOne" parent="CanvasLayer" instance=ExtResource("1_stp82")]

@@ -11,6 +11,9 @@
 
 extends Control
 
+signal note_on(note_played)
+signal note_off(note_released)
+
 var midi_dictionary: Dictionary = MusicTheoryDB.PITCHES
 #@export var required_notes: MusicSegment = generate_music_segment(C_MAJOR_SCALE)
 # where musicsegment is a class which is an array of notes and pace
@@ -20,7 +23,7 @@ var midi_dictionary: Dictionary = MusicTheoryDB.PITCHES
 func _ready() -> void:
 	OS.open_midi_inputs()
 	print(OS.get_connected_midi_inputs())
-	print(midi_dictionary)
+	#print(midi_dictionary)
 	
 
 
@@ -32,8 +35,16 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMIDI:
 		if event.message == MIDI_MESSAGE_NOTE_ON:
 			print(midi_dictionary[event.pitch] + " on")
+			emit_signal("note_on", event.pitch)
 		if event.message == MIDI_MESSAGE_NOTE_OFF:
 			print(midi_dictionary[event.pitch] + " off")
+			emit_signal("note_off", event.pitch)
+	if Input.is_key_pressed(KEY_1):
+		print('1')
+		emit_signal("note_on", 60)
+	if Input.is_key_pressed(KEY_2):
+		emit_signal("note_off", 61)
+		print('2')
 
 
 func _print_midi_info(midi_event: InputEventMIDI):

@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://boicx6ptu4ixi"]
+[gd_scene load_steps=13 format=3 uid="uid://boicx6ptu4ixi"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_kywhn"]
 [ext_resource type="PackedScene" uid="uid://c1tsspqyui758" path="res://midi_listener.tscn" id="1_ue8xs"]
+[ext_resource type="Script" path="res://CMajorScaleLevelOne.gd" id="2_7ou3x"]
 [ext_resource type="Shader" path="res://assets/background/sliding_background.gdshader" id="2_mwxum"]
 [ext_resource type="Texture2D" uid="uid://8vbd1upbqxks" path="res://assets/background/bubble_pattern.png" id="3_gxlps"]
 [ext_resource type="Texture2D" uid="uid://behgjeiqg5ojl" path="res://assets/characters/pink.png" id="4_hhiak"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c764sj6i7ua68" path="res://assets/music theory/staff lines.png" id="7_xkw4a"]
 [ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="8_2fvjo"]
 [ext_resource type="Texture2D" uid="uid://c8vub0d8x46h0" path="res://assets/music theory/piano.png" id="8_idyi8"]
+[ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="9_x5cv7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ay7s"]
 shader = ExtResource("2_mwxum")
@@ -25,6 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_kywhn")
+script = ExtResource("2_7ou3x")
 metadata/_edit_vertical_guides_ = [1280.0]
 
 [node name="MidiListener" parent="." instance=ExtResource("1_ue8xs")]
@@ -92,7 +95,7 @@ grow_vertical = 2
 texture = ExtResource("7_xkw4a")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextBox/Staff"]
+[node name="TrebleClef" type="TextureRect" parent="TextBox/Staff"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -109,7 +112,24 @@ texture = ExtResource("8_2fvjo")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="NoteHead" type="TextureRect" parent="TextBox/Staff"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 485.152
+offset_top = 154.002
+offset_right = 589.152
+offset_bottom = 230.002
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Piano" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
