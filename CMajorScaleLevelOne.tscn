@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://boicx6ptu4ixi"]
+[gd_scene load_steps=9 format=3 uid="uid://boicx6ptu4ixi"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_kywhn"]
 [ext_resource type="PackedScene" uid="uid://c1tsspqyui758" path="res://midi_listener.tscn" id="1_ue8xs"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://8vbd1upbqxks" path="res://assets/background/bubble_pattern.png" id="3_gxlps"]
 [ext_resource type="Texture2D" uid="uid://behgjeiqg5ojl" path="res://assets/characters/pink.png" id="4_hhiak"]
 [ext_resource type="Texture2D" uid="uid://bqtb64p2by5xs" path="res://assets/characters/expressions/emotion_determined.png" id="6_wuv8d"]
+[ext_resource type="Texture2D" uid="uid://c764sj6i7ua68" path="res://assets/music theory/staff lines.png" id="7_xkw4a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ay7s"]
 shader = ExtResource("2_mwxum")
@@ -76,3 +77,18 @@ grow_vertical = 2
 bbcode_enabled = true
 text = "[center][b]C
 [/b][/center]"
+
+[node name="TextureRect" type="TextureRect" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 81.0
+offset_right = -1.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xkw4a")
+expand_mode = 5
+stretch_mode = 6
