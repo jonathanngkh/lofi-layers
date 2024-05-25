@@ -20,10 +20,10 @@ MusicTheoryDB="*res://music_theory_DB.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/window_width_override=2560
+window/size/window_height_override=1440
 window/stretch/scale_mode="integer"
 
 [editor_plugins]
