@@ -18,9 +18,13 @@ func _process(delta: float) -> void:
 
 func _on_midi_listener_note_on(note_played: int) -> void:
 	#note_head.modulate = "00bf4b"
-	note_head.scale = Vector2(1.2, 1.2)
+	if note_played == 72:
+		note_head.material.set_shader_parameter("strength", 1.0)
+	#note_head.scale = Vector2(1.2, 1.2)
 
 
 func _on_midi_listener_note_off(note_released: int) -> void:
+	if note_released == 72:
+		note_head.material.set_shader_parameter("strength", 0.0)
 	#note_head.modulate = "ffffff"
-	note_head.scale = Vector2(1.0, 1.0)
+	#note_head.scale = Vector2(1.0, 1.0)

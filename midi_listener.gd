@@ -34,17 +34,16 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMIDI:
 		if event.message == MIDI_MESSAGE_NOTE_ON:
-			print(midi_dictionary[event.pitch] + " on")
+			#print(midi_dictionary[event.pitch] + " on")
 			emit_signal("note_on", event.pitch)
 		if event.message == MIDI_MESSAGE_NOTE_OFF:
-			print(midi_dictionary[event.pitch] + " off")
+			#print(midi_dictionary[event.pitch] + " off")
 			emit_signal("note_off", event.pitch)
+	# QWERTY INPUTS
 	if Input.is_key_pressed(KEY_1):
-		print('1')
 		emit_signal("note_on", 60)
 	if Input.is_key_pressed(KEY_2):
-		emit_signal("note_off", 61)
-		print('2')
+		emit_signal("note_off", 60)
 
 
 func _print_midi_info(midi_event: InputEventMIDI):
@@ -60,6 +59,22 @@ func _print_midi_info(midi_event: InputEventMIDI):
 	#print("Controller number: " + str(midi_event.controller_number))
 	#print("Controller value: " + str(midi_event.controller_value))
 
+
+
+func _get_midi_dictionary() -> Dictionary:
+	# Define the note patterns within an octave
+	var notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+	# Create the dictionary
+	var midi_dict = {}
+	# Start at MIDI note 21 (A0) and end at MIDI note 108 (C8)
+	for pitch in range(21, 109):
+		var note_index = (pitch - 12) % 12  # Calculate the note index in the 'notes' list
+		var octave = (pitch - 12) / 12  # Calculate the octave
+		var note_name = "%s%d" % [notes[note_index], octave]  # Combine note and octave
+		midi_dict[note_name] = pitch  # Map note name to MIDI number
+	return midi_dict
+
+
 #func _get_midi_dictionary() -> Dictionary:
 	## Define the note patterns within an octave
 	#var notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
@@ -72,16 +87,3 @@ func _print_midi_info(midi_event: InputEventMIDI):
 		#var note_name = "%s%d" % [notes[note_index], octave]  # Combine note and octave
 		#midi_dict[pitch] = note_name  # Map MIDI number to note name
 	#return midi_dict
-
-func _get_midi_dictionary() -> Dictionary:
-	# Define the note patterns within an octave
-	var notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
-	# Create the dictionary
-	var midi_dict = {}
-	# Start at MIDI note 21 (A0) and end at MIDI note 108 (C8)
-	for pitch in range(21, 109):
-		var note_index = (pitch - 12) % 12  # Calculate the note index in the 'notes' list
-		var octave = (pitch - 12) / 12  # Calculate the octave
-		var note_name = "%s%d" % [notes[note_index], octave]  # Combine note and octave
-		midi_dict[note_name] = pitch  # Map MIDI number to note name
-	return midi_dict

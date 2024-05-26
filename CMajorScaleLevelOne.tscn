@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://boicx6ptu4ixi"]
+[gd_scene load_steps=15 format=3 uid="uid://boicx6ptu4ixi"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_kywhn"]
 [ext_resource type="PackedScene" uid="uid://c1tsspqyui758" path="res://midi_listener.tscn" id="1_ue8xs"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="8_2fvjo"]
 [ext_resource type="Texture2D" uid="uid://c8vub0d8x46h0" path="res://assets/music theory/piano.png" id="8_idyi8"]
 [ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="9_x5cv7"]
+[ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="10_pb0ll"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ay7s"]
 shader = ExtResource("2_mwxum")
@@ -18,6 +19,12 @@ shader_parameter/bg_color = Color(0.490196, 0.776471, 0.768627, 1)
 shader_parameter/pattern_color = Color(0.266667, 0.603922, 0.639216, 1)
 shader_parameter/pattern_size = 333.0
 shader_parameter/pattern_sampler = ExtResource("3_gxlps")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ba3nt"]
+shader = ExtResource("10_pb0ll")
+shader_parameter/strength = 0.0
+shader_parameter/speed = 3.0
+shader_parameter/angle = 270.0
 
 [node name="CMajorScaleLevelOne" type="Control"]
 layout_mode = 3
@@ -113,6 +120,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="NoteHead" type="TextureRect" parent="TextBox/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -130,6 +138,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Piano" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
