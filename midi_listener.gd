@@ -40,10 +40,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			#print(midi_dictionary[event.pitch] + " off")
 			emit_signal("note_off", event.pitch)
 	# QWERTY INPUTS
-	if Input.is_key_pressed(KEY_1):
-		emit_signal("note_on", 60)
-	if Input.is_key_pressed(KEY_2):
-		emit_signal("note_off", 60)
+	if Input.get_action_strength("C5_on") == 1:
+		print('1')
+		emit_signal("note_on", 72)
+	else:
+		emit_signal("note_off", 72)
+	#if Input.is_key_pressed(KEY_1):
+		#emit_signal("note_on", 72)
+	#if Input.is_key_pressed(KEY_2):
+		#emit_signal("note_off", 72)
 
 
 func _print_midi_info(midi_event: InputEventMIDI):

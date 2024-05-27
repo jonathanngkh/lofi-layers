@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://db7uirthcq6ot"]
+
+[ext_resource type="Texture2D" uid="uid://snijjaqclrdu" path="res://assets/music theory/C normal piano key.png" id="1_4s236"]
+
+[node name="Piano" type="Control"]
+custom_minimum_size = Vector2(2560, 1440)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
+theme_override_constants/separation = -5
+
+[node name="C_TextureButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_4s236")
+
+[node name="D_TextureButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_4s236")

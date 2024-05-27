@@ -1,0 +1,154 @@
+[gd_scene load_steps=15 format=3 uid="uid://02k63jpqljgr"]
+
+[ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_qvtkd"]
+[ext_resource type="Script" path="res://CMajorScaleLevelOne.gd" id="2_sltqe"]
+[ext_resource type="PackedScene" uid="uid://c1tsspqyui758" path="res://midi_listener.tscn" id="3_i6ggl"]
+[ext_resource type="Shader" path="res://assets/background/sliding_background.gdshader" id="4_si7t7"]
+[ext_resource type="Texture2D" uid="uid://8vbd1upbqxks" path="res://assets/background/bubble_pattern.png" id="5_52iln"]
+[ext_resource type="Texture2D" uid="uid://behgjeiqg5ojl" path="res://assets/characters/pink.png" id="6_fs55r"]
+[ext_resource type="Texture2D" uid="uid://bqtb64p2by5xs" path="res://assets/characters/expressions/emotion_determined.png" id="7_n1tdq"]
+[ext_resource type="Texture2D" uid="uid://c764sj6i7ua68" path="res://assets/music theory/staff lines.png" id="8_sqyv8"]
+[ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="9_aoux3"]
+[ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="10_tbsd3"]
+[ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="11_ln085"]
+[ext_resource type="Texture2D" uid="uid://c8vub0d8x46h0" path="res://assets/music theory/piano.png" id="12_kso8x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ay7s"]
+shader = ExtResource("4_si7t7")
+shader_parameter/bg_color = Color(0.490196, 0.776471, 0.768627, 1)
+shader_parameter/pattern_color = Color(0.266667, 0.603922, 0.639216, 1)
+shader_parameter/pattern_size = 333.0
+shader_parameter/pattern_sampler = ExtResource("5_52iln")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ba3nt"]
+shader = ExtResource("10_tbsd3")
+shader_parameter/strength = 0.0
+shader_parameter/speed = 3.0
+shader_parameter/angle = 270.0
+
+[node name="CMajorScaleLevelOne" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qvtkd")
+script = ExtResource("2_sltqe")
+metadata/_edit_vertical_guides_ = [1280.0]
+
+[node name="MidiListener" parent="." instance=ExtResource("3_i6ggl")]
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_3ay7s")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Character" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0668889
+anchor_top = 1.0
+anchor_right = 0.0668889
+anchor_bottom = 1.0
+offset_left = -0.320004
+offset_top = -640.0
+offset_right = 511.68
+texture = ExtResource("6_fs55r")
+metadata/_edit_use_anchors_ = true
+
+[node name="Expression" type="TextureRect" parent="Character"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.187
+anchor_top = -0.2
+anchor_right = 2.625
+anchor_bottom = 1.0
+offset_left = 95.744
+offset_top = 128.0
+offset_right = -832.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_n1tdq")
+
+[node name="TextBox" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 664.0
+offset_top = 180.0
+offset_right = -664.0
+offset_bottom = -596.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][b]C
+[/b][/center]"
+
+[node name="Staff" type="TextureRect" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 72.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_sqyv8")
+expand_mode = 1
+
+[node name="TrebleClef" type="TextureRect" parent="TextBox/Staff"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 0.151996
+offset_top = 0.00199787
+offset_right = 295.152
+offset_bottom = 458.002
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_aoux3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="NoteHead" type="TextureRect" parent="TextBox/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 485.152
+offset_top = 154.002
+offset_right = 589.152
+offset_bottom = 230.002
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_ln085")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Piano" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 730.0
+offset_top = 946.0
+offset_right = -729.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_kso8x")
+expand_mode = 1
+stretch_mode = 5
