@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bqtb64p2by5xs" path="res://assets/characters/expressions/emotion_determined.png" id="6_wuv8d"]
 [ext_resource type="Texture2D" uid="uid://c764sj6i7ua68" path="res://assets/music theory/staff lines.png" id="7_xkw4a"]
 [ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="8_2fvjo"]
-[ext_resource type="Texture2D" uid="uid://c8vub0d8x46h0" path="res://assets/music theory/piano.png" id="8_idyi8"]
 [ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="9_x5cv7"]
 [ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="10_pb0ll"]
+[ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="12_pielo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ay7s"]
 shader = ExtResource("2_mwxum")
@@ -124,18 +124,12 @@ texture = ExtResource("9_x5cv7")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Piano" type="TextureRect" parent="."]
-visible = false
+[node name="Piano" parent="." instance=ExtResource("12_pielo")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 730.0
-offset_top = 946.0
-offset_right = -729.0
-offset_bottom = -84.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_idyi8")
-expand_mode = 1
-stretch_mode = 5
+anchors_preset = -1
+anchor_left = 0.353125
+anchor_top = 0.636111
+anchor_right = 1.3375
+anchor_bottom = 1.60833
+scale = Vector2(0.3, 0.3)
+metadata/_edit_use_anchors_ = true
