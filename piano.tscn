@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://db7uirthcq6ot"]
+[gd_scene load_steps=12 format=3 uid="uid://db7uirthcq6ot"]
 
 [ext_resource type="Texture2D" uid="uid://snijjaqclrdu" path="res://assets/music theory/C normal piano key.png" id="1_4s236"]
+[ext_resource type="Script" path="res://piano.gd" id="1_stb0y"]
+[ext_resource type="Texture2D" uid="uid://bl8muforqbm8b" path="res://assets/music theory/PianoBlackBack.png" id="1_tk1l0"]
+[ext_resource type="Texture2D" uid="uid://cl8i1xuyloair" path="res://assets/music theory/C pressed piano key.png" id="2_1do52"]
 [ext_resource type="Texture2D" uid="uid://cvw32gxf6otcf" path="res://assets/music theory/D normal piano key.png" id="2_72hrq"]
 [ext_resource type="Texture2D" uid="uid://d4n26pb6qam6d" path="res://assets/music theory/E normal piano key.png" id="3_ss4jt"]
 [ext_resource type="Texture2D" uid="uid://c47xoa5djgfwr" path="res://assets/music theory/Black Key Base.png" id="4_qkdbx"]
+[ext_resource type="Texture2D" uid="uid://dmnwoxnuf3mn2" path="res://assets/music theory/C pressed piano key pink.png" id="5_4os8f"]
+[ext_resource type="Texture2D" uid="uid://lgc56d3i0jwp" path="res://assets/music theory/C sharp normal piano key.png" id="5_drpm1"]
+[ext_resource type="Texture2D" uid="uid://cqxcpyt5nvh10" path="res://assets/music theory/C sharp pressed piano key.png" id="6_rw27b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_djs3o"]
 
 [node name="Piano" type="Control"]
 custom_minimum_size = Vector2(2560, 1440)
@@ -11,7 +19,15 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_stb0y")
 metadata/_edit_horizontal_guides_ = [1426.0, 961.0]
+metadata/_edit_vertical_guides_ = [163.0]
+
+[node name="BlackBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_tk1l0")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -21,22 +37,40 @@ offset_bottom = 1439.0
 theme_override_constants/separation = -5
 
 [node name="C_TextureButton" type="TextureButton" parent="HBoxContainer"]
+material = SubResource("ShaderMaterial_djs3o")
 layout_mode = 2
+toggle_mode = true
 texture_normal = ExtResource("1_4s236")
+texture_pressed = ExtResource("2_1do52")
+texture_hover = ExtResource("5_4os8f")
 
 [node name="D_TextureButton" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
+toggle_mode = true
 texture_normal = ExtResource("2_72hrq")
 
 [node name="E_TextureButton" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
+toggle_mode = true
 texture_normal = ExtResource("3_ss4jt")
 
-[node name="C_Sharp_TextureButton" type="TextureButton" parent="."]
+[node name="C_Sharp_BaseRect" type="TextureRect" parent="."]
 layout_mode = 2
 offset_left = 163.0
 offset_right = 332.0
 offset_bottom = 961.0
-texture_normal = ExtResource("4_qkdbx")
-ignore_texture_size = true
+texture = ExtResource("4_qkdbx")
+expand_mode = 1
 stretch_mode = 6
+
+[node name="C_Sharp_TextureButton" type="TextureButton" parent="C_Sharp_BaseRect"]
+clip_contents = true
+layout_direction = 2
+layout_mode = 0
+offset_left = -52.0
+offset_right = 169.0
+offset_bottom = 961.0
+toggle_mode = true
+texture_normal = ExtResource("5_drpm1")
+texture_pressed = ExtResource("6_rw27b")
+ignore_texture_size = true

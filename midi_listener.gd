@@ -9,7 +9,7 @@
 #7) the notes in order in triplets
 #8) the notes but as a lick
 
-extends Control
+extends Node
 
 signal note_on(note_played)
 signal note_off(note_released)
@@ -39,12 +39,19 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.message == MIDI_MESSAGE_NOTE_OFF:
 			#print(midi_dictionary[event.pitch] + " off")
 			emit_signal("note_off", event.pitch)
+			
 	# QWERTY INPUTS
 	if Input.get_action_strength("C5_on") == 1:
 		print('1')
 		emit_signal("note_on", 72)
 	else:
 		emit_signal("note_off", 72)
+		
+	if Input.get_action_strength("Csharp5_on") == 1:
+		print('2')
+		emit_signal("note_on", 73)
+	else:
+		emit_signal("note_off", 73)
 	#if Input.is_key_pressed(KEY_1):
 		#emit_signal("note_on", 72)
 	#if Input.is_key_pressed(KEY_2):

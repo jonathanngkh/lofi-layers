@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://boicx6ptu4ixi"]
+[gd_scene load_steps=16 format=3 uid="uid://boicx6ptu4ixi"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_kywhn"]
-[ext_resource type="PackedScene" uid="uid://c1tsspqyui758" path="res://midi_listener.tscn" id="1_ue8xs"]
 [ext_resource type="Script" path="res://CMajorScaleLevelOne.gd" id="2_7ou3x"]
 [ext_resource type="Shader" path="res://assets/background/sliding_background.gdshader" id="2_mwxum"]
 [ext_resource type="Texture2D" uid="uid://8vbd1upbqxks" path="res://assets/background/bubble_pattern.png" id="3_gxlps"]
@@ -11,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="8_2fvjo"]
 [ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="9_x5cv7"]
 [ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="10_pb0ll"]
+[ext_resource type="Shader" path="res://assets/shaders/group_outline.gdshader" id="11_xmm1f"]
 [ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="12_pielo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ay7s"]
@@ -26,6 +26,12 @@ shader_parameter/strength = 0.0
 shader_parameter/speed = 3.0
 shader_parameter/angle = 270.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1yvu5"]
+shader = ExtResource("11_xmm1f")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 10.0
+shader_parameter/viewport_scale = Vector2(1, 1)
+
 [node name="CMajorScaleLevelOne" type="Control"]
 custom_minimum_size = Vector2(2560, 1440)
 layout_mode = 3
@@ -35,8 +41,6 @@ offset_bottom = 1440.0
 theme = ExtResource("1_kywhn")
 script = ExtResource("2_7ou3x")
 metadata/_edit_vertical_guides_ = [1280.0]
-
-[node name="MidiListener" parent="." instance=ExtResource("1_ue8xs")]
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_3ay7s")
@@ -124,12 +128,20 @@ texture = ExtResource("9_x5cv7")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Piano" parent="." instance=ExtResource("12_pielo")]
-layout_mode = 1
+[node name="PianoCanvasGroup" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_1yvu5")
+
+[node name="Piano" parent="PianoCanvasGroup" instance=ExtResource("12_pielo")]
 anchors_preset = -1
-anchor_left = 0.353125
+anchor_left = 0.35
 anchor_top = 0.636111
-anchor_right = 1.3375
-anchor_bottom = 1.60833
+anchor_right = 0.35
+anchor_bottom = 0.636111
+offset_left = 896.0
+offset_top = 916.0
+offset_right = 3456.0
+offset_bottom = 2356.0
 scale = Vector2(0.3, 0.3)
 metadata/_edit_use_anchors_ = true
+
+[editable path="PianoCanvasGroup/Piano"]

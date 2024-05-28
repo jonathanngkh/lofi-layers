@@ -2,9 +2,5 @@
 
 [ext_resource type="Script" path="res://midi_listener.gd" id="1_ndv8i"]
 
-[node name="MidiListener" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MidiListener" type="Node"]
 script = ExtResource("1_ndv8i")
