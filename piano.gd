@@ -16,10 +16,14 @@ func _process(delta: float) -> void:
 func key_down(note_played :  int) -> void:
 	print(note_played)
 	if note_played == 72:
-		$HBoxContainer/C_TextureButton.button_pressed = true
+		$HBoxContainer/C5TextureButton.button_pressed = true
+	if note_played == 73:
+		$CSharp5BaseTextureRect/CSharp5TextureButton.button_pressed = true
 
 
 func key_up(note_released : int) -> void:
 	print(note_released)
 	if note_released == 72:
-		$HBoxContainer/C_TextureButton.button_pressed = false
+		$HBoxContainer/C5TextureButton.button_pressed = false
+	if note_released == 73:
+		$CSharp5BaseTextureRect/CSharp5TextureButton.button_pressed = false

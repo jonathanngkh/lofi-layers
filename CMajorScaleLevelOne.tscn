@@ -142,6 +142,7 @@ offset_top = 916.0
 offset_right = 3456.0
 offset_bottom = 2356.0
 scale = Vector2(0.3, 0.3)
+metadata/_edit_vertical_guides_ = [163.0]
 metadata/_edit_use_anchors_ = true
 
 [editable path="PianoCanvasGroup/Piano"]
