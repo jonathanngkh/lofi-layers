@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmnwoxnuf3mn2"
-path="res://.godot/imported/C pressed piano key pink.png-0ec35d9196fba9f0eba499879acbb3ec.ctex"
+uid="uid://cg3v5qox4p2x4"
+path="res://.godot/imported/F normal piano key.png-737b8eeb75af848f1fc5bd2f6723a095.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/music theory/C pressed piano key pink.png"
-dest_files=["res://.godot/imported/C pressed piano key pink.png-0ec35d9196fba9f0eba499879acbb3ec.ctex"]
+source_file="res://assets/music theory/F normal piano key.png"
+dest_files=["res://.godot/imported/F normal piano key.png-737b8eeb75af848f1fc5bd2f6723a095.ctex"]
 
 [params]
 

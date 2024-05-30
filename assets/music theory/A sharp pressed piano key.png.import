@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du6sf7a8vq8rm"
-path="res://.godot/imported/C.png-2806783e147ea8ad2425968dabbcf46e.ctex"
+uid="uid://cavl0fr23y62m"
+path="res://.godot/imported/A sharp pressed piano key.png-3842db2b26008a3d35e6c855c845f8e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/music theory/C.png"
-dest_files=["res://.godot/imported/C.png-2806783e147ea8ad2425968dabbcf46e.ctex"]
+source_file="res://assets/music theory/A sharp pressed piano key.png"
+dest_files=["res://.godot/imported/A sharp pressed piano key.png-3842db2b26008a3d35e6c855c845f8e0.ctex"]
 
 [params]
 

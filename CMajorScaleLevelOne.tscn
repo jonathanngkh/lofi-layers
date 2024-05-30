@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://boicx6ptu4ixi"]
+[gd_scene load_steps=15 format=3 uid="uid://boicx6ptu4ixi"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_kywhn"]
 [ext_resource type="Script" path="res://CMajorScaleLevelOne.gd" id="2_7ou3x"]
 [ext_resource type="Shader" path="res://assets/background/sliding_background.gdshader" id="2_mwxum"]
 [ext_resource type="Texture2D" uid="uid://8vbd1upbqxks" path="res://assets/background/bubble_pattern.png" id="3_gxlps"]
-[ext_resource type="Texture2D" uid="uid://behgjeiqg5ojl" path="res://assets/characters/pink.png" id="4_hhiak"]
-[ext_resource type="Texture2D" uid="uid://bqtb64p2by5xs" path="res://assets/characters/expressions/emotion_determined.png" id="6_wuv8d"]
+[ext_resource type="PackedScene" uid="uid://hriegrmf62ji" path="res://character.tscn" id="5_cjjyt"]
 [ext_resource type="Texture2D" uid="uid://c764sj6i7ua68" path="res://assets/music theory/staff lines.png" id="7_xkw4a"]
 [ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="8_2fvjo"]
 [ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="9_x5cv7"]
@@ -40,7 +39,7 @@ offset_right = 2560.0
 offset_bottom = 1440.0
 theme = ExtResource("1_kywhn")
 script = ExtResource("2_7ou3x")
-metadata/_edit_vertical_guides_ = [1280.0]
+metadata/_edit_vertical_guides_ = [1280.0, 664.0]
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_3ay7s")
@@ -48,23 +47,12 @@ layout_mode = 0
 offset_right = 2560.0
 offset_bottom = 1440.0
 
-[node name="Character" type="TextureRect" parent="."]
+[node name="Character" parent="." instance=ExtResource("5_cjjyt")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0566406
-anchor_top = 0.557639
-anchor_right = 0.0566406
-anchor_bottom = 0.557639
-offset_right = 512.0
-offset_bottom = 640.0
-texture = ExtResource("4_hhiak")
-metadata/_edit_use_anchors_ = true
-
-[node name="Expression" type="TextureRect" parent="Character"]
-layout_mode = 0
-offset_right = 512.0
-offset_bottom = 640.0
-texture = ExtResource("6_wuv8d")
+anchor_left = 0.0
+anchor_top = 0.555556
+anchor_right = 0.0
+anchor_bottom = 0.555556
 
 [node name="TextBox" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -133,16 +121,28 @@ material = SubResource("ShaderMaterial_1yvu5")
 
 [node name="Piano" parent="PianoCanvasGroup" instance=ExtResource("12_pielo")]
 anchors_preset = -1
-anchor_left = 0.35
-anchor_top = 0.636111
-anchor_right = 0.35
-anchor_bottom = 0.636111
-offset_left = 896.0
-offset_top = 916.0
-offset_right = 3456.0
-offset_bottom = 2356.0
+anchor_left = 0.392188
+anchor_top = 0.634028
+anchor_right = 0.392188
+anchor_bottom = 0.634028
+offset_left = 707.0
+offset_top = 913.0
+offset_right = 3267.0
+offset_bottom = 2353.0
 scale = Vector2(0.3, 0.3)
 metadata/_edit_vertical_guides_ = [163.0]
 metadata/_edit_use_anchors_ = true
 
-[editable path="PianoCanvasGroup/Piano"]
+[node name="Piano2" parent="PianoCanvasGroup" instance=ExtResource("12_pielo")]
+anchors_preset = -1
+anchor_left = 0.616798
+anchor_top = 0.634028
+anchor_right = 0.616798
+anchor_bottom = 0.634028
+offset_left = 1282.0
+offset_top = 913.0
+offset_right = 3842.0
+offset_bottom = 2353.0
+scale = Vector2(0.3, 0.3)
+metadata/_edit_vertical_guides_ = [163.0]
+metadata/_edit_use_anchors_ = true

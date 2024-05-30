@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://hriegrmf62ji"]
+
+[ext_resource type="Texture2D" uid="uid://behgjeiqg5ojl" path="res://assets/characters/pink.png" id="1_2jtcq"]
+[ext_resource type="Texture2D" uid="uid://bqtb64p2by5xs" path="res://assets/characters/expressions/emotion_determined.png" id="2_eti10"]
+[ext_resource type="Script" path="res://character.gd" id="2_vbmj2"]
+
+[node name="Character" type="TextureRect"]
+anchors_preset = -1
+anchor_left = 0.0566406
+anchor_top = 0.557639
+anchor_right = 0.0566406
+anchor_bottom = 0.557639
+offset_right = 512.0
+offset_bottom = 640.0
+texture = ExtResource("1_2jtcq")
+script = ExtResource("2_vbmj2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Expression" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 640.0
+texture = ExtResource("2_eti10")
+
+[node name="BlinkIntervalTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="BlinkDurationTimer" type="Timer" parent="."]
+wait_time = 0.08
+autostart = true

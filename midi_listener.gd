@@ -19,7 +19,22 @@ var midi_dictionary: Dictionary = MusicTheoryDB.PITCHES
 # where musicsegment is a class which is an array of notes and pace
 # where note is a class with properties for pitch and rhythm
 
-# Called when the node enters the scene tree for the first time.
+var action_pitch_dictionary: Dictionary = {
+	"C5_on": 72,
+	"Csharp5_on": 73,
+	"D5_on": 74,
+	"Dsharp5_on": 75,
+	"E5_on": 76,
+	"F5_on": 77,
+	"Fsharp5_on": 78,
+	"G5_on": 79,
+	"Gsharp5_on": 80,
+	"A5_on": 81,
+	"Asharp5_on": 82,
+	"B5_on": 83,
+}
+
+
 func _ready() -> void:
 	OS.open_midi_inputs()
 	print(OS.get_connected_midi_inputs())
@@ -41,21 +56,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			emit_signal("note_off", event.pitch)
 			
 	# QWERTY INPUTS
-	if Input.get_action_strength("C5_on") == 1:
-		print('1')
-		emit_signal("note_on", 72)
-	else:
-		emit_signal("note_off", 72)
-		
-	if Input.get_action_strength("Csharp5_on") == 1:
-		print('2')
-		emit_signal("note_on", 73)
-	else:
-		emit_signal("note_off", 73)
-	#if Input.is_key_pressed(KEY_1):
-		#emit_signal("note_on", 72)
-	#if Input.is_key_pressed(KEY_2):
-		#emit_signal("note_off", 72)
+	#if event is InputEventKey:
+		##if event.action
+	for key in action_pitch_dictionary:
+		if Input.is_action_just_pressed(key):
+			emit_signal("note_on", action_pitch_dictionary[key])
+		elif Input.is_action_just_released(key):
+			emit_signal("note_off", action_pitch_dictionary[key])
 
 
 func _print_midi_info(midi_event: InputEventMIDI):

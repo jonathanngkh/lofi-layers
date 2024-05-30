@@ -7,3 +7,4 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CMajorScaleLevelOne" parent="CanvasLayer" instance=ExtResource("1_stp82")]
+metadata/_edit_vertical_guides_ = [1280.0]
