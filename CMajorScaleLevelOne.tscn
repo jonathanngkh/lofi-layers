@@ -49,9 +49,9 @@ offset_bottom = 1440.0
 
 [node name="Character" parent="." instance=ExtResource("5_cjjyt")]
 layout_mode = 1
-anchor_left = 0.0
+anchor_left = 0.0363281
 anchor_top = 0.555556
-anchor_right = 0.0
+anchor_right = 0.0363281
 anchor_bottom = 0.555556
 
 [node name="TextBox" type="RichTextLabel" parent="."]

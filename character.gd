@@ -1,8 +1,10 @@
 extends TextureRect
 
 @export var initial_expression := "determined"
-@export var blink_interval := randf_range(0.4, 4.2)
 @export var blink_duration := 0.09
+@export var blink_interval_min := 0.4
+@export var blink_interval_max := 4.2
+var blink_interval := randf_range(blink_interval_min, blink_interval_max)
 
 @onready var expressions_dictionary: Dictionary = {
 	"angry": {"base": preload("res://assets/characters/expressions/emotion_angry.png"), "blink": preload("res://assets/characters/expressions/emotion_angry_blink.png")},
@@ -26,8 +28,9 @@ func _ready() -> void:
 
 
 func _on_interval_timer_timeout() -> void:
-	$Expression.texture = expressions_dictionary[initial_expression]["blink"]
-	blink_interval = randf_range(0.7, 1.8)
+	blink_interval = randf_range(blink_interval_min, blink_interval_max)
+	if expressions_dictionary[initial_expression]["blink"] != null:
+		$Expression.texture = expressions_dictionary[initial_expression]["blink"]
 	$BlinkIntervalTimer.wait_time = blink_interval
 
 
