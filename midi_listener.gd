@@ -56,8 +56,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			emit_signal("note_off", event.pitch)
 			
 	# QWERTY INPUTS
-	#if event is InputEventKey:
-		##if event.action
 	for key in action_pitch_dictionary:
 		if Input.is_action_just_pressed(key):
 			emit_signal("note_on", action_pitch_dictionary[key])

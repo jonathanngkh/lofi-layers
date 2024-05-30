@@ -1,5 +1,7 @@
 extends Control
 
+@export var octave: int = 4 # 0 to 8
+
 #region onready variables
 @onready var c_5_texture_button: TextureButton = %C5TextureButton
 @onready var d_5_texture_button: TextureButton = %D5TextureButton
@@ -14,7 +16,7 @@ extends Control
 @onready var g_sharp_5_texture_button: TextureButton = %GSharp5TextureButton
 @onready var a_sharp_5_texture_button: TextureButton = %ASharp5TextureButton
 #endregion
-
+@onready var sampler:  SamplerInstrument = $SamplerInstrument
 
 @onready var pitch_node_dictionary: Dictionary = {
 	72: c_5_texture_button,
@@ -33,21 +35,16 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(pitch_node_dictionary[72])
 	MidiListener.connect("note_on", key_down)
 	MidiListener.connect("note_off", key_up)
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 
 func key_down(note_played :  int) -> void:
 	print(note_played, " played")
 	pitch_node_dictionary[note_played].button_pressed = true
-
+	var note_name := MusicTheoryDB.get_note_name(note_played)
+	var octave:= MusicTheoryDB.get_note_octave(note_played)
+	sampler.play_note(note_name, octave)
 
 func key_up(note_released : int) -> void:
 	print(note_released, " released")

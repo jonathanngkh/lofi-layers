@@ -5,7 +5,6 @@ extends TextureRect
 @export var blink_interval_min := 0.4
 @export var blink_interval_max := 4.2
 var blink_interval := randf_range(blink_interval_min, blink_interval_max)
-
 @onready var expressions_dictionary: Dictionary = {
 	"angry": {"base": preload("res://assets/characters/expressions/emotion_angry.png"), "blink": preload("res://assets/characters/expressions/emotion_angry_blink.png")},
 	"determined": {"base": preload("res://assets/characters/expressions/emotion_determined.png"), "blink": preload("res://assets/characters/expressions/emotion_determined_blink.png")},
@@ -15,14 +14,11 @@ var blink_interval := randf_range(blink_interval_min, blink_interval_max)
 	"happy": {"base": preload("res://assets/characters/expressions/emotion_happy.png"), "blink": null}
 }
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Expression.texture = expressions_dictionary[initial_expression]["base"]
-	
 	$BlinkIntervalTimer.connect("timeout", _on_interval_timer_timeout)
 	$BlinkIntervalTimer.wait_time = blink_interval
-	
 	$BlinkDurationTimer.connect("timeout", _on_duration_timer_timeout)
 	$BlinkDurationTimer.wait_time = blink_duration
 

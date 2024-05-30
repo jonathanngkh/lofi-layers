@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 MusicTheoryDB="*res://music_theory_DB.gd"
 MidiListener="*res://midi_listener.tscn"
+NoteValue="*res://addons/SimpleSampler/note_value.gd"
 
 [display]
 
@@ -27,7 +28,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/midi/plugin.cfg")
+enabled=PackedStringArray("res://addons/SimpleSampler/plugin.cfg", "res://addons/midi/plugin.cfg")
 
 [input]
 
