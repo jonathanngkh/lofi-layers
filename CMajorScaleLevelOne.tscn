@@ -118,6 +118,7 @@ stretch_mode = 4
 
 [node name="PianoCanvasGroup" type="CanvasGroup" parent="."]
 material = SubResource("ShaderMaterial_1yvu5")
+position = Vector2(0, -28)
 
 [node name="Piano" parent="PianoCanvasGroup" instance=ExtResource("12_pielo")]
 anchors_preset = -1
