@@ -28,7 +28,7 @@ shader_parameter/angle = 270.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1yvu5"]
 shader = ExtResource("11_xmm1f")
 shader_parameter/line_color = Color(0, 0, 0, 1)
-shader_parameter/line_thickness = 10.0
+shader_parameter/line_thickness = 8.0
 shader_parameter/viewport_scale = Vector2(1, 1)
 
 [node name="CMajorScaleLevelOne" type="Control"]
@@ -118,7 +118,7 @@ stretch_mode = 4
 
 [node name="PianoCanvasGroup" type="CanvasGroup" parent="."]
 material = SubResource("ShaderMaterial_1yvu5")
-position = Vector2(0, -28)
+position = Vector2(0, 95)
 
 [node name="Piano" parent="PianoCanvasGroup" instance=ExtResource("12_pielo")]
 anchors_preset = -1
@@ -131,6 +131,7 @@ offset_top = 913.0
 offset_right = 3267.0
 offset_bottom = 2353.0
 scale = Vector2(0.3, 0.3)
+octave = 4
 metadata/_edit_vertical_guides_ = [163.0]
 metadata/_edit_use_anchors_ = true
 

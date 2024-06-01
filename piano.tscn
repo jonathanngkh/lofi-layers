@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://db7uirthcq6ot"]
+[gd_scene load_steps=32 format=3 uid="uid://db7uirthcq6ot"]
 
 [ext_resource type="Texture2D" uid="uid://snijjaqclrdu" path="res://assets/music theory/C normal piano key.png" id="1_4s236"]
 [ext_resource type="Script" path="res://piano.gd" id="1_stb0y"]
@@ -46,6 +46,10 @@ corner_radius_bottom_left = 8
 content_margin_bottom = 22.0
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca5xn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25cht"]
+
 [node name="Piano" type="Control"]
 custom_minimum_size = Vector2(2560, 1440)
 layout_mode = 3
@@ -54,7 +58,7 @@ offset_right = 2560.0
 offset_bottom = 1440.0
 script = ExtResource("1_stb0y")
 metadata/_edit_horizontal_guides_ = [1426.0, 961.0]
-metadata/_edit_vertical_guides_ = [158.0, 264.0, 274.0, 538.0, 548.0, 812.0, 822.0, 484.0, 968.0, 1278.0, 1594.0, 132.0, 406.0, 680.0, 954.0, 1096.0, 1228.0, 1776.0, 1502.0, 425.0, 212.0, 213.0]
+metadata/_edit_vertical_guides_ = [158.0, 264.0, 274.0, 538.0, 548.0, 812.0, 822.0, 484.0, 1278.0, 1594.0, 132.0, 406.0, 680.0, 954.0, 1096.0, 1228.0, 1776.0, 1502.0, 425.0, 212.0, 213.0, 242.0, 243.0]
 
 [node name="SamplerInstrument" type="AudioStreamPlayer" parent="."]
 script = ExtResource("24_85uaq")
@@ -66,69 +70,74 @@ offset_right = 1908.0
 offset_bottom = 1426.0
 texture = ExtResource("1_tk1l0")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="WhiteKeysHBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 1908.0
 offset_bottom = 1426.0
 theme_override_constants/separation = 10
 
-[node name="CTextureButton" type="TextureButton" parent="HBoxContainer"]
+[node name="CTextureButton" type="TextureButton" parent="WhiteKeysHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("1_4s236")
 texture_pressed = ExtResource("2_1do52")
 
-[node name="DTextureButton" type="TextureButton" parent="HBoxContainer"]
+[node name="DTextureButton" type="TextureButton" parent="WhiteKeysHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("2_72hrq")
 texture_pressed = ExtResource("6_s8ol7")
 
-[node name="ETextureButton" type="TextureButton" parent="HBoxContainer"]
+[node name="ETextureButton" type="TextureButton" parent="WhiteKeysHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("3_ss4jt")
 texture_pressed = ExtResource("8_djrt0")
 
-[node name="FTextureButton" type="TextureButton" parent="HBoxContainer"]
+[node name="FTextureButton" type="TextureButton" parent="WhiteKeysHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("9_3nl1w")
 texture_pressed = ExtResource("10_dh60f")
 
-[node name="GTextureButton" type="TextureButton" parent="HBoxContainer"]
+[node name="GTextureButton" type="TextureButton" parent="WhiteKeysHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("11_s02r3")
 texture_pressed = ExtResource("12_aei05")
 
-[node name="ATextureButton" type="TextureButton" parent="HBoxContainer"]
+[node name="ATextureButton" type="TextureButton" parent="WhiteKeysHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("13_s03te")
 texture_pressed = ExtResource("14_puu6k")
 
-[node name="BTextureButton" type="TextureButton" parent="HBoxContainer"]
+[node name="BTextureButton" type="TextureButton" parent="WhiteKeysHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("15_dv808")
 texture_pressed = ExtResource("16_ti8ce")
 
-[node name="CSharpBaseTextureRect" type="TextureRect" parent="."]
+[node name="BlackKeys" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CSharpBaseTextureRect" type="TextureRect" parent="BlackKeys"]
 layout_mode = 0
 offset_left = 158.0
 offset_right = 327.0
 offset_bottom = 961.0
 texture = ExtResource("4_qkdbx")
 
-[node name="CSharpTextureButton" type="TextureButton" parent="CSharpBaseTextureRect"]
+[node name="CSharpTextureButton" type="TextureButton" parent="BlackKeys/CSharpBaseTextureRect"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -142,14 +151,14 @@ texture_pressed = ExtResource("6_rw27b")
 ignore_texture_size = true
 stretch_mode = 3
 
-[node name="DSharpBaseTextureRect" type="TextureRect" parent="."]
+[node name="DSharpBaseTextureRect" type="TextureRect" parent="BlackKeys"]
 layout_mode = 0
 offset_left = 484.0
 offset_right = 653.0
 offset_bottom = 961.0
 texture = ExtResource("4_qkdbx")
 
-[node name="DSharpTextureButton" type="TextureButton" parent="DSharpBaseTextureRect"]
+[node name="DSharpTextureButton" type="TextureButton" parent="BlackKeys/DSharpBaseTextureRect"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -163,14 +172,14 @@ texture_pressed = ExtResource("12_hvswy")
 ignore_texture_size = true
 stretch_mode = 3
 
-[node name="FSharpBaseTextureRect" type="TextureRect" parent="."]
+[node name="FSharpBaseTextureRect" type="TextureRect" parent="BlackKeys"]
 layout_mode = 0
 offset_left = 968.0
 offset_right = 1137.0
 offset_bottom = 961.0
 texture = ExtResource("4_qkdbx")
 
-[node name="FSharpTextureButton" type="TextureButton" parent="FSharpBaseTextureRect"]
+[node name="FSharpTextureButton" type="TextureButton" parent="BlackKeys/FSharpBaseTextureRect"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -184,14 +193,14 @@ texture_pressed = ExtResource("21_f1iws")
 ignore_texture_size = true
 stretch_mode = 3
 
-[node name="GSharpBaseTextureRect" type="TextureRect" parent="."]
+[node name="GSharpBaseTextureRect" type="TextureRect" parent="BlackKeys"]
 layout_mode = 0
 offset_left = 1278.0
 offset_right = 1447.0
 offset_bottom = 961.0
 texture = ExtResource("4_qkdbx")
 
-[node name="GSharpTextureButton" type="TextureButton" parent="GSharpBaseTextureRect"]
+[node name="GSharpTextureButton" type="TextureButton" parent="BlackKeys/GSharpBaseTextureRect"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -205,14 +214,14 @@ texture_pressed = ExtResource("22_b8myf")
 ignore_texture_size = true
 stretch_mode = 3
 
-[node name="ASharpBaseTextureRect" type="TextureRect" parent="."]
+[node name="ASharpBaseTextureRect" type="TextureRect" parent="BlackKeys"]
 layout_mode = 0
 offset_left = 1594.0
 offset_right = 1763.0
 offset_bottom = 961.0
 texture = ExtResource("4_qkdbx")
 
-[node name="ASharpTextureButton" type="TextureButton" parent="ASharpBaseTextureRect"]
+[node name="ASharpTextureButton" type="TextureButton" parent="BlackKeys/ASharpBaseTextureRect"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -228,37 +237,38 @@ stretch_mode = 3
 
 [node name="OctaveLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_top = 1467.0
-offset_right = 425.0
-offset_bottom = 1606.0
+offset_top = -360.0
+offset_right = 404.0
+offset_bottom = -221.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 88
 theme_override_styles/normal = SubResource("StyleBoxFlat_a03lm")
 bbcode_enabled = true
-text = "[center]Octave: 4[/center]"
+text = "[center]Octave: "
 
 [node name="MinusButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 43.0
-offset_top = 1636.0
-offset_right = 202.0
-offset_bottom = 1795.0
+offset_top = -191.0
+offset_right = 194.0
+offset_bottom = -32.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_6ym31")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ca5xn")
 text = "-"
 
 [node name="PlusButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 223.0
-offset_top = 1636.0
-offset_right = 382.0
-offset_bottom = 1795.0
+offset_left = 212.0
+offset_top = -191.0
+offset_right = 401.0
+offset_bottom = -32.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_6ym31")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_25cht")
 text = "+"
 
 [node name="NoteLabels" type="Control" parent="."]
@@ -277,6 +287,18 @@ theme_override_font_sizes/normal_font_size = 88
 bbcode_enabled = true
 text = "[center]C"
 
+[node name="CSharpLabel" type="RichTextLabel" parent="NoteLabels"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 664.0
+offset_right = 321.0
+offset_bottom = 863.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "[center]C#
+"
+
 [node name="DLabel" type="RichTextLabel" parent="NoteLabels"]
 layout_mode = 0
 offset_left = 324.0
@@ -287,6 +309,18 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 88
 bbcode_enabled = true
 text = "[center]D"
+
+[node name="DSharpLabel" type="RichTextLabel" parent="NoteLabels"]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 664.0
+offset_right = 647.0
+offset_bottom = 863.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "[center]D#
+"
 
 [node name="ELabel" type="RichTextLabel" parent="NoteLabels"]
 layout_mode = 0
@@ -310,6 +344,18 @@ theme_override_font_sizes/normal_font_size = 88
 bbcode_enabled = true
 text = "[center]F"
 
+[node name="FSharpLabel" type="RichTextLabel" parent="NoteLabels"]
+layout_mode = 0
+offset_left = 973.0
+offset_top = 664.0
+offset_right = 1131.0
+offset_bottom = 863.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "[center]F#
+"
+
 [node name="GLabel" type="RichTextLabel" parent="NoteLabels"]
 layout_mode = 0
 offset_left = 1146.0
@@ -321,6 +367,18 @@ theme_override_font_sizes/normal_font_size = 88
 bbcode_enabled = true
 text = "[center]G"
 
+[node name="GSharpLabel" type="RichTextLabel" parent="NoteLabels"]
+layout_mode = 0
+offset_left = 1283.0
+offset_top = 664.0
+offset_right = 1441.0
+offset_bottom = 863.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "[center]G#
+"
+
 [node name="ALabel" type="RichTextLabel" parent="NoteLabels"]
 layout_mode = 0
 offset_left = 1420.0
@@ -331,6 +389,18 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 88
 bbcode_enabled = true
 text = "[center]A"
+
+[node name="ASharpLabel" type="RichTextLabel" parent="NoteLabels"]
+layout_mode = 0
+offset_left = 1599.0
+offset_top = 664.0
+offset_right = 1757.0
+offset_bottom = 863.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "[center]A#
+"
 
 [node name="BLabel" type="RichTextLabel" parent="NoteLabels"]
 layout_mode = 0
