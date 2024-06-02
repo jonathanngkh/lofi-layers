@@ -2,8 +2,8 @@ extends Control
 
 @export var octave: int = 5 # 0 to 8
 
-signal note_played(pitch)
-signal note_released(pitch)
+signal note_played_signal(pitch)
+signal note_released_signal(pitch)
 
 #region onready variables
 @onready var c_texture_button: TextureButton = %CTextureButton
@@ -45,7 +45,7 @@ signal note_released(pitch)
 # Called when the node enters the scene tree for the first time.
 var angle_to_set = 10
 func _ready() -> void:
-	$RainbowRotationTimer.timeout.connect(func() -> void: angle_to_set += 1; c_texture_button.material.set_shader_parameter("angle", angle_to_set); print(angle_to_set))
+	$RainbowRotationTimer.timeout.connect(func() -> void: angle_to_set += 1; c_texture_button.material.set_shader_parameter("angle", angle_to_set))
 	toggle_note_names_button.connect("pressed", func() -> void: note_labels.visible = !note_labels.visible)
 	MidiListener.connect("midi_note_on", midi_key_down)
 	MidiListener.connect("midi_note_off", midi_key_up)
@@ -60,17 +60,13 @@ func _ready() -> void:
 
 func midi_key_down(note_played : int) -> void:
 	print(MusicTheoryDB.get_note_name(note_played), MusicTheoryDB.get_note_octave(note_played), " played (midi)")
-	#if pitch_node_dictionary.keys().has(note_played):
-		#pitch_node_dictionary[note_played].button_pressed = true
 	var note_name := MusicTheoryDB.get_note_name(note_played)
 	var note_octave:= MusicTheoryDB.get_note_octave(note_played)
 	sampler.play_note(note_name, note_octave)
-	
-	#note_played = note_played + 12 + (12 * octave)
 	var note_value : int = note_played % 12
 	if note_octave == octave:
 		pitch_node_dictionary[note_value].button_pressed = true
-	emit_signal("note_played", note_played)
+	emit_signal("note_played_signal", note_played)
 
 func midi_key_up(note_released : int) -> void:
 	print(note_released, " released (midi)")
@@ -80,7 +76,7 @@ func midi_key_up(note_released : int) -> void:
 	var note_value : int = note_released % 12
 	if note_octave == octave:
 		pitch_node_dictionary[note_value].button_pressed = false
-	emit_signal("note_released", note_released)
+	emit_signal("note_released_signal", note_released)
 
 func qwerty_key_down(note_played: int) -> void:
 	# qwerty notes are always 0-12. Convert to piano's octave
@@ -91,7 +87,7 @@ func qwerty_key_down(note_played: int) -> void:
 	var note_octave := MusicTheoryDB.get_note_octave(note_played)
 	sampler.play_note(note_name, note_octave)
 	print(MusicTheoryDB.get_note_name(note_played), MusicTheoryDB.get_note_octave(note_played), " played (qwerty)")
-	emit_signal("note_played", note_played)
+	emit_signal("note_played_signal", note_played)
 
 
 func qwerty_key_up(note_released : int) -> void:
@@ -99,7 +95,7 @@ func qwerty_key_up(note_released : int) -> void:
 	pitch_node_dictionary[note_value].button_pressed = false
 	note_released = note_released + 12 + (12 * octave)
 	print(note_released, " released (qwerty)")
-	emit_signal("note_released", note_released)
+	emit_signal("note_released_signal", note_released)
 
 
 func change_octave(plus_or_minus: String) -> void:

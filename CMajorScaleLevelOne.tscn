@@ -110,6 +110,20 @@ texture = ExtResource("9_x5cv7")
 expand_mode = 1
 stretch_mode = 4
 
+[node name="TextBox2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = 412.0
+offset_right = -1955.0
+offset_bottom = -596.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "This is C. Try playing it!"
+
 [node name="PianoCanvasGroup" type="CanvasGroup" parent="."]
 material = SubResource("ShaderMaterial_1yvu5")
 position = Vector2(0, 95)
@@ -124,13 +138,5 @@ theme_override_constants/separation = 1918
 
 [node name="Piano" parent="PianoCanvasGroup/HBoxContainer" instance=ExtResource("12_pielo")]
 layout_mode = 2
-octave = 4
-metadata/_edit_vertical_guides_ = [163.0]
-metadata/_edit_use_anchors_ = true
-
-[node name="Piano2" parent="PianoCanvasGroup/HBoxContainer" instance=ExtResource("12_pielo")]
-visible = false
-layout_mode = 2
-octave = 4
 metadata/_edit_vertical_guides_ = [163.0]
 metadata/_edit_use_anchors_ = true
