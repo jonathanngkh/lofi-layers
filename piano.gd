@@ -23,6 +23,7 @@ signal note_released(pitch)
 @onready var minus_button: Button = $MinusButton
 @onready var plus_button: Button = $PlusButton
 @onready var note_labels: Control = $NoteLabels
+@onready var toggle_note_names_button: Button = $ToggleNoteNamesButton
 #endregion
 
 
@@ -42,7 +43,10 @@ signal note_released(pitch)
 }
 
 # Called when the node enters the scene tree for the first time.
+var angle_to_set = 10
 func _ready() -> void:
+	$RainbowRotationTimer.timeout.connect(func() -> void: angle_to_set += 1; c_texture_button.material.set_shader_parameter("angle", angle_to_set); print(angle_to_set))
+	toggle_note_names_button.connect("pressed", func() -> void: note_labels.visible = !note_labels.visible)
 	MidiListener.connect("midi_note_on", midi_key_down)
 	MidiListener.connect("midi_note_off", midi_key_up)
 	MidiListener.connect("qwerty_note_on", qwerty_key_down)
@@ -54,8 +58,8 @@ func _ready() -> void:
 	octave_label.text += str(octave)
 
 
-func midi_key_down(note_played :  int) -> void:
-	print(note_played, " played (midi)")
+func midi_key_down(note_played : int) -> void:
+	print(MusicTheoryDB.get_note_name(note_played), MusicTheoryDB.get_note_octave(note_played), " played (midi)")
 	#if pitch_node_dictionary.keys().has(note_played):
 		#pitch_node_dictionary[note_played].button_pressed = true
 	var note_name := MusicTheoryDB.get_note_name(note_played)

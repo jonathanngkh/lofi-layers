@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://db7uirthcq6ot"]
+[gd_scene load_steps=35 format=3 uid="uid://db7uirthcq6ot"]
 
 [ext_resource type="Texture2D" uid="uid://snijjaqclrdu" path="res://assets/music theory/C normal piano key.png" id="1_4s236"]
 [ext_resource type="Script" path="res://piano.gd" id="1_stb0y"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cl8i1xuyloair" path="res://assets/music theory/C pressed piano key.png" id="2_1do52"]
 [ext_resource type="Texture2D" uid="uid://cvw32gxf6otcf" path="res://assets/music theory/D normal piano key.png" id="2_72hrq"]
 [ext_resource type="Texture2D" uid="uid://d4n26pb6qam6d" path="res://assets/music theory/E normal piano key.png" id="3_ss4jt"]
+[ext_resource type="AudioStream" uid="uid://cvbim8uy5najq" path="res://assets/samples/B4.ogg" id="4_q0x5p"]
 [ext_resource type="Texture2D" uid="uid://c47xoa5djgfwr" path="res://assets/music theory/Black Key Base.png" id="4_qkdbx"]
 [ext_resource type="Texture2D" uid="uid://lgc56d3i0jwp" path="res://assets/music theory/C sharp normal piano key.png" id="5_drpm1"]
+[ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="6_pembf"]
 [ext_resource type="Texture2D" uid="uid://cqxcpyt5nvh10" path="res://assets/music theory/C sharp pressed piano key.png" id="6_rw27b"]
 [ext_resource type="Texture2D" uid="uid://brao4dpegbsje" path="res://assets/music theory/D pressed piano key.png" id="6_s8ol7"]
 [ext_resource type="Texture2D" uid="uid://c2u1oxk4d3sr3" path="res://assets/music theory/E pressed piano key.png" id="8_djrt0"]
@@ -25,14 +27,19 @@
 [ext_resource type="Texture2D" uid="uid://cavl0fr23y62m" path="res://assets/music theory/A sharp pressed piano key.png" id="23_u2vr4"]
 [ext_resource type="Script" path="res://addons/SimpleSampler/sampler_instrument.gd" id="24_85uaq"]
 [ext_resource type="Script" path="res://addons/SimpleSampler/sample_resource.gd" id="25_ibw8b"]
-[ext_resource type="AudioStream" uid="uid://c1c5tfryjui8y" path="res://assets/samples/Piano.mf.C5.ogg" id="26_q31oa"]
 
 [sub_resource type="Resource" id="Resource_i0kbl"]
 script = ExtResource("25_ibw8b")
-stream = ExtResource("26_q31oa")
-tone = "C"
-octave = 5
+stream = ExtResource("4_q0x5p")
+tone = "B"
+octave = 4
 velocity = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oy8f"]
+shader = ExtResource("6_pembf")
+shader_parameter/strength = 0.5
+shader_parameter/speed = 0.5
+shader_parameter/angle = 360.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a03lm"]
 bg_color = Color(1, 1, 1, 1)
@@ -50,18 +57,20 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25cht"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0aky"]
+
 [node name="Piano" type="Control"]
-custom_minimum_size = Vector2(2560, 1440)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 2560.0
-offset_bottom = 1440.0
+offset_right = 1908.0
+offset_bottom = 1426.0
 script = ExtResource("1_stb0y")
 metadata/_edit_horizontal_guides_ = [1426.0, 961.0]
 metadata/_edit_vertical_guides_ = [158.0, 264.0, 274.0, 538.0, 548.0, 812.0, 822.0, 484.0, 1278.0, 1594.0, 132.0, 406.0, 680.0, 954.0, 1096.0, 1228.0, 1776.0, 1502.0, 425.0, 212.0, 213.0, 242.0, 243.0]
 
 [node name="SamplerInstrument" type="AudioStreamPlayer" parent="."]
 script = ExtResource("24_85uaq")
+max_notes = 10
 samples = Array[ExtResource("25_ibw8b")]([SubResource("Resource_i0kbl")])
 
 [node name="BlackBackground" type="TextureRect" parent="."]
@@ -78,6 +87,7 @@ theme_override_constants/separation = 10
 
 [node name="CTextureButton" type="TextureButton" parent="WhiteKeysHBoxContainer"]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8oy8f")
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("1_4s236")
@@ -271,6 +281,20 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6ym31")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_25cht")
 text = "+"
 
+[node name="ToggleNoteNamesButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 489.0
+offset_top = -191.0
+offset_right = 1531.0
+offset_bottom = -32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ym31")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_j0aky")
+toggle_mode = true
+text = "Disable Note Names"
+
 [node name="NoteLabels" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
@@ -412,3 +436,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 88
 bbcode_enabled = true
 text = "[center]B"
+
+[node name="RainbowRotationTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true

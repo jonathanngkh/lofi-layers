@@ -2,7 +2,8 @@ extends Control
 
 #@onready var midi_listener: Control = $MidiListener
 @onready var note_head: TextureRect = $TextBox/Staff/NoteHead
-@onready var piano: Control = $PianoCanvasGroup/Piano
+@onready var piano: Control = $PianoCanvasGroup/HBoxContainer/Piano
+
 
 
 # Called when the node enters the scene tree for the first time.

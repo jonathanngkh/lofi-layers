@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bj87cd73nlury"
+path="res://.godot/imported/m_ A4_1.wav-d2fd7c30b1fa32ede94b248286e02e3c.sample"
+
+[deps]
+
+source_file="res://assets/samples/m_ A4_1.wav"
+dest_files=["res://.godot/imported/m_ A4_1.wav-d2fd7c30b1fa32ede94b248286e02e3c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
