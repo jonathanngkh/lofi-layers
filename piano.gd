@@ -1,6 +1,7 @@
 extends Control
 
 @export var octave: int = 5 # 0 to 8
+@export var sound_on: bool = true
 
 signal note_played_signal(pitch)
 signal note_released_signal(pitch)
@@ -58,15 +59,22 @@ func _ready() -> void:
 	octave_label.text += str(octave)
 
 
+func _input(event: InputEvent) -> void:
+	if Input.is_key_pressed(KEY_V):
+		print('v')
+		note_labels.visible = !note_labels.visible
+
 func midi_key_down(note_played : int) -> void:
 	print(MusicTheoryDB.get_note_name(note_played), MusicTheoryDB.get_note_octave(note_played), " played (midi)")
 	var note_name := MusicTheoryDB.get_note_name(note_played)
 	var note_octave:= MusicTheoryDB.get_note_octave(note_played)
-	sampler.play_note(note_name, note_octave)
+	if sound_on:
+		sampler.play_note(note_name, note_octave)
 	var note_value : int = note_played % 12
 	if note_octave == octave:
 		pitch_node_dictionary[note_value].button_pressed = true
 	emit_signal("note_played_signal", note_played)
+
 
 func midi_key_up(note_released : int) -> void:
 	print(note_released, " released (midi)")
@@ -78,6 +86,7 @@ func midi_key_up(note_released : int) -> void:
 		pitch_node_dictionary[note_value].button_pressed = false
 	emit_signal("note_released_signal", note_released)
 
+
 func qwerty_key_down(note_played: int) -> void:
 	# qwerty notes are always 0-12. Convert to piano's octave
 	note_played = note_played + 12 + (12 * octave)
@@ -85,7 +94,8 @@ func qwerty_key_down(note_played: int) -> void:
 	pitch_node_dictionary[note_value].button_pressed = true
 	var note_name := MusicTheoryDB.get_note_name(note_played)
 	var note_octave := MusicTheoryDB.get_note_octave(note_played)
-	sampler.play_note(note_name, note_octave)
+	if sound_on:
+		sampler.play_note(note_name, note_octave)
 	print(MusicTheoryDB.get_note_name(note_played), MusicTheoryDB.get_note_octave(note_played), " played (qwerty)")
 	emit_signal("note_played_signal", note_played)
 
@@ -99,14 +109,16 @@ func qwerty_key_up(note_released : int) -> void:
 
 
 func change_octave(plus_or_minus: String) -> void:
+	var min_octave = 0
+	var max_octave = 8
 	if plus_or_minus == "plus":
 		octave += 1
 	elif plus_or_minus == "minus":
 		octave -= 1
-	octave = clampi(octave, 0, 9)
+	octave = clampi(octave, min_octave, max_octave)
 	
-	minus_button.disabled = true if octave == 0 else false
-	plus_button.disabled = true if octave == 9 else false
+	minus_button.disabled = true if octave == min_octave else false
+	plus_button.disabled = true if octave == max_octave else false
 	
 	octave_label.text = octave_label.text.left(-1) + str(octave)
 	for label in note_labels.get_children():

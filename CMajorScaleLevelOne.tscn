@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://boicx6ptu4ixi"]
+[gd_scene load_steps=28 format=3 uid="uid://boicx6ptu4ixi"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_kywhn"]
 [ext_resource type="Script" path="res://CMajorScaleLevelOne.gd" id="2_7ou3x"]
@@ -10,7 +10,21 @@
 [ext_resource type="Material" uid="uid://dcxjx6tmdldeq" path="res://assets/shaders/RainbowShaderMaterial.tres" id="8_abmrp"]
 [ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="9_x5cv7"]
 [ext_resource type="Shader" path="res://assets/shaders/group_outline.gdshader" id="11_xmm1f"]
+[ext_resource type="Texture2D" uid="uid://i318ia4g5lxx" path="res://assets/UI/Breakfast Prompts/q_light.png" id="12_k4twq"]
 [ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="12_pielo"]
+[ext_resource type="Texture2D" uid="uid://4p2nn6k5qrt3" path="res://assets/UI/Breakfast Prompts/w_light.png" id="13_wta3f"]
+[ext_resource type="Texture2D" uid="uid://cw7vrx7eu04ip" path="res://assets/UI/Breakfast Prompts/e_light.png" id="14_70efy"]
+[ext_resource type="Texture2D" uid="uid://cab8oqlid6hjv" path="res://assets/UI/Breakfast Prompts/r_light.png" id="15_d0jhc"]
+[ext_resource type="Texture2D" uid="uid://w3rho1r6p33f" path="res://assets/UI/Breakfast Prompts/t_light.png" id="16_lwbps"]
+[ext_resource type="Texture2D" uid="uid://dmgau0ku6bfet" path="res://assets/UI/Breakfast Prompts/y_key_light.png" id="17_sy03l"]
+[ext_resource type="Texture2D" uid="uid://c8u6aw2udein0" path="res://assets/UI/Breakfast Prompts/u_light.png" id="18_n2wwp"]
+[ext_resource type="Texture2D" uid="uid://3yiwx5wev4vh" path="res://assets/UI/Breakfast Prompts/i_light.png" id="19_6k58v"]
+[ext_resource type="Texture2D" uid="uid://dyley7ukk1h2a" path="res://assets/UI/Breakfast Prompts/o_light.png" id="20_30h24"]
+[ext_resource type="Texture2D" uid="uid://co6r5mbl3ou5d" path="res://assets/UI/Breakfast Prompts/p_light.png" id="21_ddyf2"]
+[ext_resource type="Texture2D" uid="uid://blv0inljfecb0" path="res://assets/UI/Breakfast Prompts/[_light.png" id="22_4jnjn"]
+[ext_resource type="Texture2D" uid="uid://cmalpsc8m22u8" path="res://assets/UI/Breakfast Prompts/]_light.png" id="23_uouk5"]
+[ext_resource type="Texture2D" uid="uid://cbqer36ojho65" path="res://assets/UI/Breakfast Prompts/backslash_light.png" id="24_yosbp"]
+[ext_resource type="Texture2D" uid="uid://dg6b3mi6e70jf" path="res://assets/UI/Breakfast Prompts/return_light.png" id="25_vxf8o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ay7s"]
 shader = ExtResource("2_mwxum")
@@ -33,7 +47,7 @@ offset_right = 2560.0
 offset_bottom = 1440.0
 theme = ExtResource("1_kywhn")
 script = ExtResource("2_7ou3x")
-metadata/_edit_vertical_guides_ = [1280.0, 664.0]
+metadata/_edit_vertical_guides_ = [1280.0, 706.0, 1854.0]
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_3ay7s")
@@ -41,22 +55,38 @@ layout_mode = 0
 offset_right = 2560.0
 offset_bottom = 1440.0
 
-[node name="Character" parent="." instance=ExtResource("5_cjjyt")]
-layout_mode = 1
-anchor_left = 0.0363281
-anchor_top = 0.555556
-anchor_right = 0.0363281
-anchor_bottom = 0.555556
+[node name="PianoCanvasGroup" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_1yvu5")
+position = Vector2(-307, -242)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PianoCanvasGroup"]
+clip_contents = true
+offset_left = 1013.0
+offset_top = 868.0
+offset_right = 6922.0
+offset_bottom = 2294.0
+scale = Vector2(0.3, 0.3)
+theme_override_constants/separation = 1918
+
+[node name="Piano" parent="PianoCanvasGroup/HBoxContainer" instance=ExtResource("12_pielo")]
+layout_mode = 2
+metadata/_edit_vertical_guides_ = [163.0]
+metadata/_edit_use_anchors_ = true
+
+[node name="Piano2" parent="PianoCanvasGroup/HBoxContainer" instance=ExtResource("12_pielo")]
+layout_mode = 2
+metadata/_edit_vertical_guides_ = [163.0]
+metadata/_edit_use_anchors_ = true
 
 [node name="TextBox" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 664.0
-offset_top = 180.0
-offset_right = -664.0
-offset_bottom = -596.0
+offset_left = 558.0
+offset_top = 42.0
+offset_right = -558.0
+offset_bottom = -830.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
@@ -77,66 +107,167 @@ expand_mode = 1
 
 [node name="TrebleClef" type="TextureRect" parent="TextBox/Staff"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.064
-anchor_top = 0.123
-anchor_right = 0.064
-anchor_bottom = 0.123
-offset_left = 0.151996
-offset_top = 0.00199787
-offset_right = 295.152
-offset_bottom = 458.002
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 390.0
+offset_top = 68.0
+offset_right = 628.0
+offset_bottom = 487.0
 texture = ExtResource("8_2fvjo")
 expand_mode = 1
 stretch_mode = 4
 
 [node name="NoteHead" type="TextureRect" parent="TextBox/Staff"]
 material = ExtResource("8_abmrp")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.064
-anchor_top = 0.123
-anchor_right = 0.064
-anchor_bottom = 0.123
-offset_left = 485.152
-offset_top = 154.002
-offset_right = 589.152
-offset_bottom = 230.002
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 684.0
+offset_top = 196.0
+offset_right = 768.0
+offset_bottom = 258.0
 texture = ExtResource("9_x5cv7")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextBox2" type="RichTextLabel" parent="."]
+[node name="Character" parent="." instance=ExtResource("5_cjjyt")]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 93.0
-offset_top = 412.0
-offset_right = -1955.0
-offset_bottom = -596.0
+anchor_left = 0.124219
+anchor_top = 0.720139
+anchor_right = 0.251922
+anchor_bottom = 0.998611
+offset_top = 4.00543e-05
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueBox" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 1149.0
+offset_right = 1866.0
+offset_bottom = 1411.0
 bbcode_enabled = true
 text = "This is C. Try playing it!"
 
-[node name="PianoCanvasGroup" type="CanvasGroup" parent="."]
-material = SubResource("ShaderMaterial_1yvu5")
-position = Vector2(0, 95)
+[node name="C_QPrompt" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 713.0
+offset_top = 1069.0
+offset_right = 781.0
+offset_bottom = 1139.0
+texture = ExtResource("12_k4twq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PianoCanvasGroup"]
-offset_left = 991.0
-offset_top = 910.0
-offset_right = 5401.0
-offset_bottom = 2360.0
-scale = Vector2(0.3, 0.3)
-theme_override_constants/separation = 1918
+[node name="D_WPrompt" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 794.0
+offset_top = 1069.0
+offset_right = 862.0
+offset_bottom = 1139.0
+texture = ExtResource("13_wta3f")
 
-[node name="Piano" parent="PianoCanvasGroup/HBoxContainer" instance=ExtResource("12_pielo")]
-layout_mode = 2
-metadata/_edit_vertical_guides_ = [163.0]
-metadata/_edit_use_anchors_ = true
+[node name="E_EPrompt" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 877.0
+offset_top = 1069.0
+offset_right = 945.0
+offset_bottom = 1139.0
+texture = ExtResource("14_70efy")
+
+[node name="F_RPrompt" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 959.0
+offset_top = 1069.0
+offset_right = 1027.0
+offset_bottom = 1139.0
+texture = ExtResource("15_d0jhc")
+
+[node name="G_TPrompt" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1041.0
+offset_top = 1069.0
+offset_right = 1109.0
+offset_bottom = 1139.0
+texture = ExtResource("16_lwbps")
+
+[node name="A_YPrompt" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1123.0
+offset_top = 1069.0
+offset_right = 1191.0
+offset_bottom = 1139.0
+texture = ExtResource("17_sy03l")
+
+[node name="B_UPrompt" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1204.0
+offset_top = 1069.0
+offset_right = 1272.0
+offset_bottom = 1139.0
+texture = ExtResource("18_n2wwp")
+
+[node name="C_IPrompt" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1286.0
+offset_top = 1069.0
+offset_right = 1354.0
+offset_bottom = 1139.0
+texture = ExtResource("19_6k58v")
+
+[node name="TextureRect9" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1369.0
+offset_top = 1069.0
+offset_right = 1437.0
+offset_bottom = 1139.0
+texture = ExtResource("20_30h24")
+
+[node name="TextureRect10" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1451.0
+offset_top = 1069.0
+offset_right = 1519.0
+offset_bottom = 1139.0
+texture = ExtResource("21_ddyf2")
+
+[node name="TextureRect11" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1533.0
+offset_top = 1069.0
+offset_right = 1601.0
+offset_bottom = 1139.0
+texture = ExtResource("22_4jnjn")
+
+[node name="TextureRect12" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1616.0
+offset_top = 1069.0
+offset_right = 1684.0
+offset_bottom = 1139.0
+texture = ExtResource("23_uouk5")
+
+[node name="TextureRect13" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1698.0
+offset_top = 1069.0
+offset_right = 1766.0
+offset_bottom = 1139.0
+texture = ExtResource("24_yosbp")
+
+[node name="TextureRect14" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1779.0
+offset_top = 1069.0
+offset_right = 1847.0
+offset_bottom = 1139.0
+texture = ExtResource("25_vxf8o")

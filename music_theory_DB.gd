@@ -40,7 +40,7 @@ func _get_midi_dictionary() -> Dictionary:
 	# Start at MIDI note 21 (A0) and end at MIDI note 108 (C8)
 	for pitch in range(21, 109):
 		var note_index = (pitch - 12) % 12  # Calculate the note index in the 'notes' list
-		var octave = (pitch - 12) / 12  # Calculate the octave
+		var octave = (pitch - 12) / floor(12)  # Calculate the octave
 		var note_name = "%s%d" % [notes[note_index], octave]  # Combine note and octave
 		if english_mode:
 			midi_dict[note_name] = pitch
@@ -90,4 +90,4 @@ func get_note_name(value: int) -> String:
 
 # Return the octave of a note from its value
 func get_note_octave(value: int) -> int:
-	return (value - 12) / 12
+	return (value - 12) / floor(12)

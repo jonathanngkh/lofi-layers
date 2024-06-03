@@ -91,6 +91,7 @@ func _print_midi_info(midi_event: InputEventMIDI):
 
 
 func _get_midi_dictionary() -> Dictionary:
+	# -> {"C5": 72...}
 	# Define the note patterns within an octave
 	var notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 	# Create the dictionary
@@ -98,7 +99,7 @@ func _get_midi_dictionary() -> Dictionary:
 	# Start at MIDI note 21 (A0) and end at MIDI note 108 (C8)
 	for pitch in range(21, 109):
 		var note_index = (pitch - 12) % 12  # Calculate the note index in the 'notes' list
-		var octave = (pitch - 12) / 12  # Calculate the octave
+		var octave = (pitch - 12) / floor(12)  # Calculate the octave
 		var note_name = "%s%d" % [notes[note_index], octave]  # Combine note and octave
 		midi_dict[note_name] = pitch  # Map note name to MIDI number
 	return midi_dict
