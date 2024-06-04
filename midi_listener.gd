@@ -13,57 +13,16 @@ extends Node
 
 signal midi_note_on(note_played)
 signal midi_note_off(note_released)
-signal qwerty_note_on(note_played)
-signal qwerty_note_off(note_played)
 
 var midi_dictionary: Dictionary = MusicTheoryDB.PITCHES
 #@export var required_notes: MusicSegment = generate_music_segment(C_MAJOR_SCALE)
 # where musicsegment is a class which is an array of notes and pace
 # where note is a class with properties for pitch and rhythm
 
-var action_pitch_dictionary: Dictionary = {
-	"C_on": 0,
-	"Csharp_on": 1,
-	"D_on": 2,
-	"Dsharp_on": 3,
-	"E_on": 4,
-	"F_on": 5,
-	"Fsharp_on": 6,
-	"G_on": 7,
-	"Gsharp_on": 8,
-	"A_on": 9,
-	"Asharp_on": 10,
-	"B_on": 11,
-	"C_plus_on": 12,
-	"Csharp_plus_on": 13,
-	"D_plus_on": 14,
-	"Dsharp_plus_on": 15,
-	"E_plus_on": 16,
-	"F_plus_on": 17,
-	"Fsharp_plus_on": 18,
-	"G_plus_on": 19,
-	"Gsharp_plus_on": 20,
-	"A_plus_on": 21,
-	"Asharp_plus_on": 22,
-	"B_plus_on": 23,
-	"C_plus_plus_on": 24,
-	"Csharp_plus_plus_on": 25,
-	"D_plus_plus_on": 26,
-	"Dsharp_plus_plus_on": 27,
-	"E_plus_plus_on": 28,
-	"F_plus_plus_on": 29,
-}
-
 
 func _ready() -> void:
 	OS.open_midi_inputs()
 	print(OS.get_connected_midi_inputs())
-	#print(midi_dictionary)
-	
-
-
-func _process(_delta: float) -> void:
-	pass
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -74,13 +33,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.message == MIDI_MESSAGE_NOTE_OFF:
 			#print(midi_dictionary[event.pitch] + " off")
 			emit_signal("midi_note_off", event.pitch)
-			
-	# QWERTY INPUTS
-	for key in action_pitch_dictionary:
-		if Input.is_action_just_pressed(key):
-			emit_signal("qwerty_note_on", action_pitch_dictionary[key])
-		elif Input.is_action_just_released(key):
-			emit_signal("qwerty_note_off", action_pitch_dictionary[key])
 
 
 func _print_midi_info(midi_event: InputEventMIDI):
@@ -95,33 +47,3 @@ func _print_midi_info(midi_event: InputEventMIDI):
 	#print("Pressure " + str(midi_event.pressure))
 	#print("Controller number: " + str(midi_event.controller_number))
 	#print("Controller value: " + str(midi_event.controller_value))
-
-
-
-func _get_midi_dictionary() -> Dictionary:
-	# -> {"C5": 72...}
-	# Define the note patterns within an octave
-	var notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
-	# Create the dictionary
-	var midi_dict = {}
-	# Start at MIDI note 21 (A0) and end at MIDI note 108 (C8)
-	for pitch in range(21, 109):
-		var note_index = (pitch - 12) % 12  # Calculate the note index in the 'notes' list
-		var octave = (pitch - 12) / floor(12)  # Calculate the octave
-		var note_name = "%s%d" % [notes[note_index], octave]  # Combine note and octave
-		midi_dict[note_name] = pitch  # Map note name to MIDI number
-	return midi_dict
-
-
-#func _get_midi_dictionary() -> Dictionary:
-	## Define the note patterns within an octave
-	#var notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
-	## Create the dictionary
-	#var midi_dict = {}
-	## Start at MIDI note 21 (A0) and end at MIDI note 108 (C8)
-	#for pitch in range(21, 109):
-		#var note_index = (pitch - 12) % 12  # Calculate the note index in the 'notes' list
-		#var octave = (pitch - 12) / 12  # Calculate the octave
-		#var note_name = "%s%d" % [notes[note_index], octave]  # Combine note and octave
-		#midi_dict[pitch] = note_name  # Map MIDI number to note name
-	#return midi_dict

@@ -50,8 +50,8 @@ func _ready() -> void:
 	toggle_note_names_button.connect("pressed", func() -> void: note_labels.visible = !note_labels.visible)
 	MidiListener.connect("midi_note_on", midi_key_down)
 	MidiListener.connect("midi_note_off", midi_key_up)
-	MidiListener.connect("qwerty_note_on", qwerty_key_down)
-	MidiListener.connect("qwerty_note_off", qwerty_key_up)
+	QwertyListener.connect("qwerty_note_on", qwerty_key_down)
+	QwertyListener.connect("qwerty_note_off", qwerty_key_up)
 	minus_button.connect("pressed", change_octave.bind("minus"))
 	plus_button.connect("pressed", change_octave.bind("plus"))
 	for label in note_labels.get_children():
@@ -89,9 +89,7 @@ func midi_key_up(note_released: int) -> void:
 
 
 func qwerty_key_down(note_played: int) -> void:
-	# qwerty notes are always 0-12. Convert to piano's octave
-	note_played = note_played + 12 + (12 * octave)
-	var note_value : int = note_played % 12
+	var note_value : int = note_played % 12 # convert to 0-12 for MusicTheoryDB processing
 	var note_name := MusicTheoryDB.get_note_name(note_played)
 	var note_octave := MusicTheoryDB.get_note_octave(note_played)
 	if note_octave == octave:
@@ -103,7 +101,6 @@ func qwerty_key_down(note_played: int) -> void:
 
 
 func qwerty_key_up(note_released: int) -> void:
-	note_released = note_released + 12 + (12 * octave)
 	var note_value: int = note_released % 12
 	var note_octave := MusicTheoryDB.get_note_octave(note_released)
 	if note_octave == octave:
