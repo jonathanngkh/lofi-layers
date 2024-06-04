@@ -60,11 +60,12 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if Input.is_key_pressed(KEY_V):
-		print('v')
+	if Input.is_key_pressed(KEY_CAPSLOCK):
+		print('toggled note name visibility')
 		note_labels.visible = !note_labels.visible
 
-func midi_key_down(note_played : int) -> void:
+
+func midi_key_down(note_played: int) -> void:
 	print(MusicTheoryDB.get_note_name(note_played), MusicTheoryDB.get_note_octave(note_played), " played (midi)")
 	var note_name := MusicTheoryDB.get_note_name(note_played)
 	var note_octave:= MusicTheoryDB.get_note_octave(note_played)
@@ -76,7 +77,7 @@ func midi_key_down(note_played : int) -> void:
 	emit_signal("note_played_signal", note_played)
 
 
-func midi_key_up(note_released : int) -> void:
+func midi_key_up(note_released: int) -> void:
 	print(note_released, " released (midi)")
 	#if pitch_node_dictionary.keys().has(note_released):
 		#pitch_node_dictionary[note_released].button_pressed = false
@@ -91,19 +92,22 @@ func qwerty_key_down(note_played: int) -> void:
 	# qwerty notes are always 0-12. Convert to piano's octave
 	note_played = note_played + 12 + (12 * octave)
 	var note_value : int = note_played % 12
-	pitch_node_dictionary[note_value].button_pressed = true
 	var note_name := MusicTheoryDB.get_note_name(note_played)
 	var note_octave := MusicTheoryDB.get_note_octave(note_played)
+	if note_octave == octave:
+		pitch_node_dictionary[note_value].button_pressed = true
 	if sound_on:
 		sampler.play_note(note_name, note_octave)
 	print(MusicTheoryDB.get_note_name(note_played), MusicTheoryDB.get_note_octave(note_played), " played (qwerty)")
 	emit_signal("note_played_signal", note_played)
 
 
-func qwerty_key_up(note_released : int) -> void:
-	var note_value : int = note_released % 12
-	pitch_node_dictionary[note_value].button_pressed = false
+func qwerty_key_up(note_released: int) -> void:
 	note_released = note_released + 12 + (12 * octave)
+	var note_value: int = note_released % 12
+	var note_octave := MusicTheoryDB.get_note_octave(note_released)
+	if note_octave == octave:
+		pitch_node_dictionary[note_value].button_pressed = false
 	print(note_released, " released (qwerty)")
 	emit_signal("note_released_signal", note_released)
 

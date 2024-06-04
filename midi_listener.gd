@@ -44,6 +44,14 @@ var action_pitch_dictionary: Dictionary = {
 	"G_plus_on": 19,
 	"Gsharp_plus_on": 20,
 	"A_plus_on": 21,
+	"Asharp_plus_on": 22,
+	"B_plus_on": 23,
+	"C_plus_plus_on": 24,
+	"Csharp_plus_plus_on": 25,
+	"D_plus_plus_on": 26,
+	"Dsharp_plus_plus_on": 27,
+	"E_plus_plus_on": 28,
+	"F_plus_plus_on": 29,
 }
 
 

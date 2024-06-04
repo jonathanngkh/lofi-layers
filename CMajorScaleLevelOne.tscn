@@ -63,18 +63,20 @@ position = Vector2(-307, -242)
 clip_contents = true
 offset_left = 1013.0
 offset_top = 868.0
-offset_right = 6922.0
+offset_right = 8730.0
 offset_bottom = 2294.0
 scale = Vector2(0.3, 0.3)
 theme_override_constants/separation = 1918
 
 [node name="Piano" parent="PianoCanvasGroup/HBoxContainer" instance=ExtResource("12_pielo")]
 layout_mode = 2
+octave = 4
 metadata/_edit_vertical_guides_ = [163.0]
 metadata/_edit_use_anchors_ = true
 
 [node name="Piano2" parent="PianoCanvasGroup/HBoxContainer" instance=ExtResource("12_pielo")]
 layout_mode = 2
+sound_on = false
 metadata/_edit_vertical_guides_ = [163.0]
 metadata/_edit_use_anchors_ = true
 
