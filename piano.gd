@@ -2,6 +2,7 @@ extends Control
 
 @export var octave: int = 5 # 0 to 8
 @export var sound_on: bool = true
+@export var echo_on: bool = false
 
 signal note_played_signal(pitch)
 signal note_released_signal(pitch)
@@ -69,17 +70,19 @@ func _input(event: InputEvent) -> void:
 
 
 func detector_key_down(note_heard: String) -> void:
+	
 	var note_heard_float := float(note_heard)
 	var snapped_note = snapped(note_heard_float, 1)
-	print("piano heard note ", str(snapped_note))
+	#print("piano heard note ", str(snapped_note))
 	var note_name := MusicTheoryDB.get_note_name(snapped_note)
 	var note_octave:= MusicTheoryDB.get_note_octave(snapped_note) + 1
-	if sound_on:
-		sampler.play_note(note_name, note_octave)
-	var note_value : int = snapped_note % 12
-	if note_octave == octave:
-		pitch_node_dictionary[note_value].button_pressed = true
-	emit_signal("note_played_signal", snapped_note)
+	if echo_on:
+		if sound_on:
+			sampler.play_note(note_name, note_octave)
+		var note_value : int = snapped_note % 12
+		if note_octave == octave:
+			pitch_node_dictionary[note_value].button_pressed = true
+		emit_signal("note_played_signal", snapped_note)
 	# need to experiment with playing the note only on high confidence
 	# and play note only on new amplitude spike. check aubio functions
 	# if "repeated" notes, need to treat as 1 long note held down. and 0 detected as note up
