@@ -43,7 +43,7 @@ func _get_midi_dictionary() -> Dictionary:
 		var octave = (pitch - 12) / floor(12)  # Calculate the octave
 		var note_name = "%s%d" % [notes[note_index], octave]  # Combine note and octave
 		if english_mode:
-			midi_dict[note_name] = pitch
+			midi_dict[note_name] = pitch # Map note name to MIDI number
 		else:
 			midi_dict[pitch] = note_name  # Map MIDI number to note name
 	return midi_dict
@@ -52,25 +52,25 @@ func _get_midi_dictionary() -> Dictionary:
 var note_values := {
 	"C": 0,
 	"C#": 1,
-	"Db": 1,
+	#"Db": 1,
 	"D": 2,
 	"D#": 3,
-	"Eb": 3,
+	#"Eb": 3,
 	"E": 4,
-	"E#": 5,
-	"Fb": 4,
+	#"E#": 5,
+	#"Fb": 4,
 	"F": 5,
 	"F#": 6,
-	"Gb": 6,
+	#"Gb": 6,
 	"G": 7,
 	"G#": 8,
-	"Ab": 8,
+	#"Ab": 8,
 	"A": 9,
 	"A#": 10,
-	"Bb": 10,
+	#"Bb": 10,
 	"B": 11,
-	"B#": 12,
-	"Cb": -1
+	#"B#": 12,
+	#"Cb": -1
 }
 
 # Return the number value of a note from its name and octave (where C0 is 0)

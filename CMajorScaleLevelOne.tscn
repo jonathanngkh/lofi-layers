@@ -66,7 +66,7 @@ offset_top = 868.0
 offset_right = 8436.0
 offset_bottom = 2294.0
 scale = Vector2(0.3, 0.3)
-theme_override_constants/separation = 1919
+theme_override_constants/separation = 1918
 
 [node name="Piano" parent="PianoCanvasGroup/HBoxContainer" instance=ExtResource("12_pielo")]
 layout_mode = 2

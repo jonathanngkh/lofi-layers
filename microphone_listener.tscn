@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtshegdwobipi"]
+
+[ext_resource type="Script" path="res://microphone_listener.gd" id="1_i2xrf"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_5gjs0"]
+
+[node name="microphone_listener" type="Node"]
+script = ExtResource("1_i2xrf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_5gjs0")
+autoplay = true
+bus = &"AudioRecorder"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 644.0
+offset_top = 453.0
+offset_right = 2025.0
+offset_bottom = 1189.0
+theme_override_font_sizes/normal_font_size = 88
+text = "placeholder"
