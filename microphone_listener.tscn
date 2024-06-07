@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtshegdwobipi"]
+[gd_scene load_steps=5 format=3 uid="uid://dtshegdwobipi"]
 
 [ext_resource type="Script" path="res://microphone_listener.gd" id="1_i2xrf"]
+[ext_resource type="Texture2D" uid="uid://bvnpp805uhh1u" path="res://assets/music theory/A normal piano key.png" id="2_fxbql"]
+[ext_resource type="Texture2D" uid="uid://b2yh2plv8q7tx" path="res://assets/music theory/A pressed piano key.png" id="3_6r8b4"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_5gjs0"]
 
@@ -9,11 +11,10 @@ script = ExtResource("1_i2xrf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMicrophone_5gjs0")
-autoplay = true
 bus = &"AudioRecorder"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.1
 autostart = true
 
 [node name="Label" type="RichTextLabel" parent="."]
@@ -23,3 +24,33 @@ offset_right = 2025.0
 offset_bottom = 1189.0
 theme_override_font_sizes/normal_font_size = 88
 text = "placeholder"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1640.0
+offset_top = 415.0
+offset_right = 1752.0
+offset_bottom = 1020.0
+texture_normal = ExtResource("2_fxbql")
+texture_pressed = ExtResource("3_6r8b4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 1977.0
+offset_top = 415.0
+offset_right = 2089.0
+offset_bottom = 1020.0
+texture_normal = ExtResource("2_fxbql")
+texture_pressed = ExtResource("3_6r8b4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = 2287.0
+offset_top = 415.0
+offset_right = 2399.0
+offset_bottom = 1020.0
+texture_normal = ExtResource("2_fxbql")
+texture_pressed = ExtResource("3_6r8b4")
+ignore_texture_size = true
+stretch_mode = 0

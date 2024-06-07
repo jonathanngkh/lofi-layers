@@ -1,6 +1,7 @@
 extends Node
 
-var spectrum_analyzer = AudioServer.get_bus_effect_instance(1, 1)
+#var spectrum_analyzer = AudioServer.get_bus_effect_instance(1, 1)
+@onready var timer: Timer = $Timer
 
 var pitch_frequency_dictionary = {
 	0: 8.176, 1: 8.662, 2: 9.177, 3: 9.723, 4: 10.301,
@@ -40,36 +41,71 @@ func get_pitch_freq_range_dict() -> Dictionary:
 		pitch_frequency_range_dictionary[pitch] = Vector2(pitch_frequency_dictionary[pitch] - tolerance, pitch_frequency_dictionary[pitch] + tolerance)
 	return pitch_frequency_range_dictionary
 
+var aubio_output = []
+var thread: Thread
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$TextureButton.connect("pressed", button_reaction)
+	$TextureButton2.connect("pressed", button_reaction2)
+	thread = Thread.new()
+	thread.start(start_aubio_listener)
+	#OS.execute("pip3", ["install", "pyaudio"], output, true)
+	#OS.execute("pip3", ["install", "numpy"], output, true)
+	#OS.execute("pip3", ["install", "aubio"], output, true)
+	#OS.execute("python3", ["demo_pyaudio.py"], aubio_output, true)
+	#$Label.text = output[0]
 	get_pitch_freq_range_dict()
-	$Timer.timeout.connect(_on_timer_timeout)
-	print("Available Input Devices: ", AudioServer.get_input_device_list())
-	for input_device in AudioServer.get_input_device_list():
-		if input_device == "Samson C01U Pro Mic (224)":
-			AudioServer.input_device = input_device
+	timer.timeout.connect(_on_timer_timeout)
+	#print("Available Input Devices: ", AudioServer.get_input_device_list())
+	#for input_device in AudioServer.get_input_device_list():
+		#if input_device == "Samson C01U Pro Mic (224)":
+			#AudioServer.input_device = input_device
 		#if input_device == "MacBook Air Microphone (131)":
 			#AudioServer.input_device = input_device
 		#if input_device == "External Microphone (224)": # razer earphones
 			#AudioServer.input_device = input_device
-	print("Connected Input Device: ", AudioServer.input_device)
+	#print("Connected Input Device: ", AudioServer.input_device)
 	
 	#print("Available Output Devices: ", AudioServer.get_output_device_list())
-	for output_device in AudioServer.get_output_device_list():
-		if output_device == "External Headphones (217)":
-			AudioServer.output_device = output_device
-	print("Connected Output Device: ", AudioServer.output_device)
+	#for output_device in AudioServer.get_output_device_list():
+		#if output_device == "External Headphones (217)":
+			#AudioServer.output_device = output_device
+	#print("Connected Output Device: ", AudioServer.output_device)
+
+func button_reaction() -> void:
+	thread.wait_to_finish()
+	print(aubio_output)
+	for line in aubio_output:
+		$Label.text = line.left(-24)
+
+func button_reaction2() -> void:
+	thread.start(start_aubio_listener)
+
+
+func start_aubio_listener() -> void:
+	OS.execute("python3", ["demo_pyaudio.py", "recording.wav"], aubio_output, true)
+	#OS.execute("python3", ["hello_world.py"], aubio_output, true)
+	#OS.set_environment("PYTHONBUFFERD", "1")
+	#OS.execute("python3", ["demo_pyaudio.py"], aubio_output, true, true)
+	
 
 func _on_timer_timeout() -> void:
+	thread.start(start_aubio_listener)
+	#timer.start()
 	#print(spectrum_analyzer.get_magnitude_for_frequency_range(259, 262, 1)) # C4 60
 	#print(spectrum_analyzer.get_magnitude_for_frequency_range(129, 131, 1)) # C3 48
 	#print(spectrum_analyzer.get_magnitude_for_frequency_range(522, 524, 1)) # C5 72
-	pass
+	#pass
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if thread.is_alive():
+		thread.wait_to_finish()
+	for line in aubio_output:
+		$Label.text = line
+	#print(aubio_output)
 	pass
 	#$Label.text = str(spectrum_analyzer.get_magnitude_for_frequency_range(440.0 - 1.0, 440.0 + 1.0, 1).length())
 	#var strongest_range = Vector2.ZERO
@@ -77,9 +113,9 @@ func _process(_delta: float) -> void:
 		#if spectrum_analyzer.get_magnitude_for_frequency_range(test_range.x - tolerance, test_range.y + tolerance).length() > strongest_range.length():
 			#strongest_range = test_range
 	#$Label.text = str(strongest_range)
-	for pitch in pitch_frequency_range_dictionary:
-		if spectrum_analyzer.get_magnitude_for_frequency_range(pitch_frequency_range_dictionary[pitch].x, pitch_frequency_range_dictionary[pitch].y).x > 0.1:
-			$Label.text = str(MusicTheoryDB.get_note_name(pitch), MusicTheoryDB.get_note_octave(pitch), " ", pitch, " was played. Frequency range: ", pitch_frequency_range_dictionary[pitch])
+	#for pitch in pitch_frequency_range_dictionary:
+		#if spectrum_analyzer.get_magnitude_for_frequency_range(pitch_frequency_range_dictionary[pitch].x, pitch_frequency_range_dictionary[pitch].y).x > 0.1:
+			#$Label.text = str(MusicTheoryDB.get_note_name(pitch), MusicTheoryDB.get_note_octave(pitch), " ", pitch, " was played. Frequency range: ", pitch_frequency_range_dictionary[pitch])
 	#if spectrum_analyzer.get_magnitude_for_frequency_range(522, 524, 1).x > 0.2:
 		#print('C5 was played')
 	#if spectrum_analyzer.get_magnitude_for_frequency_range(259, 262, 1).x > 0.2:
