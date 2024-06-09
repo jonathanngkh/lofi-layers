@@ -135,6 +135,177 @@ texture = ExtResource("9_x5cv7")
 expand_mode = 1
 stretch_mode = 4
 
+[node name="TextBox2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1404.0
+offset_top = 42.0
+offset_right = -558.0
+offset_bottom = -830.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][b]"
+
+[node name="Staff" type="TextureRect" parent="TextBox2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 72.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xkw4a")
+expand_mode = 1
+
+[node name="TrebleClef" type="TextureRect" parent="TextBox2/Staff"]
+layout_mode = 1
+offset_left = 38.0
+offset_top = 68.0
+offset_right = 276.0
+offset_bottom = 487.0
+texture = ExtResource("8_2fvjo")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="NoteHeads" type="Control" parent="TextBox2/Staff"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="C4" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 378.0
+offset_right = 360.0
+offset_bottom = 440.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="D4" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 356.0
+offset_right = 360.0
+offset_bottom = 418.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="E4" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 331.0
+offset_right = 360.0
+offset_bottom = 393.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="F4" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 302.0
+offset_right = 360.0
+offset_bottom = 364.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="G4" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 277.0
+offset_right = 360.0
+offset_bottom = 339.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="A4" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 250.0
+offset_right = 360.0
+offset_bottom = 312.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="B4" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 226.0
+offset_right = 360.0
+offset_bottom = 288.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="C5" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 196.0
+offset_right = 360.0
+offset_bottom = 258.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="D5" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 173.0
+offset_right = 360.0
+offset_bottom = 235.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="E5" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 143.0
+offset_right = 360.0
+offset_bottom = 205.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="F5" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 117.0
+offset_right = 360.0
+offset_bottom = 179.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="G5" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 96.0
+offset_right = 360.0
+offset_bottom = 158.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="A5" type="TextureRect" parent="TextBox2/Staff/NoteHeads"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 75.0
+offset_right = 360.0
+offset_bottom = 137.0
+texture = ExtResource("9_x5cv7")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="Character" parent="." instance=ExtResource("5_cjjyt")]
 layout_mode = 1
 anchor_left = 0.124219
