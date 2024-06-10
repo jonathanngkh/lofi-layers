@@ -31,7 +31,7 @@ stream = p.open(format=pyaudio_format,
 if len(sys.argv) > 1:
     # record 5 seconds
     output_filename = sys.argv[1]
-    record_duration = 0.1 # exit 1 # default was 5
+    record_duration = 5 # exit 1 # default was 5
     outputsink = aubio.sink(sys.argv[1], samplerate)
     total_frames = 0
 else:
