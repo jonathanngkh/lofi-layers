@@ -41,12 +41,19 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	PitchDetector.connect("detected_pitch", _on_pitch_detector_detected_pitch)
 	piano.note_played_signal.connect(_on_midi_listener_note_on)
 	piano.note_released_signal.connect(_on_midi_listener_note_off)
 	note_head.modulate = "00bf4b"
 	for notehead in note_heads.get_children():
 		notehead.visible = false
 
+
+func _on_pitch_detector_detected_pitch(pitch_detected: String) -> void:
+	print(pitch_detected)
+
+func _process(_delta: float) -> void:
+	pass
 
 func _on_midi_listener_note_on(note_played: int) -> void:
 	if note_played == 72:

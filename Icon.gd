@@ -8,4 +8,3 @@ func _ready() -> void:
 
 func _on_midi_player_midi_event(channel, event) -> void:
 	pass
-

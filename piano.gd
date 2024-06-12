@@ -43,8 +43,9 @@ signal note_released_signal(pitch)
 	11: b_texture_button,
 }
 
-# Called when the node enters the scene tree for the first time.
 var angle_to_set = 10
+
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$RainbowRotationTimer.timeout.connect(func() -> void: angle_to_set += 1; c_texture_button.material.set_shader_parameter("angle", angle_to_set))
 	toggle_note_names_button.connect("pressed", func() -> void: note_labels.visible = !note_labels.visible)
@@ -52,8 +53,10 @@ func _ready() -> void:
 	MidiListener.connect("midi_note_off", midi_key_up)
 	QwertyListener.connect("qwerty_note_on", qwerty_key_down)
 	QwertyListener.connect("qwerty_note_off", qwerty_key_up)
+	PitchDetector.connect("detected_pitch", detector_key_down)
 	minus_button.connect("pressed", change_octave.bind("minus"))
 	plus_button.connect("pressed", change_octave.bind("plus"))
+	
 	for label in note_labels.get_children():
 		label.text += str(octave)
 	octave_label.text += str(octave)
@@ -63,6 +66,23 @@ func _input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_CAPSLOCK):
 		print('toggled note name visibility')
 		note_labels.visible = !note_labels.visible
+
+
+func detector_key_down(note_heard: String) -> void:
+	var note_heard_float := float(note_heard)
+	var snapped_note = snapped(note_heard_float, 1)
+	print("piano heard note ", str(snapped_note))
+	var note_name := MusicTheoryDB.get_note_name(snapped_note)
+	var note_octave:= MusicTheoryDB.get_note_octave(snapped_note) + 1
+	if sound_on:
+		sampler.play_note(note_name, note_octave)
+	var note_value : int = snapped_note % 12
+	if note_octave == octave:
+		pitch_node_dictionary[note_value].button_pressed = true
+	emit_signal("note_played_signal", snapped_note)
+	# need to experiment with playing the note only on high confidence
+	# and play note only on new amplitude spike. check aubio functions
+	# if "repeated" notes, need to treat as 1 long note held down. and 0 detected as note up
 
 
 func midi_key_down(note_played: int) -> void:
