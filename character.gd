@@ -2,8 +2,8 @@ extends TextureRect
 
 @export var expression := "determined"
 @export var blink_duration := 0.09
-@export var blink_interval_min := 0.4
-@export var blink_interval_max := 4.2
+@export var blink_interval_min := 0.3
+@export var blink_interval_max := 3.3
 var blink_interval := randf_range(blink_interval_min, blink_interval_max)
 @onready var expressions: Dictionary = {
 	"angry": {"base": preload("res://assets/characters/expressions/emotion_angry.png"),

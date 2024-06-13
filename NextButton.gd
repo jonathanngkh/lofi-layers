@@ -21,13 +21,15 @@ func _process(_delta: float) -> void:
 
 
 func _on_button_mouse_entered():
+	if not disabled:
+		button_hover_sound.play()
 	is_mouse_hovering = true
-	button_hover_sound.play()
 
 
 func _on_button_mouse_exited():
 	is_mouse_hovering = false
-	button_mouse_exited_sound.play()
+	if not disabled:
+		button_mouse_exited_sound.play()
 
 
 func _on_button_button_down():
@@ -38,8 +40,8 @@ func _on_button_button_down():
 
 
 func _on_button_button_up():
-	if is_mouse_hovering:
-		button_up_sound.play()
+	#if is_mouse_hovering:
+		#button_up_sound.play()
 	var new_style_box_pressed = get_theme_stylebox("pressed").duplicate()
 	add_theme_stylebox_override("pressed", new_style_box_pressed)
 	new_style_box_pressed.content_margin_top = -1

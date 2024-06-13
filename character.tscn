@@ -29,7 +29,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="BlinkIntervalTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.4
 autostart = true
 
 [node name="BlinkDurationTimer" type="Timer" parent="."]

@@ -4,6 +4,7 @@ extends Node
 @onready var pitch_label: Label = $PitchLabel
 
 var pitch_detected: String
+
 var thread: Thread
 var pipe: Dictionary
 var stdio: FileAccess
