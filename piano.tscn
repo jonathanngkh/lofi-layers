@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cl8i1xuyloair" path="res://assets/music theory/C pressed piano key.png" id="2_1do52"]
 [ext_resource type="Texture2D" uid="uid://cvw32gxf6otcf" path="res://assets/music theory/D normal piano key.png" id="2_72hrq"]
 [ext_resource type="Texture2D" uid="uid://d4n26pb6qam6d" path="res://assets/music theory/E normal piano key.png" id="3_ss4jt"]
-[ext_resource type="AudioStream" uid="uid://cvbim8uy5najq" path="res://assets/samples/B4.ogg" id="4_q0x5p"]
+[ext_resource type="AudioStream" uid="uid://dcuqi7pysubx7" path="res://assets/samples/ukulele_c4.ogg" id="4_kmexc"]
 [ext_resource type="Texture2D" uid="uid://c47xoa5djgfwr" path="res://assets/music theory/Black Key Base.png" id="4_qkdbx"]
 [ext_resource type="Texture2D" uid="uid://lgc56d3i0jwp" path="res://assets/music theory/C sharp normal piano key.png" id="5_drpm1"]
 [ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="6_pembf"]
@@ -30,8 +30,8 @@
 
 [sub_resource type="Resource" id="Resource_i0kbl"]
 script = ExtResource("25_ibw8b")
-stream = ExtResource("4_q0x5p")
-tone = "B"
+stream = ExtResource("4_kmexc")
+tone = "C"
 octave = 4
 velocity = 5
 

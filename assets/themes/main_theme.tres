@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://bhk78dvw2v8ao"]
 
 [ext_resource type="StyleBox" uid="uid://dbki0od6bppf7" path="res://assets/themes/hover_style_box_flat.tres" id="1_c555d"]
-[ext_resource type="StyleBox" uid="uid://dkymnk5x7l8ct" path="res://assets/themes/normal_style_box_flat.tres" id="2_u5dih"]
-[ext_resource type="StyleBox" uid="uid://jbymowip3hm3" path="res://assets/themes/pressed_style_box_flat.tres" id="3_ncs1c"]
+[ext_resource type="StyleBox" uid="uid://byygw3olqgnqw" path="res://assets/themes/normal_button_43.tres" id="2_526lo"]
+[ext_resource type="StyleBox" uid="uid://jkw0q6rtdnnw" path="res://assets/themes/pressed_button_43.tres" id="3_q2nn0"]
 [ext_resource type="StyleBox" uid="uid://c3vg77v3o5fv0" path="res://assets/themes/rich_text_label_style_box_flat.tres" id="4_xk0i7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncial"]
@@ -19,8 +19,8 @@ default_font_size = 72
 Button/styles/disabled = SubResource("StyleBoxFlat_ncial")
 Button/styles/focus = SubResource("StyleBoxEmpty_o67dh")
 Button/styles/hover = ExtResource("1_c555d")
-Button/styles/normal = ExtResource("2_u5dih")
-Button/styles/pressed = ExtResource("3_ncs1c")
+Button/styles/normal = ExtResource("2_526lo")
+Button/styles/pressed = ExtResource("3_q2nn0")
 HBoxContainer/constants/separation = 20
 Panel/styles/panel = ExtResource("4_xk0i7")
 RichTextLabel/colors/default_color = Color(0.0470588, 0.145098, 0.305882, 1)

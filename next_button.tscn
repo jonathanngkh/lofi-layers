@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyihnxcab4yft"]
+
+[ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_x6g4o"]
+[ext_resource type="Script" path="res://NextButton.gd" id="2_jqg3y"]
+[ext_resource type="AudioStream" uid="uid://br2ni0qpmebhy" path="res://assets/sfx/21-cardboard1.wav" id="3_d10j8"]
+
+[node name="NextButton" type="Button"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -351.0
+offset_top = -184.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_x6g4o")
+theme_override_font_sizes/font_size = 64
+shortcut_in_tooltip = false
+text = "Proceed"
+script = ExtResource("2_jqg3y")
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_d10j8")
+volume_db = 15.0
+pitch_scale = 1.2
+
+[node name="ButtonMouseExitedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_d10j8")
+volume_db = 10.0
+pitch_scale = 0.8
+
+[node name="ButtonDownSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_d10j8")
+volume_db = 20.0
+pitch_scale = 2.0
+
+[node name="ButtonUpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_d10j8")
+volume_db = 15.0
