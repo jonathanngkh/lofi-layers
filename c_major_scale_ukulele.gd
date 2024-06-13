@@ -57,32 +57,57 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if is_checking_notes:
-		check_note(current_note)
+	pass
+	#if is_checking_notes:
+		#check_note(current_note)
 
 func get_closest_note_detected(note_detected) -> void:
 	# convert string pitch detected 44.4 to int 44
 	if is_checking_notes:
 		snapped_note = snapped(float(note_detected), 1)
 		print(snapped_note)
+		check_note(current_note)
 
 
 func check_note(note_to_check) -> void:
-	if snapped_note == current_note:
+	if snapped_note == 60 and current_note == 60: # C
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		current_note_label = $TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer/NoteRichTextLabel3
+		current_note_label.text = wave_effect + current_note_label.text[-1]
 		current_note = 62
-	elif snapped_note == current_note:
+	elif snapped_note == 62  and current_note == 62: # D
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		current_note_label = $TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer/NoteRichTextLabel5
+		current_note_label.text = wave_effect + current_note_label.text[-1]
 		current_note = 64
-	elif snapped_note == current_note:
+	elif snapped_note == 64 and current_note == 64: # E
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		current_note_label = $TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer/NoteRichTextLabel7
+		current_note_label.text = wave_effect + current_note_label.text[-1]
 		current_note = 66
-	#if snapped_note == 62:
-		#current_note_label.text = rainbow_effect + current_note_label.text[-1]
-		#current_note_label = $TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer/NoteRichTextLabel5
+	elif snapped_note == 66 and current_note == 66: # F
+		current_note_label.text = rainbow_effect + current_note_label.text[-1]
+		current_note_label = $TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer/NoteRichTextLabel9
+		current_note_label.text = wave_effect + current_note_label.text[-1]
+		current_note = 67
+	elif snapped_note == 67 and current_note == 67:
+		current_note_label.text = rainbow_effect + current_note_label.text[-1]
+		current_note_label = $TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer/NoteRichTextLabel11
+		current_note_label.text = wave_effect + current_note_label.text[-1]
+		current_note = 69
+	elif snapped_note == 69 and current_note == 69:
+		current_note_label.text = rainbow_effect + current_note_label.text[-1]
+		current_note_label = $TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer/NoteRichTextLabel13
+		current_note_label.text = wave_effect + current_note_label.text[-1]
+		current_note = 71
+	elif snapped_note == 71 and current_note == 71:
+		current_note_label.text = rainbow_effect + current_note_label.text[-1]
+		current_note_label = $TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer/NoteRichTextLabel15
+		current_note_label.text = wave_effect + current_note_label.text[-1]
+		current_note = 72
+	elif snapped_note == 72 and current_note == 72:
+		current_note_label.text = rainbow_effect + current_note_label.text[-1]
+		
 
 func set_current_note_label(new_node: Control) -> void:
 	current_note_label = new_node
