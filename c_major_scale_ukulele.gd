@@ -11,6 +11,8 @@ extends Control
 @onready var next_button: Button = $NextButton
 @onready var talking_synth: AudioStreamPlayer = $TalkingSynth
 @onready var talking_timer: Timer = $TalkingTimer
+@onready var note_explosion: CPUParticles2D = $NoteExplosionCPUParticles2D
+
 
 var dialogue_items : Array[Dictionary] = [
 	{"text": "[b]Harmonious[/b] Hellos, Amy!",
@@ -44,6 +46,7 @@ var talking_playback_position := 0.0
 @onready var current_note = 60
 var is_checking_notes = false
 var snapped_note # converted detected pitch note for checking
+@onready var note_explosion_effect = preload("res://assets/vfx/note_explosion_cpu_particles_2d.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -72,40 +75,55 @@ func get_closest_note_detected(note_detected) -> void:
 func check_note(note_to_check) -> void:
 	if snapped_note == 60 and current_note == 60: # C
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
+		note_explosion.emitting = true
 		current_note_label = $TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer/NoteRichTextLabel3
 		current_note_label.text = wave_effect + current_note_label.text[-1]
 		current_note = 62
 	elif snapped_note == 62  and current_note == 62: # D
+		note_explosion.emitting = true
+		note_explosion.position = Vector2(676, 571)
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		current_note_label = $TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer/NoteRichTextLabel5
 		current_note_label.text = wave_effect + current_note_label.text[-1]
 		current_note = 64
 	elif snapped_note == 64 and current_note == 64: # E
+		note_explosion.emitting = true
+		note_explosion.position = Vector2(895, 470)
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		current_note_label = $TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer/NoteRichTextLabel7
 		current_note_label.text = wave_effect + current_note_label.text[-1]
 		current_note = 66
 	elif snapped_note == 66 and current_note == 66: # F
+		note_explosion.emitting = true
+		note_explosion.position = Vector2(1118, 470)
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		current_note_label = $TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer/NoteRichTextLabel9
 		current_note_label.text = wave_effect + current_note_label.text[-1]
 		current_note = 67
 	elif snapped_note == 67 and current_note == 67:
+		note_explosion.emitting = true
+		note_explosion.position = Vector2(1340, 470)
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		current_note_label = $TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer/NoteRichTextLabel11
 		current_note_label.text = wave_effect + current_note_label.text[-1]
 		current_note = 69
 	elif snapped_note == 69 and current_note == 69:
+		note_explosion.emitting = true
+		note_explosion.position = Vector2(1556, 367)
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		current_note_label = $TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer/NoteRichTextLabel13
 		current_note_label.text = wave_effect + current_note_label.text[-1]
 		current_note = 71
 	elif snapped_note == 71 and current_note == 71:
+		note_explosion.emitting = true
+		note_explosion.position = Vector2(1779, 367)
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		current_note_label = $TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer/NoteRichTextLabel15
 		current_note_label.text = wave_effect + current_note_label.text[-1]
 		current_note = 72
 	elif snapped_note == 72 and current_note == 72:
+		note_explosion.emitting = true
+		note_explosion.position = Vector2(1999, 367)
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		
 

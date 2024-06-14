@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://02k63jpqljgr"]
+[gd_scene load_steps=27 format=3 uid="uid://02k63jpqljgr"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_qvtkd"]
 [ext_resource type="Script" path="res://c_major_scale_ukulele.gd" id="2_b3kge"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="11_ln085"]
 [ext_resource type="StyleBox" uid="uid://yvjfdvkd46s5" path="res://assets/themes/tab_note_style_box.tres" id="12_luh80"]
 [ext_resource type="AudioStream" uid="uid://3h5kvbbqptgc" path="res://assets/sfx/talking_synth.mp3" id="16_hb4fi"]
+[ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="17_711ad"]
 
 [sub_resource type="Resource" id="Resource_8brqr"]
 script = ExtResource("4_37mo8")
@@ -64,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_qvtkd")
 script = ExtResource("2_b3kge")
-current_index = 2
+pink_pitch_scale = 1.1
 metadata/_edit_vertical_guides_ = [1280.0, 2209.0, 2294.0]
 metadata/_edit_horizontal_guides_ = [720.0, 600.0, 700.0, 800.0, 900.0, 1286.0]
 
@@ -109,6 +110,7 @@ text = "[tornado]Hello[/tornado], world!"
 fit_content = true
 
 [node name="NotationBoxRichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -810,3 +812,6 @@ volume_db = -9.0
 
 [node name="TalkingTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="NoteExplosionCPUParticles2D" parent="." instance=ExtResource("17_711ad")]
+position = Vector2(454, 571)

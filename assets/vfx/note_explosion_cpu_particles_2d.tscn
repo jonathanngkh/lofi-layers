@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://08hivk3e2266"]
+
+[sub_resource type="Gradient" id="Gradient_5fhvl"]
+colors = PackedColorArray(0.0901961, 0.141176, 0.282353, 1, 1, 1, 1, 0)
+
+[node name="NoteExplosionCPUParticles2D" type="CPUParticles2D"]
+position = Vector2(1233, 665)
+emitting = false
+amount = 30
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.9
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 300.0
+initial_velocity_max = 300.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_5fhvl")
