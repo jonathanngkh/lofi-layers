@@ -12,6 +12,7 @@ extends Control
 @onready var talking_synth: AudioStreamPlayer = $TalkingSynth
 @onready var talking_timer: Timer = $TalkingTimer
 @onready var note_explosion: CPUParticles2D = $NoteExplosionCPUParticles2D
+@onready var ukulele_tab: Control = $TabBoxRichTextLabel/UkuleleTab
 
 
 var dialogue_items : Array[Dictionary] = [
@@ -36,17 +37,18 @@ var fade_effect := "[fade]"
 var tornado_effect := "[tornado]"
 
 @export var pink_pitch_scale := 0.9
-var seconds_per_character := 0.4/18.0
-@export var current_index: int = 0
-@onready var current_item: Dictionary = dialogue_items[current_index]
+@export var seconds_per_character := 0.4/18.0
+@export var current_dialogue_index: int = 0
+@onready var current_item: Dictionary = dialogue_items[current_dialogue_index]
 @onready var text_appearing_duration: float = current_item["text"].length() * seconds_per_character
 var talking_playback_position := 0.0
-@onready var current_note_label = $TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer/NoteRichTextLabel
-#@onready var current_note = int(current_note_label.text[-1]) # convert from uku tab to midi pitch
-@onready var current_note = 60
+@onready var note_labels_to_play: Array[Control] = get_note_labels_to_play(ukulele_tab)
+@onready var note_label_to_play_index := 0
+@onready var current_note_label = note_labels_to_play[note_label_to_play_index]
+@onready var current_note = MusicTheoryDB.get_midi_pitch(current_note_label.get_parent().name.left(1) + "_String_" + current_note_label.text[-1])
 var is_checking_notes = false
 var snapped_note # converted detected pitch note for checking
-@onready var note_explosion_effect = preload("res://assets/vfx/note_explosion_cpu_particles_2d.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -56,23 +58,35 @@ func _ready() -> void:
 	talking_timer.connect("timeout", _on_talking_timer_timeout)
 	talk()
 	show_text()
+	print(current_note)
+
+
+#func get_note_labels_to_play(from_ukulele_tab: Control) -> Array[Control]:
+func get_note_labels_to_play(from_ukulele_tab: Control):
+	for string in from_ukulele_tab.get_children():
+		for control in string.get_children():
+			if control.is_class("BoxContainer"): #notecontainer
+				for note_label in control.get_children():
+					if not note_label.text == "":
+						note_labels_to_play.append(note_label)
+	note_labels_to_play.sort_custom(func(a, b): return a.name.naturalnocasecmp_to(b.name) < 0)
+	return note_labels_to_play
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
-	#if is_checking_notes:
-		#check_note(current_note)
+
 
 func get_closest_note_detected(note_detected) -> void:
 	# convert string pitch detected 44.4 to int 44
 	if is_checking_notes:
 		snapped_note = snapped(float(note_detected), 1)
 		print(snapped_note)
-		check_note(current_note)
+		check_note()
 
 
-func check_note(note_to_check) -> void:
+func check_note() -> void:
 	if snapped_note == 60 and current_note == 60: # C
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		note_explosion.emitting = true
@@ -155,17 +169,17 @@ func slide_in() -> void:
 
 
 func advance_dialogue() -> void:
-	if current_index + 1 < dialogue_items.size():
-		current_index += 1
+	if current_dialogue_index + 1 < dialogue_items.size():
+		current_dialogue_index += 1
 	show_text()
 
 
 func _on_talking_timer_timeout() -> void:
 	talking_playback_position = talking_synth.get_playback_position()
 	talking_synth.stop()
-	if current_index == 3:
+	if current_dialogue_index == 3:
 		is_checking_notes = true
-	if not current_index == dialogue_items.size() - 1:
+	if not current_dialogue_index == dialogue_items.size() - 1:
 		$NextButton/ButtonUpSound.play()
 		next_button.disabled = false
 		next_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
@@ -182,7 +196,7 @@ func talk() -> void:
 
 
 func show_text() -> void:
-	current_item = dialogue_items[current_index]
+	current_item = dialogue_items[current_dialogue_index]
 	dialogue_rich_text_label.text = current_item["text"]
 	character.expression = current_item["expression"]
 	talk()

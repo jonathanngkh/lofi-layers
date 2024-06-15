@@ -31,7 +31,7 @@
 [sub_resource type="Resource" id="Resource_i0kbl"]
 script = ExtResource("25_ibw8b")
 stream = ExtResource("4_kmexc")
-tone = "A"
+tone = "C"
 octave = 4
 velocity = 5
 

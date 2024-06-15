@@ -60,6 +60,96 @@ var midi_frequency_dictionary = {
 	125: 11175.303, 126: 11839.822, 127: 12543.854
 }
 
+var ukulele_frets_midi_dictionary := {
+	"A_String_0": 69,
+	"A_String_1": 70,
+	"A_String_2": 71,
+	"A_String_3": 72,
+	"A_String_4": 73,
+	"A_String_5": 74,
+	"A_String_6": 75,
+	"A_String_7": 76,
+	"A_String_8": 77,
+	"A_String_9": 78,
+	"A_String_10": 79,
+	"A_String_11": 80,
+	"A_String_12": 81,
+	"A_String_13": 82,
+	"A_String_14": 83,
+	"A_String_15": 84,
+	"A_String_16": 85,
+	"A_String_17": 86,
+	"A_String_18": 87,
+	"A_String_19": 88,
+	"A_String_20": 89,
+	
+	"E_String_0": 64,
+	"E_String_1": 65,
+	"E_String_2": 66,
+	"E_String_3": 67,
+	"E_String_4": 68,
+	"E_String_5": 69,
+	"E_String_6": 70,
+	"E_String_7": 71,
+	"E_String_8": 72,
+	"E_String_9": 73,
+	"E_String_10": 74,
+	"E_String_11": 75,
+	"E_String_12": 76,
+	"E_String_13": 77,
+	"E_String_14": 78,
+	"E_String_15": 79,
+	"E_String_16": 80,
+	"E_String_17": 81,
+	"E_String_18": 82,
+	"E_String_19": 83,
+	"E_String_20": 84,
+	
+	"C_String_0": 60,
+	"C_String_1": 61,
+	"C_String_2": 62,
+	"C_String_3": 63,
+	"C_String_4": 64,
+	"C_String_5": 65,
+	"C_String_6": 66,
+	"C_String_7": 67,
+	"C_String_8": 68,
+	"C_String_9": 69,
+	"C_String_10": 70,
+	"C_String_11": 71,
+	"C_String_12": 72,
+	"C_String_13": 73,
+	"C_String_14": 74,
+	"C_String_15": 75,
+	"C_String_16": 76,
+	"C_String_17": 77,
+	"C_String_18": 78,
+	"C_String_19": 79,
+	"C_String_20": 80,
+	
+	"G_String_0": 67,
+	"G_String_1": 68,
+	"G_String_2": 69,
+	"G_String_3": 70,
+	"G_String_4": 71,
+	"G_String_5": 72,
+	"G_String_6": 73,
+	"G_String_7": 74,
+	"G_String_8": 75,
+	"G_String_9": 76,
+	"G_String_10": 77,
+	"G_String_11": 78,
+	"G_String_12": 79,
+	"G_String_13": 80,
+	"G_String_14": 81,
+	"G_String_15": 82,
+	"G_String_16": 83,
+	"G_String_17": 84,
+	"G_String_18": 85,
+	"G_String_19": 86,
+	"G_String_20": 87,
+}
+
 func _get_midi_dictionary() -> Dictionary:
 	# Define the note patterns within an octave
 	var notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
@@ -116,6 +206,19 @@ func get_note_name(value: int) -> String:
 	var index: int = values.find(value % 12)
 	return notes[index]
 
+
 # Return the octave of a note from its value
 func get_note_octave(value: int) -> int:
 	return (value - 12) / floor(12)
+
+
+func get_midi_pitch(from_ukulele_fret: String) -> int:
+	# ukulele fret format: "A_String_0"
+	var midi_pitch := 0
+	midi_pitch = ukulele_frets_midi_dictionary[from_ukulele_fret]
+	return midi_pitch
+
+
+func get_possible_ukulele_frets(from_midi_pitch: int) -> Array[String]:
+	var possible_ukulele_frets := [""]
+	return possible_ukulele_frets
