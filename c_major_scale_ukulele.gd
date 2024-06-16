@@ -29,7 +29,7 @@ var dialogue_items : Array[Dictionary] = [
 	"expression": "determined"},
 ]
 
-var wave_effect := "[wave amp=30 freq=15]"
+var wave_effect := "[wave amp=100 freq=20]"
 var rainbow_effect := "[rainbow]"
 var shake_effect := "[shake]"
 var pulse_effect := "[pulse]"
@@ -58,7 +58,6 @@ func _ready() -> void:
 	talking_timer.connect("timeout", _on_talking_timer_timeout)
 	talk()
 	show_text()
-	print(current_note)
 
 
 #func get_note_labels_to_play(from_ukulele_tab: Control) -> Array[Control]:
@@ -87,59 +86,16 @@ func get_closest_note_detected(note_detected) -> void:
 
 
 func check_note() -> void:
-	if snapped_note == 60 and current_note == 60: # C
+	if snapped_note == current_note:
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		note_explosion.emitting = true
-		current_note_label = $TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer/NoteRichTextLabel3
-		current_note_label.text = wave_effect + current_note_label.text[-1]
-		current_note = 62
-	elif snapped_note == 62  and current_note == 62: # D
-		note_explosion.emitting = true
-		note_explosion.position = Vector2(676, 571)
-		current_note_label.text = rainbow_effect + current_note_label.text[-1]
-		current_note_label = $TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer/NoteRichTextLabel5
-		current_note_label.text = wave_effect + current_note_label.text[-1]
-		current_note = 64
-	elif snapped_note == 64 and current_note == 64: # E
-		note_explosion.emitting = true
-		note_explosion.position = Vector2(895, 470)
-		current_note_label.text = rainbow_effect + current_note_label.text[-1]
-		current_note_label = $TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer/NoteRichTextLabel7
-		current_note_label.text = wave_effect + current_note_label.text[-1]
-		current_note = 66
-	elif snapped_note == 66 and current_note == 66: # F
-		note_explosion.emitting = true
-		note_explosion.position = Vector2(1118, 470)
-		current_note_label.text = rainbow_effect + current_note_label.text[-1]
-		current_note_label = $TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer/NoteRichTextLabel9
-		current_note_label.text = wave_effect + current_note_label.text[-1]
-		current_note = 67
-	elif snapped_note == 67 and current_note == 67:
-		note_explosion.emitting = true
-		note_explosion.position = Vector2(1340, 470)
-		current_note_label.text = rainbow_effect + current_note_label.text[-1]
-		current_note_label = $TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer/NoteRichTextLabel11
-		current_note_label.text = wave_effect + current_note_label.text[-1]
-		current_note = 69
-	elif snapped_note == 69 and current_note == 69:
-		note_explosion.emitting = true
-		note_explosion.position = Vector2(1556, 367)
-		current_note_label.text = rainbow_effect + current_note_label.text[-1]
-		current_note_label = $TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer/NoteRichTextLabel13
-		current_note_label.text = wave_effect + current_note_label.text[-1]
-		current_note = 71
-	elif snapped_note == 71 and current_note == 71:
-		note_explosion.emitting = true
-		note_explosion.position = Vector2(1779, 367)
-		current_note_label.text = rainbow_effect + current_note_label.text[-1]
-		current_note_label = $TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer/NoteRichTextLabel15
-		current_note_label.text = wave_effect + current_note_label.text[-1]
-		current_note = 72
-	elif snapped_note == 72 and current_note == 72:
-		note_explosion.emitting = true
-		note_explosion.position = Vector2(1999, 367)
-		current_note_label.text = rainbow_effect + current_note_label.text[-1]
-		
+		note_explosion.position = current_note_label.global_position + Vector2(20, 50)
+		note_label_to_play_index += 1
+		if note_label_to_play_index < note_labels_to_play.size():
+			current_note_label = note_labels_to_play[note_label_to_play_index]
+			current_note_label.text = wave_effect + current_note_label.text[-1]
+			current_note = MusicTheoryDB.get_midi_pitch(current_note_label.get_parent().name.left(1) + "_String_" + current_note_label.text[-1])
+
 
 func set_current_note_label(new_node: Control) -> void:
 	current_note_label = new_node
