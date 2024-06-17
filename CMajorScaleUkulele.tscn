@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://02k63jpqljgr"]
+[gd_scene load_steps=28 format=3 uid="uid://02k63jpqljgr"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_qvtkd"]
 [ext_resource type="Script" path="res://c_major_scale_ukulele.gd" id="2_b3kge"]
@@ -17,6 +17,7 @@
 [ext_resource type="StyleBox" uid="uid://yvjfdvkd46s5" path="res://assets/themes/tab_note_style_box.tres" id="12_luh80"]
 [ext_resource type="AudioStream" uid="uid://3h5kvbbqptgc" path="res://assets/sfx/talking_synth.mp3" id="16_hb4fi"]
 [ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="17_711ad"]
+[ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="17_t4bts"]
 
 [sub_resource type="Resource" id="Resource_8brqr"]
 script = ExtResource("4_37mo8")
@@ -67,7 +68,7 @@ theme = ExtResource("1_qvtkd")
 script = ExtResource("2_b3kge")
 pink_pitch_scale = 1.1
 current_dialogue_index = 3
-metadata/_edit_vertical_guides_ = [1280.0, 2209.0, 2294.0]
+metadata/_edit_vertical_guides_ = [1280.0, 2209.0, 2294.0, 333.0]
 metadata/_edit_horizontal_guides_ = [720.0, 600.0, 700.0, 800.0, 900.0, 1286.0]
 
 [node name="SamplerInstrument" type="AudioStreamPlayer" parent="."]
@@ -89,6 +90,7 @@ offset_left = -621.0
 offset_top = -338.0
 offset_right = -270.0
 offset_bottom = -154.0
+toggle_mode = true
 
 [node name="Character" parent="." instance=ExtResource("8_x5jy0")]
 layout_mode = 1
@@ -181,13 +183,14 @@ anchor_bottom = 1.0
 offset_left = 266.0
 offset_top = 115.0
 offset_right = -266.0
-offset_bottom = -549.0
+offset_bottom = -533.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 text = "[center][b]"
 
 [node name="TitleRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel"]
+visible = false
 layout_mode = 0
 offset_left = 754.0
 offset_top = 76.0
@@ -815,4 +818,12 @@ volume_db = -9.0
 one_shot = true
 
 [node name="NoteExplosionCPUParticles2D" parent="." instance=ExtResource("17_711ad")]
+visible = false
 position = Vector2(454, 571)
+
+[node name="Piano" parent="." instance=ExtResource("17_t4bts")]
+visible = false
+
+[node name="SamplerTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
