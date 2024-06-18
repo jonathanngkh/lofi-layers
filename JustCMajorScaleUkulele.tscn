@@ -1,0 +1,1440 @@
+[gd_scene load_steps=28 format=3 uid="uid://hk3rddttqxvo"]
+
+[ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_0ngle"]
+[ext_resource type="Script" path="res://just_c_major_scale_ukulele.gd" id="2_bjjjw"]
+[ext_resource type="Script" path="res://addons/SimpleSampler/sampler_instrument.gd" id="3_up6s5"]
+[ext_resource type="Script" path="res://addons/SimpleSampler/sample_resource.gd" id="4_vji6d"]
+[ext_resource type="AudioStream" uid="uid://dcuqi7pysubx7" path="res://assets/samples/ukulele_c4.ogg" id="5_g27t6"]
+[ext_resource type="Shader" path="res://assets/background/sliding_background.gdshader" id="6_uj6s4"]
+[ext_resource type="Texture2D" uid="uid://8vbd1upbqxks" path="res://assets/background/bubble_pattern.png" id="7_4bu5k"]
+[ext_resource type="PackedScene" uid="uid://cyihnxcab4yft" path="res://next_button.tscn" id="8_qppty"]
+[ext_resource type="PackedScene" uid="uid://hriegrmf62ji" path="res://character.tscn" id="9_mw1fd"]
+[ext_resource type="Texture2D" uid="uid://c764sj6i7ua68" path="res://assets/music theory/staff lines.png" id="10_r1hui"]
+[ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="11_fljp7"]
+[ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="12_tvi7x"]
+[ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="13_wvnrd"]
+[ext_resource type="Texture2D" uid="uid://daw0mvqvvut7k" path="res://assets/music theory/staff_line.png" id="14_sknkj"]
+[ext_resource type="StyleBox" uid="uid://yvjfdvkd46s5" path="res://assets/themes/tab_note_style_box.tres" id="15_sr17m"]
+[ext_resource type="AudioStream" uid="uid://3h5kvbbqptgc" path="res://assets/sfx/talking_synth.mp3" id="16_mgur1"]
+[ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="17_mijp1"]
+[ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="18_qdhrj"]
+
+[sub_resource type="Resource" id="Resource_8brqr"]
+script = ExtResource("4_vji6d")
+stream = ExtResource("5_g27t6")
+tone = "C"
+octave = 4
+velocity = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ay7s"]
+shader = ExtResource("6_uj6s4")
+shader_parameter/bg_color = Color(0.490196, 0.776471, 0.768627, 1)
+shader_parameter/pattern_color = Color(0.266667, 0.603922, 0.639216, 1)
+shader_parameter/pattern_size = 333.0
+shader_parameter/pattern_sampler = ExtResource("7_4bu5k")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ba3nt"]
+shader = ExtResource("12_tvi7x")
+shader_parameter/strength = 0.0
+shader_parameter/speed = 3.0
+shader_parameter/angle = 270.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hso38"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tibru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7fp0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0s1g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_684my"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3oug"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="JustCMajorScaleUkulele" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0ngle")
+script = ExtResource("2_bjjjw")
+metadata/_edit_vertical_guides_ = [1280.0, 2209.0, 2294.0, 333.0]
+metadata/_edit_horizontal_guides_ = [720.0, 600.0, 700.0, 800.0, 900.0, 1286.0]
+
+[node name="SamplerInstrument" type="AudioStreamPlayer" parent="."]
+script = ExtResource("3_up6s5")
+samples = Array[ExtResource("4_vji6d")]([SubResource("Resource_8brqr")])
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_3ay7s")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Character" parent="." instance=ExtResource("9_mw1fd")]
+visible = false
+layout_mode = 1
+anchor_left = 0.0742188
+anchor_top = 0.586111
+anchor_right = 0.0742188
+anchor_bottom = 0.586111
+offset_right = 480.0
+offset_bottom = 596.0
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueRichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 656.0
+offset_top = 965.0
+offset_right = 1906.0
+offset_bottom = 1132.0
+bbcode_enabled = true
+text = "[tornado]Hello[/tornado], world!"
+fit_content = true
+
+[node name="NextButton" parent="." instance=ExtResource("8_qppty")]
+visible = false
+layout_mode = 1
+offset_left = -621.0
+offset_top = -338.0
+offset_right = -270.0
+offset_bottom = -154.0
+toggle_mode = true
+
+[node name="NotationBoxRichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 664.0
+offset_top = 180.0
+offset_right = -664.0
+offset_bottom = -596.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][b]C
+[/b][/center]"
+
+[node name="Staff" type="TextureRect" parent="NotationBoxRichTextLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 72.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_r1hui")
+expand_mode = 1
+
+[node name="TrebleClef" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 0.151996
+offset_top = 0.00199787
+offset_right = 295.152
+offset_bottom = 458.002
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_fljp7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="NoteHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 485.152
+offset_top = 154.002
+offset_right = 589.152
+offset_bottom = 230.002
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_wvnrd")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TabBoxRichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = 115.0
+offset_right = -266.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][b]"
+
+[node name="TitleRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel"]
+visible = false
+layout_mode = 0
+offset_left = 754.0
+offset_top = 76.0
+offset_right = 1273.0
+offset_bottom = 179.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hso38")
+bbcode_enabled = true
+text = "[b]C Major Scale"
+
+[node name="UkuleleTab" type="Control" parent="TabBoxRichTextLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 72.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab"]
+self_modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 2
+offset_left = 132.0
+offset_top = 178.0
+offset_right = 1919.0
+offset_bottom = 188.0
+texture = ExtResource("14_sknkj")
+expand_mode = 1
+
+[node name="AStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0366685
+anchor_top = -0.446512
+anchor_right = 0.0366685
+anchor_bottom = -0.446512
+offset_left = -144.923
+offset_top = -46.3023
+offset_right = -71.9231
+offset_bottom = 55.6977
+theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
+theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u0s1g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_684my")
+bbcode_enabled = true
+text = "[center]A"
+metadata/_edit_use_anchors_ = true
+
+[node name="AStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab/AString"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -48.0
+offset_right = 1794.0
+offset_bottom = 52.0
+
+[node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+text = "0"
+
+[node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+text = "2"
+
+[node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+text = "3"
+
+[node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="EString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab"]
+self_modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 2
+offset_left = 132.0
+offset_top = 278.0
+offset_right = 1919.0
+offset_bottom = 288.0
+texture = ExtResource("14_sknkj")
+expand_mode = 1
+
+[node name="EStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0366685
+anchor_top = 0.0534885
+anchor_right = 0.0366685
+anchor_bottom = 0.0534885
+offset_left = -144.923
+offset_top = -46.3023
+offset_right = -71.9231
+offset_bottom = 55.6977
+theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
+theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u0s1g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_684my")
+bbcode_enabled = true
+text = "[center]E"
+metadata/_edit_use_anchors_ = true
+
+[node name="EStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab/EString"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -48.0
+offset_right = 1794.0
+offset_bottom = 52.0
+
+[node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+text = "0"
+
+[node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+text = "1"
+
+[node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+text = "3"
+
+[node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="CString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab"]
+self_modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 2
+offset_left = 132.0
+offset_top = 378.0
+offset_right = 1919.0
+offset_bottom = 388.0
+texture = ExtResource("14_sknkj")
+expand_mode = 1
+
+[node name="CStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0366685
+anchor_top = 0.0534885
+anchor_right = 0.0366685
+anchor_bottom = 0.0534885
+offset_left = -144.923
+offset_top = -46.3023
+offset_right = -71.9231
+offset_bottom = 55.6977
+theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
+theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u0s1g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_684my")
+bbcode_enabled = true
+text = "[center]C"
+metadata/_edit_use_anchors_ = true
+
+[node name="CStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab/CString"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -48.0
+offset_right = 1794.0
+offset_bottom = 52.0
+
+[node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+text = "[wave amp=100 freq=20]0"
+
+[node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+text = "2"
+
+[node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="GString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab"]
+self_modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 2
+offset_left = 132.0
+offset_top = 478.0
+offset_right = 1919.0
+offset_bottom = 488.0
+texture = ExtResource("14_sknkj")
+expand_mode = 1
+
+[node name="GStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0366685
+anchor_top = -0.146511
+anchor_right = 0.0366685
+anchor_bottom = -0.146511
+offset_left = -144.923
+offset_top = -46.3023
+offset_right = -71.9231
+offset_bottom = 55.6977
+theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
+theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u0s1g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_684my")
+bbcode_enabled = true
+text = "[center]G"
+metadata/_edit_use_anchors_ = true
+
+[node name="GStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab/GString"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -48.0
+offset_right = 1794.0
+offset_bottom = 52.0
+
+[node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="UkuleleTab2" type="Control" parent="TabBoxRichTextLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 553.0
+offset_bottom = 515.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab2"]
+self_modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 2
+offset_left = 132.0
+offset_top = 178.0
+offset_right = 1919.0
+offset_bottom = 188.0
+texture = ExtResource("14_sknkj")
+expand_mode = 1
+
+[node name="AStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0366685
+anchor_top = -0.446512
+anchor_right = 0.0366685
+anchor_bottom = -0.446512
+offset_left = -144.923
+offset_top = -46.3023
+offset_right = -71.9231
+offset_bottom = 55.6977
+theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
+theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u0s1g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_684my")
+bbcode_enabled = true
+text = "[center]A"
+metadata/_edit_use_anchors_ = true
+
+[node name="AStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab2/AString"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -48.0
+offset_right = 1794.0
+offset_bottom = 52.0
+
+[node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+text = "[wave amp=100 freq=20]3"
+
+[node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+text = "2"
+
+[node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+text = "0"
+
+[node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="EString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab2"]
+self_modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 2
+offset_left = 132.0
+offset_top = 278.0
+offset_right = 1919.0
+offset_bottom = 288.0
+texture = ExtResource("14_sknkj")
+expand_mode = 1
+
+[node name="EStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0366685
+anchor_top = 0.0534885
+anchor_right = 0.0366685
+anchor_bottom = 0.0534885
+offset_left = -144.923
+offset_top = -46.3023
+offset_right = -71.9231
+offset_bottom = 55.6977
+theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
+theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u0s1g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_684my")
+bbcode_enabled = true
+text = "[center]E"
+metadata/_edit_use_anchors_ = true
+
+[node name="EStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab2/EString"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -48.0
+offset_right = 1794.0
+offset_bottom = 52.0
+
+[node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+text = "3"
+
+[node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+text = "1"
+
+[node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+text = "0"
+
+[node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3oug")
+bbcode_enabled = true
+
+[node name="CString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab2"]
+self_modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 2
+offset_left = 132.0
+offset_top = 378.0
+offset_right = 1919.0
+offset_bottom = 388.0
+texture = ExtResource("14_sknkj")
+expand_mode = 1
+
+[node name="CStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0366685
+anchor_top = 0.0534885
+anchor_right = 0.0366685
+anchor_bottom = 0.0534885
+offset_left = -144.923
+offset_top = -46.3023
+offset_right = -71.9231
+offset_bottom = 55.6977
+theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
+theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u0s1g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_684my")
+bbcode_enabled = true
+text = "[center]C"
+metadata/_edit_use_anchors_ = true
+
+[node name="CStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab2/CString"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -48.0
+offset_right = 1794.0
+offset_bottom = 52.0
+
+[node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+text = "2"
+
+[node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+text = "0"
+
+[node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="GString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab2"]
+self_modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 2
+offset_left = 132.0
+offset_top = 478.0
+offset_right = 1919.0
+offset_bottom = 488.0
+texture = ExtResource("14_sknkj")
+expand_mode = 1
+
+[node name="GStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0366685
+anchor_top = -0.146511
+anchor_right = 0.0366685
+anchor_bottom = -0.146511
+offset_left = -144.923
+offset_top = -46.3023
+offset_right = -71.9231
+offset_bottom = 55.6977
+theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
+theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u0s1g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_684my")
+bbcode_enabled = true
+text = "[center]G"
+metadata/_edit_use_anchors_ = true
+
+[node name="GStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab2/GString"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -48.0
+offset_right = 1794.0
+offset_bottom = 52.0
+
+[node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("15_sr17m")
+bbcode_enabled = true
+
+[node name="TalkingSynth" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_mgur1")
+volume_db = -9.0
+
+[node name="TalkingTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="NoteExplosionCPUParticles2D" parent="." instance=ExtResource("17_mijp1")]
+visible = false
+position = Vector2(454, 571)
+
+[node name="Piano" parent="." instance=ExtResource("18_qdhrj")]
+visible = false
+
+[node name="SamplerTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
