@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://hk3rddttqxvo"]
+[gd_scene load_steps=25 format=3 uid="uid://hk3rddttqxvo"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_0ngle"]
 [ext_resource type="Script" path="res://just_c_major_scale_ukulele.gd" id="2_bjjjw"]
@@ -7,15 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://dcuqi7pysubx7" path="res://assets/samples/ukulele_c4.ogg" id="5_g27t6"]
 [ext_resource type="Shader" path="res://assets/background/sliding_background.gdshader" id="6_uj6s4"]
 [ext_resource type="Texture2D" uid="uid://8vbd1upbqxks" path="res://assets/background/bubble_pattern.png" id="7_4bu5k"]
-[ext_resource type="PackedScene" uid="uid://cyihnxcab4yft" path="res://next_button.tscn" id="8_qppty"]
-[ext_resource type="PackedScene" uid="uid://hriegrmf62ji" path="res://character.tscn" id="9_mw1fd"]
 [ext_resource type="Texture2D" uid="uid://c764sj6i7ua68" path="res://assets/music theory/staff lines.png" id="10_r1hui"]
 [ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="11_fljp7"]
 [ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="12_tvi7x"]
 [ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="13_wvnrd"]
 [ext_resource type="Texture2D" uid="uid://daw0mvqvvut7k" path="res://assets/music theory/staff_line.png" id="14_sknkj"]
 [ext_resource type="StyleBox" uid="uid://yvjfdvkd46s5" path="res://assets/themes/tab_note_style_box.tres" id="15_sr17m"]
-[ext_resource type="AudioStream" uid="uid://3h5kvbbqptgc" path="res://assets/sfx/talking_synth.mp3" id="16_mgur1"]
 [ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="17_mijp1"]
 [ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="18_qdhrj"]
 
@@ -81,37 +78,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Character" parent="." instance=ExtResource("9_mw1fd")]
-visible = false
-layout_mode = 1
-anchor_left = 0.0742188
-anchor_top = 0.586111
-anchor_right = 0.0742188
-anchor_bottom = 0.586111
-offset_right = 480.0
-offset_bottom = 596.0
-metadata/_edit_use_anchors_ = true
-
-[node name="DialogueRichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 656.0
-offset_top = 965.0
-offset_right = 1906.0
-offset_bottom = 1132.0
-bbcode_enabled = true
-text = "[tornado]Hello[/tornado], world!"
-fit_content = true
-
-[node name="NextButton" parent="." instance=ExtResource("8_qppty")]
-visible = false
-layout_mode = 1
-offset_left = -621.0
-offset_top = -338.0
-offset_right = -270.0
-offset_bottom = -154.0
-toggle_mode = true
 
 [node name="NotationBoxRichTextLabel" type="RichTextLabel" parent="."]
 visible = false
@@ -863,7 +829,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/normal = ExtResource("15_sr17m")
 bbcode_enabled = true
-text = "[wave amp=100 freq=20]3"
+text = "3"
 
 [node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
@@ -1420,13 +1386,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/normal = ExtResource("15_sr17m")
 bbcode_enabled = true
-
-[node name="TalkingSynth" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_mgur1")
-volume_db = -9.0
-
-[node name="TalkingTimer" type="Timer" parent="."]
-one_shot = true
 
 [node name="NoteExplosionCPUParticles2D" parent="." instance=ExtResource("17_mijp1")]
 visible = false
