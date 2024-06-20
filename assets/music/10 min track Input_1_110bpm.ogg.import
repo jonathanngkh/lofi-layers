@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://rgukl6s53qkc"
+path="res://.godot/imported/10 min track Input_1_110bpm.ogg-b4e07df756d04bfc82f2ebcfc4e78f34.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/10 min track Input_1_110bpm.ogg"
+dest_files=["res://.godot/imported/10 min track Input_1_110bpm.ogg-b4e07df756d04bfc82f2ebcfc4e78f34.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

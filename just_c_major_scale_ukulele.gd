@@ -1,5 +1,8 @@
 extends Control
 
+@export var using_aubio: bool = false
+@export var using_qwerty: bool = true
+@export var using_midi: bool = false
 
 @onready var blank_style_box_flat = preload("res://assets/themes/blank_style_box_flat.tres")
 @onready var ukulele_tab: Control = $TabBoxRichTextLabel/UkuleleTab
@@ -14,7 +17,6 @@ var pulse_effect := "[pulse]"
 var fade_effect := "[fade]"
 var tornado_effect := "[tornado]"
 
-
 @onready var note_labels_to_play: Array[Control]
 @onready var note_label_to_play_index := 0
 var notes_to_play_midi: Array[int]
@@ -25,16 +27,21 @@ var is_checking_notes = true
 var snapped_note # converted detected pitch note for checking
 var note_explosions := []
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	PitchDetector.connect("detected_pitch", _on_pitch_detector_note_detected)
+	if using_aubio:
+		PitchDetector.connect("detected_pitch", _on_pitch_detector_note_detected)
+	if using_qwerty:
+		QwertyListener.connect("qwerty_note_on", _on_qwerty_listener_note_on)
+	if using_midi:
+		MidiListener.connect("midi_note_on", _on_qwerty_listener_note_on)
 	remove_tab_outlines(ukulele_tab)
 	remove_tab_outlines(ukulele_tab_2)
 	get_note_labels_to_play((ukulele_tab))
 	get_note_labels_to_play((ukulele_tab_2))
 	current_note_label = note_labels_to_play[note_label_to_play_index]
 	current_note = MusicTheoryDB.get_midi_pitch(current_note_label.get_parent().name.left(1) + "_String_" + current_note_label.text[-1])
-	print(note_labels_to_play)
 	for note_label in note_labels_to_play:
 		notes_to_play_midi.append(MusicTheoryDB.get_midi_pitch(note_label.get_parent().name.left(1) + "_String_" + note_label.text[-1]))
 		# will present issues for double digit tab notes
@@ -76,6 +83,11 @@ func _on_pitch_detector_note_detected(note_detected) -> void:
 			#if note_labels_to_play[notes_to_play_midi.find(snapped_note)].modulate.a == 1.0:
 				#note_explosions[notes_to_play_midi.find(note_midi, 7)].emitting = true
 
+
+func _on_qwerty_listener_note_on(note_played) -> void:
+	if is_checking_notes:
+		snapped_note = note_played
+		check_note()
 
 func play_all_notes() -> void:
 	for midi_note in notes_to_play_midi:

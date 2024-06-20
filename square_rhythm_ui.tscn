@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://1pdu3ku3aavf"]
+
+[ext_resource type="Script" path="res://square_rhythm_UI.gd" id="1_vw04s"]
+[ext_resource type="Texture2D" uid="uid://e4s8dxr8xpdo" path="res://assets/UI/White Circle.png" id="2_skc53"]
+[ext_resource type="PackedScene" uid="uid://n7axx3xo7km" path="res://conductor.tscn" id="3_fy7ak"]
+
+[sub_resource type="Curve2D" id="Curve2D_5iprk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 192, 0, 0, 0, 0, 0, 384, 0, 0, 0, 0, -192, 192, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Environment" id="Environment_5b7jq"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 2.39
+glow_blend_mode = 0
+glow_hdr_scale = 4.0
+
+[node name="SquareRhythmUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vw04s")
+metadata/_edit_horizontal_guides_ = [720.0]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(588, 335)
+curve = SubResource("Curve2D_5iprk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotation = 0.785492
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
+self_modulate = Color(0.4, 4, 1.3, 1)
+texture = ExtResource("2_skc53")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5b7jq")
+
+[node name="Conductor" parent="." instance=ExtResource("3_fy7ak")]
+bpm = 220
+beats_per_bar = 8

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://n7axx3xo7km"]
+
+[ext_resource type="AudioStream" uid="uid://rgukl6s53qkc" path="res://assets/music/10 min track Input_1_110bpm.ogg" id="1_tpeg8"]
+[ext_resource type="AudioStream" uid="uid://b3hhcwy3e5pje" path="res://assets/music/Input_1_110bpm.wav" id="1_vtorv"]
+[ext_resource type="Script" path="res://conductor.gd" id="2_yvi5o"]
+[ext_resource type="AudioStream" uid="uid://qgxw7ttqwxy" path="res://assets/music/1_bar_intro_110bpm.wav" id="3_4nu4q"]
+[ext_resource type="AudioStream" uid="uid://nv13d58bsn7i" path="res://assets/music/Input_2_110bpm.wav" id="5_etqpk"]
+
+[node name="Conductor" type="AudioStreamPlayer" groups=["conductor"]]
+stream = ExtResource("1_tpeg8")
+volume_db = -80.0
+autoplay = true
+script = ExtResource("2_yvi5o")
+
+[node name="StartTimer" type="Timer" parent="."]
+
+[node name="IntroAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4nu4q")
+volume_db = -10.0
+
+[node name="Track1AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_vtorv")
+volume_db = -10.0
+
+[node name="Track2AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_etqpk")
+volume_db = -10.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 318.0
+offset_top = 199.0
+offset_right = 632.0
+offset_bottom = 390.0
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

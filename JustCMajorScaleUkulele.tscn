@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://hk3rddttqxvo"]
+[gd_scene load_steps=26 format=3 uid="uid://hk3rddttqxvo"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_0ngle"]
 [ext_resource type="Script" path="res://just_c_major_scale_ukulele.gd" id="2_bjjjw"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="13_wvnrd"]
 [ext_resource type="Texture2D" uid="uid://daw0mvqvvut7k" path="res://assets/music theory/staff_line.png" id="14_sknkj"]
 [ext_resource type="StyleBox" uid="uid://yvjfdvkd46s5" path="res://assets/themes/tab_note_style_box.tres" id="15_sr17m"]
+[ext_resource type="PackedScene" uid="uid://1pdu3ku3aavf" path="res://square_rhythm_ui.tscn" id="16_p05l1"]
 [ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="17_mijp1"]
 [ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="18_qdhrj"]
 
@@ -1397,3 +1398,10 @@ visible = false
 [node name="SamplerTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="SquareRhythmUI" parent="." instance=ExtResource("16_p05l1")]
+offset_left = 1045.0
+offset_top = 21.0
+offset_right = 1045.0
+offset_bottom = 21.0
+scale = Vector2(0.4, 0.4)
