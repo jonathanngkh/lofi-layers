@@ -150,8 +150,8 @@ func _on_beat_incremented():
 			intro.play()
 	
 	if measure % 2 == 0:
-		if beat_in_bar == 1:
+		if beat_in_bar == 1  and measure >= 3:
 			track_1.play()
 	else:
-		if beat_in_bar == 1:
+		if beat_in_bar == 1  and measure >= 3:
 			track_2.play()

@@ -86,10 +86,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 664.0
-offset_top = 180.0
-offset_right = -664.0
-offset_bottom = -596.0
+offset_left = 100.0
+offset_top = 95.0
+offset_right = -100.0
+offset_bottom = -86.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
@@ -97,14 +97,10 @@ text = "[center][b]C
 [/b][/center]"
 
 [node name="Staff" type="TextureRect" parent="NotationBoxRichTextLabel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 72.0
-offset_bottom = 34.0
-grow_horizontal = 2
-grow_vertical = 2
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 2349.0
+offset_bottom = 621.0
 texture = ExtResource("10_r1hui")
 expand_mode = 1
 
@@ -148,10 +144,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = 115.0
-offset_right = -266.0
-offset_bottom = -113.0
+offset_left = 82.0
+offset_top = 71.0
+offset_right = -82.0
+offset_bottom = -69.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
@@ -183,7 +179,7 @@ self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 offset_left = 132.0
 offset_top = 178.0
-offset_right = 1919.0
+offset_right = 2277.0
 offset_bottom = 188.0
 texture = ExtResource("14_sknkj")
 expand_mode = 1
@@ -195,9 +191,9 @@ anchor_left = 0.0366685
 anchor_top = -0.446512
 anchor_right = 0.0366685
 anchor_bottom = -0.446512
-offset_left = -144.923
+offset_left = -158.05
 offset_top = -46.3023
-offset_right = -71.9231
+offset_right = -85.0504
 offset_bottom = 55.6977
 theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
 theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
@@ -209,9 +205,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab/AString"]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 58.0
 offset_top = -48.0
-offset_right = 1794.0
+offset_right = 2168.0
 offset_bottom = 52.0
 
 [node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
@@ -292,7 +288,7 @@ theme_override_styles/normal = ExtResource("15_sr17m")
 bbcode_enabled = true
 text = "0"
 
-[node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
+[node name="EStringNoteContainer" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -334,7 +330,7 @@ self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 offset_left = 132.0
 offset_top = 278.0
-offset_right = 1919.0
+offset_right = 2277.0
 offset_bottom = 288.0
 texture = ExtResource("14_sknkj")
 expand_mode = 1
@@ -346,9 +342,9 @@ anchor_left = 0.0366685
 anchor_top = 0.0534885
 anchor_right = 0.0366685
 anchor_bottom = 0.0534885
-offset_left = -144.923
+offset_left = -158.05
 offset_top = -46.3023
-offset_right = -71.9231
+offset_right = -85.0504
 offset_bottom = 55.6977
 theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
 theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
@@ -360,9 +356,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="EStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab/EString"]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 58.0
 offset_top = -48.0
-offset_right = 1794.0
+offset_right = 2168.0
 offset_bottom = 52.0
 
 [node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
@@ -485,7 +481,7 @@ self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 offset_left = 132.0
 offset_top = 378.0
-offset_right = 1919.0
+offset_right = 2277.0
 offset_bottom = 388.0
 texture = ExtResource("14_sknkj")
 expand_mode = 1
@@ -497,9 +493,9 @@ anchor_left = 0.0366685
 anchor_top = 0.0534885
 anchor_right = 0.0366685
 anchor_bottom = 0.0534885
-offset_left = -144.923
+offset_left = -158.05
 offset_top = -46.3023
-offset_right = -71.9231
+offset_right = -85.0504
 offset_bottom = 55.6977
 theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
 theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
@@ -511,9 +507,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab/CString"]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 58.0
 offset_top = -48.0
-offset_right = 1794.0
+offset_right = 2168.0
 offset_bottom = 52.0
 
 [node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
@@ -635,7 +631,7 @@ self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 offset_left = 132.0
 offset_top = 478.0
-offset_right = 1919.0
+offset_right = 2277.0
 offset_bottom = 488.0
 texture = ExtResource("14_sknkj")
 expand_mode = 1
@@ -647,10 +643,10 @@ anchor_left = 0.0366685
 anchor_top = -0.146511
 anchor_right = 0.0366685
 anchor_bottom = -0.146511
-offset_left = -144.923
-offset_top = -46.3023
-offset_right = -71.9231
-offset_bottom = 55.6977
+offset_left = -158.05
+offset_top = -46.3022
+offset_right = -85.0504
+offset_bottom = 55.6978
 theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
 theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u0s1g")
@@ -661,9 +657,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab/GString"]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 58.0
 offset_top = -48.0
-offset_right = 1794.0
+offset_right = 2168.0
 offset_bottom = 52.0
 
 [node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
@@ -783,8 +779,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 553.0
-offset_bottom = 515.0
+offset_top = 600.0
+offset_bottom = 562.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -793,7 +789,7 @@ self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 offset_left = 132.0
 offset_top = 178.0
-offset_right = 1919.0
+offset_right = 2277.0
 offset_bottom = 188.0
 texture = ExtResource("14_sknkj")
 expand_mode = 1
@@ -805,9 +801,9 @@ anchor_left = 0.0366685
 anchor_top = -0.446512
 anchor_right = 0.0366685
 anchor_bottom = -0.446512
-offset_left = -144.923
+offset_left = -158.05
 offset_top = -46.3023
-offset_right = -71.9231
+offset_right = -85.0504
 offset_bottom = 55.6977
 theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
 theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
@@ -819,9 +815,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab2/AString"]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 58.0
 offset_top = -48.0
-offset_right = 1794.0
+offset_right = 2168.0
 offset_bottom = 52.0
 
 [node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
@@ -904,7 +900,7 @@ size_flags_vertical = 3
 theme_override_styles/normal = ExtResource("15_sr17m")
 bbcode_enabled = true
 
-[node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
+[node name="EStringNoteContainer" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -944,7 +940,7 @@ self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 offset_left = 132.0
 offset_top = 278.0
-offset_right = 1919.0
+offset_right = 2277.0
 offset_bottom = 288.0
 texture = ExtResource("14_sknkj")
 expand_mode = 1
@@ -956,9 +952,9 @@ anchor_left = 0.0366685
 anchor_top = 0.0534885
 anchor_right = 0.0366685
 anchor_bottom = 0.0534885
-offset_left = -144.923
+offset_left = -158.05
 offset_top = -46.3023
-offset_right = -71.9231
+offset_right = -85.0504
 offset_bottom = 55.6977
 theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
 theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
@@ -970,9 +966,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="EStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab2/EString"]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 58.0
 offset_top = -48.0
-offset_right = 1794.0
+offset_right = 2168.0
 offset_bottom = 52.0
 
 [node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
@@ -1095,7 +1091,7 @@ self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 offset_left = 132.0
 offset_top = 378.0
-offset_right = 1919.0
+offset_right = 2277.0
 offset_bottom = 388.0
 texture = ExtResource("14_sknkj")
 expand_mode = 1
@@ -1107,9 +1103,9 @@ anchor_left = 0.0366685
 anchor_top = 0.0534885
 anchor_right = 0.0366685
 anchor_bottom = 0.0534885
-offset_left = -144.923
+offset_left = -158.05
 offset_top = -46.3023
-offset_right = -71.9231
+offset_right = -85.0504
 offset_bottom = 55.6977
 theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
 theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
@@ -1121,9 +1117,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab2/CString"]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 58.0
 offset_top = -48.0
-offset_right = 1794.0
+offset_right = 2168.0
 offset_bottom = 52.0
 
 [node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
@@ -1245,7 +1241,7 @@ self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 offset_left = 132.0
 offset_top = 478.0
-offset_right = 1919.0
+offset_right = 2277.0
 offset_bottom = 488.0
 texture = ExtResource("14_sknkj")
 expand_mode = 1
@@ -1257,10 +1253,10 @@ anchor_left = 0.0366685
 anchor_top = -0.146511
 anchor_right = 0.0366685
 anchor_bottom = -0.146511
-offset_left = -144.923
-offset_top = -46.3023
-offset_right = -71.9231
-offset_bottom = 55.6977
+offset_left = -158.05
+offset_top = -46.3022
+offset_right = -85.0504
+offset_bottom = 55.6978
 theme_override_styles/fill = SubResource("StyleBoxEmpty_tibru")
 theme_override_styles/background = SubResource("StyleBoxEmpty_7fp0t")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u0s1g")
@@ -1271,9 +1267,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GStringNoteContainer" type="BoxContainer" parent="TabBoxRichTextLabel/UkuleleTab2/GString"]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 58.0
 offset_top = -48.0
-offset_right = 1794.0
+offset_right = 2168.0
 offset_bottom = 52.0
 
 [node name="NoteRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
