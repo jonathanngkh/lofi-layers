@@ -1,38 +1,38 @@
-[gd_scene load_steps=26 format=3 uid="uid://hk3rddttqxvo"]
+[gd_scene load_steps=26 format=3 uid="uid://q0o540nhr17"]
 
-[ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_0ngle"]
-[ext_resource type="Script" path="res://just_c_major_scale_ukulele.gd" id="2_bjjjw"]
-[ext_resource type="Script" path="res://addons/SimpleSampler/sampler_instrument.gd" id="3_up6s5"]
-[ext_resource type="Script" path="res://addons/SimpleSampler/sample_resource.gd" id="4_vji6d"]
-[ext_resource type="AudioStream" uid="uid://dcuqi7pysubx7" path="res://assets/samples/ukulele_c4.ogg" id="5_g27t6"]
-[ext_resource type="Shader" path="res://assets/background/sliding_background.gdshader" id="6_uj6s4"]
-[ext_resource type="Texture2D" uid="uid://8vbd1upbqxks" path="res://assets/background/bubble_pattern.png" id="7_4bu5k"]
-[ext_resource type="Texture2D" uid="uid://c764sj6i7ua68" path="res://assets/music theory/staff lines.png" id="10_r1hui"]
-[ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="11_fljp7"]
-[ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="12_tvi7x"]
-[ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="13_wvnrd"]
-[ext_resource type="Texture2D" uid="uid://daw0mvqvvut7k" path="res://assets/music theory/staff_line.png" id="14_sknkj"]
-[ext_resource type="StyleBox" uid="uid://yvjfdvkd46s5" path="res://assets/themes/tab_note_style_box.tres" id="15_sr17m"]
-[ext_resource type="PackedScene" uid="uid://1pdu3ku3aavf" path="res://square_rhythm_ui.tscn" id="16_p05l1"]
-[ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="17_mijp1"]
-[ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="18_qdhrj"]
+[ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_4o4sp"]
+[ext_resource type="Script" path="res://c_major_scale_ukulele_level_two.gd" id="2_vmc5x"]
+[ext_resource type="Script" path="res://addons/SimpleSampler/sampler_instrument.gd" id="3_p852a"]
+[ext_resource type="Script" path="res://addons/SimpleSampler/sample_resource.gd" id="4_jgy4t"]
+[ext_resource type="AudioStream" uid="uid://dcuqi7pysubx7" path="res://assets/samples/ukulele_c4.ogg" id="5_jetdw"]
+[ext_resource type="Shader" path="res://assets/background/sliding_background.gdshader" id="6_re2hg"]
+[ext_resource type="Texture2D" uid="uid://8vbd1upbqxks" path="res://assets/background/bubble_pattern.png" id="7_pp377"]
+[ext_resource type="Texture2D" uid="uid://c764sj6i7ua68" path="res://assets/music theory/staff lines.png" id="8_bbp7i"]
+[ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="9_h4tds"]
+[ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="10_u2d6c"]
+[ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="11_xwi0r"]
+[ext_resource type="Texture2D" uid="uid://daw0mvqvvut7k" path="res://assets/music theory/staff_line.png" id="12_fol76"]
+[ext_resource type="StyleBox" uid="uid://yvjfdvkd46s5" path="res://assets/themes/tab_note_style_box.tres" id="13_xineb"]
+[ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="14_pmu0k"]
+[ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="15_kawwk"]
+[ext_resource type="PackedScene" uid="uid://cw85hbblfa1r8" path="res://bouncing_rhythm_indicator.tscn" id="16_g62k6"]
 
 [sub_resource type="Resource" id="Resource_8brqr"]
-script = ExtResource("4_vji6d")
-stream = ExtResource("5_g27t6")
+script = ExtResource("4_jgy4t")
+stream = ExtResource("5_jetdw")
 tone = "C"
 octave = 4
 velocity = 5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ay7s"]
-shader = ExtResource("6_uj6s4")
+shader = ExtResource("6_re2hg")
 shader_parameter/bg_color = Color(0.490196, 0.776471, 0.768627, 1)
 shader_parameter/pattern_color = Color(0.266667, 0.603922, 0.639216, 1)
 shader_parameter/pattern_size = 333.0
-shader_parameter/pattern_sampler = ExtResource("7_4bu5k")
+shader_parameter/pattern_sampler = ExtResource("7_pp377")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ba3nt"]
-shader = ExtResource("12_tvi7x")
+shader = ExtResource("10_u2d6c")
 shader_parameter/strength = 0.0
 shader_parameter/speed = 3.0
 shader_parameter/angle = 270.0
@@ -55,21 +55,21 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
-[node name="JustCMajorScaleUkulele" type="Control"]
+[node name="CMajorScaleUkuleleLevelTwo" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_0ngle")
-script = ExtResource("2_bjjjw")
+theme = ExtResource("1_4o4sp")
+script = ExtResource("2_vmc5x")
 metadata/_edit_vertical_guides_ = [1280.0, 2209.0, 2294.0, 333.0]
 metadata/_edit_horizontal_guides_ = [720.0, 600.0, 700.0, 800.0, 900.0, 1286.0]
 
 [node name="SamplerInstrument" type="AudioStreamPlayer" parent="."]
-script = ExtResource("3_up6s5")
-samples = Array[ExtResource("4_vji6d")]([SubResource("Resource_8brqr")])
+script = ExtResource("3_p852a")
+samples = Array[ExtResource("4_jgy4t")]([SubResource("Resource_8brqr")])
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_3ay7s")
@@ -101,7 +101,7 @@ self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 2349.0
 offset_bottom = 621.0
-texture = ExtResource("10_r1hui")
+texture = ExtResource("8_bbp7i")
 expand_mode = 1
 
 [node name="TrebleClef" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
@@ -117,7 +117,7 @@ offset_right = 295.152
 offset_bottom = 458.002
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_fljp7")
+texture = ExtResource("9_h4tds")
 expand_mode = 1
 stretch_mode = 4
 
@@ -135,7 +135,7 @@ offset_right = 589.152
 offset_bottom = 230.002
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_wvnrd")
+texture = ExtResource("11_xwi0r")
 expand_mode = 1
 stretch_mode = 4
 
@@ -155,13 +155,13 @@ text = "[center][b]"
 
 [node name="TitleRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel"]
 layout_mode = 0
-offset_left = 938.0
+offset_left = 702.0
 offset_top = 60.0
-offset_right = 1457.0
+offset_right = 1693.0
 offset_bottom = 163.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hso38")
 bbcode_enabled = true
-text = "[b]C Major Scale"
+text = "[b]Level 2: Play It To The Beat!"
 
 [node name="UkuleleTab" type="Control" parent="TabBoxRichTextLabel"]
 layout_mode = 1
@@ -180,7 +180,7 @@ offset_left = 132.0
 offset_top = 178.0
 offset_right = 2277.0
 offset_bottom = 188.0
-texture = ExtResource("14_sknkj")
+texture = ExtResource("12_fol76")
 expand_mode = 1
 
 [node name="AStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString"]
@@ -213,77 +213,77 @@ offset_bottom = 52.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 text = "0"
 
@@ -291,14 +291,14 @@ text = "0"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 text = "2"
 
@@ -306,14 +306,14 @@ text = "2"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 text = "3"
 
@@ -321,7 +321,7 @@ text = "3"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="EString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab"]
@@ -331,7 +331,7 @@ offset_left = 132.0
 offset_top = 278.0
 offset_right = 2277.0
 offset_bottom = 288.0
-texture = ExtResource("14_sknkj")
+texture = ExtResource("12_fol76")
 expand_mode = 1
 
 [node name="EStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString"]
@@ -364,7 +364,7 @@ offset_bottom = 52.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/EString/EStringNoteContainer"]
@@ -482,7 +482,7 @@ offset_left = 132.0
 offset_top = 378.0
 offset_right = 2277.0
 offset_bottom = 388.0
-texture = ExtResource("14_sknkj")
+texture = ExtResource("12_fol76")
 expand_mode = 1
 
 [node name="CStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString"]
@@ -515,7 +515,7 @@ offset_bottom = 52.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 text = "[wave amp=100 freq=20]0"
 
@@ -523,14 +523,14 @@ text = "[wave amp=100 freq=20]0"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 text = "2"
 
@@ -538,91 +538,91 @@ text = "2"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="GString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab"]
@@ -632,7 +632,7 @@ offset_left = 132.0
 offset_top = 478.0
 offset_right = 2277.0
 offset_bottom = 488.0
-texture = ExtResource("14_sknkj")
+texture = ExtResource("12_fol76")
 expand_mode = 1
 
 [node name="GStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString"]
@@ -665,112 +665,112 @@ offset_bottom = 52.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="UkuleleTab2" type="Control" parent="TabBoxRichTextLabel"]
@@ -790,7 +790,7 @@ offset_left = 132.0
 offset_top = 178.0
 offset_right = 2277.0
 offset_bottom = 188.0
-texture = ExtResource("14_sknkj")
+texture = ExtResource("12_fol76")
 expand_mode = 1
 
 [node name="AStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString"]
@@ -823,7 +823,7 @@ offset_bottom = 52.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 text = "3"
 
@@ -831,14 +831,14 @@ text = "3"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 text = "2"
 
@@ -846,14 +846,14 @@ text = "2"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 text = "0"
 
@@ -861,77 +861,77 @@ text = "0"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="EStringNoteContainer" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/AString/AStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="EString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab2"]
@@ -941,7 +941,7 @@ offset_left = 132.0
 offset_top = 278.0
 offset_right = 2277.0
 offset_bottom = 288.0
-texture = ExtResource("14_sknkj")
+texture = ExtResource("12_fol76")
 expand_mode = 1
 
 [node name="EStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString"]
@@ -974,7 +974,7 @@ offset_bottom = 52.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/EString/EStringNoteContainer"]
@@ -1092,7 +1092,7 @@ offset_left = 132.0
 offset_top = 378.0
 offset_right = 2277.0
 offset_bottom = 388.0
-texture = ExtResource("14_sknkj")
+texture = ExtResource("12_fol76")
 expand_mode = 1
 
 [node name="CStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString"]
@@ -1125,91 +1125,91 @@ offset_bottom = 52.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 text = "2"
 
@@ -1217,14 +1217,14 @@ text = "2"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/CString/CStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 text = "0"
 
@@ -1232,7 +1232,7 @@ text = "0"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="GString" type="TextureRect" parent="TabBoxRichTextLabel/UkuleleTab2"]
@@ -1242,7 +1242,7 @@ offset_left = 132.0
 offset_top = 478.0
 offset_right = 2277.0
 offset_bottom = 488.0
-texture = ExtResource("14_sknkj")
+texture = ExtResource("12_fol76")
 expand_mode = 1
 
 [node name="GStringRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString"]
@@ -1275,128 +1275,123 @@ offset_bottom = 52.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel2" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel3" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel4" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel5" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel6" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel7" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel8" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel9" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel10" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel11" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel12" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel13" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel14" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel15" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
 [node name="NoteRichTextLabel16" type="RichTextLabel" parent="TabBoxRichTextLabel/UkuleleTab2/GString/GStringNoteContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("15_sr17m")
+theme_override_styles/normal = ExtResource("13_xineb")
 bbcode_enabled = true
 
-[node name="NoteExplosionCPUParticles2D" parent="." instance=ExtResource("17_mijp1")]
+[node name="NoteExplosionCPUParticles2D" parent="." instance=ExtResource("14_pmu0k")]
 visible = false
 position = Vector2(454, 571)
 
-[node name="Piano" parent="." instance=ExtResource("18_qdhrj")]
+[node name="Piano" parent="." instance=ExtResource("15_kawwk")]
 visible = false
 
 [node name="SamplerTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
 
-[node name="SquareRhythmUI" parent="." instance=ExtResource("16_p05l1")]
-offset_left = 1045.0
-offset_top = 21.0
-offset_right = 1045.0
-offset_bottom = 21.0
-scale = Vector2(0.4, 0.4)
+[node name="BouncingRhythmIndicator" parent="." instance=ExtResource("16_g62k6")]
