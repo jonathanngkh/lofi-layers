@@ -18,9 +18,16 @@ script = ExtResource("1_82sa7")
 metadata/_edit_horizontal_guides_ = [720.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(4, 0.1, 0.1, 1)
+self_modulate = Color(0, 0, 0, 1)
 position = Vector2(588, 1000)
 rotation = 0.785492
+texture = ExtResource("2_1ncgb")
+
+[node name="BackGlow" type="Sprite2D" parent="Sprite2D"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = 1
+z_as_relative = false
+scale = Vector2(0.684714, 0.684714)
 texture = ExtResource("2_1ncgb")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

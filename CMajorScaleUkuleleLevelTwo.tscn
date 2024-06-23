@@ -1395,3 +1395,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="BouncingRhythmIndicator" parent="." instance=ExtResource("16_g62k6")]
+offset_left = -293.0
+offset_top = -839.0
+offset_right = -293.0
+offset_bottom = -839.0

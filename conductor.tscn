@@ -26,6 +26,7 @@ stream = ExtResource("5_etqpk")
 volume_db = -80.0
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 318.0
 offset_top = 199.0
 offset_right = 632.0
