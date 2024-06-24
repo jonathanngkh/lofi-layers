@@ -120,6 +120,7 @@ func check_note() -> void:
 			note_label_to_play_index += 1
 			# advance note_label
 			current_note_label = note_labels_to_play[note_label_to_play_index]
+			
 			# fade in current note label
 			var tween = create_tween()
 			tween.tween_property(current_note_label, "modulate:a", 1.0, 0.2).from(0.0)
@@ -127,7 +128,9 @@ func check_note() -> void:
 			current_note_label.text = wave_effect + current_note_label.text[-1]
 			# set current note to MusicTheoryDB-friendly string
 			current_note = MusicTheoryDB.get_midi_pitch(current_note_label.get_parent().name.left(1) + "_String_" + current_note_label.text[-1])
-
+		#if current_note_label.get_parent().get_parent().get_parent().name == "UkuleleTab2":
+			#$BouncingRhythmIndicator.position.y += 500.0
+		$BouncingRhythmIndicator.move_horizontally_to(note_labels_to_play[note_label_to_play_index + 1].position.x + 20.0)
 
 func left_click(coordinates: Vector2):
 	var press = InputEventMouseButton.new()

@@ -11,22 +11,18 @@ glow_intensity = 2.39
 glow_blend_mode = 0
 glow_hdr_scale = 4.0
 
-[node name="BouncingRhythmIndicator" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="BouncingRhythmIndicator" type="Sprite2D"]
+self_modulate = Color(0, 0, 0, 1)
+texture = ExtResource("2_1ncgb")
 script = ExtResource("1_82sa7")
 metadata/_edit_horizontal_guides_ = [720.0]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(588, 1000)
-rotation = 0.785492
-texture = ExtResource("2_1ncgb")
-
-[node name="BackGlow" type="Sprite2D" parent="Sprite2D"]
+[node name="BackGlow" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 z_index = 1
 z_as_relative = false
+position = Vector2(5.96046e-08, 0)
+rotation = 0.785492
 scale = Vector2(0.684714, 0.684714)
 texture = ExtResource("2_1ncgb")
 

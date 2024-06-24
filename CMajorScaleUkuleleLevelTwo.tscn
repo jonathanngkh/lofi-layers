@@ -65,7 +65,7 @@ grow_vertical = 2
 theme = ExtResource("1_4o4sp")
 script = ExtResource("2_vmc5x")
 metadata/_edit_vertical_guides_ = [1280.0, 2209.0, 2294.0, 333.0]
-metadata/_edit_horizontal_guides_ = [720.0, 600.0, 700.0, 800.0, 900.0, 1286.0]
+metadata/_edit_horizontal_guides_ = [720.0, 600.0, 700.0, 800.0, 900.0, 1286.0, 194.0, 753.0]
 
 [node name="SamplerInstrument" type="AudioStreamPlayer" parent="."]
 script = ExtResource("3_p852a")
@@ -156,9 +156,9 @@ text = "[center][b]"
 [node name="TitleRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel"]
 layout_mode = 0
 offset_left = 702.0
-offset_top = 60.0
+offset_top = 45.0
 offset_right = 1693.0
-offset_bottom = 163.0
+offset_bottom = 148.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hso38")
 bbcode_enabled = true
 text = "[b]Level 2: Play It To The Beat!"
@@ -1395,7 +1395,4 @@ wait_time = 0.3
 one_shot = true
 
 [node name="BouncingRhythmIndicator" parent="." instance=ExtResource("16_g62k6")]
-offset_left = -293.0
-offset_top = -839.0
-offset_right = -293.0
-offset_bottom = -839.0
+position = Vector2(297, 212)
