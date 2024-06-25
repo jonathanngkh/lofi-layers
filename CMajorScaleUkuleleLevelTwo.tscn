@@ -1394,5 +1394,8 @@ visible = false
 wait_time = 0.3
 one_shot = true
 
-[node name="BouncingRhythmIndicator" parent="." instance=ExtResource("16_g62k6")]
+[node name="BouncingRhythmContainerNode" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="BouncingRhythmIndicator" parent="BouncingRhythmContainerNode" instance=ExtResource("16_g62k6")]
 position = Vector2(297, 212)
