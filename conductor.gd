@@ -1,16 +1,12 @@
 extends AudioStreamPlayer
 
-# change to 220, and 8 to be able to detect quavers. down beats become 1357
-@export var bpm := 110
-@export var beats_per_bar := 4 # assumed to be crotchets in 4 4 time
-var quavers_per_bar = beats_per_bar * 2
-var semiquavers_per_bar = beats_per_bar * 4
+# change to 220, and 8 to be able to detect quavers. down beats become 1,3,5,7
+@export var bpm := 220
+@export var beats_per_bar := 8 # assumed to be crotchets in 4 4 time
 
 @onready var intro: AudioStreamPlayer = $IntroAudioStreamPlayer
 @onready var track_1: AudioStreamPlayer = $Track1AudioStreamPlayer
 @onready var track_2: AudioStreamPlayer = $Track2AudioStreamPlayer
-
-
 
 # Tracking the beat and song position
 var song_position_in_seconds = 0.0
@@ -23,7 +19,6 @@ var beats_before_start = 0
 var beat_in_bar = 1
 var measure = 1
 
-
 signal beat_incremented()
 signal measure_incremented()
 signal measure_minus_one_beat_incremented()
@@ -34,8 +29,8 @@ signal current_measure_signal(measure)
 func _ready():
 	beat_incremented.connect(_on_beat_incremented)
 	sec_per_beat = 60.0 / bpm
-	#play_with_beat_offset(6)
-	#intro.play()
+	self.play()
+	intro.play()
 
 
 func _physics_process(_delta):
@@ -98,14 +93,6 @@ func closest_beat_in_bar(time_of_note_played):
 	else:
 		closest_beat_in_bar = int(closest_beat_in_bar) % beats_per_bar
 	return Vector2(int(closest_beat_in_bar), time_off_beat)
-	
-func closest_quaver_in_bar(time_of_note_played): #doesnt work
-	var closest_quaver_in_bar = closest_quaver_in_song(time_of_note_played).x
-	if int(closest_quaver_in_bar) % quavers_per_bar == 0:
-		closest_quaver_in_bar = quavers_per_bar
-	else:
-		closest_quaver_in_bar = int(closest_quaver_in_bar) % quavers_per_bar
-	return Vector2(closest_quaver_in_bar, time_off_beat)
 
 
 func play_from_beat(beat, offset):
@@ -118,6 +105,7 @@ func play_from_beat(beat, offset):
 		beat_in_bar = beats_per_bar 
 	else:
 		beat_in_bar = beat_in_bar % beats_per_bar
+
 
 func _on_start_timer_timeout():
 	song_position_in_beats += 1
@@ -133,8 +121,6 @@ func _on_start_timer_timeout():
 
 
 func _on_beat_incremented():
-	#debug_label4.text = "perfect quaver_played_on: " +  str(closest_beat_in_song(get_song_position_in_seconds()).x)
-	#debug_label5.text = "perfect time_off_quaver: " +  str(closest_beat_in_song(get_song_position_in_seconds()).y)
 	if beat_in_bar == 1:
 		measure += 1
 		emit_signal("measure_incremented")
@@ -145,13 +131,13 @@ func _on_beat_incremented():
 	$Label.text = str(beat_in_bar)
 	# alternate between 2 tracks on even vs odd measures to retain longtail.
 	# beat in bar 4 because intro takes 4 beats in an 8 quaver bar
-	if measure == 2:
-		if beat_in_bar == 1:
-			intro.play()
+	#if measure == 2:
+		#if beat_in_bar == 1:
+			#intro.play()
 	
 	if measure % 2 == 0:
-		if beat_in_bar == 1  and measure >= 3:
+		if beat_in_bar == 1  and measure >= 2:
 			track_1.play()
 	else:
-		if beat_in_bar == 1  and measure >= 3:
+		if beat_in_bar == 1  and measure >= 2:
 			track_2.play()

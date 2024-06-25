@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cw85hbblfa1r8"]
+[gd_scene load_steps=4 format=3 uid="uid://cw85hbblfa1r8"]
 
 [ext_resource type="Script" path="res://bouncing_rhythm_indicator.gd" id="1_82sa7"]
 [ext_resource type="Texture2D" uid="uid://e4s8dxr8xpdo" path="res://assets/UI/White Circle.png" id="2_1ncgb"]
-[ext_resource type="PackedScene" uid="uid://n7axx3xo7km" path="res://conductor.tscn" id="3_1twot"]
 
 [sub_resource type="Environment" id="Environment_5b7jq"]
 background_mode = 3
@@ -28,7 +27,3 @@ texture = ExtResource("2_1ncgb")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5b7jq")
-
-[node name="Conductor" parent="." instance=ExtResource("3_1twot")]
-bpm = 220
-beats_per_bar = 8

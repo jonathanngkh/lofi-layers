@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7flxjhyw2o2p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hb3a2"]
+
+[node name="LateRichTextLabel" type="RichTextLabel"]
+offset_left = -5.0
+offset_right = 157.0
+offset_bottom = 58.0
+rotation = 0.371755
+pivot_offset = Vector2(50, 30)
+theme_override_colors/default_color = Color(0.934738, 0, 0.139388, 1)
+theme_override_colors/font_outline_color = Color(0.0313726, 0.137255, 0.305882, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hb3a2")
+bbcode_enabled = true
+text = "Late"

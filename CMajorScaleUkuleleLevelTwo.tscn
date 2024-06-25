@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://q0o540nhr17"]
+[gd_scene load_steps=27 format=3 uid="uid://q0o540nhr17"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_4o4sp"]
 [ext_resource type="Script" path="res://c_major_scale_ukulele_level_two.gd" id="2_vmc5x"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="14_pmu0k"]
 [ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="15_kawwk"]
 [ext_resource type="PackedScene" uid="uid://cw85hbblfa1r8" path="res://bouncing_rhythm_indicator.tscn" id="16_g62k6"]
+[ext_resource type="PackedScene" uid="uid://ep6iqj2cdesy" path="res://perfect_rich_text_label.tscn" id="17_kks75"]
 
 [sub_resource type="Resource" id="Resource_8brqr"]
 script = ExtResource("4_jgy4t")
@@ -1399,3 +1400,9 @@ anchors_preset = 0
 
 [node name="BouncingRhythmIndicator" parent="BouncingRhythmContainerNode" instance=ExtResource("16_g62k6")]
 position = Vector2(297, 212)
+
+[node name="PerfectRichTextLabel" parent="." instance=ExtResource("17_kks75")]
+visible = false
+layout_mode = 0
+offset_right = 386.0
+offset_bottom = 167.0

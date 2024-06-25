@@ -25,6 +25,7 @@ MidiListener="*res://midi_listener.tscn"
 QwertyListener="*res://qwerty_listener.tscn"
 NoteValue="*res://addons/SimpleSampler/note_value.gd"
 PitchDetector="*res://pitch_detector.tscn"
+Conductor="*res://conductor.tscn"
 
 [display]
 

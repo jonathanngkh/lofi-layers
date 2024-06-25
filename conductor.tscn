@@ -8,22 +8,22 @@
 
 [node name="Conductor" type="AudioStreamPlayer" groups=["conductor"]]
 stream = ExtResource("1_tpeg8")
-autoplay = true
+volume_db = -80.0
 script = ExtResource("2_yvi5o")
 
 [node name="StartTimer" type="Timer" parent="."]
 
 [node name="IntroAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4nu4q")
-volume_db = -80.0
+volume_db = -10.0
 
 [node name="Track1AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_vtorv")
-volume_db = -80.0
+volume_db = -10.0
 
 [node name="Track2AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_etqpk")
-volume_db = -80.0
+volume_db = -10.0
 
 [node name="Label" type="Label" parent="."]
 visible = false

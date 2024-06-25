@@ -23,6 +23,9 @@ var notes_to_play_midi: Array[int]
 @onready var current_note_label: Control
 @onready var current_note: int
 @onready var note_explosion := preload("res://assets/vfx/note_explosion_cpu_particles_2d.tscn")
+@onready var perfect_label := preload("res://perfect_rich_text_label.tscn")
+@onready var early_label := preload("res://early_rich_text_label.tscn")
+@onready var late_label := preload("res://late_rich_text_label.tscn")
 var is_checking_notes = true
 var snapped_note # converted detected pitch note for checking
 var note_explosions := []
@@ -76,18 +79,13 @@ func _on_pitch_detector_note_detected(note_detected) -> void:
 		snapped_note = snapped(float(note_detected), 1)
 		print(snapped_note)
 		check_note()
-	# check explosions
-	#for note_midi in notes_to_play_midi:
-		#if snapped_note == note_midi:
-			## if note_label is visible:
-			#if note_labels_to_play[notes_to_play_midi.find(snapped_note)].modulate.a == 1.0:
-				#note_explosions[notes_to_play_midi.find(note_midi, 7)].emitting = true
 
 
 func _on_qwerty_listener_note_on(note_played) -> void:
 	if is_checking_notes:
 		snapped_note = note_played
 		check_note()
+
 
 func play_all_notes() -> void:
 	for midi_note in notes_to_play_midi:
@@ -109,12 +107,24 @@ func play_all_notes() -> void:
 
 
 func check_note() -> void:
-	if snapped_note == current_note:
+	if snapped_note == current_note: # correct
 		# note go rainbow
 		current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		# set explosion position to note_label position with offset
 		note_explosions[note_label_to_play_index].position = current_note_label.global_position + Vector2(20, 50)
 		note_explosions[note_label_to_play_index].emitting = true
+	#if perfect: # very small amount of time off closest beat in bar 1,3,5,7
+		var perfect_label_spawn = perfect_label.instantiate()
+		add_child(perfect_label_spawn)
+		perfect_label_spawn.position = current_note_label.global_position + Vector2(-50, 90)
+	#elif early: # moderate amount of time off before closest beat in bar 1,3,5,7
+		var early_label_spawn = early_label.instantiate()
+		add_child(early_label_spawn)
+		early_label_spawn.position = current_note_label.global_position + Vector2(-50, 90)
+	#elif late: # moderate amount of time off after closest beat in bar 1,3,5,7
+		var late_label_spawn = late_label.instantiate()
+		add_child(late_label_spawn)
+		late_label_spawn.position = current_note_label.global_position + Vector2(0, 90)
 			
 		if note_label_to_play_index < note_labels_to_play.size() - 1:
 			note_label_to_play_index += 1
@@ -165,6 +175,5 @@ func slide_in(object_to_slide: Node) -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(object_to_slide, "position:x", 194, 0.5).from(400) # slide left
-	
 	tween = create_tween() # tween in parallel
 	tween.tween_property(object_to_slide, "modulate:a", 1.0, 0.2).from(0.0) # fade in
