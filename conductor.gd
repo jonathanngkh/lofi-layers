@@ -20,13 +20,19 @@ var beat_in_bar = 1
 var measure = 1
 
 signal beat_incremented()
+signal downbeat_incremented()
+signal upbeat_incremented()
 signal measure_incremented()
 signal measure_minus_one_beat_incremented()
 signal beat_in_bar_signal(beat_in_bar)
 signal current_measure_signal(measure)
+signal early_signal
+signal late_signal
+signal perfect_signal
 
 
 func _ready():
+	$StartTimer.timeout.connect(_on_start_timer_timeout)
 	beat_incremented.connect(_on_beat_incremented)
 	sec_per_beat = 60.0 / bpm
 	self.play()
@@ -47,8 +53,8 @@ func _report_beat():
 		beat_in_bar += 1
 		if beat_in_bar > beats_per_bar:
 			beat_in_bar = 1
-		emit_signal("beat_incremented")
-		emit_signal("beat_in_bar_signal", beat_in_bar)
+		beat_incremented.emit()
+		beat_in_bar_signal.emit(beat_in_bar)
 
 
 func play_with_beat_offset(num):
@@ -57,43 +63,46 @@ func play_with_beat_offset(num):
 	$StartTimer.start()
 
 
-var time_of_closest_quaver = 0.00
-var time_off_quaver = 0.00
-
-
-func closest_quaver_in_song(time_of_note_played):
-	var closest_quaver_in_song = 0
-	# when confused, use 60bpm, or 1 sec_per_beat to math)
-	closest_quaver_in_song = round(time_of_note_played / sec_per_quaver)
-	time_of_closest_quaver = closest_quaver_in_song * sec_per_quaver
-	time_off_quaver = abs(time_of_closest_quaver - time_of_note_played)
-	closest_quaver_in_song += 1
-	#if closest_beat > beats_per_bar: # only if music is meant to loop for beats_in_bar
-		#closest_beat = 1
-	return Vector2(closest_quaver_in_song, time_off_quaver)
-
 var time_of_closest_beat = 0.00
 var time_off_beat = 0.00
 
-func closest_beat_in_song(time_of_note_played):
+func closest_beat_in_song(time_of_note_played: float):
 	var closest_beat_in_song = 0
 	# when confused, use 60bpm, or 1 sec_per_beat to math
 	closest_beat_in_song = round(time_of_note_played / sec_per_beat)
 	time_of_closest_beat = closest_beat_in_song * sec_per_beat
+	
 	time_off_beat = abs(time_of_closest_beat - time_of_note_played)
 	closest_beat_in_song += 1
 	#if closest_beat > beats_per_bar: # only if music is meant to loop for beats_in_bar
 		#closest_beat = 1
-	return Vector2(closest_beat_in_song, time_off_beat)
+	var punctuality
+	if time_of_note_played > time_of_closest_beat:
+		punctuality = "late"
+	else:
+		punctuality = "early"
+	return [int(closest_beat_in_song), time_off_beat, punctuality]
 
-func closest_beat_in_bar(time_of_note_played): 
-	var closest_beat_in_bar = closest_beat_in_song(time_of_note_played).x
+
+func closest_beat_in_bar(time_of_note_played: float): 
+	var closest_beat_in_bar = closest_beat_in_song(time_of_note_played)[0]
 	if int(closest_beat_in_bar) % beats_per_bar == 0:
 		closest_beat_in_bar = beats_per_bar
 	else:
 		closest_beat_in_bar = int(closest_beat_in_bar) % beats_per_bar
-	return Vector2(int(closest_beat_in_bar), time_off_beat)
+		
+	return [int(closest_beat_in_bar), time_off_beat]
 
+
+func check_punctuality(time_of_note_played: float) -> String:
+	var closest_beat_in_bar = closest_beat_in_bar(time_of_note_played)
+	var time_off_beat = closest_beat_in_bar.y
+	if not closest_beat_in_bar % 2 == 0 and time_off_beat > sec_per_beat/2.0:
+		print('late')
+		return "late"
+	else:
+		print('perfect')
+		return "perfect"
 
 func play_from_beat(beat, offset):
 	last_reported_beat = beat - 1
@@ -123,10 +132,16 @@ func _on_start_timer_timeout():
 func _on_beat_incremented():
 	if beat_in_bar == 1:
 		measure += 1
-		emit_signal("measure_incremented")
+		measure_incremented.emit()
 		
 	if beat_in_bar == 8:
-		emit_signal("measure_minus_one_beat_incremented")
+		measure_minus_one_beat_incremented.emit()
+		
+	if beat_in_bar % 2 == 0:
+		upbeat_incremented.emit()
+	else:
+		downbeat_incremented.emit()
+		
 		
 	$Label.text = str(beat_in_bar)
 	# alternate between 2 tracks on even vs odd measures to retain longtail.
@@ -135,9 +150,9 @@ func _on_beat_incremented():
 		#if beat_in_bar == 1:
 			#intro.play()
 	
-	if measure % 2 == 0:
-		if beat_in_bar == 1  and measure >= 2:
+	if measure % 2 == 0 and measure >= 2:
+		if beat_in_bar == 1:
 			track_1.play()
 	else:
-		if beat_in_bar == 1  and measure >= 2:
+		if beat_in_bar == 1:
 			track_2.play()

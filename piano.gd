@@ -3,6 +3,7 @@ extends Control
 @export var octave: int = 5 # 0 to 8
 @export var sound_on: bool = true
 @export var echo_on: bool = false
+@export var debug_mode_on: bool = false
 
 signal note_played_signal(pitch)
 signal note_released_signal(pitch)
@@ -82,14 +83,15 @@ func detector_key_down(note_heard: String) -> void:
 		var note_value : int = snapped_note % 12
 		if note_octave == octave:
 			pitch_node_dictionary[note_value].button_pressed = true
-		emit_signal("note_played_signal", snapped_note)
+		note_played_signal.emit(snapped_note)
 	# need to experiment with playing the note only on high confidence
 	# and play note only on new amplitude spike. check aubio functions
 	# if "repeated" notes, need to treat as 1 long note held down. and 0 detected as note up
 
 
 func midi_key_down(note_played: int) -> void:
-	print(MusicTheoryDB.get_note_name(note_played), MusicTheoryDB.get_note_octave(note_played), " played (midi)")
+	if debug_mode_on:
+		print(MusicTheoryDB.get_note_name(note_played), MusicTheoryDB.get_note_octave(note_played), " played (midi)")
 	var note_name := MusicTheoryDB.get_note_name(note_played)
 	var note_octave:= MusicTheoryDB.get_note_octave(note_played)
 	if sound_on:
@@ -97,18 +99,19 @@ func midi_key_down(note_played: int) -> void:
 	var note_value : int = note_played % 12
 	if note_octave == octave:
 		pitch_node_dictionary[note_value].button_pressed = true
-	emit_signal("note_played_signal", note_played)
+	note_played_signal.emit(note_played)
 
 
 func midi_key_up(note_released: int) -> void:
-	print(note_released, " released (midi)")
+	if debug_mode_on:
+		print(note_released, " released (midi)")
 	#if pitch_node_dictionary.keys().has(note_released):
 		#pitch_node_dictionary[note_released].button_pressed = false
 	var note_octave:= MusicTheoryDB.get_note_octave(note_released)
 	var note_value : int = note_released % 12
 	if note_octave == octave:
 		pitch_node_dictionary[note_value].button_pressed = false
-	emit_signal("note_released_signal", note_released)
+	note_released_signal.emit(note_released)
 
 
 func qwerty_key_down(note_played: int) -> void:
@@ -119,8 +122,9 @@ func qwerty_key_down(note_played: int) -> void:
 		pitch_node_dictionary[note_value].button_pressed = true
 	if sound_on:
 		sampler.play_note(note_name, note_octave)
-	print(MusicTheoryDB.get_note_name(note_played), MusicTheoryDB.get_note_octave(note_played), " played (qwerty)")
-	emit_signal("note_played_signal", note_played)
+	if debug_mode_on:
+		print(MusicTheoryDB.get_note_name(note_played), MusicTheoryDB.get_note_octave(note_played), " played (qwerty)")
+	note_played_signal.emit(note_played)
 
 
 func qwerty_key_up(note_released: int) -> void:
@@ -128,8 +132,9 @@ func qwerty_key_up(note_released: int) -> void:
 	var note_octave := MusicTheoryDB.get_note_octave(note_released)
 	if note_octave == octave:
 		pitch_node_dictionary[note_value].button_pressed = false
-	print(note_released, " released (qwerty)")
-	emit_signal("note_released_signal", note_released)
+	if debug_mode_on:
+		print(note_released, " released (qwerty)")
+	note_released_signal.emit(note_released)
 
 
 func change_octave(plus_or_minus: String) -> void:

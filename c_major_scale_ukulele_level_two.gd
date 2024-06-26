@@ -11,7 +11,7 @@ extends Control
 @onready var sampler_timer: Timer = $SamplerTimer
 
 var wave_effect := "[wave amp=100 freq=20]"
-var rainbow_effect := "[rainbow]"
+var rainbow_effect := "[rainbow freq=1.2]"
 var shake_effect := "[shake]"
 var pulse_effect := "[pulse]"
 var fade_effect := "[fade]"
@@ -33,6 +33,8 @@ var note_explosions := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Conductor.beat_incremented.connect(func(): $Label.text = str(Conductor.beat_in_bar))
+	Conductor.upbeat_incremented.connect(bounce_current_note_label)
 	if using_aubio:
 		PitchDetector.connect("detected_pitch", _on_pitch_detector_note_detected)
 	if using_qwerty:
@@ -108,23 +110,49 @@ func play_all_notes() -> void:
 
 func check_note() -> void:
 	if snapped_note == current_note: # correct
+			
 		# note go rainbow
-		current_note_label.text = rainbow_effect + current_note_label.text[-1]
+		#current_note_label.text = rainbow_effect + current_note_label.text[-1]
+		vary_glow()
 		# set explosion position to note_label position with offset
 		note_explosions[note_label_to_play_index].position = current_note_label.global_position + Vector2(20, 50)
 		note_explosions[note_label_to_play_index].emitting = true
-	#if perfect: # very small amount of time off closest beat in bar 1,3,5,7
-		var perfect_label_spawn = perfect_label.instantiate()
-		add_child(perfect_label_spawn)
-		perfect_label_spawn.position = current_note_label.global_position + Vector2(-50, 90)
-	#elif early: # moderate amount of time off before closest beat in bar 1,3,5,7
-		var early_label_spawn = early_label.instantiate()
-		add_child(early_label_spawn)
-		early_label_spawn.position = current_note_label.global_position + Vector2(-50, 90)
-	#elif late: # moderate amount of time off after closest beat in bar 1,3,5,7
-		var late_label_spawn = late_label.instantiate()
-		add_child(late_label_spawn)
-		late_label_spawn.position = current_note_label.global_position + Vector2(0, 90)
+		
+		var time_off_beat = Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[1]
+		var punctuality = ""
+		if Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[0] % 2 != 0: # closest beat is down beat
+			if time_off_beat > Conductor.sec_per_beat/4.5: # time off beat is significant
+				# divide by 4 because significant time off beat in "220" bpm seems to be 0.07 which is 25% of 0.2727 (60/220)
+				punctuality = Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[2] # determine late or early
+				print(punctuality)
+				if punctuality == "early": # moderate amount of time off before closest beat in bar 1,3,5,7
+					var early_label_spawn = early_label.instantiate()
+					add_child(early_label_spawn)
+					early_label_spawn.position = current_note_label.global_position + Vector2(-70, 90)
+				elif punctuality == "late": # moderate amount of time off after closest beat in bar 1,3,5,7
+					var late_label_spawn = late_label.instantiate()
+					add_child(late_label_spawn)
+					late_label_spawn.position = current_note_label.global_position + Vector2(20, 90)
+			else:
+				punctuality = "perfect"
+				if punctuality == "perfect": # very small amount of time off closest beat in bar 1,3,5,7
+					var perfect_label_spawn = perfect_label.instantiate()
+					add_child(perfect_label_spawn)
+					perfect_label_spawn.position = current_note_label.global_position + Vector2(-50, 90)
+		else: # closest beat is upbeat
+			punctuality = Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[2]
+			if punctuality == "early": # moderate amount of time off before closest beat in bar 1,3,5,7
+				var early_label_spawn = early_label.instantiate()
+				add_child(early_label_spawn)
+				early_label_spawn.position = current_note_label.global_position + Vector2(-70, 90)
+			elif punctuality == "late": # moderate amount of time off after closest beat in bar 1,3,5,7
+				var late_label_spawn = late_label.instantiate()
+				add_child(late_label_spawn)
+				late_label_spawn.position = current_note_label.global_position + Vector2(20, 90)
+			#print("actual bib: ", Conductor.beat_in_bar)
+			#print("closest bib: ", Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[0])
+			#print("punctuality: ", Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[2])
+			
 			
 		if note_label_to_play_index < note_labels_to_play.size() - 1:
 			note_label_to_play_index += 1
@@ -135,12 +163,35 @@ func check_note() -> void:
 			var tween = create_tween()
 			tween.tween_property(current_note_label, "modulate:a", 1.0, 0.2).from(0.0)
 			# make note bounce
-			current_note_label.text = wave_effect + current_note_label.text[-1]
+			#current_note_label.text = wave_effect + current_note_label.text[-1]
+			current_note_label.text = current_note_label.text[-1]
 			# set current note to MusicTheoryDB-friendly string
 			current_note = MusicTheoryDB.get_midi_pitch(current_note_label.get_parent().name.left(1) + "_String_" + current_note_label.text[-1])
 		if current_note_label.get_parent().get_parent().get_parent().name == "UkuleleTab2":
 			$BouncingRhythmContainerNode.position.y = 500.0
 		$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(note_labels_to_play[note_label_to_play_index].global_position.x + 20.0)
+
+
+func bounce_current_note_label() -> void:
+	var tween = create_tween()
+	var bounce_height = 20
+	tween.set_trans(Tween.TRANS_QUAD)
+	#tween.set_trans(Tween.TRANS_EXPO)
+	tween.tween_property(current_note_label, "position:y", position.y + bounce_height, 60.0/220.0).set_ease(Tween.EASE_IN)
+	tween.tween_property(current_note_label, "position:y", position.y, 60.0/220.0).set_ease(Tween.EASE_OUT)
+	tween.play()
+
+
+func vary_glow() -> void:
+	var max_glow := Color(0.5, 3.2, 0.5)
+	var min_glow := Color(0.5, 1.5, 0.5)
+	var tween_duration := 60.0/220.0
+	var tween = create_tween()
+	tween.set_loops()
+	tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(current_note_label, "theme_override_colors/default_color", min_glow, tween_duration).from(max_glow)
+	tween.tween_property(current_note_label, "theme_override_colors/default_color", max_glow, tween_duration).from(min_glow)
+	tween.play()
 
 
 func left_click(coordinates: Vector2):
