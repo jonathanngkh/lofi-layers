@@ -1,8 +1,8 @@
 extends AudioStreamPlayer
 
 # change to 220, and 8 to be able to detect quavers. down beats become 1,3,5,7
-@export var bpm := 220
-@export var beats_per_bar := 8 # assumed to be crotchets in 4 4 time
+@export var bpm: float = 220.0
+@export var beats_per_bar: int = 8 # assumed to be crotchets in 4 4 time
 
 @onready var intro: AudioStreamPlayer = $IntroAudioStreamPlayer
 @onready var track_1: AudioStreamPlayer = $Track1AudioStreamPlayer
@@ -11,9 +11,7 @@ extends AudioStreamPlayer
 # Tracking the beat and song position
 var song_position_in_seconds = 0.0
 var song_position_in_beats = 1 # will always be 1 beat behind what's heard
-var sec_per_beat = 60.0 / bpm
-var sec_per_quaver = sec_per_beat / 2
-var sec_per_semiquaver = sec_per_beat / 4
+var sec_per_beat: float = 60.0 / bpm
 var last_reported_beat = 0
 var beats_before_start = 0
 var beat_in_bar = 1
@@ -26,12 +24,12 @@ signal measure_incremented()
 signal measure_minus_one_beat_incremented()
 signal beat_in_bar_signal(beat_in_bar)
 signal current_measure_signal(measure)
-signal early_signal
-signal late_signal
-signal perfect_signal
 
 
 func _ready():
+	#pitch_scale *= 1.2
+	#bpm *= 1.2
+	#intro.pitch_scale *= 1.2
 	$StartTimer.timeout.connect(_on_start_timer_timeout)
 	beat_incremented.connect(_on_beat_incremented)
 	sec_per_beat = 60.0 / bpm
@@ -94,16 +92,6 @@ func closest_beat_in_bar(time_of_note_played: float):
 	return [int(closest_beat_in_bar), time_off_beat]
 
 
-func check_punctuality(time_of_note_played: float) -> String:
-	var closest_beat_in_bar = closest_beat_in_bar(time_of_note_played)
-	var time_off_beat = closest_beat_in_bar.y
-	if not closest_beat_in_bar % 2 == 0 and time_off_beat > sec_per_beat/2.0:
-		print('late')
-		return "late"
-	else:
-		print('perfect')
-		return "perfect"
-
 func play_from_beat(beat, offset):
 	last_reported_beat = beat - 1
 	beat_in_bar = beat
@@ -137,10 +125,12 @@ func _on_beat_incremented():
 	if beat_in_bar == 8:
 		measure_minus_one_beat_incremented.emit()
 		
-	if beat_in_bar % 2 == 0:
-		upbeat_incremented.emit()
-	else:
+	if not beat_in_bar % 2 == 0:
+		$BassAudioStreamPlayer.play()
 		downbeat_incremented.emit()
+	else:
+		$TaikoAudioStreamPlayer.play()
+		upbeat_incremented.emit()
 		
 		
 	$Label.text = str(beat_in_bar)

@@ -328,7 +328,8 @@ text = "This is C. Try playing it!"
 
 [node name="ButtonPrompts" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
+offset_left = -292.0
+offset_right = -252.0
 offset_bottom = 40.0
 
 [node name="C_QPrompt" type="TextureRect" parent="ButtonPrompts"]

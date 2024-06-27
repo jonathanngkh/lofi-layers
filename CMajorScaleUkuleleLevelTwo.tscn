@@ -1781,6 +1781,10 @@ one_shot = true
 
 [node name="BouncingRhythmContainerNode" type="Control" parent="."]
 anchors_preset = 0
+offset_left = 1.0
+offset_top = 85.0
+offset_right = 1.0
+offset_bottom = 85.0
 
 [node name="BouncingRhythmIndicator" parent="BouncingRhythmContainerNode" instance=ExtResource("16_g62k6")]
 position = Vector2(297, 212)
@@ -1796,3 +1800,13 @@ offset_bottom = 167.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 99.0
+theme_override_font_sizes/font_size = 30
+text = "Beat in bar 88: "
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 216.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 30
+text = "Beat in bar 44: "

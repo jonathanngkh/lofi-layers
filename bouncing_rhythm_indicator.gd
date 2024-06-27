@@ -11,28 +11,29 @@ var dark_green := Color(0, 0.4, 0)
 var glow_time : float = 0.2
 var bounce_height : float = 70.0
 
+
 func _ready():
 	#conductor.measure_incremented.connect(_on_conductor_measure_incremented)
-	Conductor.beat_incremented.connect(_on_conductor_beat_incremented)
+	#Conductor.beat_incremented.connect(_on_conductor_beat_incremented)
+	Conductor.downbeat_incremented.connect(bounce)
 
 func _process(_delta: float) -> void:
 	pass
 
 
-func _on_conductor_beat_incremented():
-	if Conductor.beat_in_bar % 2 == 0: # use this if bpm and bpb set to 220, 8 as opposed to 110, 4
-		bounce()
-		#return
-	#if conductor.beat_in_bar == 1:
-		#glow_red()
-	#else:
-		#glow_green()
+#func _on_conductor_beat_incremented():
+	## use this if bpm and bpb set to 220, 8 as opposed to 110, 4
+	#if Conductor.beat_in_bar % 2 == 0: # every even beat 0 2 4 6 8
+		##bounce()
+		#pass
+	#else: # every odd beat 1 3 5 7
+		#bounce()
 
 
 func move_horizontally_to(next_location_x: float) -> void:
 	glow_white()
 	var tween = create_tween()
-	tween.tween_property(self, "position:x", next_location_x, 60.0/220.0*2)
+	tween.tween_property(self, "position:x", next_location_x, Conductor.sec_per_beat * 2)
 	tween.play()
 
 
@@ -64,6 +65,6 @@ func bounce():
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
 	#tween.set_trans(Tween.TRANS_EXPO)
-	tween.tween_property(self, "position:y", position.y + bounce_height, 60.0/220.0).set_ease(Tween.EASE_IN)
-	tween.tween_property(self, "position:y", position.y, 60.0/220.0).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position:y", position.y - bounce_height, Conductor.sec_per_beat - 0.01).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position:y", position.y, Conductor.sec_per_beat - 0.01).set_ease(Tween.EASE_IN)
 	tween.play()
