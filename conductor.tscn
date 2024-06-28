@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://n7axx3xo7km"]
+[gd_scene load_steps=10 format=3 uid="uid://n7axx3xo7km"]
 
 [ext_resource type="AudioStream" uid="uid://rgukl6s53qkc" path="res://assets/music/10 min track Input_1_110bpm.ogg" id="1_tpeg8"]
 [ext_resource type="AudioStream" uid="uid://b3hhcwy3e5pje" path="res://assets/music/Input_1_110bpm.wav" id="1_vtorv"]
@@ -7,18 +7,19 @@
 [ext_resource type="AudioStream" uid="uid://nv13d58bsn7i" path="res://assets/music/Input_2_110bpm.wav" id="5_etqpk"]
 [ext_resource type="AudioStream" uid="uid://cquu27wp0fhbx" path="res://assets/music/008_Percussion_Taiko Hits(Rim)_2.5secs.wav" id="6_meh0g"]
 [ext_resource type="AudioStream" uid="uid://dkwcghd4h64ln" path="res://assets/music/bass_drum-p-PB.wav" id="7_j4rk3"]
+[ext_resource type="AudioStream" uid="uid://bqseca2vsafvm" path="res://assets/music/Bumbac Mid(Open Hit).wav" id="8_c63xj"]
+[ext_resource type="AudioStream" uid="uid://cp3rxn37k86d2" path="res://assets/music/Bumbac Mid(Closed Hit).wav" id="9_s5u87"]
 
 [node name="Conductor" type="AudioStreamPlayer" groups=["conductor"]]
 stream = ExtResource("1_tpeg8")
-volume_db = -10.0
+volume_db = -80.0
 script = ExtResource("2_yvi5o")
-bpm = 110.0
 
 [node name="StartTimer" type="Timer" parent="."]
 
 [node name="IntroAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4nu4q")
-volume_db = -80.0
+volume_db = -10.0
 
 [node name="Track1AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_vtorv")
@@ -41,4 +42,19 @@ volume_db = -80.0
 
 [node name="BassAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_j4rk3")
-volume_db = -80.0
+
+[node name="OpenHitAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_c63xj")
+volume_db = -10.0
+
+[node name="OpenHitAudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_c63xj")
+volume_db = -10.0
+
+[node name="ClosedHitAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_s5u87")
+volume_db = -10.0
+
+[node name="ClosedHitAudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_s5u87")
+volume_db = -10.0

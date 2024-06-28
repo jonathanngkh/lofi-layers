@@ -27,9 +27,6 @@ signal current_measure_signal(measure)
 
 
 func _ready():
-	#pitch_scale *= 1.2
-	#bpm *= 1.2
-	#intro.pitch_scale *= 1.2
 	$StartTimer.timeout.connect(_on_start_timer_timeout)
 	beat_incremented.connect(_on_beat_incremented)
 	sec_per_beat = 60.0 / bpm
@@ -125,20 +122,33 @@ func _on_beat_incremented():
 	if beat_in_bar == 8:
 		measure_minus_one_beat_incremented.emit()
 		
-	if not beat_in_bar % 2 == 0:
-		$BassAudioStreamPlayer.play()
+	if not beat_in_bar % 2 == 0: # odd beats 1357
 		downbeat_incremented.emit()
-	else:
-		$TaikoAudioStreamPlayer.play()
+	else: # even beats 2468
 		upbeat_incremented.emit()
+		
+	if beat_in_bar == 1:
+		$ClosedHitAudioStreamPlayer.play()
+		$OpenHitAudioStreamPlayer2.play()
+	if beat_in_bar == 2:
+		pass
+	if beat_in_bar == 3:
+		$OpenHitAudioStreamPlayer.play()
+	if beat_in_bar == 4:
+		pass
+	if beat_in_bar == 5:
+		$OpenHitAudioStreamPlayer2.play()
+	if beat_in_bar == 6:
+		pass
+	if beat_in_bar == 7:
+		$OpenHitAudioStreamPlayer.play()
+	if beat_in_bar == 8:
+		pass
 		
 		
 	$Label.text = str(beat_in_bar)
 	# alternate between 2 tracks on even vs odd measures to retain longtail.
 	# beat in bar 4 because intro takes 4 beats in an 8 quaver bar
-	#if measure == 2:
-		#if beat_in_bar == 1:
-			#intro.play()
 	
 	if measure % 2 == 0 and measure >= 2:
 		if beat_in_bar == 1:
