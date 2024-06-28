@@ -61,6 +61,7 @@ func _ready() -> void:
 		if not note_label == current_note_label:
 			note_label.modulate.a = 0
 
+
 func get_note_labels_to_play(from_ukulele_tab: Control) -> void:
 	var new_note_labels := []
 	for string in from_ukulele_tab.get_children():
@@ -71,11 +72,6 @@ func get_note_labels_to_play(from_ukulele_tab: Control) -> void:
 						new_note_labels.append(note_label)
 						new_note_labels.sort_custom(func(a, b): return a.name.naturalnocasecmp_to(b.name) < 0)
 	note_labels_to_play.append_array(new_note_labels)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 
 func _on_pitch_detector_note_detected(note_detected) -> void:
@@ -112,8 +108,8 @@ func play_all_notes() -> void:
 
 
 func check_note() -> void:
-	if snapped_note == current_note: # correct
-			
+	if snapped_note == current_note: # correct note played
+		label_punctuality()
 		# note go rainbow
 		#current_note_label.text = rainbow_effect + current_note_label.text[-1]
 		
@@ -121,62 +117,43 @@ func check_note() -> void:
 		note_explosions[note_label_to_play_index].position = current_note_label.global_position + Vector2(20, 50)
 		note_explosions[note_label_to_play_index].emitting = true
 		
-		var time_off_beat = Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[1]
-		var punctuality = ""
-		#var on_beat_window := 0.56 # 220
-		var on_beat_window := 0.06 # 220
-		# if bpm lower, tolerance higher. if bpm higher, tolerance lower.
-		#var rhythm_tolerance := 4.5
-		if Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[0] % 2 != 0: # closest beat is down beat
-			if time_off_beat > on_beat_window:
-			#if time_off_beat > Conductor.sec_per_beat / rhythm_tolerance: # time off beat is significant
-				# divide by 4 because significant time off beat in "220" bpm seems to be 0.07 which is 25% of 0.2727 (60/220)
-				punctuality = Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[2] # determine late or early
-				if punctuality == "early": # moderate amount of time off before closest beat in bar 1,3,5,7
-					current_note_label.add_theme_color_override("default_color", early_color)
-					var early_label_spawn = early_label.instantiate()
-					add_child(early_label_spawn)
-					early_label_spawn.position = current_note_label.global_position + Vector2(-70, 90)
-				elif punctuality == "late": # moderate amount of time off after closest beat in bar 1,3,5,7
-					current_note_label.add_theme_color_override("default_color", late_color)
-					var late_label_spawn = late_label.instantiate()
-					add_child(late_label_spawn)
-					late_label_spawn.position = current_note_label.global_position + Vector2(20, 90)
-			else:
-				punctuality = "perfect"
-				if punctuality == "perfect": # very small amount of time off closest beat in bar 1,3,5,7
-					success_glow()
-					var perfect_label_spawn = perfect_label.instantiate()
-					add_child(perfect_label_spawn)
-					perfect_label_spawn.position = current_note_label.global_position + Vector2(-50, 90)
-		else: # closest beat is upbeat
-			punctuality = Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[2]
-			if punctuality == "early": # moderate amount of time off before closest beat in bar 1,3,5,7
-				current_note_label.add_theme_color_override("default_color", early_color)
-				var early_label_spawn = early_label.instantiate()
-				add_child(early_label_spawn)
-				early_label_spawn.position = current_note_label.global_position + Vector2(-70, 90)
-			elif punctuality == "late": # moderate amount of time off after closest beat in bar 1,3,5,7
-				current_note_label.add_theme_color_override("default_color", late_color)
-				var late_label_spawn = late_label.instantiate()
-				add_child(late_label_spawn)
-				late_label_spawn.position = current_note_label.global_position + Vector2(20, 90)
-			
 		if note_label_to_play_index < note_labels_to_play.size() - 1:
 			note_label_to_play_index += 1
 			# advance note_label
 			current_note_label = note_labels_to_play[note_label_to_play_index]
 			# fade in current note label
 			var tween = create_tween()
-			tween.tween_property(current_note_label, "modulate:a", 1.0, 0.2).from(0.0)
+			tween.tween_property(current_note_label, "modulate:a", 1.0, 0.4).from(0.0)
 			# make note bounce
 			#current_note_label.text = wave_effect + current_note_label.text[-1]
-			current_note_label.text = current_note_label.text[-1]
+			#current_note_label.text = current_note_label.text[-1]
 			# set current note to MusicTheoryDB-friendly string
 			current_note = MusicTheoryDB.get_midi_pitch(current_note_label.get_parent().name.left(1) + "_String_" + current_note_label.text[-1])
+			print("index: ", note_label_to_play_index)
+		else:
+			print('hi')
+			print("index after hi : ", note_label_to_play_index)
+			reset_notes_to_play()
+
+		#if note_label_to_play_index == note_labels_to_play.size() -1:
+			#reset_notes_to_play()
+
 		if current_note_label.get_parent().get_parent().get_parent().name == "UkuleleTab2":
 			$BouncingRhythmContainerNode.position.y = 590.0
+		
 		$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(note_labels_to_play[note_label_to_play_index].global_position.x + 20.0)
+
+
+func reset_notes_to_play() -> void:
+	$BouncingRhythmContainerNode.position.y = 85
+	note_label_to_play_index = 0
+	current_note_label = note_labels_to_play[0]
+	current_note = MusicTheoryDB.get_midi_pitch(current_note_label.get_parent().name.left(1) + "_String_" + current_note_label.text[-1])
+	$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(note_labels_to_play[note_label_to_play_index].global_position.x + 20.0)
+	for note_label in note_labels_to_play:
+		# show only first note
+		if not note_label == current_note_label:
+			note_label.modulate.a = 0
 
 
 func bounce_current_note_label() -> void:
@@ -235,3 +212,46 @@ func slide_in(object_to_slide: Node) -> void:
 	tween.tween_property(object_to_slide, "position:x", 194, 0.5).from(400) # slide left
 	tween = create_tween() # tween in parallel
 	tween.tween_property(object_to_slide, "modulate:a", 1.0, 0.2).from(0.0) # fade in
+
+
+func label_punctuality() -> void:
+	var time_off_beat = Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[1]
+	var punctuality = ""
+	#var on_beat_window := 0.56 # 220
+	var on_beat_window := 0.06 # 220
+	# if bpm lower, tolerance higher. if bpm higher, tolerance lower.
+	#var rhythm_tolerance := 4.5
+	if Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[0] % 2 != 0: # closest beat is down beat
+		if time_off_beat > on_beat_window:
+		#if time_off_beat > Conductor.sec_per_beat / rhythm_tolerance: # time off beat is significant
+			# divide by 4 because significant time off beat in "220" bpm seems to be 0.07 which is 25% of 0.2727 (60/220)
+			punctuality = Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[2] # determine late or early
+			if punctuality == "early": # moderate amount of time off before closest beat in bar 1,3,5,7
+				current_note_label.add_theme_color_override("default_color", early_color)
+				var early_label_spawn = early_label.instantiate()
+				add_child(early_label_spawn)
+				early_label_spawn.position = current_note_label.global_position + Vector2(-70, 90)
+			elif punctuality == "late": # moderate amount of time off after closest beat in bar 1,3,5,7
+				current_note_label.add_theme_color_override("default_color", late_color)
+				var late_label_spawn = late_label.instantiate()
+				add_child(late_label_spawn)
+				late_label_spawn.position = current_note_label.global_position + Vector2(20, 90)
+		else:
+			punctuality = "perfect"
+			if punctuality == "perfect": # very small amount of time off closest beat in bar 1,3,5,7
+				success_glow()
+				var perfect_label_spawn = perfect_label.instantiate()
+				add_child(perfect_label_spawn)
+				perfect_label_spawn.position = current_note_label.global_position + Vector2(-50, 90)
+	else: # closest beat is upbeat
+		punctuality = Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[2]
+		if punctuality == "early": # moderate amount of time off before closest beat in bar 1,3,5,7
+			current_note_label.add_theme_color_override("default_color", early_color)
+			var early_label_spawn = early_label.instantiate()
+			add_child(early_label_spawn)
+			early_label_spawn.position = current_note_label.global_position + Vector2(-70, 90)
+		elif punctuality == "late": # moderate amount of time off after closest beat in bar 1,3,5,7
+			current_note_label.add_theme_color_override("default_color", late_color)
+			var late_label_spawn = late_label.instantiate()
+			add_child(late_label_spawn)
+			late_label_spawn.position = current_note_label.global_position + Vector2(20, 90)

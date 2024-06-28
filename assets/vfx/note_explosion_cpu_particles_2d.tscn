@@ -21,3 +21,4 @@ initial_velocity_max = 300.0
 scale_amount_min = 10.0
 scale_amount_max = 10.0
 color_ramp = SubResource("Gradient_5fhvl")
+hue_variation_max = 1.0
