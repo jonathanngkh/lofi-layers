@@ -3,6 +3,7 @@ extends Control
 @export var using_aubio: bool = false
 @export var using_qwerty: bool = true
 @export var using_midi: bool = false
+@export var on_beat_window: float = 0.07
 
 @onready var blank_style_box_flat = preload("res://assets/themes/blank_style_box_flat.tres")
 @onready var ukulele_tab: Control = $TabBoxRichTextLabel/UkuleleTab
@@ -29,6 +30,8 @@ var notes_to_play_midi: Array[int]
 @onready var perfect_label := preload("res://perfect_rich_text_label.tscn")
 @onready var early_label := preload("res://early_rich_text_label.tscn")
 @onready var late_label := preload("res://late_rich_text_label.tscn")
+@onready var cleared_BPM_label := preload("res://cleared_bpm_rich_text_label.tscn")
+@onready var BPM_tick_label := preload("res://bpm_tick_rich_text_label.tscn")
 var is_checking_notes = true
 var snapped_note # converted detected pitch note for checking
 var note_explosions := []
@@ -36,6 +39,7 @@ var note_explosions := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$TabBoxRichTextLabel/TitleRichTextLabel.text = $TabBoxRichTextLabel/TitleRichTextLabel.text.left(16) + str(Conductor.bpm/2)
 	$Button.pressed.connect(func(): pass)
 	Conductor.beat_incremented.connect(func(): $Label.text = "Beat in bar 88: " + str(Conductor.beat_in_bar))
 	Conductor.downbeat_incremented.connect(func(): $Label2.text = "Beat in bar 44: " + str(round(Conductor.beat_in_bar/2.0)))
@@ -129,6 +133,20 @@ func check_note() -> void:
 			current_note = MusicTheoryDB.get_midi_pitch(current_note_label.get_parent().name.left(1) + "_String_" + current_note_label.text[-1])
 		else:
 			reset_notes_to_play()
+			# add spawn bpmtick and add_child to latest if all perfect
+			# position + 100 if no tick yet
+			# if have tick + 50 or something
+			# delete if not perfect
+			# if 3 bpm ticks (get clearedbpm childcount == 3):
+			# add new cleared bpm. repeat.
+			var cleared_bpm_spawn = cleared_BPM_label.instantiate()
+			cleared_bpm_spawn.text = "[b]" + str(Conductor.bpm/2)
+			if $ClearedBPMsControl.get_child_count() > 0:
+				cleared_bpm_spawn.position = $ClearedBPMsControl.get_children()[-1].position + Vector2(250, 0)
+			$ClearedBPMsControl.add_child(cleared_bpm_spawn)
+			#add_child(cleared_bpm_spawn)
+			Conductor.change_bpm(Conductor.bpm + 40)
+			$TabBoxRichTextLabel/TitleRichTextLabel.text = $TabBoxRichTextLabel/TitleRichTextLabel.text.left(16) + str(Conductor.bpm/2)
 
 
 		if current_note_label.get_parent().get_parent().get_parent().name == "UkuleleTab2":
@@ -221,7 +239,7 @@ func label_punctuality() -> void:
 	var time_off_beat = Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[1]
 	var punctuality = ""
 	#var on_beat_window := 0.56 # 220
-	var on_beat_window := 0.07 # 220
+	#var on_beat_window := 0.07 # 220
 	#var on_beat_window := 0.2 # 660
 	# if bpm lower, tolerance higher. if bpm higher, tolerance lower.
 	#var rhythm_tolerance := 4.5

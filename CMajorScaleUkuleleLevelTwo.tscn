@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://q0o540nhr17"]
+[gd_scene load_steps=28 format=3 uid="uid://q0o540nhr17"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_4o4sp"]
 [ext_resource type="Script" path="res://c_major_scale_ukulele_level_two.gd" id="2_vmc5x"]
@@ -15,8 +15,9 @@
 [ext_resource type="StyleBox" uid="uid://yvjfdvkd46s5" path="res://assets/themes/tab_note_style_box.tres" id="13_xineb"]
 [ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="14_pmu0k"]
 [ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="15_kawwk"]
+[ext_resource type="PackedScene" uid="uid://cm2nbuoex438a" path="res://cleared_bpm_rich_text_label.tscn" id="16_a12dr"]
 [ext_resource type="PackedScene" uid="uid://cw85hbblfa1r8" path="res://bouncing_rhythm_indicator.tscn" id="16_g62k6"]
-[ext_resource type="PackedScene" uid="uid://ep6iqj2cdesy" path="res://perfect_rich_text_label.tscn" id="17_kks75"]
+[ext_resource type="PackedScene" uid="uid://dl64k4tlcwdic" path="res://bpm_tick_rich_text_label.tscn" id="17_x47gx"]
 
 [sub_resource type="Resource" id="Resource_8brqr"]
 script = ExtResource("4_jgy4t")
@@ -65,6 +66,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_4o4sp")
 script = ExtResource("2_vmc5x")
+on_beat_window = 0.2
 metadata/_edit_vertical_guides_ = [1280.0, 2209.0, 2294.0, 333.0]
 metadata/_edit_horizontal_guides_ = [720.0, 600.0, 700.0, 800.0, 900.0, 1286.0, 194.0, 753.0]
 
@@ -157,12 +159,12 @@ text = "[center][b]"
 [node name="TitleRichTextLabel" type="RichTextLabel" parent="TabBoxRichTextLabel"]
 layout_mode = 0
 offset_left = 702.0
-offset_top = 45.0
+offset_top = 71.0
 offset_right = 1693.0
-offset_bottom = 148.0
+offset_bottom = 174.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hso38")
 bbcode_enabled = true
-text = "[b]Level 2: Play It To The Beat!"
+text = "[center][b]BPM: "
 
 [node name="UkuleleTab" type="Control" parent="TabBoxRichTextLabel"]
 layout_mode = 1
@@ -1772,9 +1774,6 @@ bbcode_enabled = true
 visible = false
 position = Vector2(454, 571)
 
-[node name="Piano" parent="." instance=ExtResource("15_kawwk")]
-visible = false
-
 [node name="SamplerTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
@@ -1787,16 +1786,38 @@ offset_bottom = 85.0
 [node name="BouncingRhythmIndicator" parent="BouncingRhythmContainerNode" instance=ExtResource("16_g62k6")]
 position = Vector2(297, 212)
 
-[node name="PerfectRichTextLabel" parent="." instance=ExtResource("17_kks75")]
-visible = false
+[node name="PunctualityLabelsControl" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ClearedRichTextLabel" parent="." instance=ExtResource("16_a12dr")]
 layout_mode = 0
-offset_left = 0.0
-offset_right = 386.0
-offset_bottom = 167.0
+offset_left = 112.0
+offset_top = 1209.0
+offset_right = 347.0
+offset_bottom = 1285.0
+text = "[b]Cleared:"
+
+[node name="ClearedBPMsControl" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 364.0
+offset_top = 1209.0
+offset_right = 2381.0
+offset_bottom = 1285.0
+
+[node name="ClearedBPM" parent="ClearedBPMsControl" instance=ExtResource("16_a12dr")]
+layout_mode = 0
+offset_right = 217.0
+
+[node name="BPMTick" parent="ClearedBPMsControl/ClearedBPM" instance=ExtResource("17_x47gx")]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 139.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 216.0
 offset_bottom = 99.0
 theme_override_font_sizes/font_size = 30
 text = "Beat in bar 88: "
@@ -1809,12 +1830,13 @@ offset_bottom = 131.0
 theme_override_font_sizes/font_size = 30
 text = "Beat in bar 44: "
 
-[node name="PunctualityLabelsControl" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="Button" type="Button" parent="."]
+visible = false
 layout_mode = 0
-offset_right = 96.0
-offset_bottom = 80.0
+offset_left = 141.0
+offset_top = 93.0
+offset_right = 237.0
+offset_bottom = 173.0
+
+[node name="Piano" parent="." instance=ExtResource("15_kawwk")]
+visible = false

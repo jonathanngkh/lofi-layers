@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://db7uirthcq6ot"]
+[gd_scene load_steps=36 format=3 uid="uid://db7uirthcq6ot"]
 
 [ext_resource type="Texture2D" uid="uid://snijjaqclrdu" path="res://assets/music theory/C normal piano key.png" id="1_4s236"]
 [ext_resource type="Script" path="res://piano.gd" id="1_stb0y"]
@@ -58,6 +58,8 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25cht"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0aky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_isq6y"]
 
 [node name="Piano" type="Control"]
 layout_mode = 3
@@ -308,6 +310,7 @@ offset_right = 208.0
 offset_bottom = 1370.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 88
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]C"
 
@@ -319,6 +322,7 @@ offset_right = 321.0
 offset_bottom = 863.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]C#
 "
@@ -331,6 +335,7 @@ offset_right = 482.0
 offset_bottom = 1370.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 88
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]D"
 
@@ -342,6 +347,7 @@ offset_right = 647.0
 offset_bottom = 863.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]D#
 "
@@ -354,6 +360,7 @@ offset_right = 756.0
 offset_bottom = 1370.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 88
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]E"
 
@@ -365,6 +372,7 @@ offset_right = 1030.0
 offset_bottom = 1370.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 88
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]F"
 
@@ -376,6 +384,7 @@ offset_right = 1131.0
 offset_bottom = 863.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]F#
 "
@@ -388,6 +397,7 @@ offset_right = 1304.0
 offset_bottom = 1370.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 88
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]G"
 
@@ -399,6 +409,7 @@ offset_right = 1441.0
 offset_bottom = 863.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]G#
 "
@@ -411,6 +422,7 @@ offset_right = 1578.0
 offset_bottom = 1370.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 88
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]A"
 
@@ -422,6 +434,7 @@ offset_right = 1757.0
 offset_bottom = 863.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]A#
 "
@@ -434,6 +447,7 @@ offset_right = 1852.0
 offset_bottom = 1370.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 88
+theme_override_styles/normal = SubResource("StyleBoxEmpty_isq6y")
 bbcode_enabled = true
 text = "[center]B"
 

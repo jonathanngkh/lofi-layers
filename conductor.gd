@@ -156,3 +156,8 @@ func _on_beat_incremented():
 	else:
 		if beat_in_bar == 1:
 			track_2.play()
+
+
+func change_bpm(new_bpm) -> void:
+	bpm = new_bpm
+	sec_per_beat = 60.0 / bpm
