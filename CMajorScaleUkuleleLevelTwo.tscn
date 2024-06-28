@@ -1808,3 +1808,13 @@ offset_right = 216.0
 offset_bottom = 131.0
 theme_override_font_sizes/font_size = 30
 text = "Beat in bar 44: "
+
+[node name="PunctualityLabelsControl" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 80.0

@@ -18,6 +18,7 @@ var fade_effect := "[fade]"
 var tornado_effect := "[tornado]"
 var late_color := Color(0.935, 0, 0.139)
 var early_color := Color(0.234, 0.683, 0.776)
+var default_color := Color(0.027, 0.137, 0.31)
 
 @onready var note_labels_to_play: Array[Control]
 @onready var note_label_to_play_index := 0
@@ -35,6 +36,7 @@ var note_explosions := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Button.pressed.connect(func(): pass)
 	Conductor.beat_incremented.connect(func(): $Label.text = "Beat in bar 88: " + str(Conductor.beat_in_bar))
 	Conductor.downbeat_incremented.connect(func(): $Label2.text = "Beat in bar 44: " + str(round(Conductor.beat_in_bar/2.0)))
 	Conductor.upbeat_incremented.connect(bounce_current_note_label)
@@ -121,22 +123,13 @@ func check_note() -> void:
 			note_label_to_play_index += 1
 			# advance note_label
 			current_note_label = note_labels_to_play[note_label_to_play_index]
-			# fade in current note label
-			var tween = create_tween()
-			tween.tween_property(current_note_label, "modulate:a", 1.0, 0.4).from(0.0)
-			# make note bounce
-			#current_note_label.text = wave_effect + current_note_label.text[-1]
-			#current_note_label.text = current_note_label.text[-1]
+			# make current note label visible
+			current_note_label.modulate.a = 1.0
 			# set current note to MusicTheoryDB-friendly string
 			current_note = MusicTheoryDB.get_midi_pitch(current_note_label.get_parent().name.left(1) + "_String_" + current_note_label.text[-1])
-			print("index: ", note_label_to_play_index)
 		else:
-			print('hi')
-			print("index after hi : ", note_label_to_play_index)
 			reset_notes_to_play()
 
-		#if note_label_to_play_index == note_labels_to_play.size() -1:
-			#reset_notes_to_play()
 
 		if current_note_label.get_parent().get_parent().get_parent().name == "UkuleleTab2":
 			$BouncingRhythmContainerNode.position.y = 590.0
@@ -150,10 +143,19 @@ func reset_notes_to_play() -> void:
 	current_note_label = note_labels_to_play[0]
 	current_note = MusicTheoryDB.get_midi_pitch(current_note_label.get_parent().name.left(1) + "_String_" + current_note_label.text[-1])
 	$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(note_labels_to_play[note_label_to_play_index].global_position.x + 20.0)
+
+	for tween in success_tweens_array:
+		tween.kill()
+		
 	for note_label in note_labels_to_play:
+		note_label.add_theme_color_override("default_color", default_color)
 		# show only first note
 		if not note_label == current_note_label:
 			note_label.modulate.a = 0
+	
+	for punctuality_label in $PunctualityLabelsControl.get_children():
+		punctuality_label.queue_free()
+		
 
 
 func bounce_current_note_label() -> void:
@@ -165,7 +167,7 @@ func bounce_current_note_label() -> void:
 	tween.tween_property(current_note_label, "position:y", position.y, Conductor.sec_per_beat).set_ease(Tween.EASE_OUT)
 	tween.play()
 
-
+var success_tweens_array = []
 func success_glow() -> void:
 	var max_glow := Color(0.5, 3.2, 0.5)
 	var min_glow := Color(0.5, 1.5, 0.5)
@@ -176,6 +178,7 @@ func success_glow() -> void:
 	tween.tween_property(current_note_label, "theme_override_colors/default_color", min_glow, tween_duration).from(max_glow)
 	tween.tween_property(current_note_label, "theme_override_colors/default_color", max_glow, tween_duration).from(min_glow)
 	tween.play()
+	success_tweens_array.append(tween)
 
 
 func left_click(coordinates: Vector2):
@@ -218,7 +221,8 @@ func label_punctuality() -> void:
 	var time_off_beat = Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[1]
 	var punctuality = ""
 	#var on_beat_window := 0.56 # 220
-	var on_beat_window := 0.06 # 220
+	var on_beat_window := 0.07 # 220
+	#var on_beat_window := 0.2 # 660
 	# if bpm lower, tolerance higher. if bpm higher, tolerance lower.
 	#var rhythm_tolerance := 4.5
 	if Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[0] % 2 != 0: # closest beat is down beat
@@ -229,29 +233,29 @@ func label_punctuality() -> void:
 			if punctuality == "early": # moderate amount of time off before closest beat in bar 1,3,5,7
 				current_note_label.add_theme_color_override("default_color", early_color)
 				var early_label_spawn = early_label.instantiate()
-				add_child(early_label_spawn)
+				$PunctualityLabelsControl.add_child(early_label_spawn)
 				early_label_spawn.position = current_note_label.global_position + Vector2(-70, 90)
 			elif punctuality == "late": # moderate amount of time off after closest beat in bar 1,3,5,7
 				current_note_label.add_theme_color_override("default_color", late_color)
 				var late_label_spawn = late_label.instantiate()
-				add_child(late_label_spawn)
+				$PunctualityLabelsControl.add_child(late_label_spawn)
 				late_label_spawn.position = current_note_label.global_position + Vector2(20, 90)
 		else:
 			punctuality = "perfect"
 			if punctuality == "perfect": # very small amount of time off closest beat in bar 1,3,5,7
 				success_glow()
 				var perfect_label_spawn = perfect_label.instantiate()
-				add_child(perfect_label_spawn)
+				$PunctualityLabelsControl.add_child(perfect_label_spawn)
 				perfect_label_spawn.position = current_note_label.global_position + Vector2(-50, 90)
 	else: # closest beat is upbeat
 		punctuality = Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[2]
 		if punctuality == "early": # moderate amount of time off before closest beat in bar 1,3,5,7
 			current_note_label.add_theme_color_override("default_color", early_color)
 			var early_label_spawn = early_label.instantiate()
-			add_child(early_label_spawn)
+			$PunctualityLabelsControl.add_child(early_label_spawn)
 			early_label_spawn.position = current_note_label.global_position + Vector2(-70, 90)
 		elif punctuality == "late": # moderate amount of time off after closest beat in bar 1,3,5,7
 			current_note_label.add_theme_color_override("default_color", late_color)
 			var late_label_spawn = late_label.instantiate()
-			add_child(late_label_spawn)
+			$PunctualityLabelsControl.add_child(late_label_spawn)
 			late_label_spawn.position = current_note_label.global_position + Vector2(20, 90)
