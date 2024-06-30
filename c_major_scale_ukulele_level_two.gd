@@ -247,8 +247,8 @@ func slide_in(object_to_slide: Node) -> void:
 
 func label_punctuality() -> void:
 	var time_off_beat = Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[1]
-	print("time_off_beat: " + str(time_off_beat))
-	print("closest beat in bar: " + str(Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[0]))
+	#print("time_off_beat: " + str(time_off_beat))
+	#print("closest beat in bar: " + str(Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[0]))
 	var punctuality := ""
 	if Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[0] % 2 != 0: # closest beat is down beat
 		if time_off_beat > on_beat_window:
