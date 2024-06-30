@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://q0o540nhr17"]
+[gd_scene load_steps=27 format=3 uid="uid://q0o540nhr17"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_4o4sp"]
 [ext_resource type="Script" path="res://c_major_scale_ukulele_level_two.gd" id="2_vmc5x"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="15_kawwk"]
 [ext_resource type="PackedScene" uid="uid://cm2nbuoex438a" path="res://cleared_bpm_rich_text_label.tscn" id="16_a12dr"]
 [ext_resource type="PackedScene" uid="uid://cw85hbblfa1r8" path="res://bouncing_rhythm_indicator.tscn" id="16_g62k6"]
-[ext_resource type="PackedScene" uid="uid://dl64k4tlcwdic" path="res://bpm_tick_rich_text_label.tscn" id="17_x47gx"]
 
 [sub_resource type="Resource" id="Resource_8brqr"]
 script = ExtResource("4_jgy4t")
@@ -66,7 +65,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_4o4sp")
 script = ExtResource("2_vmc5x")
-on_beat_window = 0.2
+using_qwerty = false
+using_midi = true
+on_beat_window = 0.08
+only_correct_notes_allowed = false
 metadata/_edit_vertical_guides_ = [1280.0, 2209.0, 2294.0, 333.0]
 metadata/_edit_horizontal_guides_ = [720.0, 600.0, 700.0, 800.0, 900.0, 1286.0, 194.0, 753.0]
 
@@ -1808,12 +1810,6 @@ offset_bottom = 1285.0
 
 [node name="ClearedBPM" parent="ClearedBPMsControl" instance=ExtResource("16_a12dr")]
 layout_mode = 0
-offset_right = 217.0
-
-[node name="BPMTick" parent="ClearedBPMsControl/ClearedBPM" instance=ExtResource("17_x47gx")]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 139.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

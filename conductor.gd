@@ -159,5 +159,12 @@ func _on_beat_incremented():
 
 
 func change_bpm(new_bpm) -> void:
-	bpm = new_bpm
+	bpm = float(new_bpm)
 	sec_per_beat = 60.0 / bpm
+	song_position_in_seconds = 0.0
+	song_position_in_beats = 1 # will always be 1 beat behind what's heard
+	last_reported_beat = 0
+	beat_in_bar = 1
+	measure = 1
+	self.play(0.0)
+	intro.play(0.0)

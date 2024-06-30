@@ -4,6 +4,7 @@ extends Control
 @export var using_qwerty: bool = true
 @export var using_midi: bool = false
 @export var on_beat_window: float = 0.07
+@export var only_correct_notes_allowed: bool = true
 
 @onready var blank_style_box_flat = preload("res://assets/themes/blank_style_box_flat.tres")
 @onready var ukulele_tab: Control = $TabBoxRichTextLabel/UkuleleTab
@@ -40,6 +41,7 @@ var note_explosions := []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$TabBoxRichTextLabel/TitleRichTextLabel.text = $TabBoxRichTextLabel/TitleRichTextLabel.text.left(16) + str(Conductor.bpm/2)
+	$ClearedBPMsControl/ClearedBPM.text = "[b]" + str(Conductor.bpm/2)
 	$Button.pressed.connect(func(): pass)
 	Conductor.beat_incremented.connect(func(): $Label.text = "Beat in bar 88: " + str(Conductor.beat_in_bar))
 	Conductor.downbeat_incremented.connect(func(): $Label2.text = "Beat in bar 44: " + str(round(Conductor.beat_in_bar/2.0)))
@@ -134,25 +136,33 @@ func check_note() -> void:
 		else:
 			reset_notes_to_play()
 			# add spawn bpmtick and add_child to latest if all perfect
-			# position + 100 if no tick yet
-			# if have tick + 50 or something
-			# delete if not perfect
-			# if 3 bpm ticks (get clearedbpm childcount == 3):
-			# add new cleared bpm. repeat.
-			var cleared_bpm_spawn = cleared_BPM_label.instantiate()
-			cleared_bpm_spawn.text = "[b]" + str(Conductor.bpm/2)
-			if $ClearedBPMsControl.get_child_count() > 0:
-				cleared_bpm_spawn.position = $ClearedBPMsControl.get_children()[-1].position + Vector2(250, 0)
-			$ClearedBPMsControl.add_child(cleared_bpm_spawn)
-			#add_child(cleared_bpm_spawn)
-			Conductor.change_bpm(Conductor.bpm + 40)
-			$TabBoxRichTextLabel/TitleRichTextLabel.text = $TabBoxRichTextLabel/TitleRichTextLabel.text.left(16) + str(Conductor.bpm/2)
-
-
+			var bpm_tick_spawn = BPM_tick_label.instantiate()
+			if $ClearedBPMsControl.get_children()[-1].get_child_count() == 0: # if no tick yet
+				bpm_tick_spawn.position.x += 100
+				$ClearedBPMsControl.get_children()[-1].add_child(bpm_tick_spawn)
+			elif $ClearedBPMsControl.get_children()[-1].get_child_count() < 3: # if less than 3 ticks
+				# set new tick 30 pixels to the right of latest tick
+				bpm_tick_spawn.position.x = $ClearedBPMsControl.get_children()[-1].get_children()[-1].position.x + 30
+				$ClearedBPMsControl.get_children()[-1].add_child(bpm_tick_spawn)
+			else:
+				Conductor.change_bpm(Conductor.bpm + 40.0)
+				# Update main title BPM
+				$TabBoxRichTextLabel/TitleRichTextLabel.text = $TabBoxRichTextLabel/TitleRichTextLabel.text.left(16) + str(Conductor.bpm/2)
+				# add new cleared bpm
+				var cleared_bpm_spawn = cleared_BPM_label.instantiate()
+				cleared_bpm_spawn.text = "[b]" + str(Conductor.bpm/2)
+				if $ClearedBPMsControl.get_child_count() > 0:
+					cleared_bpm_spawn.position = $ClearedBPMsControl.get_children()[-1].position + Vector2(250, 0)
+				$ClearedBPMsControl.add_child(cleared_bpm_spawn)
+		$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(note_labels_to_play[note_label_to_play_index].global_position.x + 20.0)
 		if current_note_label.get_parent().get_parent().get_parent().name == "UkuleleTab2":
 			$BouncingRhythmContainerNode.position.y = 590.0
+	else: # wrong note played
+		if only_correct_notes_allowed:
+			if $ClearedBPMsControl.get_children()[-1].get_child_count() > 0:
+				$ClearedBPMsControl.get_children()[-1].get_children()[-1].queue_free()
+
 		
-		$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(note_labels_to_play[note_label_to_play_index].global_position.x + 20.0)
 
 
 func reset_notes_to_play() -> void:
@@ -237,14 +247,18 @@ func slide_in(object_to_slide: Node) -> void:
 
 func label_punctuality() -> void:
 	var time_off_beat = Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[1]
-	var punctuality = ""
-	#var on_beat_window := 0.56 # 220
-	#var on_beat_window := 0.07 # 220
-	#var on_beat_window := 0.2 # 660
-	# if bpm lower, tolerance higher. if bpm higher, tolerance lower.
-	#var rhythm_tolerance := 4.5
-	if Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[0] % 2 != 0: # closest beat is down beat
+	print("time_off_beat: " + str(time_off_beat))
+	print("closest beat in bar: " + str(Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[0]))
+	var punctuality := ""
+	if Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[0] % 2 != 0: # closest beat is down beat
 		if time_off_beat > on_beat_window:
+			print('not perfect')
+			if only_correct_notes_allowed:
+				('attmpted delete 1')
+				if $ClearedBPMsControl.get_children()[-1].get_child_count() > 0:
+					('attmpted delete 2')
+					$ClearedBPMsControl.get_children()[-1].get_children()[-1].queue_free()
+					('attmpted delete 3')
 		#if time_off_beat > Conductor.sec_per_beat / rhythm_tolerance: # time off beat is significant
 			# divide by 4 because significant time off beat in "220" bpm seems to be 0.07 which is 25% of 0.2727 (60/220)
 			punctuality = Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[2] # determine late or early
