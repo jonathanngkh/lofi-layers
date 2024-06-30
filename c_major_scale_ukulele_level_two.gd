@@ -252,13 +252,9 @@ func label_punctuality() -> void:
 	var punctuality := ""
 	if Conductor.closest_beat_in_bar(Conductor.song_position_in_seconds)[0] % 2 != 0: # closest beat is down beat
 		if time_off_beat > on_beat_window:
-			print('not perfect')
 			if only_correct_notes_allowed:
-				('attmpted delete 1')
 				if $ClearedBPMsControl.get_children()[-1].get_child_count() > 0:
-					('attmpted delete 2')
 					$ClearedBPMsControl.get_children()[-1].get_children()[-1].queue_free()
-					('attmpted delete 3')
 		#if time_off_beat > Conductor.sec_per_beat / rhythm_tolerance: # time off beat is significant
 			# divide by 4 because significant time off beat in "220" bpm seems to be 0.07 which is 25% of 0.2727 (60/220)
 			punctuality = Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[2] # determine late or early
@@ -281,6 +277,9 @@ func label_punctuality() -> void:
 				perfect_label_spawn.position = current_note_label.global_position + Vector2(-50, 90)
 	else: # closest beat is upbeat
 		punctuality = Conductor.closest_beat_in_song(Conductor.song_position_in_seconds)[2]
+		if only_correct_notes_allowed:
+			if $ClearedBPMsControl.get_children()[-1].get_child_count() > 0:
+				$ClearedBPMsControl.get_children()[-1].get_children()[-1].queue_free()
 		if punctuality == "early": # moderate amount of time off before closest beat in bar 1,3,5,7
 			current_note_label.add_theme_color_override("default_color", early_color)
 			var early_label_spawn = early_label.instantiate()
