@@ -1,0 +1,261 @@
+[gd_scene load_steps=22 format=3 uid="uid://rxtxer6q8kea"]
+
+[ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_mqefj"]
+[ext_resource type="Script" path="res://notation_scale_master.gd" id="2_3mxo5"]
+[ext_resource type="Script" path="res://addons/SimpleSampler/sampler_instrument.gd" id="3_kv02s"]
+[ext_resource type="Script" path="res://addons/SimpleSampler/sample_resource.gd" id="4_0sr5b"]
+[ext_resource type="AudioStream" uid="uid://dcuqi7pysubx7" path="res://assets/samples/ukulele_c4.ogg" id="5_pchh2"]
+[ext_resource type="Shader" path="res://assets/background/sliding_background.gdshader" id="6_pg5fn"]
+[ext_resource type="Texture2D" uid="uid://8vbd1upbqxks" path="res://assets/background/bubble_pattern.png" id="7_vd5ej"]
+[ext_resource type="Texture2D" uid="uid://c764sj6i7ua68" path="res://assets/music theory/staff lines.png" id="8_8f32u"]
+[ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="9_wam8s"]
+[ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="10_yqbsi"]
+[ext_resource type="Texture2D" uid="uid://df1ms7pl1w36d" path="res://assets/music theory/44 time.png" id="11_epw8m"]
+[ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="11_j6c7a"]
+[ext_resource type="Texture2D" uid="uid://daw0mvqvvut7k" path="res://assets/music theory/staff_line.png" id="12_odctp"]
+[ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="14_3tip1"]
+[ext_resource type="PackedScene" uid="uid://cw85hbblfa1r8" path="res://bouncing_rhythm_indicator.tscn" id="15_5aeaq"]
+[ext_resource type="PackedScene" uid="uid://cm2nbuoex438a" path="res://cleared_bpm_rich_text_label.tscn" id="16_e1eb2"]
+[ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="17_ksycf"]
+
+[sub_resource type="Resource" id="Resource_8brqr"]
+script = ExtResource("4_0sr5b")
+stream = ExtResource("5_pchh2")
+tone = "C"
+octave = 4
+velocity = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ay7s"]
+shader = ExtResource("6_pg5fn")
+shader_parameter/bg_color = Color(0.490196, 0.776471, 0.768627, 1)
+shader_parameter/pattern_color = Color(0.266667, 0.603922, 0.639216, 1)
+shader_parameter/pattern_size = 333.0
+shader_parameter/pattern_sampler = ExtResource("7_vd5ej")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hso38"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ba3nt"]
+shader = ExtResource("10_yqbsi")
+shader_parameter/strength = 0.0
+shader_parameter/speed = 3.0
+shader_parameter/angle = 270.0
+
+[node name="NotationScaleMaster" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mqefj")
+script = ExtResource("2_3mxo5")
+metadata/_edit_vertical_guides_ = [1280.0, 2209.0, 2294.0, 333.0]
+metadata/_edit_horizontal_guides_ = [720.0, 600.0, 700.0, 800.0, 900.0, 1286.0, 194.0, 753.0, 555.0]
+
+[node name="SamplerInstrument" type="AudioStreamPlayer" parent="."]
+script = ExtResource("3_kv02s")
+samples = Array[ExtResource("4_0sr5b")]([SubResource("Resource_8brqr")])
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_3ay7s")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BouncingRhythmContainerNode" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 369.0
+offset_top = -3.0
+offset_right = 369.0
+offset_bottom = -3.0
+
+[node name="BouncingRhythmIndicator" parent="BouncingRhythmContainerNode" instance=ExtResource("15_5aeaq")]
+position = Vector2(297, 212)
+
+[node name="NotationBoxRichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 77.0
+offset_right = -64.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][b]
+[/b][/center]"
+
+[node name="TitleRichTextLabel" type="RichTextLabel" parent="NotationBoxRichTextLabel"]
+layout_mode = 0
+offset_left = 684.0
+offset_top = 47.0
+offset_right = 1675.0
+offset_bottom = 150.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hso38")
+bbcode_enabled = true
+text = "[center][b]Tempo: "
+
+[node name="Staff" type="TextureRect" parent="NotationBoxRichTextLabel"]
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 0
+offset_right = 2422.0
+offset_bottom = 621.0
+texture = ExtResource("8_8f32u")
+expand_mode = 1
+
+[node name="TrebleClef" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = -172.008
+offset_top = -0.998
+offset_right = 122.992
+offset_bottom = 457.002
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_wam8s")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TrebleClef2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 46.992
+offset_top = 92.617
+offset_right = 168.992
+offset_bottom = 345.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_epw8m")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="NoteHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 485.992
+offset_top = 460.617
+offset_right = 579.992
+offset_bottom = 522.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LedgerLineTop" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -10.0
+offset_top = -3.0
+offset_right = 114.0
+offset_bottom = 3.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLineTop2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -10.0
+offset_top = -59.0
+offset_right = 114.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLineMid" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -10.0
+offset_top = 29.0
+offset_right = 114.0
+offset_bottom = 35.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLineBottom" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -10.0
+offset_top = 59.0
+offset_right = 114.0
+offset_bottom = 65.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteExplosionCPUParticles2D" parent="." instance=ExtResource("14_3tip1")]
+visible = false
+position = Vector2(454, 571)
+
+[node name="SamplerTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="PunctualityLabelsControl" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ClearedRichTextLabel" parent="." instance=ExtResource("16_e1eb2")]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 1270.0
+offset_right = 347.0
+offset_bottom = 1346.0
+text = "[b]Cleared:"
+
+[node name="ClearedBPMsControl" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 364.0
+offset_top = 1270.0
+offset_right = 2381.0
+offset_bottom = 1346.0
+
+[node name="ClearedBPM" parent="ClearedBPMsControl" instance=ExtResource("16_e1eb2")]
+layout_mode = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 30
+text = "Beat in bar 88: "
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 216.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 30
+text = "Beat in bar 44: "
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 141.0
+offset_top = 93.0
+offset_right = 237.0
+offset_bottom = 173.0
+
+[node name="Piano" parent="." instance=ExtResource("17_ksycf")]
+visible = false
