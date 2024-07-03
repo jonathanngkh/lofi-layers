@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://rxtxer6q8kea"]
+[gd_scene load_steps=23 format=3 uid="uid://rxtxer6q8kea"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_mqefj"]
 [ext_resource type="Script" path="res://notation_scale_master.gd" id="2_3mxo5"]
@@ -10,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://c764sj6i7ua68" path="res://assets/music theory/staff lines.png" id="8_8f32u"]
 [ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="9_wam8s"]
 [ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="10_yqbsi"]
-[ext_resource type="Texture2D" uid="uid://df1ms7pl1w36d" path="res://assets/music theory/44 time.png" id="11_epw8m"]
 [ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="11_j6c7a"]
 [ext_resource type="Texture2D" uid="uid://daw0mvqvvut7k" path="res://assets/music theory/staff_line.png" id="12_odctp"]
 [ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="14_3tip1"]
+[ext_resource type="Texture2D" uid="uid://wkkk328weax0" path="res://assets/music theory/44.png" id="14_hoj6i"]
 [ext_resource type="PackedScene" uid="uid://cw85hbblfa1r8" path="res://bouncing_rhythm_indicator.tscn" id="15_5aeaq"]
+[ext_resource type="Texture2D" uid="uid://byphlyokv50bo" path="res://assets/music theory/sharp.png" id="15_nt56x"]
 [ext_resource type="PackedScene" uid="uid://cm2nbuoex438a" path="res://cleared_bpm_rich_text_label.tscn" id="16_e1eb2"]
 [ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="17_ksycf"]
 
@@ -108,68 +109,17 @@ anchor_left = 0.064
 anchor_top = 0.123
 anchor_right = 0.064
 anchor_bottom = 0.123
-offset_left = 469.352
-offset_top = 408.715
-offset_right = 563.352
-offset_bottom = 482.715
+offset_left = 368.352
+offset_top = 377.715
+offset_right = 462.352
+offset_bottom = 451.715
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_j6c7a")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="LedgerLineMid8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -152.0
-offset_right = 109.0
-offset_bottom = -146.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLineMid12" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -90.0
-offset_right = 109.0
-offset_bottom = -84.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLineMid11" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -28.0
-offset_right = 109.0
-offset_bottom = -22.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLineMid10" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 34.0
-offset_right = 109.0
-offset_bottom = 40.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLineMid9" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 96.0
-offset_right = 109.0
-offset_bottom = 102.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
 [node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -215,6 +165,7 @@ texture = ExtResource("12_odctp")
 expand_mode = 1
 
 [node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
+visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -225,6 +176,7 @@ texture = ExtResource("12_odctp")
 expand_mode = 1
 
 [node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
+visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -235,12 +187,110 @@ texture = ExtResource("12_odctp")
 expand_mode = 1
 
 [node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
+visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
 offset_top = 189.0
 offset_right = 109.0
 offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
@@ -270,20 +320,37 @@ texture = ExtResource("9_wam8s")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TrebleClef2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+[node name="TimeSignature" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
 anchor_top = 0.123
 anchor_right = 0.064
 anchor_bottom = 0.123
-offset_left = 46.992
-offset_top = 92.617
-offset_right = 168.992
-offset_bottom = 345.617
+offset_left = 163.992
+offset_top = 83.617
+offset_right = 285.992
+offset_bottom = 356.617
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_epw8m")
+texture = ExtResource("14_hoj6i")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="KeySignature" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 75.992
+offset_top = 20.617
+offset_right = 126.992
+offset_bottom = 175.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_nt56x")
 expand_mode = 1
 stretch_mode = 4
 
