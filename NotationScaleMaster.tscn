@@ -101,1573 +101,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_hso38")
 bbcode_enabled = true
 text = "[center][b]Tempo: "
 
-[node name="NoteHead" type="TextureRect" parent="NotationBoxRichTextLabel"]
-material = SubResource("ShaderMaterial_ba3nt")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.064
-anchor_top = 0.123
-anchor_right = 0.064
-anchor_bottom = 0.123
-offset_left = 368.352
-offset_top = 377.715
-offset_right = 462.352
-offset_bottom = 451.715
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_j6c7a")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -183.0
-offset_right = 109.0
-offset_bottom = -177.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -121.0
-offset_right = 109.0
-offset_bottom = -115.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -59.0
-offset_right = 109.0
-offset_bottom = -53.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 3.0
-offset_right = 109.0
-offset_bottom = 9.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 65.0
-offset_right = 109.0
-offset_bottom = 71.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 127.0
-offset_right = 109.0
-offset_bottom = 133.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 189.0
-offset_right = 109.0
-offset_bottom = 195.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 251.0
-offset_right = 109.0
-offset_bottom = 257.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -152.0
-offset_right = 109.0
-offset_bottom = -146.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -90.0
-offset_right = 109.0
-offset_bottom = -84.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -28.0
-offset_right = 109.0
-offset_bottom = -22.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 34.0
-offset_right = 109.0
-offset_bottom = 40.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 96.0
-offset_right = 109.0
-offset_bottom = 102.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 158.0
-offset_right = 109.0
-offset_bottom = 164.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 220.0
-offset_right = 109.0
-offset_bottom = 226.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 282.0
-offset_right = 109.0
-offset_bottom = 288.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="NoteHead2" type="TextureRect" parent="NotationBoxRichTextLabel"]
-material = SubResource("ShaderMaterial_ba3nt")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.064
-anchor_top = 0.123
-anchor_right = 0.064
-anchor_bottom = 0.123
-offset_left = 546.352
-offset_top = 346.715
-offset_right = 640.352
-offset_bottom = 420.715
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_j6c7a")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead2"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -183.0
-offset_right = 109.0
-offset_bottom = -177.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -121.0
-offset_right = 109.0
-offset_bottom = -115.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -59.0
-offset_right = 109.0
-offset_bottom = -53.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 3.0
-offset_right = 109.0
-offset_bottom = 9.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 65.0
-offset_right = 109.0
-offset_bottom = 71.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 127.0
-offset_right = 109.0
-offset_bottom = 133.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 189.0
-offset_right = 109.0
-offset_bottom = 195.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 251.0
-offset_right = 109.0
-offset_bottom = 257.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead2"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -152.0
-offset_right = 109.0
-offset_bottom = -146.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -90.0
-offset_right = 109.0
-offset_bottom = -84.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -28.0
-offset_right = 109.0
-offset_bottom = -22.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 34.0
-offset_right = 109.0
-offset_bottom = 40.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 96.0
-offset_right = 109.0
-offset_bottom = 102.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 158.0
-offset_right = 109.0
-offset_bottom = 164.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 220.0
-offset_right = 109.0
-offset_bottom = 226.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead2/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 282.0
-offset_right = 109.0
-offset_bottom = 288.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="NoteHead3" type="TextureRect" parent="NotationBoxRichTextLabel"]
-material = SubResource("ShaderMaterial_ba3nt")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.064
-anchor_top = 0.123
-anchor_right = 0.064
-anchor_bottom = 0.123
-offset_left = 739.352
-offset_top = 315.715
-offset_right = 833.352
-offset_bottom = 389.715
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_j6c7a")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead3"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -183.0
-offset_right = 109.0
-offset_bottom = -177.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -121.0
-offset_right = 109.0
-offset_bottom = -115.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -59.0
-offset_right = 109.0
-offset_bottom = -53.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 3.0
-offset_right = 109.0
-offset_bottom = 9.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 65.0
-offset_right = 109.0
-offset_bottom = 71.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 127.0
-offset_right = 109.0
-offset_bottom = 133.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 189.0
-offset_right = 109.0
-offset_bottom = 195.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 251.0
-offset_right = 109.0
-offset_bottom = 257.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead3"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -152.0
-offset_right = 109.0
-offset_bottom = -146.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -90.0
-offset_right = 109.0
-offset_bottom = -84.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -28.0
-offset_right = 109.0
-offset_bottom = -22.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 34.0
-offset_right = 109.0
-offset_bottom = 40.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 96.0
-offset_right = 109.0
-offset_bottom = 102.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 158.0
-offset_right = 109.0
-offset_bottom = 164.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 220.0
-offset_right = 109.0
-offset_bottom = 226.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead3/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 282.0
-offset_right = 109.0
-offset_bottom = 288.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="NoteHead4" type="TextureRect" parent="NotationBoxRichTextLabel"]
-material = SubResource("ShaderMaterial_ba3nt")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.064
-anchor_top = 0.123
-anchor_right = 0.064
-anchor_bottom = 0.123
-offset_left = 919.352
-offset_top = 284.715
-offset_right = 1013.35
-offset_bottom = 358.715
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_j6c7a")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead4"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -183.0
-offset_right = 109.0
-offset_bottom = -177.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -121.0
-offset_right = 109.0
-offset_bottom = -115.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -59.0
-offset_right = 109.0
-offset_bottom = -53.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 3.0
-offset_right = 109.0
-offset_bottom = 9.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 65.0
-offset_right = 109.0
-offset_bottom = 71.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 127.0
-offset_right = 109.0
-offset_bottom = 133.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 189.0
-offset_right = 109.0
-offset_bottom = 195.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 251.0
-offset_right = 109.0
-offset_bottom = 257.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead4"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -152.0
-offset_right = 109.0
-offset_bottom = -146.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -90.0
-offset_right = 109.0
-offset_bottom = -84.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -28.0
-offset_right = 109.0
-offset_bottom = -22.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 34.0
-offset_right = 109.0
-offset_bottom = 40.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 96.0
-offset_right = 109.0
-offset_bottom = 102.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 158.0
-offset_right = 109.0
-offset_bottom = 164.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 220.0
-offset_right = 109.0
-offset_bottom = 226.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead4/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 282.0
-offset_right = 109.0
-offset_bottom = 288.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="NoteHead5" type="TextureRect" parent="NotationBoxRichTextLabel"]
-material = SubResource("ShaderMaterial_ba3nt")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.064
-anchor_top = 0.123
-anchor_right = 0.064
-anchor_bottom = 0.123
-offset_left = 1089.35
-offset_top = 253.715
-offset_right = 1183.35
-offset_bottom = 327.715
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_j6c7a")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead5"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -183.0
-offset_right = 109.0
-offset_bottom = -177.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -121.0
-offset_right = 109.0
-offset_bottom = -115.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -59.0
-offset_right = 109.0
-offset_bottom = -53.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 3.0
-offset_right = 109.0
-offset_bottom = 9.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 65.0
-offset_right = 109.0
-offset_bottom = 71.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 127.0
-offset_right = 109.0
-offset_bottom = 133.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 189.0
-offset_right = 109.0
-offset_bottom = 195.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 251.0
-offset_right = 109.0
-offset_bottom = 257.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead5"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -152.0
-offset_right = 109.0
-offset_bottom = -146.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -90.0
-offset_right = 109.0
-offset_bottom = -84.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -28.0
-offset_right = 109.0
-offset_bottom = -22.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 34.0
-offset_right = 109.0
-offset_bottom = 40.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 96.0
-offset_right = 109.0
-offset_bottom = 102.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 158.0
-offset_right = 109.0
-offset_bottom = 164.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 220.0
-offset_right = 109.0
-offset_bottom = 226.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead5/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 282.0
-offset_right = 109.0
-offset_bottom = 288.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="NoteHead6" type="TextureRect" parent="NotationBoxRichTextLabel"]
-material = SubResource("ShaderMaterial_ba3nt")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.064
-anchor_top = 0.123
-anchor_right = 0.064
-anchor_bottom = 0.123
-offset_left = 1259.35
-offset_top = 222.715
-offset_right = 1353.35
-offset_bottom = 296.715
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_j6c7a")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead6"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -183.0
-offset_right = 109.0
-offset_bottom = -177.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -121.0
-offset_right = 109.0
-offset_bottom = -115.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -59.0
-offset_right = 109.0
-offset_bottom = -53.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 3.0
-offset_right = 109.0
-offset_bottom = 9.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 65.0
-offset_right = 109.0
-offset_bottom = 71.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 127.0
-offset_right = 109.0
-offset_bottom = 133.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 189.0
-offset_right = 109.0
-offset_bottom = 195.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 251.0
-offset_right = 109.0
-offset_bottom = 257.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead6"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -152.0
-offset_right = 109.0
-offset_bottom = -146.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -90.0
-offset_right = 109.0
-offset_bottom = -84.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -28.0
-offset_right = 109.0
-offset_bottom = -22.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 34.0
-offset_right = 109.0
-offset_bottom = 40.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 96.0
-offset_right = 109.0
-offset_bottom = 102.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 158.0
-offset_right = 109.0
-offset_bottom = 164.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 220.0
-offset_right = 109.0
-offset_bottom = 226.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead6/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 282.0
-offset_right = 109.0
-offset_bottom = 288.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="NoteHead7" type="TextureRect" parent="NotationBoxRichTextLabel"]
-material = SubResource("ShaderMaterial_ba3nt")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.064
-anchor_top = 0.123
-anchor_right = 0.064
-anchor_bottom = 0.123
-offset_left = 1429.35
-offset_top = 191.715
-offset_right = 1523.35
-offset_bottom = 265.715
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_j6c7a")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead7"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -183.0
-offset_right = 109.0
-offset_bottom = -177.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -121.0
-offset_right = 109.0
-offset_bottom = -115.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -59.0
-offset_right = 109.0
-offset_bottom = -53.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 3.0
-offset_right = 109.0
-offset_bottom = 9.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 65.0
-offset_right = 109.0
-offset_bottom = 71.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 127.0
-offset_right = 109.0
-offset_bottom = 133.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 189.0
-offset_right = 109.0
-offset_bottom = 195.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 251.0
-offset_right = 109.0
-offset_bottom = 257.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead7"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -152.0
-offset_right = 109.0
-offset_bottom = -146.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -90.0
-offset_right = 109.0
-offset_bottom = -84.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -28.0
-offset_right = 109.0
-offset_bottom = -22.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 34.0
-offset_right = 109.0
-offset_bottom = 40.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 96.0
-offset_right = 109.0
-offset_bottom = 102.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 158.0
-offset_right = 109.0
-offset_bottom = 164.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 220.0
-offset_right = 109.0
-offset_bottom = 226.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead7/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 282.0
-offset_right = 109.0
-offset_bottom = 288.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="NoteHead8" type="TextureRect" parent="NotationBoxRichTextLabel"]
-material = SubResource("ShaderMaterial_ba3nt")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.064
-anchor_top = 0.123
-anchor_right = 0.064
-anchor_bottom = 0.123
-offset_left = 1605.35
-offset_top = 160.715
-offset_right = 1699.35
-offset_bottom = 234.715
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_j6c7a")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead8"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -183.0
-offset_right = 109.0
-offset_bottom = -177.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -121.0
-offset_right = 109.0
-offset_bottom = -115.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -59.0
-offset_right = 109.0
-offset_bottom = -53.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 3.0
-offset_right = 109.0
-offset_bottom = 9.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/SpaceLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 65.0
-offset_right = 109.0
-offset_bottom = 71.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 127.0
-offset_right = 109.0
-offset_bottom = 133.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 189.0
-offset_right = 109.0
-offset_bottom = 195.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/SpaceLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 251.0
-offset_right = 109.0
-offset_bottom = 257.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/NoteHead8"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -152.0
-offset_right = 109.0
-offset_bottom = -146.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -90.0
-offset_right = 109.0
-offset_bottom = -84.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = -28.0
-offset_right = 109.0
-offset_bottom = -22.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/MidLines"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 34.0
-offset_right = 109.0
-offset_bottom = 40.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 96.0
-offset_right = 109.0
-offset_bottom = 102.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 158.0
-offset_right = 109.0
-offset_bottom = 164.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 220.0
-offset_right = 109.0
-offset_bottom = 226.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/NoteHead8/MidLines"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -15.0
-offset_top = 282.0
-offset_right = 109.0
-offset_bottom = 288.0
-texture = ExtResource("12_odctp")
-expand_mode = 1
-
 [node name="Staff" type="TextureRect" parent="NotationBoxRichTextLabel"]
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -1727,6 +160,3802 @@ grow_vertical = 2
 texture = ExtResource("15_nt56x")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="NoteHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 368.992
+offset_top = 460.617
+offset_right = 462.992
+offset_bottom = 534.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 546.992
+offset_top = 429.617
+offset_right = 640.992
+offset_bottom = 503.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead2"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 739.992
+offset_top = 398.617
+offset_right = 833.992
+offset_bottom = 472.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead3"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead3"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 919.992
+offset_top = 367.617
+offset_right = 1013.99
+offset_bottom = 441.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead4"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead4"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 1089.99
+offset_top = 336.617
+offset_right = 1183.99
+offset_bottom = 410.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead5"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead5"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 1259.99
+offset_top = 305.617
+offset_right = 1353.99
+offset_bottom = 379.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead6"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead6"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 1429.99
+offset_top = 274.617
+offset_right = 1523.99
+offset_bottom = 348.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead7"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead7"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 1605.99
+offset_top = 243.617
+offset_right = 1699.99
+offset_bottom = 317.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead8"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteHead8"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="Staff2" type="TextureRect" parent="NotationBoxRichTextLabel"]
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 0
+offset_top = 575.0
+offset_right = 2422.0
+offset_bottom = 1196.0
+texture = ExtResource("8_8f32u")
+expand_mode = 1
+
+[node name="TrebleClef" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = -172.008
+offset_top = -0.998
+offset_right = 122.992
+offset_bottom = 457.002
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_wam8s")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TimeSignature" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 163.992
+offset_top = 83.617
+offset_right = 285.992
+offset_bottom = 356.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_hoj6i")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="KeySignature" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 75.992
+offset_top = 20.617
+offset_right = 126.992
+offset_bottom = 175.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_nt56x")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="NoteHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 368.992
+offset_top = 212.617
+offset_right = 462.992
+offset_bottom = 286.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 546.992
+offset_top = 181.617
+offset_right = 640.992
+offset_bottom = 255.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead2"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead2/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 739.992
+offset_top = 150.617
+offset_right = 833.992
+offset_bottom = 224.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead3"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead3"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead3/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 919.992
+offset_top = 119.617
+offset_right = 1013.99
+offset_bottom = 193.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead4"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead4"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead4/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 1089.99
+offset_top = 88.617
+offset_right = 1183.99
+offset_bottom = 162.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead5"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead5"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead5/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 1259.99
+offset_top = 57.617
+offset_right = 1353.99
+offset_bottom = 131.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead6"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead6"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead6/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 1429.99
+offset_top = 26.617
+offset_right = 1523.99
+offset_bottom = 100.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead7"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead7"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead7/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 1605.99
+offset_top = -4.383
+offset_right = 1699.99
+offset_bottom = 69.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead8"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead8"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead8/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead9" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 1779.99
+offset_top = -35.383
+offset_right = 1873.99
+offset_bottom = 38.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead9"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead9"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead9/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead11" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2129.99
+offset_top = -97.383
+offset_right = 2223.99
+offset_bottom = -23.383
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead11"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead11"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead11/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="NoteHead10" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2"]
+material = SubResource("ShaderMaterial_ba3nt")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 1949.99
+offset_top = -66.383
+offset_right = 2043.99
+offset_bottom = 7.617
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_j6c7a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead10"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -183.0
+offset_right = 109.0
+offset_bottom = -177.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -121.0
+offset_right = 109.0
+offset_bottom = -115.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -59.0
+offset_right = 109.0
+offset_bottom = -53.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/SpaceLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 65.0
+offset_right = 109.0
+offset_bottom = 71.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 127.0
+offset_right = 109.0
+offset_bottom = 133.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 189.0
+offset_right = 109.0
+offset_bottom = 195.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/SpaceLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 251.0
+offset_right = 109.0
+offset_bottom = 257.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff2/NoteHead10"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -152.0
+offset_right = 109.0
+offset_bottom = -146.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -90.0
+offset_right = 109.0
+offset_bottom = -84.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -28.0
+offset_right = 109.0
+offset_bottom = -22.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 34.0
+offset_right = 109.0
+offset_bottom = 40.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/MidLines"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 96.0
+offset_right = 109.0
+offset_bottom = 102.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 158.0
+offset_right = 109.0
+offset_bottom = 164.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 226.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
+
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff2/NoteHead10/MidLines"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -15.0
+offset_top = 282.0
+offset_right = 109.0
+offset_bottom = 288.0
+texture = ExtResource("12_odctp")
+expand_mode = 1
 
 [node name="NoteExplosionCPUParticles2D" parent="." instance=ExtResource("14_3tip1")]
 visible = false
