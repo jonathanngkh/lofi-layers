@@ -65,7 +65,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_4o4sp")
 script = ExtResource("2_vmc5x")
-using_qwerty = false
 using_midi = true
 on_beat_window = 0.08
 metadata/_edit_vertical_guides_ = [1280.0, 2209.0, 2294.0, 333.0]
