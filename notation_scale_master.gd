@@ -9,3 +9,4 @@ extends Control
 # need to name it
 # page shows all the compositions by reading from the file
 # import midi or musicxml or mxl or musescore mscz mscx
+# study musicxml -- i think i'll use this. can convert to midi and back. and it's human readable-ish
