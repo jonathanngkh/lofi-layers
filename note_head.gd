@@ -3,6 +3,9 @@ extends TextureRect
 var hover := false
 var placed := false
 
+signal note_placed(placed_note)
+signal note_removed(removed_note)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = true
@@ -39,12 +42,11 @@ func _input(event: InputEvent) -> void:
 	)
 	if event_is_mouse_click and hover == true and placed == false:
 		placed = true
+		note_placed.emit(self)
 		modulate.a = 1.0
+
+		
 	if event_is_mouse_double_click and hover == true and placed == true:
 		placed = false
+		note_removed.emit(self)
 		modulate.a = 0.0
-
-# default: invisible
-# hover: visible but dimmed or blinking or something to indicate not confirmed
-# pressed: stays pressed and becomes visible, confirmed. maybe animation to indicate it's been "placed"
-# later can just check all confirmed ones to read the notes to be played
