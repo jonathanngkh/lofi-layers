@@ -57,16 +57,36 @@ func _on_note_head_note_removed(note_removed):
 	pass
 
 
+var composition = []
+
 func save_measures() -> void:
-	var composition = []
 	for note_stack in note_stack_container.get_children():
 		for notation in note_stack.get_children():
-			if notation.modulate.a == 1.0:
-				composition.append(
-					{
-						"note_value": notation.name.left(3)[-2],
-						"note_octave": int(notation.name.left(3)[-1]),
-						"beat": int(notation.get_parent().name.left(10)[-1])
-					}
-				)
+			if notation.modulate.a == 1.0: # rest/placed_note
+				if not notation.name == "QuarterRest":
+					composition.append(
+						{
+							"note_value": notation.name.left(3)[-2],
+							"note_octave": int(notation.name.left(3)[-1]),
+							"beat": int(notation.get_parent().name.left(10)[-1])
+						}
+					)
+				else:
+					composition.append(
+						{
+							"note_value": "QuarterRest",
+							"note_octave": -1,
+							"beat": int(notation.get_parent().name.left(10)[-1])
+						}
+					)
 	print(composition)
+
+
+func play_saved_measures() -> void:
+	# triggered on play button which is greyed out until measure saved
+	# starts the conductor with 1 bar off set, ball bounces on spot
+	# ball bounces from note to note
+	# if notation_dict["note_value"] is a quarterrest or note_octave == -1, dont play note at that beat:
+	# else sampler.play_note(notation_dict[note_value], notation_dict[note_octave]) according to notation_dict[beat]
+	for notation_dict in composition:
+		notation_dict
