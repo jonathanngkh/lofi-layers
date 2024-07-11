@@ -184,11 +184,11 @@ offset_top = -81.0
 offset_right = 1900.0
 offset_bottom = 616.0
 
-[node name="NoteStack" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer"]
+[node name="NoteStack1" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 
-[node name="G3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="G3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -208,12 +208,12 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -223,7 +223,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -233,7 +233,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -243,7 +243,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -253,7 +253,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -264,7 +264,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -275,7 +275,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -286,7 +286,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -297,13 +297,13 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -313,7 +313,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -323,7 +323,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -333,7 +333,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -343,7 +343,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -353,7 +353,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -363,7 +363,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -373,7 +373,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G3/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -383,7 +383,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="A3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="A3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -403,13 +403,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -419,7 +419,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -429,7 +429,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -440,7 +440,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -451,7 +451,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -462,7 +462,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -473,7 +473,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -484,7 +484,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -495,12 +495,12 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -511,7 +511,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -522,7 +522,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -532,7 +532,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -542,7 +542,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -553,7 +553,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -564,7 +564,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -575,7 +575,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A3/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -586,7 +586,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="B3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="B3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -606,12 +606,12 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -621,7 +621,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -631,7 +631,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -641,7 +641,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -651,7 +651,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -662,7 +662,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -673,7 +673,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -684,7 +684,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -695,13 +695,13 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -711,7 +711,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -721,7 +721,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -731,7 +731,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -741,7 +741,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -751,7 +751,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -761,7 +761,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -771,7 +771,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B3/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -781,7 +781,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="C4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="C4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -801,13 +801,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -817,7 +817,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -827,7 +827,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -837,7 +837,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -847,7 +847,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -857,7 +857,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -868,7 +868,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -879,7 +879,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -890,12 +890,12 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -906,7 +906,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -917,7 +917,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -927,7 +927,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -937,7 +937,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -948,7 +948,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -959,7 +959,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -970,7 +970,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C4/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -981,7 +981,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="D4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="D4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -1001,12 +1001,12 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1016,7 +1016,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1026,7 +1026,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1036,7 +1036,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1046,7 +1046,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1057,7 +1057,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1068,7 +1068,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1079,7 +1079,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1090,13 +1090,13 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1106,7 +1106,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1116,7 +1116,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1126,7 +1126,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1136,7 +1136,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1146,7 +1146,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1156,7 +1156,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1166,7 +1166,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D4/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1176,7 +1176,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="E4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="E4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -1196,13 +1196,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1212,7 +1212,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1222,7 +1222,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1232,7 +1232,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1242,7 +1242,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1252,7 +1252,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1263,7 +1263,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1274,7 +1274,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1285,12 +1285,12 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1301,7 +1301,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1312,7 +1312,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1322,7 +1322,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1332,7 +1332,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1343,7 +1343,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1354,7 +1354,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1365,7 +1365,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E4/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1376,7 +1376,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="F4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="F4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -1396,12 +1396,12 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1411,7 +1411,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1421,7 +1421,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1431,7 +1431,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1441,7 +1441,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1452,7 +1452,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1463,7 +1463,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1474,7 +1474,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1485,13 +1485,13 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1501,7 +1501,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1511,7 +1511,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1521,7 +1521,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1531,7 +1531,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1541,7 +1541,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1551,7 +1551,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1561,7 +1561,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F4/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1571,7 +1571,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="G4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="G4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -1591,13 +1591,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1607,7 +1607,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1617,7 +1617,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1627,7 +1627,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1637,7 +1637,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1647,7 +1647,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1658,7 +1658,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1669,7 +1669,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1680,12 +1680,12 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1696,7 +1696,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1707,7 +1707,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1717,7 +1717,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1727,7 +1727,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1738,7 +1738,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1749,7 +1749,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1760,7 +1760,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G4/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1771,7 +1771,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="A4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="A4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -1791,13 +1791,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1807,7 +1807,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1817,7 +1817,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1827,7 +1827,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1837,7 +1837,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1848,7 +1848,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1859,7 +1859,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1870,7 +1870,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1881,13 +1881,13 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1897,7 +1897,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1907,7 +1907,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1917,7 +1917,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1927,7 +1927,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1937,7 +1937,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1947,7 +1947,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1957,7 +1957,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A4/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -1967,7 +1967,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="B4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="B4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -1987,13 +1987,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2003,7 +2003,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2013,7 +2013,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2023,7 +2023,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2033,7 +2033,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2043,7 +2043,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2054,7 +2054,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2065,7 +2065,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2076,12 +2076,12 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2092,7 +2092,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2103,7 +2103,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2113,7 +2113,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2123,7 +2123,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2134,7 +2134,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2145,7 +2145,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2156,7 +2156,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B4/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2167,7 +2167,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="C5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="C5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -2187,13 +2187,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2203,7 +2203,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2213,7 +2213,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2223,7 +2223,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2233,7 +2233,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2244,7 +2244,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2255,7 +2255,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2266,7 +2266,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2277,13 +2277,13 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2293,7 +2293,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2303,7 +2303,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2313,7 +2313,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2323,7 +2323,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2333,7 +2333,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2343,7 +2343,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2353,7 +2353,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C5/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2363,7 +2363,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="D5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="D5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -2383,13 +2383,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2399,7 +2399,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2409,7 +2409,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2419,7 +2419,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2429,7 +2429,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2439,7 +2439,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2450,7 +2450,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2461,7 +2461,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2472,12 +2472,12 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2488,7 +2488,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2499,7 +2499,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2509,7 +2509,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2519,7 +2519,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2530,7 +2530,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2541,7 +2541,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2552,7 +2552,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D5/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2563,7 +2563,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="E5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="E5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -2583,13 +2583,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2599,7 +2599,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2609,7 +2609,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2619,7 +2619,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2629,7 +2629,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2640,7 +2640,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2651,7 +2651,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2662,7 +2662,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2673,13 +2673,13 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2689,7 +2689,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2699,7 +2699,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2709,7 +2709,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2719,7 +2719,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2729,7 +2729,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2739,7 +2739,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2749,7 +2749,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E5/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2759,7 +2759,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="F5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="F5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -2779,13 +2779,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2795,7 +2795,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2805,7 +2805,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2815,7 +2815,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2825,7 +2825,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2835,7 +2835,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2846,7 +2846,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2857,7 +2857,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2868,12 +2868,12 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2884,7 +2884,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2895,7 +2895,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2906,7 +2906,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -2916,7 +2916,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2927,7 +2927,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2938,7 +2938,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2949,7 +2949,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F5/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2960,7 +2960,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="G5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="G5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -2980,13 +2980,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -2997,7 +2997,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3007,7 +3007,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3017,7 +3017,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3027,7 +3027,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3037,7 +3037,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3048,7 +3048,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3059,7 +3059,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3070,13 +3070,13 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3086,7 +3086,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3096,7 +3096,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3106,7 +3106,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3116,7 +3116,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3126,7 +3126,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3136,7 +3136,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3146,7 +3146,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G5/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3156,7 +3156,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="A5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="A5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -3176,13 +3176,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3192,7 +3192,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3202,7 +3202,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3212,7 +3212,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3222,7 +3222,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3232,7 +3232,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3243,7 +3243,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3254,7 +3254,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3265,12 +3265,12 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3281,7 +3281,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3292,7 +3292,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3303,7 +3303,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3313,7 +3313,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3323,7 +3323,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3334,7 +3334,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3345,7 +3345,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/A5/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3356,7 +3356,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="B5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="B5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -3376,12 +3376,12 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3392,7 +3392,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3403,7 +3403,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3414,7 +3414,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3425,7 +3425,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3435,7 +3435,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3446,7 +3446,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3457,7 +3457,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3468,13 +3468,13 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3484,7 +3484,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3494,7 +3494,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3504,7 +3504,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3514,7 +3514,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3524,7 +3524,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3534,7 +3534,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3544,7 +3544,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/B5/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3554,7 +3554,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="C6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="C6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -3574,13 +3574,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3590,7 +3590,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3600,7 +3600,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3610,7 +3610,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3620,7 +3620,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3630,7 +3630,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3641,7 +3641,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3652,7 +3652,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3663,12 +3663,12 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3679,7 +3679,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3690,7 +3690,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3701,7 +3701,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3711,7 +3711,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3721,7 +3721,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3732,7 +3732,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3743,7 +3743,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/C6/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3754,7 +3754,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="D6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="D6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -3774,12 +3774,12 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3790,7 +3790,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3801,7 +3801,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3812,7 +3812,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3823,7 +3823,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3833,7 +3833,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3843,7 +3843,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3854,7 +3854,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -3865,13 +3865,13 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3881,7 +3881,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3891,7 +3891,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3901,7 +3901,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3911,7 +3911,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3921,7 +3921,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3931,7 +3931,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3941,7 +3941,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/D6/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3951,7 +3951,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="E6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="E6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -3971,13 +3971,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3987,7 +3987,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -3997,7 +3997,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4007,7 +4007,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4017,7 +4017,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4027,7 +4027,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4038,7 +4038,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4049,7 +4049,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4060,12 +4060,12 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4076,7 +4076,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4087,7 +4087,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4098,7 +4098,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4108,7 +4108,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4118,7 +4118,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4128,7 +4128,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4139,7 +4139,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/E6/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4150,7 +4150,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="F6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="F6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -4170,12 +4170,12 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4186,7 +4186,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4197,7 +4197,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4208,7 +4208,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4219,7 +4219,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4229,7 +4229,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4239,7 +4239,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4249,7 +4249,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4260,13 +4260,13 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4276,7 +4276,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4286,7 +4286,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4296,7 +4296,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4306,7 +4306,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4316,7 +4316,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4326,7 +4326,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4336,7 +4336,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/F6/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4346,7 +4346,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="G6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="G6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
 material = SubResource("ShaderMaterial_ba3nt")
 layout_mode = 1
@@ -4366,13 +4366,13 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
 
-[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6"]
+[node name="SpaceLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/SpaceLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4382,7 +4382,7 @@ offset_bottom = -177.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/SpaceLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4392,7 +4392,7 @@ offset_bottom = -115.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/SpaceLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4402,7 +4402,7 @@ offset_bottom = -53.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/SpaceLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4412,7 +4412,7 @@ offset_bottom = 9.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/SpaceLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/SpaceLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4422,7 +4422,7 @@ offset_bottom = 71.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/SpaceLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4433,7 +4433,7 @@ offset_bottom = 133.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/SpaceLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4444,7 +4444,7 @@ offset_bottom = 195.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/SpaceLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/SpaceLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4455,12 +4455,12 @@ offset_bottom = 257.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6"]
+[node name="MidLines" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/MidLines"]
+[node name="LedgerLine1" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4471,7 +4471,7 @@ offset_bottom = -146.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/MidLines"]
+[node name="LedgerLine2" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4482,7 +4482,7 @@ offset_bottom = -84.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/MidLines"]
+[node name="LedgerLine3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4493,7 +4493,7 @@ offset_bottom = -22.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/MidLines"]
+[node name="LedgerLine4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4503,7 +4503,7 @@ offset_bottom = 40.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/MidLines"]
+[node name="LedgerLine5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4513,7 +4513,7 @@ offset_bottom = 102.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/MidLines"]
+[node name="LedgerLine6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4523,7 +4523,7 @@ offset_bottom = 164.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/MidLines"]
+[node name="LedgerLine7" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/MidLines"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -15.0
@@ -4533,7 +4533,7 @@ offset_bottom = 226.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack/G6/MidLines"]
+[node name="LedgerLine8" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6/MidLines"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -4544,7 +4544,7 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
-[node name="QuarterRest" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack"]
+[node name="QuarterRest" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 layout_mode = 0
 offset_left = 535.0
 offset_top = 279.0
@@ -37753,8 +37753,9 @@ texture = ExtResource("12_odctp")
 expand_mode = 1
 
 [node name="NoteExplosionCPUParticles2D" parent="." instance=ExtResource("14_3tip1")]
-visible = false
 position = Vector2(454, 571)
+speed_scale = 2.5
+explosiveness = 0.9
 
 [node name="SamplerTimer" type="Timer" parent="."]
 wait_time = 0.3
@@ -37799,12 +37800,12 @@ theme_override_font_sizes/font_size = 30
 text = "Beat in bar 44: "
 
 [node name="Button" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 141.0
-offset_top = 93.0
-offset_right = 237.0
-offset_bottom = 173.0
+offset_top = 771.0
+offset_right = 399.0
+offset_bottom = 950.0
+text = "Save"
 
 [node name="Piano" parent="." instance=ExtResource("17_ksycf")]
 visible = false

@@ -16,6 +16,7 @@ extends Control
 
 
 func _ready() -> void:
+	$Button.pressed.connect(save_measures)
 	for note_stack in note_stack_container.get_children():
 		note_stack.mouse_entered.connect(_on_note_stack_mouse_interact.bind(note_stack, "entered"))
 		note_stack.mouse_exited.connect(_on_note_stack_mouse_interact.bind(note_stack, "exited"))
@@ -48,7 +49,24 @@ func is_note_stack_active(note_stack_to_check: Control) -> bool:
 
 func _on_note_head_note_placed(note_placed):
 	$SamplerInstrument.play_note(note_placed.name.left(2)[0], int(note_placed.name.left(2)[1]))
+	$NoteExplosionCPUParticles2D.emitting = true
+	$NoteExplosionCPUParticles2D.position = note_placed.global_position + Vector2(50,30)
 
 
 func _on_note_head_note_removed(note_removed):
 	pass
+
+
+func save_measures() -> void:
+	var composition = []
+	for note_stack in note_stack_container.get_children():
+		for notation in note_stack.get_children():
+			if notation.modulate.a == 1.0:
+				composition.append(
+					{
+						"note_value": notation.name.left(3)[-2],
+						"note_octave": int(notation.name.left(3)[-1]),
+						"beat": int(notation.get_parent().name.left(10)[-1])
+					}
+				)
+	print(composition)
