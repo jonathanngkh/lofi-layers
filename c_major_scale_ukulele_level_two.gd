@@ -42,7 +42,7 @@ var note_explosions := []
 func _ready() -> void:
 	$TabBoxRichTextLabel/TitleRichTextLabel.text = $TabBoxRichTextLabel/TitleRichTextLabel.text.left(16) + str(Conductor.bpm/2)
 	$ClearedBPMsControl/ClearedBPM.text = "[b]" + str(Conductor.bpm/2)
-	$Button.pressed.connect(func(): pass)
+	$Button.pressed.connect(Conductor.start_conducting)
 	Conductor.beat_incremented.connect(func(): $Label.text = "Beat in bar 88: " + str(Conductor.beat_in_bar))
 	Conductor.downbeat_incremented.connect(func(): $Label2.text = "Beat in bar 44: " + str(round(Conductor.beat_in_bar/2.0)))
 	Conductor.upbeat_incremented.connect(bounce_current_note_label)

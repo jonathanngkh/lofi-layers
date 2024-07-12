@@ -3,6 +3,7 @@ extends AudioStreamPlayer
 # change to 220, and 8 to be able to detect quavers. down beats become 1,3,5,7
 @export var bpm: float = 220.0
 @export var beats_per_bar: int = 8 # assumed to be crotchets in 4 4 time
+@export var autostart := false
 
 @onready var intro: AudioStreamPlayer = $IntroAudioStreamPlayer
 @onready var track_1: AudioStreamPlayer = $Track1AudioStreamPlayer
@@ -26,10 +27,15 @@ signal beat_in_bar_signal(beat_in_bar)
 signal current_measure_signal(measure)
 
 
-func _ready():
+func _ready() -> void:
 	$StartTimer.timeout.connect(_on_start_timer_timeout)
 	beat_incremented.connect(_on_beat_incremented)
 	sec_per_beat = 60.0 / bpm
+	if autostart:
+		start_conducting()
+
+
+func start_conducting() -> void:
 	self.play()
 	intro.play()
 
@@ -126,24 +132,25 @@ func _on_beat_incremented():
 		downbeat_incremented.emit()
 	else: # even beats 2468
 		upbeat_incremented.emit()
-		
-	if beat_in_bar == 1:
-		$ClosedHitAudioStreamPlayer.play()
-		$OpenHitAudioStreamPlayer2.play()
-	if beat_in_bar == 2:
-		pass
-	if beat_in_bar == 3:
-		$OpenHitAudioStreamPlayer.play()
-	if beat_in_bar == 4:
-		pass
-	if beat_in_bar == 5:
-		$OpenHitAudioStreamPlayer2.play()
-	if beat_in_bar == 6:
-		pass
-	if beat_in_bar == 7:
-		$OpenHitAudioStreamPlayer.play()
-	if beat_in_bar == 8:
-		pass
+	
+	if measure >= 2:
+		if beat_in_bar == 1:
+			$ClosedHitAudioStreamPlayer.play()
+			$OpenHitAudioStreamPlayer2.play()
+		if beat_in_bar == 2:
+			pass
+		if beat_in_bar == 3:
+			$OpenHitAudioStreamPlayer.play()
+		if beat_in_bar == 4:
+			pass
+		if beat_in_bar == 5:
+			$OpenHitAudioStreamPlayer2.play()
+		if beat_in_bar == 6:
+			pass
+		if beat_in_bar == 7:
+			$OpenHitAudioStreamPlayer.play()
+		if beat_in_bar == 8:
+			pass
 		
 		
 	$Label.text = str(beat_in_bar)

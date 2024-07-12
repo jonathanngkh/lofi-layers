@@ -1825,12 +1825,13 @@ theme_override_font_sizes/font_size = 30
 text = "Beat in bar 44: "
 
 [node name="Button" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 141.0
 offset_top = 93.0
 offset_right = 237.0
 offset_bottom = 173.0
+theme_override_font_sizes/font_size = 50
+text = "Start"
 
 [node name="Piano" parent="." instance=ExtResource("15_kawwk")]
 visible = false

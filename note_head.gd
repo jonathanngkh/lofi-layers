@@ -35,10 +35,10 @@ func _input(event: InputEvent) -> void:
 		event.button_index == MOUSE_BUTTON_LEFT and
 		event.pressed
 	)
-	var event_is_mouse_double_click: bool = (
+	var event_is_mouse_right_click: bool = (
 		event is InputEventMouseButton and
-		event.button_index == MOUSE_BUTTON_LEFT and
-		event.double_click
+		event.button_index == MOUSE_BUTTON_RIGHT and
+		event.pressed
 	)
 	if event_is_mouse_click and hover == true and placed == false:
 		placed = true
@@ -46,7 +46,7 @@ func _input(event: InputEvent) -> void:
 		modulate.a = 1.0
 
 		
-	if event_is_mouse_double_click and hover == true and placed == true:
+	if event_is_mouse_right_click and hover == true and placed == true:
 		placed = false
 		note_removed.emit(self)
 		modulate.a = 0.0
