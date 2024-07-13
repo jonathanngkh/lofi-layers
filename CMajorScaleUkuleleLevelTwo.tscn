@@ -1784,6 +1784,7 @@ offset_top = 85.0
 offset_bottom = 85.0
 
 [node name="BouncingRhythmIndicator" parent="BouncingRhythmContainerNode" instance=ExtResource("16_g62k6")]
+visible = true
 position = Vector2(297, 212)
 
 [node name="PunctualityLabelsControl" type="Control" parent="."]

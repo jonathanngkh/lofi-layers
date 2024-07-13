@@ -19,14 +19,18 @@ func _ready() -> void:
 
 func _on_mouse_entered() -> void:
 	hover = true
-	if placed == false:
-		modulate.a = 1.0
+	#if placed == false:
+	modulate.a = 0.5
+		
+		
 
 
 func _on_mouse_exited() -> void:
 	hover = false
 	if placed == false:
 		modulate.a = 0.0
+	else:
+		modulate.a = 1.0
 
 
 func _input(event: InputEvent) -> void:

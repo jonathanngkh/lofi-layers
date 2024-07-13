@@ -17,9 +17,7 @@ script = ExtResource("1_82sa7")
 metadata/_edit_horizontal_guides_ = [720.0]
 
 [node name="BackGlow" type="Sprite2D" parent="."]
-self_modulate = Color(0, 0, 0, 1)
 z_index = 1
-z_as_relative = false
 position = Vector2(5.96046e-08, 0)
 rotation = 0.785492
 scale = Vector2(0.684714, 0.684714)

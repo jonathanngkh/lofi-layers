@@ -1,5 +1,7 @@
 extends Sprite2D
 
+@export var debug_mode := false
+
 var glow_time : float = Conductor.sec_per_beat
 var bounce_height : float = 50.0
 
@@ -13,6 +15,8 @@ var dark_green := Color(0, 0.4, 0)
 func _ready():
 	#conductor.measure_incremented.connect(_on_conductor_measure_incremented)
 	#Conductor.beat_incremented.connect(_on_conductor_beat_incremented)
+	if debug_mode:
+		Conductor.start_conducting()
 	Conductor.downbeat_incremented.connect(bounce)
 
 func _process(_delta: float) -> void:
