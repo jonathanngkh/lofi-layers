@@ -1,10 +1,18 @@
 extends Control
 
+var music_looping = false
+var practice_mode = false
+var loaded_notes
 
 @onready var note_stack_container: HBoxContainer = $NotationBoxRichTextLabel/Staff/NoteStackContainer
+@onready var current_note: int
+@onready var note_explosion := preload("res://assets/vfx/note_explosion_cpu_particles_2d.tscn")
+@onready var perfect_label := preload("res://perfect_rich_text_label.tscn")
+@onready var early_label := preload("res://early_rich_text_label.tscn")
+@onready var late_label := preload("res://late_rich_text_label.tscn")
+@onready var cleared_BPM_label := preload("res://cleared_bpm_rich_text_label.tscn")
+@onready var BPM_tick_label := preload("res://bpm_tick_rich_text_label.tscn")
 
-var music_looping = false
-var loaded_notes
 
 func _ready() -> void:
 	Conductor.beat_incremented.connect(loop_music)
@@ -93,11 +101,16 @@ func play_saved_measures() -> void:
 	loaded_notes = JSON.parse_string(content)
 	#print(loaded_notes)
 	music_looping = true
+	practice_mode = false
 
 
 func start_practice_mode() -> void:
 	music_looping = false
+	practice_mode = true
 
+
+func check_note() -> void:
+	# if current note == played note on the correct beat, get_punctuality and print it, if all correct, play riser and success sound
 
 func loop_music() -> void: # called when beat is incremented
 	if music_looping:
