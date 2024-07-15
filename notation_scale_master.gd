@@ -1,6 +1,6 @@
 extends Control
 
-var music_looping = false
+var looping_mode: = false
 var practice_mode = false
 var loaded_notes
 
@@ -29,6 +29,12 @@ func _ready() -> void:
 			else:
 				notation.note_placed.connect(_on_note_head_note_placed)
 				notation.note_removed.connect(_on_note_head_note_removed)
+
+
+func check_note() -> void:
+	# if current note == played note on the correct beat, get_punctuality and print it, if all correct, play riser and success sound
+	
+	pass
 
 
 func _on_note_stack_mouse_interact(note_stack_entered: Control, action_type: String) -> void:
@@ -100,20 +106,24 @@ func play_saved_measures() -> void:
 	file.close()
 	loaded_notes = JSON.parse_string(content)
 	#print(loaded_notes)
-	music_looping = true
+	looping_mode = true
 	practice_mode = false
 
 
 func start_practice_mode() -> void:
-	music_looping = false
+	looping_mode = false
 	practice_mode = true
+	# start conductor
+	Conductor.change_bpm(220)
+	# load loaded_notes
+	var file = FileAccess.open("res://composition.json", FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+	loaded_notes = JSON.parse_string(content)
 
-
-func check_note() -> void:
-	# if current note == played note on the correct beat, get_punctuality and print it, if all correct, play riser and success sound
 
 func loop_music() -> void: # called when beat is incremented
-	if music_looping:
+	if looping_mode:
 		for notation_event in loaded_notes:
 			if not loaded_notes[notation_event]["note_value"] == "QuarterRest":
 				if Conductor.measure % 2 == 0: # left measure
@@ -138,21 +148,25 @@ func loop_music() -> void: # called when beat is incremented
 
 
 func bouncing_ball_movement() -> void: # called on downbeat incremented signal
-	if Conductor.measure % 2 == 0:
-		if Conductor.beat_in_bar == 1:
-			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(515)
-		if Conductor.beat_in_bar == 3:
-			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(760)
-		if Conductor.beat_in_bar == 5:
-			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(1000)
-		if Conductor.beat_in_bar == 7:
-			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(1240)
-	else:
-		if Conductor.beat_in_bar == 1:
-			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(1485)
-		if Conductor.beat_in_bar == 3:
-			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(1725)
-		if Conductor.beat_in_bar == 5:
-			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(1965)
-		if Conductor.beat_in_bar == 7:
-			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(275)
+	if looping_mode:
+		# bounce from note to note
+		if Conductor.measure % 2 == 0:
+			if Conductor.beat_in_bar == 1:
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(515)
+			if Conductor.beat_in_bar == 3:
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(760)
+			if Conductor.beat_in_bar == 5:
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(1000)
+			if Conductor.beat_in_bar == 7:
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(1240)
+		else:
+			if Conductor.beat_in_bar == 1:
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(1485)
+			if Conductor.beat_in_bar == 3:
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(1725)
+			if Conductor.beat_in_bar == 5:
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(1965)
+			if Conductor.beat_in_bar == 7:
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(275)
+	if practice_mode:
+		# bounce on note until it's played
