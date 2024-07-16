@@ -49,6 +49,10 @@ func change_bpm(plus_or_minus: String) -> void:
 	elif plus_or_minus == "minus":
 		Conductor.bpm -= change_amount
 		$TempoRichTextLabel.text = "[center][b]Tempo: " + str(Conductor.bpm/2)
+		
+	if looping_mode or practice_mode or wait_mode:
+		Conductor.change_bpm(Conductor.bpm)
+
 
 func _on_note_stack_mouse_interact(note_stack_entered: Control, action_type: String) -> void:
 	for notation in note_stack_entered.get_children():
@@ -81,12 +85,13 @@ var composition = {}
 
 func save_measures() -> void:
 	# reset composition.json with rests
-	for i in range(176):
-		composition["event" + str(i)] = {
-			"note_value": "QuarterRest",
-			"note_octave": -1,
-			"beat": 0
-		}
+	composition = {}
+	#for i in range(176):
+		#composition["event" + str(i)] = {
+			#"note_value": "placeholder",
+			#"note_octave": -1,
+			#"beat": -1
+		#}
 	# add each notation event to the json
 	var event_number = 0
 	for note_stack in note_stack_container.get_children():
