@@ -1,11 +1,12 @@
 extends Control
 
-var looping_mode: = false
-var practice_mode = false
+var looping_mode := false
+var practice_mode := false
+var wait_mode := false
 var loaded_notes
+var current_node
 
 @onready var note_stack_container: HBoxContainer = $NotationBoxRichTextLabel/Staff/NoteStackContainer
-@onready var current_note: int
 @onready var note_explosion := preload("res://assets/vfx/note_explosion_cpu_particles_2d.tscn")
 @onready var perfect_label := preload("res://perfect_rich_text_label.tscn")
 @onready var early_label := preload("res://early_rich_text_label.tscn")
@@ -20,6 +21,9 @@ func _ready() -> void:
 	$Button.pressed.connect(save_measures)
 	$Button2.pressed.connect(play_saved_measures)
 	$Button3.pressed.connect(start_practice_mode)
+	$MinusButton.pressed.connect(change_bpm.bind("minus"))
+	$PlusButton.pressed.connect(change_bpm.bind("plus"))
+	$TempoRichTextLabel.text = "[center][b]Tempo: " + str(Conductor.bpm/2)
 	for note_stack in note_stack_container.get_children():
 		note_stack.mouse_entered.connect(_on_note_stack_mouse_interact.bind(note_stack, "entered"))
 		note_stack.mouse_exited.connect(_on_note_stack_mouse_interact.bind(note_stack, "exited"))
@@ -36,6 +40,15 @@ func check_note() -> void:
 	
 	pass
 
+
+func change_bpm(plus_or_minus: String) -> void:
+	var change_amount := 10
+	if plus_or_minus == "plus":
+		Conductor.bpm += change_amount
+		$TempoRichTextLabel.text = "[center][b]Tempo: " + str(Conductor.bpm/2)
+	elif plus_or_minus == "minus":
+		Conductor.bpm -= change_amount
+		$TempoRichTextLabel.text = "[center][b]Tempo: " + str(Conductor.bpm/2)
 
 func _on_note_stack_mouse_interact(note_stack_entered: Control, action_type: String) -> void:
 	for notation in note_stack_entered.get_children():
@@ -99,7 +112,7 @@ func save_measures() -> void:
 
 func play_saved_measures() -> void:
 	#Conductor.start_conducting()
-	Conductor.change_bpm(220)
+	Conductor.change_bpm(Conductor.bpm)
 	# load loaded_notes
 	var file = FileAccess.open("res://composition.json", FileAccess.READ)
 	var content = file.get_as_text()
@@ -110,16 +123,24 @@ func play_saved_measures() -> void:
 	practice_mode = false
 
 
-func start_practice_mode() -> void:
-	looping_mode = false
-	practice_mode = true
-	# start conductor
-	Conductor.change_bpm(220)
-	# load loaded_notes
+func load_notes() -> void:
 	var file = FileAccess.open("res://composition.json", FileAccess.READ)
 	var content = file.get_as_text()
 	file.close()
 	loaded_notes = JSON.parse_string(content)
+
+
+func get_notes_to_play() -> void:
+	for event in loaded_notes:
+		if not event["note_value"] == "QuarterRest":
+			pass
+
+
+func start_practice_mode() -> void:
+	looping_mode = false
+	practice_mode = true
+	# start conductor
+	Conductor.change_bpm(Conductor.bpm)
 
 
 func loop_music() -> void: # called when beat is incremented
@@ -169,4 +190,8 @@ func bouncing_ball_movement() -> void: # called on downbeat incremented signal
 			if Conductor.beat_in_bar == 7:
 				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(275)
 	if practice_mode:
-		# bounce on note until it's played
+		# ball will bounce like in looping mode, but resets if note was not played, played early, or played late. checker will wait until past late first.
+		pass
+	if wait_mode:
+		# bounce and stop on note until it's played. if it's a rest, bounce on it then move to next one
+		pass

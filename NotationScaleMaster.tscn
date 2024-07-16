@@ -37588,6 +37588,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ClearedRichTextLabel" parent="." instance=ExtResource("16_e1eb2")]
+visible = false
 layout_mode = 0
 offset_left = 112.0
 offset_top = 1270.0
@@ -37596,6 +37597,7 @@ offset_bottom = 1346.0
 text = "[b]Cleared:"
 
 [node name="ClearedBPMsControl" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_left = 364.0
 offset_top = 1270.0
@@ -37654,6 +37656,30 @@ offset_top = 771.0
 offset_right = 1002.0
 offset_bottom = 950.0
 text = "Practice"
+
+[node name="MinusButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 1020.0
+offset_right = 319.0
+offset_bottom = 1199.0
+text = "-"
+
+[node name="TempoRichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 377.0
+offset_top = 1027.0
+offset_right = 888.0
+offset_bottom = 1188.0
+bbcode_enabled = true
+text = "[center][b]Tempo: 110"
+
+[node name="PlusButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 941.0
+offset_top = 1020.0
+offset_right = 1114.0
+offset_bottom = 1199.0
+text = "+"
 
 [node name="Piano" parent="." instance=ExtResource("17_ksycf")]
 visible = false
