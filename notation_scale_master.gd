@@ -84,27 +84,21 @@ func _on_note_head_note_removed(note_removed):
 var composition = {}
 
 func save_measures() -> void:
-	# reset composition.json with rests
+	# reset composition.json
 	composition = {}
-	#for i in range(176):
-		#composition["event" + str(i)] = {
-			#"note_value": "placeholder",
-			#"note_octave": -1,
-			#"beat": -1
-		#}
 	# add each notation event to the json
 	var event_number = 0
 	for note_stack in note_stack_container.get_children():
 		for notation in note_stack.get_children():
 			if notation.modulate.a == 1.0: # rest/placed_note
 				event_number += 1
-				if not notation.name == "QuarterRest":
+				if not notation.name == "QuarterRest": # placed_note
 					composition["event" + str(event_number)] = {
 						"note_value": notation.name.left(3)[-2],
 						"note_octave": int(notation.name.left(3)[-1]),
 						"beat": int(notation.get_parent().name.left(10)[-1])
 					}
-				else:
+				else: # rest
 					composition["event" + str(event_number)] = {
 						"note_value": "QuarterRest",
 						"note_octave": -1,
