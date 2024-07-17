@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://db3mcqs4pyfkc" path="res://assets/music theory/natural.png" id="1_3qs80"]
 
-[node name="Natural" type="TextureRect"]
+[node name="Natural" type="TextureRect" groups=["accidental"]]
 offset_left = -45.44
 offset_top = -32.811
 offset_right = -10.44

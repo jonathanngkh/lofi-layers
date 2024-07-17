@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs81k1wq4aq6o"]
+
+[ext_resource type="Texture2D" uid="uid://20jv8p0dhrek" path="res://assets/music theory/DoubleSharp.png" id="1_dqp6j"]
+
+[node name="DoubleSharp" type="TextureRect" groups=["accidental"]]
+offset_left = -57.0
+offset_top = 9.0
+offset_right = -2.0
+offset_bottom = 64.0
+texture = ExtResource("1_dqp6j")
+expand_mode = 1
+stretch_mode = 4

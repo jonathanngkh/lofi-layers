@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://de0njku1cvx2q"]
+
+[ext_resource type="Texture2D" uid="uid://0jgyjey3p0uf" path="res://assets/music theory/doubleflat.png" id="1_wftrm"]
+
+[node name="DoubleFlat" type="TextureRect" groups=["accidental"]]
+offset_left = -84.44
+offset_top = -84.0
+offset_right = 4.56
+offset_bottom = 76.0
+texture = ExtResource("1_wftrm")
+expand_mode = 1
+stretch_mode = 4

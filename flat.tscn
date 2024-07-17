@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://2gcd2xljkidx"]
+
+[ext_resource type="Texture2D" uid="uid://6hdax4q4vdp7" path="res://assets/music theory/flat.png" id="1_0jonc"]
+
+[node name="Flat" type="TextureRect" groups=["accidental"]]
+offset_left = -46.0
+offset_top = -83.811
+offset_right = 2.0
+offset_bottom = 76.189
+texture = ExtResource("1_0jonc")
+expand_mode = 1
+stretch_mode = 4

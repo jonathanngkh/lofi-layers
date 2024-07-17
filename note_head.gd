@@ -6,10 +6,13 @@ var placed := false
 signal note_placed(placed_note)
 signal note_removed(removed_note)
 
-@onready var natural_sprite := preload("res://natural.tscn")
-#@onready var sharp_sprite := preload()
-#@onready var flat_sprite := preload()
-#@onready var flat_sprite := preload()
+@onready var natural := preload("res://natural.tscn")
+@onready var sharp := preload("res://sharp.tscn")
+@onready var flat := preload("res://flat.tscn")
+@onready var double_sharp := preload("res://double_sharp.tscn")
+@onready var double_flat := preload("res://double_flat.tscn")
+@onready var accidentals := [natural, sharp, flat, double_sharp, double_flat]
+@onready var accidentals_index := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,16 +51,34 @@ func _input(event: InputEvent) -> void:
 		event.pressed
 	)
 	if event_is_mouse_click and hover == true:
+		print(accidentals_index)
 		if placed == false:
 			placed = true
 			note_placed.emit(self)
 			modulate.a = 1.0
 		elif placed == true:
-			var natural_spawn = natural_sprite.instantiate()
-			add_child(natural_spawn)
+			if accidentals_index < accidentals.size():
+				# remove previous accidental:
+				for child in get_children():
+					if child.is_in_group("accidental"):
+						child.queue_free()
+				var accidental_spawn = accidentals[accidentals_index].instantiate()
+				add_child(accidental_spawn)
+				accidentals_index += 1
+			else:
+				accidentals_index = 0
+				# remove previous accidental
+				for child in get_children():
+					if child.is_in_group("accidental"):
+						child.queue_free()
 		
 		
 	if event_is_mouse_right_click and hover == true and placed == true:
 		placed = false
 		note_removed.emit(self)
 		modulate.a = 0.0
+		accidentals_index = 0
+		# remove previous accidental
+		for child in get_children():
+			if child.is_in_group("accidental"):
+				child.queue_free()

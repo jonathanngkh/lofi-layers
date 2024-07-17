@@ -37,6 +37,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/SimpleSampler/plugin.cfg", "res://addons/midi/plugin.cfg")
 
+[global_group]
+
+accidental=""
+
 [input]
 
 C_on={

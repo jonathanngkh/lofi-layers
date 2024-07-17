@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceq52qtautd80"]
+
+[ext_resource type="Texture2D" uid="uid://byphlyokv50bo" path="res://assets/music theory/sharp.png" id="1_4rjxf"]
+
+[node name="Sharp" type="TextureRect" groups=["accidental"]]
+offset_left = -51.0
+offset_top = -41.0
+offset_right = -3.0
+offset_bottom = 117.0
+texture = ExtResource("1_4rjxf")
+expand_mode = 1
+stretch_mode = 4
