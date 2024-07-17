@@ -83,6 +83,8 @@ func _on_note_head_note_placed(note_placed):
 				accidental = "b"
 			if child.name == "DoubleFlat":
 				accidental = "bb"
+			if child.name == "Natural":
+				accidental = ""
 	$SamplerInstrument.play_note(note_placed.name.left(2)[0] + accidental, int(note_placed.name.left(2)[1]))
 	$NoteExplosionCPUParticles2D.emitting = true
 	$NoteExplosionCPUParticles2D.position = note_placed.global_position + Vector2(50,30)
@@ -115,6 +117,8 @@ func save_measures() -> void:
 								accidental = "b"
 							if child.name == "DoubleFlat":
 								accidental = "bb"
+							if child.name == "Natural":
+								accidental = ""
 					composition["event" + str(event_number)] = {
 						"note_value": notation.name.left(3)[-2] + accidental,
 						"note_octave": int(notation.name.left(3)[-1]),
