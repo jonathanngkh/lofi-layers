@@ -72,7 +72,18 @@ func is_note_stack_active(note_stack_to_check: Control) -> bool:
 
 
 func _on_note_head_note_placed(note_placed):
-	$SamplerInstrument.play_note(note_placed.name.left(2)[0], int(note_placed.name.left(2)[1]))
+	var accidental = ""
+	for child in note_placed.get_children():
+		if child.is_in_group("accidental"):
+			if child.name == "Sharp":
+				accidental = "#"
+			if child.name == "DoubleSharp":
+				accidental = "##"
+			if child.name == "Flat":
+				accidental = "b"
+			if child.name == "DoubleFlat":
+				accidental = "bb"
+	$SamplerInstrument.play_note(note_placed.name.left(2)[0] + accidental, int(note_placed.name.left(2)[1]))
 	$NoteExplosionCPUParticles2D.emitting = true
 	$NoteExplosionCPUParticles2D.position = note_placed.global_position + Vector2(50,30)
 
@@ -93,8 +104,19 @@ func save_measures() -> void:
 			if notation.modulate.a == 1.0: # rest/placed_note
 				event_number += 1
 				if not notation.name == "QuarterRest": # placed_note
+					var accidental = ""
+					for child in notation.get_children():
+						if child.is_in_group("accidental"):
+							if child.name == "Sharp":
+								accidental = "#"
+							if child.name == "DoubleSharp":
+								accidental = "##"
+							if child.name == "Flat":
+								accidental = "b"
+							if child.name == "DoubleFlat":
+								accidental = "bb"
 					composition["event" + str(event_number)] = {
-						"note_value": notation.name.left(3)[-2],
+						"note_value": notation.name.left(3)[-2] + accidental,
 						"note_octave": int(notation.name.left(3)[-1]),
 						"beat": int(notation.get_parent().name.left(10)[-1])
 					}
