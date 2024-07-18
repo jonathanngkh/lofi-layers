@@ -166,7 +166,7 @@ func _get_midi_dictionary() -> Dictionary:
 			midi_dict[pitch] = note_name  # Map MIDI number to note name
 	return midi_dict
 
-
+# why did i comment out the equivalents?
 var note_values := {
 	"C": 0,
 	"C#": 1,
@@ -197,7 +197,8 @@ func get_note_value(tone: String, octave: int = 4) -> int:
 		push_error("'" + str(tone) + "' is not a valid note!")
 		return 0
 	var value: int = note_values[tone]
-	return value + 12 * octave
+	#return (value + 12 * octave)
+	return (value + 12 * octave) + 12 # change to this when hovering notation and printing midi number, was below by 12
 
 # Return the name of a note from its value
 func get_note_name(value: int) -> String:

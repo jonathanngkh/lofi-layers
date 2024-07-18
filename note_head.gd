@@ -6,6 +6,8 @@ var placed := false
 signal note_placed(placed_note)
 signal note_removed(removed_note)
 
+@onready var left_crotchet_tail := preload("res://left_crotchet_tail.tscn")
+@onready var right_crotchet_tail := preload("res://right_crotchet_tail.tscn")
 @onready var natural := preload("res://natural.tscn")
 @onready var sharp := preload("res://sharp.tscn")
 @onready var flat := preload("res://flat.tscn")
@@ -54,6 +56,12 @@ func _input(event: InputEvent) -> void:
 			placed = true
 			note_placed.emit(self)
 			modulate.a = 1.0
+			if MusicTheoryDB.get_note_value(name.right(2)[0], int(name.right(2)[1])) >= 71:
+				var left_tail_spawn = left_crotchet_tail.instantiate()
+				add_child(left_tail_spawn)
+			else:
+				var right_tail_spawn = right_crotchet_tail.instantiate()
+				add_child(right_tail_spawn)
 		elif placed == true:
 			if accidentals_index < accidentals.size():
 				# remove previous accidental:
