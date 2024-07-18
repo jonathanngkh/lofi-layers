@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://rxtxer6q8kea"]
+[gd_scene load_steps=26 format=3 uid="uid://rxtxer6q8kea"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_mqefj"]
 [ext_resource type="Script" path="res://notation_scale_master.gd" id="2_3mxo5"]
@@ -12,6 +12,7 @@
 [ext_resource type="Shader" path="res://rainbow_gradient.gdshader" id="10_yqbsi"]
 [ext_resource type="Texture2D" uid="uid://cxuswpdv6d13l" path="res://assets/music theory/note head.png" id="11_j6c7a"]
 [ext_resource type="Texture2D" uid="uid://daw0mvqvvut7k" path="res://assets/music theory/staff_line.png" id="12_odctp"]
+[ext_resource type="Script" path="res://note_stack_container.gd" id="13_s5glm"]
 [ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="14_3tip1"]
 [ext_resource type="Texture2D" uid="uid://wkkk328weax0" path="res://assets/music theory/44.png" id="14_hoj6i"]
 [ext_resource type="PackedScene" uid="uid://cw85hbblfa1r8" path="res://bouncing_rhythm_indicator.tscn" id="15_5aeaq"]
@@ -174,6 +175,7 @@ offset_left = -15.0
 offset_top = -81.0
 offset_right = 1900.0
 offset_bottom = 616.0
+script = ExtResource("13_s5glm")
 
 [node name="NoteStack1" type="Control" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer"]
 layout_mode = 2

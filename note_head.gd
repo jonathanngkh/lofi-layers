@@ -54,14 +54,14 @@ func _input(event: InputEvent) -> void:
 	if event_is_mouse_click and hover == true:
 		if placed == false:
 			placed = true
-			note_placed.emit(self)
 			modulate.a = 1.0
-			if MusicTheoryDB.get_note_value(name.right(2)[0], int(name.right(2)[1])) >= 71:
-				var left_tail_spawn = left_crotchet_tail.instantiate()
-				add_child(left_tail_spawn)
-			else:
-				var right_tail_spawn = right_crotchet_tail.instantiate()
-				add_child(right_tail_spawn)
+			#if MusicTheoryDB.get_note_value(name.right(2)[0], int(name.right(2)[1])) >= 71:
+				#var left_tail_spawn = left_crotchet_tail.instantiate()
+				#add_child(left_tail_spawn)
+			#else:
+				#var right_tail_spawn = right_crotchet_tail.instantiate()
+				#add_child(right_tail_spawn)
+			note_placed.emit(self)
 		elif placed == true:
 			if accidentals_index < accidentals.size():
 				# remove previous accidental:

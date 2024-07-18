@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ewiwjpf3lubb" path="res://assets/music theory/crotchet tail.png" id="1_g55l3"]
 
-[node name="RightCrotchetTail" type="TextureRect"]
+[node name="RightCrotchetTail" type="TextureRect" groups=["crotchet_tail"]]
 offset_left = 79.5601
 offset_top = -180.811
 offset_right = 85.5601

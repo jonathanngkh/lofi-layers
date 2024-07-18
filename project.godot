@@ -40,6 +40,7 @@ enabled=PackedStringArray("res://addons/SimpleSampler/plugin.cfg", "res://addons
 [global_group]
 
 accidental=""
+crotchet_tail=""
 
 [input]
 
