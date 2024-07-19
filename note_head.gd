@@ -23,6 +23,7 @@ func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	for child in get_children():
+		child.mouse_filter = MOUSE_FILTER_IGNORE
 		for grandchild in child.get_children():
 			grandchild.mouse_filter = MOUSE_FILTER_IGNORE
 

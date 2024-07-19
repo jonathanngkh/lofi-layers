@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://rxtxer6q8kea"]
+[gd_scene load_steps=27 format=3 uid="uid://rxtxer6q8kea"]
 
 [ext_resource type="Theme" uid="uid://bhk78dvw2v8ao" path="res://assets/themes/main_theme.tres" id="1_mqefj"]
 [ext_resource type="Script" path="res://notation_scale_master.gd" id="2_3mxo5"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://note_stack_container.gd" id="13_s5glm"]
 [ext_resource type="PackedScene" uid="uid://08hivk3e2266" path="res://assets/vfx/note_explosion_cpu_particles_2d.tscn" id="14_3tip1"]
 [ext_resource type="Texture2D" uid="uid://wkkk328weax0" path="res://assets/music theory/44.png" id="14_hoj6i"]
+[ext_resource type="Texture2D" uid="uid://c0o2vcah5aaul" path="res://assets/music theory/white note head.png" id="14_i7evl"]
 [ext_resource type="PackedScene" uid="uid://cw85hbblfa1r8" path="res://bouncing_rhythm_indicator.tscn" id="15_5aeaq"]
 [ext_resource type="Texture2D" uid="uid://byphlyokv50bo" path="res://assets/music theory/sharp.png" id="15_nt56x"]
 [ext_resource type="Script" path="res://note_head.gd" id="15_wdb5b"]
@@ -183,6 +184,7 @@ size_flags_horizontal = 2
 
 [node name="G3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -195,7 +197,7 @@ offset_right = 615.44
 offset_bottom = 606.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -375,8 +377,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -389,7 +411,7 @@ offset_right = 615.44
 offset_bottom = 575.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -577,8 +599,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -591,7 +633,7 @@ offset_right = 615.44
 offset_bottom = 544.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -771,8 +813,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -785,7 +847,7 @@ offset_right = 615.438
 offset_bottom = 513.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -970,8 +1032,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -984,7 +1066,7 @@ offset_right = 615.44
 offset_bottom = 482.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -1164,8 +1246,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -1178,7 +1280,7 @@ offset_right = 615.44
 offset_bottom = 451.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -1363,8 +1465,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -1377,7 +1499,7 @@ offset_right = 615.44
 offset_bottom = 420.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -1557,8 +1679,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -1571,7 +1713,7 @@ offset_right = 615.44
 offset_bottom = 389.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -1756,8 +1898,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -1770,7 +1932,7 @@ offset_right = 615.44
 offset_bottom = 358.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -1951,8 +2113,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -1965,7 +2147,7 @@ offset_right = 615.44
 offset_bottom = 327.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -2150,8 +2332,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -2164,7 +2366,7 @@ offset_right = 615.44
 offset_bottom = 296.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -2345,8 +2547,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -2359,7 +2581,7 @@ offset_right = 615.44
 offset_bottom = 265.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -2544,8 +2766,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -2558,7 +2800,7 @@ offset_right = 615.44
 offset_bottom = 234.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -2739,8 +2981,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -2753,7 +3015,7 @@ offset_right = 615.44
 offset_bottom = 203.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -2939,8 +3201,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -2953,7 +3235,7 @@ offset_right = 615.44
 offset_bottom = 172.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -3134,8 +3416,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -3148,7 +3450,7 @@ offset_right = 615.44
 offset_bottom = 141.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -3333,8 +3635,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/A5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -3347,7 +3669,7 @@ offset_right = 615.44
 offset_bottom = 110.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -3530,8 +3852,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/B5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -3544,7 +3886,7 @@ offset_right = 615.44
 offset_bottom = 79.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -3729,8 +4071,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/C6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -3743,7 +4105,7 @@ offset_right = 615.44
 offset_bottom = 48.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -3925,8 +4287,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/D6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -3939,7 +4321,7 @@ offset_right = 615.44
 offset_bottom = 17.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -4123,8 +4505,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/E6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -4137,7 +4539,7 @@ offset_right = 615.44
 offset_bottom = -13.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -4318,8 +4720,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/F6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -4332,7 +4754,7 @@ offset_right = 615.44
 offset_bottom = -44.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -4515,6 +4937,25 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1/G6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="QuarterRest" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack1"]
 layout_mode = 0
 offset_left = 535.0
@@ -4531,6 +4972,7 @@ size_flags_horizontal = 2
 
 [node name="G3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -4543,7 +4985,7 @@ offset_right = 615.44
 offset_bottom = 606.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -4723,8 +5165,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/G3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -4737,7 +5199,7 @@ offset_right = 615.44
 offset_bottom = 575.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -4925,8 +5387,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/A3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -4939,7 +5421,7 @@ offset_right = 615.44
 offset_bottom = 544.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -5119,8 +5601,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/B3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -5133,7 +5635,7 @@ offset_right = 615.438
 offset_bottom = 513.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -5318,8 +5820,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/C4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -5332,7 +5854,7 @@ offset_right = 615.44
 offset_bottom = 482.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -5512,8 +6034,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/D4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -5526,7 +6068,7 @@ offset_right = 615.44
 offset_bottom = 451.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -5711,8 +6253,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/E4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -5725,7 +6287,7 @@ offset_right = 615.44
 offset_bottom = 420.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -5905,8 +6467,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/F4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -5919,7 +6501,7 @@ offset_right = 615.44
 offset_bottom = 389.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -6104,8 +6686,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/G4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -6118,7 +6720,7 @@ offset_right = 615.44
 offset_bottom = 358.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -6299,8 +6901,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/A4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -6313,7 +6935,7 @@ offset_right = 615.44
 offset_bottom = 327.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -6498,8 +7120,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/B4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -6512,7 +7154,7 @@ offset_right = 615.44
 offset_bottom = 296.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -6693,8 +7335,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/C5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -6707,7 +7369,7 @@ offset_right = 615.44
 offset_bottom = 265.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -6892,8 +7554,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/D5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -6906,7 +7588,7 @@ offset_right = 615.44
 offset_bottom = 234.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -7087,8 +7769,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/E5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -7101,7 +7803,7 @@ offset_right = 615.44
 offset_bottom = 203.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -7287,8 +7989,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/F5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -7301,7 +8023,7 @@ offset_right = 615.44
 offset_bottom = 172.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -7482,8 +8204,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/G5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -7496,7 +8238,7 @@ offset_right = 615.44
 offset_bottom = 141.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -7681,8 +8423,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/A5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -7695,7 +8457,7 @@ offset_right = 615.44
 offset_bottom = 110.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -7878,8 +8640,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/B5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -7892,7 +8674,7 @@ offset_right = 615.44
 offset_bottom = 79.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -8077,8 +8859,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/C6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -8091,7 +8893,7 @@ offset_right = 615.44
 offset_bottom = 48.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -8273,8 +9075,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/D6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -8287,7 +9109,7 @@ offset_right = 615.44
 offset_bottom = 17.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -8471,8 +9293,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/E6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -8485,7 +9327,7 @@ offset_right = 615.44
 offset_bottom = -13.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -8666,8 +9508,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/F6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -8680,7 +9542,7 @@ offset_right = 615.44
 offset_bottom = -44.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -8863,12 +9725,32 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2/G6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="QuarterRest" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack2"]
 layout_mode = 0
 offset_left = 535.0
 offset_top = 279.0
 offset_right = 601.0
 offset_bottom = 472.0
+mouse_filter = 2
 texture = ExtResource("17_mxu84")
 expand_mode = 1
 
@@ -8878,6 +9760,7 @@ size_flags_horizontal = 2
 
 [node name="G3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -8890,7 +9773,7 @@ offset_right = 615.44
 offset_bottom = 606.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -9070,8 +9953,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/G3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -9084,7 +9987,7 @@ offset_right = 615.44
 offset_bottom = 575.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -9272,8 +10175,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/A3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -9286,7 +10209,7 @@ offset_right = 615.44
 offset_bottom = 544.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -9466,8 +10389,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/B3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -9480,7 +10423,7 @@ offset_right = 615.438
 offset_bottom = 513.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -9665,8 +10608,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/C4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -9679,7 +10642,7 @@ offset_right = 615.44
 offset_bottom = 482.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -9859,8 +10822,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/D4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -9873,7 +10856,7 @@ offset_right = 615.44
 offset_bottom = 451.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -10058,8 +11041,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/E4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -10072,7 +11075,7 @@ offset_right = 615.44
 offset_bottom = 420.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -10252,8 +11255,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/F4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -10266,7 +11289,7 @@ offset_right = 615.44
 offset_bottom = 389.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -10451,8 +11474,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/G4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -10465,7 +11508,7 @@ offset_right = 615.44
 offset_bottom = 358.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -10646,8 +11689,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/A4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -10660,7 +11723,7 @@ offset_right = 615.44
 offset_bottom = 327.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -10845,8 +11908,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/B4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -10859,7 +11942,7 @@ offset_right = 615.44
 offset_bottom = 296.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -11040,8 +12123,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/C5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -11054,7 +12157,7 @@ offset_right = 615.44
 offset_bottom = 265.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -11239,8 +12342,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/D5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -11253,7 +12376,7 @@ offset_right = 615.44
 offset_bottom = 234.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -11434,8 +12557,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/E5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -11448,7 +12591,7 @@ offset_right = 615.44
 offset_bottom = 203.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -11634,8 +12777,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/F5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -11648,7 +12811,7 @@ offset_right = 615.44
 offset_bottom = 172.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -11829,8 +12992,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/G5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -11843,7 +13026,7 @@ offset_right = 615.44
 offset_bottom = 141.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -12028,8 +13211,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/A5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -12042,7 +13245,7 @@ offset_right = 615.44
 offset_bottom = 110.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -12225,8 +13428,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/B5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -12239,7 +13462,7 @@ offset_right = 615.44
 offset_bottom = 79.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -12424,8 +13647,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/C6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -12438,7 +13681,7 @@ offset_right = 615.44
 offset_bottom = 48.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -12620,8 +13863,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/D6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -12634,7 +13897,7 @@ offset_right = 615.44
 offset_bottom = 17.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -12818,8 +14081,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/E6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -12832,7 +14115,7 @@ offset_right = 615.44
 offset_bottom = -13.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -13013,8 +14296,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/F6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -13027,7 +14330,7 @@ offset_right = 615.44
 offset_bottom = -44.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -13210,12 +14513,32 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3/G6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="QuarterRest" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack3"]
 layout_mode = 0
 offset_left = 535.0
 offset_top = 279.0
 offset_right = 601.0
 offset_bottom = 472.0
+mouse_filter = 2
 texture = ExtResource("17_mxu84")
 expand_mode = 1
 
@@ -13225,6 +14548,7 @@ size_flags_horizontal = 2
 
 [node name="G3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -13237,7 +14561,7 @@ offset_right = 615.44
 offset_bottom = 606.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -13417,8 +14741,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/G3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -13431,7 +14775,7 @@ offset_right = 615.44
 offset_bottom = 575.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -13619,8 +14963,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/A3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -13633,7 +14997,7 @@ offset_right = 615.44
 offset_bottom = 544.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -13813,8 +15177,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/B3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -13827,7 +15211,7 @@ offset_right = 615.438
 offset_bottom = 513.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -14012,8 +15396,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/C4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -14026,7 +15430,7 @@ offset_right = 615.44
 offset_bottom = 482.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -14206,8 +15610,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/D4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -14220,7 +15644,7 @@ offset_right = 615.44
 offset_bottom = 451.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -14405,8 +15829,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/E4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -14419,7 +15863,7 @@ offset_right = 615.44
 offset_bottom = 420.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -14599,8 +16043,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/F4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -14613,7 +16077,7 @@ offset_right = 615.44
 offset_bottom = 389.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -14798,8 +16262,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/G4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -14812,7 +16296,7 @@ offset_right = 615.44
 offset_bottom = 358.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -14993,8 +16477,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/A4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -15007,7 +16511,7 @@ offset_right = 615.44
 offset_bottom = 327.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -15192,8 +16696,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/B4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -15206,7 +16730,7 @@ offset_right = 615.44
 offset_bottom = 296.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -15387,8 +16911,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/C5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -15401,7 +16945,7 @@ offset_right = 615.44
 offset_bottom = 265.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -15586,8 +17130,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/D5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -15600,7 +17164,7 @@ offset_right = 615.44
 offset_bottom = 234.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -15781,8 +17345,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/E5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -15795,7 +17379,7 @@ offset_right = 615.44
 offset_bottom = 203.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -15981,8 +17565,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/F5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -15995,7 +17599,7 @@ offset_right = 615.44
 offset_bottom = 172.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -16176,8 +17780,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/G5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -16190,7 +17814,7 @@ offset_right = 615.44
 offset_bottom = 141.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -16375,8 +17999,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/A5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -16389,7 +18033,7 @@ offset_right = 615.44
 offset_bottom = 110.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -16572,8 +18216,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/B5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -16586,7 +18250,7 @@ offset_right = 615.44
 offset_bottom = 79.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -16771,8 +18435,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/C6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -16785,7 +18469,7 @@ offset_right = 615.44
 offset_bottom = 48.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -16967,8 +18651,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/D6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -16981,7 +18685,7 @@ offset_right = 615.44
 offset_bottom = 17.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -17165,8 +18869,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/E6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -17179,7 +18903,7 @@ offset_right = 615.44
 offset_bottom = -13.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -17360,8 +19084,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/F6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -17374,7 +19118,7 @@ offset_right = 615.44
 offset_bottom = -44.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -17557,12 +19301,32 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4/G6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="QuarterRest" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack4"]
 layout_mode = 0
 offset_left = 535.0
 offset_top = 279.0
 offset_right = 601.0
 offset_bottom = 472.0
+mouse_filter = 2
 texture = ExtResource("17_mxu84")
 expand_mode = 1
 
@@ -17572,6 +19336,7 @@ size_flags_horizontal = 2
 
 [node name="G3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -17584,7 +19349,7 @@ offset_right = 615.44
 offset_bottom = 606.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -17764,8 +19529,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/G3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -17778,7 +19563,7 @@ offset_right = 615.44
 offset_bottom = 575.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -17966,8 +19751,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/A3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -17980,7 +19785,7 @@ offset_right = 615.44
 offset_bottom = 544.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -18160,8 +19965,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/B3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -18174,7 +19999,7 @@ offset_right = 615.438
 offset_bottom = 513.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -18359,8 +20184,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/C4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -18373,7 +20218,7 @@ offset_right = 615.44
 offset_bottom = 482.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -18553,8 +20398,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/D4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -18567,7 +20432,7 @@ offset_right = 615.44
 offset_bottom = 451.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -18752,8 +20617,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/E4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -18766,7 +20651,7 @@ offset_right = 615.44
 offset_bottom = 420.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -18946,8 +20831,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/F4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -18960,7 +20865,7 @@ offset_right = 615.44
 offset_bottom = 389.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -19145,8 +21050,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/G4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -19159,7 +21084,7 @@ offset_right = 615.44
 offset_bottom = 358.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -19340,8 +21265,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/A4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -19354,7 +21299,7 @@ offset_right = 615.44
 offset_bottom = 327.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -19539,8 +21484,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/B4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -19553,7 +21518,7 @@ offset_right = 615.44
 offset_bottom = 296.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -19734,8 +21699,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/C5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -19748,7 +21733,7 @@ offset_right = 615.44
 offset_bottom = 265.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -19933,8 +21918,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/D5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -19947,7 +21952,7 @@ offset_right = 615.44
 offset_bottom = 234.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -20128,8 +22133,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/E5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -20142,7 +22167,7 @@ offset_right = 615.44
 offset_bottom = 203.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -20328,8 +22353,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/F5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -20342,7 +22387,7 @@ offset_right = 615.44
 offset_bottom = 172.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -20523,8 +22568,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/G5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -20537,7 +22602,7 @@ offset_right = 615.44
 offset_bottom = 141.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -20722,8 +22787,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/A5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -20736,7 +22821,7 @@ offset_right = 615.44
 offset_bottom = 110.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -20919,8 +23004,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/B5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -20933,7 +23038,7 @@ offset_right = 615.44
 offset_bottom = 79.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -21118,8 +23223,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/C6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -21132,7 +23257,7 @@ offset_right = 615.44
 offset_bottom = 48.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -21314,8 +23439,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/D6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -21328,7 +23473,7 @@ offset_right = 615.44
 offset_bottom = 17.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -21512,8 +23657,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/E6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -21526,7 +23691,7 @@ offset_right = 615.44
 offset_bottom = -13.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -21707,8 +23872,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/F6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -21721,7 +23906,7 @@ offset_right = 615.44
 offset_bottom = -44.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -21904,12 +24089,32 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5/G6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="QuarterRest" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack5"]
 layout_mode = 0
 offset_left = 535.0
 offset_top = 279.0
 offset_right = 601.0
 offset_bottom = 472.0
+mouse_filter = 2
 texture = ExtResource("17_mxu84")
 expand_mode = 1
 
@@ -21919,6 +24124,7 @@ size_flags_horizontal = 2
 
 [node name="G3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -21931,7 +24137,7 @@ offset_right = 615.44
 offset_bottom = 606.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -22111,8 +24317,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/G3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -22125,7 +24351,7 @@ offset_right = 615.44
 offset_bottom = 575.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -22313,8 +24539,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/A3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -22327,7 +24573,7 @@ offset_right = 615.44
 offset_bottom = 544.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -22507,8 +24753,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/B3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -22521,7 +24787,7 @@ offset_right = 615.438
 offset_bottom = 513.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -22706,8 +24972,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/C4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -22720,7 +25006,7 @@ offset_right = 615.44
 offset_bottom = 482.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -22900,8 +25186,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/D4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -22914,7 +25220,7 @@ offset_right = 615.44
 offset_bottom = 451.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -23099,8 +25405,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/E4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -23113,7 +25439,7 @@ offset_right = 615.44
 offset_bottom = 420.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -23293,8 +25619,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/F4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -23307,7 +25653,7 @@ offset_right = 615.44
 offset_bottom = 389.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -23492,8 +25838,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/G4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -23506,7 +25872,7 @@ offset_right = 615.44
 offset_bottom = 358.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -23687,8 +26053,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/A4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -23701,7 +26087,7 @@ offset_right = 615.44
 offset_bottom = 327.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -23886,8 +26272,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/B4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -23900,7 +26306,7 @@ offset_right = 615.44
 offset_bottom = 296.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -24081,8 +26487,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/C5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -24095,7 +26521,7 @@ offset_right = 615.44
 offset_bottom = 265.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -24280,8 +26706,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/D5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -24294,7 +26740,7 @@ offset_right = 615.44
 offset_bottom = 234.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -24475,8 +26921,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/E5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -24489,7 +26955,7 @@ offset_right = 615.44
 offset_bottom = 203.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -24675,8 +27141,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/F5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -24689,7 +27175,7 @@ offset_right = 615.44
 offset_bottom = 172.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -24870,8 +27356,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/G5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -24884,7 +27390,7 @@ offset_right = 615.44
 offset_bottom = 141.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -25069,8 +27575,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/A5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -25083,7 +27609,7 @@ offset_right = 615.44
 offset_bottom = 110.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -25266,8 +27792,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/B5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -25280,7 +27826,7 @@ offset_right = 615.44
 offset_bottom = 79.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -25465,8 +28011,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/C6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -25479,7 +28045,7 @@ offset_right = 615.44
 offset_bottom = 48.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -25661,8 +28227,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/D6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -25675,7 +28261,7 @@ offset_right = 615.44
 offset_bottom = 17.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -25859,8 +28445,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/E6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -25873,7 +28479,7 @@ offset_right = 615.44
 offset_bottom = -13.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -26054,8 +28660,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/F6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -26068,7 +28694,7 @@ offset_right = 615.44
 offset_bottom = -44.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -26251,12 +28877,32 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6/G6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="QuarterRest" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack6"]
 layout_mode = 0
 offset_left = 535.0
 offset_top = 279.0
 offset_right = 601.0
 offset_bottom = 472.0
+mouse_filter = 2
 texture = ExtResource("17_mxu84")
 expand_mode = 1
 
@@ -26266,6 +28912,7 @@ size_flags_horizontal = 2
 
 [node name="G3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -26278,7 +28925,7 @@ offset_right = 615.44
 offset_bottom = 606.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -26458,8 +29105,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/G3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -26472,7 +29139,7 @@ offset_right = 615.44
 offset_bottom = 575.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -26660,8 +29327,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/A3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -26674,7 +29361,7 @@ offset_right = 615.44
 offset_bottom = 544.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -26854,8 +29541,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/B3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -26868,7 +29575,7 @@ offset_right = 615.438
 offset_bottom = 513.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -27053,8 +29760,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/C4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -27067,7 +29794,7 @@ offset_right = 615.44
 offset_bottom = 482.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -27247,8 +29974,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/D4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -27261,7 +30008,7 @@ offset_right = 615.44
 offset_bottom = 451.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -27446,8 +30193,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/E4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -27460,7 +30227,7 @@ offset_right = 615.44
 offset_bottom = 420.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -27640,8 +30407,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/F4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -27654,7 +30441,7 @@ offset_right = 615.44
 offset_bottom = 389.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -27839,8 +30626,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/G4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -27853,7 +30660,7 @@ offset_right = 615.44
 offset_bottom = 358.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -28034,8 +30841,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/A4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -28048,7 +30875,7 @@ offset_right = 615.44
 offset_bottom = 327.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -28233,8 +31060,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/B4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -28247,7 +31094,7 @@ offset_right = 615.44
 offset_bottom = 296.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -28428,8 +31275,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/C5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -28442,7 +31309,7 @@ offset_right = 615.44
 offset_bottom = 265.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -28627,8 +31494,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/D5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -28641,7 +31528,7 @@ offset_right = 615.44
 offset_bottom = 234.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -28822,8 +31709,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/E5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -28836,7 +31743,7 @@ offset_right = 615.44
 offset_bottom = 203.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -29022,8 +31929,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/F5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -29036,7 +31963,7 @@ offset_right = 615.44
 offset_bottom = 172.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -29217,8 +32144,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/G5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -29231,7 +32178,7 @@ offset_right = 615.44
 offset_bottom = 141.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -29416,8 +32363,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/A5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -29430,7 +32397,7 @@ offset_right = 615.44
 offset_bottom = 110.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -29613,8 +32580,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/B5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -29627,7 +32614,7 @@ offset_right = 615.44
 offset_bottom = 79.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -29812,8 +32799,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/C6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -29826,7 +32833,7 @@ offset_right = 615.44
 offset_bottom = 48.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -30008,8 +33015,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/D6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -30022,7 +33049,7 @@ offset_right = 615.44
 offset_bottom = 17.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -30206,8 +33233,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/E6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -30220,7 +33267,7 @@ offset_right = 615.44
 offset_bottom = -13.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -30401,8 +33448,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/F6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -30415,7 +33482,7 @@ offset_right = 615.44
 offset_bottom = -44.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -30598,12 +33665,32 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7/G6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="QuarterRest" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack7"]
 layout_mode = 0
 offset_left = 535.0
 offset_top = 279.0
 offset_right = 601.0
 offset_bottom = 472.0
+mouse_filter = 2
 texture = ExtResource("17_mxu84")
 expand_mode = 1
 
@@ -30613,6 +33700,7 @@ size_flags_horizontal = 2
 
 [node name="G3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -30625,7 +33713,7 @@ offset_right = 615.44
 offset_bottom = 606.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -30805,8 +33893,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/G3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -30819,7 +33927,7 @@ offset_right = 615.44
 offset_bottom = 575.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -31007,8 +34115,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/A3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B3" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -31021,7 +34149,7 @@ offset_right = 615.44
 offset_bottom = 544.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -31201,8 +34329,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/B3"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -31215,7 +34363,7 @@ offset_right = 615.438
 offset_bottom = 513.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -31400,8 +34548,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/C4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -31414,7 +34582,7 @@ offset_right = 615.44
 offset_bottom = 482.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -31594,8 +34762,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/D4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -31608,7 +34796,7 @@ offset_right = 615.44
 offset_bottom = 451.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -31793,8 +34981,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/E4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -31807,7 +35015,7 @@ offset_right = 615.44
 offset_bottom = 420.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -31987,8 +35195,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/F4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -32001,7 +35229,7 @@ offset_right = 615.44
 offset_bottom = 389.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -32186,8 +35414,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/G4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -32200,7 +35448,7 @@ offset_right = 615.44
 offset_bottom = 358.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -32381,8 +35629,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/A4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B4" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -32395,7 +35663,7 @@ offset_right = 615.44
 offset_bottom = 327.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -32580,8 +35848,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/B4"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -32594,7 +35882,7 @@ offset_right = 615.44
 offset_bottom = 296.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -32775,8 +36063,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/C5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -32789,7 +36097,7 @@ offset_right = 615.44
 offset_bottom = 265.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -32974,8 +36282,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/D5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -32988,7 +36316,7 @@ offset_right = 615.44
 offset_bottom = 234.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -33169,8 +36497,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/E5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -33183,7 +36531,7 @@ offset_right = 615.44
 offset_bottom = 203.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -33369,8 +36717,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/F5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -33383,7 +36751,7 @@ offset_right = 615.44
 offset_bottom = 172.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -33564,8 +36932,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/G5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="A5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -33578,7 +36966,7 @@ offset_right = 615.44
 offset_bottom = 141.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -33763,8 +37151,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/A5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="B5" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -33777,7 +37185,7 @@ offset_right = 615.44
 offset_bottom = 110.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -33960,8 +37368,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/B5"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="C6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -33974,7 +37402,7 @@ offset_right = 615.44
 offset_bottom = 79.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -34159,8 +37587,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/C6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="D6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -34173,7 +37621,7 @@ offset_right = 615.44
 offset_bottom = 48.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -34355,8 +37803,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/D6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="E6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -34369,7 +37837,7 @@ offset_right = 615.44
 offset_bottom = 17.08
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -34553,8 +38021,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/E6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="F6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -34567,7 +38055,7 @@ offset_right = 615.44
 offset_bottom = -13.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -34748,8 +38236,28 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/F6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="G6" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.064
@@ -34762,7 +38270,7 @@ offset_right = 615.44
 offset_bottom = -44.92
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_j6c7a")
+texture = ExtResource("14_i7evl")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("15_wdb5b")
@@ -34945,12 +38453,32 @@ offset_bottom = 288.0
 texture = ExtResource("12_odctp")
 expand_mode = 1
 
+[node name="InnerHead" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8/G6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.123
+anchor_right = 0.064
+anchor_bottom = 0.123
+offset_left = 2.984
+offset_top = -2.102
+offset_right = 78.984
+offset_bottom = 57.898
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_i7evl")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("15_wdb5b")
+
 [node name="QuarterRest" type="TextureRect" parent="NotationBoxRichTextLabel/Staff/NoteStackContainer/NoteStack8"]
 layout_mode = 0
 offset_left = 535.0
 offset_top = 279.0
 offset_right = 601.0
 offset_bottom = 472.0
+mouse_filter = 2
 texture = ExtResource("17_mxu84")
 expand_mode = 1
 

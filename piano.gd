@@ -64,7 +64,7 @@ func _ready() -> void:
 	octave_label.text += str(octave)
 
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_CAPSLOCK):
 		print('toggled note name visibility')
 		note_labels.visible = !note_labels.visible

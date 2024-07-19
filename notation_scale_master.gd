@@ -3,6 +3,7 @@ extends Control
 @export var using_aubio := false
 @export var using_qwerty := true
 @export var using_midi := true
+@export var on_beat_window := 0.07
 var looping_mode := false
 var practice_mode := false
 var wait_mode := false
@@ -93,7 +94,7 @@ func _on_note_head_note_placed(note_placed):
 	$NoteExplosionCPUParticles2D.position = note_placed.global_position + Vector2(50,30)
 
 
-func _on_note_head_note_removed(note_removed):
+func _on_note_head_note_removed(_note_removed):
 	pass
 
 
@@ -178,15 +179,25 @@ func check_note() -> void:
 
 func _on_qwerty_listener_note_on(note_played) -> void: # called on player key press
 	if practice_mode:
-		var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
-		print(time_off_beat)
-		#if note_played == 
-		#var played_note = note_played
-		#print("played_note: " + str(played_note))
-		#print(MusicTheoryDB.get_note_name(played_note))
-		#print(MusicTheoryDB.get_note_octave(played_note)) # int
-		
-		#MusicTheoryDB.get_note_name()
+		# check note
+		# check timing
+		var note_string := MusicTheoryDB.get_note_name(note_played) + str(MusicTheoryDB.get_note_octave(note_played))
+		print(loaded_notes["event1"]["beat"])
+		#for event in loaded_notes:
+			#print(loaded_notes)
+			#print('hi')
+			#if not event["note_value"] == "QuarterRest":
+				#if note_string == event["note_value"] + str(event["note_octave"]):
+					#print("correct")
+		#var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
+		#var punctuality := ""
+		#if Conductor.get_closest_beat_in_bar(Conductor.song_position_in_seconds) % 2 != 0: # closest beat is down beat
+			#if time_off_beat > on_beat_window:
+				#punctuality = Conductor.get_punctuality(Conductor.song_position_in_seconds)
+				#if punctuality == "early":
+					#pass
+				#elif punctuality == "late":
+					#pass
 
 	#loaded_notes = {
 		#"event1" = {
@@ -202,6 +213,7 @@ func _on_qwerty_listener_note_on(note_played) -> void: # called on player key pr
 
 
 func start_practice_mode() -> void:
+	load_notes()
 	looping_mode = false
 	practice_mode = true
 	# start conductor

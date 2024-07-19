@@ -24,7 +24,7 @@ signal upbeat_incremented()
 signal measure_incremented()
 signal measure_minus_one_beat_incremented()
 signal beat_in_bar_signal(beat_in_bar)
-signal current_measure_signal(measure)
+#signal current_measure_signal(measure)
 
 
 func _ready() -> void:
@@ -67,14 +67,14 @@ func play_with_beat_offset(num):
 var time_of_closest_beat = 0.00
 var time_off_beat = 0.00
 
-func closest_beat_in_song(time_of_note_played: float):
-	var closest_beat_in_song = 0
+func closest_beat_in_song(time_of_note_played: float) -> Array:
+	var closest_song_beat = 0
 	# when confused, use 60bpm, or 1 sec_per_beat to math
-	closest_beat_in_song = round(time_of_note_played / sec_per_beat)
-	time_of_closest_beat = closest_beat_in_song * sec_per_beat
+	closest_song_beat = round(time_of_note_played / sec_per_beat)
+	time_of_closest_beat = closest_song_beat * sec_per_beat
 	
 	time_off_beat = abs(time_of_closest_beat - time_of_note_played)
-	closest_beat_in_song += 1
+	closest_song_beat += 1
 	#if closest_beat > beats_per_bar: # only if music is meant to loop for beats_in_bar
 		#closest_beat = 1
 	var punctuality
@@ -82,17 +82,26 @@ func closest_beat_in_song(time_of_note_played: float):
 		punctuality = "late"
 	else:
 		punctuality = "early"
-	return [int(closest_beat_in_song), time_off_beat, punctuality]
+	return [int(closest_song_beat), time_off_beat, punctuality]
+
+
+func get_punctuality(time_of_note_played: float) -> String:
+	return closest_beat_in_song(time_of_note_played)[2]
+
 
 
 func closest_beat_in_bar(time_of_note_played: float): 
-	var closest_beat_in_bar = closest_beat_in_song(time_of_note_played)[0]
-	if int(closest_beat_in_bar) % beats_per_bar == 0:
-		closest_beat_in_bar = beats_per_bar
+	var closest_bar_beat = closest_beat_in_song(time_of_note_played)[0]
+	if int(closest_bar_beat) % beats_per_bar == 0:
+		closest_bar_beat = beats_per_bar
 	else:
-		closest_beat_in_bar = int(closest_beat_in_bar) % beats_per_bar
+		closest_bar_beat = int(closest_bar_beat) % beats_per_bar
 		
-	return [int(closest_beat_in_bar), time_off_beat]
+	return [int(closest_bar_beat), time_off_beat]
+
+
+func get_closest_beat_in_bar(time_of_note_played: float) -> int:
+	return closest_beat_in_bar(time_of_note_played)[0]
 
 
 func get_time_off_closest_beat_in_bar(time_of_note_played: float) -> float:

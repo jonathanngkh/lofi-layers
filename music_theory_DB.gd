@@ -220,6 +220,6 @@ func get_midi_pitch(from_ukulele_fret: String) -> int:
 	return midi_pitch
 
 
-func get_possible_ukulele_frets(from_midi_pitch: int) -> Array[String]:
-	var possible_ukulele_frets := [""]
-	return possible_ukulele_frets
+#func get_possible_ukulele_frets(from_midi_pitch: int) -> Array[String]:
+	#var possible_ukulele_frets := [""]
+	#return possible_ukulele_frets
