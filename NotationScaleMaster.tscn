@@ -37591,7 +37591,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ClearedRichTextLabel" parent="." instance=ExtResource("16_e1eb2")]
-visible = false
 layout_mode = 0
 offset_left = 112.0
 offset_top = 1270.0
@@ -37600,7 +37599,6 @@ offset_bottom = 1346.0
 text = "[b]Cleared:"
 
 [node name="ClearedBPMsControl" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_left = 364.0
 offset_top = 1270.0

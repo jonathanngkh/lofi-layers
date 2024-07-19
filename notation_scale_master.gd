@@ -1,5 +1,8 @@
 extends Control
 
+@export var using_aubio := false
+@export var using_qwerty := true
+@export var using_midi := true
 var looping_mode := false
 var practice_mode := false
 var wait_mode := false
@@ -16,6 +19,12 @@ var current_node
 
 
 func _ready() -> void:
+	if using_aubio:
+		PitchDetector.connect("detected_pitch", _on_pitch_detector_note_detected)
+	if using_qwerty:
+		QwertyListener.connect("qwerty_note_on", _on_qwerty_listener_note_on)
+	if using_midi:
+		MidiListener.connect("midi_note_on", _on_qwerty_listener_note_on)
 	Conductor.beat_incremented.connect(loop_music)
 	Conductor.downbeat_incremented.connect(bouncing_ball_movement)
 	$Button.pressed.connect(save_measures)
@@ -33,12 +42,6 @@ func _ready() -> void:
 			else:
 				notation.note_placed.connect(_on_note_head_note_placed)
 				notation.note_removed.connect(_on_note_head_note_removed)
-
-
-func check_note() -> void:
-	# if current note == played note on the correct beat, get_punctuality and print it, if all correct, play riser and success sound
-	
-	pass
 
 
 func change_bpm(plus_or_minus: String) -> void:
@@ -155,7 +158,36 @@ func load_notes() -> void:
 	loaded_notes = JSON.parse_string(content)
 
 
-func get_notes_to_play() -> void:
+func _on_pitch_detector_note_detected(note_detected) -> void:
+	if practice_mode:
+		# convert string pitch detected 44.4 to int 44
+		var played_note = snapped(float(note_detected), 1)
+		print("aubio snapped to: " + str(played_note))
+		check_note()
+
+func check_note() -> void:
+	# current_note_stack_notes: [event1, event2, event3] all on beat 1
+	# check punctuality on individual note basis
+	# just label each note's punctuality. bouncing ball keeps going.
+	# do a % of correct at the end and print at the bottom
+	# maybe have a score, score increases on each note played
+	# if current note == played note on the correct beat, get_punctuality and print it, if all correct, play riser and success sound
+	
+	pass
+
+
+func _on_qwerty_listener_note_on(note_played) -> void: # called on player key press
+	if practice_mode:
+		var played_note = note_played
+
+	#loaded_notes = {
+		#"event1" = {
+			#"beat": 1,
+			#"note_value": "C",
+			#"note_octave": 4
+		#}
+	#}
+	# 
 	for event in loaded_notes:
 		if not event["note_value"] == "QuarterRest":
 			pass
