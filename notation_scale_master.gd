@@ -165,6 +165,7 @@ func _on_pitch_detector_note_detected(note_detected) -> void:
 		print("aubio snapped to: " + str(played_note))
 		check_note()
 
+
 func check_note() -> void:
 	# current_note_stack_notes: [event1, event2, event3] all on beat 1
 	# check punctuality on individual note basis
@@ -172,13 +173,17 @@ func check_note() -> void:
 	# do a % of correct at the end and print at the bottom
 	# maybe have a score, score increases on each note played
 	# if current note == played note on the correct beat, get_punctuality and print it, if all correct, play riser and success sound
-	
 	pass
 
 
 func _on_qwerty_listener_note_on(note_played) -> void: # called on player key press
 	if practice_mode:
 		var played_note = note_played
+		print("played_note: " + str(played_note))
+		print(MusicTheoryDB.get_note_name(played_note))
+		print(MusicTheoryDB.get_note_octave(played_note)) # int
+		
+		#MusicTheoryDB.get_note_name()
 
 	#loaded_notes = {
 		#"event1" = {
@@ -188,9 +193,9 @@ func _on_qwerty_listener_note_on(note_played) -> void: # called on player key pr
 		#}
 	#}
 	# 
-	for event in loaded_notes:
-		if not event["note_value"] == "QuarterRest":
-			pass
+	#for event in loaded_notes:
+		#if not event["note_value"] == "QuarterRest":
+			#pass
 
 
 func start_practice_mode() -> void:
