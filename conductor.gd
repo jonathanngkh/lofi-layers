@@ -95,6 +95,10 @@ func closest_beat_in_bar(time_of_note_played: float):
 	return [int(closest_beat_in_bar), time_off_beat]
 
 
+func get_time_off_closest_beat_in_bar(time_of_note_played: float) -> float:
+	return closest_beat_in_bar(time_of_note_played)[1]
+
+
 func play_from_beat(beat, offset):
 	last_reported_beat = beat - 1
 	beat_in_bar = beat

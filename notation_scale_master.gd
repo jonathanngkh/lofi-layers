@@ -178,10 +178,13 @@ func check_note() -> void:
 
 func _on_qwerty_listener_note_on(note_played) -> void: # called on player key press
 	if practice_mode:
-		var played_note = note_played
-		print("played_note: " + str(played_note))
-		print(MusicTheoryDB.get_note_name(played_note))
-		print(MusicTheoryDB.get_note_octave(played_note)) # int
+		var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
+		print(time_off_beat)
+		#if note_played == 
+		#var played_note = note_played
+		#print("played_note: " + str(played_note))
+		#print(MusicTheoryDB.get_note_name(played_note))
+		#print(MusicTheoryDB.get_note_octave(played_note)) # int
 		
 		#MusicTheoryDB.get_note_name()
 
