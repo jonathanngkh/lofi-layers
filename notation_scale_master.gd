@@ -8,7 +8,6 @@ var looping_mode := false
 var practice_mode := false
 var wait_mode := false
 var loaded_notes
-var current_node
 
 @onready var note_stack_container: HBoxContainer = $NotationBoxRichTextLabel/Staff/NoteStackContainer
 @onready var note_explosion := preload("res://assets/vfx/note_explosion_cpu_particles_2d.tscn")
@@ -176,19 +175,40 @@ func check_note() -> void:
 	# if current note == played note on the correct beat, get_punctuality and print it, if all correct, play riser and success sound
 	pass
 
-
+var current_note_stack = 1
 func _on_qwerty_listener_note_on(note_played) -> void: # called on player key press
 	if practice_mode:
 		# check note
 		# check timing
-		var note_string := MusicTheoryDB.get_note_name(note_played) + str(MusicTheoryDB.get_note_octave(note_played))
-		print(loaded_notes["event1"]["beat"])
-		#for event in loaded_notes:
+		
+		var played_note_string := MusicTheoryDB.get_note_name(note_played) + str(MusicTheoryDB.get_note_octave(note_played))
+		#if played_note_string == 
+		for event in loaded_notes:
+			#print(event)
 			#print(loaded_notes)
 			#print('hi')
-			#if not event["note_value"] == "QuarterRest":
-				#if note_string == event["note_value"] + str(event["note_octave"]):
-					#print("correct")
+			if not loaded_notes[event]["note_value"] == "QuarterRest":
+				if loaded_notes[event]["beat"] == current_note_stack:
+					if played_note_string == loaded_notes[event]["note_value"] + str(loaded_notes[event]["note_octave"]):
+						print("loaded note: " + loaded_notes[event]["note_value"] + str(loaded_notes[event]["note_octave"]) + " was played")
+						for note_stack in note_stack_container.get_children():
+							if note_stack.name.right(1) == str(current_note_stack):
+								for notation in note_stack.get_children():
+									if notation.name == played_note_string:
+										notation.self_modulate = "08234e" # dark blue "outline"
+										for child in notation.get_children():
+											if child.name == "LeftCrotchetTail" or child.name == "RightCrotchetTail":
+												child.self_modulate = "08234e"
+										notation.get_node("InnerHead").visible = true
+										notation.get_node("InnerHead").self_modulate = "3caec6" # light blue base
+		# if all notes in note stack have been played: check using color? or array/dictionary
+		if current_note_stack < 8:
+			current_note_stack += 1
+			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(ball_positions[current_note_stack - 1])
+		else:
+			current_note_stack = 1
+			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(ball_positions[current_note_stack - 1])
+										
 		#var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
 		#var punctuality := ""
 		#if Conductor.get_closest_beat_in_bar(Conductor.song_position_in_seconds) % 2 != 0: # closest beat is down beat
@@ -206,10 +226,6 @@ func _on_qwerty_listener_note_on(note_played) -> void: # called on player key pr
 			#"note_octave": 4
 		#}
 	#}
-	# 
-	#for event in loaded_notes:
-		#if not event["note_value"] == "QuarterRest":
-			#pass
 
 
 func start_practice_mode() -> void:
@@ -243,7 +259,7 @@ func loop_music() -> void: # called when beat is incremented
 					if loaded_notes[notation_event]["beat"] == 8 and Conductor.beat_in_bar == 7:
 						$SamplerInstrument.play_note(loaded_notes[notation_event]["note_value"], loaded_notes[notation_event]["note_octave"])
 
-
+var ball_positions := [275, 515, 760, 1000, 1240, 1485, 1725, 1965]
 
 func bouncing_ball_movement() -> void: # called on downbeat incremented signal
 	if looping_mode:

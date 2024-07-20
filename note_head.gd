@@ -24,6 +24,8 @@ func _ready() -> void:
 	mouse_exited.connect(_on_mouse_exited)
 	for child in get_children():
 		child.mouse_filter = MOUSE_FILTER_IGNORE
+		if child.name == "InnerHead":
+			child.visible = false
 		for grandchild in child.get_children():
 			grandchild.mouse_filter = MOUSE_FILTER_IGNORE
 
@@ -86,8 +88,13 @@ func _input(event: InputEvent) -> void:
 		placed = false
 		note_removed.emit(self)
 		modulate.a = 0.0
+		self_modulate = "000000"
 		accidentals_index = 0
 		# remove previous accidental
 		for child in get_children():
 			if child.is_in_group("accidental"):
 				child.queue_free()
+			# reset color of innerhead to black
+			if child.name == "InnerHead":
+				child.visible = false
+				child.self_modulate = "000000"

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ewiwjpf3lubb" path="res://assets/music theory/crotchet tail.png" id="1_dr06e"]
 
 [node name="LeftCrotchetTail" type="TextureRect" groups=["crotchet_tail"]]
+self_modulate = Color(0, 0, 0, 1)
 offset_left = 8.0
 offset_top = 44.0
 offset_right = 14.0
