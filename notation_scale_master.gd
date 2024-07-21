@@ -26,7 +26,7 @@ func _ready() -> void:
 	if using_midi:
 		MidiListener.connect("midi_note_on", _on_qwerty_listener_note_on)
 	Conductor.beat_incremented.connect(loop_music)
-	Conductor.downbeat_incremented.connect(bouncing_ball_movement)
+	Conductor.downbeat_incremented.connect(_on_conductor_downbeat_incremented)
 	$Button.pressed.connect(save_measures)
 	$Button2.pressed.connect(play_saved_measures)
 	$Button3.pressed.connect(start_practice_mode)
@@ -136,6 +136,7 @@ func save_measures() -> void:
 	# save data
 	var file = FileAccess.open("res://composition.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(composition))
+	get_notes_in_current_note_stack()
 
 
 func play_saved_measures() -> void:
@@ -175,39 +176,53 @@ func check_note() -> void:
 	# if current note == played note on the correct beat, get_punctuality and print it, if all correct, play riser and success sound
 	pass
 
-var current_note_stack = 1
+var current_note_stack := 1
+var notes_in_current_note_stack := []
+
+func get_notes_in_current_note_stack() -> void:
+	notes_in_current_note_stack = []
+	for note_stack in note_stack_container.get_children():
+		if note_stack.name.right(1) == str(current_note_stack):
+			for notation in note_stack.get_children():
+				if notation.modulate.a == 1.0:
+					notes_in_current_note_stack.append(notation)
+
+
 func _on_qwerty_listener_note_on(note_played) -> void: # called on player key press
 	if practice_mode:
 		# check note
 		# check timing
-		
 		var played_note_string := MusicTheoryDB.get_note_name(note_played) + str(MusicTheoryDB.get_note_octave(note_played))
-		#if played_note_string == 
 		for event in loaded_notes:
-			#print(event)
-			#print(loaded_notes)
-			#print('hi')
 			if not loaded_notes[event]["note_value"] == "QuarterRest":
 				if loaded_notes[event]["beat"] == current_note_stack:
 					if played_note_string == loaded_notes[event]["note_value"] + str(loaded_notes[event]["note_octave"]):
-						print("loaded note: " + loaded_notes[event]["note_value"] + str(loaded_notes[event]["note_octave"]) + " was played")
+						#print("loaded note: " + loaded_notes[event]["note_value"] + str(loaded_notes[event]["note_octave"]) + " was played")
 						for note_stack in note_stack_container.get_children():
 							if note_stack.name.right(1) == str(current_note_stack):
 								for notation in note_stack.get_children():
-									if notation.name == played_note_string:
+									if notation.name == played_note_string: # correct note played on correct beat
+										notes_in_current_note_stack.erase(notation)
+										# if early:
 										notation.self_modulate = "08234e" # dark blue "outline"
 										for child in notation.get_children():
 											if child.name == "LeftCrotchetTail" or child.name == "RightCrotchetTail":
 												child.self_modulate = "08234e"
 										notation.get_node("InnerHead").visible = true
 										notation.get_node("InnerHead").self_modulate = "3caec6" # light blue base
+										# if late: red
+										# if perfect: glowing green
+										
 		# if all notes in note stack have been played: check using color? or array/dictionary
-		if current_note_stack < 8:
-			current_note_stack += 1
-			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(ball_positions[current_note_stack - 1])
-		else:
-			current_note_stack = 1
-			$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(ball_positions[current_note_stack - 1])
+		#if notes_in_current_note_stack.size() == 0:
+			#if current_note_stack < 8:
+				#current_note_stack += 1
+				#get_notes_in_current_note_stack()
+				#$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(ball_positions[current_note_stack - 1])
+			#else:
+				#current_note_stack = 1
+				#get_notes_in_current_note_stack()
+				#$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(ball_positions[current_note_stack - 1])
 										
 		#var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
 		#var punctuality := ""
@@ -219,14 +234,6 @@ func _on_qwerty_listener_note_on(note_played) -> void: # called on player key pr
 				#elif punctuality == "late":
 					#pass
 
-	#loaded_notes = {
-		#"event1" = {
-			#"beat": 1,
-			#"note_value": "C",
-			#"note_octave": 4
-		#}
-	#}
-
 
 func start_practice_mode() -> void:
 	load_notes()
@@ -235,6 +242,9 @@ func start_practice_mode() -> void:
 	# start conductor
 	Conductor.change_bpm(Conductor.bpm)
 
+
+func _on_conductor_downbeat_incremented() -> void:
+	bouncing_ball_movement()
 
 func loop_music() -> void: # called when beat is incremented
 	if looping_mode:
@@ -261,6 +271,15 @@ func loop_music() -> void: # called when beat is incremented
 
 var ball_positions := [275, 515, 760, 1000, 1240, 1485, 1725, 1965]
 
+func reset_note_heads() -> void:
+	for note_stack in note_stack_container.get_children():
+		for notation in note_stack.get_children():
+			notation.self_modulate = "000000"
+			for child in notation.get_children():
+				if child.name == "LeftCrotchetTail" or child.name == "RightCrotchetTail":
+					child.self_modulate = "000000"
+				notation.get_node("InnerHead").self_modulate = "000000"
+
 func bouncing_ball_movement() -> void: # called on downbeat incremented signal
 	if looping_mode:
 		# bounce from note to note
@@ -284,7 +303,27 @@ func bouncing_ball_movement() -> void: # called on downbeat incremented signal
 				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(275)
 	if practice_mode:
 		# ball will bounce like in looping mode, but resets if note was not played, played early, or played late. checker will wait until past late first.
-		pass
+		if notes_in_current_note_stack.size() == 1 and notes_in_current_note_stack[0].name == "QuarterRest":
+			if current_note_stack < 8:
+				current_note_stack += 1
+				get_notes_in_current_note_stack()
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(ball_positions[current_note_stack - 1])
+			else:
+				reset_note_heads()
+				current_note_stack = 1
+				get_notes_in_current_note_stack()
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(ball_positions[current_note_stack - 1])
+		elif notes_in_current_note_stack.size() == 0:
+			if current_note_stack < 8:
+				current_note_stack += 1
+				get_notes_in_current_note_stack()
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(ball_positions[current_note_stack - 1])
+			else:
+				reset_note_heads()
+				current_note_stack = 1
+				get_notes_in_current_note_stack()
+				$BouncingRhythmContainerNode/BouncingRhythmIndicator.move_horizontally_to(ball_positions[current_note_stack - 1])
+				
 	if wait_mode:
 		# bounce and stop on note until it's played. if it's a rest, bounce on it then move to next one
 		pass
