@@ -8,6 +8,13 @@ var looping_mode := false
 var practice_mode := false
 var wait_mode := false
 var loaded_notes
+var accidental_symbol_dict := {
+	"Sharp": "#",
+	"DoubleSharp": "##",
+	"Flat": "b",
+	"DoubleFlat": "bb",
+	"Natural": ""
+}
 
 @onready var note_stack_container: HBoxContainer = $NotationBoxRichTextLabel/Staff/NoteStackContainer
 @onready var note_explosion := preload("res://assets/vfx/note_explosion_cpu_particles_2d.tscn")
@@ -28,9 +35,9 @@ func _ready() -> void:
 		MidiListener.connect("midi_note_on", _on_qwerty_listener_note_on)
 	Conductor.beat_incremented.connect(loop_music)
 	Conductor.downbeat_incremented.connect(_on_conductor_downbeat_incremented)
-	$Button.pressed.connect(save_measures)
-	$Button2.pressed.connect(play_saved_measures)
-	$Button3.pressed.connect(start_practice_mode)
+	$SaveButton.pressed.connect(save_measures)
+	$PlayButton.pressed.connect(play_saved_measures)
+	$PracticeButton.pressed.connect(start_practice_mode)
 	$MinusButton.pressed.connect(change_bpm.bind("minus"))
 	$PlusButton.pressed.connect(change_bpm.bind("plus"))
 	$TempoRichTextLabel.text = "[center][b]Tempo: " + str(Conductor.bpm/2)
@@ -74,13 +81,6 @@ func is_note_stack_active(note_stack_to_check: Control) -> bool:
 				return true
 	return false
 
-var accidental_symbol_dict := {
-	"Sharp": "#",
-	"DoubleSharp": "##",
-	"Flat": "b",
-	"DoubleFlat": "bb",
-	"Natural": ""
-}
 
 func _on_note_head_note_placed(note_placed):
 	var accidental = ""
@@ -96,11 +96,9 @@ func _on_note_head_note_removed(_note_removed):
 	pass
 
 
-var composition = {}
-
 func save_measures() -> void:
 	# reset composition.json
-	composition = {}
+	var composition = {}
 	# add each notation event to the json
 	var event_number = 0
 	for note_stack in note_stack_container.get_children():
