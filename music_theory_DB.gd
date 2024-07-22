@@ -166,29 +166,66 @@ func _get_midi_dictionary() -> Dictionary:
 			midi_dict[pitch] = note_name  # Map MIDI number to note name
 	return midi_dict
 
-# why did i comment out the equivalents?
+#var note_values := {
+	#"C": 0,
+	#"C#": 1,
+	##"Db": 1,
+	#"D": 2,
+	#"D#": 3,
+	##"Eb": 3,
+	#"E": 4,
+	##"E#": 5,
+	##"Fb": 4,
+	#"F": 5,
+	#"F#": 6,
+	##"Gb": 6,
+	#"G": 7,
+	#"G#": 8,
+	##"Ab": 8,
+	#"A": 9,
+	#"A#": 10,
+	##"Bb": 10,
+	#"B": 11,
+	##"B#": 12,
+	##"Cb": -1
+#}
+
 var note_values := {
 	"C": 0,
 	"C#": 1,
-	#"Db": 1,
+	"C##": 2,#
+	"Dbb": 0,#
+	"Db": 1,
 	"D": 2,
 	"D#": 3,
-	#"Eb": 3,
+	"D##": 4,#
+	"Ebb": 2,#
+	"Eb": 3,
 	"E": 4,
-	#"E#": 5,
-	#"Fb": 4,
+	"E#": 5,
+	"E##": 6,#
+	"Fbb": 3,#
+	"Fb": 4,
 	"F": 5,
 	"F#": 6,
-	#"Gb": 6,
+	"F##": 7,#
+	"Gbb": 5,#
+	"Gb": 6,
 	"G": 7,
 	"G#": 8,
-	#"Ab": 8,
+	"G##": 9,#
+	"Abb": 7,#
+	"Ab": 8,
 	"A": 9,
 	"A#": 10,
-	#"Bb": 10,
+	"A##": 11,#
+	"Bbb": 9,#
+	"Bb": 10,
 	"B": 11,
-	#"B#": 12,
-	#"Cb": -1
+	"B#": 12,
+	"B##": 13,#
+	"Cb": -1,
+	"Cbb": -2,#
 }
 
 # Return the number value of a note from its name and octave (where C0 is 0)

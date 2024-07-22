@@ -8,13 +8,8 @@ var looping_mode := false
 var practice_mode := false
 var wait_mode := false
 var loaded_notes
-var accidental_symbol_dict := {
-	"Sharp": "#",
-	"DoubleSharp": "##",
-	"Flat": "b",
-	"DoubleFlat": "bb",
-	"Natural": ""
-}
+var current_note_stack := 1
+var notes_in_current_note_stack := []
 
 @onready var note_stack_container: HBoxContainer = $NotationBoxRichTextLabel/Staff/NoteStackContainer
 @onready var note_explosion := preload("res://assets/vfx/note_explosion_cpu_particles_2d.tscn")
@@ -80,14 +75,12 @@ func is_note_stack_active(note_stack_to_check: Control) -> bool:
 			if notation.modulate.a == 1.0:
 				return true
 	return false
-
+# C##5 5##C
 
 func _on_note_head_note_placed(note_placed):
-	var accidental = ""
-	for child in note_placed.get_children():
-		if child.is_in_group("accidental"):
-			accidental = accidental_symbol_dict[child.name]
-	$SamplerInstrument.play_note(note_placed.name.left(2)[0] + accidental, int(note_placed.name.left(2)[1]))
+	var note_value = note_placed.name.reverse().erase(0, 1).reverse()
+	var note_octave = int(note_placed.name.right(1))
+	$SamplerInstrument.play_note(note_value, note_octave)
 	$NoteExplosionCPUParticles2D.emitting = true
 	$NoteExplosionCPUParticles2D.position = note_placed.global_position + Vector2(50,30)
 
@@ -106,20 +99,16 @@ func save_measures() -> void:
 			if notation.modulate.a == 1.0: # rest/placed_note
 				event_number += 1
 				if not notation.name == "QuarterRest": # placed_note
-					var accidental = ""
-					for child in notation.get_children():
-						if child.is_in_group("accidental"):
-							accidental = accidental_symbol_dict[child.name]
 					composition["event" + str(event_number)] = {
-						"note_value": notation.name.left(3)[-2] + accidental,
-						"note_octave": int(notation.name.left(3)[-1]),
-						"beat": int(notation.get_parent().name.left(10)[-1])
+						"note_value": notation.name.reverse().erase(0, 1).reverse(),
+						"note_octave": int(notation.name.right(1)),
+						"beat": int(notation.get_parent().name.right(1))
 					}
 				else: # rest
 					composition["event" + str(event_number)] = {
 						"note_value": "QuarterRest",
 						"note_octave": -1,
-						"beat": int(notation.get_parent().name.left(10)[-1])
+						"beat": int(notation.get_parent().name.right(1))
 					}
 	# save data
 	var file = FileAccess.open("res://composition.json", FileAccess.WRITE)
@@ -161,8 +150,6 @@ func check_note() -> void:
 	# if current note == played note on the correct beat, get_punctuality and print it, if all correct, play riser and success sound
 	pass
 
-var current_note_stack := 1
-var notes_in_current_note_stack := []
 
 func get_notes_in_current_note_stack() -> void:
 	notes_in_current_note_stack = []
@@ -178,32 +165,30 @@ func _on_qwerty_listener_note_on(note_played) -> void: # called on player key pr
 		# check note
 		# check timing
 		print(loaded_notes)
-		var played_note_string := MusicTheoryDB.get_note_name(note_played) + str(MusicTheoryDB.get_note_octave(note_played))
-		var played_note_string_no_accidentals := played_note_string.left(1) + played_note_string.right(1)
-		print("played_note_string: " + played_note_string)
-		print("played_note_string_no_accidentals: " + played_note_string_no_accidentals)
+		#var played_note_string := MusicTheoryDB.get_note_name(note_played) + str(MusicTheoryDB.get_note_octave(note_played))
+		#print("played_note_string: " + played_note_string)
 		for event in loaded_notes:
 			if not loaded_notes[event]["note_value"] == "QuarterRest":
 				if loaded_notes[event]["beat"] == current_note_stack:
-					if played_note_string == loaded_notes[event]["note_value"] + str(loaded_notes[event]["note_octave"]):
+					var event_midi := MusicTheoryDB.get_note_value(loaded_notes[event]["note_value"], loaded_notes[event]["note_octave"])
+					if note_played == event_midi:
 						print("loaded note: " + loaded_notes[event]["note_value"] + str(loaded_notes[event]["note_octave"]) + " was played")
 						for note_stack in note_stack_container.get_children():
-							if note_stack.name.right(1) == str(current_note_stack):
+							if note_stack.name.right(1) == str(current_note_stack): # same beat
 								for notation in note_stack.get_children():
-									#if notation.name == played_note_string: # does not work on accidentals at all
-									if notation.name == played_note_string_no_accidentals: # correct note played on correct beat
-										 #only works for C# D# F# G# A#. Does not work for flats,dubflats, dubsharps, B#, and E#
-										# will convert to midi and deal from there.
-										notes_in_current_note_stack.erase(notation)
-										# if early:
-										notation.self_modulate = "08234e" # dark blue "outline"
-										for child in notation.get_children():
-											if child.name == "LeftCrotchetTail" or child.name == "RightCrotchetTail":
-												child.self_modulate = "08234e"
-										notation.get_node("InnerHead").visible = true
-										notation.get_node("InnerHead").self_modulate = "3caec6" # light blue base
-										# if late: red
-										# if perfect: glowing green
+									if not notation.name == "QuarterRest":
+										var notation_midi := MusicTheoryDB.get_note_value(notation.name.reverse().erase(0,1).reverse(), int(notation.name.right(1)))
+										if notation_midi == note_played:
+											notes_in_current_note_stack.erase(notation)
+											# if early:
+											notation.self_modulate = "08234e" # dark blue "outline"
+											for child in notation.get_children():
+												if child.name == "LeftCrotchetTail" or child.name == "RightCrotchetTail":
+													child.self_modulate = "08234e"
+											notation.get_node("InnerHead").visible = true
+											notation.get_node("InnerHead").self_modulate = "3caec6" # light blue base
+											# if late: red
+											# if perfect: glowing green
 		#var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
 		#var punctuality := ""
 		#if Conductor.get_closest_beat_in_bar(Conductor.song_position_in_seconds) % 2 != 0: # closest beat is down beat

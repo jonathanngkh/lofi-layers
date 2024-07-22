@@ -15,6 +15,13 @@ signal note_removed(removed_note)
 @onready var double_flat := preload("res://double_flat.tscn")
 @onready var accidentals := [sharp, flat, natural, double_sharp, double_flat]
 @onready var accidentals_index := 0
+@onready var accidental_symbol_dict := {
+	"Sharp": "#",
+	"DoubleSharp": "##",
+	"Flat": "b",
+	"DoubleFlat": "bb",
+	"Natural": ""
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -73,6 +80,7 @@ func _input(event: InputEvent) -> void:
 						child.queue_free()
 				var accidental_spawn = accidentals[accidentals_index].instantiate()
 				add_child(accidental_spawn)
+				name = name.left(1) + accidental_symbol_dict[accidental_spawn.name] + name.right(1)
 				accidentals_index += 1
 				note_placed.emit(self)
 			else:
@@ -81,12 +89,14 @@ func _input(event: InputEvent) -> void:
 				for child in get_children():
 					if child.is_in_group("accidental"):
 						child.queue_free()
+				name = name.left(1) + name.right(1)
+				print(name)
 				note_placed.emit(self)
 		
 		
 	if event_is_mouse_right_click and hover == true and placed == true:
 		placed = false
-		note_removed.emit(self)
+		name = name.left(1) + name.right(1)
 		modulate.a = 0.0
 		self_modulate = "000000"
 		accidentals_index = 0
@@ -98,3 +108,4 @@ func _input(event: InputEvent) -> void:
 			if child.name == "InnerHead":
 				child.visible = false
 				child.self_modulate = "000000"
+		note_removed.emit(self)
