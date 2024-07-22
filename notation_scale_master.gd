@@ -3,7 +3,7 @@ extends Control
 @export var using_aubio := false
 @export var using_qwerty := true
 @export var using_midi := true
-@export var on_beat_window := 0.07
+@export var on_beat_window := 0.08
 var looping_mode := false
 var practice_mode := false
 var wait_mode := false
