@@ -40960,6 +40960,7 @@ offset_right = 343.0
 offset_bottom = -3.0
 
 [node name="BouncingRhythmIndicator" parent="BouncingRhythmContainerNode" instance=ExtResource("15_5aeaq")]
+unique_name_in_owner = true
 position = Vector2(275, 242)
 scale = Vector2(1.5625, 1.5625)
 
