@@ -78,7 +78,7 @@ func is_note_stack_active(note_stack_to_check: Control) -> bool:
 # C##5 5##C
 
 func _on_note_head_note_placed(note_placed):
-	var note_value = note_placed.name.reverse().erase(0, 1).reverse()
+	var note_value = note_placed.name.left(note_placed.name.length() - 1)
 	var note_octave = int(note_placed.name.right(1))
 	$SamplerInstrument.play_note(note_value, note_octave)
 	$NoteExplosionCPUParticles2D.emitting = true
@@ -100,7 +100,7 @@ func save_measures() -> void:
 				event_number += 1
 				if not notation.name == "QuarterRest": # placed_note
 					composition["event" + str(event_number)] = {
-						"note_value": notation.name.reverse().erase(0, 1).reverse(),
+						"note_value": notation.name.left(notation.name.length() - 1),
 						"note_octave": int(notation.name.right(1)),
 						"beat": int(notation.get_parent().name.right(1))
 					}
@@ -177,7 +177,7 @@ func _on_qwerty_listener_note_on(note_played) -> void: # called on player key pr
 							if note_stack.name.right(1) == str(current_note_stack): # same beat
 								for notation in note_stack.get_children():
 									if not notation.name == "QuarterRest":
-										var notation_midi := MusicTheoryDB.get_note_value(notation.name.reverse().erase(0,1).reverse(), int(notation.name.right(1)))
+										var notation_midi := MusicTheoryDB.get_note_value(notation.name.left(notation.name.length() - 1), int(notation.name.right(1)))
 										if notation_midi == note_played:
 											notes_in_current_note_stack.erase(notation)
 											# if early:
@@ -202,6 +202,10 @@ func _on_qwerty_listener_note_on(note_played) -> void: # called on player key pr
 
 func start_practice_mode() -> void:
 	load_notes()
+	# need to find a way to start the bouncing ball to start at stack 1 on beat 1
+	#current_note_stack = 1
+	#cycle_note_stack_and_move_ball()
+	#bouncing_rhythm_indicator.move_horizontally_to(ball_positions[current_note_stack - 1])
 	looping_mode = false
 	practice_mode = true
 	# start conductor
