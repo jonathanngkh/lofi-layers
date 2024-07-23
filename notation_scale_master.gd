@@ -186,7 +186,8 @@ func _on_qwerty_listener_note_on(note_played) -> void: # called on player key pr
 												if child.name == "LeftCrotchetTail" or child.name == "RightCrotchetTail":
 													child.self_modulate = "08234e"
 											notation.get_node("InnerHead").visible = true
-											notation.get_node("InnerHead").self_modulate = "3caec6" # light blue base
+											#notation.get_node("InnerHead").self_modulate = "3caec6" # light blue base
+											success_glow(notation)
 											# if late: red
 											# if perfect: glowing green
 		#var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
@@ -198,6 +199,19 @@ func _on_qwerty_listener_note_on(note_played) -> void: # called on player key pr
 					#pass
 				#elif punctuality == "late":
 					#pass
+
+var success_tweens_array = []
+func success_glow(note_head) -> void:
+	var max_glow := Color(0.5, 3.2, 0.5)
+	var min_glow := Color(0.5, 1.5, 0.5)
+	var tween_duration = Conductor.sec_per_beat
+	var tween = create_tween()
+	tween.set_loops()
+	tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(note_head, "self_modulate", min_glow, tween_duration).from(max_glow)
+	tween.tween_property(note_head, "self_modulate", max_glow, tween_duration).from(min_glow)
+	tween.play()
+	success_tweens_array.append(tween)
 
 
 func start_practice_mode() -> void:
@@ -241,6 +255,8 @@ func loop_music() -> void: # called when beat is incremented
 var ball_positions := [275, 515, 760, 1000, 1240, 1485, 1725, 1965]
 
 func reset_note_heads() -> void:
+	for tween in success_tweens_array:
+		tween.kill()
 	for note_stack in note_stack_container.get_children():
 		for notation in note_stack.get_children():
 			notation.self_modulate = "000000"
