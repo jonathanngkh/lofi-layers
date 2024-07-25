@@ -142,12 +142,6 @@ func _on_pitch_detector_note_detected(note_detected) -> void:
 
 
 func check_note() -> void:
-	# current_note_stack_notes: [event1, event2, event3] all on beat 1
-	# check punctuality on individual note basis
-	# just label each note's punctuality. bouncing ball keeps going.
-	# do a % of correct at the end and print at the bottom
-	# maybe have a score, score increases on each note played
-	# if current note == played note on the correct beat, get_punctuality and print it, if all correct, play riser and success sound
 	pass
 
 
@@ -161,37 +155,36 @@ func get_notes_in_current_note_stack() -> void:
 
 
 func _on_qwerty_listener_note_on(note_played) -> void: # called on player key press
-	if practice_mode:
-		# check note
-		# check timing
-		print(loaded_notes)
-		#var played_note_string := MusicTheoryDB.get_note_name(note_played) + str(MusicTheoryDB.get_note_octave(note_played))
-		#print("played_note_string: " + played_note_string)
-		for event in loaded_notes:
-			if not loaded_notes[event]["note_value"] == "QuarterRest":
-				if loaded_notes[event]["beat"] == current_note_stack:
-					var event_midi := MusicTheoryDB.get_note_value(loaded_notes[event]["note_value"], loaded_notes[event]["note_octave"])
-					if note_played == event_midi:
-						print("loaded note: " + loaded_notes[event]["note_value"] + str(loaded_notes[event]["note_octave"]) + " was played")
-						for note_stack in note_stack_container.get_children():
-							if note_stack.name.right(1) == str(current_note_stack): # same beat
-								for notation in note_stack.get_children():
-									if not notation.name == "QuarterRest":
-										var notation_midi := MusicTheoryDB.get_note_value(notation.name.left(notation.name.length() - 1), int(notation.name.right(1)))
-										if notation_midi == note_played:
-											notes_in_current_note_stack.erase(notation)
-											# if early:
-											notation.self_modulate = "08234e" # dark blue "outline"
-											for child in notation.get_children():
-												if child.name == "LeftCrotchetTail" or child.name == "RightCrotchetTail":
-													child.self_modulate = "08234e"
-											notation.get_node("InnerHead").visible = true
-											#notation.get_node("InnerHead").self_modulate = "3caec6" # light blue base
-											success_glow(notation)
-											# if late: red
-											# if perfect: glowing green
-		#var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
-		#var punctuality := ""
+	print(loaded_notes)
+	#var played_note_string := MusicTheoryDB.get_note_name(note_played) + str(MusicTheoryDB.get_note_octave(note_played))
+	#print("played_note_string: " + played_note_string)
+	for event in loaded_notes:
+		if not loaded_notes[event]["note_value"] == "QuarterRest":
+			if loaded_notes[event]["beat"] == current_note_stack:
+				var event_midi := MusicTheoryDB.get_note_value(loaded_notes[event]["note_value"], loaded_notes[event]["note_octave"])
+				if note_played == event_midi:
+					print("loaded note: " + loaded_notes[event]["note_value"] + str(loaded_notes[event]["note_octave"]) + " was played")
+					for note_stack in note_stack_container.get_children():
+						if note_stack.name.right(1) == str(current_note_stack): # same beat
+							for notation in note_stack.get_children():
+								if not notation.name == "QuarterRest":
+									var notation_midi := MusicTheoryDB.get_note_value(notation.name.left(notation.name.length() - 1), int(notation.name.right(1)))
+									if notation_midi == note_played:
+										notes_in_current_note_stack.erase(notation)
+										#if notes_in_current_note_stack.size() == 0:
+											#cycle_note_stack_and_move_ball()
+										# if early:
+										notation.self_modulate = "08234e" # dark blue "outline"
+										for child in notation.get_children():
+											if child.name == "LeftCrotchetTail" or child.name == "RightCrotchetTail":
+												child.self_modulate = "08234e"
+										notation.get_node("InnerHead").visible = true
+										#notation.get_node("InnerHead").self_modulate = "3caec6" # light blue base
+										success_glow(notation)
+										# if late: red
+										# if perfect: glowing green
+		var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
+		var punctuality := ""
 		#if Conductor.get_closest_beat_in_bar(Conductor.song_position_in_seconds) % 2 != 0: # closest beat is down beat
 			#if time_off_beat > on_beat_window:
 				#punctuality = Conductor.get_punctuality(Conductor.song_position_in_seconds)
@@ -288,6 +281,7 @@ func bouncing_ball_movement() -> void: # called on downbeat incremented signal
 			if Conductor.beat_in_bar == 7:
 				bouncing_rhythm_indicator.move_horizontally_to(275)
 	if practice_mode:
+		pass
 		# ball will bounce like in looping mode, but resets if note was not played, played early, or played late. checker will wait until past late first.
 		if notes_in_current_note_stack.size() == 1 and notes_in_current_note_stack[0].name == "QuarterRest":
 			cycle_note_stack_and_move_ball()
