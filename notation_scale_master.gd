@@ -185,6 +185,7 @@ func _on_qwerty_listener_note_on(note_played) -> void: # called on player key pr
 										# if perfect: glowing green
 		var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
 		var punctuality := ""
+		# odd measure beat  1357 is beat1234 and even measure 1357 is 5678. then just check and print if late or early
 		#if Conductor.get_closest_beat_in_bar(Conductor.song_position_in_seconds) % 2 != 0: # closest beat is down beat
 			#if time_off_beat > on_beat_window:
 				#punctuality = Conductor.get_punctuality(Conductor.song_position_in_seconds)
