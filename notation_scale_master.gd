@@ -155,7 +155,9 @@ func get_notes_in_current_note_stack() -> void:
 
 
 func _on_qwerty_listener_note_on(note_played) -> void: # called on player key press
-	print(loaded_notes)
+	var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
+	var punctuality := ""
+	#print(loaded_notes)
 	#var played_note_string := MusicTheoryDB.get_note_name(note_played) + str(MusicTheoryDB.get_note_octave(note_played))
 	#print("played_note_string: " + played_note_string)
 	for event in loaded_notes:
@@ -171,28 +173,49 @@ func _on_qwerty_listener_note_on(note_played) -> void: # called on player key pr
 									var notation_midi := MusicTheoryDB.get_note_value(notation.name.left(notation.name.length() - 1), int(notation.name.right(1)))
 									if notation_midi == note_played:
 										notes_in_current_note_stack.erase(notation)
-										#if notes_in_current_note_stack.size() == 0:
-											#cycle_note_stack_and_move_ball()
-										# if early:
+										notation.get_node("InnerHead").visible = true
 										notation.self_modulate = "08234e" # dark blue "outline"
+										success_glow(notation)
 										for child in notation.get_children():
 											if child.name == "LeftCrotchetTail" or child.name == "RightCrotchetTail":
 												child.self_modulate = "08234e"
-										notation.get_node("InnerHead").visible = true
-										#notation.get_node("InnerHead").self_modulate = "3caec6" # light blue base
-										success_glow(notation)
-										# if late: red
-										# if perfect: glowing green
-		var time_off_beat = Conductor.get_time_off_closest_beat_in_bar(Conductor.song_position_in_seconds)
-		var punctuality := ""
+										#if notes_in_current_note_stack.size() == 0:
+											#cycle_note_stack_and_move_ball()
+										#if Conductor.measure % 2 == 0: # left measure
+											#if Conductor.get_closest_beat_in_bar(Conductor.song_position_in_seconds) % 2 != 0: # closest beat is down beat
+												#notation.get_node("InnerHead").visible = true
+												#if time_off_beat > on_beat_window:
+													#punctuality = Conductor.get_punctuality(Conductor.song_position_in_seconds)
+													#notation.self_modulate = "08234e" # dark blue "outline"
+													#for child in notation.get_children():
+														#if child.name == "LeftCrotchetTail" or child.name == "RightCrotchetTail":
+															#child.self_modulate = "08234e"
+													#if punctuality == "early":
+														#notation.get_node("InnerHead").self_modulate = "3caec6"
+														#var early_label_spawn = early_label.instantiate()
+														#notation.add_child(early_label_spawn)
+														#early_label_spawn.position = notation.global_position + Vector2(-700, -580)
+													#elif punctuality == "late":
+														#notation.get_node("InnerHead").self_modulate = "ee0024"
+														#var late_label_spawn = late_label.instantiate()
+														#notation.add_child(late_label_spawn)
+														#late_label_spawn.position = notation.global_position + Vector2(-450, -580)
+												#else:
+													#success_glow(notation)
+													#var perfect_label_spawn = perfect_label.instantiate()
+													#notation.add_child(perfect_label_spawn)
+													#perfect_label_spawn.position = notation.global_position + Vector2(-650, -500)
+		
 		# odd measure beat  1357 is beat1234 and even measure 1357 is 5678. then just check and print if late or early
-		#if Conductor.get_closest_beat_in_bar(Conductor.song_position_in_seconds) % 2 != 0: # closest beat is down beat
-			#if time_off_beat > on_beat_window:
-				#punctuality = Conductor.get_punctuality(Conductor.song_position_in_seconds)
-				#if punctuality == "early":
-					#pass
-				#elif punctuality == "late":
-					#pass
+		#if Conductor.measure % 2 == 0: # left measure
+			#if Conductor.get_closest_beat_in_bar(Conductor.song_position_in_seconds) % 2 != 0: # closest beat is down beat
+				#pass
+				#if time_off_beat > on_beat_window:
+					#punctuality = Conductor.get_punctuality(Conductor.song_position_in_seconds)
+					#if punctuality == "early":
+						#pass
+					#elif punctuality == "late":
+						#pass
 
 var success_tweens_array = []
 func success_glow(note_head) -> void:
