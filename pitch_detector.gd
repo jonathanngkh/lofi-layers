@@ -22,6 +22,9 @@ func _ready() -> void:
 		
 		get_window().close_requested.connect(clean_func)
 		kill_thread_button.pressed.connect(clean_func)
+	else:
+		$KillThreadButton.visible = false
+		$PitchLabel.visible = false
 	
 	# if pyaudio/sys/numpy/aubio is not yet installed, run the following:
 	#var output = []
