@@ -1,14 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd7e5wvydw0pg"]
+[gd_scene load_steps=4 format=3 uid="uid://bd7e5wvydw0pg"]
 
 [ext_resource type="PackedScene" uid="uid://c475exd8klytk" path="res://parallax_background.tscn" id="1_d7jge"]
 [ext_resource type="PackedScene" uid="uid://deo3afb16s5gi" path="res://ground_static_body_2d.tscn" id="2_3un34"]
+[ext_resource type="PackedScene" uid="uid://bn67qf3wexjsq" path="res://eleanore_character_body_2d.tscn" id="3_ookp4"]
 
 [node name="World" type="Node2D"]
+texture_filter = 1
 metadata/_edit_vertical_guides_ = [2560.0, 1280.0]
 metadata/_edit_horizontal_guides_ = [1440.0]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_d7jge")]
 
 [node name="GroundStaticBody2D" parent="." instance=ExtResource("2_3un34")]
+modulate = Color(0.298844, 0.798139, 0.821057, 1)
 position = Vector2(0, 1280)
 scale = Vector2(5, 5)
+
+[node name="GroundStaticBody2D2" parent="." instance=ExtResource("2_3un34")]
+modulate = Color(0.298844, 0.798139, 0.821057, 1)
+position = Vector2(652, 1040)
+scale = Vector2(5, 5)
+
+[node name="EleanoreCharacterBody2D" parent="." instance=ExtResource("3_ookp4")]
+position = Vector2(261, 1125)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1280, 720)
