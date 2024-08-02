@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c475exd8klytk" path="res://parallax_background.tscn" id="1_d7jge"]
 [ext_resource type="PackedScene" uid="uid://deo3afb16s5gi" path="res://ground_static_body_2d.tscn" id="2_3un34"]
-[ext_resource type="PackedScene" uid="uid://bn67qf3wexjsq" path="res://eleanore_character_body_2d.tscn" id="3_ookp4"]
+[ext_resource type="PackedScene" uid="uid://bn67qf3wexjsq" path="res://Characters/witch/witch_character_body_2d.tscn" id="3_ookp4"]
 
 [node name="World" type="Node2D"]
 texture_filter = 1

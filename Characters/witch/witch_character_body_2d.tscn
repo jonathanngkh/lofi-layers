@@ -1,7 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://bn67qf3wexjsq"]
+[gd_scene load_steps=25 format=3 uid="uid://bn67qf3wexjsq"]
 
-[ext_resource type="Script" path="res://eleanore_character_body_2d.gd" id="1_ryhk5"]
+[ext_resource type="Script" path="res://Characters/witch/witch_character_body_2d.gd" id="1_ryhk5"]
 [ext_resource type="Texture2D" uid="uid://jc40qfw7vbkx" path="res://assets/characters/eleanore/SalamandarWitch-Sheet#1.png" id="2_ysvn3"]
+[ext_resource type="PackedScene" uid="uid://m3ibtx1a6nk4" path="res://utility/state_machine.tscn" id="3_wts2t"]
+[ext_resource type="Script" path="res://Characters/witch/idle.gd" id="4_je1uh"]
+[ext_resource type="Script" path="res://Characters/witch/walk.gd" id="5_g1aa8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwklg"]
 atlas = ExtResource("2_ysvn3")
@@ -143,17 +146,33 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpw5"]
 size = Vector2(20, 48)
 
-[node name="EleanoreCharacterBody2D" type="CharacterBody2D"]
+[node name="WitchCharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(6, 6)
 script = ExtResource("1_ryhk5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
 animation = &"jump"
-frame_progress = 0.405058
+frame_progress = 0.288965
 offset = Vector2(40, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_bmpw5")
+
+[node name="StateMachine" parent="." instance=ExtResource("3_wts2t")]
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="StateMachine"]
+script = ExtResource("4_je1uh")
+
+[node name="Walk" type="Node2D" parent="StateMachine"]
+script = ExtResource("5_g1aa8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -30.3333
+offset_top = 36.0
+offset_right = 13.6667
+offset_bottom = 59.0
+text = "state:"
