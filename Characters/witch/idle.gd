@@ -14,12 +14,15 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	pass
-	#if not witch.velocity == Vector2.ZERO:
-		#state_machine.transition_to("Walk")
+	if not witch.velocity.x == 0:
+		state_machine.transition_to("Walk")
+	if witch.velocity.y > 0:
+		state_machine.transition_to("Jump")
+
 
 # Receives events from the `_unhandled_input()` callback.
-func handle_input(event: InputEvent) -> void:
+func handle_input(_event: InputEvent) -> void:
+	# walk left or right
 	if Input.is_action_pressed("left"):
 		witch.sprite.scale.x = -1
 		witch.velocity.x = -1 * witch.SPEED
@@ -28,18 +31,9 @@ func handle_input(event: InputEvent) -> void:
 		witch.sprite.scale.x = 1
 		witch.velocity.x = 1 * witch.SPEED
 		state_machine.transition_to("Walk")
-	#var direction := Input.get_axis("left", "right")
-	#if direction:
-		#if direction == -1:
-			#witch.sprite.scale.x = -1
-		#else:
-			#witch.sprite.scale.x = 1
-		#witch.velocity.x = witch.direction * witch.SPEED
-	#else:
-			##sprite.play("idle")
-			#witch.velocity.x = move_toward(witch.velocity.x, 0, witch.SPEED)
-	#witch.sprite.play("walk")
-	pass
+	# jump
+	if Input.is_action_just_pressed("jump") and witch.is_on_floor():
+		state_machine.transition_to("Jump")
 	#if event is InputEventKey:
 		#if event.keycode == KEY_F:
 			#state_machine.transition_to("Attack1") # F
