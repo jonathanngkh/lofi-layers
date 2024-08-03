@@ -18,12 +18,11 @@ scale = Vector2(5, 5)
 
 [node name="GroundStaticBody2D2" parent="." instance=ExtResource("2_3un34")]
 modulate = Color(0.298844, 0.798139, 0.821057, 1)
-position = Vector2(652, 1040)
+position = Vector2(5116, 1280)
 scale = Vector2(5, 5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1280, 720)
 
 [node name="EleanoreCharacterBody2D" parent="." instance=ExtResource("3_ookp4")]
 position = Vector2(261, 1125)
-
-[node name="Camera2D" type="Camera2D" parent="EleanoreCharacterBody2D"]
-position = Vector2(169.833, -67.5)
-scale = Vector2(0.166667, 0.166667)
