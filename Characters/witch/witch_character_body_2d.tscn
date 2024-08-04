@@ -298,7 +298,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_mg3ah")
 }],
-"loop": false,
+"loop": true,
 "name": &"double_jump",
 "speed": 10.0
 }, {
@@ -452,9 +452,8 @@ script = ExtResource("1_ryhk5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
-animation = &"dash_brake"
-frame = 7
-frame_progress = 1.0
+animation = &"double_jump"
+frame_progress = 0.803514
 offset = Vector2(40, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

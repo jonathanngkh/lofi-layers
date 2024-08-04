@@ -1,6 +1,7 @@
 extends WitchState
 
 var can_double_jump := true
+var allow_air_stop := false
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
@@ -15,16 +16,15 @@ func enter(_msg := {}) -> void:
 
 # Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
-	# left or right
-	if Input.is_action_pressed("left"):
-		witch.sprite.scale.x = -1
-		witch.velocity.x = -1 * witch.SPEED
-	elif Input.is_action_pressed("right"):
+	if Input.get_axis("left", "right") > 0:
 		witch.sprite.scale.x = 1
 		witch.velocity.x = 1 * witch.SPEED
-	# stop
-	elif Input.is_action_just_released("left") or Input.is_action_just_released("right"):
-		witch.velocity.x = move_toward(witch.velocity.x, 0, witch.SPEED)
+	elif Input.get_axis("left", "right") < 0:
+		witch.sprite.scale.x = -1
+		witch.velocity.x = -1 * witch.SPEED
+	else:
+		if allow_air_stop:
+			witch.velocity.x = move_toward(witch.velocity.x, 0, witch.SPEED)
 	# dash
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")
@@ -35,8 +35,8 @@ func handle_input(_event: InputEvent) -> void:
 		else:
 			if can_double_jump:
 				can_double_jump = false
-				witch.sprite.play("double_jump", 2.5)
-				witch.velocity.y = witch.JUMP_VELOCITY * 1.3
+				witch.sprite.play("double_jump", 2.2)
+				witch.velocity.y = witch.JUMP_VELOCITY * 1.4
 				witch.sprite.offset.x = 0
 
 # Corresponds to the `_process()` callback.

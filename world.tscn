@@ -21,6 +21,11 @@ modulate = Color(0.298844, 0.798139, 0.821057, 1)
 position = Vector2(5116, 1280)
 scale = Vector2(5, 5)
 
+[node name="GroundStaticBody2D3" parent="." instance=ExtResource("2_3un34")]
+modulate = Color(0.298844, 0.798139, 0.821057, 1)
+position = Vector2(1288, 715)
+scale = Vector2(5, 5)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1280, 720)
 

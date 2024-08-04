@@ -5,6 +5,10 @@ extends WitchState
 func enter(_msg := {}) -> void:
 	witch.sprite.animation_finished.connect(_on_animation_finished)
 	witch.sprite.play("to_walk", 1.6)
+	if Input.get_axis("left", "right") == 0:
+		witch.sprite.play("brake", 1.8)
+		var tween = create_tween()
+		tween.tween_property(witch, "velocity:x", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 
 
 # Corresponds to the `_process()` callback.
@@ -17,8 +21,8 @@ func physics_update(_delta: float) -> void:
 	if witch.velocity.x == 0:
 		state_machine.transition_to("Idle")
 	pass
-	#if witch.velocity.y > 0:
-		#state_machine.transition_to("Jump")
+	if not witch.velocity.y == 0:
+		state_machine.transition_to("Jump", {"stage": "apex"})
 
 
 func _on_animation_finished() -> void:
@@ -33,14 +37,13 @@ func handle_input(_event: InputEvent) -> void:
 		if not witch.sprite.animation == "brake":
 			witch.sprite.scale.x = 1
 			witch.velocity.x = 1 * witch.SPEED
-	elif Input.get_action_strength("right") - Input.get_action_strength("left") < 0:
+	elif Input.get_axis("left", "right") < 0:
 		if not witch.sprite.animation == "brake":
 			witch.sprite.scale.x = -1
 			witch.velocity.x = -1 * witch.SPEED
 	else:
 		if not witch.sprite.animation == "brake":
 			witch.sprite.play("brake", 1.8)
-			#var brake_speed
 			var tween = create_tween()
 			tween.tween_property(witch, "velocity:x", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	# dash
