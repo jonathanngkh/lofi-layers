@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	$Label.text = "state: " + $StateMachine.state.name
 	$Label2.text = "animation: " + sprite.animation
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and not $StateMachine.state.name == "Dash":
 		velocity += get_gravity() * delta
 		
 	move_and_slide()

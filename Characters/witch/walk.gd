@@ -16,8 +16,9 @@ func update(_delta: float) -> void:
 func physics_update(_delta: float) -> void:
 	if witch.velocity.x == 0:
 		state_machine.transition_to("Idle")
-	if witch.velocity.y > 0:
-		state_machine.transition_to("Jump")
+	pass
+	#if witch.velocity.y > 0:
+		#state_machine.transition_to("Jump")
 
 
 func _on_animation_finished() -> void:
@@ -38,10 +39,10 @@ func handle_input(_event: InputEvent) -> void:
 			witch.velocity.x = -1 * witch.SPEED
 	else:
 		if not witch.sprite.animation == "brake":
-			witch.sprite.play("brake", 1.2)
+			witch.sprite.play("brake", 1.8)
 			#var brake_speed
 			var tween = create_tween()
-			tween.tween_property(witch, "velocity:x", 0, 0.6).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+			tween.tween_property(witch, "velocity:x", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	# dash
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")

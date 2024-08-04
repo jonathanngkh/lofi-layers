@@ -2,12 +2,14 @@ extends WitchState
 
 var dash_speed = 2000
 var starting_direction
+var starting_height
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	starting_direction = witch.sprite.scale.x
-	$DashDurationTimer.wait_time = 0.1
-	$DashDurationTimer.timeout.connect(_on_timeout)
+	starting_height = witch.position.y
+	#$DashDurationTimer.wait_time = 0.1
+	#$DashDurationTimer.timeout.connect(_on_timeout)
 	witch.sprite.offset.x = -10
 	witch.sprite.play("to_dash")
 	witch.sprite.animation_finished.connect(_on_animation_finished)
@@ -15,7 +17,10 @@ func enter(_msg := {}) -> void:
 
 # Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
-	pass
+	if _event.is_action_released("dash"):
+		witch.sprite.play("dash_brake")
+		var tween = create_tween()
+		tween.tween_property(self, "dash_speed", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 
 # Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:
@@ -25,13 +30,18 @@ func update(_delta: float) -> void:
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
 	witch.velocity.x = starting_direction * dash_speed
+	witch.position.y = starting_height
+
 
 func _on_animation_finished() -> void:
 	if witch.sprite.animation == "to_dash":
 		$DashDurationTimer.start()
 		witch.sprite.play("dash")
 	elif witch.sprite.animation == "dash_brake":
-		state_machine.transition_to("Idle")
+		if witch.is_on_floor():
+			state_machine.transition_to("Idle")
+		else:
+			state_machine.transition_to("Jump", {"stage": "apex"})
 
 
 func _on_timeout() -> void:
@@ -46,3 +56,4 @@ func exit() -> void:
 	witch.sprite.offset.x = 40
 	$DashDurationTimer.timeout.disconnect(_on_timeout)
 	dash_speed = 2000
+	witch.velocity.y = 0

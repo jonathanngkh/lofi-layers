@@ -16,8 +16,8 @@ func update(_delta: float) -> void:
 func physics_update(_delta: float) -> void:
 	if not witch.velocity.x == 0:
 		state_machine.transition_to("Walk")
-	if witch.velocity.y > 0:
-		state_machine.transition_to("Jump")
+	#if witch.velocity.y > 0:
+		#state_machine.transition_to("Jump")
 
 
 # Receives events from the `_unhandled_input()` callback.

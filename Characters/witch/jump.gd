@@ -4,9 +4,13 @@ var can_double_jump := true
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	witch.sprite.play("jump")
-	witch.velocity.y = witch.JUMP_VELOCITY
 	witch.sprite.animation_finished.connect(_on_animation_finished)
+	if _msg:
+		if _msg["stage"] == "apex":
+			witch.sprite.play("apex")
+	else:
+		witch.sprite.play("jump")
+		witch.velocity.y = witch.JUMP_VELOCITY
 
 
 # Receives events from the `_unhandled_input()` callback.
@@ -21,6 +25,9 @@ func handle_input(_event: InputEvent) -> void:
 	# stop
 	elif Input.is_action_just_released("left") or Input.is_action_just_released("right"):
 		witch.velocity.x = move_toward(witch.velocity.x, 0, witch.SPEED)
+	# dash
+	if Input.is_action_just_pressed("dash"):
+		state_machine.transition_to("Dash")
 	# jump
 	if Input.is_action_just_pressed("jump"):
 		if witch.is_on_floor():
@@ -54,6 +61,8 @@ func _on_animation_finished() -> void:
 		witch.sprite.play("fall")
 	elif witch.sprite.animation == "land":
 		state_machine.transition_to("Idle")
+
+
 # Called by the state machine before changing the active state. Use this function to clean up the state.
 func exit() -> void:
 	witch.sprite.animation_finished.disconnect(_on_animation_finished)
