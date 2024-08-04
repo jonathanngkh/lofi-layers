@@ -453,7 +453,7 @@ script = ExtResource("1_ryhk5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
 animation = &"double_jump"
-frame_progress = 0.803514
+frame_progress = 0.619691
 offset = Vector2(40, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -480,6 +480,7 @@ script = ExtResource("37_1rsph")
 one_shot = true
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -30.3333
 offset_top = 17.3333
 offset_right = 13.6667
@@ -487,6 +488,7 @@ offset_bottom = 40.3333
 text = "state:"
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 offset_left = -30.3333
 offset_top = 33.3333
 offset_right = 53.6667
