@@ -453,8 +453,9 @@ script = ExtResource("1_ryhk5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
-animation = &"idle"
-frame_progress = 0.494962
+animation = &"brake"
+frame = 6
+frame_progress = 1.0
 offset = Vector2(40, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

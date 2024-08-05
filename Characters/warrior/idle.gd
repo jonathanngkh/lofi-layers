@@ -5,8 +5,6 @@ extends WarriorState
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	warrior.sprite.play("idle", 0.7)
-	#if warrior.velocity.x < 0:
-		#warrior.sprite.scale.x = -1
 	if Input.get_axis("left", "right") > 0:
 		warrior.sprite.scale.x = 1
 		warrior.velocity.x = 1 * warrior.SPEED
@@ -38,11 +36,11 @@ func handle_input(_event: InputEvent) -> void:
 	if Input.get_axis("left", "right") > 0:
 		warrior.sprite.scale.x = 1
 		warrior.velocity.x = 1 * warrior.SPEED
-		state_machine.transition_to("Run", {"direction": "right"})
+		state_machine.transition_to("Run")
 	elif Input.get_axis("left", "right") < 0:
 		warrior.sprite.scale.x = -1
 		warrior.velocity.x = -1 * warrior.SPEED
-		state_machine.transition_to("Run", {"direction": "left"})
+		state_machine.transition_to("Run")
 	else:
 		warrior.velocity.x = move_toward(warrior.velocity.x, 0, warrior.SPEED)
 	# jump

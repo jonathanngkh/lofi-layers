@@ -29,14 +29,11 @@ func physics_update(_delta: float) -> void:
 	if warrior.velocity.y > 0 and warrior.velocity.y < 100:
 		warrior.sprite.play("apex")
 	if warrior.is_on_floor():
-		#warrior.velocity.x = 0
 		if warrior.velocity.x == 0:
 			if not warrior.sprite.animation == "land":
 				warrior.sprite.play("land", 1)
-		elif warrior.velocity.x > 0:
-			state_machine.transition_to("Run", {"direction": "right"})
-		elif warrior.velocity.x < 0:
-			state_machine.transition_to("Run", {"direction": "left"})
+		else:
+			state_machine.transition_to("Run")
 
 func _on_animation_finished() -> void:
 	if warrior.sprite.animation == "apex":

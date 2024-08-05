@@ -33,16 +33,14 @@ func _on_animation_finished() -> void:
 # Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
 	# left or right
-	if Input.get_axis("left", "right") > 0:
-		if not witch.sprite.animation == "brake":
+	if not witch.sprite.animation == "brake":
+		if Input.get_axis("left", "right") > 0:
 			witch.sprite.scale.x = 1
 			witch.velocity.x = 1 * witch.SPEED
-	elif Input.get_axis("left", "right") < 0:
-		if not witch.sprite.animation == "brake":
+		elif Input.get_axis("left", "right") < 0:
 			witch.sprite.scale.x = -1
 			witch.velocity.x = -1 * witch.SPEED
-	else:
-		if not witch.sprite.animation == "brake":
+		else:
 			witch.sprite.play("brake", 1.8)
 			var tween = create_tween()
 			tween.tween_property(witch, "velocity:x", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)

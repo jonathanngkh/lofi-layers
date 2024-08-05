@@ -3,22 +3,18 @@ extends WarriorState
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	warrior.sprite.scale.x = 1
-	if _msg:
-		if _msg["direction"] == "left":
-			warrior.sprite.play("run_left")
-		elif _msg["direction"] == "right":
-			warrior.sprite.play("run_right")
+	warrior.sprite.animation_finished.connect(_on_animation_finished)
+	warrior.sprite.play("run_start", 1.6)
 
-	if Input.get_axis("left", "right") > 0:
-		warrior.sprite.scale.x = 1
-		warrior.velocity.x = 1 * warrior.SPEED
-		warrior.sprite.play("run_right")
-	elif Input.get_axis("left", "right") < 0:
-		warrior.velocity.x = -1 * warrior.SPEED
-		warrior.sprite.play("run_left")
-	else:
-		warrior.velocity.x = move_toward(warrior.velocity.x, 0, warrior.SPEED)
+	if Input.get_axis("left", "right") == 0:
+		warrior.sprite.play("run_break", 1.5)
+		var tween = create_tween()
+		tween.tween_property(warrior, "velocity:x", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+
+
+func _on_animation_finished() -> void:
+	if warrior.sprite.animation == "run_start":
+		warrior.sprite.play("run")
 
 
 # Corresponds to the `_physics_process()` callback.
@@ -29,14 +25,23 @@ func physics_update(_delta: float) -> void:
 
 ## Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
-	if Input.get_axis("left", "right") > 0:
-		warrior.velocity.x = 1 * warrior.SPEED
-		warrior.sprite.play("run_right")
-	elif Input.get_axis("left", "right") < 0:
-		warrior.velocity.x = -1 * warrior.SPEED
-		warrior.sprite.play("run_left")
-	else:
-		warrior.velocity.x = move_toward(warrior.velocity.x, 0, warrior.SPEED)
+	if not warrior.sprite.animation == "run_break":
+		if Input.get_axis("left", "right") > 0:
+			warrior.sprite.scale.x = 1
+			warrior.velocity.x = 1 * warrior.SPEED
+			warrior.sprite.play("run")
+		elif Input.get_axis("left", "right") < 0:
+			warrior.sprite.scale.x = -1
+			warrior.velocity.x = -1 * warrior.SPEED
+			warrior.sprite.play("run")
+		else:
+			if warrior.velocity.x > 0:
+				warrior.sprite.scale.x = 1
+			elif warrior.velocity.x < 0:
+				warrior.sprite.scale.x = -1
+			warrior.sprite.play("run_break", 1.5)
+			var tween = create_tween()
+			tween.tween_property(warrior, "velocity:x", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	# jump
 	if Input.is_action_just_pressed("jump") and warrior.is_on_floor():
 		state_machine.transition_to("Jump")
@@ -44,7 +49,4 @@ func handle_input(_event: InputEvent) -> void:
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
 func exit() -> void:
-	if warrior.sprite.animation == "run_left":
-		warrior.sprite.scale.x = -1
-	if warrior.sprite.animation == "run_right":
-		warrior.sprite.scale.x = 1
+	warrior.sprite.animation_finished.disconnect(_on_animation_finished)
