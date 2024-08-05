@@ -1,7 +1,7 @@
 class_name Witch
 extends CharacterBody2D
 
-const SPEED = 1000.0
+const SPEED = 500.0
 const JUMP_VELOCITY = -1900.0
 const BRAKING_SPEED = 400.0
 @export var debug_mode = false
@@ -10,6 +10,7 @@ const BRAKING_SPEED = 400.0
 
 func _ready() -> void:
 	pass
+
 
 func _physics_process(delta: float) -> void:
 	if debug_mode:

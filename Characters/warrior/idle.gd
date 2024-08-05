@@ -31,17 +31,16 @@ func enter(_msg := {}) -> void:
 #
 #
 ## Receives events from the `_unhandled_input()` callback.
-#func handle_input(_event: InputEvent) -> void:
-	#if Input.get_axis("left", "right") > 0:
-		#warrior.sprite.scale.x = 1
-		#warrior.velocity.x = 1 * warrior.SPEED
-		#state_machine.transition_to("Walk")
-	#elif Input.get_axis("left", "right") < 0:
-		#warrior.sprite.scale.x = -1
-		#warrior.velocity.x = -1 * warrior.SPEED
-		#state_machine.transition_to("Walk")
-	#else:
-		#warrior.velocity.x = move_toward(warrior.velocity.x, 0, warrior.SPEED)
+func handle_input(_event: InputEvent) -> void:
+	if Input.get_axis("left", "right") > 0:
+		warrior.sprite.scale.x = 1
+		warrior.velocity.x = 1 * warrior.SPEED
+		state_machine.transition_to("Run", {"direction": "right"})
+	elif Input.get_axis("left", "right") < 0:
+		warrior.velocity.x = -1 * warrior.SPEED
+		state_machine.transition_to("Run", {"direction": "left"})
+	else:
+		warrior.velocity.x = move_toward(warrior.velocity.x, 0, warrior.SPEED)
 	## jump
 	#if Input.is_action_just_pressed("jump") and warrior.is_on_floor():
 		#state_machine.transition_to("Jump")
