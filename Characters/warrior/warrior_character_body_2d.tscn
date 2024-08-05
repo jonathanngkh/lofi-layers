@@ -192,7 +192,7 @@ debug_mode = true
 position = Vector2(-3.33333, 4.33333)
 sprite_frames = SubResource("SpriteFrames_o7tut")
 animation = &"run_left"
-frame_progress = 0.452584
+frame_progress = 0.798322
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
