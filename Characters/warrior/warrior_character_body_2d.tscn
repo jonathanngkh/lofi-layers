@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=3 uid="uid://brg22imany6tq"]
+
+[ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
+[ext_resource type="Script" path="res://Characters/warrior/idle.gd" id="3_j5bub"]
+[ext_resource type="Texture2D" uid="uid://4dk2v2v0f84u" path="res://assets/characters/joanna/JoannaSheet1.png" id="25_5pc18"]
+[ext_resource type="PackedScene" uid="uid://m3ibtx1a6nk4" path="res://utility/state_machine.tscn" id="33_qgulk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc1ic"]
+atlas = ExtResource("25_5pc18")
+region = Rect2(0, 0, 98, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_way2b"]
+atlas = ExtResource("25_5pc18")
+region = Rect2(98, 0, 98, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2pj5"]
+atlas = ExtResource("25_5pc18")
+region = Rect2(196, 0, 98, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1ti8"]
+atlas = ExtResource("25_5pc18")
+region = Rect2(294, 0, 98, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chcsh"]
+atlas = ExtResource("25_5pc18")
+region = Rect2(392, 0, 98, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqbor"]
+atlas = ExtResource("25_5pc18")
+region = Rect2(490, 0, 98, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o7tut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc1ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_way2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2pj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1ti8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chcsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqbor")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek4rg"]
+size = Vector2(20, 43)
+
+[node name="WarriorCharacterBody2D" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+script = ExtResource("1_jp0s3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.33333, 4.33333)
+sprite_frames = SubResource("SpriteFrames_o7tut")
+animation = &"idle"
+frame_progress = 0.645337
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1.33333)
+shape = SubResource("RectangleShape2D_ek4rg")
+
+[node name="StateMachine" parent="." instance=ExtResource("33_qgulk")]
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="StateMachine"]
+script = ExtResource("3_j5bub")

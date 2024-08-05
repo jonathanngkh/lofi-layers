@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd7e5wvydw0pg"]
+[gd_scene load_steps=6 format=3 uid="uid://bd7e5wvydw0pg"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_bx3ql"]
 [ext_resource type="PackedScene" uid="uid://c475exd8klytk" path="res://parallax_background.tscn" id="1_d7jge"]
 [ext_resource type="PackedScene" uid="uid://deo3afb16s5gi" path="res://ground_static_body_2d.tscn" id="2_3un34"]
 [ext_resource type="PackedScene" uid="uid://bn67qf3wexjsq" path="res://Characters/witch/witch_character_body_2d.tscn" id="3_ookp4"]
+[ext_resource type="PackedScene" uid="uid://brg22imany6tq" path="res://Characters/warrior/warrior_character_body_2d.tscn" id="5_1upx7"]
 
 [node name="World" type="Node2D"]
 texture_filter = 1
@@ -30,8 +31,10 @@ scale = Vector2(2.5, 2.5)
 
 [node name="EleanoreCharacterBody2D" parent="." instance=ExtResource("3_ookp4")]
 position = Vector2(261, 1125)
-scale = Vector2(3, 3)
 
 [node name="Camera2D" type="Camera2D" parent="EleanoreCharacterBody2D"]
 position = Vector2(169.833, -67.5)
 scale = Vector2(0.166667, 0.166667)
+
+[node name="WarriorCharacterBody2D" parent="." instance=ExtResource("5_1upx7")]
+position = Vector2(401, 1141)

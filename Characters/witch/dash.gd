@@ -35,13 +35,16 @@ func physics_update(_delta: float) -> void:
 	witch.velocity.x = starting_direction * dash_speed
 	witch.position.y = starting_height
 	if dash_cancelled and can_end_dash:
-		if not witch.sprite.animation == "dash_brake":
-			if witch.is_on_floor():
-				witch.sprite.play("dash_brake", 1.3)
-				var tween = create_tween()
-				tween.tween_property(self, "dash_speed", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
-			else:
-				state_machine.transition_to("Jump", {"stage": "apex"}) # double jump can be used repeatedly for infinite height
+		end_dash()
+
+func end_dash() -> void:
+	if not witch.sprite.animation == "dash_brake":
+		if witch.is_on_floor():
+			witch.sprite.play("dash_brake", 1.3)
+			var tween = create_tween()
+			tween.tween_property(self, "dash_speed", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		else:
+			state_machine.transition_to("Jump", {"stage": "apex"}) # double jump can be used repeatedly for infinite height
 
 
 func _on_animation_finished() -> void:

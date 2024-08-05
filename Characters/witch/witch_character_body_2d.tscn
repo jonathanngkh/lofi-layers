@@ -447,17 +447,18 @@ animations = [{
 size = Vector2(20, 48)
 
 [node name="WitchCharacterBody2D" type="CharacterBody2D"]
-scale = Vector2(6, 6)
+texture_filter = 1
+scale = Vector2(3, 3)
 script = ExtResource("1_ryhk5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
 animation = &"idle"
-frame_progress = 0.982726
+frame_progress = 0.459904
 offset = Vector2(40, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 2.66667)
 shape = SubResource("RectangleShape2D_bmpw5")
 
 [node name="StateMachine" parent="." instance=ExtResource("3_wts2t")]
