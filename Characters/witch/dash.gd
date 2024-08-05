@@ -26,7 +26,8 @@ func handle_input(_event: InputEvent) -> void:
 
 # Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:
-	pass
+	if Input.is_action_pressed("jump"):
+		starting_height -= 10
 
 
 # Corresponds to the `_physics_process()` callback.
