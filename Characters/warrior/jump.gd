@@ -3,12 +3,20 @@ extends WarriorState
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	pass
+	warrior.sprite.animation_finished.connect(_on_animation_finished)
+	warrior.sprite.play("jump")
+	warrior.velocity.y = warrior.JUMP_VELOCITY
 
 
 # Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
-	pass
+	if not warrior.sprite.animation == "land":
+		if Input.get_axis("left", "right") > 0:
+			warrior.sprite.scale.x = 1
+			warrior.velocity.x = 1 * warrior.SPEED
+		elif Input.get_axis("left", "right") < 0:
+			warrior.sprite.scale.x = -1
+			warrior.velocity.x = -1 * warrior.SPEED
 
 
 # Corresponds to the `_process()` callback.
@@ -18,9 +26,25 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	pass
+	if warrior.velocity.y > 0 and warrior.velocity.y < 100:
+		warrior.sprite.play("apex")
+	if warrior.is_on_floor():
+		#warrior.velocity.x = 0
+		if warrior.velocity.x == 0:
+			if not warrior.sprite.animation == "land":
+				warrior.sprite.play("land", 1)
+		elif warrior.velocity.x > 0:
+			state_machine.transition_to("Run", {"direction": "right"})
+		elif warrior.velocity.x < 0:
+			state_machine.transition_to("Run", {"direction": "left"})
+
+func _on_animation_finished() -> void:
+	if warrior.sprite.animation == "apex":
+		warrior.sprite.play("fall")
+	elif warrior.sprite.animation == "land":
+		state_machine.transition_to("Idle")
 
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
 func exit() -> void:
-	pass
+	warrior.sprite.animation_finished.disconnect(_on_animation_finished)
