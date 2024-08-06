@@ -1,42 +1,67 @@
-[gd_scene load_steps=76 format=3 uid="uid://bn67qf3wexjsq"]
+[gd_scene load_steps=102 format=3 uid="uid://bn67qf3wexjsq"]
 
 [ext_resource type="Script" path="res://Characters/witch/witch_character_body_2d.gd" id="1_ryhk5"]
 [ext_resource type="Texture2D" uid="uid://jc40qfw7vbkx" path="res://assets/characters/eleanore/SalamandarWitch-Sheet#1.png" id="2_ysvn3"]
 [ext_resource type="Texture2D" uid="uid://b12m38m4xjnxa" path="res://assets/characters/eleanore/dash/Dash9.png" id="3_eto77"]
 [ext_resource type="Texture2D" uid="uid://dlsr1clohwmox" path="res://assets/characters/eleanore/double jump/DoubleJump1.png" id="3_o4gnr"]
 [ext_resource type="PackedScene" uid="uid://m3ibtx1a6nk4" path="res://utility/state_machine.tscn" id="3_wts2t"]
+[ext_resource type="Texture2D" uid="uid://gllfblrwhkt8" path="res://assets/characters/eleanore/block/CastingMagicShield1.png" id="3_yds0u"]
 [ext_resource type="Script" path="res://Characters/witch/idle.gd" id="4_je1uh"]
 [ext_resource type="Texture2D" uid="uid://bao15a0rbajg2" path="res://assets/characters/eleanore/dash/Dash10.png" id="4_p462q"]
 [ext_resource type="Texture2D" uid="uid://csl5hayjhja06" path="res://assets/characters/eleanore/double jump/DoubleJump2.png" id="4_qsv5i"]
+[ext_resource type="Texture2D" uid="uid://dhtx2teqgfvum" path="res://assets/characters/eleanore/block/CastingMagicShield2.png" id="4_x2xer"]
 [ext_resource type="Texture2D" uid="uid://7no2r3hfxkyg" path="res://assets/characters/eleanore/double jump/DoubleJump3.png" id="5_8hupl"]
 [ext_resource type="Script" path="res://Characters/witch/walk.gd" id="5_g1aa8"]
 [ext_resource type="Texture2D" uid="uid://bkn6opvt20e4y" path="res://assets/characters/eleanore/dash/Dash11.png" id="5_n58e3"]
+[ext_resource type="Texture2D" uid="uid://bmgo1udbkn4ov" path="res://assets/characters/eleanore/block/CastingMagicShield3.png" id="5_uykcc"]
 [ext_resource type="Script" path="res://Characters/witch/jump.gd" id="6_bnm8n"]
+[ext_resource type="Texture2D" uid="uid://besbr6sgdw737" path="res://assets/characters/eleanore/block/CastingMagicShield4.png" id="6_o436y"]
 [ext_resource type="Texture2D" uid="uid://dj0brp16f5ql1" path="res://assets/characters/eleanore/double jump/DoubleJump4.png" id="6_ub4l7"]
 [ext_resource type="Texture2D" uid="uid://bv5xim6xrjg2w" path="res://assets/characters/eleanore/dash/Dash12.png" id="6_yrft1"]
 [ext_resource type="Texture2D" uid="uid://c7ugguq3c4lri" path="res://assets/characters/eleanore/double jump/DoubleJump5.png" id="7_3aprp"]
 [ext_resource type="Texture2D" uid="uid://17n0dktfs04l" path="res://assets/characters/eleanore/dash/Dash13.png" id="7_lu25j"]
+[ext_resource type="Texture2D" uid="uid://s7ak175gbaun" path="res://assets/characters/eleanore/block_break/MagicShieldBreak1.png" id="7_yibvv"]
 [ext_resource type="Texture2D" uid="uid://yiwta0y0bdf6" path="res://assets/characters/eleanore/dash/Dash14.png" id="8_koj3k"]
 [ext_resource type="Texture2D" uid="uid://bvoqpqor1qubn" path="res://assets/characters/eleanore/double jump/DoubleJump6.png" id="8_owjbg"]
+[ext_resource type="Texture2D" uid="uid://ss8u3xpgrcjr" path="res://assets/characters/eleanore/block_break/MagicShieldBreak2.png" id="8_tp85s"]
 [ext_resource type="Texture2D" uid="uid://wqsx33whco10" path="res://assets/characters/eleanore/dash/Dash15.png" id="9_3d4x0"]
 [ext_resource type="Texture2D" uid="uid://dxyc28aylanod" path="res://assets/characters/eleanore/double jump/DoubleJump7.png" id="9_dm42d"]
+[ext_resource type="Texture2D" uid="uid://0j2e3w05nb8f" path="res://assets/characters/eleanore/block_break/MagicShieldBreak3.png" id="9_l2xkv"]
 [ext_resource type="Texture2D" uid="uid://dpavtnhgn3shn" path="res://assets/characters/eleanore/dash/Dash16.png" id="10_lhk2l"]
+[ext_resource type="Texture2D" uid="uid://c6gdi51l33ngp" path="res://assets/characters/eleanore/block_break/MagicShieldBreak4.png" id="10_mucdm"]
 [ext_resource type="Texture2D" uid="uid://btmcq1ssjks6b" path="res://assets/characters/eleanore/double jump/DoubleJump8.png" id="10_oa3ig"]
+[ext_resource type="Texture2D" uid="uid://dxj4i2iwhh7kr" path="res://assets/characters/eleanore/block_break/MagicShieldBreak5.png" id="11_eacx7"]
 [ext_resource type="Texture2D" uid="uid://c4w54nqntd1ur" path="res://assets/characters/eleanore/dash/Dash17.png" id="11_ktyjf"]
 [ext_resource type="Texture2D" uid="uid://bq8a65wu8dfgr" path="res://assets/characters/eleanore/double jump/DoubleJump9.png" id="11_nvjw6"]
 [ext_resource type="Texture2D" uid="uid://8r58o266esge" path="res://assets/characters/eleanore/dash/Dash18.png" id="12_7ahyl"]
 [ext_resource type="Texture2D" uid="uid://dbb3566p4wuql" path="res://assets/characters/eleanore/double jump/DoubleJump10.png" id="12_s16e6"]
+[ext_resource type="Texture2D" uid="uid://cw1lt7q2d7vsx" path="res://assets/characters/eleanore/block_break/MagicShieldBreak6.png" id="12_wtqop"]
+[ext_resource type="Texture2D" uid="uid://dulu0xvrjbfrf" path="res://assets/characters/eleanore/block_break/MagicShieldBreak7.png" id="13_iaqus"]
 [ext_resource type="Texture2D" uid="uid://cqb2deg0xsof5" path="res://assets/characters/eleanore/double jump/DoubleJump11.png" id="13_mg3ah"]
 [ext_resource type="Texture2D" uid="uid://yon4nyq8atic" path="res://assets/characters/eleanore/dash/Dash19.png" id="13_ssl5f"]
+[ext_resource type="Texture2D" uid="uid://c5m67krv0btmx" path="res://assets/characters/eleanore/block_break/MagicShieldBreak8.png" id="14_niufd"]
+[ext_resource type="Texture2D" uid="uid://3dosblvvxi70" path="res://assets/characters/eleanore/block_break/MagicShieldBreak9.png" id="15_wfd1b"]
+[ext_resource type="Texture2D" uid="uid://btb2r46n88svg" path="res://assets/characters/eleanore/block_hit/MagicShieldBlock1.png" id="16_ad6ae"]
+[ext_resource type="Texture2D" uid="uid://lkqw51khlh7s" path="res://assets/characters/eleanore/block_hit/MagicShieldBlock2.png" id="17_5uv0i"]
+[ext_resource type="Texture2D" uid="uid://bqxm04elxcw3s" path="res://assets/characters/eleanore/block_hit/MagicShieldBlock3.png" id="18_u22ny"]
+[ext_resource type="Texture2D" uid="uid://cf8svkqa16krv" path="res://assets/characters/eleanore/block_hit/MagicShieldBlock4.png" id="19_0s4xa"]
+[ext_resource type="Texture2D" uid="uid://bsxuv0jbjr65" path="res://assets/characters/eleanore/block_start/CastMagicShield1.png" id="20_qwwfr"]
+[ext_resource type="Texture2D" uid="uid://k8o0uglonn15" path="res://assets/characters/eleanore/block_start/CastMagicShield2.png" id="21_hws0k"]
+[ext_resource type="Texture2D" uid="uid://4gep5236vlbp" path="res://assets/characters/eleanore/block_start/CastMagicShield3.png" id="22_j8on0"]
+[ext_resource type="Texture2D" uid="uid://d035djf3yaihn" path="res://assets/characters/eleanore/block_start/CastMagicShield4.png" id="23_ew1fl"]
+[ext_resource type="Texture2D" uid="uid://bmue4lqlf4koo" path="res://assets/characters/eleanore/block_start/CastMagicShield5.png" id="24_xukd5"]
+[ext_resource type="Texture2D" uid="uid://cyqgk0wxgjhng" path="res://assets/characters/eleanore/block_start/CastMagicShield6.png" id="25_1ugp0"]
 [ext_resource type="Texture2D" uid="uid://bw5halgepwj62" path="res://assets/characters/eleanore/dash/Dash1.png" id="25_jeji2"]
 [ext_resource type="Texture2D" uid="uid://0nnjnx1tonih" path="res://assets/characters/eleanore/dash/Dash2.png" id="26_wwoxb"]
 [ext_resource type="Texture2D" uid="uid://1k1gup6pxo3u" path="res://assets/characters/eleanore/dash/Dash3.png" id="27_o3cm0"]
 [ext_resource type="Texture2D" uid="uid://cqdfqi3muf7p5" path="res://assets/characters/eleanore/dash/Dash4.png" id="28_srgqc"]
+[ext_resource type="Texture2D" uid="uid://6rdbq61mlc6j" path="res://assets/characters/eleanore/block_start/CastMagicShield9.png" id="28_xfabn"]
 [ext_resource type="Texture2D" uid="uid://543se250sws8" path="res://assets/characters/eleanore/dash/Dash5.png" id="29_vok1a"]
 [ext_resource type="Texture2D" uid="uid://ci5xce5u7kljl" path="res://assets/characters/eleanore/dash/Dash6.png" id="30_psnw0"]
 [ext_resource type="Texture2D" uid="uid://d37l1h1kcu7ym" path="res://assets/characters/eleanore/dash/Dash7.png" id="31_2heuq"]
 [ext_resource type="Texture2D" uid="uid://bmp1edwm0nrrv" path="res://assets/characters/eleanore/dash/Dash8.png" id="32_onxq6"]
 [ext_resource type="Script" path="res://Characters/witch/dash.gd" id="37_1rsph"]
+[ext_resource type="Script" path="res://Characters/witch/block.gd" id="64_50yte"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8vcw"]
 atlas = ExtResource("2_ysvn3")
@@ -193,6 +218,124 @@ animations = [{
 }],
 "loop": false,
 "name": &"apex",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yds0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x2xer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uykcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o436y")
+}],
+"loop": true,
+"name": &"block",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_yibvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tp85s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l2xkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mucdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_eacx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wtqop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iaqus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_niufd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wfd1b")
+}],
+"loop": false,
+"name": &"block_break",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_xfabn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1ugp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xukd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ew1fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_j8on0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hws0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qwwfr")
+}],
+"loop": false,
+"name": &"block_end",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ad6ae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5uv0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u22ny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0s4xa")
+}],
+"loop": false,
+"name": &"block_hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_qwwfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hws0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_j8on0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ew1fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xukd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1ugp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_xfabn")
+}],
+"loop": false,
+"name": &"block_start",
 "speed": 10.0
 }, {
 "frames": [{
@@ -446,6 +589,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpw5"]
 size = Vector2(20, 48)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqle6"]
+radius = 15.6667
+height = 39.3333
+
 [node name="WitchCharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
 scale = Vector2(3, 3)
@@ -453,12 +600,11 @@ script = ExtResource("1_ryhk5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
-animation = &"brake"
-frame = 6
-frame_progress = 1.0
+animation = &"block_start"
 offset = Vector2(40, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 2.66667)
 shape = SubResource("RectangleShape2D_bmpw5")
 
@@ -480,6 +626,9 @@ script = ExtResource("37_1rsph")
 [node name="DashDurationTimer" type="Timer" parent="StateMachine/Dash"]
 one_shot = true
 
+[node name="Block" type="Node2D" parent="StateMachine"]
+script = ExtResource("64_50yte")
+
 [node name="Label" type="Label" parent="."]
 offset_left = -30.3333
 offset_top = 17.3333
@@ -493,3 +642,8 @@ offset_top = 33.3333
 offset_right = 13.6667
 offset_bottom = 56.3333
 text = "animation:"
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CapsuleShape2D_lqle6")

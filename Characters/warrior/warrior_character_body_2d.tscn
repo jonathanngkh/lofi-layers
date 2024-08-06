@@ -645,7 +645,7 @@ debug_mode = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3.33333, 4.33333)
 sprite_frames = SubResource("SpriteFrames_o7tut")
-animation = &"block"
+animation = &"block_start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

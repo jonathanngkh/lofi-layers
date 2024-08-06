@@ -50,6 +50,9 @@ func handle_input(_event: InputEvent) -> void:
 	# jump
 	if Input.is_action_just_pressed("jump") and witch.is_on_floor():
 		state_machine.transition_to("Jump")
+	# block
+	if Input.is_action_pressed("block"):
+		state_machine.transition_to("Block")
 		
 
 

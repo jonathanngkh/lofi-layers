@@ -7,6 +7,7 @@ const BRAKING_SPEED = 400.0
 @export var debug_mode = false
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hurt_box: Area2D = $HurtBox
 
 func _ready() -> void:
 	pass

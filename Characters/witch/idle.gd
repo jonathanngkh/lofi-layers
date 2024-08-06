@@ -42,15 +42,9 @@ func handle_input(_event: InputEvent) -> void:
 		state_machine.transition_to("Walk")
 	else:
 		witch.velocity.x = move_toward(witch.velocity.x, 0, witch.SPEED)
-	# walk left or right
-	#if Input.is_action_pressed("left"):
-		#witch.sprite.scale.x = -1
-		#witch.velocity.x = -1 * witch.SPEED
-		#state_machine.transition_to("Walk")
-	#elif Input.is_action_pressed("right"):
-		#witch.sprite.scale.x = 1
-		#witch.velocity.x = 1 * witch.SPEED
-		#state_machine.transition_to("Walk")
+	# block
+	if Input.is_action_pressed("block"):
+		state_machine.transition_to("Block")
 	# jump
 	if Input.is_action_just_pressed("jump") and witch.is_on_floor():
 		state_machine.transition_to("Jump")
@@ -70,9 +64,3 @@ func handle_input(_event: InputEvent) -> void:
 # Called by the state machine before changing the active state. Use this function to clean up the state.
 func exit() -> void:
 	pass
-
-#func is_movement_key_pressed(event) -> bool:
-	#if event.keycode == KEY_W or event.keycode == KEY_A or event.keycode == KEY_S or event.keycode == KEY_D:
-		#return true
-	#else:
-		#return false
