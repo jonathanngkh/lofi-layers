@@ -48,6 +48,9 @@ func handle_input(_event: InputEvent) -> void:
 	# dash
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")
+	# block
+	if Input.is_action_just_pressed("block"):
+		state_machine.transition_to("Block")
 
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
