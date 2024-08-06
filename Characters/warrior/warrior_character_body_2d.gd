@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box: Area2D = $HurtBox
+@onready var hit_box: Area2D = $HitBox
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -1900.0
