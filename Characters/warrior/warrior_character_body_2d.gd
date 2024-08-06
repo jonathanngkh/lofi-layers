@@ -2,6 +2,7 @@ class_name Warrior
 extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hurt_box: Area2D = $HurtBox
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -1900.0

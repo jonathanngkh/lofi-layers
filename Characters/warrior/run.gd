@@ -49,7 +49,7 @@ func handle_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")
 	# block
-	if Input.is_action_just_pressed("block"):
+	if Input.is_action_pressed("block"):
 		state_machine.transition_to("Block")
 
 

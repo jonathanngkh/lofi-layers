@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=88 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="Script" path="res://Characters/warrior/idle.gd" id="3_j5bub"]
@@ -632,6 +632,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ek4rg"]
 size = Vector2(20, 43)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eiyko"]
+radius = 9.66667
+height = 30.6667
+
 [node name="WarriorCharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
 scale = Vector2(3, 3)
@@ -683,3 +687,10 @@ offset_top = 25.0
 offset_right = -2.0
 offset_bottom = 48.0
 text = "animation:"
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+visible = false
+position = Vector2(0, 0.333333)
+shape = SubResource("CapsuleShape2D_eiyko")
