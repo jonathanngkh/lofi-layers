@@ -4,9 +4,12 @@ extends WarriorState
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
-	warrior.sprite.play("jump")
-	warrior.velocity.y = warrior.JUMP_VELOCITY
-
+	if _msg:
+		if _msg["stage"] == "apex":
+			warrior.sprite.play("apex")
+	else:
+		warrior.sprite.play("jump")
+		warrior.velocity.y = warrior.JUMP_VELOCITY
 
 # Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
@@ -17,7 +20,9 @@ func handle_input(_event: InputEvent) -> void:
 		elif Input.get_axis("left", "right") < 0:
 			warrior.sprite.scale.x = -1
 			warrior.velocity.x = -1 * warrior.SPEED
-
+	# dash
+	if Input.is_action_just_pressed("dash"):
+		state_machine.transition_to("Dash")
 
 # Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:
