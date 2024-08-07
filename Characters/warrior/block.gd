@@ -73,6 +73,8 @@ func handle_input(_event: InputEvent) -> void:
 	# release block
 	if Input.is_action_just_released("block"):
 		warrior.sprite.play("block_end")
+	if Input.is_action_pressed("light_attack"):
+		state_machine.transition_to("LightAttack1")
 
 
 func block_hit() -> void:

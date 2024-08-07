@@ -604,7 +604,6 @@ animation = &"block_start"
 offset = Vector2(40, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 2.66667)
 shape = SubResource("RectangleShape2D_bmpw5")
 

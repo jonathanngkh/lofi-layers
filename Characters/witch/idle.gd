@@ -15,6 +15,8 @@ func enter(_msg := {}) -> void:
 		state_machine.transition_to("Walk")
 	else:
 		witch.velocity.x = move_toward(witch.velocity.x, 0, witch.SPEED)
+	if Input.is_action_pressed("block"):
+		state_machine.transition_to("Block")
 
 
 # Corresponds to the `_process()` callback.

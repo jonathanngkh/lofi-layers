@@ -50,7 +50,7 @@ func handle_input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("block"):
 		state_machine.transition_to("Block")
 	# attack
-	if Input.is_action_just_pressed("light_attack"):
+	if Input.is_action_pressed("light_attack"):
 		state_machine.transition_to("LightAttack1")
 
 

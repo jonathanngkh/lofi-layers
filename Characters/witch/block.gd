@@ -12,16 +12,22 @@ func enter(_msg := {}) -> void:
 	witch.sprite.animation_finished.connect(_on_animation_finished)
 	witch.hurt_box.mouse_entered.connect(_on_mouse_entered)
 	witch.hurt_box.mouse_exited.connect(_on_mouse_exited)
-#
-#
+
+
 ## Corresponds to the `_process()` callback.
 #func update(_delta: float) -> void:
 	#pass
-#
-#
+
+
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
 	pass
+	#for area in witch.hurt_box.get_overlapping_areas():
+		#if not area.owner.hit_victim.is_connected(block_hit):
+			#area.owner.hit_victim.connect(block_hit)
+			#print('connected to hit')
+			
+	#pass
 	#if Input.is_action_pressed("block"):
 		#witch.velocity.x = 0
 	#if not witch.velocity.x == 0:
@@ -72,7 +78,7 @@ func handle_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("jump") and witch.is_on_floor():
 		state_machine.transition_to("Jump")
 	# release block
-	if Input.is_action_just_released("block"):
+	if not Input.is_action_pressed("block") and not witch.sprite.animation == "block_break" and not witch.sprite.animation == "block_hit":
 		witch.sprite.play("block_end", 1.8)
 
 
