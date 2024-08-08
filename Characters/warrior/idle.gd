@@ -5,17 +5,7 @@ extends WarriorState
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	warrior.sprite.play("idle", 0.7)
-	if Input.get_axis("left", "right") > 0:
-		warrior.sprite.scale.x = 1
-		warrior.velocity.x = 1 * warrior.SPEED
-		state_machine.transition_to("Run")
-	elif Input.get_axis("left", "right") < 0:
-		warrior.sprite.scale.x = -1
-		warrior.velocity.x = -1 * warrior.SPEED
-		state_machine.transition_to("Run")
-	else:
-		warrior.sprite.scale.x = warrior.sprite.scale.x
-		warrior.velocity.x = move_toward(warrior.velocity.x, 0, warrior.SPEED)
+	controls()
 #
 #
 ## Corresponds to the `_process()` callback.
@@ -33,6 +23,10 @@ func physics_update(_delta: float) -> void:
 #
 ## Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
+	controls()
+
+
+func controls():
 	if Input.get_axis("left", "right") > 0:
 		warrior.sprite.scale.x = 1
 		warrior.velocity.x = 1 * warrior.SPEED
@@ -44,7 +38,7 @@ func handle_input(_event: InputEvent) -> void:
 	else:
 		warrior.velocity.x = move_toward(warrior.velocity.x, 0, warrior.SPEED)
 	# jump
-	if Input.is_action_just_pressed("jump") and warrior.is_on_floor():
+	if Input.is_action_pressed("jump") and warrior.is_on_floor():
 		state_machine.transition_to("Jump")
 	# block
 	if Input.is_action_pressed("block"):

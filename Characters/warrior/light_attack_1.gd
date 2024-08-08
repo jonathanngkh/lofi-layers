@@ -10,6 +10,7 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.offset = Vector2(24, -8)
 	warrior.velocity.x = 0
 	overlapping_areas = []
+	warrior.hit_box.previously_hit_hurtboxes = []
 
 
 func _on_animation_finished() -> void:
@@ -19,18 +20,18 @@ func _on_animation_finished() -> void:
 		state_machine.transition_to("Idle")
 
 
-func hit(area: Area2D) -> void:
-	print('hit ' + str(area) + ' in physics')
-	overlapping_areas.append(area)
-	warrior.hit_victim.emit(warrior)
-	
+#func hit(area: Area2D) -> void:
+	#print('hit ' + str(area) + ' in physics')
+	#overlapping_areas.append(area)
+
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
 	if warrior.sprite.frame >= 3:
-		for area in warrior.hit_box.get_overlapping_areas():
-			if not overlapping_areas.has(area):
-				hit(area)
+		warrior.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
+		#for area in warrior.hit_box.get_overlapping_areas():
+			#if not overlapping_areas.has(area):
+				#hit(area)
 
 
 ## Receives events from the `_unhandled_input()` callback.
@@ -49,6 +50,7 @@ func exit() -> void:
 	warrior.sprite.animation_finished.disconnect(_on_animation_finished)
 	warrior.sprite.frame_changed.disconnect(_on_frame_changed)
 	warrior.sprite.offset = Vector2.ZERO
+	warrior.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func _on_frame_changed() -> void:
