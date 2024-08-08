@@ -17,7 +17,8 @@ func enter(_msg := {}) -> void:
 		witch.velocity.x = move_toward(witch.velocity.x, 0, witch.SPEED)
 	if Input.is_action_pressed("block"):
 		state_machine.transition_to("Block")
-
+	if Input.is_action_pressed("light_attack"):
+		state_machine.transition_to("LightAttack1")
 
 # Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:
@@ -50,6 +51,8 @@ func handle_input(_event: InputEvent) -> void:
 	# jump
 	if Input.is_action_just_pressed("jump") and witch.is_on_floor():
 		state_machine.transition_to("Jump")
+	if Input.is_action_pressed("light_attack"):
+		state_machine.transition_to("LightAttack1")
 	#if event is InputEventKey:
 		#if event.keycode == KEY_F:
 			#state_machine.transition_to("Attack1") # F

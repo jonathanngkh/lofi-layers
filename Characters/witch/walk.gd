@@ -53,7 +53,8 @@ func handle_input(_event: InputEvent) -> void:
 	# block
 	if Input.is_action_pressed("block"):
 		state_machine.transition_to("Block")
-		
+	if Input.is_action_pressed("light_attack"):
+		state_machine.transition_to("LightAttack1")
 
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.

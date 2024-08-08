@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box: Area2D = $HurtBox
 @onready var hit_box: Area2D = $AnimatedSprite2D/HitBox
+@onready var state_machine: StateMachine = $StateMachine
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -1900.0
@@ -28,3 +29,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	move_and_slide()
+
+
+func receive_hit() -> void:
+	if state_machine.state == $StateMachine/Block:
+		$StateMachine/Block.block_hit()

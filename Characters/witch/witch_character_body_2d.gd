@@ -8,10 +8,11 @@ const BRAKING_SPEED = 400.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box: Area2D = $HurtBox
+@onready var hit_box: HitBox = $AnimatedSprite2D/HitBox
 @onready var state_machine: StateMachine = $StateMachine
 
 func _ready() -> void:
-	pass
+	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func _physics_process(delta: float) -> void:
@@ -32,10 +33,9 @@ func _physics_process(delta: float) -> void:
 
 
 func receive_hit() -> void:
-	print('witch was hit')
 	if state_machine.state == $StateMachine/Block:
 		$StateMachine/Block.block_hit()
-		print('hit was blocked')
+
 
 func _unhandled_input(_event: InputEvent) -> void:
 	pass

@@ -1,7 +1,6 @@
 extends WarriorState
 
 
-var overlapping_areas = [Area2D]
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
@@ -9,7 +8,6 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.play("light_attack_1", 1.8)
 	warrior.sprite.offset = Vector2(24, -8)
 	warrior.velocity.x = 0
-	overlapping_areas = []
 	warrior.hit_box.previously_hit_hurtboxes = []
 
 

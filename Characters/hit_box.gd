@@ -21,8 +21,7 @@ func _process(_delta: float) -> void:
 				if not hit_signal.is_connected(area.owner.receive_hit):
 					hit_signal.connect(area.owner.receive_hit)
 				hit_signal.emit()
-				print('hit emitted')
-				print(previously_hit_hurtboxes)
+				print(owner.name + ' hit ' + area.owner.name)
 
 
 func _area_exited(area_that_exited: HurtBox) -> void:
