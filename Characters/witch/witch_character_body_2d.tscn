@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://bn67qf3wexjsq"]
+[gd_scene load_steps=120 format=3 uid="uid://bn67qf3wexjsq"]
 
 [ext_resource type="Script" path="res://Characters/witch/witch_character_body_2d.gd" id="1_ryhk5"]
 [ext_resource type="Texture2D" uid="uid://jc40qfw7vbkx" path="res://assets/characters/eleanore/SalamandarWitch-Sheet#1.png" id="2_ysvn3"]
@@ -65,6 +65,7 @@
 [ext_resource type="PackedScene" uid="uid://c1jrg0r6vw1pv" path="res://utility/hurt_box.tscn" id="63_nsm3n"]
 [ext_resource type="Script" path="res://Characters/witch/block.gd" id="64_50yte"]
 [ext_resource type="Script" path="res://Characters/witch/light_attack_1.gd" id="64_j7y7o"]
+[ext_resource type="Script" path="res://Characters/witch/hurt.gd" id="65_jdde8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8vcw"]
 atlas = ExtResource("2_ysvn3")
@@ -113,6 +114,22 @@ region = Rect2(576, 768, 192, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ah3g1"]
 atlas = ExtResource("2_ysvn3")
 region = Rect2(768, 768, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82h8l"]
+atlas = ExtResource("2_ysvn3")
+region = Rect2(192, 512, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1djj"]
+atlas = ExtResource("2_ysvn3")
+region = Rect2(384, 512, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qj18"]
+atlas = ExtResource("2_ysvn3")
+region = Rect2(576, 512, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4q8b"]
+atlas = ExtResource("2_ysvn3")
+region = Rect2(768, 512, 192, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwklg"]
 atlas = ExtResource("2_ysvn3")
@@ -500,6 +517,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_82h8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1djj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qj18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4q8b")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fwklg")
 }, {
 "duration": 1.0,
@@ -674,7 +708,7 @@ script = ExtResource("1_ryhk5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
-animation = &"light_attack_1"
+animation = &"hurt"
 offset = Vector2(40, 2.08165e-12)
 
 [node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("57_syqrg")]
@@ -711,6 +745,9 @@ script = ExtResource("64_50yte")
 
 [node name="LightAttack1" type="Node2D" parent="StateMachine"]
 script = ExtResource("64_j7y7o")
+
+[node name="Hurt" type="Node2D" parent="StateMachine"]
+script = ExtResource("65_jdde8")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -30.3333

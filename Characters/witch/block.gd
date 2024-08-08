@@ -80,7 +80,7 @@ func handle_input(_event: InputEvent) -> void:
 	# release block
 	if not Input.is_action_pressed("block") and not witch.sprite.animation == "block_break" and not witch.sprite.animation == "block_hit":
 		witch.sprite.play("block_end", 1.8)
-	if Input.is_action_pressed("light_attack"):
+	if Input.is_action_pressed("light_attack") and witch.can_attack_while_blocking:
 		state_machine.transition_to("LightAttack1")
 
 

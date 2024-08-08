@@ -2,6 +2,7 @@ class_name Warrior
 extends CharacterBody2D
 
 @export var debug_mode := false
+@export var can_attack_while_blocking = true
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box: Area2D = $HurtBox
@@ -34,3 +35,5 @@ func _physics_process(delta: float) -> void:
 func receive_hit() -> void:
 	if state_machine.state == $StateMachine/Block:
 		$StateMachine/Block.block_hit()
+	else:
+		state_machine.transition_to("Hurt")

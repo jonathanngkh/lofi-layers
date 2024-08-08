@@ -1,8 +1,9 @@
-[gd_scene load_steps=131 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=138 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="Texture2D" uid="uid://c6l5l4xg3whx5" path="res://assets/characters/joanna/JoannaD'ArcIIIAttacks-Sheet.png" id="3_1ongg"]
 [ext_resource type="Script" path="res://Characters/warrior/idle.gd" id="3_j5bub"]
+[ext_resource type="Texture2D" uid="uid://bff117spuw3u4" path="res://assets/characters/joanna/JoannaD'ArcIII-Sheet2.png" id="4_75ux4"]
 [ext_resource type="PackedScene" uid="uid://dpkefryb25jky" path="res://hit_box.tscn" id="4_il7ku"]
 [ext_resource type="Script" path="res://Characters/warrior/run.gd" id="5_akmfl"]
 [ext_resource type="Script" path="res://Characters/warrior/jump.gd" id="6_mc74y"]
@@ -10,6 +11,7 @@
 [ext_resource type="Script" path="res://Characters/warrior/block.gd" id="8_jpocv"]
 [ext_resource type="Script" path="res://Characters/warrior/light_attack_1.gd" id="10_64t0a"]
 [ext_resource type="Script" path="res://utility/hurt_box.gd" id="12_bf3at"]
+[ext_resource type="Script" path="res://Characters/warrior/hurt.gd" id="13_b1ba7"]
 [ext_resource type="Texture2D" uid="uid://4dk2v2v0f84u" path="res://assets/characters/joanna/JoannaSheet1.png" id="25_5pc18"]
 [ext_resource type="PackedScene" uid="uid://m3ibtx1a6nk4" path="res://utility/state_machine.tscn" id="33_qgulk"]
 
@@ -220,6 +222,26 @@ region = Rect2(2304, 0, 144, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2ugb"]
 atlas = ExtResource("3_1ongg")
 region = Rect2(2448, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxbjy"]
+atlas = ExtResource("4_75ux4")
+region = Rect2(79, 0, 79, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf3oo"]
+atlas = ExtResource("4_75ux4")
+region = Rect2(158, 0, 79, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1afp"]
+atlas = ExtResource("4_75ux4")
+region = Rect2(237, 0, 79, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asgbj"]
+atlas = ExtResource("4_75ux4")
+region = Rect2(316, 0, 79, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnie2"]
+atlas = ExtResource("4_75ux4")
+region = Rect2(395, 0, 79, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yc1ic"]
 atlas = ExtResource("25_5pc18")
@@ -684,6 +706,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fxbjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf3oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1afp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asgbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnie2")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yc1ic")
 }, {
 "duration": 1.0,
@@ -939,7 +981,9 @@ metadata/_edit_horizontal_guides_ = [61.0]
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3.33333, 4.33333)
 sprite_frames = SubResource("SpriteFrames_o7tut")
-animation = &"idle"
+animation = &"hurt"
+frame = 4
+frame_progress = 1.0
 
 [node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("4_il7ku")]
 
@@ -975,6 +1019,9 @@ script = ExtResource("8_jpocv")
 
 [node name="LightAttack1" type="Node2D" parent="StateMachine"]
 script = ExtResource("10_64t0a")
+
+[node name="Hurt" type="Node2D" parent="StateMachine"]
+script = ExtResource("13_b1ba7")
 
 [node name="Label" type="Label" parent="."]
 visible = false

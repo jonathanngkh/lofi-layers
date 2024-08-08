@@ -5,6 +5,7 @@ const SPEED = 500.0
 const JUMP_VELOCITY = -1900.0
 const BRAKING_SPEED = 400.0
 @export var debug_mode = false
+@export var can_attack_while_blocking = true
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box: Area2D = $HurtBox
@@ -35,6 +36,8 @@ func _physics_process(delta: float) -> void:
 func receive_hit() -> void:
 	if state_machine.state == $StateMachine/Block:
 		$StateMachine/Block.block_hit()
+	else:
+		state_machine.transition_to("Hurt")
 
 
 func _unhandled_input(_event: InputEvent) -> void:
