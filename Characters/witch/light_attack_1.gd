@@ -3,6 +3,7 @@ extends WitchState
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
+	witch.sprite.offset.x = 40
 	witch.sprite.animation_finished.connect(_on_animation_finished)
 	witch.sprite.frame_changed.connect(_on_frame_changed)
 	witch.sprite.play("light_attack_1", 1.4)

@@ -15,12 +15,21 @@ func enter(_msg := {}) -> void:
 #
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	if not warrior.velocity.x == 0:
+	#if not warrior.velocity.x == 0:
+		#state_machine.transition_to("Run")
+		# down
+	if Input.get_axis("up", "down") > 0:
 		state_machine.transition_to("Run")
+		warrior.position.y -= 1
+	# up
+	elif Input.get_axis("up", "down") < 0:
+		state_machine.transition_to("Run")
+		warrior.position.y += 1
+		
 	if not warrior.velocity.y == 0:
 		state_machine.transition_to("Jump", {"stage": "apex"})
-#
-#
+
+
 ## Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
 	controls()

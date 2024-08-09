@@ -3,6 +3,7 @@ extends Area2D
 
 signal hit_signal()
 
+# previously_hit_hurtboxes is manually reset in owner's attack class when attack state is entered
 var previously_hit_hurtboxes := []
 var damage = 0
 

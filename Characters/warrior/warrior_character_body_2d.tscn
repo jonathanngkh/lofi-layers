@@ -1,6 +1,7 @@
-[gd_scene load_steps=138 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=140 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
+[ext_resource type="Texture2D" uid="uid://b6ove03nmd1eb" path="res://assets/characters/shadow/Shadow1.png" id="2_ersos"]
 [ext_resource type="Texture2D" uid="uid://c6l5l4xg3whx5" path="res://assets/characters/joanna/JoannaD'ArcIIIAttacks-Sheet.png" id="3_1ongg"]
 [ext_resource type="Script" path="res://Characters/warrior/idle.gd" id="3_j5bub"]
 [ext_resource type="Texture2D" uid="uid://bff117spuw3u4" path="res://assets/characters/joanna/JoannaD'ArcIII-Sheet2.png" id="4_75ux4"]
@@ -964,6 +965,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lglmt"]
 size = Vector2(28.6667, 37.3333)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_io7hh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ersos")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 10.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ek4rg"]
 size = Vector2(20, 43)
 
@@ -972,6 +984,7 @@ radius = 13.6667
 height = 34.6667
 
 [node name="WarriorCharacterBody2D" type="CharacterBody2D"]
+z_index = 1
 texture_filter = 1
 scale = Vector2(3, 3)
 script = ExtResource("1_jp0s3")
@@ -979,11 +992,9 @@ debug_mode = true
 metadata/_edit_horizontal_guides_ = [61.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3.33333, 4.33333)
+position = Vector2(2.08165e-12, 4.333)
 sprite_frames = SubResource("SpriteFrames_o7tut")
-animation = &"hurt"
-frame = 4
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("4_il7ku")]
 
@@ -992,8 +1003,15 @@ position = Vector2(26.3333, 0.666667)
 shape = SubResource("RectangleShape2D_lglmt")
 debug_color = Color(0.828602, 0.331566, 0.559356, 0.42)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+z_index = -1
+position = Vector2(2.66667, 15.3337)
+scale = Vector2(2.3125, 1.08164)
+sprite_frames = SubResource("SpriteFrames_io7hh")
+animation = &"idle"
+frame_progress = 1.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1.33333, -1.33333)
 shape = SubResource("RectangleShape2D_ek4rg")
 
@@ -1045,3 +1063,4 @@ script = ExtResource("12_bf3at")
 [node name="HurtCollisionShape" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(4.47035e-08, -2)
 shape = SubResource("CapsuleShape2D_410yk")
+debug_color = Color(0, 0.642853, 0.310531, 0.42)

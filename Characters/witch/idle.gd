@@ -4,6 +4,7 @@ extends WitchState
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
+	witch.sprite.offset.x = 40
 	witch.sprite.play("idle")
 	if Input.get_axis("left", "right") > 0:
 		witch.sprite.scale.x = 1

@@ -101,4 +101,3 @@ func exit() -> void:
 	witch.hurt_box.mouse_entered.disconnect(_on_mouse_entered)
 	witch.hurt_box.mouse_exited.disconnect(_on_mouse_exited)
 	block_health = 2
-	witch.sprite.offset.x = 40

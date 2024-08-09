@@ -709,7 +709,6 @@ script = ExtResource("1_ryhk5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
 animation = &"hurt"
-offset = Vector2(40, 2.08165e-12)
 
 [node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("57_syqrg")]
 

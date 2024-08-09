@@ -3,6 +3,7 @@ extends WitchState
 
 # Called when the node enters the scene tree for the first time.
 func enter(_msg := {}) -> void:
+	witch.sprite.offset.x = 40
 	witch.sprite.animation_finished.connect(_on_animation_finished)
 	witch.sprite.play("to_walk", 1.6)
 	if Input.get_axis("left", "right") == 0:

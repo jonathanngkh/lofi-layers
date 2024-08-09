@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var hit_box: Area2D = $AnimatedSprite2D/HitBox
 @onready var state_machine: StateMachine = $StateMachine
 
+
 const SPEED = 500.0
 const JUMP_VELOCITY = -1900.0
 
@@ -25,8 +26,11 @@ func _physics_process(delta: float) -> void:
 		$Label.visible = false
 		$Label2.visible = false
 		
-	# Add the gravity.
-	if not is_on_floor():
+	 # Gravity.
+	#if not is_on_floor():
+		#velocity += get_gravity() * delta
+	
+	if state_machine.state == $StateMachine/Jump:
 		velocity += get_gravity() * delta
 
 	move_and_slide()

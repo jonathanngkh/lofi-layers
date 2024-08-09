@@ -356,6 +356,5 @@ tile_map_data = PackedByteArray("AAAAAAEAAAABAA8AAAABAAAAAAACAA4AAAABAAEAAAACAA8
 tile_set = SubResource("TileSet_uuvel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(512, 16)
+position = Vector2(512, 17)
 shape = SubResource("RectangleShape2D_muhbs")

@@ -1,5 +1,6 @@
 extends WarriorState
 
+var pre_jump_position_y
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:

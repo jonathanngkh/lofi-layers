@@ -5,6 +5,7 @@ var allow_air_stop := false
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
+	witch.sprite.offset.x = 40
 	witch.sprite.animation_finished.connect(_on_animation_finished)
 	if _msg:
 		if _msg["stage"] == "apex":
@@ -52,6 +53,7 @@ func physics_update(_delta: float) -> void:
 	if witch.is_on_floor():
 		if witch.velocity.x == 0:
 			witch.sprite.play("land", 1.2)
+			witch.sprite.offset.x = 40
 		else:
 			state_machine.transition_to("Walk")
 		

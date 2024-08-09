@@ -65,7 +65,6 @@ func _on_timeout() -> void:
 # Called by the state machine before changing the active state. Use this function to clean up the state.
 func exit() -> void:
 	witch.sprite.animation_finished.disconnect(_on_animation_finished)
-	witch.sprite.offset.x = 40
 	#$DashDurationTimer.timeout.disconnect(_on_timeout)
 	dash_speed = 1000
 	witch.velocity.y = 0
