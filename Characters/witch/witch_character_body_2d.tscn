@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=3 uid="uid://bn67qf3wexjsq"]
+[gd_scene load_steps=122 format=3 uid="uid://bn67qf3wexjsq"]
 
 [ext_resource type="Script" path="res://Characters/witch/witch_character_body_2d.gd" id="1_ryhk5"]
 [ext_resource type="Texture2D" uid="uid://jc40qfw7vbkx" path="res://assets/characters/eleanore/SalamandarWitch-Sheet#1.png" id="2_ysvn3"]
@@ -62,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://bmp1edwm0nrrv" path="res://assets/characters/eleanore/dash/Dash8.png" id="32_onxq6"]
 [ext_resource type="Script" path="res://Characters/witch/dash.gd" id="37_1rsph"]
 [ext_resource type="PackedScene" uid="uid://dpkefryb25jky" path="res://hit_box.tscn" id="57_syqrg"]
+[ext_resource type="Texture2D" uid="uid://b6ove03nmd1eb" path="res://assets/characters/shadow/Shadow1.png" id="58_s84pn"]
 [ext_resource type="PackedScene" uid="uid://c1jrg0r6vw1pv" path="res://utility/hurt_box.tscn" id="63_nsm3n"]
 [ext_resource type="Script" path="res://Characters/witch/block.gd" id="64_50yte"]
 [ext_resource type="Script" path="res://Characters/witch/light_attack_1.gd" id="64_j7y7o"]
@@ -370,9 +371,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("20_qwwfr")
-}, {
-"duration": 1.0,
 "texture": ExtResource("21_hws0k")
 }, {
 "duration": 1.0,
@@ -497,7 +495,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_mg3ah")
 }],
-"loop": true,
+"loop": false,
 "name": &"double_jump",
 "speed": 10.0
 }, {
@@ -694,6 +692,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbblw"]
 size = Vector2(50, 59.6667)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_io7hh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58_s84pn")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 10.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpw5"]
 size = Vector2(20, 48)
 
@@ -702,13 +711,15 @@ radius = 9.66667
 height = 30.6667
 
 [node name="WitchCharacterBody2D" type="CharacterBody2D"]
+z_index = 1
 texture_filter = 1
 scale = Vector2(3, 3)
 script = ExtResource("1_ryhk5")
+debug_mode = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
-animation = &"hurt"
+animation = &"to_walk"
 
 [node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("57_syqrg")]
 
@@ -716,6 +727,14 @@ animation = &"hurt"
 position = Vector2(32, 5.83333)
 shape = SubResource("RectangleShape2D_mbblw")
 debug_color = Color(0.724575, 0.40365, 0.666198, 0.42)
+
+[node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+z_index = -1
+position = Vector2(2.66667, 26)
+scale = Vector2(2.3125, 1.08164)
+sprite_frames = SubResource("SpriteFrames_io7hh")
+animation = &"idle"
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.66667)

@@ -374,19 +374,21 @@ tile_map_data = PackedByteArray("AAAAAA4AAAAGAAIAAAAAAA8AAAAGAAMAAAAAABAAAAAGAAQ
 tile_set = SubResource("TileSet_xqrda")
 
 [node name="GroundStaticBody2D" parent="." instance=ExtResource("2_3un34")]
-visible = false
 modulate = Color(0.298844, 0.798139, 0.821057, 1)
 position = Vector2(0, 1151)
 scale = Vector2(2.5, 2.5)
 
+[node name="GroundStaticBody2D4" parent="." instance=ExtResource("2_3un34")]
+modulate = Color(0.298844, 0.798139, 0.821057, 1)
+position = Vector2(714, 936)
+scale = Vector2(2.5, 2.5)
+
 [node name="GroundStaticBody2D2" parent="." instance=ExtResource("2_3un34")]
-visible = false
 modulate = Color(0.298844, 0.798139, 0.821057, 1)
 position = Vector2(2560, 1151)
 scale = Vector2(2.5, 2.5)
 
 [node name="GroundStaticBody2D3" parent="." instance=ExtResource("2_3un34")]
-visible = false
 modulate = Color(0.298844, 0.798139, 0.821057, 1)
 position = Vector2(-2560, 1151)
 scale = Vector2(2.5, 2.5)

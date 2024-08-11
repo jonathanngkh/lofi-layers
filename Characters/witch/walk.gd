@@ -19,9 +19,8 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	if witch.velocity.x == 0:
-		state_machine.transition_to("Idle")
-	pass
+	#if witch.velocity.x == 0:
+		#state_machine.transition_to("Idle")
 	if not witch.velocity.y == 0:
 		state_machine.transition_to("Jump", {"stage": "apex"})
 
@@ -29,6 +28,8 @@ func physics_update(_delta: float) -> void:
 func _on_animation_finished() -> void:
 	if witch.sprite.animation == "to_walk":
 		witch.sprite.play("walk")
+	if witch.sprite.animation == "brake":
+		state_machine.transition_to("Idle")
 
 
 # Receives events from the `_unhandled_input()` callback.
@@ -38,10 +39,12 @@ func handle_input(_event: InputEvent) -> void:
 		if Input.get_axis("left", "right") > 0:
 			witch.sprite.scale.x = 1
 			witch.velocity.x = 1 * witch.SPEED
+			witch.sprite.play("walk")
 		elif Input.get_axis("left", "right") < 0:
 			witch.sprite.scale.x = -1
 			witch.velocity.x = -1 * witch.SPEED
-		else:
+			witch.sprite.play("walk")
+		elif Input.get_axis("left", "right") == 0:
 			witch.sprite.play("brake", 1.8)
 			var tween = create_tween()
 			tween.tween_property(witch, "velocity:x", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)

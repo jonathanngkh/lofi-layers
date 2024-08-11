@@ -28,8 +28,8 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	if not witch.velocity.x == 0:
-		state_machine.transition_to("Walk")
+	#if not witch.velocity.x == 0:
+		#state_machine.transition_to("Walk")
 	if not witch.velocity.y == 0:
 		state_machine.transition_to("Jump", {"stage": "apex"})
 

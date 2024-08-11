@@ -18,6 +18,13 @@ position = Vector2(1.04308e-07, 8.9407e-08)
 texture = ExtResource("1_gccas")
 centered = false
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.714212, 0.714212, 0.714212, 1)
+texture_filter = 1
+position = Vector2(384, 2.08165e-12)
+texture = ExtResource("1_gccas")
+centered = false
+
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 position = Vector2(1.04308e-07, 8.9407e-08)
 motion_scale = Vector2(0.1, 0.1)
