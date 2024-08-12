@@ -2,7 +2,8 @@ class_name Warrior
 extends CharacterBody2D
 
 @export var debug_mode := false
-@export var can_attack_while_blocking = true
+@export var can_attack_while_blocking := true
+@export var beat_em_up_mode := true
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box: Area2D = $HurtBox
@@ -27,8 +28,9 @@ func _physics_process(delta: float) -> void:
 		$Label2.visible = false
 		
 	 # Gravity.
-	#if not is_on_floor():
-		#velocity += get_gravity() * delta
+	if not beat_em_up_mode:
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 	
 	if state_machine.state == $StateMachine/Jump:
 		velocity += get_gravity() * delta

@@ -2,9 +2,11 @@ extends WitchState
 
 var can_double_jump := true
 var allow_air_stop := false
+var position_y_before_jump
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
+	position_y_before_jump = witch.shadow.global_position.y
 	witch.sprite.offset.x = 40
 	witch.sprite.animation_finished.connect(_on_animation_finished)
 	if _msg:
@@ -52,6 +54,7 @@ func handle_input(_event: InputEvent) -> void:
 
 # Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:
+	witch.shadow.global_position.y = position_y_before_jump
 	if witch.sprite.animation == "block_end":
 		witch.sprite.stop()
 		witch.sprite.play("jump")
@@ -81,3 +84,4 @@ func _on_animation_finished() -> void:
 func exit() -> void:
 	witch.sprite.animation_finished.disconnect(_on_animation_finished)
 	can_double_jump = true
+	witch.shadow.global_position.y = position_y_before_jump

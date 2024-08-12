@@ -11,6 +11,7 @@ const BRAKING_SPEED = 400.0
 @onready var hurt_box: Area2D = $HurtBox
 @onready var hit_box: HitBox = $AnimatedSprite2D/HitBox
 @onready var state_machine: StateMachine = $StateMachine
+@onready var shadow: AnimatedSprite2D = $AnimatedSprite2D/ShadowAnimatedSprite2D
 
 func _ready() -> void:
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED

@@ -689,9 +689,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbblw"]
-size = Vector2(50, 59.6667)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_io7hh"]
 animations = [{
 "frames": [{
@@ -702,6 +699,9 @@ animations = [{
 "name": &"idle",
 "speed": 10.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbblw"]
+size = Vector2(50, 59.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpw5"]
 size = Vector2(20, 48)
@@ -715,28 +715,29 @@ z_index = 1
 texture_filter = 1
 scale = Vector2(3, 3)
 script = ExtResource("1_ryhk5")
-debug_mode = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
 animation = &"to_walk"
 
-[node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("57_syqrg")]
-
-[node name="HitCollisionShape" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox"]
-position = Vector2(32, 5.83333)
-shape = SubResource("RectangleShape2D_mbblw")
-debug_color = Color(0.724575, 0.40365, 0.666198, 0.42)
-
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 z_index = -1
-position = Vector2(2.66667, 26)
+position = Vector2(1.66667, 26)
 scale = Vector2(2.3125, 1.08164)
 sprite_frames = SubResource("SpriteFrames_io7hh")
 animation = &"idle"
 frame_progress = 1.0
 
+[node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("57_syqrg")]
+
+[node name="HitCollisionShape" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox"]
+visible = false
+position = Vector2(32, 5.83333)
+shape = SubResource("RectangleShape2D_mbblw")
+debug_color = Color(0.724575, 0.40365, 0.666198, 0.42)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 2.66667)
 shape = SubResource("RectangleShape2D_bmpw5")
 

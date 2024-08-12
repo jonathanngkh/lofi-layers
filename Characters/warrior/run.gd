@@ -9,7 +9,7 @@ func enter(_msg := {}) -> void:
 	if Input.get_axis("left", "right") == 0 and Input.get_axis("up", "down") == 0:
 		warrior.sprite.play("run_break", 1.5)
 		var tween = create_tween()
-		tween.tween_property(warrior, "velocity:x", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		tween.tween_property(warrior, "velocity:x", 0, 0.3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 
 
 func _on_animation_finished() -> void:
@@ -33,7 +33,7 @@ func physics_update(_delta: float) -> void:
 		#else:
 			#warrior.sprite.play("run_break")
 			#var tween = create_tween()
-			#tween.tween_property(warrior, "velocity:y", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+			#tween.tween_property(warrior, "velocity:y", 0, 0.3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 
 
 ## Receives events from the `_unhandled_input()` callback.
@@ -54,7 +54,7 @@ func handle_input(_event: InputEvent) -> void:
 				warrior.sprite.scale.x = -1
 			warrior.sprite.play("run_break", 1.5)
 			var tween = create_tween()
-			tween.tween_property(warrior, "velocity:x", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+			tween.tween_property(warrior, "velocity:x", 0, 0.3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	# jump
 	if Input.is_action_just_pressed("jump") and warrior.is_on_floor():
 		state_machine.transition_to("Jump")

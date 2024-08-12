@@ -962,9 +962,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lglmt"]
-size = Vector2(28.6667, 37.3333)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_io7hh"]
 animations = [{
 "frames": [{
@@ -975,6 +972,9 @@ animations = [{
 "name": &"idle",
 "speed": 10.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lglmt"]
+size = Vector2(28.6667, 37.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ek4rg"]
 size = Vector2(20, 43)
@@ -988,20 +988,12 @@ z_index = 1
 texture_filter = 1
 scale = Vector2(3, 3)
 script = ExtResource("1_jp0s3")
-debug_mode = true
 metadata/_edit_horizontal_guides_ = [61.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.08165e-12, 4.333)
 sprite_frames = SubResource("SpriteFrames_o7tut")
 animation = &"idle"
-
-[node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("4_il7ku")]
-
-[node name="HitCollisionShape" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox"]
-position = Vector2(26.3333, 0.666667)
-shape = SubResource("RectangleShape2D_lglmt")
-debug_color = Color(0.828602, 0.331566, 0.559356, 0.42)
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 z_index = -1
@@ -1011,7 +1003,16 @@ sprite_frames = SubResource("SpriteFrames_io7hh")
 animation = &"idle"
 frame_progress = 1.0
 
+[node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("4_il7ku")]
+
+[node name="HitCollisionShape" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox"]
+visible = false
+position = Vector2(26.3333, 0.666667)
+shape = SubResource("RectangleShape2D_lglmt")
+debug_color = Color(0.828602, 0.331566, 0.559356, 0.42)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1.33333, -1.33333)
 shape = SubResource("RectangleShape2D_ek4rg")
 
@@ -1061,6 +1062,7 @@ text = "animation:"
 script = ExtResource("12_bf3at")
 
 [node name="HurtCollisionShape" type="CollisionShape2D" parent="HurtBox"]
+visible = false
 position = Vector2(4.47035e-08, -2)
 shape = SubResource("CapsuleShape2D_410yk")
 debug_color = Color(0, 0.642853, 0.310531, 0.42)
