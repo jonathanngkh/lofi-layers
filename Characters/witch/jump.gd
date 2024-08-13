@@ -84,4 +84,5 @@ func _on_animation_finished() -> void:
 func exit() -> void:
 	witch.sprite.animation_finished.disconnect(_on_animation_finished)
 	can_double_jump = true
-	witch.shadow.global_position.y = position_y_before_jump
+	#witch.shadow.global_position.y = position_y_before_jump
+	witch.shadow.position.y = 26

@@ -6,7 +6,14 @@ extends WitchState
 func enter(_msg := {}) -> void:
 	witch.sprite.offset.x = 40
 	witch.sprite.play("hurt")
+	sprite_flash()
 	witch.sprite.animation_finished.connect(_on_animation_finished)
+
+
+func sprite_flash() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(witch.sprite, "modulate:v", 1, 0.2).from(15)
+	tween.play()
 
 
 func _on_animation_finished() -> void:

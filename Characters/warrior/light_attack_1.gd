@@ -25,7 +25,7 @@ func _on_animation_finished() -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	if warrior.sprite.frame >= 3:
+	if warrior.sprite.frame >= 4:
 		warrior.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
 		#for area in warrior.hit_box.get_overlapping_areas():
 			#if not overlapping_areas.has(area):

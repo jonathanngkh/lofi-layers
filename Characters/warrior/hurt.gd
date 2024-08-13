@@ -6,8 +6,13 @@ extends WarriorState
 func enter(_msg := {}) -> void:
 	warrior.sprite.play("hurt")
 	warrior.sprite.offset = Vector2(7, -25)
+	sprite_flash()
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
-
+	
+func sprite_flash() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(warrior.sprite, "modulate:v", 1, 0.2).from(15)
+	tween.play()
 
 func _on_animation_finished() -> void:
 	if warrior.sprite.animation == "hurt":

@@ -23,6 +23,9 @@ func _process(_delta: float) -> void:
 					hit_signal.connect(area.owner.receive_hit)
 				hit_signal.emit()
 				print(owner.name + ' hit ' + area.owner.name)
+				# could affect rhythms:
+				var tween = create_tween()
+				tween.tween_property(Engine, "time_scale",  1.0, 0.2).from(0.5)
 
 
 func _area_exited(area_that_exited: HurtBox) -> void:

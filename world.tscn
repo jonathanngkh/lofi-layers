@@ -388,6 +388,7 @@ tile_map_data = PackedByteArray("AAAAAA4AAAAOABEAAAAAAA8AAAAOABIAAAAAABAAAAAGAAQ
 tile_set = SubResource("TileSet_xqrda")
 
 [node name="tilemapspam" type="Node2D" parent="."]
+modulate = Color(0.811629, 0.754368, 1, 1)
 position = Vector2(0, 136)
 
 [node name="TileMapLayerSpam8" type="TileMapLayer" parent="tilemapspam"]
