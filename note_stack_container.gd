@@ -40,10 +40,16 @@ var note_stack_counters := {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for note_stack in self.get_children():
+		var note_count := 0
 		for notation in note_stack.get_children():
 			if not notation.name == "QuarterRest":
+				if notation.placed == true:
+					print(notation.name)
+					note_count += 1
 				notation.note_placed.connect(_on_notation_note_placed)
 				notation.note_removed.connect(_on_notation_note_removed)
+			if notation.name == "QuarterRest" and note_count > 0:
+				notation.visible = false
 
 
 func _on_notation_note_placed(note_placed) -> void:
@@ -62,6 +68,8 @@ func _on_notation_note_placed(note_placed) -> void:
 			# if high_note
 			else:
 				high_note_count += 1
+		elif notation.name == "QuarterRest":
+			notation.visible = false
 	for notation in note_stack.get_children():
 		if notation.modulate.a == 1.0 and not notation.name == "QuarterRest":
 			if low_note_count <= high_note_count:
@@ -99,3 +107,5 @@ func _on_notation_note_removed(note_removed) -> void:
 			else:
 				var right_tail_spawn = right_tail.instantiate()
 				notation.add_child(right_tail_spawn)
+		elif notation.name == "QuarterRest" and low_note_count == 0 and high_note_count == 0:
+			notation.visible = true

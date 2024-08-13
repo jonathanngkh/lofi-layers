@@ -34,7 +34,7 @@ offset_right = 2560.0
 offset_bottom = 1440.0
 
 [node name="MinCharacterBody" type="CharacterBody2D" parent="."]
-position = Vector2(1197, 365)
+position = Vector2(760, 561)
 motion_mode = 1
 script = ExtResource("2_njwop")
 
@@ -2368,6 +2368,7 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="C5" type="TextureRect" parent="Staff/NoteStackContainer/NoteStack1"]
+visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
