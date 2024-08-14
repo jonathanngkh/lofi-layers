@@ -1059,6 +1059,8 @@ offset_bottom = 48.0
 text = "animation:"
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("12_bf3at")
 
 [node name="HurtCollisionShape" type="CollisionShape2D" parent="HurtBox"]

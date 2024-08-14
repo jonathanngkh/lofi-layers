@@ -30,11 +30,21 @@ func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	for child in get_children():
-		child.mouse_filter = MOUSE_FILTER_IGNORE
-		if child.name == "InnerHead":
-			child.visible = false
-		for grandchild in child.get_children():
-			grandchild.mouse_filter = MOUSE_FILTER_IGNORE
+		if not child.name == "HurtBox":
+			child.mouse_filter = MOUSE_FILTER_IGNORE
+			if child.name == "InnerHead":
+				child.visible = false
+			for grandchild in child.get_children():
+				grandchild.mouse_filter = MOUSE_FILTER_IGNORE
+
+func receive_hit() -> void:
+	sprite_flash()
+
+
+func sprite_flash() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "self_modulate:v", 0, 0.2).from(50)
+
 
 
 func _on_mouse_entered() -> void:
