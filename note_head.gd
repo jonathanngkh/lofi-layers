@@ -39,6 +39,12 @@ func _ready() -> void:
 
 func receive_hit() -> void:
 	sprite_flash()
+	var tween_x = create_tween()
+	tween_x.tween_property(self, "position:x", position.x, 0.05).from(position.x + 7)
+	tween_x.tween_property(self, "position:x", position.x, 0.05).from(position.x - 7)
+	var tween_y = create_tween()
+	tween_y.tween_property(self, "position:y", position.y, 0.05).from(position.y + 7)
+	tween_y.tween_property(self, "position:y", position.y, 0.05).from(position.y - 7)
 
 
 func sprite_flash() -> void:
