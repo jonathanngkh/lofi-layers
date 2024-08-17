@@ -33,10 +33,10 @@ func physics_update(_delta: float) -> void:
 ## Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
 	controls()
-	if Input.is_action_just_pressed("left_click"):
-		state_machine.transition_to("LightAttack1")
-	if Input.is_action_just_pressed("right_click"):
-		state_machine.transition_to("LightAttack1")
+	#if Input.is_action_just_pressed("left_click"):
+		#state_machine.transition_to("LightAttack1")
+	#if Input.is_action_just_pressed("right_click"):
+		#state_machine.transition_to("LightAttack1")
 
 
 func controls():
@@ -61,6 +61,9 @@ func controls():
 	# attack
 	if Input.is_action_pressed("light_attack"):
 		state_machine.transition_to("LightAttack1")
+	
+	if Input.is_action_pressed("heavy_attack"):
+		state_machine.transition_to("HeavyAttack")
 
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.

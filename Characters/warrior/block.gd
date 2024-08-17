@@ -7,10 +7,17 @@ var block_health := 2
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	warrior.velocity.x = 0
-	warrior.sprite.play("block_start")
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.hurt_box.mouse_entered.connect(_on_mouse_entered)
 	warrior.hurt_box.mouse_exited.connect(_on_mouse_exited)
+	if _msg:
+		if _msg["from"] == "shield_attack":
+			warrior.sprite.play("block")
+	else:
+		warrior.sprite.play("block_start")
+	
+	if not Input.is_action_pressed("block") and not warrior.sprite.animation == "block_break" and not warrior.sprite.animation == "block_hit":
+		warrior.sprite.play("block_end")
 #
 #
 ## Corresponds to the `_process()` callback.
@@ -75,6 +82,8 @@ func handle_input(_event: InputEvent) -> void:
 		warrior.sprite.play("block_end")
 	if Input.is_action_pressed("light_attack") and warrior.can_attack_while_blocking:
 		state_machine.transition_to("LightAttack1")
+	if Input.is_action_pressed("heavy_attack"):
+		state_machine.transition_to("ShieldHeavyAttack")
 
 
 func block_hit() -> void:

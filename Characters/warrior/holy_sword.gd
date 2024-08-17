@@ -5,10 +5,11 @@ func enter(_msg := {}) -> void:
 	#print("equipped note: " + str(warrior.equipped_note))
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
-	warrior.sprite.play("holy_sword", 1.3)
+	warrior.sprite.play("holy_sword", 1.4)
 	warrior.sprite.offset = Vector2(72, -16)
 	warrior.velocity.x = 0
 	warrior.hit_box.previously_hit_hurtboxes = []
+	$AudioStreamPlayer.play()
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()
 	#warrior.sampler.play_note(warrior.minor_scale[warrior.minor_scale_index][0], warrior.minor_scale[warrior.minor_scale_index][1])

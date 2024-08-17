@@ -481,10 +481,11 @@ position = Vector2(733, 1102)
 scale = Vector2(4, 4)
 
 [node name="WarriorCharacterBody2D" parent="." instance=ExtResource("5_1upx7")]
-position = Vector2(401, 969)
+position = Vector2(401, 1198)
 scale = Vector2(4, 4)
 
 [node name="Staff" parent="." instance=ExtResource("8_xi7wq")]
+process_mode = 4
 visible = false
 offset_top = 882.0
 offset_bottom = 1503.0

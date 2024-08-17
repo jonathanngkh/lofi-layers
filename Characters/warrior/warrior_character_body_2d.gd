@@ -35,12 +35,12 @@ var minor_scale := [
 	["F", 5],
 	["G#", 5],
 	["A", 5],
-	]
+]
 
 var minor_scale_index = 0
 
 const SPEED = 500.0
-const JUMP_VELOCITY = -3100.0
+const JUMP_VELOCITY = -1900.0
 
 func _ready() -> void:
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
@@ -79,12 +79,12 @@ func _physics_process(delta: float) -> void:
 		$Label2.visible = false
 		
 	 # Gravity.
-	if not beat_em_up_mode:
-		if not is_on_floor():
-			velocity += get_gravity() * delta
-	
-	if state_machine.state == $StateMachine/Jump:
+	#if not beat_em_up_mode:
+	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	#if state_machine.state == $StateMachine/Jump:
+		#velocity += get_gravity() * delta
 
 	move_and_slide()
 

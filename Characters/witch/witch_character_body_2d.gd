@@ -34,7 +34,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func receive_hit() -> void:
+func receive_hit(launch_or_not) -> void:
+	if launch_or_not == "launch":
+		velocity.y += JUMP_VELOCITY * 1.3
 	if state_machine.state == $StateMachine/Block:
 		$StateMachine/Block.block_hit()
 	else:

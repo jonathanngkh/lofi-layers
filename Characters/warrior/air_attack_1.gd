@@ -23,13 +23,12 @@ var go_to_attack_2 := false
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	
+	warrior.velocity.y = 0
 	print("equipped note: " + str(warrior.equipped_note))
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
-	warrior.sprite.play("light_attack_1", 1.8)
+	warrior.sprite.play("air_attack_1", 1.8)
 	warrior.sprite.offset = Vector2(24, -8)
-	warrior.velocity.x = 0
 	warrior.hit_box.previously_hit_hurtboxes = []
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()
@@ -44,16 +43,11 @@ func enter(_msg := {}) -> void:
 
 
 func _on_animation_finished() -> void:
-	if warrior.sprite.animation == "light_attack_1":
+	if warrior.sprite.animation == "air_attack_1":
 		if go_to_attack_2:
-			state_machine.transition_to("LightAttack2")
+			state_machine.transition_to("AirAttack2")
 		else:
-			warrior.sprite.play("light_attack_end", 1.8)
-	elif warrior.sprite.animation == "light_attack_end":
-		if go_to_attack_2:
-			state_machine.transition_to("LightAttack2")
-		else:
-			state_machine.transition_to("Idle")
+			state_machine.transition_to("Jump", {"stage": "apex"})
 
 
 #func hit(area: Area2D) -> void:
@@ -65,6 +59,8 @@ func _on_animation_finished() -> void:
 func physics_update(_delta: float) -> void:
 	if warrior.sprite.frame >= 4:
 		warrior.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
+	if not warrior.is_on_floor():
+		warrior.velocity -= warrior.get_gravity() * _delta
 		#warrior.hit_box.tone = "Re"
 		#for area in warrior.hit_box.get_overlapping_areas():
 			#if not overlapping_areas.has(area):
@@ -74,7 +70,7 @@ func physics_update(_delta: float) -> void:
 ## Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
 	# dash
-	if not warrior.sprite.animation == "light_attack_1":
+	if not warrior.sprite.animation == "air_attack_1":
 		if Input.is_action_just_pressed("dash"):
 			state_machine.transition_to("Dash")
 		# block
@@ -166,4 +162,5 @@ func _on_frame_changed() -> void:
 		if warrior.saved_notes.size() >= 4:
 			state_machine.transition_to("HolySword")
 
-		pass
+	if warrior.sprite.frame >= 6:
+		state_machine.transition_to("AirAttack2")

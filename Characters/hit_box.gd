@@ -7,6 +7,7 @@ signal hit_signal()
 var previously_hit_hurtboxes := []
 var damage = 0
 var tone := ""
+var launch := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,21 +24,24 @@ func _process(_delta: float) -> void:
 				if area.owner.has_method("receive_hit"):
 					if not hit_signal.is_connected(area.owner.receive_hit):
 						hit_signal.connect(area.owner.receive_hit)
-					hit_signal.emit()
+					if launch:
+						hit_signal.emit("launch")
+					else:
+						hit_signal.emit("no_launch")
 					hit_signal.disconnect(area.owner.receive_hit)
 					print(owner.name + ' hit ' + area.owner.name)
-					# could affect rhythms:
-					var tween = create_tween()
-					tween.tween_property(Engine, "time_scale",  1.0, 0.2).from(0.5)
-				elif area.get_parent().has_method("receive_hit"):
-					if not hit_signal.is_connected(area.get_parent().receive_hit):
-						hit_signal.connect(area.get_parent().receive_hit)
-					hit_signal.emit()
-					hit_signal.disconnect(area.get_parent().receive_hit)
-					print(owner.name + ' hit ' + area.get_parent().name)
-					# could affect rhythms:
-					var tween = create_tween()
-					tween.tween_property(Engine, "time_scale",  1.0, 0.2).from(0.5)
+					## could affect rhythms:
+					#var tween = create_tween()
+					#tween.tween_property(Engine, "time_scale",  1.0, 0.2).from(0.5)
+				#elif area.get_parent().has_method("receive_hit"):
+					#if not hit_signal.is_connected(area.get_parent().receive_hit):
+						#hit_signal.connect(area.get_parent().receive_hit)
+					#hit_signal.emit()
+					#hit_signal.disconnect(area.get_parent().receive_hit)
+					#print(owner.name + ' hit ' + area.get_parent().name)
+					## could affect rhythms:
+					#var tween = create_tween()
+					#tween.tween_property(Engine, "time_scale",  1.0, 0.2).from(0.5)
 
 
 func _area_exited(area_that_exited: HurtBox) -> void:

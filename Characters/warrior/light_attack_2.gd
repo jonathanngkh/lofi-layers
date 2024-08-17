@@ -1,6 +1,6 @@
 extends WarriorState
 
-var go_to_attack_2 := false
+var queue_jump := false
 
 @onready var sword_sounds := [
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_01.wav"),
@@ -23,14 +23,15 @@ var go_to_attack_2 := false
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	
+	warrior.velocity.y = 0
 	print("equipped note: " + str(warrior.equipped_note))
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
-	warrior.sprite.play("light_attack_1", 1.8)
+	warrior.sprite.play("light_attack_2", 1.8)
 	warrior.sprite.offset = Vector2(24, -8)
 	warrior.velocity.x = 0
 	warrior.hit_box.previously_hit_hurtboxes = []
+	warrior.hit_box.launch = true
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()
 	#warrior.sampler.play_note(warrior.minor_scale[warrior.minor_scale_index][0], warrior.minor_scale[warrior.minor_scale_index][1])
@@ -44,16 +45,10 @@ func enter(_msg := {}) -> void:
 
 
 func _on_animation_finished() -> void:
-	if warrior.sprite.animation == "light_attack_1":
-		if go_to_attack_2:
-			state_machine.transition_to("LightAttack2")
-		else:
-			warrior.sprite.play("light_attack_end", 1.8)
+	if warrior.sprite.animation == "light_attack_2":
+		warrior.sprite.play("light_attack_end", 1.8)
 	elif warrior.sprite.animation == "light_attack_end":
-		if go_to_attack_2:
-			state_machine.transition_to("LightAttack2")
-		else:
-			state_machine.transition_to("Idle")
+		state_machine.transition_to("Idle")
 
 
 #func hit(area: Area2D) -> void:
@@ -74,15 +69,15 @@ func physics_update(_delta: float) -> void:
 ## Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
 	# dash
-	if not warrior.sprite.animation == "light_attack_1":
+	if Input.is_action_pressed("jump"):
+		queue_jump = true
+		#state_machine.transition_to("Jump")
+	if not warrior.sprite.animation == "light_attack_2":
 		if Input.is_action_just_pressed("dash"):
 			state_machine.transition_to("Dash")
 		# block
 		if Input.is_action_pressed("block"):
 			state_machine.transition_to("Block")
-
-	if Input.is_action_pressed("light_attack"):
-		go_to_attack_2 = true
 
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
@@ -91,7 +86,8 @@ func exit() -> void:
 	warrior.sprite.frame_changed.disconnect(_on_frame_changed)
 	warrior.sprite.offset = Vector2.ZERO
 	warrior.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
-	go_to_attack_2 = false
+	warrior.hit_box.launch = false
+	queue_jump = false
 	
 
 
@@ -166,4 +162,6 @@ func _on_frame_changed() -> void:
 		if warrior.saved_notes.size() >= 4:
 			state_machine.transition_to("HolySword")
 
-		pass
+	if warrior.sprite.frame >= 6:
+		if queue_jump:
+			state_machine.transition_to("Jump")

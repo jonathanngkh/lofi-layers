@@ -1,6 +1,6 @@
 extends WarriorState
 
-var go_to_attack_2 := false
+
 
 @onready var sword_sounds := [
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_01.wav"),
@@ -23,12 +23,11 @@ var go_to_attack_2 := false
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	
 	print("equipped note: " + str(warrior.equipped_note))
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
-	warrior.sprite.play("light_attack_1", 1.8)
-	warrior.sprite.offset = Vector2(24, -8)
+	warrior.sprite.play("shield_heavy_attack", 2.0)
+	warrior.sprite.offset = Vector2(0, -8)
 	warrior.velocity.x = 0
 	warrior.hit_box.previously_hit_hurtboxes = []
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
@@ -44,16 +43,8 @@ func enter(_msg := {}) -> void:
 
 
 func _on_animation_finished() -> void:
-	if warrior.sprite.animation == "light_attack_1":
-		if go_to_attack_2:
-			state_machine.transition_to("LightAttack2")
-		else:
-			warrior.sprite.play("light_attack_end", 1.8)
-	elif warrior.sprite.animation == "light_attack_end":
-		if go_to_attack_2:
-			state_machine.transition_to("LightAttack2")
-		else:
-			state_machine.transition_to("Idle")
+	if warrior.sprite.animation == "shield_heavy_attack":
+		state_machine.transition_to("Block", {"from": "shield_attack"})
 
 
 #func hit(area: Area2D) -> void:
@@ -74,15 +65,12 @@ func physics_update(_delta: float) -> void:
 ## Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
 	# dash
-	if not warrior.sprite.animation == "light_attack_1":
+	if not warrior.sprite.animation == "shield_heavy_attack":
 		if Input.is_action_just_pressed("dash"):
 			state_machine.transition_to("Dash")
 		# block
 		if Input.is_action_pressed("block"):
 			state_machine.transition_to("Block")
-
-	if Input.is_action_pressed("light_attack"):
-		go_to_attack_2 = true
 
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
@@ -91,7 +79,6 @@ func exit() -> void:
 	warrior.sprite.frame_changed.disconnect(_on_frame_changed)
 	warrior.sprite.offset = Vector2.ZERO
 	warrior.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
-	go_to_attack_2 = false
 	
 
 

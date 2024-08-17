@@ -21,15 +21,16 @@ func _on_animation_finished() -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	if not warrior.sprite.animation == "run_break":
-		# down
-		if Input.get_axis("up", "down") > 0:
-			warrior.sprite.play("run")
-			warrior.position.y += 10
-		# up
-		elif Input.get_axis("up", "down") < 0:
-			warrior.sprite.play("run")
-			warrior.position.y += -10
+	pass
+	#if not warrior.sprite.animation == "run_break":
+		## down
+		#if Input.get_axis("up", "down") > 0:
+			#warrior.sprite.play("run")
+			#warrior.position.y += 10
+		## up
+		#elif Input.get_axis("up", "down") < 0:
+			#warrior.sprite.play("run")
+			#warrior.position.y += -10
 		#else:
 			#warrior.sprite.play("run_break")
 			#var tween = create_tween()
@@ -67,6 +68,8 @@ func handle_input(_event: InputEvent) -> void:
 	# attack
 	if Input.is_action_just_pressed("light_attack"):
 		state_machine.transition_to("LightAttack1")
+	if Input.is_action_pressed("heavy_attack"):
+		state_machine.transition_to("HeavyAttack")
 
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
