@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bd7e5wvydw0pg"]
+[gd_scene load_steps=12 format=4 uid="uid://bd7e5wvydw0pg"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_bx3ql"]
 [ext_resource type="PackedScene" uid="uid://c475exd8klytk" path="res://parallax_background.tscn" id="1_d7jge"]
@@ -361,6 +361,13 @@ texture = ExtResource("7_mk5la")
 [sub_resource type="TileSet" id="TileSet_xqrda"]
 sources/0 = SubResource("TileSetAtlasSource_dkfc1")
 
+[sub_resource type="Environment" id="Environment_iwex5"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.43
+glow_bloom = 0.01
+glow_hdr_threshold = 0.99
+
 [node name="World" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_bx3ql")
@@ -481,3 +488,6 @@ scale = Vector2(4, 4)
 visible = false
 offset_top = 882.0
 offset_bottom = 1503.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iwex5")

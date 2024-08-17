@@ -150,7 +150,7 @@ func _on_frame_changed() -> void:
 			if not warrior.saved_notes.has("Ti"):
 				warrior.saved_notes.append("Ti")
 		
-		if warrior.saved_notes.size() == 7:
+		if warrior.saved_notes.size() == 4:
 			state_machine.transition_to("HolySword")
 
 		pass

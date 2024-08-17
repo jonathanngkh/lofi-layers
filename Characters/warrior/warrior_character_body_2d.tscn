@@ -1,4 +1,4 @@
-[gd_scene load_steps=175 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=182 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="Texture2D" uid="uid://b6ove03nmd1eb" path="res://assets/characters/shadow/Shadow1.png" id="2_ersos"]
@@ -20,7 +20,14 @@
 [ext_resource type="AudioStream" uid="uid://bgq0gcslurfh" path="res://Characters/warrior/sounds/notes/sfx_musicnotes_C.wav" id="18_sbn60"]
 [ext_resource type="Texture2D" uid="uid://e4s8dxr8xpdo" path="res://assets/UI/White Circle.png" id="20_ep8tn"]
 [ext_resource type="Script" path="res://utility/solfege_ball.gd" id="21_xgyup"]
+[ext_resource type="Texture2D" uid="uid://chs8ibt06rinv" path="res://assets/characters/do.png" id="22_pllxg"]
+[ext_resource type="Texture2D" uid="uid://cm208n8affa81" path="res://assets/characters/re.png" id="24_xwu4f"]
 [ext_resource type="Texture2D" uid="uid://4dk2v2v0f84u" path="res://assets/characters/joanna/JoannaSheet1.png" id="25_5pc18"]
+[ext_resource type="Texture2D" uid="uid://0t1ixaxovtnc" path="res://assets/characters/mi.png" id="25_lel2n"]
+[ext_resource type="Texture2D" uid="uid://cuhu63pmhxyr4" path="res://assets/characters/fa.png" id="26_tjbs5"]
+[ext_resource type="Texture2D" uid="uid://dmfoupxsxgjfn" path="res://assets/characters/so.png" id="27_xle5e"]
+[ext_resource type="Texture2D" uid="uid://bjvfxwyag5jg7" path="res://assets/characters/la.png" id="28_57g27"]
+[ext_resource type="Texture2D" uid="uid://cymlinrljycyu" path="res://assets/characters/ti.png" id="29_a7gav"]
 [ext_resource type="PackedScene" uid="uid://m3ibtx1a6nk4" path="res://utility/state_machine.tscn" id="33_qgulk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yibd8"]
@@ -1348,6 +1355,7 @@ offset_right = 40.0
 offset_bottom = 36.6667
 
 [node name="Outline" type="TextureRect" parent="SolfegeWheel"]
+visible = false
 layout_mode = 0
 offset_left = -14.0
 offset_top = -48.0
@@ -1362,17 +1370,18 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Do" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(1, 0.27, 0.27, 1)
+self_modulate = Color(4, 0.27, 0.27, 1)
 layout_mode = 0
 offset_left = -11.0
 offset_top = -45.0
 offset_right = 12.0
 offset_bottom = -22.0
-texture = ExtResource("20_ep8tn")
+texture = ExtResource("22_pllxg")
 expand_mode = 1
 script = ExtResource("21_xgyup")
 
 [node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/Do"]
+visible = false
 layout_mode = 0
 offset_left = 1.66667
 offset_right = 41.6667
@@ -1381,18 +1390,19 @@ theme_override_font_sizes/font_size = 15
 text = "Do"
 
 [node name="Re" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(0.88, 0.448213, 0.0704, 1)
+self_modulate = Color(4, 0.448, 0.07, 1)
 layout_mode = 0
 offset_left = 22.0
 offset_top = -28.0
 offset_right = 45.0
 offset_bottom = -5.0
-texture = ExtResource("20_ep8tn")
+texture = ExtResource("24_xwu4f")
 expand_mode = 1
 script = ExtResource("21_xgyup")
 solfege_ball_positions_index = 1
 
 [node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/Re"]
+visible = false
 layout_mode = 0
 offset_left = 1.66667
 offset_right = 41.6667
@@ -1406,12 +1416,13 @@ layout_mode = 0
 offset_left = 27.0
 offset_right = 50.0
 offset_bottom = 23.0
-texture = ExtResource("20_ep8tn")
+texture = ExtResource("25_lel2n")
 expand_mode = 1
 script = ExtResource("21_xgyup")
 solfege_ball_positions_index = 2
 
 [node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/Mi"]
+visible = false
 layout_mode = 0
 offset_left = 1.66667
 offset_right = 41.6667
@@ -1426,12 +1437,13 @@ offset_left = 7.0
 offset_top = 24.0
 offset_right = 30.0
 offset_bottom = 47.0
-texture = ExtResource("20_ep8tn")
+texture = ExtResource("26_tjbs5")
 expand_mode = 1
 script = ExtResource("21_xgyup")
 solfege_ball_positions_index = 3
 
 [node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/Fa"]
+visible = false
 layout_mode = 0
 offset_left = 3.33333
 offset_right = 43.3333
@@ -1446,12 +1458,13 @@ offset_left = -30.0
 offset_top = 24.0
 offset_right = -7.0
 offset_bottom = 47.0
-texture = ExtResource("20_ep8tn")
+texture = ExtResource("27_xle5e")
 expand_mode = 1
 script = ExtResource("21_xgyup")
 solfege_ball_positions_index = 4
 
 [node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/So"]
+visible = false
 layout_mode = 0
 offset_left = 3.33333
 offset_right = 43.3333
@@ -1465,12 +1478,13 @@ layout_mode = 0
 offset_left = -47.0
 offset_right = -24.0
 offset_bottom = 23.0
-texture = ExtResource("20_ep8tn")
+texture = ExtResource("28_57g27")
 expand_mode = 1
 script = ExtResource("21_xgyup")
 solfege_ball_positions_index = 5
 
 [node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/La"]
+visible = false
 layout_mode = 0
 offset_left = 3.33333
 offset_right = 43.3333
@@ -1485,12 +1499,13 @@ offset_left = -42.0
 offset_top = -28.0
 offset_right = -19.0
 offset_bottom = -5.0
-texture = ExtResource("20_ep8tn")
+texture = ExtResource("29_a7gav")
 expand_mode = 1
 script = ExtResource("21_xgyup")
 solfege_ball_positions_index = 6
 
 [node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/Ti"]
+visible = false
 layout_mode = 0
 offset_left = 4.66666
 offset_right = 44.6667
