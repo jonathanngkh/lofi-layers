@@ -23,7 +23,7 @@ var go_to_heavy_attack := false
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	warrior.velocity.y += warrior.JUMP_VELOCITY * 0.5
+	warrior.velocity.y += warrior.JUMP_VELOCITY * 1.7
 	print("equipped note: " + str(warrior.equipped_note))
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)

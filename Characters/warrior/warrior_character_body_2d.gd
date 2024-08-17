@@ -40,7 +40,7 @@ var minor_scale := [
 var minor_scale_index = 0
 
 const SPEED = 500.0
-const JUMP_VELOCITY = -1900.0
+const JUMP_VELOCITY = -2100.0
 
 func _ready() -> void:
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED

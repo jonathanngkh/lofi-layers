@@ -721,6 +721,7 @@ sprite_frames = SubResource("SpriteFrames_nekmc")
 animation = &"to_walk"
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 z_index = -1
 position = Vector2(1.66667, 26)
 scale = Vector2(2.3125, 1.08164)

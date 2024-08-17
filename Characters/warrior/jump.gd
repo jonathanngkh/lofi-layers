@@ -29,6 +29,8 @@ func handle_input(_event: InputEvent) -> void:
 		state_machine.transition_to("Dash")
 	if Input.is_action_pressed("light_attack"):
 		state_machine.transition_to("AirAttack1")
+	if Input.is_action_pressed("heavy_attack"):
+		state_machine.transition_to("AirHeavyAttack")
 
 # Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:

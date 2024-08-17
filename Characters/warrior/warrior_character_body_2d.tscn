@@ -1,4 +1,4 @@
-[gd_scene load_steps=218 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=238 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="Texture2D" uid="uid://b6ove03nmd1eb" path="res://assets/characters/shadow/Shadow1.png" id="2_ersos"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://chs8ibt06rinv" path="res://assets/characters/do.png" id="22_pllxg"]
 [ext_resource type="Script" path="res://Characters/warrior/air_attack_1.gd" id="22_uep7s"]
 [ext_resource type="Script" path="res://Characters/warrior/air_attack_2.gd" id="23_j51wb"]
+[ext_resource type="Script" path="res://Characters/warrior/air_heavy_attack.gd" id="24_e3t65"]
 [ext_resource type="Texture2D" uid="uid://cm208n8affa81" path="res://assets/characters/re.png" id="24_xwu4f"]
 [ext_resource type="Texture2D" uid="uid://4dk2v2v0f84u" path="res://assets/characters/joanna/JoannaSheet1.png" id="25_5pc18"]
 [ext_resource type="Texture2D" uid="uid://0t1ixaxovtnc" path="res://assets/characters/mi.png" id="25_lel2n"]
@@ -96,6 +97,82 @@ region = Rect2(1872, 240, 144, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wa3hp"]
 atlas = ExtResource("3_1ongg")
 region = Rect2(2016, 240, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaghq"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(144, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvl1i"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(288, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0lre"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(432, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj2il"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(576, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v635"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(720, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvb6x"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(864, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxsel"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(1008, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo800"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(1152, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05cnx"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(1296, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb8lr"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(2016, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u5dg"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(2160, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cwaj"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(2304, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvbuk"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(2448, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ji1i"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(2592, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uawf"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(2736, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq7bt"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(2880, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipaoe"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(3024, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjbhu"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(3168, 320, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b045s"]
+atlas = ExtResource("3_1ongg")
+region = Rect2(3312, 320, 144, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yibd8"]
 atlas = ExtResource("25_5pc18")
@@ -796,6 +873,68 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vaghq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvl1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0lre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj2il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v635")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvb6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxsel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo800")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05cnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb8lr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u5dg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cwaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvbuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ji1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uawf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq7bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipaoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjbhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b045s")
+}],
+"loop": false,
+"name": &"air_heavy_attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yibd8")
 }, {
 "duration": 1.0,
@@ -1435,9 +1574,12 @@ metadata/_edit_horizontal_guides_ = [61.0]
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.08165e-12, 4.333)
 sprite_frames = SubResource("SpriteFrames_o7tut")
-animation = &"air_attack_2"
+animation = &"air_heavy_attack"
+frame = 18
+frame_progress = 1.0
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 z_index = -1
 position = Vector2(2.66667, 15.3337)
 scale = Vector2(2.3125, 1.08164)
@@ -1517,6 +1659,11 @@ script = ExtResource("22_uep7s")
 script = ExtResource("23_j51wb")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/AirAttack2"]
+
+[node name="AirHeavyAttack" type="Node2D" parent="StateMachine"]
+script = ExtResource("24_e3t65")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/AirHeavyAttack"]
 
 [node name="Label" type="Label" parent="."]
 visible = false

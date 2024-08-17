@@ -1,7 +1,5 @@
 extends WarriorState
 
-var go_to_attack_2 := false
-
 @onready var sword_sounds := [
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_01.wav"),
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_02.wav"),
@@ -23,32 +21,18 @@ var go_to_attack_2 := false
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	warrior.velocity.y = 0
+	warrior.velocity.y += warrior.JUMP_VELOCITY * 0.7
 	print("equipped note: " + str(warrior.equipped_note))
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
-	warrior.sprite.play("air_attack_1", 1.8)
+	warrior.sprite.play("air_heavy_attack", 1.8)
 	warrior.sprite.offset = Vector2(24, -8)
 	warrior.hit_box.previously_hit_hurtboxes = []
-	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
-	#$AudioStreamPlayer.play()
-	#warrior.sampler.play_note(warrior.minor_scale[warrior.minor_scale_index][0], warrior.minor_scale[warrior.minor_scale_index][1])
-	#warrior.label_3.text = "played_note: " + warrior.minor_scale[warrior.minor_scale_index][0] + str(warrior.minor_scale[warrior.minor_scale_index][1])
-	##warrior.sampler.play_note(warrior.chromatic_scale[warrior.chromatic_scale_index][0], warrior.chromatic_scale[warrior.chromatic_scale_index][1])
-	#if warrior.minor_scale_index < 7:
-		#warrior.minor_scale_index += 1
-	#else:
-		#warrior.minor_scale_index = 0
-	#warrior.label_4.text = "next_note: " + warrior.minor_scale[warrior.minor_scale_index][0] + str(warrior.minor_scale[warrior.minor_scale_index][1])
 
 
 func _on_animation_finished() -> void:
-	if warrior.sprite.animation == "air_attack_1":
-		if go_to_attack_2:
-			state_machine.transition_to("AirAttack2")
-		else:
-			state_machine.transition_to("Jump", {"stage": "apex"})
-
+	if warrior.sprite.animation == "air_heavy_attack":
+		state_machine.transition_to("Idle")
 
 #func hit(area: Area2D) -> void:
 	#print('hit ' + str(area) + ' in physics')
@@ -59,26 +43,17 @@ func _on_animation_finished() -> void:
 func physics_update(_delta: float) -> void:
 	if warrior.sprite.frame >= 4:
 		warrior.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
-	if not warrior.is_on_floor():
-		warrior.velocity -= warrior.get_gravity() * _delta
-		#warrior.hit_box.tone = "Re"
-		#for area in warrior.hit_box.get_overlapping_areas():
-			#if not overlapping_areas.has(area):
-				#hit(area)
 
 
 ## Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
 	# dash
-	if not warrior.sprite.animation == "air_attack_1":
+	if not warrior.sprite.animation == "air_heavy_attack":
 		if Input.is_action_just_pressed("dash"):
 			state_machine.transition_to("Dash")
 		# block
 		if Input.is_action_pressed("block"):
 			state_machine.transition_to("Block")
-
-	if Input.is_action_just_pressed("light_attack"):
-		go_to_attack_2 = true
 
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
@@ -87,7 +62,6 @@ func exit() -> void:
 	warrior.sprite.frame_changed.disconnect(_on_frame_changed)
 	warrior.sprite.offset = Vector2.ZERO
 	warrior.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
-	go_to_attack_2 = false
 	
 
 
@@ -162,6 +136,4 @@ func _on_frame_changed() -> void:
 		if warrior.saved_notes.size() >= 4:
 			state_machine.transition_to("HolySword")
 
-	if warrior.sprite.frame >= 6:
-		if go_to_attack_2:
-			state_machine.transition_to("AirAttack2")
+		pass
