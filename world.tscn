@@ -478,5 +478,6 @@ position = Vector2(401, 969)
 scale = Vector2(4, 4)
 
 [node name="Staff" parent="." instance=ExtResource("8_xi7wq")]
+visible = false
 offset_top = 882.0
 offset_bottom = 1503.0

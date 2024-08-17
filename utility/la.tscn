@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://byi4sd52wv3he"]
+
+[ext_resource type="Texture2D" uid="uid://e4s8dxr8xpdo" path="res://assets/UI/White Circle.png" id="1_6hqfx"]
+[ext_resource type="Script" path="res://utility/solfege_ball.gd" id="2_gy8ox"]
+
+[node name="La" type="TextureRect"]
+self_modulate = Color(0.361968, 0.495136, 0.965113, 1)
+offset_left = -47.0
+offset_right = -24.0
+offset_bottom = 23.0
+texture = ExtResource("1_6hqfx")
+expand_mode = 1
+script = ExtResource("2_gy8ox")
+solfege_ball_positions_index = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.33333
+offset_right = 43.3333
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "La"

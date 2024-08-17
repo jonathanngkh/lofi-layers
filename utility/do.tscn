@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://wd8pfuhjpmsq"]
+
+[ext_resource type="Texture2D" uid="uid://e4s8dxr8xpdo" path="res://assets/UI/White Circle.png" id="1_ka6fy"]
+[ext_resource type="Script" path="res://utility/solfege_ball.gd" id="2_txh1e"]
+
+[node name="Do" type="TextureRect"]
+self_modulate = Color(1, 0.27, 0.27, 1)
+offset_left = -11.0
+offset_top = -45.0
+offset_right = 12.0
+offset_bottom = -22.0
+texture = ExtResource("1_ka6fy")
+expand_mode = 1
+script = ExtResource("2_txh1e")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.66667
+offset_right = 41.6667
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "Do"

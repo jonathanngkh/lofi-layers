@@ -12,8 +12,8 @@
 
 [node name="Conductor" type="AudioStreamPlayer" groups=["conductor"]]
 stream = ExtResource("1_tpeg8")
-volume_db = -80.0
 script = ExtResource("2_yvi5o")
+autostart = true
 
 [node name="StartTimer" type="Timer" parent="."]
 

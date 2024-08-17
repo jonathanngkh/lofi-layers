@@ -33,9 +33,15 @@ func physics_update(_delta: float) -> void:
 ## Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
 	controls()
+	if Input.is_action_just_pressed("left_click"):
+		state_machine.transition_to("LightAttack1")
+	if Input.is_action_just_pressed("right_click"):
+		state_machine.transition_to("LightAttack1")
 
 
 func controls():
+	if Input.get_action_strength("reset_scale"):
+		warrior.minor_scale_index = 0
 	if Input.get_axis("left", "right") > 0:
 		warrior.sprite.scale.x = 1
 		warrior.velocity.x = 1 * warrior.SPEED

@@ -6,6 +6,7 @@ signal hit_signal()
 # previously_hit_hurtboxes is manually reset in owner's attack class when attack state is entered
 var previously_hit_hurtboxes := []
 var damage = 0
+var tone := ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

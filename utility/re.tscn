@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dagxagy4phjyw"]
+
+[ext_resource type="Texture2D" uid="uid://e4s8dxr8xpdo" path="res://assets/UI/White Circle.png" id="1_hmjtl"]
+[ext_resource type="Script" path="res://utility/solfege_ball.gd" id="2_f4wt5"]
+
+[node name="Re" type="TextureRect"]
+self_modulate = Color(0.87521, 0.441588, 0.073457, 1)
+offset_left = 22.0
+offset_top = -28.0
+offset_right = 45.0
+offset_bottom = -5.0
+texture = ExtResource("1_hmjtl")
+expand_mode = 1
+script = ExtResource("2_f4wt5")
+solfege_ball_positions_index = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.66667
+offset_right = 41.6667
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "Re"

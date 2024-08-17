@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqhdg82ae743o"]
+
+[ext_resource type="Texture2D" uid="uid://e4s8dxr8xpdo" path="res://assets/UI/White Circle.png" id="1_dfxuy"]
+[ext_resource type="Script" path="res://utility/solfege_ball.gd" id="2_78nh7"]
+
+[node name="Fa" type="TextureRect"]
+self_modulate = Color(8.31465e-07, 0.652532, 0.0723789, 1)
+offset_left = 7.0
+offset_top = 24.0
+offset_right = 30.0
+offset_bottom = 47.0
+texture = ExtResource("1_dfxuy")
+expand_mode = 1
+script = ExtResource("2_78nh7")
+solfege_ball_positions_index = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.33333
+offset_right = 43.3333
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "Fa"
