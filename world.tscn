@@ -508,3 +508,7 @@ environment = SubResource("Environment_iwex5")
 position = Vector2(770, 1191)
 scale = Vector2(4, 4)
 note_health = ["Fa", "Re", "La"]
+
+[node name="RogueGoblinCharacterBody2" parent="." instance=ExtResource("9_r8jc3")]
+position = Vector2(653, 1191)
+scale = Vector2(4, 4)

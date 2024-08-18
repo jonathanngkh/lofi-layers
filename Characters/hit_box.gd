@@ -22,9 +22,10 @@ var solfege_note_name_dict := {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if owner.is_in_group("player"):
-		collision_mask = 2
+		set_collision_mask_value(3, true)
 	elif owner.is_in_group("enemy"):
-		collision_mask = 3
+		set_collision_mask_value(2, true)
+
 	area_exited.connect(_area_exited)
 
 

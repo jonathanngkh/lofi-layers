@@ -1887,7 +1887,7 @@ tone = "C"
 octave = 5
 velocity = 5
 
-[node name="WarriorCharacterBody2D" type="CharacterBody2D"]
+[node name="WarriorCharacterBody2D" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 texture_filter = 1
 scale = Vector2(3, 3)
