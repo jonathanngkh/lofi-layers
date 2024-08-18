@@ -477,8 +477,18 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("6_3c176")
 
 [node name="WitchCharacterBody2D" parent="." instance=ExtResource("3_ookp4")]
-position = Vector2(733, 1102)
+position = Vector2(948, 1198)
 scale = Vector2(4, 4)
+
+[node name="WitchCharacterBody2D2" parent="." instance=ExtResource("3_ookp4")]
+position = Vector2(1324, 1198)
+scale = Vector2(4, 4)
+note_health = ["Mi"]
+
+[node name="WitchCharacterBody2D3" parent="." instance=ExtResource("3_ookp4")]
+position = Vector2(1651, 1198)
+scale = Vector2(4, 4)
+note_health = ["So"]
 
 [node name="WarriorCharacterBody2D" parent="." instance=ExtResource("5_1upx7")]
 position = Vector2(401, 1198)

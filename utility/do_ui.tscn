@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://7hq8huhncy2o"]
+
+[ext_resource type="Texture2D" uid="uid://chs8ibt06rinv" path="res://assets/characters/do.png" id="1_qr3x5"]
+
+[node name="DoUI" type="TextureRect"]
+self_modulate = Color(1, 0.27, 0.27, 1)
+texture_filter = 1
+offset_right = 100.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+texture = ExtResource("1_qr3x5")
+expand_mode = 1
+stretch_mode = 4

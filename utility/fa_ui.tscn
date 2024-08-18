@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dewy5iremnvrw"]
+
+[ext_resource type="Texture2D" uid="uid://cuhu63pmhxyr4" path="res://assets/characters/fa.png" id="1_e54bv"]
+
+[node name="FaUI" type="TextureRect"]
+self_modulate = Color(0.2, 1, 0.25, 1)
+texture_filter = 1
+offset_right = 100.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+texture = ExtResource("1_e54bv")
+expand_mode = 1
+stretch_mode = 4

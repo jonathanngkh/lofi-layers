@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4jhyg0n0pwea"]
+
+[ext_resource type="Texture2D" uid="uid://dmfoupxsxgjfn" path="res://assets/characters/so.png" id="1_fmrr4"]
+
+[node name="SoUI" type="TextureRect"]
+self_modulate = Color(0.1, 0.9, 1, 1)
+texture_filter = 1
+offset_right = 100.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+texture = ExtResource("1_fmrr4")
+expand_mode = 1
+stretch_mode = 4

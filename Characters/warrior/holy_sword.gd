@@ -10,6 +10,10 @@ func enter(_msg := {}) -> void:
 	warrior.velocity.x = 0
 	warrior.hit_box.previously_hit_hurtboxes = []
 	$AudioStreamPlayer.play()
+	warrior.can_holy_sword = false
+	warrior.aura.visible = false
+	warrior.saved_notes = []
+	warrior._on_hit()
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()
 	#warrior.sampler.play_note(warrior.minor_scale[warrior.minor_scale_index][0], warrior.minor_scale[warrior.minor_scale_index][1])

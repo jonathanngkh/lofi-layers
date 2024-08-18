@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://kjby3ljjqg7h"]
+
+[ext_resource type="Texture2D" uid="uid://0t1ixaxovtnc" path="res://assets/characters/mi.png" id="1_pj4sr"]
+
+[node name="MiUI" type="TextureRect"]
+self_modulate = Color(1, 0.8, 0, 1)
+texture_filter = 1
+offset_right = 100.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+texture = ExtResource("1_pj4sr")
+expand_mode = 1
+stretch_mode = 4

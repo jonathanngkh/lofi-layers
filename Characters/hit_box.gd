@@ -8,6 +8,15 @@ var previously_hit_hurtboxes := []
 var damage = 0
 var tone := ""
 var launch := false
+var solfege_note_name_dict := {
+	"Do": ["C", 4],
+	"Re": ["D", 4],
+	"Mi": ["E", 4],
+	"Fa": ["F", 4],
+	"So": ["G", 4],
+	"La": ["A", 4],
+	"Ti": ["B", 4],
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,10 +33,11 @@ func _process(_delta: float) -> void:
 				if area.owner.has_method("receive_hit"):
 					if not hit_signal.is_connected(area.owner.receive_hit):
 						hit_signal.connect(area.owner.receive_hit)
-					if launch:
-						hit_signal.emit("launch")
-					else:
-						hit_signal.emit("no_launch")
+						if owner.name == "WarriorCharacterBody2D":
+							var victim_note = area.owner.note_health[-1]
+							owner.saved_notes.append(victim_note)
+							owner.get_node("SamplerInstrument").play_note(solfege_note_name_dict[victim_note][0], solfege_note_name_dict[victim_note][1])
+						hit_signal.emit()
 					hit_signal.disconnect(area.owner.receive_hit)
 					print(owner.name + ' hit ' + area.owner.name)
 					## could affect rhythms:

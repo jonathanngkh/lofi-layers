@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlfjjbmbxujse"]
+
+[ext_resource type="Texture2D" uid="uid://cymlinrljycyu" path="res://assets/characters/ti.png" id="1_3r1py"]
+
+[node name="TiUI" type="TextureRect"]
+self_modulate = Color(0.7, 0.3, 1, 1)
+texture_filter = 1
+offset_right = 100.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+texture = ExtResource("1_3r1py")
+expand_mode = 1
+stretch_mode = 4

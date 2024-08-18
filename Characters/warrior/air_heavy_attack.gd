@@ -22,7 +22,7 @@ extends WarriorState
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	warrior.velocity.y += warrior.JUMP_VELOCITY * 0.7
-	print("equipped note: " + str(warrior.equipped_note))
+	#print("equipped note: " + str(warrior.equipped_note))
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
 	warrior.sprite.play("air_heavy_attack", 1.8)
@@ -78,62 +78,63 @@ func _on_frame_changed() -> void:
 		$AudioStreamPlayer.stream = sword_sounds.pick_random()
 		$AudioStreamPlayer.play()
 	if warrior.sprite.frame == 5:
-		if warrior.equipped_note == "Do":
-			warrior.sampler.play_note("C", 5)
-			var do_spawn = solfege_balls[0].instantiate()
-			do_spawn.position = Vector2.ZERO
-			do_spawn.get_node("Label").position = Vector2(7, 5)
-			warrior.note_container.get_children()[0].add_child(do_spawn)
-			if not warrior.saved_notes.has("Do"):
-				warrior.saved_notes.append("Do")
-		elif warrior.equipped_note == "Re":
-			warrior.sampler.play_note("D", 5)
-			var re_spawn = solfege_balls[1].instantiate()
-			re_spawn.position = Vector2.ZERO
-			re_spawn.get_node("Label").position = Vector2(7, 5)
-			re_spawn.position = Vector2.ZERO
-			warrior.note_container.get_children()[1].add_child(re_spawn)
-			if not warrior.saved_notes.has("Re"):
-				warrior.saved_notes.append("Re")
-		elif warrior.equipped_note == "Mi":
-			warrior.sampler.play_note("E", 5)
-			var mi_spawn = solfege_balls[2].instantiate()
-			mi_spawn.position = Vector2.ZERO
-			mi_spawn.get_node("Label").position = Vector2(7, 5)
-			warrior.note_container.get_children()[2].add_child(mi_spawn)
-			if not warrior.saved_notes.has("Mi"):
-				warrior.saved_notes.append("Mi")
-		elif warrior.equipped_note == "Fa":
-			warrior.sampler.play_note("F", 5)
-			var fa_spawn = solfege_balls[3].instantiate()
-			fa_spawn.position = Vector2.ZERO
-			fa_spawn.get_node("Label").position = Vector2(7, 5)
-			warrior.note_container.get_children()[3].add_child(fa_spawn)
-			if not warrior.saved_notes.has("Fa"):
-				warrior.saved_notes.append("Fa")
-		elif warrior.equipped_note == "So":
-			warrior.sampler.play_note("G", 5)
-			var so_spawn = solfege_balls[4].instantiate()
-			so_spawn.get_node("Label").position = Vector2(7, 5)
-			warrior.note_container.get_children()[4].add_child(so_spawn)
-			if not warrior.saved_notes.has("So"):
-				warrior.saved_notes.append("So")
-		elif warrior.equipped_note == "La":
-			warrior.sampler.play_note("A", 5)
-			var la_spawn = solfege_balls[5].instantiate()
-			la_spawn.get_node("Label").position = Vector2(7, 5)
-			warrior.note_container.get_children()[5].add_child(la_spawn)
-			if not warrior.saved_notes.has("La"):
-				warrior.saved_notes.append("La")
-		elif warrior.equipped_note == "Ti":
-			warrior.sampler.play_note("B", 5)
-			var ti_spawn = solfege_balls[6].instantiate()
-			ti_spawn.get_node("Label").position = Vector2(7, 5)
-			warrior.note_container.get_children()[6].add_child(ti_spawn)
-			if not warrior.saved_notes.has("Ti"):
-				warrior.saved_notes.append("Ti")
-		
-		if warrior.saved_notes.size() >= 4:
-			state_machine.transition_to("HolySword")
+		pass
+		#if warrior.equipped_note == "Do":
+			#warrior.sampler.play_note("C", 5)
+			#var do_spawn = solfege_balls[0].instantiate()
+			#do_spawn.position = Vector2.ZERO
+			#do_spawn.get_node("Label").position = Vector2(7, 5)
+			#warrior.note_container.get_children()[0].add_child(do_spawn)
+			#if not warrior.saved_notes.has("Do"):
+				#warrior.saved_notes.append("Do")
+		#elif warrior.equipped_note == "Re":
+			#warrior.sampler.play_note("D", 5)
+			#var re_spawn = solfege_balls[1].instantiate()
+			#re_spawn.position = Vector2.ZERO
+			#re_spawn.get_node("Label").position = Vector2(7, 5)
+			#re_spawn.position = Vector2.ZERO
+			#warrior.note_container.get_children()[1].add_child(re_spawn)
+			#if not warrior.saved_notes.has("Re"):
+				#warrior.saved_notes.append("Re")
+		#elif warrior.equipped_note == "Mi":
+			#warrior.sampler.play_note("E", 5)
+			#var mi_spawn = solfege_balls[2].instantiate()
+			#mi_spawn.position = Vector2.ZERO
+			#mi_spawn.get_node("Label").position = Vector2(7, 5)
+			#warrior.note_container.get_children()[2].add_child(mi_spawn)
+			#if not warrior.saved_notes.has("Mi"):
+				#warrior.saved_notes.append("Mi")
+		#elif warrior.equipped_note == "Fa":
+			#warrior.sampler.play_note("F", 5)
+			#var fa_spawn = solfege_balls[3].instantiate()
+			#fa_spawn.position = Vector2.ZERO
+			#fa_spawn.get_node("Label").position = Vector2(7, 5)
+			#warrior.note_container.get_children()[3].add_child(fa_spawn)
+			#if not warrior.saved_notes.has("Fa"):
+				#warrior.saved_notes.append("Fa")
+		#elif warrior.equipped_note == "So":
+			#warrior.sampler.play_note("G", 5)
+			#var so_spawn = solfege_balls[4].instantiate()
+			#so_spawn.get_node("Label").position = Vector2(7, 5)
+			#warrior.note_container.get_children()[4].add_child(so_spawn)
+			#if not warrior.saved_notes.has("So"):
+				#warrior.saved_notes.append("So")
+		#elif warrior.equipped_note == "La":
+			#warrior.sampler.play_note("A", 5)
+			#var la_spawn = solfege_balls[5].instantiate()
+			#la_spawn.get_node("Label").position = Vector2(7, 5)
+			#warrior.note_container.get_children()[5].add_child(la_spawn)
+			#if not warrior.saved_notes.has("La"):
+				#warrior.saved_notes.append("La")
+		#elif warrior.equipped_note == "Ti":
+			#warrior.sampler.play_note("B", 5)
+			#var ti_spawn = solfege_balls[6].instantiate()
+			#ti_spawn.get_node("Label").position = Vector2(7, 5)
+			#warrior.note_container.get_children()[6].add_child(ti_spawn)
+			#if not warrior.saved_notes.has("Ti"):
+				#warrior.saved_notes.append("Ti")
+		#
+		#if warrior.saved_notes.size() >= 4:
+			#state_machine.transition_to("HolySword")
 
 		pass

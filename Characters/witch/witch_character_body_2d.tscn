@@ -715,10 +715,12 @@ z_index = 1
 texture_filter = 1
 scale = Vector2(3, 3)
 script = ExtResource("1_ryhk5")
+is_player_controlled = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
-animation = &"to_walk"
+animation = &"idle"
+offset = Vector2(40, 2.08165e-12)
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 visible = false
@@ -789,3 +791,30 @@ text = "animation:"
 visible = false
 position = Vector2(0, 0.333333)
 shape = SubResource("CapsuleShape2D_eiyko")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -9.0
+offset_top = -48.0
+offset_right = 86.0
+offset_bottom = -31.0
+theme_override_constants/separation = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

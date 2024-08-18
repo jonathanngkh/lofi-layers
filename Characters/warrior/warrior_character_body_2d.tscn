@@ -1,4 +1,4 @@
-[gd_scene load_steps=238 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=270 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="Texture2D" uid="uid://b6ove03nmd1eb" path="res://assets/characters/shadow/Shadow1.png" id="2_ersos"]
@@ -12,7 +12,10 @@
 [ext_resource type="Script" path="res://Characters/warrior/jump.gd" id="6_mc74y"]
 [ext_resource type="Script" path="res://Characters/warrior/dash.gd" id="7_r6vl6"]
 [ext_resource type="Script" path="res://Characters/warrior/block.gd" id="8_jpocv"]
+[ext_resource type="Texture2D" uid="uid://b8rqmpxtq6wyi" path="res://Characters/warrior/shieldbuffaura1.png" id="9_7aj01"]
 [ext_resource type="Script" path="res://Characters/warrior/light_attack_1.gd" id="10_64t0a"]
+[ext_resource type="Texture2D" uid="uid://dkg8lslw40cbh" path="res://Characters/warrior/shieldbuffaura2.png" id="10_n448v"]
+[ext_resource type="Texture2D" uid="uid://d3bxe8iesw0tt" path="res://Characters/warrior/shieldbuffaura3.png" id="11_r8c5s"]
 [ext_resource type="Script" path="res://utility/hurt_box.gd" id="12_bf3at"]
 [ext_resource type="Script" path="res://Characters/warrior/hurt.gd" id="13_b1ba7"]
 [ext_resource type="Script" path="res://Characters/warrior/light_attack_2.gd" id="15_qoqu0"]
@@ -489,6 +492,118 @@ region = Rect2(3718, 1596, 286, 114)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1r825"]
 atlas = ExtResource("4_w4nqn")
 region = Rect2(4004, 1596, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7se10"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(0, 684, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhtri"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(286, 684, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4skf"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(572, 684, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpnvo"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(858, 684, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dwjl"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(1144, 684, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdwue"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(1430, 684, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4y4d"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(1716, 684, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dojpq"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(2002, 684, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlc6f"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(2288, 684, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioc0f"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(2574, 684, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lclu"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(0, 798, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rbx7"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(286, 798, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31c2b"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(572, 798, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8ahx"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(858, 798, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drvyx"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(1144, 798, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sctt"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(1430, 798, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37ejr"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(1716, 798, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4su6j"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(2002, 798, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5xwb"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(0, 912, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uyeh"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(286, 912, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7ryg"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(572, 912, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jskf0"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(858, 912, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2cxk"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(1144, 912, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1hum"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(1430, 912, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbw7b"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(1716, 912, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4edc"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(2002, 912, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ur2c"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(2288, 912, 286, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0c15"]
+atlas = ExtResource("4_w4nqn")
+region = Rect2(2574, 912, 286, 114)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxbjy"]
 atlas = ExtResource("4_75ux4")
@@ -1232,6 +1347,95 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7se10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhtri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4skf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpnvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dwjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdwue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4y4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dojpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlc6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioc0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lclu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rbx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31c2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8ahx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drvyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sctt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37ejr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4su6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5xwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uyeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7ryg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jskf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2cxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1hum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbw7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4edc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ur2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0c15")
+}],
+"loop": true,
+"name": &"holy_wave",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fxbjy")
 }, {
 "duration": 1.0,
@@ -1548,6 +1752,23 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lglmt"]
 size = Vector2(37.0001, 46.6667)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_fnpfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_7aj01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n448v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r8c5s")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 10.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ek4rg"]
 size = Vector2(20, 43)
 
@@ -1571,12 +1792,54 @@ debug_mode = true
 beat_em_up_mode = false
 metadata/_edit_horizontal_guides_ = [61.0]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SavedNotesHBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 49.0
+offset_top = 46.0
+offset_right = 1073.0
+offset_bottom = 193.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AspectRatioContainer6" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AspectRatioContainer7" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.08165e-12, 4.333)
 sprite_frames = SubResource("SpriteFrames_o7tut")
-animation = &"air_heavy_attack"
-frame = 18
-frame_progress = 1.0
+animation = &"idle"
+frame_progress = 0.743016
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 visible = false
@@ -1590,9 +1853,18 @@ frame_progress = 1.0
 [node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("4_il7ku")]
 
 [node name="HitCollisionShape" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox"]
+visible = false
 position = Vector2(30.5, 1.00033)
 shape = SubResource("RectangleShape2D_lglmt")
 debug_color = Color(0.828602, 0.331566, 0.559356, 0.42)
+
+[node name="AuraAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_fnpfr")
+animation = &"loop"
+frame_progress = 0.0262778
+offset = Vector2(85, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -1764,6 +2036,7 @@ texture = ExtResource("20_ep8tn")
 expand_mode = 1
 
 [node name="SolfegeContainer" type="Control" parent="SolfegeWheel"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -1810,7 +2083,7 @@ theme_override_font_sizes/font_size = 15
 text = "Re"
 
 [node name="Mi" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(0.908895, 0.716859, 0, 1)
+self_modulate = Color(1, 0.8, 0, 1)
 layout_mode = 0
 offset_left = 27.0
 offset_right = 50.0
@@ -1830,7 +2103,7 @@ theme_override_font_sizes/font_size = 15
 text = "Mi"
 
 [node name="Fa" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(8.31465e-07, 0.652532, 0.0723789, 1)
+self_modulate = Color(0.2, 1, 0.25, 1)
 layout_mode = 0
 offset_left = 7.0
 offset_top = 24.0
@@ -1851,7 +2124,7 @@ theme_override_font_sizes/font_size = 15
 text = "Fa"
 
 [node name="So" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(0.0938366, 0.72286, 0.792417, 1)
+self_modulate = Color(0.1, 0.9, 1, 1)
 layout_mode = 0
 offset_left = -30.0
 offset_top = 24.0
@@ -1872,7 +2145,7 @@ theme_override_font_sizes/font_size = 15
 text = "So"
 
 [node name="La" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(0.361968, 0.495136, 0.965113, 1)
+self_modulate = Color(0.35, 0.5, 1, 1)
 layout_mode = 0
 offset_left = -47.0
 offset_right = -24.0
@@ -1892,7 +2165,7 @@ theme_override_font_sizes/font_size = 15
 text = "La"
 
 [node name="Ti" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(0.679911, 0.307292, 0.99487, 1)
+self_modulate = Color(0.7, 0.3, 1, 1)
 layout_mode = 0
 offset_left = -42.0
 offset_top = -28.0
