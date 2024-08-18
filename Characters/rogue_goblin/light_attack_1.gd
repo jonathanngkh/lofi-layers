@@ -1,5 +1,9 @@
 extends RogueGoblinState
 
+@onready var sword_sounds = [
+	preload("res://Characters/rogue_goblin/sounds/sfx_enemy_roguegoblin_slash/sfx_enemy_roguegoblin_slash_01.wav"),
+	preload("res://Characters/rogue_goblin/sounds/sfx_enemy_roguegoblin_slash/sfx_enemy_roguegoblin_slash_02.wav"),
+]
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
@@ -56,10 +60,22 @@ func exit() -> void:
 
 
 func _on_frame_changed() -> void:
+	if rogue_goblin.sprite.frame == 3:
+		$AudioStreamPlayer2D.stream = sword_sounds.pick_random()
+		$AudioStreamPlayer2D.play()
+		var tween = create_tween()
+		var direction = rogue_goblin.sprite.scale.x
+		tween.tween_property(rogue_goblin, "velocity:x", 0, 0.3).from(direction * rogue_goblin.SPEED * 4)
 	if rogue_goblin.sprite.frame == 4:
 		rogue_goblin.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
 	if rogue_goblin.sprite.frame == 6:
 		rogue_goblin.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
+	if rogue_goblin.sprite.frame == 8:
+		$AudioStreamPlayer2D.stream = sword_sounds.pick_random()
+		$AudioStreamPlayer2D.play()
+		var tween = create_tween()
+		var direction = rogue_goblin.sprite.scale.x
+		tween.tween_property(rogue_goblin, "velocity:x", 0, 0.3).from(direction * rogue_goblin.SPEED * 4)
 	if rogue_goblin.sprite.frame == 9:
 		rogue_goblin.hit_box.previously_hit_hurtboxes = []
 		rogue_goblin.hit_box.process_mode = Node.PROCESS_MODE_INHERIT

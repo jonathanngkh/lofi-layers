@@ -457,7 +457,7 @@ size = Vector2(39.5, 47)
 size = Vector2(27, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yl4c"]
-size = Vector2(24, 32)
+size = Vector2(11, 28)
 
 [node name="RogueGoblinCharacterBody" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
@@ -468,9 +468,7 @@ damage = 5
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_k74mf")
-animation = &"death"
-frame = 18
-frame_progress = 1.0
+animation = &"idle"
 offset = Vector2(30, 0)
 
 [node name="HitBox" parent="AnimatedSprite2D" groups=["enemy"] instance=ExtResource("17_vadwp")]
@@ -513,14 +511,24 @@ script = ExtResource("5_q251a")
 [node name="LightAttack1" type="Node2D" parent="StateMachine"]
 script = ExtResource("16_l42jq")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/LightAttack1"]
+
 [node name="Hurt" type="Node2D" parent="StateMachine"]
 script = ExtResource("18_pgu14")
+
+[node name="AudioStreamPlayer2D_Hurt" type="AudioStreamPlayer2D" parent="StateMachine/Hurt"]
+
+[node name="AudioStreamPlayer2D_Impact" type="AudioStreamPlayer2D" parent="StateMachine/Hurt"]
+volume_db = 12.0
 
 [node name="Freeze" type="Node2D" parent="StateMachine" groups=["enemy"]]
 script = ExtResource("19_1id8c")
 
 [node name="Death" type="Node2D" parent="StateMachine"]
 script = ExtResource("20_gsh4w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/Death"]
+volume_db = 3.0
 
 [node name="HurtBox" type="Area2D" parent="."]
 visible = false
@@ -532,8 +540,7 @@ shape = SubResource("RectangleShape2D_7ty7w")
 debug_color = Color(0.117921, 0.647349, 0, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 6)
+position = Vector2(0.5, 8)
 shape = SubResource("RectangleShape2D_5yl4c")
 
 [node name="AttackTimer" type="Timer" parent="."]

@@ -1,13 +1,18 @@
-# idle state
+# death state
 extends RogueGoblinState
 
-
+@onready var death_sounds = [
+	preload("res://Characters/rogue_goblin/sounds/sfx_enemy_roguegoblin_death/sfx_enemy_roguegoblin_death.wav"),
+]
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	rogue_goblin.sprite.offset = Vector2(0, 5)
+	rogue_goblin.velocity = Vector2.ZERO
 	rogue_goblin.sprite.animation_finished.connect(_on_animation_finished)
 	rogue_goblin.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
+	$AudioStreamPlayer2D.stream = death_sounds[0]
 	rogue_goblin.sprite.play("death")
+	$AudioStreamPlayer2D.play()
 	
 	
 

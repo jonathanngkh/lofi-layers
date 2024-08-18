@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3drb04nw2qjt"
+path="res://.godot/imported/sfx_enemy_roguegoblin_hurt_05 [Draft 2].wav-31424e5d1cf1498ce6ebc0e2410740af.sample"
+
+[deps]
+
+source_file="res://Characters/rogue_goblin/sounds/sfx_enemy_roguegoblin_hurt/sfx_enemy_roguegoblin_hurt_05 [Draft 2].wav"
+dest_files=["res://.godot/imported/sfx_enemy_roguegoblin_hurt_05 [Draft 2].wav-31424e5d1cf1498ce6ebc0e2410740af.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

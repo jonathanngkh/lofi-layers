@@ -129,8 +129,9 @@ func _physics_process(delta: float) -> void:
 
 
 func receive_hit(message) -> void:
-	hp -= message
-	$CanvasLayer/HealthBarControl.damage(message)
+	if message is int:
+		hp -= message
+		$CanvasLayer/HealthBarControl.damage(message)
 	if hp <= 0:
 		state_machine.transition_to("Death")
 	elif state_machine.state == $StateMachine/Block:

@@ -563,6 +563,7 @@ sprite_frames = SubResource("SpriteFrames_levyq")
 animation = &"BloodSplatter"
 
 [node name="MaxHealthText" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -574,6 +575,7 @@ text = "/ 20"
 horizontal_alignment = 2
 
 [node name="CurrentHealthText" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=313 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=315 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="Texture2D" uid="uid://b6ove03nmd1eb" path="res://assets/characters/shadow/Shadow1.png" id="2_ersos"]
@@ -24,7 +24,6 @@
 [ext_resource type="Script" path="res://addons/SimpleSampler/sampler_instrument.gd" id="16_xo4at"]
 [ext_resource type="Script" path="res://addons/SimpleSampler/sample_resource.gd" id="17_q0fva"]
 [ext_resource type="AudioStream" uid="uid://cc7w4rmyq2231" path="res://Characters/warrior/sounds/sfx_holysword.wav" id="17_qy5db"]
-[ext_resource type="AudioStream" uid="uid://bgq0gcslurfh" path="res://Characters/warrior/sounds/notes/sfx_musicnotes_C.wav" id="18_sbn60"]
 [ext_resource type="Texture2D" uid="uid://e4s8dxr8xpdo" path="res://assets/UI/White Circle.png" id="20_ep8tn"]
 [ext_resource type="Script" path="res://Characters/warrior/shield_heavy_attack.gd" id="20_xjgfq"]
 [ext_resource type="Script" path="res://Characters/warrior/heavy_attack.gd" id="21_xalye"]
@@ -36,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cm208n8affa81" path="res://assets/characters/re.png" id="24_xwu4f"]
 [ext_resource type="Texture2D" uid="uid://4dk2v2v0f84u" path="res://assets/characters/joanna/JoannaSheet1.png" id="25_5pc18"]
 [ext_resource type="Texture2D" uid="uid://0t1ixaxovtnc" path="res://assets/characters/mi.png" id="25_lel2n"]
+[ext_resource type="Script" path="res://Characters/warrior/holy_wave.gd" id="26_gg3d6"]
 [ext_resource type="Texture2D" uid="uid://cuhu63pmhxyr4" path="res://assets/characters/fa.png" id="26_tjbs5"]
 [ext_resource type="Texture2D" uid="uid://dmfoupxsxgjfn" path="res://assets/characters/so.png" id="27_xle5e"]
 [ext_resource type="Texture2D" uid="uid://bjvfxwyag5jg7" path="res://assets/characters/la.png" id="28_57g27"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://cymlinrljycyu" path="res://assets/characters/ti.png" id="29_a7gav"]
 [ext_resource type="Script" path="res://Characters/warrior/death.gd" id="30_0mfxg"]
 [ext_resource type="PackedScene" uid="uid://m3ibtx1a6nk4" path="res://utility/state_machine.tscn" id="33_qgulk"]
+[ext_resource type="AudioStream" uid="uid://cp5chf8pctueq" path="res://Characters/warrior/sounds/notes/sfx_musicnotes_C [Draft 3].wav" id="34_4dkm0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wkfji"]
 atlas = ExtResource("3_1ongg")
@@ -1709,9 +1710,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h0c15")
 }],
-"loop": true,
+"loop": false,
 "name": &"holy_wave",
-"speed": 14.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2054,6 +2055,9 @@ size = Vector2(139.333, 22.3333)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_foobn"]
 size = Vector2(87, 62.6667)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w71vu"]
+size = Vector2(215.667, 37)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ek4rg"]
 size = Vector2(20, 43)
 
@@ -2061,9 +2065,9 @@ size = Vector2(20, 43)
 radius = 13.6667
 height = 34.6667
 
-[sub_resource type="Resource" id="Resource_qc8t3"]
+[sub_resource type="Resource" id="Resource_nytyh"]
 script = ExtResource("17_q0fva")
-stream = ExtResource("18_sbn60")
+stream = ExtResource("34_4dkm0")
 tone = "C"
 octave = 5
 velocity = 5
@@ -2129,7 +2133,8 @@ offset_bottom = -570.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.08165e-12, 4.333)
 sprite_frames = SubResource("SpriteFrames_o7tut")
-animation = &"idle"
+animation = &"holy_wave"
+frame = 24
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 visible = false
@@ -2162,16 +2167,21 @@ visible = false
 position = Vector2(3.33333, -8.66633)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox2"]
-visible = false
 position = Vector2(27.3333, -26.8333)
 shape = SubResource("RectangleShape2D_k4v1q")
 debug_color = Color(0.924397, 0.128557, 0.599307, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox2"]
-visible = false
 position = Vector2(55.5, 11.3333)
 shape = SubResource("RectangleShape2D_foobn")
 debug_color = Color(0.961607, 1.18208e-06, 0.50938, 0.42)
+
+[node name="HitBox3" parent="AnimatedSprite2D" instance=ExtResource("4_il7ku")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox3"]
+position = Vector2(102.333, 2.167)
+shape = SubResource("RectangleShape2D_w71vu")
+debug_color = Color(0.893167, 0.000225059, 0.785036, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -2186,6 +2196,8 @@ script = ExtResource("3_j5bub")
 
 [node name="Run" type="Node2D" parent="StateMachine"]
 script = ExtResource("5_akmfl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/Run"]
 
 [node name="Jump" type="Node2D" parent="StateMachine"]
 script = ExtResource("6_mc74y")
@@ -2228,6 +2240,9 @@ script = ExtResource("21_xalye")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/HeavyAttack"]
 pitch_scale = 0.7
+
+[node name="HolyWave" type="Node2D" parent="StateMachine"]
+script = ExtResource("26_gg3d6")
 
 [node name="AirAttack1" type="Node2D" parent="StateMachine"]
 script = ExtResource("22_uep7s")
@@ -2295,7 +2310,7 @@ debug_color = Color(0, 0.642853, 0.310531, 0.42)
 
 [node name="SamplerInstrument" type="AudioStreamPlayer" parent="."]
 script = ExtResource("16_xo4at")
-samples = Array[ExtResource("17_q0fva")]([SubResource("Resource_qc8t3")])
+samples = Array[ExtResource("17_q0fva")]([SubResource("Resource_nytyh")])
 
 [node name="NoteContainer" type="HBoxContainer" parent="."]
 offset_left = -124.0

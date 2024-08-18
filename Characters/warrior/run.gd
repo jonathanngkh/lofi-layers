@@ -1,9 +1,16 @@
 extends WarriorState
 
-
+@onready var footstep_sounds := [
+	preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_01.wav"),
+	preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_02.wav"),
+	preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_03.wav"),
+	preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_04.wav"),
+	preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_05.wav")
+]
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
+	warrior.sprite.frame_changed.connect(_on_frame_changed)
 	warrior.sprite.play("run_start", 1.6)
 
 	if Input.get_axis("left", "right") == 0 and Input.get_axis("up", "down") == 0:
@@ -70,7 +77,16 @@ func handle_input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("heavy_attack"):
 		state_machine.transition_to("HeavyAttack")
 
+func _on_frame_changed() -> void:
+	if warrior.sprite.frame == 2:
+		$AudioStreamPlayer2D.stream = footstep_sounds.pick_random()
+		$AudioStreamPlayer2D.play()
+	if warrior.sprite.frame == 6:
+		$AudioStreamPlayer2D.stream = footstep_sounds.pick_random()
+		$AudioStreamPlayer2D.play()
+	
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
 func exit() -> void:
 	warrior.sprite.animation_finished.disconnect(_on_animation_finished)
+	warrior.sprite.frame_changed.disconnect(_on_frame_changed)

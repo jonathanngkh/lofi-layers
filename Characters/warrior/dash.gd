@@ -1,9 +1,9 @@
 extends WarriorState
 
-var dash_speed = 1000
+var dash_speed = 1400
 var starting_direction
 var starting_height
-var dash_cancelled := false
+var dash_cancelled := true
 var can_end_dash := false
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
@@ -22,8 +22,9 @@ func handle_input(_event: InputEvent) -> void:
 
 # Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:
-	if Input.is_action_pressed("jump"):
-		starting_height -= 10
+	pass
+	#if Input.is_action_pressed("jump"):
+		#starting_height -= 10
 
 
 # Corresponds to the `_physics_process()` callback.
@@ -61,7 +62,7 @@ func _on_timeout() -> void:
 # Called by the state machine before changing the active state. Use this function to clean up the state.
 func exit() -> void:
 	warrior.sprite.animation_finished.disconnect(_on_animation_finished)
-	dash_speed = 1000
+	dash_speed = 1400
 	warrior.velocity.y = 0
-	dash_cancelled = false
+	dash_cancelled = true
 	can_end_dash = false

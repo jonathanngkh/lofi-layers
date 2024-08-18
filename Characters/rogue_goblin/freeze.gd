@@ -6,6 +6,7 @@ extends RogueGoblinState
 func enter(_msg := {}) -> void:
 	rogue_goblin.sprite.play("hurt", 0.35)
 	rogue_goblin.sprite.offset = Vector2(30, 0)
+	rogue_goblin.velocity.x = 0
 	sprite_flash()
 	rogue_goblin.sprite.animation_finished.connect(_on_animation_finished)
 	

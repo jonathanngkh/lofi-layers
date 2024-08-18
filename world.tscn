@@ -605,8 +605,8 @@ position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.4
-drag_right_margin = 0.4
+drag_left_margin = 0.1
+drag_right_margin = 0.1
 script = ExtResource("6_3c176")
 
 [node name="Staff" parent="." instance=ExtResource("8_xi7wq")]
@@ -619,30 +619,35 @@ offset_bottom = 1503.0
 environment = SubResource("Environment_iwex5")
 
 [node name="RogueGoblinCharacterBody" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(1613, 1191)
+position = Vector2(1651, 1001)
 scale = Vector2(4, 4)
-note_health = ["So", "Re", "La"]
 
 [node name="RogueGoblinCharacterBody3" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(1291, 1191)
+position = Vector2(1315, 881)
 scale = Vector2(4, 4)
 note_health = ["Mi"]
 
 [node name="RogueGoblinCharacterBody4" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(284, 659)
+position = Vector2(1833, 773)
 scale = Vector2(4, 4)
 note_health = ["So"]
 
 [node name="RogueGoblinCharacterBody5" parent="." instance=ExtResource("9_r8jc3")]
+process_mode = 4
+visible = false
 position = Vector2(1849, 1191)
 scale = Vector2(4, 4)
 note_health = ["So"]
 
 [node name="RogueGoblinCharacterBody6" parent="." instance=ExtResource("9_r8jc3")]
+process_mode = 4
+visible = false
 position = Vector2(1459, 1191)
 scale = Vector2(4, 4)
 note_health = ["Ti"]
 
 [node name="RogueGoblinCharacterBody2" parent="." instance=ExtResource("9_r8jc3")]
+process_mode = 4
+visible = false
 position = Vector2(2359, 1191)
 scale = Vector2(4, 4)

@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 
 func _on_timeout() -> void:
 	play("break")
+	$HitBox.process_mode = Node.PROCESS_MODE_DISABLED
 	
 
 func _on_animation_finished() -> void:

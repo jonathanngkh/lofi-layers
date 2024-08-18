@@ -98,15 +98,19 @@ func exit() -> void:
 func _on_frame_changed() -> void:
 	if warrior.sprite.frame == 0:
 		pass
+		
 	if warrior.sprite.frame == 1:
+		
 		pass
 	if warrior.sprite.frame == 2:
+		
 		pass
 	if warrior.sprite.frame == 3:
-		pass
-	if warrior.sprite.frame == 4:
 		$AudioStreamPlayer.stream = sword_sounds.pick_random()
 		$AudioStreamPlayer.play()
+		pass
+	if warrior.sprite.frame == 4:
+		pass
 	if warrior.sprite.frame == 5:
 		#if warrior.equipped_note == "Do":
 			#warrior.sampler.play_note("C", 5)
