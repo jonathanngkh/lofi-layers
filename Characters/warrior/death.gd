@@ -8,6 +8,7 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
 	warrior.sprite.play("death")
+	warrior.velocity.x = 0
 	var world = warrior.get_parent()
 	
 	for node in world.get_children():
