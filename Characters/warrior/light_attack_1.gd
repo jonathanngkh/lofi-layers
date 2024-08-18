@@ -4,9 +4,9 @@ var go_to_attack_2 := false
 
 @onready var sword_sounds := [
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_01.wav"),
-	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_02.wav"),
+	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_02 [Draft 2].wav"),
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_03.wav"),
-	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_04.wav"),
+	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_04 [Draft 2].wav"),
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_05.wav"),
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_06.wav"),
 ]

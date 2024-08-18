@@ -4,9 +4,9 @@ var queue_jump := false
 
 @onready var sword_sounds := [
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_01.wav"),
-	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_02.wav"),
+	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_02 [Draft 2].wav"),
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_03.wav"),
-	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_04.wav"),
+	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_04 [Draft 2].wav"),
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_05.wav"),
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_06.wav"),
 ]
@@ -99,10 +99,10 @@ func _on_frame_changed() -> void:
 	if warrior.sprite.frame == 2:
 		pass
 	if warrior.sprite.frame == 3:
-		pass
-	if warrior.sprite.frame == 4:
 		$AudioStreamPlayer.stream = sword_sounds.pick_random()
 		$AudioStreamPlayer.play()
+	if warrior.sprite.frame == 4:
+		pass
 	if warrior.sprite.frame == 5:
 		pass
 		#if warrior.equipped_note == "Do":
