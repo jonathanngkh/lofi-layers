@@ -5,6 +5,7 @@ extends WarriorState
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	warrior.sprite.play("idle", 0.7)
+	warrior.velocity.x = 0
 	controls()
 #
 #

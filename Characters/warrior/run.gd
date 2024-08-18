@@ -7,16 +7,14 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.play("run_start", 1.6)
 
 	if Input.get_axis("left", "right") == 0 and Input.get_axis("up", "down") == 0:
-		warrior.sprite.play("run_break", 1.5)
-		var tween = create_tween()
-		tween.tween_property(warrior, "velocity:x", 0, 0.3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		state_machine.transition_to("Idle")
 
 
 func _on_animation_finished() -> void:
 	if warrior.sprite.animation == "run_start":
 		warrior.sprite.play("run")
-	if warrior.sprite.animation == "run_break":
-		state_machine.transition_to("Idle")
+	#if warrior.sprite.animation == "run_break":
+		#state_machine.transition_to("Idle")
 
 
 # Corresponds to the `_physics_process()` callback.
@@ -53,9 +51,10 @@ func handle_input(_event: InputEvent) -> void:
 				warrior.sprite.scale.x = 1
 			elif warrior.velocity.x < 0:
 				warrior.sprite.scale.x = -1
-			warrior.sprite.play("run_break", 1.5)
-			var tween = create_tween()
-			tween.tween_property(warrior, "velocity:x", 0, 0.3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+			state_machine.transition_to("Idle")
+			#warrior.sprite.play("run_break", 1.5)
+			#var tween = create_tween()
+			#tween.tween_property(warrior, "velocity:x", 0, 0.3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	# jump
 	if Input.is_action_just_pressed("jump") and warrior.is_on_floor():
 		state_machine.transition_to("Jump")

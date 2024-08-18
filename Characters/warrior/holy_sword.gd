@@ -11,11 +11,13 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.offset = Vector2(72, -16)
 	warrior.velocity.x = 0
 	warrior.hit_box_2.previously_hit_hurtboxes = []
+	warrior.hit_box_2.holy_sword = true
 	$AudioStreamPlayer.play()
 	warrior.can_holy_sword = false
 	warrior.aura.visible = false
 	warrior.saved_notes = []
 	warrior._on_hit("")
+	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()
 	#warrior.sampler.play_note(warrior.minor_scale[warrior.minor_scale_index][0], warrior.minor_scale[warrior.minor_scale_index][1])
@@ -67,8 +69,8 @@ func exit() -> void:
 	warrior.sprite.offset = Vector2.ZERO
 	#warrior.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 	warrior.hit_box_2.process_mode = Node.PROCESS_MODE_DISABLED
-	
-
+	warrior.hurt_box.process_mode = Node.PROCESS_MODE_INHERIT
+	warrior.hit_box_2.holy_sword = true
 
 func _on_frame_changed() -> void:
 	if warrior.sprite.frame == 0:

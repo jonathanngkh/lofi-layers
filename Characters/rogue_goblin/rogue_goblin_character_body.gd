@@ -41,8 +41,8 @@ func _on_attack_timer_timeout():
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	#if not is_on_floor():
-		#velocity += get_gravity() * delta
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 
 	# Handle jump.
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -63,5 +63,7 @@ func receive_hit(message) -> void:
 	if message == "freeze":
 		print('frozen')
 		state_machine.transition_to("Freeze")
+	elif message == "holy_sword":
+		state_machine.transition_to("Death")
 	else:
 		state_machine.transition_to("Hurt")

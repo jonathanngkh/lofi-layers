@@ -14,4 +14,4 @@ func _process(_delta: float) -> void:
 	#if $EleanoreCharacterBody2D.position.x - $GroundStaticBody2D.position.x > screen_size.x * 1.1:
 		#$GroundStaticBody2D.position.x += screen_size.x
 	#if $EleanoreCharacterBody2D.position.x - $G roundStaticBody2D.position.x < screen_size.x:
-		#$GroundStaticBody2D.position.x -= screen_size.xecc
+		#$GroundStaticBody2D.position.x -= screen_size.x

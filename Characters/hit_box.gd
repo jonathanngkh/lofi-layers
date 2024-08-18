@@ -9,6 +9,8 @@ var damage = 0
 var tone := ""
 var launch := false
 var freeze := false
+var holy_sword := false
+
 var solfege_note_name_dict := {
 	"Do": ["C", 4],
 	"Re": ["D", 4],
@@ -44,6 +46,8 @@ func _process(_delta: float) -> void:
 							owner.get_node("SamplerInstrument").play_note(solfege_note_name_dict[victim_note][0], solfege_note_name_dict[victim_note][1])
 						if freeze:
 							hit_signal.emit("freeze")
+						elif holy_sword:
+							hit_signal.emit("holy_sword")
 						else:
 							hit_signal.emit("")
 					hit_signal.disconnect(area.owner.receive_hit)

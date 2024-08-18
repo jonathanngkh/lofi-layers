@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://nyoassqddeo1"]
+[gd_scene load_steps=80 format=3 uid="uid://nyoassqddeo1"]
 
 [ext_resource type="Script" path="res://Characters/rogue_goblin/rogue_goblin_character_body.gd" id="1_fqv6n"]
 [ext_resource type="Texture2D" uid="uid://dysgk2xodvr0m" path="res://Characters/rogue_goblin/RogueGoblin-Sheet#1.png" id="2_n5hok"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://Characters/rogue_goblin/hurt.gd" id="18_pgu14"]
 [ext_resource type="Script" path="res://Characters/rogue_goblin/freeze.gd" id="19_1id8c"]
 [ext_resource type="Script" path="res://utility/hurt_box.gd" id="19_5dd0n"]
+[ext_resource type="Script" path="res://Characters/rogue_goblin/death.gd" id="20_gsh4w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmg12"]
 atlas = ExtResource("2_n5hok")
@@ -447,10 +448,10 @@ animations = [{
 size = Vector2(34, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbw8k"]
-size = Vector2(486, 75)
+size = Vector2(786, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v0j1"]
-size = Vector2(57.5, 51)
+size = Vector2(39.5, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ty7w"]
 size = Vector2(27, 35)
@@ -466,7 +467,9 @@ script = ExtResource("1_fqv6n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_k74mf")
-animation = &"idle"
+animation = &"death"
+frame = 18
+frame_progress = 1.0
 offset = Vector2(30, 0)
 
 [node name="HitBox" parent="AnimatedSprite2D" groups=["enemy"] instance=ExtResource("17_vadwp")]
@@ -482,7 +485,8 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MoveRange"]
-position = Vector2(-1, -14.5)
+visible = false
+position = Vector2(-1, -33)
 shape = SubResource("RectangleShape2D_nbw8k")
 
 [node name="AttackRange" type="Area2D" parent="AnimatedSprite2D"]
@@ -490,7 +494,8 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/AttackRange"]
-position = Vector2(23.25, -2.5)
+visible = false
+position = Vector2(14.25, -0.5)
 shape = SubResource("RectangleShape2D_1v0j1")
 debug_color = Color(0.691044, 0.497214, 0.0236368, 0.42)
 
@@ -512,6 +517,9 @@ script = ExtResource("18_pgu14")
 
 [node name="Freeze" type="Node2D" parent="StateMachine" groups=["enemy"]]
 script = ExtResource("19_1id8c")
+
+[node name="Death" type="Node2D" parent="StateMachine"]
+script = ExtResource("20_gsh4w")
 
 [node name="HurtBox" type="Area2D" parent="."]
 visible = false

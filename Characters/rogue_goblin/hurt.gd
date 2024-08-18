@@ -19,6 +19,14 @@ func _on_animation_finished() -> void:
 		rogue_goblin.can_attack = false
 		rogue_goblin.attack_timer.start(1.0)
 		state_machine.transition_to("Idle")
+#
+	#if rogue_goblin.sprite.animation == "hurt":
+		#if rogue_goblin.hp <= 0:
+			#state_machine.transition_to("Death")
+	#else:
+		#rogue_goblin.can_attack = false
+		#rogue_goblin.attack_timer.start(1.0)
+		#state_machine.transition_to("Idle")
 
 
 ## Corresponds to the `_process()` callback.

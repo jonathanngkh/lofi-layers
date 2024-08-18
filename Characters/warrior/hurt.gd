@@ -5,6 +5,7 @@ extends WarriorState
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	warrior.sprite.play("hurt")
+	warrior.velocity.x = 0
 	warrior.sprite.offset = Vector2(7, -25)
 	sprite_flash()
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
