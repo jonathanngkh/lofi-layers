@@ -598,6 +598,10 @@ scale = Vector2(0.05, 0.05)
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.4
+drag_right_margin = 0.4
 script = ExtResource("6_3c176")
 
 [node name="Staff" parent="." instance=ExtResource("8_xi7wq")]

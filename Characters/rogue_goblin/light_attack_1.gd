@@ -3,6 +3,7 @@ extends RogueGoblinState
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
+	rogue_goblin.hit_box.damage = rogue_goblin.damage
 	rogue_goblin.sprite.animation_finished.connect(_on_animation_finished)
 	rogue_goblin.sprite.frame_changed.connect(_on_frame_changed)
 	rogue_goblin.sprite.offset = Vector2(30, 0)
@@ -51,6 +52,7 @@ func exit() -> void:
 	rogue_goblin.sprite.frame_changed.disconnect(_on_frame_changed)
 	rogue_goblin.sprite.offset = Vector2.ZERO
 	rogue_goblin.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
+	rogue_goblin.hit_box.damage = 0
 
 
 func _on_frame_changed() -> void:

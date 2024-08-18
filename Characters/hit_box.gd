@@ -48,6 +48,8 @@ func _process(_delta: float) -> void:
 							hit_signal.emit("freeze")
 						elif holy_sword:
 							hit_signal.emit("holy_sword")
+						elif not damage == 0:
+							hit_signal.emit(damage)
 						else:
 							hit_signal.emit("")
 					hit_signal.disconnect(area.owner.receive_hit)

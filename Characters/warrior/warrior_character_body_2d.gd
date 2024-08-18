@@ -2,7 +2,7 @@ class_name Warrior
 extends CharacterBody2D
 
 var can_holy_sword = false
-
+@export var hp := 20
 var saved_notes := []
 #@onready var solfege_notes := ["Do", "Re", "Mi", "Fa", "So", "La", "Ti"]
 #@onready var solfege_notes_index := 0
@@ -129,7 +129,11 @@ func _physics_process(delta: float) -> void:
 
 
 func receive_hit(message) -> void:
-	if state_machine.state == $StateMachine/Block:
+	hp -= message
+	$CanvasLayer/HealthBarControl.damage(message)
+	if hp <= 0:
+		state_machine.transition_to("Death")
+	elif state_machine.state == $StateMachine/Block:
 		$StateMachine/Block.block_hit()
 	else:
 		state_machine.transition_to("Hurt")

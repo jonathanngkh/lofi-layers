@@ -1,6 +1,8 @@
 class_name RogueGoblin
 extends CharacterBody2D
 
+@export var damage := 2
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: Area2D = $AnimatedSprite2D/HitBox
 @onready var hurt_box: Area2D = $HurtBox

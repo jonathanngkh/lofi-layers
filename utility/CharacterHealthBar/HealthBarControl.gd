@@ -131,10 +131,11 @@ func _on_Timer_timeout():
 
 	
 func _input(event:InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		damage(1)
-	if event.is_action_pressed("ui_down"):
-		heal(3)
+	pass
+	#if event.is_action_pressed("ui_accept"):
+		#damage(1)
+	#if event.is_action_pressed("ui_down"):
+		#heal(3)
 		
 func damage(damAmt):
 	isHealing = false
