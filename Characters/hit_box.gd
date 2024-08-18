@@ -8,6 +8,7 @@ var previously_hit_hurtboxes := []
 var damage = 0
 var tone := ""
 var launch := false
+var freeze := false
 var solfege_note_name_dict := {
 	"Do": ["C", 4],
 	"Re": ["D", 4],
@@ -20,7 +21,10 @@ var solfege_note_name_dict := {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	collision_mask = 2
+	if owner.is_in_group("player"):
+		collision_mask = 2
+	elif owner.is_in_group("enemy"):
+		collision_mask = 3
 	area_exited.connect(_area_exited)
 
 
@@ -37,21 +41,12 @@ func _process(_delta: float) -> void:
 							var victim_note = area.owner.note_health[-1]
 							owner.saved_notes.append(victim_note)
 							owner.get_node("SamplerInstrument").play_note(solfege_note_name_dict[victim_note][0], solfege_note_name_dict[victim_note][1])
-						hit_signal.emit()
+						if freeze:
+							hit_signal.emit("freeze")
+						else:
+							hit_signal.emit("")
 					hit_signal.disconnect(area.owner.receive_hit)
 					print(owner.name + ' hit ' + area.owner.name)
-					## could affect rhythms:
-					#var tween = create_tween()
-					#tween.tween_property(Engine, "time_scale",  1.0, 0.2).from(0.5)
-				#elif area.get_parent().has_method("receive_hit"):
-					#if not hit_signal.is_connected(area.get_parent().receive_hit):
-						#hit_signal.connect(area.get_parent().receive_hit)
-					#hit_signal.emit()
-					#hit_signal.disconnect(area.get_parent().receive_hit)
-					#print(owner.name + ' hit ' + area.get_parent().name)
-					## could affect rhythms:
-					#var tween = create_tween()
-					#tween.tween_property(Engine, "time_scale",  1.0, 0.2).from(0.5)
 
 
 func _area_exited(area_that_exited: HurtBox) -> void:

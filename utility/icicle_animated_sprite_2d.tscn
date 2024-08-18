@@ -1,0 +1,128 @@
+[gd_scene load_steps=26 format=3 uid="uid://cxs4uu0iq5537"]
+
+[ext_resource type="Texture2D" uid="uid://wgu6bsoiuqbc" path="res://Characters/warrior/IcePillarCasted.png" id="1_346e1"]
+[ext_resource type="Texture2D" uid="uid://dod44wwoxjb34" path="res://Characters/warrior/ice_break/IcePillarBreak1.png" id="1_vkxys"]
+[ext_resource type="Script" path="res://utility/icicle_animated_sprite_2d.gd" id="2_psv3g"]
+[ext_resource type="Texture2D" uid="uid://bsqdwis6rv2ia" path="res://Characters/warrior/ice_break/IcePillarBreak2.png" id="2_uu1sb"]
+[ext_resource type="Texture2D" uid="uid://bciwr6m3oh1qv" path="res://Characters/warrior/ice_break/IcePillarBreak3.png" id="3_5mujw"]
+[ext_resource type="Texture2D" uid="uid://bh4na22luuw4u" path="res://Characters/warrior/ice_break/IcePillarBreak4.png" id="4_rjqst"]
+[ext_resource type="Texture2D" uid="uid://dy2mwpinw15p2" path="res://Characters/warrior/ice_break/IcePillarBreak5.png" id="5_pyvvt"]
+[ext_resource type="Texture2D" uid="uid://c6211minostlp" path="res://Characters/warrior/ice_break/IcePillarBreak6.png" id="6_buyhk"]
+[ext_resource type="Texture2D" uid="uid://ddhcfryh1n7qi" path="res://Characters/warrior/ice_break/IcePillarBreak7.png" id="7_was42"]
+[ext_resource type="Texture2D" uid="uid://f0rk3guh6vuf" path="res://Characters/warrior/ice_break/IcePillarBreak8.png" id="8_hurbl"]
+[ext_resource type="Texture2D" uid="uid://upuknuma6ct6" path="res://Characters/warrior/ice_break/IcePillarBreak9.png" id="9_iwr3c"]
+[ext_resource type="Texture2D" uid="uid://bvuy5sru8q30f" path="res://Characters/warrior/ice_break/IcePillarBreak10.png" id="10_wrtmx"]
+[ext_resource type="Texture2D" uid="uid://dlfqgf0ky03of" path="res://Characters/warrior/ice_break/IcePillarBreak11.png" id="11_x6to5"]
+[ext_resource type="Texture2D" uid="uid://bh6rxnvrsqd3r" path="res://Characters/warrior/ice_break/IcePillarBreak12.png" id="12_4cn7j"]
+[ext_resource type="Texture2D" uid="uid://dc7kpxtrgowny" path="res://Characters/warrior/ice_break/IcePillarBreak13.png" id="13_w1e22"]
+[ext_resource type="Texture2D" uid="uid://i5ot1w73vh4w" path="res://Characters/warrior/ice_break/IcePillarBreak14.png" id="14_11k5s"]
+[ext_resource type="Texture2D" uid="uid://p53mshdk4gll" path="res://Characters/warrior/ice_break/IcePillarBreak15.png" id="15_8xo3j"]
+[ext_resource type="Texture2D" uid="uid://p1jnooq4rtsg" path="res://Characters/warrior/ice_break/IcePillarBreak16.png" id="16_fkhcq"]
+[ext_resource type="Texture2D" uid="uid://cjot4w0d5h3jo" path="res://Characters/warrior/ice_break/IcePillarBreak17.png" id="17_k7x0h"]
+[ext_resource type="PackedScene" uid="uid://dpkefryb25jky" path="res://hit_box.tscn" id="20_kn57j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kysr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vkxys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uu1sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5mujw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rjqst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pyvvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_buyhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_was42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iwr3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wrtmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x6to5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4cn7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_w1e22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_11k5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8xo3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fkhcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_k7x0h")
+}],
+"loop": false,
+"name": &"break",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_346e1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rnu2"]
+size = Vector2(45, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kujts"]
+size = Vector2(32, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y76f8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj31w"]
+size = Vector2(8.5, 15)
+
+[node name="IcicleAnimatedSprite2D" type="AnimatedSprite2D"]
+self_modulate = Color(1, 1, 1, 0.731)
+z_index = 1
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_kysr1")
+script = ExtResource("2_psv3g")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="HitBox" parent="." instance=ExtResource("20_kn57j")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(4.16667, 36.3333)
+shape = SubResource("RectangleShape2D_5rnu2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(6.66667, 19.3333)
+shape = SubResource("RectangleShape2D_kujts")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(12.6667, 5.33333)
+shape = SubResource("RectangleShape2D_y76f8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(19.9167, -12.1667)
+shape = SubResource("RectangleShape2D_fj31w")

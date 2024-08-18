@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func receive_hit() -> void:
+func receive_hit(message) -> void:
 	#$HBoxContainer.get_children()[note_health_number - 1]
 	#note_health.erase(note_health[-1])
 	#if launch_or_not == "launch":

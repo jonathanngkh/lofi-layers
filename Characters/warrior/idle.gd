@@ -64,6 +64,9 @@ func controls():
 	
 	if Input.is_action_pressed("heavy_attack"):
 		state_machine.transition_to("HeavyAttack")
+	
+	if Input.is_action_just_pressed("freeze"):
+		state_machine.transition_to("CastFreeze")
 
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.

@@ -1,5 +1,7 @@
 extends WarriorState
 
+
+
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	#print("equipped note: " + str(warrior.equipped_note))
@@ -8,12 +10,12 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.play("holy_sword", 1.4)
 	warrior.sprite.offset = Vector2(72, -16)
 	warrior.velocity.x = 0
-	warrior.hit_box.previously_hit_hurtboxes = []
+	warrior.hit_box_2.previously_hit_hurtboxes = []
 	$AudioStreamPlayer.play()
 	warrior.can_holy_sword = false
 	warrior.aura.visible = false
 	warrior.saved_notes = []
-	warrior._on_hit()
+	warrior._on_hit("")
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()
 	#warrior.sampler.play_note(warrior.minor_scale[warrior.minor_scale_index][0], warrior.minor_scale[warrior.minor_scale_index][1])
@@ -39,7 +41,7 @@ func _on_animation_finished() -> void:
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
 	if warrior.sprite.frame >= 16:
-		warrior.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
+		warrior.hit_box_2.process_mode = Node.PROCESS_MODE_INHERIT
 		#warrior.hit_box.tone = "Re"
 		#for area in warrior.hit_box.get_overlapping_areas():
 			#if not overlapping_areas.has(area):
@@ -63,7 +65,8 @@ func exit() -> void:
 	warrior.sprite.animation_finished.disconnect(_on_animation_finished)
 	warrior.sprite.frame_changed.disconnect(_on_frame_changed)
 	warrior.sprite.offset = Vector2.ZERO
-	warrior.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
+	#warrior.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
+	warrior.hit_box_2.process_mode = Node.PROCESS_MODE_DISABLED
 	
 
 
@@ -79,4 +82,8 @@ func _on_frame_changed() -> void:
 	if warrior.sprite.frame == 4:
 		pass
 	if warrior.sprite.frame == 5:
+		pass
+	if warrior.sprite.frame == 6:
+		pass
+	if warrior.sprite.frame == 7:
 		pass

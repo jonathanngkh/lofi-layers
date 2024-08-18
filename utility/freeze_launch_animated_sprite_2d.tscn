@@ -1,0 +1,58 @@
+[gd_scene load_steps=13 format=3 uid="uid://be43csi3ubogo"]
+
+[ext_resource type="Texture2D" uid="uid://ck4gulgjgg7qa" path="res://Characters/warrior/icelaunch1.png" id="1_gx70y"]
+[ext_resource type="Texture2D" uid="uid://baessdhi8hqn1" path="res://Characters/warrior/icelaunch2.png" id="2_0fqn8"]
+[ext_resource type="Texture2D" uid="uid://12e67mhp2tik" path="res://Characters/warrior/icelaunch3.png" id="3_18806"]
+[ext_resource type="Texture2D" uid="uid://bfgw23iifdcw8" path="res://Characters/warrior/icelaunch4.png" id="4_kio1x"]
+[ext_resource type="Texture2D" uid="uid://4tkm6jbvi7tl" path="res://Characters/warrior/icelaunch5.png" id="5_faymh"]
+[ext_resource type="Texture2D" uid="uid://cdxiuyw63xvwv" path="res://Characters/warrior/icelaunch6.png" id="6_irdxy"]
+[ext_resource type="Texture2D" uid="uid://cssvu4oqaehxt" path="res://Characters/warrior/icelaunch7.png" id="7_evexi"]
+[ext_resource type="Texture2D" uid="uid://c8wtrq7b07gu5" path="res://Characters/warrior/icelaunch8.png" id="8_wpl00"]
+[ext_resource type="Texture2D" uid="uid://d3qr2h8h0qrry" path="res://Characters/warrior/icelaunch9.png" id="9_bvnsl"]
+[ext_resource type="Texture2D" uid="uid://dcp2kak6hs2qm" path="res://Characters/warrior/icelaunch10.png" id="10_bo4oc"]
+[ext_resource type="Script" path="res://utility/freeze_launch_animated_sprite_2d.gd" id="11_5wehe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0nr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gx70y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0fqn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_18806")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kio1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_faymh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_irdxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_evexi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wpl00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bvnsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bo4oc")
+}],
+"loop": false,
+"name": &"launch",
+"speed": 10.0
+}]
+
+[node name="FreezeLaunchAnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_y0nr4")
+animation = &"launch"
+frame = 9
+frame_progress = 1.0
+script = ExtResource("11_5wehe")

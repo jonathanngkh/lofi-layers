@@ -16,6 +16,8 @@ var saved_notes := []
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box: Area2D = $HurtBox
 @onready var hit_box: Area2D = $AnimatedSprite2D/HitBox
+@onready var hit_box_2: HitBox = $AnimatedSprite2D/HitBox2
+
 @onready var state_machine: StateMachine = $StateMachine
 @onready var sampler: SamplerInstrument = $SamplerInstrument
 @onready var aura: AnimatedSprite2D = $AnimatedSprite2D/AuraAnimatedSprite2D
@@ -61,9 +63,10 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("special_attack"):
-		state_machine.transition_to("HolySword")
+		if can_holy_sword:
+			state_machine.transition_to("HolySword")
 
-func _on_hit() -> void:
+func _on_hit(message) -> void:
 	print("saved notes: " + str(saved_notes))
 	for container in saved_notes_hbox.get_children():
 		for note_ui in container.get_children():
@@ -125,7 +128,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func receive_hit() -> void:
+func receive_hit(message) -> void:
 	if state_machine.state == $StateMachine/Block:
 		$StateMachine/Block.block_hit()
 	else:
