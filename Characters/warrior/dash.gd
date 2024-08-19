@@ -70,7 +70,7 @@ func exit() -> void:
 	warrior.velocity.y = 0
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_INHERIT
 	warrior.can_dash = false
-	warrior.dash_cooldown_timer.start(0.5)
+	warrior.dash_cooldown_timer.start(0.8)
 
 
 func _on_frame_changed() -> void:

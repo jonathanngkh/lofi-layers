@@ -2502,7 +2502,7 @@ script = ExtResource("7_r6vl6")
 [node name="DashDurationTimer" type="Timer" parent="StateMachine/Dash"]
 
 [node name="DashCooldownTimer" type="Timer" parent="StateMachine/Dash"]
-wait_time = 0.5
+wait_time = 0.8
 one_shot = true
 
 [node name="Block" type="Node2D" parent="StateMachine"]

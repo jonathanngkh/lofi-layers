@@ -25,7 +25,7 @@ func handle_input(_event: InputEvent) -> void:
 		if Input.is_action_pressed("jump"):
 			state_machine.transition_to("Jump")
 	# dash
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and warrior.can_dash:
 		state_machine.transition_to("Dash")
 	if Input.is_action_pressed("light_attack"):
 		state_machine.transition_to("AirHeavyAttack")
