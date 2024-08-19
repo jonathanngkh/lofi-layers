@@ -1,54 +1,55 @@
 extends WarriorState
 
-var dash_speed = 1400
+@export var dash_speed = 1800
 var starting_direction
 var starting_height
-var dash_cancelled := true
-var can_end_dash := false
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
+	dash_speed = 1800
 	starting_direction = warrior.sprite.scale.x
 	starting_height = warrior.position.y
 	warrior.sprite.play("dash_start", 2.5)
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
+	warrior.sprite.frame_changed.connect(_on_frame_changed)
+	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
 
 
 # Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
-	if _event.is_action_released("dash"):
-		dash_cancelled = true
-
+	if Input.is_action_just_pressed("block"):
+		state_machine.transition_to("ShieldHeavyAttack")
+	if Input.is_action_just_pressed("light_attack"):
+		state_machine.transition_to("HeavyAttack")
+	if Input.is_action_just_pressed("jump"):
+		state_machine.transition_to("Jump")
 
 # Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:
 	pass
-	#if Input.is_action_pressed("jump"):
-		#starting_height -= 10
 
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
 	warrior.velocity.x = starting_direction * dash_speed
 	warrior.position.y = starting_height
-	if dash_cancelled and can_end_dash:
-		end_dash()
 
 
 func end_dash() -> void:
 	if not warrior.sprite.animation == "dash_break":
-		if warrior.is_on_floor():
-			warrior.sprite.play("dash_break", 1.3)
-			var tween = create_tween()
-			tween.tween_property(self, "dash_speed", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
-		else:
-			state_machine.transition_to("Jump", {"stage": "apex"}) # double jump can be used repeatedly for infinite height
+		#if warrior.is_on_floor():
+		warrior.sprite.play("dash_break", 2.0)
+		var tween = create_tween()
+		tween.tween_property(self, "dash_speed", 0, 0.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		#else:
+			#state_machine.transition_to("Jump", {"stage": "apex"}) # double jump can be used repeatedly for infinite height
 
 
 func _on_animation_finished() -> void:
 	if warrior.sprite.animation == "dash_start":
-		can_end_dash = true
-		warrior.sprite.play("dash")
+		warrior.sprite.play("dash", 3.5)
+	elif warrior.sprite.animation == "dash":
+		end_dash()
 	elif warrior.sprite.animation == "dash_break":
 		state_machine.transition_to("Idle")
 
@@ -61,8 +62,18 @@ func _on_timeout() -> void:
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
 func exit() -> void:
-	warrior.sprite.animation_finished.disconnect(_on_animation_finished)
-	dash_speed = 1400
+	if warrior.sprite.animation_finished.is_connected(_on_animation_finished):
+		warrior.sprite.animation_finished.disconnect(_on_animation_finished)
+	if warrior.sprite.frame_changed.is_connected(_on_frame_changed):
+		warrior.sprite.frame_changed.disconnect(_on_frame_changed)
+	dash_speed = 1800
 	warrior.velocity.y = 0
-	dash_cancelled = true
-	can_end_dash = false
+	warrior.hurt_box.process_mode = Node.PROCESS_MODE_INHERIT
+	warrior.can_dash = false
+	warrior.dash_cooldown_timer.start(0.5)
+
+
+func _on_frame_changed() -> void:
+	pass
+	#if warrior.sprite.frame == 3:
+		#warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED

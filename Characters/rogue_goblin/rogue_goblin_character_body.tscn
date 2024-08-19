@@ -402,7 +402,7 @@ size = Vector2(34, 36)
 size = Vector2(786, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v0j1"]
-size = Vector2(39.5, 47)
+size = Vector2(78.5, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ty7w"]
 size = Vector2(27, 35)
@@ -414,7 +414,7 @@ size = Vector2(11, 28)
 collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_fqv6n")
-damage = 5
+damage = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -444,8 +444,7 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/AttackRange"]
-visible = false
-position = Vector2(14.25, -0.5)
+position = Vector2(33.75, -0.5)
 shape = SubResource("RectangleShape2D_1v0j1")
 debug_color = Color(0.691044, 0.497214, 0.0236368, 0.42)
 

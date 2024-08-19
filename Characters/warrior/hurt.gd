@@ -9,6 +9,7 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.offset = Vector2(7, -25)
 	sprite_flash()
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
+	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
 	
 func sprite_flash() -> void:
 	var tween: Tween = create_tween()
@@ -35,7 +36,8 @@ func physics_update(_delta: float) -> void:
 
 
 # Receives events from the `_unhandled_input()` callback.
-#func handle_input(_event: InputEvent) -> void:
+func handle_input(_event: InputEvent) -> void:
+	pass
 	#controls()
 
 
@@ -65,3 +67,4 @@ func controls():
 func exit() -> void:
 	warrior.sprite.offset = Vector2.ZERO
 	warrior.sprite.animation_finished.disconnect(_on_animation_finished)
+	warrior.hurt_box.process_mode = Node.PROCESS_MODE_INHERIT

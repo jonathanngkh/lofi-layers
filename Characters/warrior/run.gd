@@ -66,7 +66,7 @@ func handle_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("jump") and warrior.is_on_floor():
 		state_machine.transition_to("Jump")
 	# dash
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and warrior.can_dash:
 		state_machine.transition_to("Dash")
 	# block
 	if Input.is_action_pressed("block"):
@@ -74,8 +74,17 @@ func handle_input(_event: InputEvent) -> void:
 	# attack
 	if Input.is_action_just_pressed("light_attack"):
 		state_machine.transition_to("LightAttack1")
-	if Input.is_action_pressed("heavy_attack"):
-		state_machine.transition_to("HeavyAttack")
+	#if Input.is_action_pressed("heavy_attack"):
+		#state_machine.transition_to("HeavyAttack")
+	#if Input.is_action_just_pressed("shield_attack"):
+		#state_machine.transition_to("ShieldHeavyAttack")
+		
+	#if Input.is_action_just_pressed("freeze"):
+		#state_machine.transition_to("CastFreeze")
+	#if Input.is_action_just_pressed("holy_wave"):
+		#state_machine.transition_to("HolyWave")
+	#if Input.is_action_just_pressed("heal"):
+		#state_machine.transition_to("Heal")
 
 func _on_frame_changed() -> void:
 	if warrior.sprite.frame == 2:

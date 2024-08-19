@@ -2,7 +2,7 @@ class_name FemaleGoblin
 extends CharacterBody2D
 
 @export var damage := 2
-@export var max_fireball_count := 5
+@export var max_fireball_count := 3
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: Area2D = $AnimatedSprite2D/HitBox

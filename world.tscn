@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=4 uid="uid://bd7e5wvydw0pg"]
+[gd_scene load_steps=14 format=4 uid="uid://bd7e5wvydw0pg"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_bx3ql"]
 [ext_resource type="PackedScene" uid="uid://c475exd8klytk" path="res://parallax_background.tscn" id="1_d7jge"]
 [ext_resource type="PackedScene" uid="uid://deo3afb16s5gi" path="res://ground_static_body_2d.tscn" id="2_3un34"]
 [ext_resource type="PackedScene" uid="uid://brg22imany6tq" path="res://Characters/warrior/warrior_character_body_2d.tscn" id="5_1upx7"]
-[ext_resource type="Script" path="res://camera_2d.gd" id="6_3c176"]
+[ext_resource type="Script" path="res://utility/camera_2d.gd" id="6_joinc"]
 [ext_resource type="Texture2D" uid="uid://cfs2sxu8xq8y2" path="res://assets/tilesets/jungle tileset.png" id="7_mk5la"]
 [ext_resource type="PackedScene" uid="uid://cm0vop1dti24t" path="res://utility/staff.tscn" id="8_xi7wq"]
+[ext_resource type="PackedScene" uid="uid://dtq6odoaxknll" path="res://Characters/tank_goblin/tank_goblin_character_body.tscn" id="9_4pt1f"]
 [ext_resource type="PackedScene" uid="uid://c7i3mpluva58" path="res://Characters/female_goblin/female_goblin_character_body.tscn" id="9_edalk"]
 [ext_resource type="PackedScene" uid="uid://nyoassqddeo1" path="res://Characters/rogue_goblin/rogue_goblin_character_body.tscn" id="9_r8jc3"]
 
@@ -582,13 +583,6 @@ modulate = Color(0.298844, 0.798139, 0.821057, 1)
 position = Vector2(2560, 1289)
 scale = Vector2(2.5, 2.5)
 
-[node name="GroundStaticBody2D4" parent="." instance=ExtResource("2_3un34")]
-process_mode = 4
-visible = false
-modulate = Color(0.298844, 0.798139, 0.821057, 1)
-position = Vector2(2560, 1051)
-scale = Vector2(2.5, 2.5)
-
 [node name="GroundStaticBody2D3" parent="." instance=ExtResource("2_3un34")]
 visible = false
 modulate = Color(0.298844, 0.798139, 0.821057, 1)
@@ -596,7 +590,7 @@ position = Vector2(-2560, 1289)
 scale = Vector2(2.5, 2.5)
 
 [node name="WarriorCharacterBody2D" parent="." instance=ExtResource("5_1upx7")]
-position = Vector2(401, 1198)
+position = Vector2(1280, 1198)
 
 [node name="Camera2D" type="Camera2D" parent="WarriorCharacterBody2D"]
 position = Vector2(2.08165e-12, -119.5)
@@ -608,7 +602,7 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.1
 drag_right_margin = 0.1
-script = ExtResource("6_3c176")
+script = ExtResource("6_joinc")
 
 [node name="Staff" parent="." instance=ExtResource("8_xi7wq")]
 process_mode = 4
@@ -619,26 +613,14 @@ offset_bottom = 1503.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iwex5")
 
-[node name="RogueGoblinCharacterBody" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(1651, 1001)
-scale = Vector2(4, 4)
-
-[node name="RogueGoblinCharacterBody3" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(1315, 881)
-scale = Vector2(4, 4)
-note_health = ["Mi"]
-
 [node name="RogueGoblinCharacterBody4" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(1833, 773)
+position = Vector2(1762, 773)
 scale = Vector2(4, 4)
-note_health = ["So"]
+
+[node name="TankGoblinCharacterBody" parent="." instance=ExtResource("9_4pt1f")]
+position = Vector2(2109, 1038)
+scale = Vector2(4, 4)
 
 [node name="FemaleGoblinCharacterBody" parent="." instance=ExtResource("9_edalk")]
-position = Vector2(887, 912)
+position = Vector2(423, 853)
 scale = Vector2(4, 4)
-note_health = ["Mi"]
-
-[node name="FemaleGoblinCharacterBody2" parent="." instance=ExtResource("9_edalk")]
-position = Vector2(2079, 858)
-scale = Vector2(4, 4)
-note_health = ["Mi"]

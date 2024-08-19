@@ -21,11 +21,12 @@ extends WarriorState
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	warrior.velocity.y += warrior.JUMP_VELOCITY * 0.7
+	warrior.velocity.y = 0
+	warrior.velocity.y += warrior.JUMP_VELOCITY * 0.5
 	#print("equipped note: " + str(warrior.equipped_note))
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
-	warrior.sprite.play("air_heavy_attack", 1.8)
+	warrior.sprite.play("air_heavy_attack", 2.0)
 	warrior.sprite.offset = Vector2(24, -8)
 	warrior.hit_box.previously_hit_hurtboxes = []
 
@@ -41,8 +42,10 @@ func _on_animation_finished() -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	if warrior.sprite.frame >= 4:
+	if warrior.sprite.frame >= 3:
 		warrior.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
+	if warrior.is_on_floor():
+		warrior.velocity.x = 0
 
 
 ## Receives events from the `_unhandled_input()` callback.

@@ -1,6 +1,6 @@
 extends WarriorState
 
-
+#var wave_preload := preload("")
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
@@ -10,13 +10,13 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.play("holy_wave", 1.3)
 	warrior.sprite.offset = Vector2(72, -16)
 	warrior.velocity.x = 0
-	warrior.hit_box_2.previously_hit_hurtboxes = []
-	warrior.hit_box_2.holy_sword = true
-	$AudioStreamPlayer.play()
+	warrior.hit_box_3.previously_hit_hurtboxes = []
+	warrior.hit_box_3.holy_sword = true
+	#$AudioStreamPlayer.play()
 	warrior.can_holy_sword = false
 	warrior.aura.visible = false
 	warrior.saved_notes = []
-	warrior._on_hit("")
+	warrior.update_saved_notes()
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()
@@ -43,7 +43,7 @@ func _on_animation_finished() -> void:
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
 	if warrior.sprite.frame >= 20:
-		warrior.hit_box_2.process_mode = Node.PROCESS_MODE_INHERIT
+		warrior.hit_box_3.process_mode = Node.PROCESS_MODE_INHERIT
 		#warrior.hit_box.tone = "Re"
 		#for area in warrior.hit_box.get_overlapping_areas():
 			#if not overlapping_areas.has(area):
@@ -67,10 +67,10 @@ func exit() -> void:
 	warrior.sprite.animation_finished.disconnect(_on_animation_finished)
 	warrior.sprite.frame_changed.disconnect(_on_frame_changed)
 	warrior.sprite.offset = Vector2.ZERO
-	#warrior.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
-	warrior.hit_box_2.process_mode = Node.PROCESS_MODE_DISABLED
+	#warrior.hit_boxprocess_mode = Node.PROCESS_MODE_DISABLED
+	warrior.hit_box_3.process_mode = Node.PROCESS_MODE_DISABLED
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_INHERIT
-	warrior.hit_box_2.holy_sword = true
+	warrior.hit_box_3.holy_sword = true
 
 func _on_frame_changed() -> void:
 	if warrior.sprite.frame == 0:

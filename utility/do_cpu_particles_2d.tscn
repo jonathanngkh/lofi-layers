@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://hyck3t50l8sm"]
+
+[ext_resource type="Texture2D" uid="uid://chs8ibt06rinv" path="res://assets/characters/do.png" id="1_15rrn"]
+
+[sub_resource type="Gradient" id="Gradient_fefpf"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.437984, 1)
+colors = PackedColorArray(0.970309, 0.00784371, 0.417949, 1, 1, 1, 1, 0)
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+texture_filter = 1
+amount = 1
+speed_scale = 1.36
+explosiveness = 0.87
+randomness = 0.2
+texture = ExtResource("1_15rrn")
+gravity = Vector2(2.08165e-12, 120)
+initial_velocity_min = 430.08
+initial_velocity_max = 543.08
+color_ramp = SubResource("Gradient_fefpf")

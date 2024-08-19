@@ -70,10 +70,10 @@ script = ExtResource("1_wiv0n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(7.62939e-06, -0.999992)
-scale = Vector2(8, 8)
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_xuqyi")
 animation = &"loop"
-frame_progress = 0.265298
+frame_progress = 0.0569739
 
 [node name="HitBox" parent="." instance=ExtResource("2_ig03d")]
 visible = false

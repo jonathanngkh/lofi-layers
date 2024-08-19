@@ -4,7 +4,9 @@ var fireball_packed_scene = preload("res://Characters/female_goblin/fireball.tsc
 var hero_global_position := Vector2.ZERO
 var fireball_count := 1
 var rng = RandomNumberGenerator.new()
-
+@onready var cast_sounds = [
+	preload("res://Characters/female_goblin/fireball/sfx/sfx_enemy_magegoblin_fireballthrow.wav")
+]
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	female_goblin.sprite.animation_finished.connect(_on_animation_finished)
@@ -14,6 +16,8 @@ func enter(_msg := {}) -> void:
 	female_goblin.hit_box.previously_hit_hurtboxes = []
 	female_goblin.hit_box.damage = female_goblin.damage
 	female_goblin.sprite.play("cast_fireball")
+	$AudioStreamPlayer2D.stream = cast_sounds[0]
+	$AudioStreamPlayer2D.play()
 	fireball_count = rng.randf_range(1, female_goblin.max_fireball_count)
 
 

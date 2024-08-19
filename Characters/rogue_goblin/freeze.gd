@@ -4,7 +4,7 @@ extends RogueGoblinState
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	rogue_goblin.sprite.play("hurt", 0.35)
+	rogue_goblin.sprite.play("hurt", 0.2)
 	rogue_goblin.sprite.offset = Vector2(30, 0)
 	rogue_goblin.velocity.x = 0
 	sprite_flash()

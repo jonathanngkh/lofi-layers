@@ -16,7 +16,7 @@ func enter(_msg := {}) -> void:
 	warrior.can_holy_sword = false
 	warrior.aura.visible = false
 	warrior.saved_notes = []
-	warrior._on_hit("")
+	warrior.update_saved_notes()
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()

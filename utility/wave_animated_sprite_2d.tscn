@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://d3stblw6o05uu"]
+
+[ext_resource type="Texture2D" uid="uid://b62gvpp06lxdr" path="res://Characters/warrior/holy_wave1.png" id="1_knyqw"]
+[ext_resource type="Texture2D" uid="uid://7ab1b8b6lrc7" path="res://Characters/warrior/holy_wave2.png" id="2_2xo3f"]
+[ext_resource type="Texture2D" uid="uid://dftydidxt4m16" path="res://Characters/warrior/holy_wave3.png" id="3_b0w0k"]
+[ext_resource type="Texture2D" uid="uid://dkks2sb8jts1y" path="res://Characters/warrior/holy_wave4.png" id="4_kjlbp"]
+[ext_resource type="Texture2D" uid="uid://bk35bk6xs4ljn" path="res://Characters/warrior/holy_wave5.png" id="5_qahg8"]
+[ext_resource type="Texture2D" uid="uid://daon4hf8x4t48" path="res://Characters/warrior/holy_wave6.png" id="6_thyf6"]
+[ext_resource type="Texture2D" uid="uid://dkt24q67l1k20" path="res://Characters/warrior/holy_wave7.png" id="7_c5f6t"]
+[ext_resource type="Script" path="res://utility/wave_animated_sprite_2d.gd" id="8_fdghs"]
+[ext_resource type="PackedScene" uid="uid://dpkefryb25jky" path="res://hit_box.tscn" id="20_sesg2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8i1ir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_knyqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2xo3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b0w0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kjlbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qahg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_thyf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c5f6t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rnu2"]
+size = Vector2(45, 20)
+
+[node name="WaveAnimatedSprite2D" type="AnimatedSprite2D" groups=["player"]]
+self_modulate = Color(1, 1, 1, 0.731)
+z_index = 1
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_8i1ir")
+frame_progress = 0.0758853
+script = ExtResource("8_fdghs")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.5
+
+[node name="HitBox" parent="." groups=["player"] instance=ExtResource("20_sesg2")]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-3.33333, 4.33333)
+shape = SubResource("RectangleShape2D_5rnu2")
+debug_color = Color(0.85699, 0.316908, 0.479056, 0.42)

@@ -1,6 +1,8 @@
 # idle state
 extends FemaleGoblinState
-
+@onready var charge_sounds = [
+	preload("res://Characters/female_goblin/fireball/sfx/sfx_enemy_magegoblin_fireballcharge.wav")
+]
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	female_goblin.sprite.offset = Vector2(-15, 0)
@@ -8,6 +10,8 @@ func enter(_msg := {}) -> void:
 	female_goblin.sprite.animation_finished.connect(_on_animation_finished)
 	female_goblin.charge_timer.timeout.connect(_on_timer_timeout)
 	female_goblin.sprite.play("charge")
+	$AudioStreamPlayer2D.stream = charge_sounds[0]
+	$AudioStreamPlayer2D.play()
 	if female_goblin.charge_timer.is_stopped():
 		female_goblin.charge_timer.start(0.8)
 	

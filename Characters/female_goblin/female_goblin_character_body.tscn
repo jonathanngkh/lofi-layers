@@ -544,17 +544,18 @@ size = Vector2(102, 61)
 size = Vector2(32, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yl4c"]
-size = Vector2(15, 42)
+size = Vector2(15, 38)
 
 [node name="FemaleGoblinCharacterBody" type="CharacterBody2D" groups=["enemy"]]
-collision_layer = 0
+collision_layer = 32
+collision_mask = 33
 script = ExtResource("1_uy5cd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_k74mf")
 animation = &"charge"
-frame_progress = 0.534657
+frame_progress = 0.621206
 
 [node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("13_kwp7q")]
 visible = false
@@ -622,8 +623,12 @@ script = ExtResource("9_yn12l")
 wait_time = 3.0
 one_shot = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/Charge"]
+
 [node name="CastFireball" type="Node2D" parent="StateMachine"]
 script = ExtResource("10_kvybe")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/CastFireball"]
 
 [node name="Death" type="Node2D" parent="StateMachine"]
 script = ExtResource("11_bgbwx")
@@ -647,7 +652,7 @@ debug_color = Color(0.117921, 0.647349, 0, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-2.5, 8)
+position = Vector2(-2.5, 9)
 shape = SubResource("RectangleShape2D_5yl4c")
 
 [node name="AttackTimer" type="Timer" parent="."]

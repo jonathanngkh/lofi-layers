@@ -1,32 +1,59 @@
-[gd_scene load_steps=315 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=344 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
+[ext_resource type="PackedScene" uid="uid://7hq8huhncy2o" path="res://utility/do_ui.tscn" id="2_7wi07"]
 [ext_resource type="Texture2D" uid="uid://b6ove03nmd1eb" path="res://assets/characters/shadow/Shadow1.png" id="2_ersos"]
 [ext_resource type="PackedScene" uid="uid://dyru573di1xkl" path="res://utility/CharacterHealthBar/HealthBarControl.tscn" id="2_krcfy"]
 [ext_resource type="Texture2D" uid="uid://c6l5l4xg3whx5" path="res://assets/characters/joanna/JoannaD'ArcIIIAttacks-Sheet.png" id="3_1ongg"]
+[ext_resource type="PackedScene" uid="uid://cf5bw71d6x4vq" path="res://utility/re_ui.tscn" id="3_ens6y"]
 [ext_resource type="Script" path="res://Characters/warrior/idle.gd" id="3_j5bub"]
+[ext_resource type="PackedScene" uid="uid://kjby3ljjqg7h" path="res://utility/mi_ui.tscn" id="4_7dttv"]
 [ext_resource type="Texture2D" uid="uid://bff117spuw3u4" path="res://assets/characters/joanna/JoannaD'ArcIII-Sheet2.png" id="4_75ux4"]
 [ext_resource type="PackedScene" uid="uid://dpkefryb25jky" path="res://hit_box.tscn" id="4_il7ku"]
 [ext_resource type="Texture2D" uid="uid://dt2kajqh4vmti" path="res://assets/characters/joanna/JoannaD'ArcIIICasts-Sheet#5.png" id="4_w4nqn"]
 [ext_resource type="Script" path="res://Characters/warrior/run.gd" id="5_akmfl"]
+[ext_resource type="PackedScene" uid="uid://dewy5iremnvrw" path="res://utility/fa_ui.tscn" id="5_ymi85"]
+[ext_resource type="PackedScene" uid="uid://d4jhyg0n0pwea" path="res://utility/so_ui.tscn" id="6_8hxqt"]
 [ext_resource type="Texture2D" uid="uid://be0ougbggefl0" path="res://assets/characters/joanna/Addon-Sheet.png" id="6_iv7ar"]
 [ext_resource type="Script" path="res://Characters/warrior/jump.gd" id="6_mc74y"]
+[ext_resource type="Texture2D" uid="uid://rbmbb2dvnuen" path="res://Characters/warrior/heal1.png" id="7_b1obp"]
+[ext_resource type="PackedScene" uid="uid://i800u0e1fu3p" path="res://utility/la_ui.tscn" id="7_fmkmx"]
 [ext_resource type="Script" path="res://Characters/warrior/dash.gd" id="7_r6vl6"]
+[ext_resource type="Texture2D" uid="uid://c143jveyd48oh" path="res://Characters/warrior/heal2.png" id="8_fc0qa"]
 [ext_resource type="Script" path="res://Characters/warrior/block.gd" id="8_jpocv"]
+[ext_resource type="PackedScene" uid="uid://dlfjjbmbxujse" path="res://utility/ti_ui.tscn" id="8_klicw"]
 [ext_resource type="Texture2D" uid="uid://b8rqmpxtq6wyi" path="res://Characters/warrior/shieldbuffaura1.png" id="9_7aj01"]
+[ext_resource type="Texture2D" uid="uid://cgrhd6wo7fkrv" path="res://Characters/warrior/heal3.png" id="9_lo03d"]
 [ext_resource type="Script" path="res://Characters/warrior/light_attack_1.gd" id="10_64t0a"]
+[ext_resource type="Texture2D" uid="uid://bmt3v3prrxcfg" path="res://Characters/warrior/heal4.png" id="10_gtm8q"]
+[ext_resource type="FontFile" uid="uid://01rksbs4gol5" path="res://utility/CharacterHealthBar/fonts/ThaleahFat.ttf" id="10_mjt45"]
 [ext_resource type="Texture2D" uid="uid://dkg8lslw40cbh" path="res://Characters/warrior/shieldbuffaura2.png" id="10_n448v"]
+[ext_resource type="Texture2D" uid="uid://biq8v2xjomo2u" path="res://Characters/warrior/heal5.png" id="11_myenr"]
 [ext_resource type="Texture2D" uid="uid://d3bxe8iesw0tt" path="res://Characters/warrior/shieldbuffaura3.png" id="11_r8c5s"]
+[ext_resource type="PackedScene" uid="uid://d2oe85ngciha4" path="res://utility/NoteSlotsControl/note_slots.tscn" id="11_y1bh8"]
+[ext_resource type="Texture2D" uid="uid://bckdqppkw3bkf" path="res://utility/ButtonGuide.png" id="12_b14eq"]
 [ext_resource type="Script" path="res://utility/hurt_box.gd" id="12_bf3at"]
+[ext_resource type="Shader" path="res://utility/teleport.gdshader" id="12_gnvma"]
+[ext_resource type="Texture2D" uid="uid://dbhnq1mclgqfb" path="res://Characters/warrior/heal6.png" id="12_hj06o"]
 [ext_resource type="Script" path="res://Characters/warrior/hurt.gd" id="13_b1ba7"]
+[ext_resource type="Texture2D" uid="uid://dhm17hjqssxyf" path="res://Characters/warrior/heal7.png" id="13_y810e"]
+[ext_resource type="Texture2D" uid="uid://bxdqlyfteq76w" path="res://Characters/warrior/heal8.png" id="14_iauvm"]
 [ext_resource type="Script" path="res://Characters/warrior/light_attack_2.gd" id="15_qoqu0"]
+[ext_resource type="Texture2D" uid="uid://c2lfb0a7byu8v" path="res://Characters/warrior/heal9.png" id="15_y7egn"]
+[ext_resource type="Texture2D" uid="uid://wjiah1ofay8x" path="res://Characters/warrior/heal10.png" id="16_8xdy0"]
 [ext_resource type="Script" path="res://Characters/warrior/holy_sword.gd" id="16_brbk0"]
 [ext_resource type="Script" path="res://addons/SimpleSampler/sampler_instrument.gd" id="16_xo4at"]
+[ext_resource type="Texture2D" uid="uid://kagrl3o6byot" path="res://Characters/warrior/heal11.png" id="17_3bady"]
 [ext_resource type="Script" path="res://addons/SimpleSampler/sample_resource.gd" id="17_q0fva"]
+[ext_resource type="Texture2D" uid="uid://bf5jf5cy1mta0" path="res://Characters/warrior/heal12.png" id="18_patop"]
+[ext_resource type="Texture2D" uid="uid://c738uoswxmjb4" path="res://Characters/warrior/heal13.png" id="19_fjx4g"]
 [ext_resource type="Texture2D" uid="uid://e4s8dxr8xpdo" path="res://assets/UI/White Circle.png" id="20_ep8tn"]
+[ext_resource type="Texture2D" uid="uid://4h76woksxhly" path="res://Characters/warrior/heal14.png" id="20_gbvow"]
 [ext_resource type="Script" path="res://Characters/warrior/shield_heavy_attack.gd" id="20_xjgfq"]
+[ext_resource type="Texture2D" uid="uid://2rii4pw0qq84" path="res://Characters/warrior/heal15.png" id="21_wgdov"]
 [ext_resource type="Script" path="res://Characters/warrior/heavy_attack.gd" id="21_xalye"]
 [ext_resource type="Script" path="res://utility/solfege_ball.gd" id="21_xgyup"]
+[ext_resource type="Texture2D" uid="uid://chbrqqpu84aj4" path="res://Characters/warrior/heal16.png" id="22_5uth7"]
 [ext_resource type="Texture2D" uid="uid://chs8ibt06rinv" path="res://assets/characters/do.png" id="22_pllxg"]
 [ext_resource type="Script" path="res://Characters/warrior/air_attack_1.gd" id="22_uep7s"]
 [ext_resource type="Script" path="res://Characters/warrior/air_attack_2.gd" id="23_j51wb"]
@@ -44,6 +71,14 @@
 [ext_resource type="Script" path="res://Characters/warrior/death.gd" id="30_0mfxg"]
 [ext_resource type="PackedScene" uid="uid://m3ibtx1a6nk4" path="res://utility/state_machine.tscn" id="33_qgulk"]
 [ext_resource type="AudioStream" uid="uid://cp5chf8pctueq" path="res://Characters/warrior/sounds/notes/sfx_musicnotes_C [Draft 3].wav" id="34_4dkm0"]
+[ext_resource type="Script" path="res://Characters/warrior/heal.gd" id="48_vf30k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w6br3"]
+shader = ExtResource("12_gnvma")
+shader_parameter/progress = null
+shader_parameter/noise_desnity = 60.0
+shader_parameter/beam_size = null
+shader_parameter/color = Vector4(0, 1.02, 1.2, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wkfji"]
 atlas = ExtResource("3_1ongg")
@@ -1351,7 +1386,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gqc2l")
 }],
-"loop": true,
+"loop": false,
 "name": &"dash",
 "speed": 10.0
 }, {
@@ -1481,6 +1516,59 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_b1obp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fc0qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lo03d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gtm8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_myenr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hj06o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_y810e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_iauvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_y7egn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8xdy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3bady")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_patop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fjx4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_gbvow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wgdov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5uth7")
+}],
+"loop": false,
+"name": &"heal",
 "speed": 10.0
 }, {
 "frames": [{
@@ -2056,7 +2144,7 @@ size = Vector2(139.333, 22.3333)
 size = Vector2(87, 62.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w71vu"]
-size = Vector2(215.667, 37)
+size = Vector2(264.501, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ek4rg"]
 size = Vector2(20, 43)
@@ -2078,6 +2166,7 @@ texture_filter = 1
 scale = Vector2(3, 3)
 collision_layer = 16
 script = ExtResource("1_jp0s3")
+debug_mode = true
 beat_em_up_mode = false
 metadata/_edit_horizontal_guides_ = [61.0]
 
@@ -2085,9 +2174,9 @@ metadata/_edit_horizontal_guides_ = [61.0]
 
 [node name="SavedNotesHBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 offset_left = 49.0
-offset_top = 46.0
-offset_right = 1073.0
-offset_bottom = 193.0
+offset_top = 176.0
+offset_right = 913.0
+offset_bottom = 277.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -2124,17 +2213,218 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="GuideHBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 1860.0
+offset_top = 18.0
+offset_right = 2555.0
+offset_bottom = 108.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DoUI" parent="CanvasLayer/GuideHBoxContainer/AspectRatioContainer" instance=ExtResource("2_7wi07")]
+layout_mode = 2
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ReUI" parent="CanvasLayer/GuideHBoxContainer/AspectRatioContainer2" instance=ExtResource("3_ens6y")]
+layout_mode = 2
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MiUI" parent="CanvasLayer/GuideHBoxContainer/AspectRatioContainer3" instance=ExtResource("4_7dttv")]
+layout_mode = 2
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FaUI" parent="CanvasLayer/GuideHBoxContainer/AspectRatioContainer4" instance=ExtResource("5_ymi85")]
+layout_mode = 2
+
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SoUI" parent="CanvasLayer/GuideHBoxContainer/AspectRatioContainer5" instance=ExtResource("6_8hxqt")]
+layout_mode = 2
+
+[node name="AspectRatioContainer6" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LaUI" parent="CanvasLayer/GuideHBoxContainer/AspectRatioContainer6" instance=ExtResource("7_fmkmx")]
+layout_mode = 2
+
+[node name="AspectRatioContainer7" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TiUI" parent="CanvasLayer/GuideHBoxContainer/AspectRatioContainer7" instance=ExtResource("8_klicw")]
+layout_mode = 2
+
+[node name="GuideHBoxContainer2" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 1864.0
+offset_top = 227.0
+offset_right = 2155.0
+offset_bottom = 317.0
+
+[node name="AspectRatioContainer7" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TiUI" parent="CanvasLayer/GuideHBoxContainer2/AspectRatioContainer7" instance=ExtResource("8_klicw")]
+layout_mode = 2
+
+[node name="AspectRatioContainer8" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LaUI" parent="CanvasLayer/GuideHBoxContainer2/AspectRatioContainer8" instance=ExtResource("7_fmkmx")]
+layout_mode = 2
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FaUI" parent="CanvasLayer/GuideHBoxContainer2/AspectRatioContainer4" instance=ExtResource("5_ymi85")]
+layout_mode = 2
+
+[node name="GuideHBoxContainer4" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 1864.0
+offset_top = 124.0
+offset_right = 2254.0
+offset_bottom = 214.0
+
+[node name="AspectRatioContainer6" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LaUI" parent="CanvasLayer/GuideHBoxContainer4/AspectRatioContainer6" instance=ExtResource("7_fmkmx")]
+layout_mode = 2
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MiUI" parent="CanvasLayer/GuideHBoxContainer4/AspectRatioContainer3" instance=ExtResource("4_7dttv")]
+layout_mode = 2
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FaUI" parent="CanvasLayer/GuideHBoxContainer4/AspectRatioContainer4" instance=ExtResource("5_ymi85")]
+layout_mode = 2
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ReUI" parent="CanvasLayer/GuideHBoxContainer4/AspectRatioContainer2" instance=ExtResource("3_ens6y")]
+layout_mode = 2
+
+[node name="GuideHBoxContainer3" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 1864.0
+offset_top = 322.0
+offset_right = 2155.0
+offset_bottom = 412.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DoUI" parent="CanvasLayer/GuideHBoxContainer3/AspectRatioContainer" instance=ExtResource("2_7wi07")]
+layout_mode = 2
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FaUI" parent="CanvasLayer/GuideHBoxContainer3/AspectRatioContainer4" instance=ExtResource("5_ymi85")]
+layout_mode = 2
+
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="CanvasLayer/GuideHBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SoUI" parent="CanvasLayer/GuideHBoxContainer3/AspectRatioContainer5" instance=ExtResource("6_8hxqt")]
+layout_mode = 2
+
 [node name="HealthBarControl" parent="CanvasLayer" instance=ExtResource("2_krcfy")]
-offset_left = 79.0
-offset_top = 78.0
-offset_right = -1073.0
-offset_bottom = -570.0
+offset_left = 1.0
+offset_top = -88.0
+offset_right = -1151.0
+offset_bottom = -736.0
+
+[node name="HolySwordLabel" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 1614.0
+offset_top = 43.0
+offset_right = 1869.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Holy Sword: "
+
+[node name="FreezeLabel" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 1697.0
+offset_top = 250.0
+offset_right = 1952.0
+offset_bottom = 294.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Freeze: "
+
+[node name="HolyWaveLabel" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 1636.0
+offset_top = 151.0
+offset_right = 1891.0
+offset_bottom = 195.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Holy wave: "
+
+[node name="HealLabel" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 1743.0
+offset_top = 346.0
+offset_right = 1998.0
+offset_bottom = 390.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Heal: "
+
+[node name="NoteSlots" parent="CanvasLayer" instance=ExtResource("11_y1bh8")]
+offset_left = 76.0
+offset_top = 42.0
+offset_right = 76.0
+offset_bottom = 42.0
+scale = Vector2(1.3, 1.3)
+
+[node name="ButtonGuide" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w6br3")
+offset_left = 113.0
+offset_top = 1243.0
+offset_right = 1460.0
+offset_bottom = 1428.0
+texture = ExtResource("12_b14eq")
+stretch_mode = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.08165e-12, 4.333)
 sprite_frames = SubResource("SpriteFrames_o7tut")
-animation = &"holy_wave"
-frame = 24
+animation = &"dash"
+frame = 2
+frame_progress = 1.0
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 visible = false
@@ -2180,7 +2470,7 @@ debug_color = Color(0.961607, 1.18208e-06, 0.50938, 0.42)
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox3"]
-position = Vector2(102.333, 2.167)
+position = Vector2(126.75, 2.167)
 shape = SubResource("RectangleShape2D_w71vu")
 debug_color = Color(0.893167, 0.000225059, 0.785036, 0.42)
 
@@ -2203,10 +2493,17 @@ script = ExtResource("5_akmfl")
 [node name="Jump" type="Node2D" parent="StateMachine"]
 script = ExtResource("6_mc74y")
 
+[node name="Hurt" type="Node2D" parent="StateMachine"]
+script = ExtResource("13_b1ba7")
+
 [node name="Dash" type="Node2D" parent="StateMachine"]
 script = ExtResource("7_r6vl6")
 
 [node name="DashDurationTimer" type="Timer" parent="StateMachine/Dash"]
+
+[node name="DashCooldownTimer" type="Timer" parent="StateMachine/Dash"]
+wait_time = 0.5
+one_shot = true
 
 [node name="Block" type="Node2D" parent="StateMachine"]
 script = ExtResource("8_jpocv")
@@ -2228,9 +2525,6 @@ script = ExtResource("15_qoqu0")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/LightAttack2"]
 volume_db = -10.0
-
-[node name="Hurt" type="Node2D" parent="StateMachine"]
-script = ExtResource("13_b1ba7")
 
 [node name="HolySword" type="Node2D" parent="StateMachine"]
 script = ExtResource("16_brbk0")
@@ -2271,6 +2565,9 @@ script = ExtResource("28_nlu03")
 
 [node name="Death" type="Node2D" parent="StateMachine"]
 script = ExtResource("30_0mfxg")
+
+[node name="Heal" type="Node2D" parent="StateMachine"]
+script = ExtResource("48_vf30k")
 
 [node name="Label" type="Label" parent="."]
 visible = false

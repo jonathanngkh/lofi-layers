@@ -5,7 +5,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wrvv6"]
 
 [node name="DoUI" type="TextureRect"]
-self_modulate = Color(1, 0.27, 0.27, 1)
+self_modulate = Color(4, 0.15, 0.27, 1)
 texture_filter = 1
 material = SubResource("ShaderMaterial_wrvv6")
 offset_right = 100.0

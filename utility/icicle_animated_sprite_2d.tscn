@@ -107,9 +107,10 @@ sprite_frames = SubResource("SpriteFrames_kysr1")
 script = ExtResource("2_psv3g")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.5
 
 [node name="HitBox" parent="." groups=["player"] instance=ExtResource("20_kn57j")]
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(4.16667, 36.3333)

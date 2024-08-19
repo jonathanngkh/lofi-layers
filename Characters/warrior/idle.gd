@@ -19,13 +19,14 @@ func physics_update(_delta: float) -> void:
 	#if not warrior.velocity.x == 0:
 		#state_machine.transition_to("Run")
 		# down
-	if Input.get_axis("up", "down") > 0:
-		state_machine.transition_to("Run")
-		warrior.position.y -= 1
-	# up
-	elif Input.get_axis("up", "down") < 0:
-		state_machine.transition_to("Run")
-		warrior.position.y += 1
+	if warrior.beat_em_up_mode:
+		if Input.get_axis("up", "down") > 0:
+			state_machine.transition_to("Run")
+			warrior.position.y -= 1
+		# up
+		elif Input.get_axis("up", "down") < 0:
+			state_machine.transition_to("Run")
+			warrior.position.y += 1
 		
 	if not warrior.velocity.y == 0:
 		state_machine.transition_to("Jump", {"stage": "apex"})
@@ -62,12 +63,23 @@ func controls():
 	# attack
 	if Input.is_action_pressed("light_attack"):
 		state_machine.transition_to("LightAttack1")
+		
+	if Input.is_action_just_pressed("dash") and warrior.can_dash:
+		state_machine.transition_to("Dash")
 	
-	if Input.is_action_pressed("heavy_attack"):
-		state_machine.transition_to("HeavyAttack")
+	#if Input.is_action_pressed("heavy_attack"):
+		#state_machine.transition_to("HeavyAttack")
+	#if Input.is_action_just_pressed("shield_attack"):
+		#state_machine.transition_to("ShieldHeavyAttack")
 	
-	if Input.is_action_just_pressed("freeze"):
-		state_machine.transition_to("CastFreeze")
+	# should be invoked only
+	#if Input.is_action_just_pressed("freeze"):
+		#state_machine.transition_to("CastFreeze")
+	#if Input.is_action_just_pressed("holy_wave"):
+		#state_machine.transition_to("HolyWave")
+	#if Input.is_action_just_pressed("heal"):
+		#state_machine.transition_to("Heal")
+
 
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.

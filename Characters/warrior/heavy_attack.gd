@@ -26,10 +26,14 @@ func enter(_msg := {}) -> void:
 	#print("equipped note: " + str(warrior.equipped_note))
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
-	warrior.sprite.play("heavy_attack", 1.8)
+	warrior.sprite.play("heavy_attack", 2.5)
 	warrior.sprite.offset = Vector2(24, -8)
 	warrior.velocity.x = 0
+	var tween = create_tween()
+	var direction = warrior.sprite.scale.x
+	tween.tween_property(warrior, "velocity:x", 0, 0.2).from(direction * warrior.SPEED * 6)
 	warrior.hit_box.previously_hit_hurtboxes = []
+	warrior.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()
 	#warrior.sampler.play_note(warrior.minor_scale[warrior.minor_scale_index][0], warrior.minor_scale[warrior.minor_scale_index][1])
@@ -54,8 +58,9 @@ func _on_animation_finished() -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	if warrior.sprite.frame >= 4:
-		warrior.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
+	pass
+	#if warrior.sprite.frame >= 4:
+		#warrior.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
 		#warrior.hit_box.tone = "Re"
 		#for area in warrior.hit_box.get_overlapping_areas():
 			#if not overlapping_areas.has(area):

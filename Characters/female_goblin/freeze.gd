@@ -8,7 +8,7 @@ func enter(_msg := {}) -> void:
 	female_goblin.sprite.offset = Vector2(-15, 0)
 	
 	female_goblin.sprite.animation_finished.connect(_on_animation_finished)
-	female_goblin.sprite.play("hurt", 0.35)
+	female_goblin.sprite.play("hurt", 0.08)
 	sprite_flash()
 	
 func sprite_flash() -> void:

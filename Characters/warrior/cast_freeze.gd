@@ -14,6 +14,7 @@ func enter(_msg := {}) -> void:
 	warrior.hit_box.previously_hit_hurtboxes = []
 	warrior.aura.visible = false
 	#warrior.saved_notes = []
+	warrior.update_saved_notes()
 	#warrior._on_hit()
 
 func _on_animation_finished() -> void:
