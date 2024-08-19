@@ -463,6 +463,7 @@ script = ExtResource("5_q251a")
 script = ExtResource("16_l42jq")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/LightAttack1"]
+volume_db = 10.0
 
 [node name="Hurt" type="Node2D" parent="StateMachine"]
 script = ExtResource("18_pgu14")
@@ -470,10 +471,15 @@ script = ExtResource("18_pgu14")
 [node name="AudioStreamPlayer2D_Hurt" type="AudioStreamPlayer2D" parent="StateMachine/Hurt"]
 
 [node name="AudioStreamPlayer2D_Impact" type="AudioStreamPlayer2D" parent="StateMachine/Hurt"]
-volume_db = 9.0
+volume_db = 20.0
 
 [node name="Freeze" type="Node2D" parent="StateMachine" groups=["enemy"]]
 script = ExtResource("19_1id8c")
+
+[node name="AudioStreamPlayer2D_Hurt" type="AudioStreamPlayer2D" parent="StateMachine/Freeze"]
+
+[node name="AudioStreamPlayer2D_Impact" type="AudioStreamPlayer2D" parent="StateMachine/Freeze"]
+volume_db = 9.0
 
 [node name="Death" type="Node2D" parent="StateMachine"]
 script = ExtResource("20_gsh4w")

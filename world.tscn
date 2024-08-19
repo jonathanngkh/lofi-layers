@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bd7e5wvydw0pg"]
+[gd_scene load_steps=19 format=4 uid="uid://bd7e5wvydw0pg"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_bx3ql"]
 [ext_resource type="PackedScene" uid="uid://c475exd8klytk" path="res://parallax_background.tscn" id="1_d7jge"]
@@ -13,6 +13,8 @@
 [ext_resource type="FontFile" uid="uid://01rksbs4gol5" path="res://utility/CharacterHealthBar/fonts/ThaleahFat.ttf" id="11_1uocd"]
 [ext_resource type="AudioStream" uid="uid://cjw488ad02nsi" path="res://assets/music/Medieval Vol. 2 6.mp3" id="12_jdrhc"]
 [ext_resource type="AudioStream" uid="uid://yh2tyvv7r5j6" path="res://utility/ambience_forest.wav" id="13_oi33x"]
+[ext_resource type="PackedScene" uid="uid://7hq8huhncy2o" path="res://utility/do_ui.tscn" id="14_1py61"]
+[ext_resource type="PackedScene" uid="uid://bm732gadxy1et" path="res://Characters/dummy/dummy_character_body_2d.tscn" id="14_3lcor"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkfc1"]
 texture = ExtResource("7_mk5la")
@@ -593,7 +595,7 @@ position = Vector2(-2560, 1289)
 scale = Vector2(2.5, 2.5)
 
 [node name="WarriorCharacterBody2D" parent="." instance=ExtResource("5_1upx7")]
-position = Vector2(1280, 1198)
+position = Vector2(547, 1198)
 
 [node name="Camera2D" type="Camera2D" parent="WarriorCharacterBody2D"]
 position = Vector2(2.08165e-12, -119.5)
@@ -617,7 +619,7 @@ offset_bottom = 1503.0
 environment = SubResource("Environment_iwex5")
 
 [node name="RogueGoblinCharacterBody4" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(1762, 773)
+position = Vector2(5679, 830)
 scale = Vector2(4, 4)
 
 [node name="TankGoblinCharacterBody" parent="." instance=ExtResource("9_4pt1f")]
@@ -632,7 +634,16 @@ visible = false
 position = Vector2(423, 853)
 scale = Vector2(4, 4)
 
-[node name="FreezeLabel" type="Label" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_jdrhc")
+volume_db = -11.0
+
+[node name="AmbientNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_oi33x")
+volume_db = 5.0
+autoplay = true
+
+[node name="InstructionLabel1" type="Label" parent="."]
 texture_filter = 1
 offset_left = 608.0
 offset_top = 1447.0
@@ -640,14 +651,48 @@ offset_right = 1274.0
 offset_bottom = 1491.0
 theme_override_fonts/font = ExtResource("11_1uocd")
 theme_override_font_sizes/font_size = 48
+text = "Hit an enemy to store its note"
+
+[node name="DoUI" parent="InstructionLabel1" instance=ExtResource("14_1py61")]
+layout_mode = 0
+offset_left = 630.0
+offset_top = -8.0
+offset_right = 692.0
+offset_bottom = 54.0
+
+[node name="DummyCharacterBody2D" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(962, 1184)
+
+[node name="DummyCharacterBody2D2" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(1232, 1184)
+note_health = ["Re"]
+
+[node name="DummyCharacterBody2D3" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(1509, 1184)
+note_health = ["Mi"]
+
+[node name="DummyCharacterBody2D4" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(1779, 1184)
+note_health = ["Fa"]
+
+[node name="DummyCharacterBody2D5" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(2030, 1184)
+note_health = ["So"]
+
+[node name="DummyCharacterBody2D6" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(2300, 1184)
+note_health = ["La"]
+
+[node name="DummyCharacterBody2D7" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(2577, 1184)
+note_health = ["Ti"]
+
+[node name="InstructionLabel2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2022.0
+offset_top = 1447.0
+offset_right = 2688.0
+offset_bottom = 1491.0
+theme_override_fonts/font = ExtResource("11_1uocd")
+theme_override_font_sizes/font_size = 48
 text = "Hit an enemy to store their note"
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_jdrhc")
-volume_db = -10.0
-autoplay = true
-
-[node name="AmbientNoise" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_oi33x")
-volume_db = -1.0
-autoplay = true

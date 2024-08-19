@@ -1,4 +1,4 @@
-[gd_scene load_steps=351 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=354 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="PackedScene" uid="uid://7hq8huhncy2o" path="res://utility/do_ui.tscn" id="2_7wi07"]
@@ -51,7 +51,6 @@
 [ext_resource type="Script" path="res://addons/SimpleSampler/sample_resource.gd" id="17_q0fva"]
 [ext_resource type="Texture2D" uid="uid://bf5jf5cy1mta0" path="res://Characters/warrior/heal12.png" id="18_patop"]
 [ext_resource type="Texture2D" uid="uid://c738uoswxmjb4" path="res://Characters/warrior/heal13.png" id="19_fjx4g"]
-[ext_resource type="Texture2D" uid="uid://e4s8dxr8xpdo" path="res://assets/UI/White Circle.png" id="20_ep8tn"]
 [ext_resource type="Texture2D" uid="uid://4h76woksxhly" path="res://Characters/warrior/heal14.png" id="20_gbvow"]
 [ext_resource type="Script" path="res://Characters/warrior/shield_heavy_attack.gd" id="20_xjgfq"]
 [ext_resource type="Texture2D" uid="uid://2rii4pw0qq84" path="res://Characters/warrior/heal15.png" id="21_wgdov"]
@@ -76,9 +75,13 @@
 [ext_resource type="PackedScene" uid="uid://m3ibtx1a6nk4" path="res://utility/state_machine.tscn" id="33_qgulk"]
 [ext_resource type="AudioStream" uid="uid://cp5chf8pctueq" path="res://Characters/warrior/sounds/notes/sfx_musicnotes_C [Draft 3].wav" id="34_4dkm0"]
 [ext_resource type="Script" path="res://Characters/warrior/heal.gd" id="48_vf30k"]
+[ext_resource type="AudioStream" uid="uid://b7gjelq5anesj" path="res://Characters/warrior/sfx_player_jump.wav" id="48_yrp76"]
 [ext_resource type="AudioStream" uid="uid://3sdnpp4h3uew" path="res://Characters/warrior/damaged2.wav" id="49_gf4px"]
+[ext_resource type="AudioStream" uid="uid://b3ma3jwt5lvx0" path="res://Characters/warrior/sfx_player_dash.wav" id="51_wlisp"]
 [ext_resource type="AudioStream" uid="uid://bulatcucye2vb" path="res://Characters/warrior/sfx_skill_aircut.wav" id="54_kgyj0"]
 [ext_resource type="AudioStream" uid="uid://c86fw12mboc5i" path="res://Characters/warrior/sfx_skill_freeze.wav" id="59_s5w21"]
+[ext_resource type="AudioStream" uid="uid://c74p3vb3ipmj4" path="res://Characters/warrior/vestal divine grace.wav" id="69_xualk"]
+[ext_resource type="Texture2D" uid="uid://b6x2sa0qrnulc" path="res://utility/NoteSlotsControl/Noteslot.png" id="73_x0wju"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w6br3"]
 shader = ExtResource("12_gnvma")
@@ -2174,50 +2177,42 @@ scale = Vector2(3, 3)
 collision_layer = 16
 script = ExtResource("1_jp0s3")
 is_cheat_mode = true
-debug_mode = true
 beat_em_up_mode = false
 metadata/_edit_horizontal_guides_ = [61.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SavedNotesHBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-offset_left = 49.0
-offset_top = 176.0
-offset_right = 913.0
-offset_bottom = 277.0
+offset_left = 152.0
+offset_top = 128.0
+offset_right = 922.0
+offset_bottom = 216.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AspectRatioContainer3" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AspectRatioContainer4" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AspectRatioContainer5" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AspectRatioContainer6" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AspectRatioContainer7" type="AspectRatioContainer" parent="CanvasLayer/SavedNotesHBoxContainer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -2563,14 +2558,20 @@ script = ExtResource("5_akmfl")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/Run"]
 
 [node name="Jump" type="Node2D" parent="StateMachine"]
+visible = false
 script = ExtResource("6_mc74y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Jump"]
+stream = ExtResource("48_yrp76")
+volume_db = -10.0
+pitch_scale = 1.4
 
 [node name="Hurt" type="Node2D" parent="StateMachine"]
 script = ExtResource("13_b1ba7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Hurt"]
 stream = ExtResource("49_gf4px")
-volume_db = -7.0
+volume_db = -9.0
 
 [node name="Dash" type="Node2D" parent="StateMachine"]
 script = ExtResource("7_r6vl6")
@@ -2580,6 +2581,11 @@ script = ExtResource("7_r6vl6")
 [node name="DashCooldownTimer" type="Timer" parent="StateMachine/Dash"]
 wait_time = 0.8
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Dash"]
+stream = ExtResource("51_wlisp")
+volume_db = -7.0
+pitch_scale = 1.3
 
 [node name="Block" type="Node2D" parent="StateMachine"]
 script = ExtResource("8_jpocv")
@@ -2656,6 +2662,11 @@ script = ExtResource("30_0mfxg")
 
 [node name="Heal" type="Node2D" parent="StateMachine"]
 script = ExtResource("48_vf30k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Heal"]
+stream = ExtResource("69_xualk")
+volume_db = -10.0
+pitch_scale = 2.0
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -2740,6 +2751,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="SolfegeWheel" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = -3.33333
@@ -2747,23 +2759,21 @@ offset_right = 40.0
 offset_bottom = 36.6667
 
 [node name="Outline" type="TextureRect" parent="SolfegeWheel"]
-visible = false
 layout_mode = 0
 offset_left = -14.0
 offset_top = -48.0
 offset_right = 15.0
 offset_bottom = -19.0
-texture = ExtResource("20_ep8tn")
+texture = ExtResource("73_x0wju")
 expand_mode = 1
 
 [node name="SolfegeContainer" type="Control" parent="SolfegeWheel" groups=["player"]]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Do" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(4, 0.27, 0.27, 1)
+self_modulate = Color(4, 0.15, 0.27, 1)
 layout_mode = 0
 offset_left = -11.0
 offset_top = -45.0
@@ -2804,7 +2814,7 @@ theme_override_font_sizes/font_size = 15
 text = "Re"
 
 [node name="Mi" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(1, 0.8, 0, 1)
+self_modulate = Color(4, 0.8, 0, 1)
 layout_mode = 0
 offset_left = 27.0
 offset_right = 50.0
@@ -2824,7 +2834,7 @@ theme_override_font_sizes/font_size = 15
 text = "Mi"
 
 [node name="Fa" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(0.2, 1, 0.25, 1)
+self_modulate = Color(0.2, 3, 0.25, 1)
 layout_mode = 0
 offset_left = 7.0
 offset_top = 24.0
@@ -2845,7 +2855,7 @@ theme_override_font_sizes/font_size = 15
 text = "Fa"
 
 [node name="So" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(0.1, 0.9, 1, 1)
+self_modulate = Color(0.1, 0.9, 4, 1)
 layout_mode = 0
 offset_left = -30.0
 offset_top = 24.0
@@ -2866,7 +2876,7 @@ theme_override_font_sizes/font_size = 15
 text = "So"
 
 [node name="La" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(0.35, 0.5, 1, 1)
+self_modulate = Color(0.35, 0.5, 7, 1)
 layout_mode = 0
 offset_left = -47.0
 offset_right = -24.0
@@ -2886,7 +2896,7 @@ theme_override_font_sizes/font_size = 15
 text = "La"
 
 [node name="Ti" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
-self_modulate = Color(0.7, 0.3, 1, 1)
+self_modulate = Color(0.7, 0.3, 4, 1)
 layout_mode = 0
 offset_left = -42.0
 offset_top = -28.0

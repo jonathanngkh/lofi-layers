@@ -13,7 +13,7 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
 	warrior.sprite.play("run_start", 1.6)
 
-	if Input.get_axis("left", "right") == 0 and Input.get_axis("up", "down") == 0:
+	if Input.get_axis("left", "right") == 0:
 		state_machine.transition_to("Idle")
 
 

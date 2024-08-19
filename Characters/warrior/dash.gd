@@ -13,6 +13,7 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
+	$AudioStreamPlayer.play()
 
 
 # Receives events from the `_unhandled_input()` callback.

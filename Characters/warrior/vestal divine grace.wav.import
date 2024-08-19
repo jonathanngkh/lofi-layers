@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c74p3vb3ipmj4"
+path="res://.godot/imported/vestal divine grace.wav-db7d5ec99f9a6f1c7f1e93aad616ed69.sample"
+
+[deps]
+
+source_file="res://Characters/warrior/vestal divine grace.wav"
+dest_files=["res://.godot/imported/vestal divine grace.wav-db7d5ec99f9a6f1c7f1e93aad616ed69.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

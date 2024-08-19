@@ -1,12 +1,27 @@
 # idle state
 extends RogueGoblinState
 
-
+@onready var enemy_impact_sounds = [
+	preload("res://Characters/sfx/sfx_enemy_impact_01 [Draft 2].wav"),
+	preload("res://Characters/sfx/sfx_enemy_impact_02 [Draft 2].wav"),
+	preload("res://Characters/sfx/sfx_enemy_impact_03 [Draft 2].wav")
+]
+@onready var hurt_sounds = [
+	preload("res://Characters/rogue_goblin/sounds/sfx_enemy_roguegoblin_hurt/sfx_enemy_roguegoblin_hurt_01 [Draft 2].wav"),
+	preload("res://Characters/rogue_goblin/sounds/sfx_enemy_roguegoblin_hurt/sfx_enemy_roguegoblin_hurt_02 [Draft 2].wav"),
+	preload("res://Characters/rogue_goblin/sounds/sfx_enemy_roguegoblin_hurt/sfx_enemy_roguegoblin_hurt_03 [Draft 2].wav"),
+	preload("res://Characters/rogue_goblin/sounds/sfx_enemy_roguegoblin_hurt/sfx_enemy_roguegoblin_hurt_04 [Draft 2].wav"),
+	preload("res://Characters/rogue_goblin/sounds/sfx_enemy_roguegoblin_hurt/sfx_enemy_roguegoblin_hurt_05 [Draft 2].wav")
+]
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	rogue_goblin.sprite.play("hurt", 0.2)
 	rogue_goblin.sprite.offset = Vector2(30, 0)
 	rogue_goblin.velocity.x = 0
+	$AudioStreamPlayer2D_Hurt.stream = hurt_sounds.pick_random()
+	$AudioStreamPlayer2D_Impact.stream = enemy_impact_sounds.pick_random()
+	$AudioStreamPlayer2D_Hurt.play()
+	$AudioStreamPlayer2D_Impact.play()
 	sprite_flash()
 	rogue_goblin.sprite.animation_finished.connect(_on_animation_finished)
 	

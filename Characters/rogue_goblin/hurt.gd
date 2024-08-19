@@ -19,10 +19,10 @@ extends RogueGoblinState
 func enter(_msg := {}) -> void:
 	rogue_goblin.sprite.offset = Vector2(30, 0)
 	rogue_goblin.velocity = Vector2.ZERO
-	$AudioStreamPlayer2D_Hurt.stream = hurt_sounds.pick_random()
-	$AudioStreamPlayer2D_Impact.stream = enemy_impact_sounds.pick_random()
 	rogue_goblin.sprite.animation_finished.connect(_on_animation_finished)
 	rogue_goblin.sprite.play("hurt")
+	$AudioStreamPlayer2D_Hurt.stream = hurt_sounds.pick_random()
+	$AudioStreamPlayer2D_Impact.stream = enemy_impact_sounds.pick_random()
 	$AudioStreamPlayer2D_Hurt.play()
 	$AudioStreamPlayer2D_Impact.play()
 	sprite_flash()

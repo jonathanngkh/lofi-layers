@@ -15,6 +15,7 @@ func enter(_msg := {}) -> void:
 	warrior.velocity.x = 0
 	warrior.hit_box.previously_hit_hurtboxes = []
 	warrior.aura.visible = false
+	
 	#warrior.saved_notes = []
 	#warrior._on_hit()
 
@@ -61,6 +62,8 @@ func exit() -> void:
 
 
 func _on_frame_changed() -> void:
+	if warrior.sprite.frame == 6:
+		$AudioStreamPlayer.play()
 	if warrior.sprite.frame == 10:
 		warrior.hp += 5
 		warrior.health_bar_control.heal(5)

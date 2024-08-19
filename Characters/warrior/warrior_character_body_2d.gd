@@ -5,9 +5,9 @@ var can_holy_sword = false
 @export var hp := 20
 var saved_notes := []
 var can_dash = true
-#@onready var solfege_notes := ["Do", "Re", "Mi", "Fa", "So", "La", "Ti"]
-#@onready var solfege_notes_index := 0
-#@onready var equipped_note : String = solfege_notes[solfege_notes_index]
+@onready var solfege_notes := ["Do", "Re", "Mi", "Fa", "So", "La", "Ti"]
+@onready var solfege_notes_index := 0
+@onready var equipped_note : String = solfege_notes[solfege_notes_index]
 @onready var camera: Camera2D = $Camera2D
 
 @export var is_cheat_mode := false
@@ -79,7 +79,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_hit(message) -> void:
 	camera.apply_shake()
-
+	update_saved_notes()
 
 func update_saved_notes() -> void:
 	print("saved notes: " + str(saved_notes))
@@ -103,27 +103,27 @@ func update_saved_notes() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	#if Input.is_action_just_pressed("solfege_backward"):
-		#if solfege_notes_index > -(solfege_notes.size() - 1):
-			#solfege_notes_index -= 1
-			#equipped_note = solfege_notes[solfege_notes_index]
-		#else:
-			#solfege_notes_index = 0
-			#equipped_note = solfege_notes[solfege_notes_index]
-			#
-		#for ball in solfege_container.get_children():
-			#ball.solfege_backward()
-			#
-	#if Input.is_action_just_pressed("solfege_forward"):
-		#if solfege_notes_index < solfege_notes.size() - 1:
-			#solfege_notes_index += 1
-			#equipped_note = solfege_notes[solfege_notes_index]
-		#else:
-			#solfege_notes_index = 0
-			#equipped_note = solfege_notes[solfege_notes_index]
-			#
-		#for ball in solfege_container.get_children():
-			#ball.solfege_forward()
+	if Input.is_action_just_pressed("solfege_backward"):
+		if solfege_notes_index > -(solfege_notes.size() - 1):
+			solfege_notes_index -= 1
+			equipped_note = solfege_notes[solfege_notes_index]
+		else:
+			solfege_notes_index = 0
+			equipped_note = solfege_notes[solfege_notes_index]
+			
+		for ball in solfege_container.get_children():
+			ball.solfege_backward()
+			
+	if Input.is_action_just_pressed("solfege_forward"):
+		if solfege_notes_index < solfege_notes.size() - 1:
+			solfege_notes_index += 1
+			equipped_note = solfege_notes[solfege_notes_index]
+		else:
+			solfege_notes_index = 0
+			equipped_note = solfege_notes[solfege_notes_index]
+			
+		for ball in solfege_container.get_children():
+			ball.solfege_forward()
 
 	if debug_mode:
 		$Label.visible = true
