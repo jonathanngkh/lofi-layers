@@ -69,11 +69,10 @@ func exit() -> void:
 		warrior.sprite.animation_finished.disconnect(_on_animation_finished)
 	if warrior.sprite.frame_changed.is_connected(_on_frame_changed):
 		warrior.sprite.frame_changed.disconnect(_on_frame_changed)
-	#dash_speed = 1800
 	warrior.velocity.y = 0
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_INHERIT
-	warrior.can_dash = false
-	warrior.dash_cooldown_timer.start(0.8)
+	warrior.can_air_dash = false
+	warrior.air_dash_cooldown_timer.start(0.8)
 
 
 func _on_frame_changed() -> void:

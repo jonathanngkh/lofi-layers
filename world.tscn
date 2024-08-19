@@ -368,12 +368,13 @@ texture = ExtResource("7_mk5la")
 [sub_resource type="TileSet" id="TileSet_xqrda"]
 sources/0 = SubResource("TileSetAtlasSource_dkfc1")
 
-[sub_resource type="Environment" id="Environment_iwex5"]
+[sub_resource type="Environment" id="Environment_qmkeb"]
 background_mode = 3
+background_canvas_max_layer = 1
 glow_enabled = true
-glow_intensity = 0.43
+glow_intensity = 0.45
 glow_bloom = 0.01
-glow_hdr_threshold = 0.99
+glow_hdr_threshold = 0.9
 
 [node name="World" type="Node2D"]
 texture_filter = 1
@@ -615,9 +616,6 @@ visible = false
 offset_top = 882.0
 offset_bottom = 1503.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_iwex5")
-
 [node name="RogueGoblinCharacterBody4" parent="." instance=ExtResource("9_r8jc3")]
 position = Vector2(5679, 830)
 scale = Vector2(4, 4)
@@ -696,3 +694,6 @@ offset_bottom = 1491.0
 theme_override_fonts/font = ExtResource("11_1uocd")
 theme_override_font_sizes/font_size = 48
 text = "Hit an enemy to store their note"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qmkeb")

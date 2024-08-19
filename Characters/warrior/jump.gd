@@ -4,12 +4,12 @@ var pre_jump_position_y
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	$AudioStreamPlayer.play()
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	if _msg:
 		if _msg["stage"] == "apex":
 			warrior.sprite.play("apex")
 	else:
+		$AudioStreamPlayer.play()
 		warrior.sprite.play("jump")
 		warrior.velocity.y = warrior.JUMP_VELOCITY
 	

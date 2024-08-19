@@ -42,7 +42,8 @@ func _process(_delta: float) -> void:
 						hit_signal.connect(area.owner.receive_hit)
 						if owner.name == "WarriorCharacterBody2D":
 							var victim_note = area.owner.note_health[-1]
-							owner.saved_notes.append(victim_note)
+							#owner.saved_notes.append(victim_note)
+							owner.add_note(victim_note)
 							owner.get_node("SamplerInstrument").play_note(solfege_note_name_dict[victim_note][0], solfege_note_name_dict[victim_note][1])
 						if freeze:
 							hit_signal.emit("freeze")

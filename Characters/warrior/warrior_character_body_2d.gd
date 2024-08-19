@@ -2,9 +2,14 @@ class_name Warrior
 extends CharacterBody2D
 
 var can_holy_sword = false
+var can_heal = false
+var can_holy_wave = false
+var can_freeze = false
+
 @export var hp := 20
-var saved_notes := []
+var saved_notes := ["Do", "Fa", "So"]
 var can_dash = true
+var can_air_dash = true
 @onready var solfege_notes := ["Do", "Re", "Mi", "Fa", "So", "La", "Ti"]
 @onready var solfege_notes_index := 0
 @onready var equipped_note : String = solfege_notes[solfege_notes_index]
@@ -16,6 +21,7 @@ var can_dash = true
 @export var beat_em_up_mode := true
 @onready var saved_notes_hbox: HBoxContainer = $CanvasLayer/SavedNotesHBoxContainer
 @onready var dash_cooldown_timer: Timer = $StateMachine/Dash/DashCooldownTimer
+@onready var air_dash_cooldown_timer: Timer = $StateMachine/AirDash/DashCooldownTimer
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box: Area2D = $HurtBox
@@ -69,17 +75,29 @@ func _ready() -> void:
 	hit_box_3.process_mode = Node.PROCESS_MODE_DISABLED
 	hit_box_3.hit_signal.connect(_on_hit)
 	dash_cooldown_timer.timeout.connect(func() -> void: can_dash = true)
+	air_dash_cooldown_timer.timeout.connect(func() -> void: can_air_dash = true)
 	label_4.text = "next_note: " + minor_scale[minor_scale_index][0] + str(minor_scale[minor_scale_index][1])
-
+	update_saved_notes()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("special_attack"):
 		if can_holy_sword:
 			state_machine.transition_to("HolySword")
+		if can_freeze:
+			state_machine.transition_to("CastFreeze")
+		if can_heal:
+			state_machine.transition_to("Heal")
+		if can_holy_wave:
+			state_machine.transition_to("HolyWave")
 
 func _on_hit(message) -> void:
 	camera.apply_shake()
 	update_saved_notes()
+
+func add_note(victim_note) -> void:
+	if saved_notes.size() == 7:
+		saved_notes.erase(saved_notes[0])
+	saved_notes.append(victim_note)
 
 func update_saved_notes() -> void:
 	print("saved notes: " + str(saved_notes))
@@ -95,36 +113,147 @@ func update_saved_notes() -> void:
 				container.modulate.a = 1.0
 				break
 				
-	if saved_notes.has("Do") and saved_notes.has("Mi") and saved_notes.has("So"):
-		can_holy_sword = true
-		$AnimatedSprite2D/AuraAnimatedSprite2D.visible = true
-		$AnimatedSprite2D/AuraAnimatedSprite2D.play()
-	
+	check_for_heal_song()
+	check_for_freeze_song()
+	check_for_holy_wave_song()
+	check_for_holy_sword_song()
+				
+func check_for_heal_song() -> void:
+	if saved_notes.size() >= 3:
+		if saved_notes[0] == "Do" and saved_notes[1] == "Fa" and saved_notes[2] == "So":
+			$CanvasLayer/FreezeLabel1.visible = true
+			can_heal = true
+			var tween = create_tween()
+			tween.bind_node(self)
+			tween.set_loops()
+			tween.tween_property(saved_notes_hbox.get_children()[0].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
+			tween.tween_property(saved_notes_hbox.get_children()[0].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
+			var tween2 = create_tween()
+			tween2.bind_node(self)
+			tween2.set_loops()
+			tween2.tween_property(saved_notes_hbox.get_children()[1].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
+			tween2.tween_property(saved_notes_hbox.get_children()[1].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
+			var tween3 = create_tween()
+			tween3.bind_node(self)
+			tween3.set_loops()
+			tween3.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
+			tween3.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
+	if saved_notes.size() >= 4:
+		if saved_notes[1] == "Do" and saved_notes[2] == "Fa" and saved_notes[3] == "So":
+			$CanvasLayer/FreezeLabel2.visible = true
+			can_heal = true
+			var tween = create_tween()
+			tween.bind_node(self)
+			tween.set_loops()
+			tween.tween_property(saved_notes_hbox.get_children()[1].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
+			tween.tween_property(saved_notes_hbox.get_children()[1].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
+			var tween2 = create_tween()
+			tween2.set_loops()
+			tween2.bind_node(self)
+			tween2.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
+			tween2.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
+			var tween3 = create_tween()
+			tween3.bind_node(self)
+			tween3.set_loops()
+			tween3.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
+			tween3.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
+	if saved_notes.size() >= 5:
+		if saved_notes[2] == "Do" and saved_notes[3] == "Fa" and saved_notes[4] == "So":
+			$CanvasLayer/FreezeLabel3.visible = true
+			can_heal = true
+			var tween = create_tween()
+			tween.bind_node(self)
+			tween.set_loops()
+			tween.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
+			tween.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
+			var tween2 = create_tween()
+			tween2.bind_node(self)
+			tween2.set_loops()
+			tween2.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
+			tween2.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
+			var tween3 = create_tween()
+			tween3.bind_node(self)
+			tween3.set_loops()
+			tween3.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
+			tween3.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
+	if saved_notes.size() >= 6:
+		if saved_notes[3] == "Do" and saved_notes[4] == "Fa" and saved_notes[5] == "So":
+			$CanvasLayer/FreezeLabel4.visible = true
+			can_heal = true
+			var tween = create_tween()
+			tween.bind_node(self)
+			tween.set_loops()
+			tween.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
+			tween.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
+			var tween2 = create_tween()
+			tween2.bind_node(self)
+			tween2.set_loops()
+			tween2.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
+			tween2.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
+			var tween3 = create_tween()
+			tween3.bind_node(self)
+			tween3.set_loops()
+			tween3.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
+			tween3.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
+	if saved_notes.size() >= 7:
+		if saved_notes[4] == "Do" and saved_notes[5] == "Fa" and saved_notes[6] == "So":
+			$CanvasLayer/FreezeLabel5.visible = true
+			can_heal = true
+			var tween = create_tween()
+			tween.bind_node(self)
+			tween.set_loops()
+			tween.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
+			tween.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
+			var tween2 = create_tween()
+			tween2.bind_node(self)
+			tween2.set_loops()
+			tween2.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
+			tween2.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
+			var tween3 = create_tween()
+			tween3.bind_node(self)
+			tween3.set_loops()
+			tween3.tween_property(saved_notes_hbox.get_children()[6].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
+			tween3.tween_property(saved_notes_hbox.get_children()[6].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
+
+func check_for_freeze_song() -> void:
+	if saved_notes.size() >= 3:
+		if saved_notes[0] == "Ti" and saved_notes[1] == "La" and saved_notes[2] == "Fa":
+			can_freeze = true
+	if saved_notes.size() >= 4:
+		if saved_notes[1] == "Ti" and saved_notes[2] == "La" and saved_notes[3] == "Fa":
+			can_freeze = true
+	if saved_notes.size() >= 5:
+		if saved_notes[2] == "Ti" and saved_notes[3] == "La" and saved_notes[4] == "Fa":
+			can_freeze = true
+	if saved_notes.size() >= 6:
+		if saved_notes[3] == "Ti" and saved_notes[4] == "La" and saved_notes[5] == "Fa":
+			can_freeze = true
+	if saved_notes.size() >= 7:
+		if saved_notes[4] == "Ti" and saved_notes[5] == "La" and saved_notes[6] == "Fa":
+			can_freeze = true
+
+func check_for_holy_wave_song() -> void:
+	if saved_notes.size() >= 4:
+		if saved_notes[0] == "La" and saved_notes[1] == "Mi" and saved_notes[2] == "Fa" and saved_notes[3] == "Re":
+			can_holy_wave = true
+	if saved_notes.size() >= 5:
+		if saved_notes[1] == "La" and saved_notes[2] == "Mi" and saved_notes[3] == "Fa" and saved_notes[4] == "Re":
+			can_holy_wave = true
+	if saved_notes.size() >= 6:
+		if saved_notes[2] == "La" and saved_notes[3] == "Mi" and saved_notes[4] == "Fa" and saved_notes[5] == "Re":
+			can_holy_wave = true
+	if saved_notes.size() >= 7:
+		if saved_notes[3] == "La" and saved_notes[4] == "Mi" and saved_notes[5] == "Fa" and saved_notes[6] == "Re":
+			can_holy_wave = true
+
+
+func check_for_holy_sword_song() -> void:
+	if saved_notes.size() >= 7:
+		if saved_notes[0] == "Do" and saved_notes[1] == "Re" and saved_notes[2] == "Mi" and saved_notes[3] == "Fa" and saved_notes[4] == "So" and saved_notes[5] == "La" and saved_notes[6] == "Ti":
+			can_holy_sword = true
 
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("solfege_backward"):
-		if solfege_notes_index > -(solfege_notes.size() - 1):
-			solfege_notes_index -= 1
-			equipped_note = solfege_notes[solfege_notes_index]
-		else:
-			solfege_notes_index = 0
-			equipped_note = solfege_notes[solfege_notes_index]
-			
-		for ball in solfege_container.get_children():
-			ball.solfege_backward()
-			
-	if Input.is_action_just_pressed("solfege_forward"):
-		if solfege_notes_index < solfege_notes.size() - 1:
-			solfege_notes_index += 1
-			equipped_note = solfege_notes[solfege_notes_index]
-		else:
-			solfege_notes_index = 0
-			equipped_note = solfege_notes[solfege_notes_index]
-			
-		for ball in solfege_container.get_children():
-			ball.solfege_forward()
-
 	if debug_mode:
 		$Label.visible = true
 		$Label2.visible = true
