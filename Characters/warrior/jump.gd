@@ -11,6 +11,13 @@ func enter(_msg := {}) -> void:
 	else:
 		warrior.sprite.play("jump")
 		warrior.velocity.y = warrior.JUMP_VELOCITY
+	
+	if warrior.velocity.x > warrior.SPEED:
+		var tween = create_tween()
+		tween.tween_property(warrior, "velocity:x", warrior.SPEED, 0.3)
+	elif warrior.velocity.x < -warrior.SPEED:
+		var tween = create_tween()
+		tween.tween_property(warrior, "velocity:x", -warrior.SPEED, 0.3)
 
 # Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:

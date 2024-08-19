@@ -10,6 +10,7 @@ var can_dash = true
 #@onready var equipped_note : String = solfege_notes[solfege_notes_index]
 @onready var camera: Camera2D = $Camera2D
 
+@export var is_cheat_mode := false
 @export var debug_mode := false
 @export var can_attack_while_blocking := true
 @export var beat_em_up_mode := true
@@ -147,6 +148,7 @@ func _physics_process(delta: float) -> void:
 func receive_hit(message) -> void:
 	if message is int:
 		if not state_machine.state == $StateMachine/Block:
+			camera.apply_shake()
 			hp -= message
 			$CanvasLayer/HealthBarControl.damage(message)
 	if hp <= 0:

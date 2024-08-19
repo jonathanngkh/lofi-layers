@@ -100,7 +100,7 @@ size = Vector2(32, 20)
 size = Vector2(8.5, 15)
 
 [node name="IcicleAnimatedSprite2D" type="AnimatedSprite2D" groups=["player"]]
-self_modulate = Color(1, 1, 1, 0.731)
+self_modulate = Color(1, 1, 1, 0.578)
 z_index = 1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_kysr1")
@@ -110,6 +110,7 @@ script = ExtResource("2_psv3g")
 wait_time = 4.5
 
 [node name="HitBox" parent="." groups=["player"] instance=ExtResource("20_kn57j")]
+visible = false
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]

@@ -16,7 +16,8 @@ func enter(_msg := {}) -> void:
 	#warrior.saved_notes = []
 	warrior.update_saved_notes()
 	#warrior._on_hit()
-
+	$AudioStreamPlayer.play()
+	
 func _on_animation_finished() -> void:
 	if warrior.sprite.animation == "cast":
 		state_machine.transition_to("Idle")

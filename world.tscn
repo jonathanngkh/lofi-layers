@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bd7e5wvydw0pg"]
+[gd_scene load_steps=17 format=4 uid="uid://bd7e5wvydw0pg"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_bx3ql"]
 [ext_resource type="PackedScene" uid="uid://c475exd8klytk" path="res://parallax_background.tscn" id="1_d7jge"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dtq6odoaxknll" path="res://Characters/tank_goblin/tank_goblin_character_body.tscn" id="9_4pt1f"]
 [ext_resource type="PackedScene" uid="uid://c7i3mpluva58" path="res://Characters/female_goblin/female_goblin_character_body.tscn" id="9_edalk"]
 [ext_resource type="PackedScene" uid="uid://nyoassqddeo1" path="res://Characters/rogue_goblin/rogue_goblin_character_body.tscn" id="9_r8jc3"]
+[ext_resource type="FontFile" uid="uid://01rksbs4gol5" path="res://utility/CharacterHealthBar/fonts/ThaleahFat.ttf" id="11_1uocd"]
+[ext_resource type="AudioStream" uid="uid://cjw488ad02nsi" path="res://assets/music/Medieval Vol. 2 6.mp3" id="12_jdrhc"]
+[ext_resource type="AudioStream" uid="uid://yh2tyvv7r5j6" path="res://utility/ambience_forest.wav" id="13_oi33x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkfc1"]
 texture = ExtResource("7_mk5la")
@@ -618,9 +621,33 @@ position = Vector2(1762, 773)
 scale = Vector2(4, 4)
 
 [node name="TankGoblinCharacterBody" parent="." instance=ExtResource("9_4pt1f")]
+process_mode = 4
+visible = false
 position = Vector2(2109, 1038)
 scale = Vector2(4, 4)
 
 [node name="FemaleGoblinCharacterBody" parent="." instance=ExtResource("9_edalk")]
+process_mode = 4
+visible = false
 position = Vector2(423, 853)
 scale = Vector2(4, 4)
+
+[node name="FreezeLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 608.0
+offset_top = 1447.0
+offset_right = 1274.0
+offset_bottom = 1491.0
+theme_override_fonts/font = ExtResource("11_1uocd")
+theme_override_font_sizes/font_size = 48
+text = "Hit an enemy to store their note"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_jdrhc")
+volume_db = -10.0
+autoplay = true
+
+[node name="AmbientNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_oi33x")
+volume_db = -1.0
+autoplay = true

@@ -10,6 +10,7 @@ func enter(_msg := {}) -> void:
 	female_goblin.velocity = Vector2.ZERO
 	female_goblin.hit_box.previously_hit_hurtboxes = []
 	female_goblin.sprite.play("light_attack_1")
+	$AudioStreamPlayer.play()
 
 
 func _on_animation_finished() -> void:

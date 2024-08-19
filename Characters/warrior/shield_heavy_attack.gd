@@ -4,9 +4,9 @@ extends WarriorState
 
 @onready var sword_sounds := [
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_01.wav"),
-	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_02.wav"),
+	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_02 [Draft 2].wav"),
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_03.wav"),
-	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_04.wav"),
+	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_04 [Draft 2].wav"),
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_05.wav"),
 	preload("res://Characters/warrior/sounds/sword/sfx_sword_lightslash_06.wav"),
 ]
@@ -33,6 +33,8 @@ func enter(_msg := {}) -> void:
 	tween.tween_property(warrior, "velocity:x", 0, 0.3).from(direction * warrior.SPEED * 5)
 	warrior.hit_box.previously_hit_hurtboxes = []
 	warrior.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
+	$AudioStreamPlayer.stream = sword_sounds.pick_random()
+	$AudioStreamPlayer.play()
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()
 	#warrior.sampler.play_note(warrior.minor_scale[warrior.minor_scale_index][0], warrior.minor_scale[warrior.minor_scale_index][1])
@@ -96,8 +98,8 @@ func _on_frame_changed() -> void:
 	if warrior.sprite.frame == 3:
 		pass
 	if warrior.sprite.frame == 4:
-		$AudioStreamPlayer.stream = sword_sounds.pick_random()
-		$AudioStreamPlayer.play()
+		pass
+		
 	if warrior.sprite.frame == 5:
 		pass
 		#if warrior.equipped_note == "Do":

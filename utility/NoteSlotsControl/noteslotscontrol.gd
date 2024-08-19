@@ -9,15 +9,15 @@ func _ready() -> void:
 	pass
 
 var count = 0
-func _input(event:InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		add_note_into_left_empty_slot(notes[count])
-		if count < 6: 
-			count+=1
-	if event.is_action_pressed("ui_down"):
-		remove_note_from_rightmost_slot()
-		if count > 0:
-			count -=1
+#func _input(event:InputEvent) -> void:
+	#if event.is_action_pressed("ui_accept"):
+		#add_note_into_left_empty_slot(notes[count])
+		#if count < 6: 
+			#count+=1
+	#if event.is_action_pressed("ui_down"):
+		#remove_note_from_rightmost_slot()
+		#if count > 0:
+			#count -=1
 
 
 func add_note_into_left_empty_slot(note):

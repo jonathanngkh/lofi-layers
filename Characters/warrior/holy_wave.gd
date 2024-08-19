@@ -18,6 +18,7 @@ func enter(_msg := {}) -> void:
 	warrior.saved_notes = []
 	warrior.update_saved_notes()
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
+	
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()
 	#warrior.sampler.play_note(warrior.minor_scale[warrior.minor_scale_index][0], warrior.minor_scale[warrior.minor_scale_index][1])
@@ -87,5 +88,6 @@ func _on_frame_changed() -> void:
 		pass
 	if warrior.sprite.frame == 6:
 		pass
+		$AudioStreamPlayer.play()
 	if warrior.sprite.frame == 7:
 		pass

@@ -1,7 +1,8 @@
-[gd_scene load_steps=89 format=3 uid="uid://c7i3mpluva58"]
+[gd_scene load_steps=90 format=3 uid="uid://c7i3mpluva58"]
 
 [ext_resource type="Script" path="res://Characters/female_goblin/female_goblin_character_body.gd" id="1_uy5cd"]
 [ext_resource type="Texture2D" uid="uid://3vwssp8a8ff3" path="res://Characters/female_goblin/FemaleGoblin-Sheet.png" id="3_8t23n"]
+[ext_resource type="AudioStream" uid="uid://u8b8anal6qvt" path="res://Characters/female_goblin/sfx_enemy_magegoblin_torchslash.wav" id="8_ypfpo"]
 [ext_resource type="Script" path="res://Characters/female_goblin/charge.gd" id="9_yn12l"]
 [ext_resource type="Script" path="res://Characters/female_goblin/cast_fireball.gd" id="10_kvybe"]
 [ext_resource type="Script" path="res://Characters/female_goblin/death.gd" id="11_bgbwx"]
@@ -607,6 +608,9 @@ script = ExtResource("16_maao3")
 
 [node name="LightAttack1" type="Node2D" parent="StateMachine"]
 script = ExtResource("17_xbnb7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/LightAttack1"]
+stream = ExtResource("8_ypfpo")
 
 [node name="Hurt" type="Node2D" parent="StateMachine"]
 script = ExtResource("18_eenf6")

@@ -10,10 +10,10 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.play("death")
 	warrior.velocity.x = 0
 	var world = warrior.get_parent()
-	
+	world.get_node("BackgroundMusic").stop()
 	for node in world.get_children():
 		if not node.is_in_group("player"):
-			if not node.name == "ParallaxBackground" and not node.name == "WorldEnvironment":
+			if not node.name == "ParallaxBackground" and not node.name == "WorldEnvironment" and not node.name == "BackgroundMusic" and not node.name == "AmbientNoise":
 				
 				node.modulate = "000000"
 	

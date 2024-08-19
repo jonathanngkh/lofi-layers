@@ -60,13 +60,13 @@ func _on_mouse_exited() -> void:
 
 # Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
-	#var event_is_mouse_click: bool = (
-		#_event is InputEventMouseButton and
-		#_event.button_index == MOUSE_BUTTON_LEFT and
-		#_event.pressed
-	#)
-	#if event_is_mouse_click and hover:
-		#block_hit()
+	var event_is_mouse_click: bool = (
+		_event is InputEventMouseButton and
+		_event.button_index == MOUSE_BUTTON_LEFT and
+		_event.pressed
+	)
+	if event_is_mouse_click and hover:
+		block_hit()
 	
 	if not (warrior.sprite.animation == "block_hit" or warrior.sprite.animation == "block_break"):
 		

@@ -6,7 +6,7 @@ var starting_height
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	dash_speed = 1800
+	#dash_speed = 1800
 	starting_direction = warrior.sprite.scale.x
 	starting_height = warrior.position.y
 	warrior.sprite.play("dash_start", 2.5)
@@ -31,16 +31,18 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	warrior.velocity.x = starting_direction * dash_speed
 	warrior.position.y = starting_height
+	if not warrior.sprite.animation == "dash_break":
+		warrior.velocity.x = starting_direction * dash_speed
 
 
 func end_dash() -> void:
 	if not warrior.sprite.animation == "dash_break":
+		#warrior.velocity.y = 0
 		#if warrior.is_on_floor():
 		warrior.sprite.play("dash_break", 2.0)
 		var tween = create_tween()
-		tween.tween_property(self, "dash_speed", 0, 0.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		tween.tween_property(warrior, "velocity:x", 0, 0.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		#else:
 			#state_machine.transition_to("Jump", {"stage": "apex"}) # double jump can be used repeatedly for infinite height
 
@@ -54,10 +56,10 @@ func _on_animation_finished() -> void:
 		state_machine.transition_to("Idle")
 
 
-func _on_timeout() -> void:
-	warrior.sprite.play("dash_break")
-	var tween = create_tween()
-	tween.tween_property(self, "dash_speed", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+#func _on_timeout() -> void:
+	#warrior.sprite.play("dash_break")
+	#var tween = create_tween()
+	#tween.tween_property(self, "dash_speed", 0, 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
@@ -66,7 +68,7 @@ func exit() -> void:
 		warrior.sprite.animation_finished.disconnect(_on_animation_finished)
 	if warrior.sprite.frame_changed.is_connected(_on_frame_changed):
 		warrior.sprite.frame_changed.disconnect(_on_frame_changed)
-	dash_speed = 1800
+	#dash_speed = 1800
 	warrior.velocity.y = 0
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_INHERIT
 	warrior.can_dash = false

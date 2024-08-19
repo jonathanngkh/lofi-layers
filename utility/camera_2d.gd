@@ -1,6 +1,6 @@
 extends Camera2D
-@export var randomStrength: float = 10.0 #how violently it shakes
-@export var shakeFade: float = 8.0 #how long the shake takes to fade, higher number = fade faster
+@export var randomStrength: float = 12.0 #how violently it shakes
+@export var shakeFade: float = 7.0 #how long the shake takes to fade, higher number = fade faster
 
 var start_position
 var rng = RandomNumberGenerator.new()

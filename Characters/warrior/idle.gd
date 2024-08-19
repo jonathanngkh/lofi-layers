@@ -73,12 +73,15 @@ func controls():
 		#state_machine.transition_to("ShieldHeavyAttack")
 	
 	# should be invoked only
-	#if Input.is_action_just_pressed("freeze"):
-		#state_machine.transition_to("CastFreeze")
-	#if Input.is_action_just_pressed("holy_wave"):
-		#state_machine.transition_to("HolyWave")
-	#if Input.is_action_just_pressed("heal"):
-		#state_machine.transition_to("Heal")
+	if warrior.is_cheat_mode:
+		if Input.is_action_just_pressed("freeze"):
+			state_machine.transition_to("CastFreeze")
+		if Input.is_action_just_pressed("holy_wave"):
+			state_machine.transition_to("HolyWave")
+		if Input.is_action_just_pressed("heal"):
+			state_machine.transition_to("Heal")
+		if Input.is_action_just_pressed("special_attack"):
+			state_machine.transition_to("HolySword")
 
 
 
