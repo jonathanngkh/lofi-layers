@@ -636,3 +636,9 @@ note_health = ["So"]
 [node name="FemaleGoblinCharacterBody" parent="." instance=ExtResource("9_edalk")]
 position = Vector2(887, 912)
 scale = Vector2(4, 4)
+note_health = ["Mi"]
+
+[node name="FemaleGoblinCharacterBody2" parent="." instance=ExtResource("9_edalk")]
+position = Vector2(2079, 858)
+scale = Vector2(4, 4)
+note_health = ["Mi"]

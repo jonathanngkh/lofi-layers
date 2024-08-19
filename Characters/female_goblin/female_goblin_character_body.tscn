@@ -554,7 +554,7 @@ script = ExtResource("1_uy5cd")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_k74mf")
 animation = &"charge"
-frame_progress = 0.610091
+frame_progress = 0.534657
 
 [node name="HitBox" parent="AnimatedSprite2D" instance=ExtResource("13_kwp7q")]
 visible = false
