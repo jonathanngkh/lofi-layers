@@ -1,0 +1,86 @@
+[gd_scene load_steps=16 format=3 uid="uid://0m0mkm8gm2a5"]
+
+[ext_resource type="Script" path="res://Characters/female_goblin/fireball.gd" id="1_wiv0n"]
+[ext_resource type="PackedScene" uid="uid://dpkefryb25jky" path="res://hit_box.tscn" id="2_ig03d"]
+[ext_resource type="Texture2D" uid="uid://cg2rbriakgrrj" path="res://Characters/female_goblin/fireball/Dissipate/Dissipate1.png" id="2_pu6ux"]
+[ext_resource type="Texture2D" uid="uid://bxejyd0guhyt8" path="res://Characters/female_goblin/fireball/Dissipate/Dissipate2.png" id="3_1aqgg"]
+[ext_resource type="Texture2D" uid="uid://dydxy64jtv43x" path="res://Characters/female_goblin/fireball/Triggered/Triggered1.png" id="3_cioym"]
+[ext_resource type="Texture2D" uid="uid://cpwpqhnygj11o" path="res://Characters/female_goblin/fireball/Dissipate/Dissipate3.png" id="4_74vtf"]
+[ext_resource type="Texture2D" uid="uid://b6mkyact1076l" path="res://Characters/female_goblin/fireball/Triggered/Triggered2.png" id="4_o6vmj"]
+[ext_resource type="Texture2D" uid="uid://e4aly8berfrn" path="res://Characters/female_goblin/fireball/Triggered/Triggered3.png" id="5_ooyrr"]
+[ext_resource type="Texture2D" uid="uid://ud4id2y4hoel" path="res://Characters/female_goblin/fireball/Dissipate/Dissipate4.png" id="5_v61nb"]
+[ext_resource type="Texture2D" uid="uid://bqdbqioe32yjg" path="res://Characters/female_goblin/fireball/Triggered/Triggered4.png" id="6_4fuk8"]
+[ext_resource type="Texture2D" uid="uid://c2tmv6moowp2d" path="res://Characters/female_goblin/fireball/Dissipate/Dissipate5.png" id="6_rb08j"]
+[ext_resource type="Texture2D" uid="uid://c4pfpf760234l" path="res://Characters/female_goblin/fireball/Triggered/Triggered5.png" id="7_c8x1t"]
+[ext_resource type="Texture2D" uid="uid://dbl1nhc8x5ntr" path="res://Characters/female_goblin/fireball/Triggered/Triggered6.png" id="8_nr2xb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xuqyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pu6ux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1aqgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_74vtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v61nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rb08j")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cioym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o6vmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ooyrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4fuk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c8x1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nr2xb")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_haw5y"]
+radius = 36.0
+height = 104.0
+
+[node name="Fireball" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_wiv0n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(7.62939e-06, -0.999992)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_xuqyi")
+animation = &"loop"
+frame_progress = 0.265298
+
+[node name="HitBox" parent="." instance=ExtResource("2_ig03d")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(24.6667, 7.33333)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_haw5y")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

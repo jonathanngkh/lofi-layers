@@ -2177,6 +2177,7 @@ shape = SubResource("RectangleShape2D_foobn")
 debug_color = Color(0.961607, 1.18208e-06, 0.50938, 0.42)
 
 [node name="HitBox3" parent="AnimatedSprite2D" instance=ExtResource("4_il7ku")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox3"]
 position = Vector2(102.333, 2.167)

@@ -419,9 +419,7 @@ damage = 5
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_k74mf")
-animation = &"death"
-frame = 11
-frame_progress = 1.0
+animation = &"idle"
 offset = Vector2(30, 0)
 
 [node name="HitBox" parent="AnimatedSprite2D" groups=["enemy"] instance=ExtResource("17_vadwp")]
@@ -495,6 +493,7 @@ shape = SubResource("RectangleShape2D_7ty7w")
 debug_color = Color(0.117921, 0.647349, 0, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0.5, 8)
 shape = SubResource("RectangleShape2D_5yl4c")
 
