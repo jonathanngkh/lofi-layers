@@ -15,9 +15,19 @@ func enter(_msg := {}) -> void:
 	warrior.velocity.x = 0
 	warrior.hit_box.previously_hit_hurtboxes = []
 	warrior.aura.visible = false
-	
-	#warrior.saved_notes = []
-	#warrior._on_hit()
+	warrior.can_heal = false
+	var notes_to_remove = []
+	for i in range(4, -1, -1):
+		if warrior.saved_notes.size() >= i+3:
+			if warrior.saved_notes[i] == "Do" and warrior.saved_notes[i+1] == "Fa" and warrior.saved_notes[i+2] == "So":
+				notes_to_remove.append(warrior.saved_notes[i+2])
+				notes_to_remove.append(warrior.saved_notes[i+1])
+				notes_to_remove.append(warrior.saved_notes[i+0])
+				break
+	# TWEEN THEM REALLY BRIGHT BEFORE REMOVAL
+	for note in notes_to_remove:
+		warrior.saved_notes.erase(note)
+	warrior.update_saved_notes()
 
 func _on_animation_finished() -> void:
 	if warrior.sprite.animation == "heal":
@@ -58,7 +68,6 @@ func exit() -> void:
 	warrior.sprite.frame_changed.disconnect(_on_frame_changed)
 	warrior.sprite.offset = Vector2.ZERO
 	warrior.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
-	
 
 
 func _on_frame_changed() -> void:

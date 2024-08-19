@@ -30,11 +30,11 @@ func handle_input(_event: InputEvent) -> void:
 			warrior.sprite.scale.x = -1
 			warrior.velocity.x = -1 * warrior.SPEED
 	else:
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_pressed("jump") and warrior.is_on_floor():
 			state_machine.transition_to("Jump")
 	# dash
-	if Input.is_action_just_pressed("dash") and warrior.can_dash:
-		state_machine.transition_to("Dash")
+	if Input.is_action_just_pressed("dash") and warrior.can_air_dash:
+		state_machine.transition_to("AirDash")
 	if Input.is_action_pressed("light_attack"):
 		state_machine.transition_to("AirHeavyAttack")
 

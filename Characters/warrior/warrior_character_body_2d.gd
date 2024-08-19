@@ -7,7 +7,7 @@ var can_holy_wave = false
 var can_freeze = false
 
 @export var hp := 20
-var saved_notes := ["Do", "Fa", "So"]
+var saved_notes := ["Do", "Fa", "So", "Do", "Fa", "So"]
 var can_dash = true
 var can_air_dash = true
 @onready var solfege_notes := ["Do", "Re", "Mi", "Fa", "So", "La", "Ti"]
@@ -67,6 +67,15 @@ var minor_scale_index = 0
 const SPEED = 500.0
 const JUMP_VELOCITY = -2100.0
 
+@onready var tween1 = create_tween()
+@onready var tween2 = create_tween()
+@onready var tween3 = create_tween()
+@onready var tween4 = create_tween()
+@onready var tween5 = create_tween()
+@onready var tween6 = create_tween()
+@onready var tween7 = create_tween()
+
+
 func _ready() -> void:
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 	hit_box.hit_signal.connect(_on_hit)
@@ -119,117 +128,143 @@ func update_saved_notes() -> void:
 	check_for_holy_sword_song()
 				
 func check_for_heal_song() -> void:
+	tween1.kill()
+	tween2.kill()
+	tween3.kill()
+	tween4.kill()
+	tween5.kill()
+	tween6.kill()
+	$CanvasLayer/HealLabel1.visible = false
+	$CanvasLayer/HealLabel2.visible = false
+	$CanvasLayer/HealLabel3.visible = false
+	$CanvasLayer/HealLabel4.visible = false
+	$CanvasLayer/HealLabel5.visible = false
 	if saved_notes.size() >= 3:
 		if saved_notes[0] == "Do" and saved_notes[1] == "Fa" and saved_notes[2] == "So":
-			$CanvasLayer/FreezeLabel1.visible = true
+			$CanvasLayer/HealLabel1.visible = true
 			can_heal = true
-			var tween = create_tween()
-			tween.bind_node(self)
-			tween.set_loops()
-			tween.tween_property(saved_notes_hbox.get_children()[0].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
-			tween.tween_property(saved_notes_hbox.get_children()[0].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
-			var tween2 = create_tween()
+			aura.visible = true
+			tween1 = create_tween()
+			tween1.bind_node(self)
+			tween1.set_loops()
+			tween1.tween_property(saved_notes_hbox.get_children()[0].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
+			tween1.tween_property(saved_notes_hbox.get_children()[0].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
+			tween2 = create_tween()
 			tween2.bind_node(self)
 			tween2.set_loops()
 			tween2.tween_property(saved_notes_hbox.get_children()[1].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
 			tween2.tween_property(saved_notes_hbox.get_children()[1].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
-			var tween3 = create_tween()
+			tween3 = create_tween()
 			tween3.bind_node(self)
 			tween3.set_loops()
 			tween3.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
 			tween3.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
 	if saved_notes.size() >= 4:
 		if saved_notes[1] == "Do" and saved_notes[2] == "Fa" and saved_notes[3] == "So":
-			$CanvasLayer/FreezeLabel2.visible = true
+			$CanvasLayer/HealLabel2.visible = true
 			can_heal = true
-			var tween = create_tween()
-			tween.bind_node(self)
-			tween.set_loops()
-			tween.tween_property(saved_notes_hbox.get_children()[1].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
-			tween.tween_property(saved_notes_hbox.get_children()[1].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
-			var tween2 = create_tween()
-			tween2.set_loops()
+			aura.visible = true
+			tween2 = create_tween()
 			tween2.bind_node(self)
-			tween2.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
-			tween2.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
-			var tween3 = create_tween()
-			tween3.bind_node(self)
+			tween2.set_loops()
+			tween2.tween_property(saved_notes_hbox.get_children()[1].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
+			tween2.tween_property(saved_notes_hbox.get_children()[1].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
+			tween3 = create_tween()
 			tween3.set_loops()
-			tween3.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
-			tween3.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
+			tween3.bind_node(self)
+			tween3.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
+			tween3.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
+			var tween4 = create_tween()
+			tween4.bind_node(self)
+			tween4.set_loops()
+			tween4.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
+			tween4.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
 	if saved_notes.size() >= 5:
 		if saved_notes[2] == "Do" and saved_notes[3] == "Fa" and saved_notes[4] == "So":
-			$CanvasLayer/FreezeLabel3.visible = true
+			$CanvasLayer/HealLabel3.visible = true
 			can_heal = true
-			var tween = create_tween()
-			tween.bind_node(self)
-			tween.set_loops()
-			tween.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
-			tween.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
-			var tween2 = create_tween()
-			tween2.bind_node(self)
-			tween2.set_loops()
-			tween2.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
-			tween2.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
-			var tween3 = create_tween()
+			aura.visible = true
+			tween3 = create_tween()
 			tween3.bind_node(self)
 			tween3.set_loops()
-			tween3.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
-			tween3.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
+			tween3.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
+			tween3.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
+			tween4 = create_tween()
+			tween4.bind_node(self)
+			tween4.set_loops()
+			tween4.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
+			tween4.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
+			tween5 = create_tween()
+			tween5.bind_node(self)
+			tween5.set_loops()
+			tween5.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
+			tween5.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
 	if saved_notes.size() >= 6:
 		if saved_notes[3] == "Do" and saved_notes[4] == "Fa" and saved_notes[5] == "So":
-			$CanvasLayer/FreezeLabel4.visible = true
+			$CanvasLayer/HealLabel4.visible = true
 			can_heal = true
-			var tween = create_tween()
-			tween.bind_node(self)
-			tween.set_loops()
-			tween.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
-			tween.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
-			var tween2 = create_tween()
-			tween2.bind_node(self)
-			tween2.set_loops()
-			tween2.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
-			tween2.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
-			var tween3 = create_tween()
-			tween3.bind_node(self)
-			tween3.set_loops()
-			tween3.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
-			tween3.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
+			aura.visible = true
+			tween4 = create_tween()
+			tween4.bind_node(self)
+			tween4.set_loops()
+			tween4.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
+			tween4.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
+			tween5 = create_tween()
+			tween5.bind_node(self)
+			tween5.set_loops()
+			tween5.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
+			tween5.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
+			tween6 = create_tween()
+			tween6.bind_node(self)
+			tween6.set_loops()
+			tween6.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
+			tween6.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
 	if saved_notes.size() >= 7:
 		if saved_notes[4] == "Do" and saved_notes[5] == "Fa" and saved_notes[6] == "So":
-			$CanvasLayer/FreezeLabel5.visible = true
+			$CanvasLayer/HealLabel5.visible = true
 			can_heal = true
-			var tween = create_tween()
-			tween.bind_node(self)
-			tween.set_loops()
-			tween.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
-			tween.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
-			var tween2 = create_tween()
-			tween2.bind_node(self)
-			tween2.set_loops()
-			tween2.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
-			tween2.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
-			var tween3 = create_tween()
-			tween3.bind_node(self)
-			tween3.set_loops()
-			tween3.tween_property(saved_notes_hbox.get_children()[6].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
-			tween3.tween_property(saved_notes_hbox.get_children()[6].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
+			aura.visible = true
+			tween5 = create_tween()
+			tween5.bind_node(self)
+			tween5.set_loops()
+			tween5.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
+			tween5.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
+			tween6 = create_tween()
+			tween6.bind_node(self)
+			tween6.set_loops()
+			tween6.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.2, 4, 0.25), 0.3)
+			tween6.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(0.2, 1, 0.25), 0.3)
+			tween7 = create_tween()
+			tween7.bind_node(self)
+			tween7.set_loops()
+			tween7.tween_property(saved_notes_hbox.get_children()[6].get_children()[0], "self_modulate", Color(0.1, 0.9, 6), 0.3)
+			tween7.tween_property(saved_notes_hbox.get_children()[6].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
 
 func check_for_freeze_song() -> void:
 	if saved_notes.size() >= 3:
 		if saved_notes[0] == "Ti" and saved_notes[1] == "La" and saved_notes[2] == "Fa":
+			$CanvasLayer/FreezeLabel1.visible = true
 			can_freeze = true
+			var tween = create_tween()
+			tween.bind_node(self)
+			tween.set_loops()
+			tween.tween_property(saved_notes_hbox.get_children()[0].get_children()[0], "self_modulate", Color(4, 0.15, 0.27), 0.3)
+			tween.tween_property(saved_notes_hbox.get_children()[0].get_children()[0], "self_modulate", Color(1, 0.15, 0.27), 0.3)
 	if saved_notes.size() >= 4:
 		if saved_notes[1] == "Ti" and saved_notes[2] == "La" and saved_notes[3] == "Fa":
+			$CanvasLayer/FreezeLabel2.visible = true
 			can_freeze = true
 	if saved_notes.size() >= 5:
 		if saved_notes[2] == "Ti" and saved_notes[3] == "La" and saved_notes[4] == "Fa":
+			$CanvasLayer/FreezeLabel3.visible = true
 			can_freeze = true
 	if saved_notes.size() >= 6:
 		if saved_notes[3] == "Ti" and saved_notes[4] == "La" and saved_notes[5] == "Fa":
+			$CanvasLayer/FreezeLabel4.visible = true
 			can_freeze = true
 	if saved_notes.size() >= 7:
 		if saved_notes[4] == "Ti" and saved_notes[5] == "La" and saved_notes[6] == "Fa":
+			$CanvasLayer/FreezeLabel5.visible = true
 			can_freeze = true
 
 func check_for_holy_wave_song() -> void:

@@ -2395,9 +2395,9 @@ text = "Freeze: "
 visible = false
 texture_filter = 1
 offset_left = 244.0
-offset_top = 250.0
+offset_top = 231.0
 offset_right = 388.0
-offset_bottom = 294.0
+offset_bottom = 275.0
 theme_override_fonts/font = ExtResource("10_mjt45")
 theme_override_font_sizes/font_size = 48
 text = "Freeze"
@@ -2406,9 +2406,9 @@ text = "Freeze"
 visible = false
 texture_filter = 1
 offset_left = 354.0
-offset_top = 250.0
+offset_top = 231.0
 offset_right = 498.0
-offset_bottom = 294.0
+offset_bottom = 275.0
 theme_override_fonts/font = ExtResource("10_mjt45")
 theme_override_font_sizes/font_size = 48
 text = "Freeze"
@@ -2417,9 +2417,9 @@ text = "Freeze"
 visible = false
 texture_filter = 1
 offset_left = 466.0
-offset_top = 250.0
+offset_top = 231.0
 offset_right = 610.0
-offset_bottom = 294.0
+offset_bottom = 275.0
 theme_override_fonts/font = ExtResource("10_mjt45")
 theme_override_font_sizes/font_size = 48
 text = "Freeze"
@@ -2428,9 +2428,9 @@ text = "Freeze"
 visible = false
 texture_filter = 1
 offset_left = 575.0
-offset_top = 250.0
+offset_top = 231.0
 offset_right = 719.0
-offset_bottom = 294.0
+offset_bottom = 275.0
 theme_override_fonts/font = ExtResource("10_mjt45")
 theme_override_font_sizes/font_size = 48
 text = "Freeze"
@@ -2439,12 +2439,67 @@ text = "Freeze"
 visible = false
 texture_filter = 1
 offset_left = 687.0
-offset_top = 250.0
+offset_top = 231.0
 offset_right = 831.0
-offset_bottom = 294.0
+offset_bottom = 275.0
 theme_override_fonts/font = ExtResource("10_mjt45")
 theme_override_font_sizes/font_size = 48
 text = "Freeze"
+
+[node name="HealLabel1" type="Label" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+offset_left = 267.0
+offset_top = 231.0
+offset_right = 363.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Heal"
+
+[node name="HealLabel2" type="Label" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+offset_left = 377.0
+offset_top = 231.0
+offset_right = 473.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Heal"
+
+[node name="HealLabel3" type="Label" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+offset_left = 487.0
+offset_top = 231.0
+offset_right = 583.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Heal"
+
+[node name="HealLabel4" type="Label" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+offset_left = 598.0
+offset_top = 231.0
+offset_right = 694.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Heal"
+
+[node name="HealLabel5" type="Label" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+offset_left = 710.0
+offset_top = 231.0
+offset_right = 806.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Heal"
 
 [node name="HolyWaveLabel" type="Label" parent="CanvasLayer"]
 texture_filter = 1
