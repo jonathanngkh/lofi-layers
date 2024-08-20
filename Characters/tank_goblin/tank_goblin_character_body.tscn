@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://dtq6odoaxknll"]
+[gd_scene load_steps=99 format=3 uid="uid://dtq6odoaxknll"]
 
 [ext_resource type="Script" path="res://Characters/tank_goblin/tank_goblin_character_body.gd" id="1_xj1we"]
 [ext_resource type="Texture2D" uid="uid://3qxexvvqh6fj" path="res://Characters/tank_goblin/FighterGoblin-Sheet.png" id="3_wcq2q"]
@@ -18,6 +18,15 @@
 [ext_resource type="Script" path="res://Characters/tank_goblin/hurt.gd" id="16_ug2x5"]
 [ext_resource type="Script" path="res://Characters/tank_goblin/death.gd" id="17_77fo3"]
 [ext_resource type="Script" path="res://utility/hurt_box.gd" id="19_jf7pb"]
+[ext_resource type="Texture2D" uid="uid://b6x2sa0qrnulc" path="res://utility/NoteSlotsControl/Noteslot.png" id="19_p0rn8"]
+[ext_resource type="Texture2D" uid="uid://chs8ibt06rinv" path="res://assets/characters/do.png" id="20_trwb8"]
+[ext_resource type="Script" path="res://utility/solfege_ball.gd" id="21_1lxoy"]
+[ext_resource type="Texture2D" uid="uid://cm208n8affa81" path="res://assets/characters/re.png" id="22_1a6np"]
+[ext_resource type="Texture2D" uid="uid://0t1ixaxovtnc" path="res://assets/characters/mi.png" id="23_er1pt"]
+[ext_resource type="Texture2D" uid="uid://cuhu63pmhxyr4" path="res://assets/characters/fa.png" id="24_1mdxa"]
+[ext_resource type="Texture2D" uid="uid://dmfoupxsxgjfn" path="res://assets/characters/so.png" id="25_ibhu5"]
+[ext_resource type="Texture2D" uid="uid://bjvfxwyag5jg7" path="res://assets/characters/la.png" id="26_ud3of"]
+[ext_resource type="Texture2D" uid="uid://cymlinrljycyu" path="res://assets/characters/ti.png" id="27_rbuqg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1i47"]
 atlas = ExtResource("3_wcq2q")
@@ -545,6 +554,7 @@ size = Vector2(33, 48)
 collision_layer = 64
 collision_mask = 65
 script = ExtResource("1_xj1we")
+random_notes_mode = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -595,13 +605,15 @@ script = ExtResource("15_1teyk")
 [node name="Hurt" type="Node2D" parent="StateMachine"]
 script = ExtResource("16_ug2x5")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Hurt"]
+
 [node name="Death" type="Node2D" parent="StateMachine"]
 script = ExtResource("17_77fo3")
 
 [node name="AudioStreamPlayer2D_Death" type="AudioStreamPlayer2D" parent="StateMachine/Death"]
 
 [node name="AudioStreamPlayer2D_Impact" type="AudioStreamPlayer2D" parent="StateMachine/Death"]
-volume_db = 9.0
+volume_db = 20.0
 
 [node name="HurtBox" type="Area2D" parent="."]
 visible = false
@@ -621,6 +633,7 @@ shape = SubResource("RectangleShape2D_5yl4c")
 one_shot = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 offset_left = -9.0
 offset_top = -48.0
 offset_right = 86.0
@@ -648,6 +661,172 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="AudioStreamPlayer2D_Hurt" type="AudioStreamPlayer2D" parent="."]
+volume_db = 5.0
 
 [node name="AudioStreamPlayer2D_Impact" type="AudioStreamPlayer2D" parent="."]
-volume_db = 9.0
+volume_db = 20.0
+
+[node name="SolfegeWheel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -3.33333
+offset_right = 40.0
+offset_bottom = 36.6667
+
+[node name="Outline" type="TextureRect" parent="SolfegeWheel"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -48.0
+offset_right = 15.0
+offset_bottom = -19.0
+texture = ExtResource("19_p0rn8")
+expand_mode = 1
+
+[node name="SolfegeContainer" type="Control" parent="SolfegeWheel" groups=["player"]]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Do" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
+self_modulate = Color(4, 0.15, 0.27, 1)
+layout_mode = 0
+offset_left = -11.0
+offset_top = -45.0
+offset_right = 12.0
+offset_bottom = -22.0
+texture = ExtResource("20_trwb8")
+expand_mode = 1
+script = ExtResource("21_1lxoy")
+
+[node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/Do"]
+visible = false
+layout_mode = 0
+offset_left = 1.66667
+offset_right = 41.6667
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "Do"
+
+[node name="Re" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
+self_modulate = Color(4, 0.448, 0.07, 1)
+layout_mode = 0
+offset_left = 22.0
+offset_top = -28.0
+offset_right = 45.0
+offset_bottom = -5.0
+texture = ExtResource("22_1a6np")
+expand_mode = 1
+script = ExtResource("21_1lxoy")
+solfege_ball_positions_index = 1
+
+[node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/Re"]
+visible = false
+layout_mode = 0
+offset_left = 1.66667
+offset_right = 41.6667
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "Re"
+
+[node name="Mi" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
+self_modulate = Color(4, 0.8, 0, 1)
+layout_mode = 0
+offset_left = 27.0
+offset_right = 50.0
+offset_bottom = 23.0
+texture = ExtResource("23_er1pt")
+expand_mode = 1
+script = ExtResource("21_1lxoy")
+solfege_ball_positions_index = 2
+
+[node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/Mi"]
+visible = false
+layout_mode = 0
+offset_left = 1.66667
+offset_right = 41.6667
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "Mi"
+
+[node name="Fa" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
+self_modulate = Color(0.2, 3, 0.25, 1)
+layout_mode = 0
+offset_left = 7.0
+offset_top = 24.0
+offset_right = 30.0
+offset_bottom = 47.0
+texture = ExtResource("24_1mdxa")
+expand_mode = 1
+script = ExtResource("21_1lxoy")
+solfege_ball_positions_index = 3
+
+[node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/Fa"]
+visible = false
+layout_mode = 0
+offset_left = 3.33333
+offset_right = 43.3333
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "Fa"
+
+[node name="So" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
+self_modulate = Color(0.1, 0.9, 4, 1)
+layout_mode = 0
+offset_left = -30.0
+offset_top = 24.0
+offset_right = -7.0
+offset_bottom = 47.0
+texture = ExtResource("25_ibhu5")
+expand_mode = 1
+script = ExtResource("21_1lxoy")
+solfege_ball_positions_index = 4
+
+[node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/So"]
+visible = false
+layout_mode = 0
+offset_left = 3.33333
+offset_right = 43.3333
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "So"
+
+[node name="La" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
+self_modulate = Color(0.35, 0.5, 7, 1)
+layout_mode = 0
+offset_left = -47.0
+offset_right = -24.0
+offset_bottom = 23.0
+texture = ExtResource("26_ud3of")
+expand_mode = 1
+script = ExtResource("21_1lxoy")
+solfege_ball_positions_index = 5
+
+[node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/La"]
+visible = false
+layout_mode = 0
+offset_left = 3.33333
+offset_right = 43.3333
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "La"
+
+[node name="Ti" type="TextureRect" parent="SolfegeWheel/SolfegeContainer"]
+self_modulate = Color(0.7, 0.3, 4, 1)
+layout_mode = 0
+offset_left = -42.0
+offset_top = -28.0
+offset_right = -19.0
+offset_bottom = -5.0
+texture = ExtResource("27_rbuqg")
+expand_mode = 1
+script = ExtResource("21_1lxoy")
+solfege_ball_positions_index = 6
+
+[node name="Label" type="Label" parent="SolfegeWheel/SolfegeContainer/Ti"]
+visible = false
+layout_mode = 0
+offset_left = 4.66666
+offset_right = 44.6667
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "Ti"

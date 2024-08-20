@@ -8,6 +8,18 @@ func enter(_msg := {}) -> void:
 	tank_goblin.sprite.offset = Vector2(15, 0)
 	sprite_flash()
 	tank_goblin.sprite.animation_finished.connect(_on_animation_finished)
+	if tank_goblin.random_notes_mode:
+		roulette()
+
+func _rotate_solfege_wheel() -> void:
+	for solfege_note in tank_goblin.solfege_container.get_children():
+		solfege_note.solfege_forward()
+	
+
+func roulette() -> void:
+	for i in randi_range(1, 7):
+		await get_tree().create_timer(0.1).timeout
+		_rotate_solfege_wheel()
 	
 func sprite_flash() -> void:
 	var tween: Tween = create_tween()

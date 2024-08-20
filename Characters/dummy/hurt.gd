@@ -17,7 +17,17 @@ func enter(_msg := {}) -> void:
 	sprite_flash()
 	if dummy.random_notes_mode:
 		roulette()
-	#$Timer.timeout.connect(_rotate_solfege_wheel)
+
+func _rotate_solfege_wheel() -> void:
+	for solfege_note in dummy.solfege_container.get_children():
+		solfege_note.solfege_forward()
+	
+
+func roulette() -> void:
+	for i in randi_range(1, 7):
+		await get_tree().create_timer(0.1).timeout
+		_rotate_solfege_wheel()
+
 
 func sprite_flash() -> void:
 	var tween: Tween = create_tween()
@@ -42,15 +52,6 @@ func handle_input(_event: InputEvent) -> void:
 	pass
 
 
-func _rotate_solfege_wheel() -> void:
-	for solfege_note in dummy.solfege_container.get_children():
-		solfege_note.solfege_forward()
-	
-
-func roulette() -> void:
-	for i in randi_range(1, 7):
-		await get_tree().create_timer(0.1).timeout
-		_rotate_solfege_wheel()
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
 func exit() -> void:

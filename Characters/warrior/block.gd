@@ -14,6 +14,7 @@ func enter(_msg := {}) -> void:
 		if _msg["from"] == "shield_attack":
 			warrior.sprite.play("block")
 	else:
+		$AudioStreamPlayer.play()
 		warrior.sprite.play("block_start")
 	
 	if not Input.is_action_pressed("block") and not warrior.sprite.animation == "block_break" and not warrior.sprite.animation == "block_hit":
@@ -94,6 +95,7 @@ func handle_input(_event: InputEvent) -> void:
 
 func block_hit() -> void:
 	# no invincibility yet: block health will go down even during block hit animation
+	$AudioStreamPlayer_BlockHit.play()
 	if block_health > 0:
 		if warrior.sprite.animation == "block_hit":
 			warrior.sprite.stop()

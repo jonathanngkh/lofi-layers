@@ -427,6 +427,7 @@ collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_fqv6n")
 damage = 3
+random_notes_mode = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var hit_box: Area2D = $HitBox
+@onready var hit_box: HitBox = $AnimatedSprite2D/HitBox
 @onready var screen_notifier: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 
 const SPEED = 600.0

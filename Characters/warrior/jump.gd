@@ -43,6 +43,12 @@ func controls() -> void:
 	else:
 		if Input.is_action_pressed("jump") and warrior.is_on_floor():
 			state_machine.transition_to("Jump")
+		if Input.get_axis("left", "right") > 0:
+			warrior.sprite.scale.x = 1
+			warrior.velocity.x = 1 * warrior.SPEED
+		elif Input.get_axis("left", "right") < 0:
+			warrior.sprite.scale.x = -1
+			warrior.velocity.x = -1 * warrior.SPEED
 	# dash
 	if Input.is_action_just_pressed("dash") and warrior.can_air_dash:
 		state_machine.transition_to("AirDash")
@@ -62,7 +68,7 @@ func physics_update(_delta: float) -> void:
 		$AudioStreamPlayer2D.play()
 		if warrior.velocity.x == 0:
 			if not warrior.sprite.animation == "land":
-				warrior.sprite.play("land", 1)
+				warrior.sprite.play("land", 2.0)
 		else:
 			state_machine.transition_to("Run")
 

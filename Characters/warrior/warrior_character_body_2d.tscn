@@ -1,4 +1,4 @@
-[gd_scene load_steps=385 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=387 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="PackedScene" uid="uid://7hq8huhncy2o" path="res://utility/do_ui.tscn" id="2_7wi07"]
@@ -81,6 +81,8 @@
 [ext_resource type="AudioStream" uid="uid://b3ma3jwt5lvx0" path="res://Characters/warrior/sfx_player_dash.wav" id="51_wlisp"]
 [ext_resource type="AudioStream" uid="uid://bulatcucye2vb" path="res://Characters/warrior/sfx_skill_aircut.wav" id="54_kgyj0"]
 [ext_resource type="Script" path="res://Characters/warrior/air_dash.gd" id="55_pubvm"]
+[ext_resource type="AudioStream" uid="uid://4mlglr7kkaie" path="res://Characters/warrior/sfx_shield_raise [Draft 2].wav" id="57_llbru"]
+[ext_resource type="AudioStream" uid="uid://dqxyosfocste4" path="res://Characters/warrior/sfx_shield_block.wav" id="58_05bct"]
 [ext_resource type="AudioStream" uid="uid://c7vehkne1c0q2" path="res://Characters/warrior/sfx_holysword [Draft 4].wav" id="58_dtrgq"]
 [ext_resource type="AudioStream" uid="uid://c86fw12mboc5i" path="res://Characters/warrior/sfx_skill_freeze.wav" id="59_s5w21"]
 [ext_resource type="AudioStream" uid="uid://3xibkemd5jdq" path="res://Characters/warrior/sfx_skill_heal.wav" id="71_m5h07"]
@@ -2928,7 +2930,6 @@ debug_color = Color(0.981884, 0, 0.367129, 0.42)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox2"]
 position = Vector2(131.667, -11)
 rotation = -0.785397
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_opo1i")
 debug_color = Color(0.940005, 0.0777886, 0.576187, 0.42)
 
@@ -3013,6 +3014,12 @@ pitch_scale = 1.3
 script = ExtResource("8_jpocv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Block"]
+stream = ExtResource("57_llbru")
+pitch_scale = 1.3
+
+[node name="AudioStreamPlayer_BlockHit" type="AudioStreamPlayer" parent="StateMachine/Block"]
+stream = ExtResource("58_05bct")
+volume_db = -4.657
 
 [node name="ShieldHeavyAttack" type="Node2D" parent="StateMachine"]
 script = ExtResource("20_xjgfq")

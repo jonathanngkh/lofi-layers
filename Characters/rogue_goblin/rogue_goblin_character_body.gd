@@ -2,6 +2,7 @@ class_name RogueGoblin
 extends CharacterBody2D
 
 @export var damage := 2
+@export var random_notes_mode := false
 var note_rotate_dict := {
 	"Do": 0,
 	"Re": 1,
@@ -42,12 +43,12 @@ func _ready() -> void:
 		for solfege in solfege_container.get_children():
 			solfege.solfege_forward()
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
-	for note in note_health:
-		var note_ui_spawn = note_preloads[note].instantiate()
-		for container in $HBoxContainer.get_children():
-			if container.get_child_count() == 0:
-				container.add_child(note_ui_spawn)
-				break
+	#for note in note_health:
+		#var note_ui_spawn = note_preloads[note].instantiate()
+		#for container in $HBoxContainer.get_children():
+			#if container.get_child_count() == 0:
+				#container.add_child(note_ui_spawn)
+				#break
 	attack_timer.timeout.connect(_on_attack_timer_timeout)
 	
 func _on_attack_timer_timeout():

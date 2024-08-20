@@ -1,8 +1,8 @@
 class_name Dummy
 extends CharacterBody2D
 
-@export var random_notes_mode := false
 @export var note_health := ["Do"]
+@export var random_notes_mode := false
 var note_rotate_dict := {
 	"Do": 0,
 	"Re": 1,
@@ -12,9 +12,9 @@ var note_rotate_dict := {
 	"La": 5,
 	"Ti": 6,
 }
+@onready var solfege_container: Control = $SolfegeWheel/SolfegeContainer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var state_machine: StateMachine = $StateMachine
-@onready var solfege_container: Control = $SolfegeWheel/SolfegeContainer
 
 
 func _ready() -> void:

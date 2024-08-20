@@ -26,7 +26,8 @@ func enter(_msg := {}) -> void:
 	$AudioStreamPlayer2D_Hurt.play()
 	$AudioStreamPlayer2D_Impact.play()
 	sprite_flash()
-	roulette()
+	if rogue_goblin.random_notes_mode:
+		roulette()
 
 
 func _rotate_solfege_wheel() -> void:
@@ -47,7 +48,7 @@ func sprite_flash() -> void:
 func _on_animation_finished() -> void:
 	if rogue_goblin.sprite.animation == "hurt":
 		rogue_goblin.can_attack = false
-		rogue_goblin.attack_timer.start(1.0)
+		rogue_goblin.attack_timer.start(0.2)
 		state_machine.transition_to("Idle")
 #
 	#if rogue_goblin.sprite.animation == "hurt":
