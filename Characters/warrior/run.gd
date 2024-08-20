@@ -1,12 +1,19 @@
 extends WarriorState
 
+#@onready var footstep_sounds := [
+	#preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_01.wav"),
+	#preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_02.wav"),
+	#preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_03.wav"),
+	#preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_04.wav"),
+	#preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_05.wav")
+#]
+
 @onready var footstep_sounds := [
-	preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_01.wav"),
-	preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_02.wav"),
-	preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_03.wav"),
-	preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_04.wav"),
-	preload("res://Characters/warrior/sounds/footsteps/sfx_footsteps_grass_05.wav")
+	preload("res://assets/sfx/grass_walk_3.mp3"),
+	preload("res://assets/sfx/grass_walk_2.mp3"),
+	preload("res://assets/sfx/grass_walk_1.mp3"),
 ]
+
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	warrior.sprite.animation_finished.connect(_on_animation_finished)

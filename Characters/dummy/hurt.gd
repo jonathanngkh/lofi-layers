@@ -15,7 +15,8 @@ func enter(_msg := {}) -> void:
 	$AudioStreamPlayer2D_Impact.stream = enemy_impact_sounds.pick_random()
 	$AudioStreamPlayer2D_Impact.play()
 	sprite_flash()
-	roulette()
+	if dummy.random_notes_mode:
+		roulette()
 	#$Timer.timeout.connect(_rotate_solfege_wheel)
 
 func sprite_flash() -> void:

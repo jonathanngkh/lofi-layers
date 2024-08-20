@@ -8,7 +8,7 @@ var can_freeze = false
 
 @export var hp := 20
 #var saved_notes := ["Do", "Fa", "So",]
-var saved_notes := ["Do", "Re", "Mi", "Fa", "So", "La", "Ti"]
+var saved_notes := ["La", "Mi", "Fa", "Re"]
 var can_dash = true
 var can_air_dash = true
 @onready var solfege_notes := ["Do", "Re", "Mi", "Fa", "So", "La", "Ti"]
@@ -78,6 +78,7 @@ const JUMP_VELOCITY = -2100.0
 
 
 func _ready() -> void:
+	health_bar_control.PlayerCurrentHealth = hp
 	aura.play("loop")
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 	hit_box.hit_signal.connect(_on_hit)
@@ -392,7 +393,7 @@ func check_for_holy_wave_song() -> void:
 			tween4.bind_node(self)
 			tween4.set_loops()
 			tween4.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(4, 0.5, 0.1), 0.3)
-			tween4.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(1, 0.5, 1), 0.3)
+			tween4.tween_property(saved_notes_hbox.get_children()[3].get_children()[0], "self_modulate", Color(1, 0.5, 0.1), 0.3)
 	if saved_notes.size() >= 5:
 		if saved_notes[1] == "La" and saved_notes[2] == "Mi" and saved_notes[3] == "Fa" and saved_notes[4] == "Re":
 			$CanvasLayer/HolyWaveLabel2.visible = true
@@ -417,13 +418,13 @@ func check_for_holy_wave_song() -> void:
 			tween5.bind_node(self)
 			tween5.set_loops()
 			tween5.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(4, 0.5, 0.1), 0.3)
-			tween5.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(1, 0.5, 1), 0.3)
+			tween5.tween_property(saved_notes_hbox.get_children()[4].get_children()[0], "self_modulate", Color(1, 0.5, 0.1), 0.3)
 	if saved_notes.size() >= 6:
 		if saved_notes[2] == "La" and saved_notes[3] == "Mi" and saved_notes[4] == "Fa" and saved_notes[5] == "Re":
 			$CanvasLayer/HolyWaveLabel3.visible = true
 			can_holy_wave = true
 			aura.visible = true
-			tween1 = create_tween()
+			tween3 = create_tween()
 			tween3.bind_node(self)
 			tween3.set_loops()
 			tween3.tween_property(saved_notes_hbox.get_children()[2].get_children()[0], "self_modulate", Color(0.35, 0.5, 6), 0.3)
@@ -442,7 +443,7 @@ func check_for_holy_wave_song() -> void:
 			tween6.bind_node(self)
 			tween6.set_loops()
 			tween6.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(4, 0.5, 0.1), 0.3)
-			tween6.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(1, 0.5, 1), 0.3)
+			tween6.tween_property(saved_notes_hbox.get_children()[5].get_children()[0], "self_modulate", Color(1, 0.5, 0.1), 0.3)
 	if saved_notes.size() >= 7:
 		if saved_notes[3] == "La" and saved_notes[4] == "Mi" and saved_notes[5] == "Fa" and saved_notes[6] == "Re":
 			$CanvasLayer/HolyWaveLabel4.visible = true

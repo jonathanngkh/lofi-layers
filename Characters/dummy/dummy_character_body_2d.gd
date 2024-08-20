@@ -1,6 +1,7 @@
 class_name Dummy
 extends CharacterBody2D
 
+@export var random_notes_mode := false
 @export var note_health := ["Do"]
 var note_rotate_dict := {
 	"Do": 0,

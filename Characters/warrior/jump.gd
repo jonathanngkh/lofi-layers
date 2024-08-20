@@ -1,7 +1,11 @@
 extends WarriorState
 
 var pre_jump_position_y
-
+@onready var footstep_sounds := [
+	preload("res://assets/sfx/grass_walk_3.mp3"),
+	preload("res://assets/sfx/grass_walk_2.mp3"),
+	preload("res://assets/sfx/grass_walk_1.mp3"),
+]
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
@@ -48,6 +52,8 @@ func physics_update(_delta: float) -> void:
 	if warrior.velocity.y > 0 and warrior.velocity.y < 100:
 		warrior.sprite.play("apex")
 	if warrior.is_on_floor():
+		$AudioStreamPlayer2D.stream = footstep_sounds.pick_random()
+		$AudioStreamPlayer2D.play()
 		if warrior.velocity.x == 0:
 			if not warrior.sprite.animation == "land":
 				warrior.sprite.play("land", 1)
