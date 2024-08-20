@@ -14,7 +14,7 @@ func apply_shake():
 	shake_strength = randomStrength
 
 func _process(delta):
-	global_position.y = start_position
+	#global_position.y = start_position
 	#if Input.is_action_just_pressed("shake"):
 		#apply_shake()
 	

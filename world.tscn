@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bd7e5wvydw0pg"]
+[gd_scene load_steps=32 format=4 uid="uid://bd7e5wvydw0pg"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_bx3ql"]
 [ext_resource type="PackedScene" uid="uid://c475exd8klytk" path="res://parallax_background.tscn" id="1_d7jge"]
@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://i800u0e1fu3p" path="res://utility/la_ui.tscn" id="20_ernfu"]
 [ext_resource type="PackedScene" uid="uid://kjby3ljjqg7h" path="res://utility/mi_ui.tscn" id="21_5t487"]
 [ext_resource type="Texture2D" uid="uid://ckle0wf7h4fe8" path="res://utility/k_dash_button_guide.png" id="21_8x88e"]
+[ext_resource type="PackedScene" uid="uid://cf5bw71d6x4vq" path="res://utility/re_ui.tscn" id="24_rr441"]
+[ext_resource type="Texture2D" uid="uid://cgq5w8i78pfmo" path="res://utility/space_jump_button_guide.png" id="25_e5bej"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkfc1"]
 texture = ExtResource("7_mk5la")
@@ -376,6 +378,15 @@ texture = ExtResource("7_mk5la")
 [sub_resource type="TileSet" id="TileSet_xqrda"]
 sources/0 = SubResource("TileSetAtlasSource_dkfc1")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhrue"]
+size = Vector2(6210.5, 145)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sumpl"]
+size = Vector2(600, 212)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40u87"]
+size = Vector2(377, 176)
+
 [sub_resource type="Environment" id="Environment_qmkeb"]
 background_mode = 3
 background_canvas_max_layer = 1
@@ -473,66 +484,30 @@ scale = Vector2(2.5, 2.5)
 
 [node name="tilemapspam4" type="Node2D" parent="."]
 modulate = Color(0.811629, 0.754368, 1, 1)
-position = Vector2(-4, 136)
+position = Vector2(-4, -28)
 
 [node name="TileMapLayerSpam" type="TileMapLayer" parent="tilemapspam4"]
 scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAAAAA4AAAAGAAIAAAAAAA8AAAAGAAMAAAAAABAAAAAGAAQAAAABAA4AAAAGAAIAAAABAA8AAAAGAAMAAAABABAAAAAGAAQAAAACAA4AAAAGAAIAAAACAA8AAAAGAAMAAAACABAAAAAGAAQAAAADAA4AAAAGAAIAAAADAA8AAAAGAAMAAAADABAAAAAGAAQAAAAEAA4AAAAGAAIAAAAEAA8AAAAGAAMAAAAEABAAAAAGAAQAAAAFAA4AAAAGAAIAAAAFAA8AAAAGAAMAAAAFABAAAAAGAAQAAAAGAA4AAAAGAAIAAAAGAA8AAAAGAAMAAAAGABAAAAAGAAQAAAAHAA4AAAAGAAIAAAAHAA8AAAAGAAMAAAAHABAAAAAGAAQAAAAIAA4AAAAGAAIAAAAIAA8AAAAGAAMAAAAIABAAAAAGAAQAAAAJAA4AAAAGAAIAAAAJAA8AAAAGAAMAAAAJABAAAAAGAAQAAAAKAA4AAAAGAAIAAAAKAA8AAAAGAAMAAAAKABAAAAAGAAQAAAALAA4AAAAGAAIAAAALAA8AAAAGAAMAAAALABAAAAAGAAQAAAAMAA4AAAAGAAIAAAAMAA8AAAAGAAMAAAAMABAAAAAGAAQAAAANAA4AAAAGAAIAAAANAA8AAAAGAAMAAAANABAAAAAGAAQAAAAOAA4AAAAGAAIAAAAOAA8AAAAGAAMAAAAOABAAAAAGAAQAAAAPAA4AAAAGAAIAAAAPAA8AAAAGAAMAAAAPABAAAAAGAAQAAAAQAA4AAAAGAAIAAAAQAA8AAAAGAAMAAAAQABAAAAAGAAQAAAARAA4AAAAGAAIAAAARAA8AAAAGAAMAAAARABAAAAAGAAQAAAASAA4AAAAGAAIAAAASAA8AAAAGAAMAAAASABAAAAAGAAQAAAATAA4AAAAGAAIAAAATAA8AAAAGAAMAAAATABAAAAAGAAQAAAAUAA4AAAAGAAIAAAAUAA8AAAAGAAMAAAAUABAAAAAGAAQAAAAVAA4AAAAGAAIAAAAVAA8AAAAGAAMAAAAVABAAAAAGAAQAAAAWAA4AAAAGAAIAAAAWAA8AAAAGAAMAAAAWABAAAAAGAAQAAAAXAA4AAAAGAAIAAAAXAA8AAAAGAAMAAAAXABAAAAAGAAQAAAAYAA4AAAAGAAIAAAAYAA8AAAAGAAMAAAAYABAAAAAGAAQAAAAZAA4AAAAGAAIAAAAZAA8AAAAGAAMAAAAZABAAAAAGAAQAAAAaAA4AAAAGAAIAAAAaAA8AAAAGAAMAAAAaABAAAAAGAAQAAAAbAA4AAAAGAAIAAAAbAA8AAAAGAAMAAAAbABAAAAAGAAQAAAAcAA4AAAAGAAIAAAAcAA8AAAAGAAMAAAAcABAAAAAGAAQAAAAdAA4AAAAGAAIAAAAdAA8AAAAGAAMAAAAdABAAAAAGAAQAAAAeAA4AAAAGAAIAAAAeAA8AAAAGAAMAAAAeABAAAAAGAAQAAAAfAA4AAAAGAAIAAAAfAA8AAAAGAAMAAAAfABAAAAAGAAQAAAAAABEAAAAGAAQAAAABABEAAAAGAAQAAAACABEAAAAGAAQAAAADABEAAAAGAAQAAAAEABEAAAAGAAQAAAAFABEAAAAGAAQAAAAGABEAAAAGAAQAAAAHABEAAAAGAAQAAAAIABEAAAAGAAQAAAAJABEAAAAGAAQAAAAKABEAAAAGAAQAAAALABEAAAAGAAQAAAAMABEAAAAGAAQAAAANABEAAAAGAAQAAAAOABEAAAAGAAQAAAAPABEAAAAGAAQAAAAQABEAAAAGAAQAAAARABEAAAAGAAQAAAASABEAAAAGAAQAAAATABEAAAAGAAQAAAAUABEAAAAGAAQAAAAVABEAAAAGAAQAAAAWABEAAAAGAAQAAAAXABEAAAAGAAQAAAAYABEAAAAGAAQAAAAZABEAAAAGAAQAAAAaABEAAAAGAAQAAAAbABEAAAAGAAQAAAAcABEAAAAGAAQAAAAdABEAAAAGAAQAAAAeABEAAAAGAAQAAAAfABEAAAAGAAQAAAA=")
+tile_map_data = PackedByteArray("AAAAAA8AAAAEAAMAAAAAABAAAAAQAAkAAAABAA4AAAAGAAIAAAABAA8AAAAFAAMAAAABABAAAAARABEAAAACAA4AAAAQAAkAAAACAA8AAAAPABIAAAACABAAAAAGAAQAAAADAA4AAAARABEAAAADAA8AAAARABIAAAADABAAAAAGAAQAAAAEAA4AAAAGAAQAAAAEAA8AAAAGAAQAAAAEABAAAAAGAAQAAAAFAA4AAAAGAAQAAAAFAA8AAAAGAAQAAAAFABAAAAAGAAQAAAAGAA4AAAAGAAQAAAAGAA8AAAAGAAQAAAAGABAAAAAGAAQAAAAHAA4AAAAGAAQAAAAHAA8AAAAGAAQAAAAHABAAAAAGAAQAAAAIAA4AAAAMABEAAAAIABAAAAAGAAQAAAAJAA4AAAANABEAAAAJAA8AAAANABIAAAAJABAAAAAGAAQAAAAKAA4AAAAOABEAAAAKAA8AAAAOABIAAAAKABAAAAAGAAQAAAALAA4AAAAGAAIAAAALAA8AAAAGAAMAAAALABAAAAAGAAQAAAAMAA4AAAAGAAIAAAAMAA8AAAAGAAMAAAAMABAAAAAGAAQAAAANAA4AAAAGAAIAAAANAA8AAAAGAAMAAAANABAAAAAGAAQAAAAOAA4AAAAGAAIAAAAOAA8AAAAGAAMAAAAOABAAAAAGAAQAAAAPAA4AAAAGAAIAAAAPAA8AAAAGAAMAAAAPABAAAAAGAAQAAAAQAA4AAAAGAAIAAAAQAA8AAAAGAAMAAAAQABAAAAAGAAQAAAARAA4AAAAGAAIAAAARAA8AAAAGAAMAAAARABAAAAAGAAQAAAASAA4AAAAGAAIAAAASAA8AAAAGAAMAAAASABAAAAAGAAQAAAATAA4AAAAGAAIAAAATAA8AAAAGAAMAAAATABAAAAAGAAQAAAAUAA4AAAAGAAIAAAAUAA8AAAAGAAMAAAAUABAAAAAGAAQAAAAVAA4AAAAGAAIAAAAVAA8AAAAGAAMAAAAVABAAAAAGAAQAAAAWAA4AAAAGAAIAAAAWAA8AAAAGAAMAAAAWABAAAAAGAAQAAAAXAA4AAAAGAAIAAAAXAA8AAAAGAAMAAAAXABAAAAAGAAQAAAAYAA4AAAAGAAIAAAAYAA8AAAAGAAMAAAAYABAAAAAGAAQAAAAZAA4AAAAGAAIAAAAZAA8AAAAGAAMAAAAZABAAAAAGAAQAAAAaAA4AAAAGAAIAAAAaAA8AAAAGAAMAAAAaABAAAAAGAAQAAAAbAA4AAAAGAAIAAAAbAA8AAAAGAAMAAAAbABAAAAAGAAQAAAAcAA4AAAAGAAIAAAAcAA8AAAAGAAMAAAAcABAAAAAGAAQAAAAdAA4AAAAGAAIAAAAdAA8AAAAGAAMAAAAdABAAAAAGAAQAAAAeAA4AAAAGAAIAAAAeAA8AAAAGAAMAAAAeABAAAAAGAAQAAAAfAA4AAAAGAAIAAAAfAA8AAAAGAAMAAAAfABAAAAAGAAQAAAAAABEAAAAPABIAAAABABEAAAARABIAAAACABEAAAAGAAQAAAADABEAAAAGAAQAAAAEABEAAAAGAAQAAAAFABEAAAAGAAQAAAAGABEAAAAGAAQAAAAHABEAAAAGAAQAAAAIABEAAAAGAAQAAAAJABEAAAAGAAQAAAAKABEAAAAGAAQAAAALABEAAAAGAAQAAAAMABEAAAAGAAQAAAANABEAAAAGAAQAAAAOABEAAAAGAAQAAAAPABEAAAAGAAQAAAAQABEAAAAGAAQAAAARABEAAAAGAAQAAAASABEAAAAGAAQAAAATABEAAAAGAAQAAAAUABEAAAAGAAQAAAAVABEAAAAGAAQAAAAWABEAAAAGAAQAAAAXABEAAAAGAAQAAAAYABEAAAAGAAQAAAAZABEAAAAGAAQAAAAaABEAAAAGAAQAAAAbABEAAAAGAAQAAAAcABEAAAAGAAQAAAAdABEAAAAGAAQAAAAeABEAAAAGAAQAAAAfABEAAAAGAAQAAAAAABIAAAAGAAQAAAAAABMAAAAGAAQAAAABABIAAAAGAAQAAAABABMAAAAGAAQAAAACABIAAAAGAAQAAAACABMAAAAGAAQAAAADABIAAAAGAAQAAAADABMAAAAGAAQAAAAEABIAAAAGAAQAAAAEABMAAAAGAAQAAAAFABIAAAAGAAQAAAAFABMAAAAGAAQAAAAGABIAAAAGAAQAAAAGABMAAAAGAAQAAAAHABIAAAAGAAQAAAAHABMAAAAGAAQAAAAIABIAAAAGAAQAAAAIABMAAAAGAAQAAAAJABIAAAAGAAQAAAAJABMAAAAGAAQAAAAKABIAAAAGAAQAAAAKABMAAAAGAAQAAAALABIAAAAGAAQAAAALABMAAAAGAAQAAAAMABIAAAAGAAQAAAAMABMAAAAGAAQAAAANABIAAAAGAAQAAAANABMAAAAGAAQAAAAOABIAAAAGAAQAAAAOABMAAAAGAAQAAAAPABIAAAAGAAQAAAAPABMAAAAGAAQAAAAQABIAAAAGAAQAAAAQABMAAAAGAAQAAAARABIAAAAGAAQAAAARABMAAAAGAAQAAAASABIAAAAGAAQAAAASABMAAAAGAAQAAAATABIAAAAGAAQAAAATABMAAAAGAAQAAAAUABIAAAAGAAQAAAAUABMAAAAGAAQAAAAVABIAAAAGAAQAAAAVABMAAAAGAAQAAAAWABIAAAAGAAQAAAAWABMAAAAGAAQAAAAXABIAAAAGAAQAAAAXABMAAAAGAAQAAAAYABIAAAAGAAQAAAAYABMAAAAGAAQAAAAZABIAAAAGAAQAAAAZABMAAAAGAAQAAAAaABIAAAAGAAQAAAAaABMAAAAGAAQAAAAbABIAAAAGAAQAAAAbABMAAAAGAAQAAAAcABIAAAAGAAQAAAAcABMAAAAGAAQAAAAdABIAAAAGAAQAAAAdABMAAAAGAAQAAAAeABIAAAAGAAQAAAAeABMAAAAGAAQAAAAfABIAAAAGAAQAAAAfABMAAAAGAAQAAAAAAA4AAAAEAAIAAAACAAwAAAAEAAIAAAACAA0AAAAEAAMAAAADAAwAAAAGAAIAAAADAA0AAAAFAAMAAAAEAAwAAAAQAAkAAAAEAA0AAAAPABIAAAAFAAwAAAARABEAAAAFAA0AAAARABIAAAAEAAoAAAAEAAIAAAAEAAsAAAAEAAMAAAAFAAoAAAAGAAIAAAAFAAsAAAAFAAMAAAAGAAoAAAAGAAIAAAAGAAsAAAAGAAMAAAAGAAwAAAAGAAQAAAAGAA0AAAAGAAQAAAAHAAwAAAAMABEAAAAHAA0AAAAMABIAAAAIAAwAAAARAAkAAAAIAA0AAAAHAAMAAAAgAA4AAAAOABEAAAAgAA8AAAAOABIAAAAgABAAAAAGAAQAAAAgABEAAAAGAAQAAAAgABIAAAAGAAQAAAAgABMAAAAGAAQAAAAhAA4AAAAGAAIAAAAhAA8AAAAGAAMAAAAhABAAAAAGAAQAAAAhABEAAAAGAAQAAAAhABIAAAAGAAQAAAAhABMAAAAGAAQAAAAiAA4AAAAGAAIAAAAiAA8AAAAGAAMAAAAiABAAAAAGAAQAAAAiABEAAAAGAAQAAAAiABIAAAAGAAQAAAAiABMAAAAGAAQAAAAjAA4AAAAGAAIAAAAjAA8AAAAGAAMAAAAjABAAAAAGAAQAAAAjABEAAAAGAAQAAAAjABIAAAAGAAQAAAAjABMAAAAGAAQAAAAkAA4AAAAGAAIAAAAkAA8AAAAGAAMAAAAkABAAAAAGAAQAAAAkABEAAAAGAAQAAAAkABIAAAAGAAQAAAAkABMAAAAGAAQAAAAlAA4AAAAGAAIAAAAlAA8AAAAGAAMAAAAlABAAAAAGAAQAAAAlABEAAAAGAAQAAAAlABIAAAAGAAQAAAAlABMAAAAGAAQAAAAmAA4AAAAGAAIAAAAmAA8AAAAGAAMAAAAmABAAAAAGAAQAAAAmABEAAAAGAAQAAAAmABIAAAAGAAQAAAAmABMAAAAGAAQAAAAnAA4AAAAGAAIAAAAnAA8AAAAGAAMAAAAnABAAAAAGAAQAAAAnABEAAAAGAAQAAAAnABIAAAAGAAQAAAAnABMAAAAGAAQAAAAoAA4AAAAGAAIAAAAoAA8AAAAGAAMAAAAoABAAAAAGAAQAAAAoABEAAAAGAAQAAAAoABIAAAAGAAQAAAAoABMAAAAGAAQAAAApAA4AAAAGAAIAAAApAA8AAAAGAAMAAAApABAAAAAGAAQAAAApABEAAAAGAAQAAAApABIAAAAGAAQAAAApABMAAAAGAAQAAAAqAA4AAAAGAAIAAAAqAA8AAAAGAAMAAAAqABAAAAAGAAQAAAAqABEAAAAGAAQAAAAqABIAAAAGAAQAAAAqABMAAAAGAAQAAAArAA4AAAAGAAIAAAArAA8AAAAGAAMAAAArABAAAAAGAAQAAAArABEAAAAGAAQAAAArABIAAAAGAAQAAAArABMAAAAGAAQAAAAsAA4AAAAGAAIAAAAsAA8AAAAGAAMAAAAsABAAAAAGAAQAAAAsABEAAAAGAAQAAAAsABIAAAAGAAQAAAAsABMAAAAGAAQAAAAtAA4AAAAGAAIAAAAtAA8AAAAGAAMAAAAtABAAAAAGAAQAAAAtABEAAAAGAAQAAAAtABIAAAAGAAQAAAAtABMAAAAGAAQAAAAuAA4AAAAGAAIAAAAuAA8AAAAGAAMAAAAuABAAAAAGAAQAAAAuABEAAAAGAAQAAAAuABIAAAAGAAQAAAAuABMAAAAGAAQAAAAvAA4AAAAGAAIAAAAvAA8AAAAGAAMAAAAvABAAAAAGAAQAAAAvABEAAAAGAAQAAAAvABIAAAAGAAQAAAAvABMAAAAGAAQAAAAwAA4AAAAGAAIAAAAwAA8AAAAGAAMAAAAwABAAAAAGAAQAAAAwABEAAAAGAAQAAAAwABIAAAAGAAQAAAAwABMAAAAGAAQAAAAxAA4AAAAGAAIAAAAxAA8AAAAGAAMAAAAxABAAAAAGAAQAAAAxABEAAAAGAAQAAAAxABIAAAAGAAQAAAAxABMAAAAGAAQAAAAyAA4AAAAGAAIAAAAyAA8AAAAGAAMAAAAyABAAAAAGAAQAAAAyABEAAAAGAAQAAAAyABIAAAAGAAQAAAAyABMAAAAGAAQAAAAzAA4AAAAGAAIAAAAzAA8AAAAGAAMAAAAzABAAAAAGAAQAAAAzABEAAAAGAAQAAAAzABIAAAAGAAQAAAAzABMAAAAGAAQAAAA0AA4AAAAGAAIAAAA0AA8AAAAGAAMAAAA0ABAAAAAGAAQAAAA0ABEAAAAGAAQAAAA0ABIAAAAGAAQAAAA0ABMAAAAGAAQAAAA1AA4AAAAGAAIAAAA1AA8AAAAGAAMAAAA1ABAAAAAGAAQAAAA1ABEAAAAGAAQAAAA1ABIAAAAGAAQAAAA1ABMAAAAGAAQAAAA2AA4AAAAGAAIAAAA2AA8AAAAGAAMAAAA2ABAAAAAGAAQAAAA2ABEAAAAGAAQAAAA2ABIAAAAGAAQAAAA2ABMAAAAGAAQAAAA3AA4AAAAOABEAAAA3AA8AAAAOABIAAAA3ABAAAAAGAAQAAAA3ABEAAAAGAAQAAAA3ABIAAAAGAAQAAAA3ABMAAAAGAAQAAAA4AA4AAAAGAAIAAAA4AA8AAAAGAAMAAAA4ABAAAAAGAAQAAAA4ABEAAAAGAAQAAAA4ABIAAAAGAAQAAAA4ABMAAAAGAAQAAAA5AA4AAAAGAAIAAAA5AA8AAAAGAAMAAAA5ABAAAAAGAAQAAAA5ABEAAAAGAAQAAAA5ABIAAAAGAAQAAAA5ABMAAAAGAAQAAAA6AA4AAAAGAAIAAAA6AA8AAAAGAAMAAAA6ABAAAAAGAAQAAAA6ABEAAAAGAAQAAAA6ABIAAAAGAAQAAAA6ABMAAAAGAAQAAAA7AA4AAAAGAAIAAAA7AA8AAAAGAAMAAAA7ABAAAAAGAAQAAAA7ABEAAAAGAAQAAAA7ABIAAAAGAAQAAAA7ABMAAAAGAAQAAAA8AA4AAAAGAAIAAAA8AA8AAAAGAAMAAAA8ABAAAAAGAAQAAAA8ABEAAAAGAAQAAAA8ABIAAAAGAAQAAAA8ABMAAAAGAAQAAAA9AA4AAAAGAAIAAAA9AA8AAAAGAAMAAAA9ABAAAAAGAAQAAAA9ABEAAAAGAAQAAAA9ABIAAAAGAAQAAAA9ABMAAAAGAAQAAAA+AA4AAAAGAAIAAAA+AA8AAAAGAAMAAAA+ABAAAAAGAAQAAAA+ABEAAAAGAAQAAAA+ABIAAAAGAAQAAAA+ABMAAAAGAAQAAAA/AA4AAAAGAAIAAAA/AA8AAAAGAAMAAAA/ABAAAAAGAAQAAAA/ABEAAAAGAAQAAAA/ABIAAAAGAAQAAAA/ABMAAAAGAAQAAABAAA4AAAAGAAIAAABAAA8AAAAGAAMAAABAABAAAAAGAAQAAABAABEAAAAGAAQAAABAABIAAAAGAAQAAABAABMAAAAGAAQAAABBAA4AAAAGAAIAAABBAA8AAAAGAAMAAABBABAAAAAGAAQAAABBABEAAAAGAAQAAABBABIAAAAGAAQAAABBABMAAAAGAAQAAABCAA4AAAAGAAIAAABCAA8AAAAGAAMAAABCABAAAAAGAAQAAABCABEAAAAGAAQAAABCABIAAAAGAAQAAABCABMAAAAGAAQAAABDAA4AAAAGAAIAAABDAA8AAAAGAAMAAABDABAAAAAGAAQAAABDABEAAAAGAAQAAABDABIAAAAGAAQAAABDABMAAAAGAAQAAABEAA4AAAAGAAIAAABEAA8AAAAGAAMAAABEABAAAAAGAAQAAABEABEAAAAGAAQAAABEABIAAAAGAAQAAABEABMAAAAGAAQAAABFAA4AAAAGAAIAAABFAA8AAAAGAAMAAABFABAAAAAGAAQAAABFABEAAAAGAAQAAABFABIAAAAGAAQAAABFABMAAAAGAAQAAABGAA4AAAAGAAIAAABGAA8AAAAGAAMAAABGABAAAAAGAAQAAABGABEAAAAGAAQAAABGABIAAAAGAAQAAABGABMAAAAGAAQAAABHAA4AAAAGAAIAAABHAA8AAAAGAAMAAABHABAAAAAGAAQAAABHABEAAAAGAAQAAABHABIAAAAGAAQAAABHABMAAAAGAAQAAABIAA4AAAAGAAIAAABIAA8AAAAGAAMAAABIABAAAAAGAAQAAABIABEAAAAGAAQAAABIABIAAAAGAAQAAABIABMAAAAGAAQAAABJAA4AAAAGAAIAAABJAA8AAAAGAAMAAABJABAAAAAGAAQAAABJABEAAAAGAAQAAABJABIAAAAGAAQAAABJABMAAAAGAAQAAABKAA4AAAAGAAIAAABKAA8AAAAGAAMAAABKABAAAAAGAAQAAABKABEAAAAGAAQAAABKABIAAAAGAAQAAABKABMAAAAGAAQAAABLAA4AAAAGAAIAAABLAA8AAAAGAAMAAABLABAAAAAGAAQAAABLABEAAAAGAAQAAABLABIAAAAGAAQAAABLABMAAAAGAAQAAABMAA4AAAAGAAIAAABMAA8AAAAGAAMAAABMABAAAAAGAAQAAABMABEAAAAGAAQAAABMABIAAAAGAAQAAABMABMAAAAGAAQAAABNAA4AAAAGAAIAAABNAA8AAAAGAAMAAABNABAAAAAGAAQAAABNABEAAAAGAAQAAABNABIAAAAGAAQAAABNABMAAAAGAAQAAAAJAAwAAAAIAAIAAAAJAA0AAAANABAAAAAHAAoAAAAHAAIAAAAHAAsAAAAHAAMAAAAIAAoAAAAIAAIAAAAIAAsAAAAIAAMAAAAIAA8AAAAMABIAAAA=")
 tile_set = SubResource("TileSet_xqrda")
 
-[node name="GroundStaticBody2D3" parent="tilemapspam4" instance=ExtResource("2_3un34")]
+[node name="RigidBody2D" type="StaticBody2D" parent="tilemapspam4"]
 visible = false
-modulate = Color(0.298844, 0.798139, 0.821057, 1)
-position = Vector2(0, 1153)
-scale = Vector2(2.5, 2.5)
 
-[node name="tilemapspam5" type="Node2D" parent="."]
-modulate = Color(0.811629, 0.754368, 1, 1)
-position = Vector2(2549, 136)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tilemapspam4/RigidBody2D"]
+position = Vector2(3110.75, 1213)
+shape = SubResource("RectangleShape2D_dhrue")
 
-[node name="TileMapLayerSpam" type="TileMapLayer" parent="tilemapspam5"]
-scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAAAAA4AAAAGAAIAAAAAAA8AAAAGAAMAAAAAABAAAAAGAAQAAAABAA4AAAAGAAIAAAABAA8AAAAGAAMAAAABABAAAAAGAAQAAAACAA4AAAAGAAIAAAACAA8AAAAGAAMAAAACABAAAAAGAAQAAAADAA4AAAAGAAIAAAADAA8AAAAGAAMAAAADABAAAAAGAAQAAAAEAA4AAAAGAAIAAAAEAA8AAAAGAAMAAAAEABAAAAAGAAQAAAAFAA4AAAAGAAIAAAAFAA8AAAAGAAMAAAAFABAAAAAGAAQAAAAGAA4AAAAGAAIAAAAGAA8AAAAGAAMAAAAGABAAAAAGAAQAAAAHAA4AAAAGAAIAAAAHAA8AAAAGAAMAAAAHABAAAAAGAAQAAAAIAA4AAAAGAAIAAAAIAA8AAAAGAAMAAAAIABAAAAAGAAQAAAAJAA4AAAAGAAIAAAAJAA8AAAAGAAMAAAAJABAAAAAGAAQAAAAKAA4AAAAGAAIAAAAKAA8AAAAGAAMAAAAKABAAAAAGAAQAAAALAA4AAAAGAAIAAAALAA8AAAAGAAMAAAALABAAAAAGAAQAAAAMAA4AAAAGAAIAAAAMAA8AAAAGAAMAAAAMABAAAAAGAAQAAAANAA4AAAAGAAIAAAANAA8AAAAGAAMAAAANABAAAAAGAAQAAAAOAA4AAAAGAAIAAAAOAA8AAAAGAAMAAAAOABAAAAAGAAQAAAAPAA4AAAAGAAIAAAAPAA8AAAAGAAMAAAAPABAAAAAGAAQAAAAQAA4AAAAGAAIAAAAQAA8AAAAGAAMAAAAQABAAAAAGAAQAAAARAA4AAAAGAAIAAAARAA8AAAAGAAMAAAARABAAAAAGAAQAAAASAA4AAAAGAAIAAAASAA8AAAAGAAMAAAASABAAAAAGAAQAAAATAA4AAAAGAAIAAAATAA8AAAAGAAMAAAATABAAAAAGAAQAAAAUAA4AAAAGAAIAAAAUAA8AAAAGAAMAAAAUABAAAAAGAAQAAAAVAA4AAAAGAAIAAAAVAA8AAAAGAAMAAAAVABAAAAAGAAQAAAAWAA4AAAAGAAIAAAAWAA8AAAAGAAMAAAAWABAAAAAGAAQAAAAXAA4AAAAGAAIAAAAXAA8AAAAGAAMAAAAXABAAAAAGAAQAAAAYAA4AAAAGAAIAAAAYAA8AAAAGAAMAAAAYABAAAAAGAAQAAAAZAA4AAAAGAAIAAAAZAA8AAAAGAAMAAAAZABAAAAAGAAQAAAAaAA4AAAAGAAIAAAAaAA8AAAAGAAMAAAAaABAAAAAGAAQAAAAbAA4AAAAGAAIAAAAbAA8AAAAGAAMAAAAbABAAAAAGAAQAAAAcAA4AAAAGAAIAAAAcAA8AAAAGAAMAAAAcABAAAAAGAAQAAAAdAA4AAAAGAAIAAAAdAA8AAAAGAAMAAAAdABAAAAAGAAQAAAAeAA4AAAAGAAIAAAAeAA8AAAAGAAMAAAAeABAAAAAGAAQAAAAfAA4AAAAGAAIAAAAfAA8AAAAGAAMAAAAfABAAAAAGAAQAAAAAABEAAAAGAAQAAAABABEAAAAGAAQAAAACABEAAAAGAAQAAAADABEAAAAGAAQAAAAEABEAAAAGAAQAAAAFABEAAAAGAAQAAAAGABEAAAAGAAQAAAAHABEAAAAGAAQAAAAIABEAAAAGAAQAAAAJABEAAAAGAAQAAAAKABEAAAAGAAQAAAALABEAAAAGAAQAAAAMABEAAAAGAAQAAAANABEAAAAGAAQAAAAOABEAAAAGAAQAAAAPABEAAAAGAAQAAAAQABEAAAAGAAQAAAARABEAAAAGAAQAAAASABEAAAAGAAQAAAATABEAAAAGAAQAAAAUABEAAAAGAAQAAAAVABEAAAAGAAQAAAAWABEAAAAGAAQAAAAXABEAAAAGAAQAAAAYABEAAAAGAAQAAAAZABEAAAAGAAQAAAAaABEAAAAGAAQAAAAbABEAAAAGAAQAAAAcABEAAAAGAAQAAAAdABEAAAAGAAQAAAAeABEAAAAGAAQAAAAfABEAAAAGAAQAAAA=")
-tile_set = SubResource("TileSet_xqrda")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="tilemapspam4/RigidBody2D"]
+position = Vector2(473, 1086)
+shape = SubResource("RectangleShape2D_sumpl")
 
-[node name="GroundStaticBody2D3" parent="tilemapspam5" instance=ExtResource("2_3un34")]
-visible = false
-modulate = Color(0.298844, 0.798139, 0.821057, 1)
-position = Vector2(0, 1153)
-scale = Vector2(2.5, 2.5)
-
-[node name="tilemapspam6" type="Node2D" parent="."]
-modulate = Color(0.811629, 0.754368, 1, 1)
-position = Vector2(5098, 136)
-
-[node name="TileMapLayerSpam" type="TileMapLayer" parent="tilemapspam6"]
-scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAAAAA4AAAAGAAIAAAAAAA8AAAAGAAMAAAAAABAAAAAGAAQAAAABAA4AAAAGAAIAAAABAA8AAAAGAAMAAAABABAAAAAGAAQAAAACAA4AAAAGAAIAAAACAA8AAAAGAAMAAAACABAAAAAGAAQAAAADAA4AAAAGAAIAAAADAA8AAAAGAAMAAAADABAAAAAGAAQAAAAEAA4AAAAGAAIAAAAEAA8AAAAGAAMAAAAEABAAAAAGAAQAAAAFAA4AAAAGAAIAAAAFAA8AAAAGAAMAAAAFABAAAAAGAAQAAAAGAA4AAAAGAAIAAAAGAA8AAAAGAAMAAAAGABAAAAAGAAQAAAAHAA4AAAAGAAIAAAAHAA8AAAAGAAMAAAAHABAAAAAGAAQAAAAIAA4AAAAGAAIAAAAIAA8AAAAGAAMAAAAIABAAAAAGAAQAAAAJAA4AAAAGAAIAAAAJAA8AAAAGAAMAAAAJABAAAAAGAAQAAAAKAA4AAAAGAAIAAAAKAA8AAAAGAAMAAAAKABAAAAAGAAQAAAALAA4AAAAGAAIAAAALAA8AAAAGAAMAAAALABAAAAAGAAQAAAAMAA4AAAAGAAIAAAAMAA8AAAAGAAMAAAAMABAAAAAGAAQAAAANAA4AAAAGAAIAAAANAA8AAAAGAAMAAAANABAAAAAGAAQAAAAOAA4AAAAGAAIAAAAOAA8AAAAGAAMAAAAOABAAAAAGAAQAAAAPAA4AAAAGAAIAAAAPAA8AAAAGAAMAAAAPABAAAAAGAAQAAAAQAA4AAAAGAAIAAAAQAA8AAAAGAAMAAAAQABAAAAAGAAQAAAARAA4AAAAGAAIAAAARAA8AAAAGAAMAAAARABAAAAAGAAQAAAASAA4AAAAGAAIAAAASAA8AAAAGAAMAAAASABAAAAAGAAQAAAATAA4AAAAGAAIAAAATAA8AAAAGAAMAAAATABAAAAAGAAQAAAAUAA4AAAAGAAIAAAAUAA8AAAAGAAMAAAAUABAAAAAGAAQAAAAVAA4AAAAGAAIAAAAVAA8AAAAGAAMAAAAVABAAAAAGAAQAAAAWAA4AAAAGAAIAAAAWAA8AAAAGAAMAAAAWABAAAAAGAAQAAAAXAA4AAAAGAAIAAAAXAA8AAAAGAAMAAAAXABAAAAAGAAQAAAAYAA4AAAAGAAIAAAAYAA8AAAAGAAMAAAAYABAAAAAGAAQAAAAZAA4AAAAGAAIAAAAZAA8AAAAGAAMAAAAZABAAAAAGAAQAAAAaAA4AAAAGAAIAAAAaAA8AAAAGAAMAAAAaABAAAAAGAAQAAAAbAA4AAAAGAAIAAAAbAA8AAAAGAAMAAAAbABAAAAAGAAQAAAAcAA4AAAAGAAIAAAAcAA8AAAAGAAMAAAAcABAAAAAGAAQAAAAdAA4AAAAGAAIAAAAdAA8AAAAGAAMAAAAdABAAAAAGAAQAAAAeAA4AAAAGAAIAAAAeAA8AAAAGAAMAAAAeABAAAAAGAAQAAAAfAA4AAAAGAAIAAAAfAA8AAAAGAAMAAAAfABAAAAAGAAQAAAAAABEAAAAGAAQAAAABABEAAAAGAAQAAAACABEAAAAGAAQAAAADABEAAAAGAAQAAAAEABEAAAAGAAQAAAAFABEAAAAGAAQAAAAGABEAAAAGAAQAAAAHABEAAAAGAAQAAAAIABEAAAAGAAQAAAAJABEAAAAGAAQAAAAKABEAAAAGAAQAAAALABEAAAAGAAQAAAAMABEAAAAGAAQAAAANABEAAAAGAAQAAAAOABEAAAAGAAQAAAAPABEAAAAGAAQAAAAQABEAAAAGAAQAAAARABEAAAAGAAQAAAASABEAAAAGAAQAAAATABEAAAAGAAQAAAAUABEAAAAGAAQAAAAVABEAAAAGAAQAAAAWABEAAAAGAAQAAAAXABEAAAAGAAQAAAAYABEAAAAGAAQAAAAZABEAAAAGAAQAAAAaABEAAAAGAAQAAAAbABEAAAAGAAQAAAAcABEAAAAGAAQAAAAdABEAAAAGAAQAAAAeABEAAAAGAAQAAAAfABEAAAAGAAQAAAA=")
-tile_set = SubResource("TileSet_xqrda")
-
-[node name="GroundStaticBody2D3" parent="tilemapspam6" instance=ExtResource("2_3un34")]
-visible = false
-modulate = Color(0.298844, 0.798139, 0.821057, 1)
-position = Vector2(0, 1153)
-scale = Vector2(2.5, 2.5)
-
-[node name="tilemapspam7" type="Node2D" parent="."]
-modulate = Color(0.811629, 0.754368, 1, 1)
-position = Vector2(7524, 136)
-
-[node name="TileMapLayerSpam" type="TileMapLayer" parent="tilemapspam7"]
-scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAAAAA4AAAAGAAIAAAAAAA8AAAAGAAMAAAAAABAAAAAGAAQAAAABAA4AAAAGAAIAAAABAA8AAAAGAAMAAAABABAAAAAGAAQAAAACAA4AAAAGAAIAAAACAA8AAAAGAAMAAAACABAAAAAGAAQAAAADAA4AAAAGAAIAAAADAA8AAAAGAAMAAAADABAAAAAGAAQAAAAEAA4AAAAGAAIAAAAEAA8AAAAGAAMAAAAEABAAAAAGAAQAAAAFAA4AAAAGAAIAAAAFAA8AAAAGAAMAAAAFABAAAAAGAAQAAAAGAA4AAAAGAAIAAAAGAA8AAAAGAAMAAAAGABAAAAAGAAQAAAAHAA4AAAAGAAIAAAAHAA8AAAAGAAMAAAAHABAAAAAGAAQAAAAIAA4AAAAGAAIAAAAIAA8AAAAGAAMAAAAIABAAAAAGAAQAAAAJAA4AAAAGAAIAAAAJAA8AAAAGAAMAAAAJABAAAAAGAAQAAAAKAA4AAAAGAAIAAAAKAA8AAAAGAAMAAAAKABAAAAAGAAQAAAALAA4AAAAGAAIAAAALAA8AAAAGAAMAAAALABAAAAAGAAQAAAAMAA4AAAAGAAIAAAAMAA8AAAAGAAMAAAAMABAAAAAGAAQAAAANAA4AAAAGAAIAAAANAA8AAAAGAAMAAAANABAAAAAGAAQAAAAOAA4AAAAGAAIAAAAOAA8AAAAGAAMAAAAOABAAAAAGAAQAAAAPAA4AAAAGAAIAAAAPAA8AAAAGAAMAAAAPABAAAAAGAAQAAAAQAA4AAAAGAAIAAAAQAA8AAAAGAAMAAAAQABAAAAAGAAQAAAARAA4AAAAGAAIAAAARAA8AAAAGAAMAAAARABAAAAAGAAQAAAASAA4AAAAGAAIAAAASAA8AAAAGAAMAAAASABAAAAAGAAQAAAATAA4AAAAGAAIAAAATAA8AAAAGAAMAAAATABAAAAAGAAQAAAAUAA4AAAAGAAIAAAAUAA8AAAAGAAMAAAAUABAAAAAGAAQAAAAVAA4AAAAGAAIAAAAVAA8AAAAGAAMAAAAVABAAAAAGAAQAAAAWAA4AAAAGAAIAAAAWAA8AAAAGAAMAAAAWABAAAAAGAAQAAAAXAA4AAAAGAAIAAAAXAA8AAAAGAAMAAAAXABAAAAAGAAQAAAAYAA4AAAAGAAIAAAAYAA8AAAAGAAMAAAAYABAAAAAGAAQAAAAZAA4AAAAGAAIAAAAZAA8AAAAGAAMAAAAZABAAAAAGAAQAAAAaAA4AAAAGAAIAAAAaAA8AAAAGAAMAAAAaABAAAAAGAAQAAAAbAA4AAAAGAAIAAAAbAA8AAAAGAAMAAAAbABAAAAAGAAQAAAAcAA4AAAAGAAIAAAAcAA8AAAAGAAMAAAAcABAAAAAGAAQAAAAdAA4AAAAGAAIAAAAdAA8AAAAGAAMAAAAdABAAAAAGAAQAAAAeAA4AAAAGAAIAAAAeAA8AAAAGAAMAAAAeABAAAAAGAAQAAAAfAA4AAAAGAAIAAAAfAA8AAAAGAAMAAAAfABAAAAAGAAQAAAAAABEAAAAGAAQAAAABABEAAAAGAAQAAAACABEAAAAGAAQAAAADABEAAAAGAAQAAAAEABEAAAAGAAQAAAAFABEAAAAGAAQAAAAGABEAAAAGAAQAAAAHABEAAAAGAAQAAAAIABEAAAAGAAQAAAAJABEAAAAGAAQAAAAKABEAAAAGAAQAAAALABEAAAAGAAQAAAAMABEAAAAGAAQAAAANABEAAAAGAAQAAAAOABEAAAAGAAQAAAAPABEAAAAGAAQAAAAQABEAAAAGAAQAAAARABEAAAAGAAQAAAASABEAAAAGAAQAAAATABEAAAAGAAQAAAAUABEAAAAGAAQAAAAVABEAAAAGAAQAAAAWABEAAAAGAAQAAAAXABEAAAAGAAQAAAAYABEAAAAGAAQAAAAZABEAAAAGAAQAAAAaABEAAAAGAAQAAAAbABEAAAAGAAQAAAAcABEAAAAGAAQAAAAdABEAAAAGAAQAAAAeABEAAAAGAAQAAAAfABEAAAAGAAQAAAA=")
-tile_set = SubResource("TileSet_xqrda")
-
-[node name="GroundStaticBody2D3" parent="tilemapspam7" instance=ExtResource("2_3un34")]
-visible = false
-modulate = Color(0.298844, 0.798139, 0.821057, 1)
-position = Vector2(0, 1153)
-scale = Vector2(2.5, 2.5)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="tilemapspam4/RigidBody2D"]
+position = Vector2(521, 941)
+shape = SubResource("RectangleShape2D_40u87")
 
 [node name="WarriorCharacterBody2D" parent="." instance=ExtResource("5_1upx7")]
-position = Vector2(-7545, 1198)
+position = Vector2(-106, 1199)
 
 [node name="Camera2D" type="Camera2D" parent="WarriorCharacterBody2D"]
 position = Vector2(2.08165e-12, -119.5)
@@ -543,7 +518,9 @@ position_smoothing_speed = 4.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.1
+drag_top_margin = 0.4
 drag_right_margin = 0.1
+drag_bottom_margin = 0.1
 script = ExtResource("6_joinc")
 
 [node name="Staff" parent="." instance=ExtResource("8_xi7wq")]
@@ -640,7 +617,7 @@ stretch_mode = 4
 [node name="DummyCharacterBody2D8" parent="." instance=ExtResource("14_3lcor")]
 position = Vector2(-6991, 1184)
 
-[node name="InstructionLabel4" type="Label" parent="."]
+[node name="InstructionLabel2" type="Label" parent="."]
 texture_filter = 1
 offset_left = -6343.0
 offset_top = 906.0
@@ -654,7 +631,7 @@ theme_override_fonts/font = ExtResource("11_1uocd")
 theme_override_font_sizes/font_size = 48
 text = "When you've built up scale charges in the right order . . ."
 
-[node name="DoUI" parent="InstructionLabel4" instance=ExtResource("14_1py61")]
+[node name="DoUI" parent="InstructionLabel2" instance=ExtResource("14_1py61")]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 893.0
@@ -662,7 +639,7 @@ offset_top = -60.0
 offset_right = 955.0
 offset_bottom = 2.0
 
-[node name="FaUI" parent="InstructionLabel4" instance=ExtResource("16_mxgph")]
+[node name="FaUI" parent="InstructionLabel2" instance=ExtResource("16_mxgph")]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 962.0
@@ -670,7 +647,7 @@ offset_top = -60.0
 offset_right = 1024.0
 offset_bottom = 2.0
 
-[node name="SoUI" parent="InstructionLabel4" instance=ExtResource("17_ewc37")]
+[node name="SoUI" parent="InstructionLabel2" instance=ExtResource("17_ewc37")]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 1032.0
@@ -678,28 +655,28 @@ offset_top = -60.0
 offset_right = 1094.0
 offset_bottom = 2.0
 
-[node name="DoUI2" parent="InstructionLabel4" instance=ExtResource("14_1py61")]
+[node name="DoUI2" parent="InstructionLabel2" instance=ExtResource("14_1py61")]
 layout_mode = 0
 offset_left = 891.0
 offset_top = -62.0
 offset_right = 953.0
 offset_bottom = 0.0
 
-[node name="FaUI2" parent="InstructionLabel4" instance=ExtResource("16_mxgph")]
+[node name="FaUI2" parent="InstructionLabel2" instance=ExtResource("16_mxgph")]
 layout_mode = 0
 offset_left = 960.0
 offset_top = -62.0
 offset_right = 1022.0
 offset_bottom = 0.0
 
-[node name="SoUI2" parent="InstructionLabel4" instance=ExtResource("17_ewc37")]
+[node name="SoUI2" parent="InstructionLabel2" instance=ExtResource("17_ewc37")]
 layout_mode = 0
 offset_left = 1030.0
 offset_top = -62.0
 offset_right = 1092.0
 offset_bottom = 0.0
 
-[node name="TextureRect" type="TextureRect" parent="InstructionLabel4"]
+[node name="TextureRect" type="TextureRect" parent="InstructionLabel2"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -710,7 +687,7 @@ offset_bottom = 6.0
 texture = ExtResource("15_onkxt")
 stretch_mode = 4
 
-[node name="TextureRect2" type="TextureRect" parent="InstructionLabel4"]
+[node name="TextureRect2" type="TextureRect" parent="InstructionLabel2"]
 visible = false
 layout_mode = 0
 offset_left = -1.0
@@ -813,7 +790,7 @@ offset_bottom = 212.0
 texture = ExtResource("17_wfs1g")
 stretch_mode = 4
 
-[node name="InstructionLabel8" type="Label" parent="."]
+[node name="InstructionLabel4" type="Label" parent="."]
 texture_filter = 1
 offset_left = -3828.0
 offset_top = 906.0
@@ -827,7 +804,7 @@ theme_override_fonts/font = ExtResource("11_1uocd")
 theme_override_font_sizes/font_size = 48
 text = "Attack while dashing to lunge"
 
-[node name="DoUI" parent="InstructionLabel8" instance=ExtResource("14_1py61")]
+[node name="DoUI" parent="InstructionLabel4" instance=ExtResource("14_1py61")]
 visible = false
 layout_mode = 0
 offset_left = 621.0
@@ -835,7 +812,7 @@ offset_top = -62.0
 offset_right = 683.0
 offset_bottom = -2.0
 
-[node name="DoUI2" parent="InstructionLabel8" instance=ExtResource("14_1py61")]
+[node name="DoUI2" parent="InstructionLabel4" instance=ExtResource("14_1py61")]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -844,7 +821,7 @@ offset_top = -69.0
 offset_right = 614.0
 offset_bottom = -7.0
 
-[node name="FaUI" parent="InstructionLabel8" instance=ExtResource("16_mxgph")]
+[node name="FaUI" parent="InstructionLabel4" instance=ExtResource("16_mxgph")]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -853,7 +830,7 @@ offset_top = -69.0
 offset_right = 683.0
 offset_bottom = -7.0
 
-[node name="SoUI" parent="InstructionLabel8" instance=ExtResource("17_ewc37")]
+[node name="SoUI" parent="InstructionLabel4" instance=ExtResource("17_ewc37")]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -862,7 +839,7 @@ offset_top = -69.0
 offset_right = 753.0
 offset_bottom = -7.0
 
-[node name="DoUI3" parent="InstructionLabel8" instance=ExtResource("14_1py61")]
+[node name="DoUI3" parent="InstructionLabel4" instance=ExtResource("14_1py61")]
 visible = false
 layout_mode = 0
 offset_left = 550.0
@@ -870,7 +847,7 @@ offset_top = -71.0
 offset_right = 612.0
 offset_bottom = -9.0
 
-[node name="FaUI2" parent="InstructionLabel8" instance=ExtResource("16_mxgph")]
+[node name="FaUI2" parent="InstructionLabel4" instance=ExtResource("16_mxgph")]
 visible = false
 layout_mode = 0
 offset_left = 619.0
@@ -878,7 +855,7 @@ offset_top = -71.0
 offset_right = 681.0
 offset_bottom = -9.0
 
-[node name="SoUI2" parent="InstructionLabel8" instance=ExtResource("17_ewc37")]
+[node name="SoUI2" parent="InstructionLabel4" instance=ExtResource("17_ewc37")]
 visible = false
 layout_mode = 0
 offset_left = 689.0
@@ -886,76 +863,79 @@ offset_top = -71.0
 offset_right = 751.0
 offset_bottom = -9.0
 
-[node name="TextureRect5" type="TextureRect" parent="InstructionLabel8"]
+[node name="TextureRect5" type="TextureRect" parent="InstructionLabel4"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 248.0
+offset_left = 174.0
 offset_top = 116.0
-offset_right = 328.0
+offset_right = 254.0
 offset_bottom = 261.0
 texture = ExtResource("18_xd408")
 stretch_mode = 4
 
-[node name="TextureRect6" type="TextureRect" parent="InstructionLabel8"]
+[node name="TextureRect6" type="TextureRect" parent="InstructionLabel4"]
 layout_mode = 0
-offset_left = 244.0
+offset_left = 170.0
 offset_top = 113.0
-offset_right = 324.0
+offset_right = 250.0
 offset_bottom = 254.0
 texture = ExtResource("18_xd408")
 stretch_mode = 4
 
-[node name="TextureRect7" type="TextureRect" parent="InstructionLabel8"]
+[node name="TextureRect7" type="TextureRect" parent="InstructionLabel4"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 74.0
 offset_top = 101.0
-offset_right = 208.0
+offset_right = 134.0
 offset_bottom = 246.0
 texture = ExtResource("21_8x88e")
 stretch_mode = 4
 
-[node name="TextureRect8" type="TextureRect" parent="InstructionLabel8"]
+[node name="TextureRect8" type="TextureRect" parent="InstructionLabel4"]
 layout_mode = 0
-offset_left = 71.0
+offset_left = -3.0
 offset_top = 98.0
-offset_right = 201.0
+offset_right = 127.0
 offset_bottom = 239.0
 texture = ExtResource("21_8x88e")
 stretch_mode = 4
 
-[node name="TextureRect3" type="TextureRect" parent="InstructionLabel8"]
+[node name="TextureRect3" type="TextureRect" parent="InstructionLabel4"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 389.0
+offset_left = 315.0
 offset_top = 61.0
-offset_right = 523.0
+offset_right = 449.0
 offset_bottom = 206.0
 texture = ExtResource("15_onkxt")
 stretch_mode = 4
 
-[node name="TextureRect4" type="TextureRect" parent="InstructionLabel8"]
+[node name="TextureRect4" type="TextureRect" parent="InstructionLabel4"]
 layout_mode = 0
-offset_left = 387.0
+offset_left = 313.0
 offset_top = 59.0
-offset_right = 517.0
+offset_right = 443.0
 offset_bottom = 200.0
 texture = ExtResource("15_onkxt")
 stretch_mode = 4
 
-[node name="DummyCharacterBody2D9" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(-6055, 1184)
+[node name="DummyCharacterBody2D2" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(-3315, 1184)
+note_health = ["La"]
+
+[node name="DummyCharacterBody2D14" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(-3197, 1184)
 note_health = ["Fa"]
 
-[node name="DummyCharacterBody2D10" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(-5488, 1184)
-note_health = ["So"]
+[node name="DummyCharacterBody2D15" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(-3077, 1184)
+note_health = ["Mi"]
 
 [node name="InstructionLabel5" type="Label" parent="."]
 texture_filter = 1
-offset_left = 927.0
+offset_left = -2335.0
 offset_top = 906.0
-offset_right = 1767.0
+offset_right = -1636.0
 offset_bottom = 950.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
@@ -963,7 +943,7 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("11_1uocd")
 theme_override_font_sizes/font_size = 48
-text = "Try freezing the goblin"
+text = "Try invoking to freeze the goblin!"
 
 [node name="DoUI" parent="InstructionLabel5" instance=ExtResource("14_1py61")]
 visible = false
@@ -1031,50 +1011,50 @@ stretch_mode = 4
 [node name="LaUI" parent="InstructionLabel5" instance=ExtResource("20_ernfu")]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 117.0
-offset_top = 47.0
-offset_right = 179.0
-offset_bottom = 109.0
+offset_left = 248.0
+offset_top = -69.0
+offset_right = 310.0
+offset_bottom = -7.0
 
 [node name="LaUI2" parent="InstructionLabel5" instance=ExtResource("20_ernfu")]
 layout_mode = 0
-offset_left = 115.0
-offset_top = 45.0
-offset_right = 177.0
-offset_bottom = 107.0
+offset_left = 246.0
+offset_top = -71.0
+offset_right = 308.0
+offset_bottom = -9.0
 
 [node name="FaUI" parent="InstructionLabel5" instance=ExtResource("16_mxgph")]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 199.0
-offset_top = 48.0
-offset_right = 261.0
-offset_bottom = 110.0
+offset_left = 330.0
+offset_top = -68.0
+offset_right = 392.0
+offset_bottom = -6.0
 
 [node name="FaUI2" parent="InstructionLabel5" instance=ExtResource("16_mxgph")]
 layout_mode = 0
-offset_left = 197.0
-offset_top = 46.0
-offset_right = 259.0
-offset_bottom = 108.0
+offset_left = 328.0
+offset_top = -70.0
+offset_right = 390.0
+offset_bottom = -8.0
 
 [node name="MiUI" parent="InstructionLabel5" instance=ExtResource("21_5t487")]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 281.0
-offset_top = 47.0
-offset_right = 343.0
-offset_bottom = 109.0
+offset_left = 412.0
+offset_top = -69.0
+offset_right = 474.0
+offset_bottom = -7.0
 
 [node name="MiUI2" parent="InstructionLabel5" instance=ExtResource("21_5t487")]
 layout_mode = 0
-offset_left = 278.0
-offset_top = 45.0
-offset_right = 340.0
-offset_bottom = 107.0
+offset_left = 409.0
+offset_top = -71.0
+offset_right = 471.0
+offset_bottom = -9.0
 
 [node name="DummyCharacterBody2D11" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(654, 1184)
+position = Vector2(-2369, 1184)
 collision_layer = 136
 note_health = ["Mi"]
 
@@ -1082,7 +1062,7 @@ note_health = ["Mi"]
 position = Vector2(5.5, 6)
 
 [node name="RogueGoblinCharacterBody" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(1201, 1189)
+position = Vector2(-1977, 1189)
 scale = Vector2(4, 4)
 note_health = ["La"]
 
@@ -1091,184 +1071,27 @@ visible = true
 position = Vector2(40.75, -33)
 
 [node name="DummyCharacterBody2D12" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(1688, 1184)
+position = Vector2(-1618, 1184)
 collision_layer = 136
 note_health = ["Fa"]
 
 [node name="CollisionShape2D" parent="DummyCharacterBody2D12" index="3"]
 position = Vector2(-3.25, 9.875)
 
-[node name="InstructionLabel6" type="Label" parent="."]
-texture_filter = 1
-offset_left = 2308.0
-offset_top = 906.0
-offset_right = 3340.0
-offset_bottom = 950.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("11_1uocd")
-theme_override_font_sizes/font_size = 48
-text = "The Sword of the scales does no physical damage"
-
-[node name="DoUI" parent="InstructionLabel6" instance=ExtResource("14_1py61")]
-visible = false
-layout_mode = 0
-offset_left = 621.0
-offset_top = -62.0
-offset_right = 683.0
-offset_bottom = -2.0
-
-[node name="DoUI2" parent="InstructionLabel6" instance=ExtResource("14_1py61")]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 552.0
-offset_top = -69.0
-offset_right = 614.0
-offset_bottom = -7.0
-
-[node name="SoUI" parent="InstructionLabel6" instance=ExtResource("17_ewc37")]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 691.0
-offset_top = -69.0
-offset_right = 753.0
-offset_bottom = -7.0
-
-[node name="DoUI3" parent="InstructionLabel6" instance=ExtResource("14_1py61")]
-visible = false
-layout_mode = 0
-offset_left = 550.0
-offset_top = -71.0
-offset_right = 612.0
-offset_bottom = -9.0
-
-[node name="SoUI2" parent="InstructionLabel6" instance=ExtResource("17_ewc37")]
-visible = false
-layout_mode = 0
-offset_left = 689.0
-offset_top = -71.0
-offset_right = 751.0
-offset_bottom = -9.0
-
-[node name="TextureRect3" type="TextureRect" parent="InstructionLabel6"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 318.0
-offset_top = 73.0
-offset_right = 452.0
-offset_bottom = 218.0
-texture = ExtResource("17_wfs1g")
-stretch_mode = 4
-
-[node name="TextureRect4" type="TextureRect" parent="InstructionLabel6"]
-visible = false
-layout_mode = 0
-offset_left = 317.0
-offset_top = 71.0
-offset_right = 447.0
-offset_bottom = 212.0
-texture = ExtResource("17_wfs1g")
-stretch_mode = 4
-
-[node name="LaUI" parent="InstructionLabel6" instance=ExtResource("20_ernfu")]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 117.0
-offset_top = 47.0
-offset_right = 179.0
-offset_bottom = 109.0
-
-[node name="LaUI2" parent="InstructionLabel6" instance=ExtResource("20_ernfu")]
-visible = false
-layout_mode = 0
-offset_left = 115.0
-offset_top = 45.0
-offset_right = 177.0
-offset_bottom = 107.0
-
-[node name="FaUI" parent="InstructionLabel6" instance=ExtResource("16_mxgph")]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 199.0
-offset_top = 48.0
-offset_right = 261.0
-offset_bottom = 110.0
-
-[node name="FaUI2" parent="InstructionLabel6" instance=ExtResource("16_mxgph")]
-visible = false
-layout_mode = 0
-offset_left = 197.0
-offset_top = 46.0
-offset_right = 259.0
-offset_bottom = 108.0
-
-[node name="MiUI" parent="InstructionLabel6" instance=ExtResource("21_5t487")]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 281.0
-offset_top = 47.0
-offset_right = 343.0
-offset_bottom = 109.0
-
-[node name="MiUI2" parent="InstructionLabel6" instance=ExtResource("21_5t487")]
-visible = false
-layout_mode = 0
-offset_left = 278.0
-offset_top = 45.0
-offset_right = 340.0
-offset_bottom = 107.0
-
-[node name="DummyCharacterBody2D" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(2320, 1184)
-
-[node name="DummyCharacterBody2D2" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(-3630, 1184)
-
-[node name="DummyCharacterBody2D13" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(2675, 1184)
-note_health = ["Re"]
-
-[node name="DummyCharacterBody2D3" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(3147, 1184)
-note_health = ["Mi"]
-
-[node name="DummyCharacterBody2D4" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(3556, 1184)
-note_health = ["Fa"]
-
-[node name="DummyCharacterBody2D5" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(3976, 1184)
-note_health = ["So"]
-
-[node name="DummyCharacterBody2D6" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(4392, 1184)
-note_health = ["La"]
-
-[node name="DummyCharacterBody2D7" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(4813, 1184)
-note_health = ["Ti"]
-
 [node name="InstructionLabel7" type="Label" parent="."]
 texture_filter = 1
-offset_left = -538.0
-offset_top = 918.0
-offset_right = 695.0
-offset_bottom = 962.0
+offset_left = -1073.0
+offset_top = 813.0
+offset_right = -43.0
+offset_bottom = 964.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("11_1uocd")
-theme_override_font_sizes/font_size = 48
-text = "You must invoke HOly sword or holy wave to defeat goblins"
+theme_override_font_sizes/font_size = 80
+text = "Only holy wave or holy sword
+can kill goblins"
 
 [node name="DoUI" parent="InstructionLabel7" instance=ExtResource("14_1py61")]
 visible = false
@@ -1334,6 +1157,175 @@ texture = ExtResource("17_wfs1g")
 stretch_mode = 4
 
 [node name="LaUI" parent="InstructionLabel7" instance=ExtResource("20_ernfu")]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 195.0
+offset_top = -56.0
+offset_right = 257.0
+offset_bottom = 6.0
+
+[node name="LaUI2" parent="InstructionLabel7" instance=ExtResource("20_ernfu")]
+layout_mode = 0
+offset_left = 193.0
+offset_top = -58.0
+offset_right = 255.0
+offset_bottom = 4.0
+
+[node name="FaUI" parent="InstructionLabel7" instance=ExtResource("16_mxgph")]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 277.0
+offset_top = -55.0
+offset_right = 339.0
+offset_bottom = 7.0
+
+[node name="FaUI2" parent="InstructionLabel7" instance=ExtResource("16_mxgph")]
+layout_mode = 0
+offset_left = 275.0
+offset_top = -57.0
+offset_right = 337.0
+offset_bottom = 5.0
+
+[node name="MiUI" parent="InstructionLabel7" instance=ExtResource("21_5t487")]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 359.0
+offset_top = -56.0
+offset_right = 421.0
+offset_bottom = 6.0
+
+[node name="MiUI2" parent="InstructionLabel7" instance=ExtResource("21_5t487")]
+layout_mode = 0
+offset_left = 356.0
+offset_top = -58.0
+offset_right = 418.0
+offset_bottom = 4.0
+
+[node name="ReUI" parent="InstructionLabel7" instance=ExtResource("24_rr441")]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 440.0
+offset_top = -56.0
+offset_right = 502.0
+offset_bottom = 6.0
+
+[node name="ReUI2" parent="InstructionLabel7" instance=ExtResource("24_rr441")]
+layout_mode = 0
+offset_left = 437.0
+offset_top = -58.0
+offset_right = 499.0
+offset_bottom = 4.0
+
+[node name="DummyCharacterBody2D16" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(-902, 1184)
+collision_layer = 136
+note_health = ["La"]
+
+[node name="CollisionShape2D" parent="DummyCharacterBody2D16" index="3"]
+position = Vector2(-3.25, 9.875)
+
+[node name="DummyCharacterBody2D17" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(-786, 1184)
+collision_layer = 136
+note_health = ["Mi"]
+
+[node name="CollisionShape2D" parent="DummyCharacterBody2D17" index="3"]
+position = Vector2(-3.25, 9.875)
+
+[node name="DummyCharacterBody2D18" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(-672, 1184)
+collision_layer = 136
+note_health = ["Fa"]
+
+[node name="CollisionShape2D" parent="DummyCharacterBody2D18" index="3"]
+position = Vector2(-3.25, 9.875)
+
+[node name="DummyCharacterBody2D19" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(-558, 1184)
+collision_layer = 136
+note_health = ["Re"]
+
+[node name="CollisionShape2D" parent="DummyCharacterBody2D19" index="3"]
+position = Vector2(-3.25, 9.875)
+
+[node name="InstructionLabel8" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1631.0
+offset_top = 859.0
+offset_right = 1841.0
+offset_bottom = 933.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("11_1uocd")
+theme_override_font_sizes/font_size = 80
+text = "Wave 1"
+
+[node name="DoUI" parent="InstructionLabel8" instance=ExtResource("14_1py61")]
+visible = false
+layout_mode = 0
+offset_left = 621.0
+offset_top = -62.0
+offset_right = 683.0
+offset_bottom = -2.0
+
+[node name="DoUI2" parent="InstructionLabel8" instance=ExtResource("14_1py61")]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 552.0
+offset_top = -69.0
+offset_right = 614.0
+offset_bottom = -7.0
+
+[node name="SoUI" parent="InstructionLabel8" instance=ExtResource("17_ewc37")]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 691.0
+offset_top = -69.0
+offset_right = 753.0
+offset_bottom = -7.0
+
+[node name="DoUI3" parent="InstructionLabel8" instance=ExtResource("14_1py61")]
+visible = false
+layout_mode = 0
+offset_left = 550.0
+offset_top = -71.0
+offset_right = 612.0
+offset_bottom = -9.0
+
+[node name="SoUI2" parent="InstructionLabel8" instance=ExtResource("17_ewc37")]
+visible = false
+layout_mode = 0
+offset_left = 689.0
+offset_top = -71.0
+offset_right = 751.0
+offset_bottom = -9.0
+
+[node name="TextureRect3" type="TextureRect" parent="InstructionLabel8"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 318.0
+offset_top = 73.0
+offset_right = 452.0
+offset_bottom = 218.0
+texture = ExtResource("17_wfs1g")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="InstructionLabel8"]
+visible = false
+layout_mode = 0
+offset_left = 317.0
+offset_top = 71.0
+offset_right = 447.0
+offset_bottom = 212.0
+texture = ExtResource("17_wfs1g")
+stretch_mode = 4
+
+[node name="LaUI" parent="InstructionLabel8" instance=ExtResource("20_ernfu")]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1342,7 +1334,7 @@ offset_top = 47.0
 offset_right = 179.0
 offset_bottom = 109.0
 
-[node name="LaUI2" parent="InstructionLabel7" instance=ExtResource("20_ernfu")]
+[node name="LaUI2" parent="InstructionLabel8" instance=ExtResource("20_ernfu")]
 visible = false
 layout_mode = 0
 offset_left = 115.0
@@ -1350,7 +1342,7 @@ offset_top = 45.0
 offset_right = 177.0
 offset_bottom = 107.0
 
-[node name="FaUI" parent="InstructionLabel7" instance=ExtResource("16_mxgph")]
+[node name="FaUI" parent="InstructionLabel8" instance=ExtResource("16_mxgph")]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1359,7 +1351,7 @@ offset_top = 48.0
 offset_right = 261.0
 offset_bottom = 110.0
 
-[node name="FaUI2" parent="InstructionLabel7" instance=ExtResource("16_mxgph")]
+[node name="FaUI2" parent="InstructionLabel8" instance=ExtResource("16_mxgph")]
 visible = false
 layout_mode = 0
 offset_left = 197.0
@@ -1367,7 +1359,7 @@ offset_top = 46.0
 offset_right = 259.0
 offset_bottom = 108.0
 
-[node name="MiUI" parent="InstructionLabel7" instance=ExtResource("21_5t487")]
+[node name="MiUI" parent="InstructionLabel8" instance=ExtResource("21_5t487")]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -1376,7 +1368,7 @@ offset_top = 47.0
 offset_right = 343.0
 offset_bottom = 109.0
 
-[node name="MiUI2" parent="InstructionLabel7" instance=ExtResource("21_5t487")]
+[node name="MiUI2" parent="InstructionLabel8" instance=ExtResource("21_5t487")]
 visible = false
 layout_mode = 0
 offset_left = 278.0
@@ -1384,9 +1376,201 @@ offset_top = 45.0
 offset_right = 340.0
 offset_bottom = 107.0
 
+[node name="DummyCharacterBody2D13" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(1017, 1020)
+note_health = ["Ti"]
+
+[node name="DummyCharacterBody2D20" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(989, 897)
+note_health = ["La"]
+
+[node name="DummyCharacterBody2D21" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(973, 770)
+note_health = ["So"]
+
+[node name="DummyCharacterBody2D22" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(953, 647)
+note_health = ["Fa"]
+
+[node name="DummyCharacterBody2D23" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(925, 500)
+note_health = ["Mi"]
+
+[node name="DummyCharacterBody2D24" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(890, 362)
+note_health = ["Re"]
+
+[node name="DummyCharacterBody2D25" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(875, 226)
+
+[node name="InstructionLabel6" type="Label" parent="."]
+texture_filter = 1
+offset_left = 47.0
+offset_top = 405.0
+offset_right = 701.0
+offset_bottom = 449.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("11_1uocd")
+theme_override_font_sizes/font_size = 48
+text = "Attack in mid-air to hit them all"
+
+[node name="DoUI" parent="InstructionLabel6" instance=ExtResource("14_1py61")]
+visible = false
+layout_mode = 0
+offset_left = 621.0
+offset_top = -62.0
+offset_right = 683.0
+offset_bottom = -2.0
+
+[node name="DoUI2" parent="InstructionLabel6" instance=ExtResource("14_1py61")]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 552.0
+offset_top = -69.0
+offset_right = 614.0
+offset_bottom = -7.0
+
+[node name="FaUI" parent="InstructionLabel6" instance=ExtResource("16_mxgph")]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 621.0
+offset_top = -69.0
+offset_right = 683.0
+offset_bottom = -7.0
+
+[node name="SoUI" parent="InstructionLabel6" instance=ExtResource("17_ewc37")]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 691.0
+offset_top = -69.0
+offset_right = 753.0
+offset_bottom = -7.0
+
+[node name="DoUI3" parent="InstructionLabel6" instance=ExtResource("14_1py61")]
+visible = false
+layout_mode = 0
+offset_left = 550.0
+offset_top = -71.0
+offset_right = 612.0
+offset_bottom = -9.0
+
+[node name="FaUI2" parent="InstructionLabel6" instance=ExtResource("16_mxgph")]
+visible = false
+layout_mode = 0
+offset_left = 619.0
+offset_top = -71.0
+offset_right = 681.0
+offset_bottom = -9.0
+
+[node name="SoUI2" parent="InstructionLabel6" instance=ExtResource("17_ewc37")]
+visible = false
+layout_mode = 0
+offset_left = 689.0
+offset_top = -71.0
+offset_right = 751.0
+offset_bottom = -9.0
+
+[node name="TextureRect5" type="TextureRect" parent="InstructionLabel6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 357.0
+offset_top = 116.0
+offset_right = 437.0
+offset_bottom = 261.0
+texture = ExtResource("18_xd408")
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="InstructionLabel6"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 113.0
+offset_right = 433.0
+offset_bottom = 254.0
+texture = ExtResource("18_xd408")
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="InstructionLabel6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -12.0
+offset_top = 68.0
+offset_right = 338.0
+offset_bottom = 213.0
+texture = ExtResource("25_e5bej")
+stretch_mode = 4
+
+[node name="TextureRect8" type="TextureRect" parent="InstructionLabel6"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 64.0
+offset_right = 333.0
+offset_bottom = 205.0
+texture = ExtResource("25_e5bej")
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="InstructionLabel6"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 484.0
+offset_top = 61.0
+offset_right = 618.0
+offset_bottom = 206.0
+texture = ExtResource("15_onkxt")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="InstructionLabel6"]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 59.0
+offset_right = 612.0
+offset_bottom = 200.0
+texture = ExtResource("15_onkxt")
+stretch_mode = 4
+
+[node name="DummyCharacterBody2D9" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(-6055, 1184)
+note_health = ["Fa"]
+
+[node name="DummyCharacterBody2D10" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(-5488, 1184)
+note_health = ["So"]
+
+[node name="DummyCharacterBody2D" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(2320, 1184)
+
+[node name="DummyCharacterBody2D3" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(3147, 1184)
+note_health = ["Mi"]
+
+[node name="DummyCharacterBody2D4" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(3556, 1184)
+note_health = ["Fa"]
+
+[node name="DummyCharacterBody2D5" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(3976, 1184)
+note_health = ["So"]
+
+[node name="DummyCharacterBody2D6" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(4392, 1184)
+note_health = ["La"]
+
+[node name="DummyCharacterBody2D7" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(4813, 1184)
+note_health = ["Ti"]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qmkeb")
 
 [editable path="DummyCharacterBody2D11"]
 [editable path="RogueGoblinCharacterBody"]
 [editable path="DummyCharacterBody2D12"]
+[editable path="DummyCharacterBody2D16"]
+[editable path="DummyCharacterBody2D17"]
+[editable path="DummyCharacterBody2D18"]
+[editable path="DummyCharacterBody2D19"]
