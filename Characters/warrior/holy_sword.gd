@@ -15,8 +15,6 @@ func enter(_msg := {}) -> void:
 	$AudioStreamPlayer.play()
 	warrior.can_holy_sword = false
 	warrior.aura.visible = false
-	warrior.saved_notes = []
-	warrior.update_saved_notes()
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
 	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
 	#$AudioStreamPlayer.play()
@@ -42,8 +40,41 @@ func _on_animation_finished() -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
+	if warrior.sprite.frame == 10:
+		var notes_to_remove = []
+		var i = 0
+		if warrior.saved_notes.size() >= 7:
+			if warrior.saved_notes[i] == "Do" and warrior.saved_notes[i+1] == "Re" and warrior.saved_notes[i+2] == "Mi" and warrior.saved_notes[i+3] == "Fa" and warrior.saved_notes[i+4] == "So" and warrior.saved_notes[i+5] == "La" and warrior.saved_notes[i+6] == "Ti":
+				notes_to_remove.append(warrior.saved_notes[i+6])
+				notes_to_remove.append(warrior.saved_notes[i+5])
+				notes_to_remove.append(warrior.saved_notes[i+4])
+				notes_to_remove.append(warrior.saved_notes[i+3])
+				notes_to_remove.append(warrior.saved_notes[i+2])
+				notes_to_remove.append(warrior.saved_notes[i+1])
+				notes_to_remove.append(warrior.saved_notes[i+0])
+			var tween1 = create_tween()
+			tween1.tween_property(warrior.saved_notes_hbox.get_children()[i+0].get_children()[0], "self_modulate:v", 1, 0.4).from(100)
+			var tween2 = create_tween()
+			tween2.tween_property(warrior.saved_notes_hbox.get_children()[i+1].get_children()[0], "self_modulate:v", 1, 0.4).from(100)
+			var tween3 = create_tween()
+			tween3.tween_property(warrior.saved_notes_hbox.get_children()[i+2].get_children()[0], "self_modulate:v", 1, 0.4).from(100)
+			var tween4 = create_tween()
+			tween4.tween_property(warrior.saved_notes_hbox.get_children()[i+3].get_children()[0], "self_modulate:v", 1, 0.4).from(100)
+			var tween5 = create_tween()
+			tween5.tween_property(warrior.saved_notes_hbox.get_children()[i+4].get_children()[0], "self_modulate:v", 1, 0.4).from(100)
+			var tween6 = create_tween()
+			tween6.tween_property(warrior.saved_notes_hbox.get_children()[i+5].get_children()[0], "self_modulate:v", 1, 0.4).from(100)
+			var tween7 = create_tween()
+			tween7.tween_property(warrior.saved_notes_hbox.get_children()[i+6].get_children()[0], "self_modulate:v", 1, 0.4).from(100)
+		
+		for note in notes_to_remove:
+			warrior.saved_notes.reverse()
+			warrior.saved_notes.erase(note)
+			warrior.saved_notes.reverse()
+			
 	if warrior.sprite.frame >= 16:
 		warrior.hit_box_2.process_mode = Node.PROCESS_MODE_INHERIT
+		warrior.update_saved_notes()
 		#warrior.hit_box.tone = "Re"
 		#for area in warrior.hit_box.get_overlapping_areas():
 			#if not overlapping_areas.has(area):
@@ -70,7 +101,7 @@ func exit() -> void:
 	#warrior.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 	warrior.hit_box_2.process_mode = Node.PROCESS_MODE_DISABLED
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_INHERIT
-	warrior.hit_box_2.holy_sword = true
+	warrior.hit_box_2.holy_sword = false
 
 func _on_frame_changed() -> void:
 	if warrior.sprite.frame == 0:

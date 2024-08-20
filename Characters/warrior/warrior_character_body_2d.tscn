@@ -2383,6 +2383,26 @@ theme_override_fonts/font = ExtResource("10_mjt45")
 theme_override_font_sizes/font_size = 48
 text = "Holy Sword: "
 
+[node name="HolyWaveLabel" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 1636.0
+offset_top = 151.0
+offset_right = 1891.0
+offset_bottom = 195.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Holy wave: "
+
+[node name="HealLabel" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 1743.0
+offset_top = 346.0
+offset_right = 1998.0
+offset_bottom = 390.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Heal: "
+
 [node name="FreezeLabel" type="Label" parent="CanvasLayer"]
 texture_filter = 1
 offset_left = 1697.0
@@ -2503,25 +2523,60 @@ theme_override_fonts/font = ExtResource("10_mjt45")
 theme_override_font_sizes/font_size = 48
 text = "Heal"
 
-[node name="HolyWaveLabel" type="Label" parent="CanvasLayer"]
+[node name="HolyWaveLabel1" type="Label" parent="CanvasLayer"]
+visible = false
 texture_filter = 1
-offset_left = 1636.0
-offset_top = 151.0
-offset_right = 1891.0
-offset_bottom = 195.0
+offset_left = 268.0
+offset_top = 231.0
+offset_right = 472.0
+offset_bottom = 275.0
 theme_override_fonts/font = ExtResource("10_mjt45")
 theme_override_font_sizes/font_size = 48
-text = "Holy wave: "
+text = "Holy Wave"
 
-[node name="HealLabel" type="Label" parent="CanvasLayer"]
+[node name="HolyWaveLabel2" type="Label" parent="CanvasLayer"]
+visible = false
 texture_filter = 1
-offset_left = 1743.0
-offset_top = 346.0
-offset_right = 1998.0
-offset_bottom = 390.0
+offset_left = 381.0
+offset_top = 231.0
+offset_right = 585.0
+offset_bottom = 275.0
 theme_override_fonts/font = ExtResource("10_mjt45")
 theme_override_font_sizes/font_size = 48
-text = "Heal: "
+text = "Holy Wave"
+
+[node name="HolyWaveLabel3" type="Label" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+offset_left = 493.0
+offset_top = 231.0
+offset_right = 697.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Holy Wave"
+
+[node name="HolyWaveLabel4" type="Label" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+offset_left = 602.0
+offset_top = 231.0
+offset_right = 806.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Holy Wave"
+
+[node name="HolySwordLabel1" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 420.0
+offset_top = 231.0
+offset_right = 648.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 48
+text = "Holy Sword
+"
 
 [node name="NoteSlots" parent="CanvasLayer" instance=ExtResource("11_y1bh8")]
 offset_left = 76.0

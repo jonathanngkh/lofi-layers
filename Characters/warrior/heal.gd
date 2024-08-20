@@ -8,6 +8,7 @@ extends WarriorState
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	#print("equipped note: " + str(warrior.equipped_note))
+	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
 	warrior.sprite.play("heal", 1.1)
@@ -78,6 +79,7 @@ func exit() -> void:
 	warrior.sprite.frame_changed.disconnect(_on_frame_changed)
 	warrior.sprite.offset = Vector2.ZERO
 	warrior.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
+	warrior.hurt_box.process_mode = Node.PROCESS_MODE_INHERIT
 
 
 func _on_frame_changed() -> void:

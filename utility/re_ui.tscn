@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cm208n8affa81" path="res://assets/characters/re.png" id="1_5kod8"]
 
 [node name="ReUI" type="TextureRect"]
-self_modulate = Color(1, 0.448, 0.07, 1)
+self_modulate = Color(1, 0.5, 0.1, 1)
 texture_filter = 1
 offset_right = 100.0
 offset_bottom = 100.0
