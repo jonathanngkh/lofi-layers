@@ -79,6 +79,7 @@ const JUMP_VELOCITY = -2100.0
 
 func _ready() -> void:
 	health_bar_control.PlayerCurrentHealth = hp
+	health_bar_control.damage(0)
 	aura.play("loop")
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 	hit_box.hit_signal.connect(_on_hit)
