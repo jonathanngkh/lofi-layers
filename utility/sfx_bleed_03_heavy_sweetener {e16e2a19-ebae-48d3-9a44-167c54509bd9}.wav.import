@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4u5l4hbjgiqd"
+path="res://.godot/imported/sfx_bleed_03_heavy_sweetener {e16e2a19-ebae-48d3-9a44-167c54509bd9}.wav-3c4f80b54708a89d3457cf726329b073.sample"
+
+[deps]
+
+source_file="res://utility/sfx_bleed_03_heavy_sweetener {e16e2a19-ebae-48d3-9a44-167c54509bd9}.wav"
+dest_files=["res://.godot/imported/sfx_bleed_03_heavy_sweetener {e16e2a19-ebae-48d3-9a44-167c54509bd9}.wav-3c4f80b54708a89d3457cf726329b073.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

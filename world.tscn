@@ -617,7 +617,7 @@ offset_top = 882.0
 offset_bottom = 1503.0
 
 [node name="RogueGoblinCharacterBody4" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(5679, 830)
+position = Vector2(3865, 830)
 scale = Vector2(4, 4)
 
 [node name="TankGoblinCharacterBody" parent="." instance=ExtResource("9_4pt1f")]

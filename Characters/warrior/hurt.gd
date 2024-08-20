@@ -1,10 +1,16 @@
 # idle state
 extends WarriorState
-
+@onready var enemy_impact_sounds = [
+	preload("res://Characters/sfx/sfx_enemy_impact_01 [Draft 2].wav"),
+	preload("res://Characters/sfx/sfx_enemy_impact_02 [Draft 2].wav"),
+	preload("res://Characters/sfx/sfx_enemy_impact_03 [Draft 2].wav")
+]
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer_Impact.stream = enemy_impact_sounds.pick_random()
+	$AudioStreamPlayer_Impact.play()
 	warrior.sprite.play("hurt")
 	warrior.velocity.x = 0
 	warrior.sprite.offset = Vector2(7, -25)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=354 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=355 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="PackedScene" uid="uid://7hq8huhncy2o" path="res://utility/do_ui.tscn" id="2_7wi07"]
@@ -76,6 +76,7 @@
 [ext_resource type="Script" path="res://Characters/warrior/heal.gd" id="48_vf30k"]
 [ext_resource type="AudioStream" uid="uid://b7gjelq5anesj" path="res://Characters/warrior/sfx_player_jump.wav" id="48_yrp76"]
 [ext_resource type="AudioStream" uid="uid://3sdnpp4h3uew" path="res://Characters/warrior/damaged2.wav" id="49_gf4px"]
+[ext_resource type="AudioStream" uid="uid://b4u5l4hbjgiqd" path="res://utility/sfx_bleed_03_heavy_sweetener {e16e2a19-ebae-48d3-9a44-167c54509bd9}.wav" id="51_53dyw"]
 [ext_resource type="AudioStream" uid="uid://b3ma3jwt5lvx0" path="res://Characters/warrior/sfx_player_dash.wav" id="51_wlisp"]
 [ext_resource type="AudioStream" uid="uid://bulatcucye2vb" path="res://Characters/warrior/sfx_skill_aircut.wav" id="54_kgyj0"]
 [ext_resource type="AudioStream" uid="uid://c7vehkne1c0q2" path="res://Characters/warrior/sfx_holysword [Draft 4].wav" id="58_dtrgq"]
@@ -2686,7 +2687,12 @@ script = ExtResource("13_b1ba7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Hurt"]
 stream = ExtResource("49_gf4px")
-volume_db = -9.0
+volume_db = -3.0
+
+[node name="AudioStreamPlayer_Impact" type="AudioStreamPlayer" parent="StateMachine/Hurt"]
+stream = ExtResource("51_53dyw")
+volume_db = -10.0
+pitch_scale = 1.2
 
 [node name="Dash" type="Node2D" parent="StateMachine"]
 script = ExtResource("7_r6vl6")
