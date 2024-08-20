@@ -17,6 +17,8 @@ func enter(_msg := {}) -> void:
 		warrior.sprite.play("jump")
 		warrior.velocity.y = warrior.JUMP_VELOCITY
 	
+	controls()
+	
 	if warrior.velocity.x > warrior.SPEED:
 		var tween = create_tween()
 		tween.tween_property(warrior, "velocity:x", warrior.SPEED, 0.3)
@@ -24,8 +26,13 @@ func enter(_msg := {}) -> void:
 		var tween = create_tween()
 		tween.tween_property(warrior, "velocity:x", -warrior.SPEED, 0.3)
 
+
 # Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
+	controls()
+
+
+func controls() -> void:
 	if not warrior.sprite.animation == "land":
 		if Input.get_axis("left", "right") > 0:
 			warrior.sprite.scale.x = 1
@@ -41,7 +48,6 @@ func handle_input(_event: InputEvent) -> void:
 		state_machine.transition_to("AirDash")
 	if Input.is_action_pressed("light_attack"):
 		state_machine.transition_to("AirHeavyAttack")
-
 # Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:
 	pass
