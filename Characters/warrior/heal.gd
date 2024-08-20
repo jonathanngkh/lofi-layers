@@ -23,11 +23,21 @@ func enter(_msg := {}) -> void:
 				notes_to_remove.append(warrior.saved_notes[i+2])
 				notes_to_remove.append(warrior.saved_notes[i+1])
 				notes_to_remove.append(warrior.saved_notes[i+0])
+				var tween1 = create_tween()
+				tween1.tween_property(warrior.saved_notes_hbox.get_children()[i].get_children()[0], "self_modulate:v", 1, 0.4).from(100)
+				var tween2 = create_tween()
+				tween2.tween_property(warrior.saved_notes_hbox.get_children()[i+1].get_children()[0], "self_modulate:v", 1, 0.4).from(100)
+				var tween3 = create_tween()
+				tween3.tween_property(warrior.saved_notes_hbox.get_children()[i+2].get_children()[0], "self_modulate:v", 1, 0.4).from(100)
+				#warrior.sampler.play_note("C", 3)
+				#warrior.sampler.play_note("F", 3)
+				#warrior.sampler.play_note("G", 3)
 				break
-	# TWEEN THEM REALLY BRIGHT BEFORE REMOVAL
 	for note in notes_to_remove:
+		warrior.saved_notes.reverse()
 		warrior.saved_notes.erase(note)
-	warrior.update_saved_notes()
+		warrior.saved_notes.reverse()
+	
 
 func _on_animation_finished() -> void:
 	if warrior.sprite.animation == "heal":
@@ -73,6 +83,8 @@ func exit() -> void:
 func _on_frame_changed() -> void:
 	if warrior.sprite.frame == 6:
 		$AudioStreamPlayer.play()
+	if warrior.sprite.frame == 8:
+		warrior.update_saved_notes()
 	if warrior.sprite.frame == 10:
 		warrior.hp += 5
 		warrior.health_bar_control.heal(5)
