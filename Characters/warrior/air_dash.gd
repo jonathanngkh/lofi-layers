@@ -54,7 +54,7 @@ func _on_animation_finished() -> void:
 	elif warrior.sprite.animation == "dash":
 		end_dash()
 	elif warrior.sprite.animation == "dash_break":
-		state_machine.transition_to("Idle")
+		state_machine.transition_to("Jump", {"stage": "apex"})
 
 
 #func _on_timeout() -> void:
@@ -71,8 +71,8 @@ func exit() -> void:
 		warrior.sprite.frame_changed.disconnect(_on_frame_changed)
 	warrior.velocity.y = 0
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_INHERIT
-	warrior.can_dash = false
-	warrior.dash_cooldown_timer.start(0.8)
+	warrior.can_air_dash = false
+	warrior.air_dash_cooldown_timer.start(0.8)
 
 
 func _on_frame_changed() -> void:

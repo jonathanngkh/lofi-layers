@@ -582,14 +582,17 @@ scale = Vector2(4, 4)
 [node name="RogueGoblinCharacterBody3" parent="." instance=ExtResource("9_r8jc3")]
 position = Vector2(-9711, 1189)
 scale = Vector2(4, 4)
+note_health = ["Re"]
 
 [node name="RogueGoblinCharacterBody5" parent="." instance=ExtResource("9_r8jc3")]
 position = Vector2(-9535, 1189)
 scale = Vector2(4, 4)
+note_health = ["Mi"]
 
 [node name="RogueGoblinCharacterBody6" parent="." instance=ExtResource("9_r8jc3")]
 position = Vector2(-9365, 1189)
 scale = Vector2(4, 4)
+note_health = ["Fa"]
 
 [node name="InstructionLabel1" type="Label" parent="."]
 texture_filter = 1
@@ -808,6 +811,99 @@ offset_bottom = 212.0
 texture = ExtResource("17_wfs1g")
 stretch_mode = 4
 
+[node name="InstructionLabel8" type="Label" parent="."]
+texture_filter = 1
+offset_left = -3391.0
+offset_top = 906.0
+offset_right = -2770.0
+offset_bottom = 950.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("11_1uocd")
+theme_override_font_sizes/font_size = 48
+text = "Attack while dashing to lunge"
+
+[node name="DoUI" parent="InstructionLabel8" instance=ExtResource("14_1py61")]
+visible = false
+layout_mode = 0
+offset_left = 621.0
+offset_top = -62.0
+offset_right = 683.0
+offset_bottom = -2.0
+
+[node name="DoUI2" parent="InstructionLabel8" instance=ExtResource("14_1py61")]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 552.0
+offset_top = -69.0
+offset_right = 614.0
+offset_bottom = -7.0
+
+[node name="FaUI" parent="InstructionLabel8" instance=ExtResource("16_mxgph")]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 621.0
+offset_top = -69.0
+offset_right = 683.0
+offset_bottom = -7.0
+
+[node name="SoUI" parent="InstructionLabel8" instance=ExtResource("17_ewc37")]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 691.0
+offset_top = -69.0
+offset_right = 753.0
+offset_bottom = -7.0
+
+[node name="DoUI3" parent="InstructionLabel8" instance=ExtResource("14_1py61")]
+visible = false
+layout_mode = 0
+offset_left = 550.0
+offset_top = -71.0
+offset_right = 612.0
+offset_bottom = -9.0
+
+[node name="FaUI2" parent="InstructionLabel8" instance=ExtResource("16_mxgph")]
+visible = false
+layout_mode = 0
+offset_left = 619.0
+offset_top = -71.0
+offset_right = 681.0
+offset_bottom = -9.0
+
+[node name="SoUI2" parent="InstructionLabel8" instance=ExtResource("17_ewc37")]
+visible = false
+layout_mode = 0
+offset_left = 689.0
+offset_top = -71.0
+offset_right = 751.0
+offset_bottom = -9.0
+
+[node name="TextureRect3" type="TextureRect" parent="InstructionLabel8"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 318.0
+offset_top = 73.0
+offset_right = 452.0
+offset_bottom = 218.0
+texture = ExtResource("17_wfs1g")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="InstructionLabel8"]
+self_modulate = Color(3, 3, 3, 1)
+layout_mode = 0
+offset_left = 317.0
+offset_top = 71.0
+offset_right = 447.0
+offset_bottom = 212.0
+texture = ExtResource("17_wfs1g")
+stretch_mode = 4
+
 [node name="DummyCharacterBody2D9" parent="." instance=ExtResource("14_3lcor")]
 position = Vector2(-6055, 1184)
 note_health = ["Fa"]
@@ -818,9 +914,9 @@ note_health = ["So"]
 
 [node name="InstructionLabel5" type="Label" parent="."]
 texture_filter = 1
-offset_left = -3377.0
+offset_left = 927.0
 offset_top = 906.0
-offset_right = -2537.0
+offset_right = 1767.0
 offset_bottom = 950.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
@@ -939,7 +1035,7 @@ offset_right = 340.0
 offset_bottom = 107.0
 
 [node name="DummyCharacterBody2D11" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(-3650, 1184)
+position = Vector2(654, 1184)
 collision_layer = 136
 note_health = ["Mi"]
 
@@ -947,16 +1043,16 @@ note_health = ["Mi"]
 position = Vector2(5.5, 6)
 
 [node name="RogueGoblinCharacterBody" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(-3141, 1189)
+position = Vector2(1201, 1189)
 scale = Vector2(4, 4)
 note_health = ["La"]
 
 [node name="CollisionShape2D" parent="RogueGoblinCharacterBody/AnimatedSprite2D/MoveRange" index="0"]
 visible = true
-position = Vector2(49.75, -33)
+position = Vector2(40.75, -33)
 
 [node name="DummyCharacterBody2D12" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(-2616, 1184)
+position = Vector2(1688, 1184)
 collision_layer = 136
 note_health = ["Fa"]
 
@@ -965,9 +1061,9 @@ position = Vector2(-3.25, 9.875)
 
 [node name="InstructionLabel6" type="Label" parent="."]
 texture_filter = 1
-offset_left = -1996.0
+offset_left = 2308.0
 offset_top = 906.0
-offset_right = -1156.0
+offset_right = 3340.0
 offset_bottom = 950.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
@@ -1092,30 +1188,30 @@ offset_right = 340.0
 offset_bottom = 107.0
 
 [node name="DummyCharacterBody2D" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(-1984, 1184)
+position = Vector2(2320, 1184)
 
 [node name="DummyCharacterBody2D13" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(-1629, 1184)
+position = Vector2(2675, 1184)
 note_health = ["Re"]
 
 [node name="DummyCharacterBody2D3" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(-1157, 1184)
+position = Vector2(3147, 1184)
 note_health = ["Mi"]
 
 [node name="DummyCharacterBody2D4" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(-748, 1184)
+position = Vector2(3556, 1184)
 note_health = ["Fa"]
 
 [node name="DummyCharacterBody2D5" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(-328, 1184)
+position = Vector2(3976, 1184)
 note_health = ["So"]
 
 [node name="DummyCharacterBody2D6" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(88, 1184)
+position = Vector2(4392, 1184)
 note_health = ["La"]
 
 [node name="DummyCharacterBody2D7" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(509, 1184)
+position = Vector2(4813, 1184)
 note_health = ["Ti"]
 
 [node name="InstructionLabel7" type="Label" parent="."]

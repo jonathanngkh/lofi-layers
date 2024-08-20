@@ -84,7 +84,7 @@ script = ExtResource("8_a1bc8")
 script = ExtResource("9_b3bjo")
 
 [node name="AudioStreamPlayer2D_Impact" type="AudioStreamPlayer2D" parent="StateMachine/Hurt"]
-volume_db = 20.0
+volume_db = 18.0
 
 [node name="Freeze" type="Node2D" parent="StateMachine"]
 script = ExtResource("10_6lman")

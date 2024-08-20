@@ -38,7 +38,7 @@ func enter(_msg := {}) -> void:
 		warrior.saved_notes.reverse()
 		warrior.saved_notes.erase(note)
 		warrior.saved_notes.reverse()
-	
+	$AudioStreamPlayer.play()
 
 func _on_animation_finished() -> void:
 	if warrior.sprite.animation == "heal":
@@ -83,8 +83,8 @@ func exit() -> void:
 
 
 func _on_frame_changed() -> void:
-	if warrior.sprite.frame == 6:
-		$AudioStreamPlayer.play()
+	#if warrior.sprite.frame == 6:
+		#$AudioStreamPlayer.play()
 	if warrior.sprite.frame == 8:
 		warrior.update_saved_notes()
 	if warrior.sprite.frame == 10:

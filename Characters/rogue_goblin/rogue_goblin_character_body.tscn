@@ -411,7 +411,7 @@ animations = [{
 size = Vector2(34, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbw8k"]
-size = Vector2(333.5, 112)
+size = Vector2(379.5, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v0j1"]
 size = Vector2(78.5, 47)
@@ -484,7 +484,7 @@ script = ExtResource("18_pgu14")
 [node name="AudioStreamPlayer2D_Hurt" type="AudioStreamPlayer2D" parent="StateMachine/Hurt"]
 
 [node name="AudioStreamPlayer2D_Impact" type="AudioStreamPlayer2D" parent="StateMachine/Hurt"]
-volume_db = 20.0
+volume_db = 18.0
 
 [node name="Freeze" type="Node2D" parent="StateMachine" groups=["enemy"]]
 script = ExtResource("19_1id8c")
@@ -503,7 +503,7 @@ volume_db = 5.0
 
 [node name="AudioStreamPlayer2D_Impact" type="AudioStreamPlayer2D" parent="StateMachine/Death"]
 stream = ExtResource("22_sbvn5")
-volume_db = 24.0
+volume_db = 18.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Death"]
 stream = ExtResource("23_5pkc1")

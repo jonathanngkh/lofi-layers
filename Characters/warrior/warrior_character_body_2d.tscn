@@ -1,4 +1,4 @@
-[gd_scene load_steps=384 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=385 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="PackedScene" uid="uid://7hq8huhncy2o" path="res://utility/do_ui.tscn" id="2_7wi07"]
@@ -80,9 +80,10 @@
 [ext_resource type="AudioStream" uid="uid://b4u5l4hbjgiqd" path="res://utility/sfx_bleed_03_heavy_sweetener {e16e2a19-ebae-48d3-9a44-167c54509bd9}.wav" id="51_53dyw"]
 [ext_resource type="AudioStream" uid="uid://b3ma3jwt5lvx0" path="res://Characters/warrior/sfx_player_dash.wav" id="51_wlisp"]
 [ext_resource type="AudioStream" uid="uid://bulatcucye2vb" path="res://Characters/warrior/sfx_skill_aircut.wav" id="54_kgyj0"]
+[ext_resource type="Script" path="res://Characters/warrior/air_dash.gd" id="55_pubvm"]
 [ext_resource type="AudioStream" uid="uid://c7vehkne1c0q2" path="res://Characters/warrior/sfx_holysword [Draft 4].wav" id="58_dtrgq"]
 [ext_resource type="AudioStream" uid="uid://c86fw12mboc5i" path="res://Characters/warrior/sfx_skill_freeze.wav" id="59_s5w21"]
-[ext_resource type="AudioStream" uid="uid://c74p3vb3ipmj4" path="res://Characters/warrior/vestal divine grace.wav" id="69_xualk"]
+[ext_resource type="AudioStream" uid="uid://3xibkemd5jdq" path="res://Characters/warrior/sfx_skill_heal.wav" id="71_m5h07"]
 [ext_resource type="Texture2D" uid="uid://b6x2sa0qrnulc" path="res://utility/NoteSlotsControl/Noteslot.png" id="73_x0wju"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w6br3"]
@@ -2376,6 +2377,7 @@ scale = Vector2(3, 3)
 collision_layer = 16
 script = ExtResource("1_jp0s3")
 hp = 10
+debug_mode = true
 beat_em_up_mode = false
 metadata/_edit_horizontal_guides_ = [61.0]
 metadata/_edit_vertical_guides_ = [1281.0]
@@ -2995,7 +2997,7 @@ volume_db = -7.0
 pitch_scale = 1.3
 
 [node name="AirDash" type="Node2D" parent="StateMachine"]
-script = ExtResource("7_r6vl6")
+script = ExtResource("55_pubvm")
 
 [node name="DashDurationTimer" type="Timer" parent="StateMachine/AirDash"]
 
@@ -3085,9 +3087,8 @@ script = ExtResource("30_0mfxg")
 script = ExtResource("48_vf30k")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Heal"]
-stream = ExtResource("69_xualk")
-volume_db = -10.0
-pitch_scale = 2.0
+stream = ExtResource("71_m5h07")
+volume_db = 4.0
 
 [node name="Label" type="Label" parent="."]
 visible = false
