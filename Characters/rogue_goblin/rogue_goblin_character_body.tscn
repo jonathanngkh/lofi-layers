@@ -443,6 +443,7 @@ shape = SubResource("RectangleShape2D_2eafg")
 debug_color = Color(0.856711, 0.298909, 0.546538, 0.42)
 
 [node name="MoveRange" type="Area2D" parent="AnimatedSprite2D"]
+visible = false
 collision_layer = 0
 collision_mask = 16
 

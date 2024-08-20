@@ -575,6 +575,22 @@ stream = ExtResource("13_oi33x")
 volume_db = 5.0
 autoplay = true
 
+[node name="RogueGoblinCharacterBody2" parent="." instance=ExtResource("9_r8jc3")]
+position = Vector2(-9921, 1189)
+scale = Vector2(4, 4)
+
+[node name="RogueGoblinCharacterBody3" parent="." instance=ExtResource("9_r8jc3")]
+position = Vector2(-9711, 1189)
+scale = Vector2(4, 4)
+
+[node name="RogueGoblinCharacterBody5" parent="." instance=ExtResource("9_r8jc3")]
+position = Vector2(-9535, 1189)
+scale = Vector2(4, 4)
+
+[node name="RogueGoblinCharacterBody6" parent="." instance=ExtResource("9_r8jc3")]
+position = Vector2(-9365, 1189)
+scale = Vector2(4, 4)
+
 [node name="InstructionLabel1" type="Label" parent="."]
 texture_filter = 1
 offset_left = -7403.0
@@ -939,20 +955,6 @@ note_health = ["La"]
 visible = true
 position = Vector2(49.75, -33)
 
-[node name="RogueGoblinCharacterBody2" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(-7215, 1189)
-scale = Vector2(4, 4)
-
-[node name="CollisionShape2D" parent="RogueGoblinCharacterBody2/AnimatedSprite2D/MoveRange" index="0"]
-visible = true
-position = Vector2(49.75, -33)
-
-[node name="AudioStreamPlayer2D_Death" parent="RogueGoblinCharacterBody2/StateMachine/Death" index="0"]
-volume_db = 0.0
-
-[node name="AudioStreamPlayer2D_Impact" parent="RogueGoblinCharacterBody2/StateMachine/Death" index="1"]
-volume_db = 9.0
-
 [node name="DummyCharacterBody2D12" parent="." instance=ExtResource("14_3lcor")]
 position = Vector2(-2616, 1184)
 collision_layer = 136
@@ -1093,7 +1095,7 @@ offset_bottom = 107.0
 position = Vector2(-1984, 1184)
 
 [node name="DummyCharacterBody2D13" parent="." instance=ExtResource("14_3lcor")]
-position = Vector2(-1572, 1184)
+position = Vector2(-1629, 1184)
 note_health = ["Re"]
 
 [node name="DummyCharacterBody2D3" parent="." instance=ExtResource("14_3lcor")]
@@ -1249,5 +1251,4 @@ environment = SubResource("Environment_qmkeb")
 
 [editable path="DummyCharacterBody2D11"]
 [editable path="RogueGoblinCharacterBody"]
-[editable path="RogueGoblinCharacterBody2"]
 [editable path="DummyCharacterBody2D12"]
