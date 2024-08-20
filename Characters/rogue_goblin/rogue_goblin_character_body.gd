@@ -2,7 +2,16 @@ class_name RogueGoblin
 extends CharacterBody2D
 
 @export var damage := 2
-
+var note_rotate_dict := {
+	"Do": 0,
+	"Re": 1,
+	"Mi": 2,
+	"Fa": 3,
+	"So": 4,
+	"La": 5,
+	"Ti": 6,
+}
+@onready var solfege_container: Control = $SolfegeWheel/SolfegeContainer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: Area2D = $AnimatedSprite2D/HitBox
 @onready var hurt_box: Area2D = $HurtBox
@@ -29,6 +38,9 @@ var player_chase := false
 var can_attack := true
 
 func _ready() -> void:
+	for i in range(note_rotate_dict[note_health[0]]):
+		for solfege in solfege_container.get_children():
+			solfege.solfege_forward()
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 	for note in note_health:
 		var note_ui_spawn = note_preloads[note].instantiate()
@@ -42,6 +54,9 @@ func _on_attack_timer_timeout():
 	can_attack = true
 
 func _physics_process(delta: float) -> void:
+	for solfege_note in solfege_container.get_children():
+		if solfege_note.position == Vector2(-11, -45):
+			note_health[0] = solfege_note.name.left(2)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

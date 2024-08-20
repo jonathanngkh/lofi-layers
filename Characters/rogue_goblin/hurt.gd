@@ -26,7 +26,19 @@ func enter(_msg := {}) -> void:
 	$AudioStreamPlayer2D_Hurt.play()
 	$AudioStreamPlayer2D_Impact.play()
 	sprite_flash()
+	roulette()
+
+
+func _rotate_solfege_wheel() -> void:
+	for solfege_note in rogue_goblin.solfege_container.get_children():
+		solfege_note.solfege_forward()
 	
+
+func roulette() -> void:
+	for i in randi_range(1, 7):
+		await get_tree().create_timer(0.1).timeout
+		_rotate_solfege_wheel()
+
 func sprite_flash() -> void:
 	var tween: Tween = create_tween()
 	tween.tween_property(rogue_goblin.sprite, "modulate:v", 1, 0.2).from(15)

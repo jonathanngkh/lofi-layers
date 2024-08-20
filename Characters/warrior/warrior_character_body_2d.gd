@@ -8,7 +8,9 @@ var can_freeze = false
 
 @export var hp := 20
 #var saved_notes := ["Do", "Fa", "So",]
-var saved_notes := ["La", "Mi", "Fa", "Re"]
+#var saved_notes := ["La", "Mi", "Fa", "Re"]
+var saved_notes := ["Do", "Re", "Mi", "Fa", "So", "La", "Ti"]
+#var saved_notes := []
 var can_dash = true
 var can_air_dash = true
 @onready var solfege_notes := ["Do", "Re", "Mi", "Fa", "So", "La", "Ti"]
@@ -127,7 +129,10 @@ func update_saved_notes() -> void:
 		for container in saved_notes_hbox.get_children():
 			if container.get_child_count() == 0:
 				container.add_child(note_ui_spawn)
-				container.modulate.a = 1.0
+				#container.modulate.a = 1.0
+				var tween = create_tween()
+				tween.tween_property(container, "modulate:a", 1.0, 0.2)
+				tween.tween_property(container, "modulate:v", 1, 0.2).from(15)
 				break
 				
 	check_for_heal_song()

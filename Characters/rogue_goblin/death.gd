@@ -23,6 +23,7 @@ func enter(_msg := {}) -> void:
 	rogue_goblin.sprite.play("death")
 	$AudioStreamPlayer2D_Impact.play()
 	$AudioStreamPlayer2D_Death.play()
+	$AudioStreamPlayer.play()
 	
 
 func _on_animation_finished() -> void:

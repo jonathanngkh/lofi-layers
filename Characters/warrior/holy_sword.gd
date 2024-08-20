@@ -8,7 +8,7 @@ func enter(_msg := {}) -> void:
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.sprite.frame_changed.connect(_on_frame_changed)
 	warrior.sprite.play("holy_sword", 1.4)
-	warrior.sprite.offset = Vector2(72, -16)
+	warrior.sprite.offset = Vector2(49, -36)
 	warrior.velocity.x = 0
 	warrior.hit_box_2.previously_hit_hurtboxes = []
 	warrior.hit_box_2.holy_sword = true
@@ -16,16 +16,6 @@ func enter(_msg := {}) -> void:
 	warrior.can_holy_sword = false
 	warrior.aura.visible = false
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
-	#$AudioStreamPlayer.stream = sword_sounds.pick_random()
-	#$AudioStreamPlayer.play()
-	#warrior.sampler.play_note(warrior.minor_scale[warrior.minor_scale_index][0], warrior.minor_scale[warrior.minor_scale_index][1])
-	#warrior.label_3.text = "played_note: " + warrior.minor_scale[warrior.minor_scale_index][0] + str(warrior.minor_scale[warrior.minor_scale_index][1])
-	##warrior.sampler.play_note(warrior.chromatic_scale[warrior.chromatic_scale_index][0], warrior.chromatic_scale[warrior.chromatic_scale_index][1])
-	#if warrior.minor_scale_index < 7:
-		#warrior.minor_scale_index += 1
-	#else:
-		#warrior.minor_scale_index = 0
-	#warrior.label_4.text = "next_note: " + warrior.minor_scale[warrior.minor_scale_index][0] + str(warrior.minor_scale[warrior.minor_scale_index][1])
 
 
 func _on_animation_finished() -> void:

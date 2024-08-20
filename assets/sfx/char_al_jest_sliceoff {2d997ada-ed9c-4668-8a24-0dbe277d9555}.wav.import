@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rnnkh5bkitj0"
+path="res://.godot/imported/char_al_jest_sliceoff {2d997ada-ed9c-4668-8a24-0dbe277d9555}.wav-f70a6350fa43d49b23fcc9e02ed7700a.sample"
+
+[deps]
+
+source_file="res://assets/sfx/char_al_jest_sliceoff {2d997ada-ed9c-4668-8a24-0dbe277d9555}.wav"
+dest_files=["res://.godot/imported/char_al_jest_sliceoff {2d997ada-ed9c-4668-8a24-0dbe277d9555}.wav-f70a6350fa43d49b23fcc9e02ed7700a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
