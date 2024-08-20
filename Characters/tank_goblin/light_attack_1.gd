@@ -1,5 +1,6 @@
 extends TankGoblinState
 
+@onready var sounds
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
@@ -9,6 +10,7 @@ func enter(_msg := {}) -> void:
 	tank_goblin.sprite.offset = Vector2(15, 0)
 	tank_goblin.velocity.x = 0
 	tank_goblin.hit_box.previously_hit_hurtboxes = []
+	$ChainHitAudioStreamPlayer.play()
 	
 	tank_goblin.sprite.play("heavy_attack")
 
@@ -51,6 +53,7 @@ func _on_frame_changed() -> void:
 		tween.tween_property(tank_goblin, "velocity:x", 0, 0.3).from(direction * tank_goblin.SPEED * 6)
 	if tank_goblin.sprite.frame == 9:
 		tank_goblin.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
+		$ChainHitAudioStreamPlayer.play()
 	if tank_goblin.sprite.frame == 11:
 		tank_goblin.hit_box.previously_hit_hurtboxes = []
 		var tween = create_tween()
@@ -59,6 +62,8 @@ func _on_frame_changed() -> void:
 		tank_goblin.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
 	if tank_goblin.sprite.frame == 14:
 		tank_goblin.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
+	if tank_goblin.sprite.frame == 19:
+		$JumpSmashAudioStreamPlayer.play()
 	if tank_goblin.sprite.frame == 21:
 		var x_tween = create_tween()
 		var direction = tank_goblin.sprite.scale.x

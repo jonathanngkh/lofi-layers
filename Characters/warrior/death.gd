@@ -4,6 +4,7 @@ extends WarriorState
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
+	$AudioStreamPlayer.play()
 	warrior.sprite.offset = Vector2(8, -25)
 	warrior.sprite.animation_finished.connect(_on_animation_finished)
 	warrior.hurt_box.process_mode = Node.PROCESS_MODE_DISABLED
@@ -11,11 +12,17 @@ func enter(_msg := {}) -> void:
 	warrior.velocity.x = 0
 	var world = warrior.get_parent()
 	world.get_node("BackgroundMusic").stop()
+	warrior.game_over_black_screen.visible = true
+	warrior.death_sprite_2d.visible = true
+	warrior.death_sprite_2d.play("death")
+	#get_tree().paused = true
 	for node in world.get_children():
+		if node.name == "ParallaxBackground":
+			node.visible = false
 		if not node.is_in_group("player"):
-			if not node.name == "ParallaxBackground" and not node.name == "WorldEnvironment" and not node.name == "BackgroundMusic" and not node.name == "AmbientNoise":
-				
+			if not node.name == "ParallaxBackground" and not node.name == "WorldEnvironment" and not node.name == "BackgroundMusic" and not node.name == "AmbientNoise" and not node.name == "FirstBackgroundAudioStreamPlayer":
 				node.modulate = "000000"
+	
 	
 	
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://dtq6odoaxknll"]
+[gd_scene load_steps=101 format=3 uid="uid://dtq6odoaxknll"]
 
 [ext_resource type="Script" path="res://Characters/tank_goblin/tank_goblin_character_body.gd" id="1_xj1we"]
 [ext_resource type="Texture2D" uid="uid://3qxexvvqh6fj" path="res://Characters/tank_goblin/FighterGoblin-Sheet.png" id="3_wcq2q"]
@@ -15,7 +15,9 @@
 [ext_resource type="Script" path="res://Characters/tank_goblin/run.gd" id="14_71mn0"]
 [ext_resource type="Script" path="res://utility/state_machine.gd" id="14_gw0uq"]
 [ext_resource type="Script" path="res://Characters/tank_goblin/light_attack_1.gd" id="15_1teyk"]
+[ext_resource type="AudioStream" uid="uid://dm1763cibxeh7" path="res://Characters/tank_goblin/sfx_enemy_tankgoblin_chainslash.wav" id="16_3moey"]
 [ext_resource type="Script" path="res://Characters/tank_goblin/hurt.gd" id="16_ug2x5"]
+[ext_resource type="AudioStream" uid="uid://d1obcu3xbs302" path="res://Characters/tank_goblin/sfx_enemy_tankgoblin_jumpsmash.wav" id="17_5p4ii"]
 [ext_resource type="Script" path="res://Characters/tank_goblin/death.gd" id="17_77fo3"]
 [ext_resource type="Script" path="res://utility/hurt_box.gd" id="19_jf7pb"]
 [ext_resource type="Texture2D" uid="uid://b6x2sa0qrnulc" path="res://utility/NoteSlotsControl/Noteslot.png" id="19_p0rn8"]
@@ -601,6 +603,14 @@ script = ExtResource("14_71mn0")
 
 [node name="HeavyAttack" type="Node2D" parent="StateMachine"]
 script = ExtResource("15_1teyk")
+
+[node name="ChainHitAudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/HeavyAttack"]
+stream = ExtResource("16_3moey")
+volume_db = -10.0
+pitch_scale = 1.3
+
+[node name="JumpSmashAudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/HeavyAttack"]
+stream = ExtResource("17_5p4ii")
 
 [node name="Hurt" type="Node2D" parent="StateMachine"]
 script = ExtResource("16_ug2x5")

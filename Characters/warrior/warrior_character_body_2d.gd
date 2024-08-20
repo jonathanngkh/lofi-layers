@@ -17,6 +17,7 @@ var can_air_dash = true
 @onready var solfege_notes_index := 0
 @onready var equipped_note : String = solfege_notes[solfege_notes_index]
 @onready var camera: Camera2D = $Camera2D
+@onready var game_over_black_screen: ColorRect = $CanvasLayer/GameOverBlackScreen
 
 @export var is_cheat_mode := false
 @export var debug_mode := false
@@ -77,9 +78,12 @@ const JUMP_VELOCITY = -2100.0
 @onready var tween5 = create_tween()
 @onready var tween6 = create_tween()
 @onready var tween7 = create_tween()
+@onready var death_sprite_2d: AnimatedSprite2D = $CanvasLayer/DeathSprite2D
 
 
 func _ready() -> void:
+	death_sprite_2d.visible = false
+	game_over_black_screen.visible = false
 	health_bar_control.PlayerCurrentHealth = hp
 	health_bar_control.damage(0)
 	aura.play("loop")

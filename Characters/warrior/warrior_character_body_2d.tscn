@@ -1,4 +1,4 @@
-[gd_scene load_steps=387 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=388 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="PackedScene" uid="uid://7hq8huhncy2o" path="res://utility/do_ui.tscn" id="2_7wi07"]
@@ -31,12 +31,13 @@
 [ext_resource type="Texture2D" uid="uid://biq8v2xjomo2u" path="res://Characters/warrior/heal5.png" id="11_myenr"]
 [ext_resource type="Texture2D" uid="uid://d3bxe8iesw0tt" path="res://Characters/warrior/shieldbuffaura3.png" id="11_r8c5s"]
 [ext_resource type="PackedScene" uid="uid://d2oe85ngciha4" path="res://utility/NoteSlotsControl/note_slots.tscn" id="11_y1bh8"]
-[ext_resource type="Texture2D" uid="uid://bckdqppkw3bkf" path="res://utility/ButtonGuide.png" id="12_b14eq"]
 [ext_resource type="Script" path="res://utility/hurt_box.gd" id="12_bf3at"]
 [ext_resource type="Shader" path="res://utility/teleport.gdshader" id="12_gnvma"]
 [ext_resource type="Texture2D" uid="uid://dbhnq1mclgqfb" path="res://Characters/warrior/heal6.png" id="12_hj06o"]
+[ext_resource type="Texture2D" uid="uid://bkf1aa3jr1c6t" path="res://utility/ButtonGuide (2).png" id="12_pugpg"]
 [ext_resource type="Script" path="res://Characters/warrior/hurt.gd" id="13_b1ba7"]
 [ext_resource type="Texture2D" uid="uid://dhm17hjqssxyf" path="res://Characters/warrior/heal7.png" id="13_y810e"]
+[ext_resource type="Script" path="res://Characters/warrior/game_over_black_screen.gd" id="14_gdjth"]
 [ext_resource type="Texture2D" uid="uid://bxdqlyfteq76w" path="res://Characters/warrior/heal8.png" id="14_iauvm"]
 [ext_resource type="Texture2D" uid="uid://dd512vcx0ggtm" path="res://utility/Leaves/Leaves1.png" id="14_su0u4"]
 [ext_resource type="Texture2D" uid="uid://cixbaykqpksue" path="res://utility/Leaves/Leaves6.png" id="15_appi8"]
@@ -2796,6 +2797,7 @@ text = "Holy Sword
 "
 
 [node name="NoteSlots" parent="CanvasLayer" instance=ExtResource("11_y1bh8")]
+z_index = -1
 offset_left = 76.0
 offset_top = 42.0
 offset_right = 76.0
@@ -2805,14 +2807,45 @@ scale = Vector2(1.3, 1.3)
 [node name="ButtonGuide" type="TextureRect" parent="CanvasLayer"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_w6br3")
-offset_left = 8.0
+offset_left = 20.0
 offset_top = 1250.0
-offset_right = 390.0
+offset_right = 585.0
 offset_bottom = 1435.0
-texture = ExtResource("12_b14eq")
+texture = ExtResource("12_pugpg")
 stretch_mode = 4
 
+[node name="HealthBarControl" parent="CanvasLayer" instance=ExtResource("2_krcfy")]
+offset_left = 1.0
+offset_top = -88.0
+offset_right = 1.0
+offset_bottom = -88.0
+
+[node name="GameOverBlackScreen" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 2560.0
+offset_bottom = 1440.0
+color = Color(0.08, 0.08, 0.08, 1)
+script = ExtResource("14_gdjth")
+
+[node name="GameOverMessageLabel" type="Label" parent="CanvasLayer/GameOverBlackScreen"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 790.0
+offset_top = 709.0
+offset_right = 1770.0
+offset_bottom = 1014.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 80
+text = "Try again?
+(press esc)"
+horizontal_alignment = 1
+
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer"]
+process_mode = 3
 position = Vector2(-256, 0)
 scale = Vector2(2, 2)
 amount = 3
@@ -2829,6 +2862,7 @@ scale_amount_max = 4.0
 color = Color(0.656, 0.656, 0.656, 0.812)
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="CanvasLayer"]
+process_mode = 3
 position = Vector2(435, 0)
 scale = Vector2(2, 2)
 amount = 3
@@ -2845,6 +2879,7 @@ scale_amount_max = 4.0
 color = Color(0.656, 0.656, 0.656, 0.812)
 
 [node name="CPUParticles2D3" type="CPUParticles2D" parent="CanvasLayer"]
+process_mode = 3
 position = Vector2(1095, 0)
 scale = Vector2(2, 2)
 amount = 3
@@ -2860,13 +2895,8 @@ scale_amount_min = 3.0
 scale_amount_max = 4.0
 color = Color(0.656, 0.656, 0.656, 0.812)
 
-[node name="HealthBarControl" parent="CanvasLayer" instance=ExtResource("2_krcfy")]
-offset_left = 1.0
-offset_top = -88.0
-offset_right = 1.0
-offset_bottom = -88.0
-
 [node name="CPUParticles2D4" type="CPUParticles2D" parent="CanvasLayer"]
+process_mode = 3
 position = Vector2(1855, 0)
 scale = Vector2(2, 2)
 amount = 3
@@ -2881,6 +2911,16 @@ initial_velocity_max = 200.0
 scale_amount_min = 3.0
 scale_amount_max = 4.0
 color = Color(0.656, 0.656, 0.656, 0.812)
+
+[node name="DeathSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+position = Vector2(1232, 908)
+scale = Vector2(6.05063, 6.05063)
+sprite_frames = SubResource("SpriteFrames_o7tut")
+animation = &"death"
+frame = 24
+frame_progress = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.08165e-12, 4.333)
@@ -3088,6 +3128,11 @@ volume_db = -2.0
 
 [node name="Death" type="Node2D" parent="StateMachine"]
 script = ExtResource("30_0mfxg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Death"]
+stream = ExtResource("49_gf4px")
+volume_db = -3.0
+bus = &"Death Echo"
 
 [node name="Heal" type="Node2D" parent="StateMachine"]
 script = ExtResource("48_vf30k")
