@@ -1,4 +1,4 @@
-[gd_scene load_steps=388 format=3 uid="uid://brg22imany6tq"]
+[gd_scene load_steps=390 format=3 uid="uid://brg22imany6tq"]
 
 [ext_resource type="Script" path="res://Characters/warrior/warrior_character_body_2d.gd" id="1_jp0s3"]
 [ext_resource type="PackedScene" uid="uid://7hq8huhncy2o" path="res://utility/do_ui.tscn" id="2_7wi07"]
@@ -42,6 +42,8 @@
 [ext_resource type="Texture2D" uid="uid://dd512vcx0ggtm" path="res://utility/Leaves/Leaves1.png" id="14_su0u4"]
 [ext_resource type="Texture2D" uid="uid://cixbaykqpksue" path="res://utility/Leaves/Leaves6.png" id="15_appi8"]
 [ext_resource type="Script" path="res://Characters/warrior/light_attack_2.gd" id="15_qoqu0"]
+[ext_resource type="Script" path="res://Characters/warrior/start_screen.gd" id="15_qyg0r"]
+[ext_resource type="Texture2D" uid="uid://diaqqw0uc87yy" path="res://utility/Cover image.png" id="15_svamo"]
 [ext_resource type="Texture2D" uid="uid://c2lfb0a7byu8v" path="res://Characters/warrior/heal9.png" id="15_y7egn"]
 [ext_resource type="Texture2D" uid="uid://wjiah1ofay8x" path="res://Characters/warrior/heal10.png" id="16_8xdy0"]
 [ext_resource type="Script" path="res://Characters/warrior/holy_sword.gd" id="16_brbk0"]
@@ -2822,6 +2824,41 @@ theme_override_font_sizes/font_size = 80
 text = "Try again?
 (press esc)"
 horizontal_alignment = 1
+
+[node name="StartScreen" type="ColorRect" parent="CanvasLayer"]
+offset_right = 2560.0
+offset_bottom = 1440.0
+color = Color(0.08, 0.08, 0.08, 1)
+script = ExtResource("15_qyg0r")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/StartScreen"]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 5.0
+offset_right = 2256.0
+offset_bottom = 1445.0
+texture = ExtResource("15_svamo")
+stretch_mode = 4
+
+[node name="PressJToStartLabel" type="Label" parent="CanvasLayer/StartScreen"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 900.0
+offset_top = 1086.0
+offset_right = 1665.0
+offset_bottom = 1160.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 80
+text = "Press J to start game"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/StartScreen"]
+stream = ExtResource("54_kgyj0")
+volume_db = -7.0
 
 [node name="EndGameBlackscreen" type="ColorRect" parent="CanvasLayer"]
 visible = false
