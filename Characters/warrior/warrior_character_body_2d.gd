@@ -18,6 +18,7 @@ var can_air_dash = true
 @onready var equipped_note : String = solfege_notes[solfege_notes_index]
 @onready var camera: Camera2D = $Camera2D
 @onready var game_over_black_screen: ColorRect = $CanvasLayer/GameOverBlackScreen
+@onready var end_game_blackscreen: ColorRect = $CanvasLayer/EndGameBlackscreen
 
 @export var is_cheat_mode := false
 @export var debug_mode := false
@@ -82,6 +83,7 @@ const JUMP_VELOCITY = -2100.0
 
 
 func _ready() -> void:
+	end_game_blackscreen.visible = false
 	death_sprite_2d.visible = false
 	game_over_black_screen.visible = false
 	health_bar_control.PlayerCurrentHealth = hp

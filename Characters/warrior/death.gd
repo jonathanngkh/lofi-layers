@@ -20,7 +20,7 @@ func enter(_msg := {}) -> void:
 		if node.name == "ParallaxBackground":
 			node.visible = false
 		if not node.is_in_group("player"):
-			if not node.name == "ParallaxBackground" and not node.name == "WorldEnvironment" and not node.name == "BackgroundMusic" and not node.name == "AmbientNoise" and not node.name == "FirstBackgroundAudioStreamPlayer":
+			if not node.name == "ParallaxBackground" and not node.name == "WorldEnvironment" and not node.name == "BackgroundMusic" and not node.name == "AmbientNoise" and not node.name == "FirstBackgroundAudioStreamPlayer" and not node.name == "Timer":
 				node.modulate = "000000"
 	
 	

@@ -2386,27 +2386,6 @@ metadata/_edit_vertical_guides_ = [1281.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GoblinsKilledLabel" type="Label" parent="CanvasLayer"]
-texture_filter = 1
-offset_left = 1126.0
-offset_top = 1322.0
-offset_right = 1435.0
-offset_bottom = 1366.0
-theme_override_fonts/font = ExtResource("10_mjt45")
-theme_override_font_sizes/font_size = 48
-text = "goblins killed:"
-
-[node name="NumberGoblinsKilledLabel" type="RichTextLabel" parent="CanvasLayer"]
-texture_filter = 1
-offset_left = 1224.0
-offset_top = 1382.0
-offset_right = 1339.0
-offset_bottom = 1426.0
-theme_override_fonts/normal_font = ExtResource("10_mjt45")
-theme_override_font_sizes/normal_font_size = 48
-bbcode_enabled = true
-text = "[center]0 / 9"
-
 [node name="SavedNotesHBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 offset_left = 152.0
 offset_top = 128.0
@@ -2842,6 +2821,30 @@ theme_override_fonts/font = ExtResource("10_mjt45")
 theme_override_font_sizes/font_size = 80
 text = "Try again?
 (press esc)"
+horizontal_alignment = 1
+
+[node name="EndGameBlackscreen" type="ColorRect" parent="CanvasLayer"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+offset_right = 2560.0
+offset_bottom = 1440.0
+color = Color(0.08, 0.08, 0.08, 1)
+script = ExtResource("14_gdjth")
+
+[node name="GameOverMessageLabel" type="Label" parent="CanvasLayer/EndGameBlackscreen"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 790.0
+offset_top = 709.0
+offset_right = 1770.0
+offset_bottom = 1014.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("10_mjt45")
+theme_override_font_sizes/font_size = 80
+text = "To Be Continued..."
 horizontal_alignment = 1
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer"]

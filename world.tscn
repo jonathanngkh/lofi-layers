@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bd7e5wvydw0pg"]
+[gd_scene load_steps=37 format=4 uid="uid://bd7e5wvydw0pg"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_bx3ql"]
 [ext_resource type="PackedScene" uid="uid://c475exd8klytk" path="res://parallax_background.tscn" id="1_d7jge"]
@@ -397,6 +397,9 @@ size = Vector2(826, 386)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xkv8h"]
 size = Vector2(1091, 233)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckuqo"]
+size = Vector2(420, 1186)
+
 [sub_resource type="Environment" id="Environment_qmkeb"]
 background_mode = 3
 background_canvas_max_layer = 1
@@ -531,8 +534,12 @@ shape = SubResource("RectangleShape2D_3ttuv")
 position = Vector2(9521.5, 1097.5)
 shape = SubResource("RectangleShape2D_xkv8h")
 
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="tilemapspam4/RigidBody2D"]
+position = Vector2(-10378, 857)
+shape = SubResource("RectangleShape2D_ckuqo")
+
 [node name="WarriorCharacterBody2D" parent="." instance=ExtResource("5_1upx7")]
-position = Vector2(9036, 664)
+position = Vector2(-7541, 224)
 
 [node name="Camera2D" type="Camera2D" parent="WarriorCharacterBody2D"]
 position = Vector2(2.08165e-12, -119.5)
@@ -588,10 +595,6 @@ position = Vector2(8062, 957)
 scale = Vector2(4, 4)
 random_notes_mode = false
 note_health = ["Re"]
-
-[node name="FemaleGoblinCharacterBody2" parent="." instance=ExtResource("9_edalk")]
-position = Vector2(7633, 668)
-scale = Vector2(4, 4)
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_ygp8x")
@@ -1634,12 +1637,20 @@ note_health = ["Mi"]
 position = Vector2(6670, 986)
 note_health = ["Fa"]
 
+[node name="DummyCharacterBody2D6" parent="." instance=ExtResource("14_3lcor")]
+position = Vector2(7655, 986)
+note_health = ["Re"]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qmkeb")
 
 [node name="FirstBackgroundAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_jdrhc")
 volume_db = -15.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
 [editable path="DummyCharacterBody2D11"]
 [editable path="RogueGoblinCharacterBody"]
