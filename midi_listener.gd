@@ -29,10 +29,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMIDI:
 		if event.message == MIDI_MESSAGE_NOTE_ON:
 			#print(midi_dictionary[event.pitch] + " on")
-			emit_signal("midi_note_on", event.pitch)
+			midi_note_on.emit(event.pitch)
+			#emit_signal("midi_note_on", event.pitch)
 		if event.message == MIDI_MESSAGE_NOTE_OFF:
 			#print(midi_dictionary[event.pitch] + " off")
-			emit_signal("midi_note_off", event.pitch)
+			midi_note_off.emit(event.pitch)
+			#emit_signal("midi_note_off", event.pitch)
 
 
 func _print_midi_info(midi_event: InputEventMIDI):

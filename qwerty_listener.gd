@@ -48,9 +48,11 @@ func _unhandled_input(_event: InputEvent) -> void:
 	# sending pitches according to input map
 	for key in action_pitch_dictionary:
 		if Input.is_action_just_pressed(key):
-			emit_signal("qwerty_note_on", action_pitch_dictionary[key])
+			qwerty_note_on.emit(action_pitch_dictionary[key])
+			#emit_signal("qwerty_note_on", action_pitch_dictionary[key])
 		elif Input.is_action_just_released(key):
-			emit_signal("qwerty_note_off", action_pitch_dictionary[key])
+			qwerty_note_off.emit(action_pitch_dictionary[key])
+			#emit_signal("qwerty_note_off", action_pitch_dictionary[key])
 	
 	# Changing octaves using arrow keys
 	if Input.is_action_just_released("qwerty_minus_1_octave"):

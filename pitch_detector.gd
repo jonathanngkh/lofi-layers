@@ -42,7 +42,9 @@ func _start_pitch_detection() -> void:
 	while stdio.is_open() and stdio.get_error() == OK:
 		#print(stdio.get_line())
 		pitch_detected = stdio.get_line()
-		call_deferred("emit_signal", "detected_pitch", pitch_detected)
+		#detected_pitch.emit(pitch_detected)
+		detected_pitch.emit.call_deferred(pitch_detected)
+		#call_deferred("emit_signal", "detected_pitch", pitch_detected)
 		
 	# print error messages, if any
 	if stdio.get_error() != OK:
