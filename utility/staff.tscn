@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cm0vop1dti24t"]
+[gd_scene load_steps=10 format=3 uid="uid://cm0vop1dti24t"]
 
 [ext_resource type="Script" path="res://staff.gd" id="1_uqtcc"]
 [ext_resource type="Texture2D" uid="uid://dw2wbv5llap1p" path="res://assets/music theory/treble clef.png" id="2_8x8do"]
@@ -8,12 +8,7 @@
 [ext_resource type="Script" path="res://note_stack_container.gd" id="6_lrv4b"]
 [ext_resource type="Texture2D" uid="uid://c0o2vcah5aaul" path="res://assets/music theory/white note head.png" id="7_iea4l"]
 [ext_resource type="Script" path="res://note_head.gd" id="8_5lfwn"]
-[ext_resource type="Script" path="res://utility/hurt_box.gd" id="9_hxaa6"]
 [ext_resource type="Texture2D" uid="uid://dh5br0nob50no" path="res://assets/music theory/Path.png" id="9_qygvo"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xobxo"]
-radius = 31.5167
-height = 79.1577
 
 [node name="Staff" type="Control"]
 self_modulate = Color(0, 0, 0, 0)
@@ -2106,16 +2101,6 @@ grow_vertical = 2
 texture = ExtResource("7_iea4l")
 expand_mode = 1
 stretch_mode = 6
-
-[node name="HurtBox" type="Area2D" parent="NoteStackContainer/NoteStack1/A4"]
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("9_hxaa6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NoteStackContainer/NoteStack1/A4/HurtBox"]
-position = Vector2(46.9999, 37.189)
-rotation = 1.0472
-shape = SubResource("CapsuleShape2D_xobxo")
 
 [node name="B4" type="TextureRect" parent="NoteStackContainer/NoteStack1"]
 visible = false

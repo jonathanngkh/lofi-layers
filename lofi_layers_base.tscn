@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bxdgaof253m3y"]
+[gd_scene load_steps=2 format=3 uid="uid://bxdgaof253m3y"]
+
+[ext_resource type="PackedScene" uid="uid://cm0vop1dti24t" path="res://utility/staff.tscn" id="1_20n21"]
 
 [node name="LofiLayersBase" type="Node2D"]
 
@@ -6,4 +8,6 @@
 custom_minimum_size = Vector2(2560, 1440)
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(0, 0, 0, 1)
+color = Color(0.131379, 0.131379, 0.131379, 1)
+
+[node name="Staff" parent="." instance=ExtResource("1_20n21")]
