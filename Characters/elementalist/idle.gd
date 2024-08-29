@@ -1,21 +1,21 @@
 # idle state
-extends WitchState
+extends ElementalistState
 
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	witch.sprite.offset.x = 40
-	witch.sprite.play("idle")
+	elementalist.sprite.offset.x = 40
+	elementalist.sprite.play("idle")
 	if Input.get_axis("left", "right") > 0:
-		witch.sprite.scale.x = 1
-		witch.velocity.x = 1 * witch.SPEED
+		elementalist.sprite.scale.x = 1
+		elementalist.velocity.x = 1 * elementalist.SPEED
 		state_machine.transition_to("Walk")
 	elif Input.get_axis("left", "right") < 0:
-		witch.sprite.scale.x = -1
-		witch.velocity.x = -1 * witch.SPEED
+		elementalist.sprite.scale.x = -1
+		elementalist.velocity.x = -1 * elementalist.SPEED
 		state_machine.transition_to("Walk")
 	else:
-		witch.velocity.x = move_toward(witch.velocity.x, 0, witch.SPEED)
+		elementalist.velocity.x = move_toward(elementalist.velocity.x, 0, elementalist.SPEED)
 	if Input.is_action_pressed("block"):
 		state_machine.transition_to("Block")
 	if Input.is_action_pressed("light_attack"):
@@ -28,30 +28,30 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	#if not witch.velocity.x == 0:
+	#if not elementalist.velocity.x == 0:
 		#state_machine.transition_to("Walk")
-	if not witch.velocity.y == 0:
+	if not elementalist.velocity.y == 0:
 		state_machine.transition_to("Jump", {"stage": "apex"})
 
 
 # Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
-	if witch.is_player_controlled:
+	if elementalist.is_player_controlled:
 		if Input.get_axis("left", "right") > 0:
-			witch.sprite.scale.x = 1
-			witch.velocity.x = 1 * witch.SPEED
+			elementalist.sprite.scale.x = 1
+			elementalist.velocity.x = 1 * elementalist.SPEED
 			state_machine.transition_to("Walk")
 		elif Input.get_axis("left", "right") < 0:
-			witch.sprite.scale.x = -1
-			witch.velocity.x = -1 * witch.SPEED
+			elementalist.sprite.scale.x = -1
+			elementalist.velocity.x = -1 * elementalist.SPEED
 			state_machine.transition_to("Walk")
 		else:
-			witch.velocity.x = move_toward(witch.velocity.x, 0, witch.SPEED)
+			elementalist.velocity.x = move_toward(elementalist.velocity.x, 0, elementalist.SPEED)
 		# block
 		if Input.is_action_pressed("block"):
 			state_machine.transition_to("Block")
 		# jump
-		if Input.is_action_just_pressed("jump") and witch.is_on_floor():
+		if Input.is_action_just_pressed("jump") and elementalist.is_on_floor():
 			state_machine.transition_to("Jump")
 		if Input.is_action_pressed("light_attack"):
 			state_machine.transition_to("LightAttack1")

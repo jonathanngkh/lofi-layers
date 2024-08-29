@@ -1,6 +1,6 @@
 [gd_scene load_steps=122 format=3 uid="uid://4snwrvp6duw0"]
 
-[ext_resource type="Script" path="res://Characters/witch/witch_character_body_2d.gd" id="1_wonej"]
+[ext_resource type="Script" path="res://Characters/elementalist/elementalist_character_body.gd" id="1_nvyyi"]
 [ext_resource type="Texture2D" uid="uid://jc40qfw7vbkx" path="res://assets/characters/eleanore/SalamandarWitch-Sheet#1.png" id="2_o230v"]
 [ext_resource type="Texture2D" uid="uid://gllfblrwhkt8" path="res://assets/characters/eleanore/block/CastingMagicShield1.png" id="3_co5wi"]
 [ext_resource type="Texture2D" uid="uid://dhtx2teqgfvum" path="res://assets/characters/eleanore/block/CastingMagicShield2.png" id="4_bwxhv"]
@@ -59,13 +59,13 @@
 [ext_resource type="Texture2D" uid="uid://b6ove03nmd1eb" path="res://assets/characters/shadow/Shadow1.png" id="57_y5ige"]
 [ext_resource type="PackedScene" uid="uid://dpkefryb25jky" path="res://hit_box.tscn" id="58_btc6i"]
 [ext_resource type="PackedScene" uid="uid://m3ibtx1a6nk4" path="res://utility/state_machine.tscn" id="59_54xtw"]
-[ext_resource type="Script" path="res://Characters/witch/idle.gd" id="60_fsalx"]
-[ext_resource type="Script" path="res://Characters/witch/walk.gd" id="61_bfhvf"]
-[ext_resource type="Script" path="res://Characters/witch/jump.gd" id="62_c3plp"]
-[ext_resource type="Script" path="res://Characters/witch/dash.gd" id="63_pnph4"]
-[ext_resource type="Script" path="res://Characters/witch/block.gd" id="64_6h022"]
-[ext_resource type="Script" path="res://Characters/witch/light_attack_1.gd" id="65_2flml"]
-[ext_resource type="Script" path="res://Characters/witch/hurt.gd" id="66_0qbe0"]
+[ext_resource type="Script" path="res://Characters/elementalist/idle.gd" id="60_s3wta"]
+[ext_resource type="Script" path="res://Characters/elementalist/walk.gd" id="61_rcj7x"]
+[ext_resource type="Script" path="res://Characters/elementalist/jump.gd" id="62_nmqb0"]
+[ext_resource type="Script" path="res://Characters/elementalist/dash.gd" id="63_58vkx"]
+[ext_resource type="Script" path="res://Characters/elementalist/block.gd" id="64_eh7lh"]
+[ext_resource type="Script" path="res://Characters/elementalist/light_attack_1.gd" id="65_8eg2i"]
+[ext_resource type="Script" path="res://Characters/elementalist/hurt.gd" id="66_nmobm"]
 [ext_resource type="PackedScene" uid="uid://c1jrg0r6vw1pv" path="res://utility/hurt_box.tscn" id="67_5cuw5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8vcw"]
@@ -710,12 +710,11 @@ size = Vector2(20, 48)
 radius = 9.66667
 height = 30.6667
 
-[node name="WitchCharacterBody2D" type="CharacterBody2D"]
+[node name="ElementalistCharacterBody" type="CharacterBody2D"]
 z_index = 1
 texture_filter = 1
 scale = Vector2(3, 3)
-script = ExtResource("1_wonej")
-is_player_controlled = false
+script = ExtResource("1_nvyyi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nekmc")
@@ -748,28 +747,28 @@ shape = SubResource("RectangleShape2D_bmpw5")
 initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node2D" parent="StateMachine"]
-script = ExtResource("60_fsalx")
+script = ExtResource("60_s3wta")
 
 [node name="Walk" type="Node2D" parent="StateMachine"]
-script = ExtResource("61_bfhvf")
+script = ExtResource("61_rcj7x")
 
 [node name="Jump" type="Node2D" parent="StateMachine"]
-script = ExtResource("62_c3plp")
+script = ExtResource("62_nmqb0")
 
 [node name="Dash" type="Node2D" parent="StateMachine"]
-script = ExtResource("63_pnph4")
+script = ExtResource("63_58vkx")
 
 [node name="DashDurationTimer" type="Timer" parent="StateMachine/Dash"]
 one_shot = true
 
 [node name="Block" type="Node2D" parent="StateMachine"]
-script = ExtResource("64_6h022")
+script = ExtResource("64_eh7lh")
 
 [node name="LightAttack1" type="Node2D" parent="StateMachine"]
-script = ExtResource("65_2flml")
+script = ExtResource("65_8eg2i")
 
 [node name="Hurt" type="Node2D" parent="StateMachine"]
-script = ExtResource("66_0qbe0")
+script = ExtResource("66_nmobm")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -30.3333

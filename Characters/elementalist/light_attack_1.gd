@@ -1,22 +1,22 @@
-extends WitchState
+extends ElementalistState
 
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	witch.sprite.offset.x = 40
-	witch.sprite.animation_finished.connect(_on_animation_finished)
-	witch.sprite.frame_changed.connect(_on_frame_changed)
-	witch.sprite.play("light_attack_1", 1.4)
-	witch.velocity.x = 0
-	witch.hit_box.previously_hit_hurtboxes = []
+	elementalist.sprite.offset.x = 40
+	elementalist.sprite.animation_finished.connect(_on_animation_finished)
+	elementalist.sprite.frame_changed.connect(_on_frame_changed)
+	elementalist.sprite.play("light_attack_1", 1.4)
+	elementalist.velocity.x = 0
+	elementalist.hit_box.previously_hit_hurtboxes = []
 
 
 func _on_animation_finished() -> void:
-	if witch.sprite.animation == "light_attack_1":
+	if elementalist.sprite.animation == "light_attack_1":
 		state_machine.transition_to("Idle")
-	#if witch.sprite.animation == "light_attack_1":
-		#witch.sprite.play("light_attack_end", 1.8)
-	#elif witch.sprite.animation == "light_attack_end":
+	#if elementalist.sprite.animation == "light_attack_1":
+		#elementalist.sprite.play("light_attack_end", 1.8)
+	#elif elementalist.sprite.animation == "light_attack_end":
 		#state_machine.transition_to("Idle")
 
 
@@ -27,9 +27,9 @@ func _on_animation_finished() -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	if witch.sprite.frame >= 3:
-		witch.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
-		#for area in witch.hit_box.get_overlapping_areas():
+	if elementalist.sprite.frame >= 3:
+		elementalist.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
+		#for area in elementalist.hit_box.get_overlapping_areas():
 			#if not overlapping_areas.has(area):
 				#hit(area)
 
@@ -37,7 +37,7 @@ func physics_update(_delta: float) -> void:
 ## Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:
 	# dash
-	if not witch.sprite.animation == "light_attack_1":
+	if not elementalist.sprite.animation == "light_attack_1":
 		if Input.is_action_just_pressed("dash"):
 			state_machine.transition_to("Dash")
 		# block
@@ -47,21 +47,21 @@ func handle_input(_event: InputEvent) -> void:
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
 func exit() -> void:
-	witch.sprite.animation_finished.disconnect(_on_animation_finished)
-	witch.sprite.frame_changed.disconnect(_on_frame_changed)
-	witch.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
+	elementalist.sprite.animation_finished.disconnect(_on_animation_finished)
+	elementalist.sprite.frame_changed.disconnect(_on_frame_changed)
+	elementalist.hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func _on_frame_changed() -> void:
-	if witch.sprite.frame == 0:
+	if elementalist.sprite.frame == 0:
 		pass
-	if witch.sprite.frame == 1:
+	if elementalist.sprite.frame == 1:
 		pass
-	if witch.sprite.frame == 2:
+	if elementalist.sprite.frame == 2:
 		pass
-	if witch.sprite.frame == 3:
+	if elementalist.sprite.frame == 3:
 		pass
-	if witch.sprite.frame == 4:
+	if elementalist.sprite.frame == 4:
 		pass
-	if witch.sprite.frame == 5:
+	if elementalist.sprite.frame == 5:
 		pass

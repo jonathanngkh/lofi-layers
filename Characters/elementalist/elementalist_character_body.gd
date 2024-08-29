@@ -1,4 +1,4 @@
-class_name Witch
+class_name Elementalist
 extends CharacterBody2D
 
 const SPEED = 500.0
