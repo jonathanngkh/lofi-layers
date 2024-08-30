@@ -185,7 +185,7 @@ script = ExtResource("1_nvyyi")
 position = Vector2(0, -40)
 sprite_frames = SubResource("SpriteFrames_44h2c")
 animation = &"walk"
-frame_progress = 0.0771457
+frame_progress = 0.855476
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 visible = false

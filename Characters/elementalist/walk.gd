@@ -13,7 +13,28 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	pass
+		# left or right
+	var x_vector := Input.get_axis("left", "right")
+	if Input.get_axis("left", "right") > 0:
+		elementalist.sprite.scale.x = 1
+		#x_vector = 1
+	elif Input.get_axis("left", "right") < 0:
+		elementalist.sprite.scale.x = -1
+		#x_vector = -1
+	#elif Input.get_axis("left", "right") == 0:
+		#x_vector = 0
+	
+	var y_vector := Input.get_axis("up", "down")
+	#if Input.get_axis("up", "down") > 0:
+		#y_vector = 1
+	#elif Input.get_axis("up", "down") < 0:
+		#y_vector = -1
+	#elif Input.get_axis("up", "down") == 0:
+		#y_vector = 0
+	
+	var direction_vector := Vector2(x_vector, y_vector)
+	elementalist.velocity = direction_vector.normalized() * elementalist.SPEED
+	elementalist.move_and_slide()
 
 
 func _on_animation_finished() -> void:
@@ -26,25 +47,6 @@ func handle_input(_event: InputEvent) -> void:
 
 
 func controls() -> void:
-		# left or right
-	if Input.get_axis("left", "right") > 0:
-		elementalist.sprite.scale.x = 1
-		elementalist.velocity.x = 1 * elementalist.SPEED
-	elif Input.get_axis("left", "right") < 0:
-		elementalist.sprite.scale.x = -1
-		elementalist.velocity.x = -1 * elementalist.SPEED
-	elif Input.get_axis("left", "right") == 0:
-		elementalist.velocity.x = 0
-		#state_machine.transition_to("Idle")
-		
-	if Input.get_axis("up", "down") > 0:
-		elementalist.velocity.y = 1 * elementalist.SPEED
-	elif Input.get_axis("up", "down") < 0:
-		elementalist.velocity.y = -1 * elementalist.SPEED
-	elif Input.get_axis("up", "down") == 0:
-		elementalist.velocity.y = 0
-		#state_machine.transition_to("Idle")
-	
 	if Input.get_axis("left", "right") == 0 and Input.get_axis("down", "up") == 0:
 		state_machine.transition_to("Idle")
 		
