@@ -49,8 +49,8 @@ func _physics_process(delta: float) -> void:
 		$Label2.visible = false
 		
 	# Add the gravity.
-	if not is_on_floor() and not $StateMachine.state.name == "Dash":
-		velocity += get_gravity() * delta
+	#if not is_on_floor() and not $StateMachine.state.name == "Dash":
+		#velocity += get_gravity() * delta
 		
 	move_and_slide()
 

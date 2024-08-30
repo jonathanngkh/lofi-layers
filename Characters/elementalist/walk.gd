@@ -2,15 +2,9 @@ extends ElementalistState
 
 # Called when the node enters the scene tree for the first time.
 func enter(_msg := {}) -> void:
-	elementalist.sprite.offset.x = 40
 	elementalist.sprite.animation_finished.connect(_on_animation_finished)
-	elementalist.sprite.play("to_walk", 1.6)
-	if Input.get_axis("left", "right") == 0:
-		if not elementalist.velocity.x == 0:
-			elementalist.sprite.play("brake", 1.8)
-			var tween = create_tween()
-			tween.tween_property(elementalist, "velocity:x", 0, 0.3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
-			tween.play()
+	elementalist.sprite.play("walk")
+
 
 # Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:
@@ -19,17 +13,11 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	#if elementalist.velocity.x == 0:
-		#state_machine.transition_to("Idle")
-	if not elementalist.velocity.y == 0:
-		state_machine.transition_to("Jump", {"stage": "apex"})
+	pass
 
 
 func _on_animation_finished() -> void:
-	if elementalist.sprite.animation == "to_walk":
-		elementalist.sprite.play("walk")
-	if elementalist.sprite.animation == "brake":
-		state_machine.transition_to("Idle")
+	pass
 
 
 # Receives events from the `_unhandled_input()` callback.
@@ -39,21 +27,27 @@ func handle_input(_event: InputEvent) -> void:
 
 func controls() -> void:
 		# left or right
-	if not elementalist.sprite.animation == "brake":
-		if Input.get_axis("left", "right") > 0:
-			elementalist.sprite.scale.x = 1
-			elementalist.velocity.x = 1 * elementalist.SPEED
-			elementalist.sprite.play("walk")
-		elif Input.get_axis("left", "right") < 0:
-			elementalist.sprite.scale.x = -1
-			elementalist.velocity.x = -1 * elementalist.SPEED
-			elementalist.sprite.play("walk")
-		elif Input.get_axis("left", "right") == 0:
-			if not elementalist.velocity.x == 0:
-				elementalist.sprite.play("brake", 1.8)
-				var tween = create_tween()
-				tween.tween_property(elementalist, "velocity:x", 0, 0.3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
-				tween.play()
+	if Input.get_axis("left", "right") > 0:
+		elementalist.sprite.scale.x = 1
+		elementalist.velocity.x = 1 * elementalist.SPEED
+	elif Input.get_axis("left", "right") < 0:
+		elementalist.sprite.scale.x = -1
+		elementalist.velocity.x = -1 * elementalist.SPEED
+	elif Input.get_axis("left", "right") == 0:
+		elementalist.velocity.x = 0
+		#state_machine.transition_to("Idle")
+		
+	if Input.get_axis("up", "down") > 0:
+		elementalist.velocity.y = 1 * elementalist.SPEED
+	elif Input.get_axis("up", "down") < 0:
+		elementalist.velocity.y = -1 * elementalist.SPEED
+	elif Input.get_axis("up", "down") == 0:
+		elementalist.velocity.y = 0
+		#state_machine.transition_to("Idle")
+	
+	if Input.get_axis("left", "right") == 0 and Input.get_axis("down", "up") == 0:
+		state_machine.transition_to("Idle")
+		
 	# dash
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")

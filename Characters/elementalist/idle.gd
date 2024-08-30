@@ -4,18 +4,8 @@ extends ElementalistState
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	elementalist.sprite.offset.x = 40
 	elementalist.sprite.play("idle")
-	if Input.get_axis("left", "right") > 0:
-		elementalist.sprite.scale.x = 1
-		elementalist.velocity.x = 1 * elementalist.SPEED
-		state_machine.transition_to("Walk")
-	elif Input.get_axis("left", "right") < 0:
-		elementalist.sprite.scale.x = -1
-		elementalist.velocity.x = -1 * elementalist.SPEED
-		state_machine.transition_to("Walk")
-	else:
-		elementalist.velocity.x = move_toward(elementalist.velocity.x, 0, elementalist.SPEED)
+
 	if Input.is_action_pressed("block"):
 		state_machine.transition_to("Block")
 	if Input.is_action_pressed("light_attack"):
@@ -28,10 +18,7 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	#if not elementalist.velocity.x == 0:
-		#state_machine.transition_to("Walk")
-	if not elementalist.velocity.y == 0:
-		state_machine.transition_to("Jump", {"stage": "apex"})
+	pass
 
 
 # Receives events from the `_unhandled_input()` callback.
@@ -47,6 +34,15 @@ func handle_input(_event: InputEvent) -> void:
 			state_machine.transition_to("Walk")
 		else:
 			elementalist.velocity.x = move_toward(elementalist.velocity.x, 0, elementalist.SPEED)
+			
+		if Input.get_axis("up", "down") > 0:
+			elementalist.velocity.y = 1 * elementalist.SPEED
+			state_machine.transition_to("Walk")
+		elif Input.get_axis("up", "down") < 0:
+			elementalist.velocity.y = -1 * elementalist.SPEED
+			state_machine.transition_to("Walk")
+		else:
+			elementalist.velocity.y = move_toward(elementalist.velocity.y, 0, elementalist.SPEED)
 		# block
 		if Input.is_action_pressed("block"):
 			state_machine.transition_to("Block")

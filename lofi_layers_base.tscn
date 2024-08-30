@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxdgaof253m3y"]
+[gd_scene load_steps=3 format=3 uid="uid://bxdgaof253m3y"]
 
 [ext_resource type="PackedScene" uid="uid://cm0vop1dti24t" path="res://utility/staff.tscn" id="1_20n21"]
+[ext_resource type="PackedScene" uid="uid://4snwrvp6duw0" path="res://Characters/elementalist/elementalist_character_body.tscn" id="2_lsd2c"]
 
 [node name="LofiLayersBase" type="Node2D"]
 
@@ -11,3 +12,7 @@ offset_bottom = 40.0
 color = Color(0.131379, 0.131379, 0.131379, 1)
 
 [node name="Staff" parent="." instance=ExtResource("1_20n21")]
+
+[node name="ElementalistCharacterBody" parent="." instance=ExtResource("2_lsd2c")]
+position = Vector2(1244, 954)
+debug_mode = true
