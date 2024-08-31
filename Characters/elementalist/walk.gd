@@ -13,25 +13,14 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-		# left or right
 	var x_vector := Input.get_axis("left", "right")
+	
 	if Input.get_axis("left", "right") > 0:
 		elementalist.sprite.scale.x = 1
-		#x_vector = 1
 	elif Input.get_axis("left", "right") < 0:
 		elementalist.sprite.scale.x = -1
-		#x_vector = -1
-	#elif Input.get_axis("left", "right") == 0:
-		#x_vector = 0
 	
 	var y_vector := Input.get_axis("up", "down")
-	#if Input.get_axis("up", "down") > 0:
-		#y_vector = 1
-	#elif Input.get_axis("up", "down") < 0:
-		#y_vector = -1
-	#elif Input.get_axis("up", "down") == 0:
-		#y_vector = 0
-	
 	var direction_vector := Vector2(x_vector, y_vector)
 	elementalist.velocity = direction_vector.normalized() * elementalist.SPEED
 	elementalist.move_and_slide()
@@ -54,7 +43,7 @@ func controls() -> void:
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")
 	# jump
-	if Input.is_action_just_pressed("jump") and elementalist.is_on_floor():
+	if Input.is_action_just_pressed("jump"):
 		state_machine.transition_to("Jump")
 	# block
 	if Input.is_action_pressed("block"):

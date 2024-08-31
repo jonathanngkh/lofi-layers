@@ -7,11 +7,10 @@ var position_y_before_jump
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	position_y_before_jump = elementalist.shadow.global_position.y
-	elementalist.sprite.offset.x = 40
 	elementalist.sprite.animation_finished.connect(_on_animation_finished)
 	if _msg:
 		if _msg["stage"] == "apex":
-			elementalist.sprite.play("apex")
+			elementalist.sprite.play("fall")
 	else:
 		elementalist.sprite.play("jump")
 		elementalist.velocity.y = elementalist.JUMP_VELOCITY
@@ -63,13 +62,8 @@ func update(_delta: float) -> void:
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
 	if elementalist.velocity.y > 0 and elementalist.velocity.y < 100:
-		elementalist.sprite.play("apex")
-		elementalist.sprite.offset.x = 40
+		elementalist.sprite.play("fall")
 	if elementalist.is_on_floor():
-		if elementalist.velocity.x == 0:
-			elementalist.sprite.play("land", 1.2)
-			elementalist.sprite.offset.x = 40
-		else:
 			state_machine.transition_to("Walk")
 		
 
