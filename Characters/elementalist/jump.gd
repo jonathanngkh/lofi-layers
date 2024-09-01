@@ -13,17 +13,8 @@ func enter(_msg := {}) -> void:
 			elementalist.sprite.play("fall")
 	else:
 		elementalist.sprite.play("jump")
-		elementalist.velocity.y = elementalist.JUMP_VELOCITY
 	
-	if Input.get_axis("left", "right") > 0:
-		elementalist.sprite.scale.x = 1
-		elementalist.velocity.x = 1 * elementalist.SPEED
-	elif Input.get_axis("left", "right") < 0:
-		elementalist.sprite.scale.x = -1
-		elementalist.velocity.x = -1 * elementalist.SPEED
-	else:
-		if allow_air_stop:
-			elementalist.velocity.x = move_toward(elementalist.velocity.x, 0, elementalist.SPEED)
+		#elementalist.velocity.y = elementalist.JUMP_VELOCITY
 
 
 # Receives events from the `_unhandled_input()` callback.
@@ -34,9 +25,10 @@ func handle_input(_event: InputEvent) -> void:
 	elif Input.get_axis("left", "right") < 0:
 		elementalist.sprite.scale.x = -1
 		elementalist.velocity.x = -1 * elementalist.SPEED
-	else:
-		if allow_air_stop:
-			elementalist.velocity.x = move_toward(elementalist.velocity.x, 0, elementalist.SPEED)
+	
+	#else:
+		#if allow_air_stop:
+			#elementalist.velocity.x = move_toward(elementalist.velocity.x, 0, elementalist.SPEED)
 	# dash
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")
@@ -50,6 +42,7 @@ func handle_input(_event: InputEvent) -> void:
 				elementalist.sprite.offset.x = 0
 				elementalist.sprite.play("double_jump", 2.2)
 				elementalist.velocity.y = elementalist.JUMP_VELOCITY * 1.4
+	elementalist.move_and_slide()
 
 # Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:
@@ -61,6 +54,7 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
+	elementalist.sprite.offset.y += -10
 	if elementalist.velocity.y > 0 and elementalist.velocity.y < 100:
 		elementalist.sprite.play("fall")
 	if elementalist.is_on_floor():

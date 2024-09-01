@@ -237,7 +237,7 @@ script = ExtResource("1_nvyyi")
 position = Vector2(0, -40)
 sprite_frames = SubResource("SpriteFrames_44h2c")
 animation = &"jump"
-frame_progress = 0.77523
+frame_progress = 0.108371
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 visible = false
