@@ -13,13 +13,11 @@ func update(_delta: float) -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	var x_vector := Input.get_axis("left", "right")
-	
 	if Input.get_axis("left", "right") > 0:
 		elementalist.sprite.scale.x = 1
 	elif Input.get_axis("left", "right") < 0:
 		elementalist.sprite.scale.x = -1
-	
+	var x_vector := Input.get_axis("left", "right")
 	var y_vector := Input.get_axis("up", "down")
 	var direction_vector := Vector2(x_vector, y_vector)
 	elementalist.velocity = direction_vector.normalized() * elementalist.SPEED

@@ -9,7 +9,7 @@
 custom_minimum_size = Vector2(2560, 1440)
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(0.131379, 0.131379, 0.131379, 1)
+color = Color(0.535023, 0.535023, 0.535023, 1)
 
 [node name="Staff" parent="." instance=ExtResource("1_20n21")]
 

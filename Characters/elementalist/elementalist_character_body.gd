@@ -29,7 +29,6 @@ const BRAKING_SPEED = 400.0
 func _ready() -> void:
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 	
-	
 	for note in note_health:
 		var note_ui_spawn = note_preloads[note].instantiate()
 		for container in $HBoxContainer.get_children():
@@ -41,18 +40,15 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if debug_mode:
 		$Label.visible = true
-		$Label2.visible = true
 		$Label.text = "state: " + $StateMachine.state.name
+		$Label2.visible = true
 		$Label2.text = "animation: " + sprite.animation
+		$Label3.visible = true
+		$Label3.text = "z: " + str(sprite.offset.y)
 	else:
 		$Label.visible = false
 		$Label2.visible = false
-		
-	# Add the gravity.
-	#if not is_on_floor() and not $StateMachine.state.name == "Dash":
-		#velocity += get_gravity() * delta
-		
-	#move_and_slide()
+		$Label3.visible = false
 
 
 func receive_hit(message) -> void:

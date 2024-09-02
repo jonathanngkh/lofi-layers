@@ -236,14 +236,13 @@ script = ExtResource("1_nvyyi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -40)
 sprite_frames = SubResource("SpriteFrames_44h2c")
-animation = &"jump"
-frame_progress = 0.108371
+animation = &"idle"
+frame_progress = 0.707127
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
-visible = false
 z_index = -1
-position = Vector2(1.66667, 26)
-scale = Vector2(2.3125, 1.08164)
+position = Vector2(-1.33333, 39.6667)
+scale = Vector2(3, 1)
 sprite_frames = SubResource("SpriteFrames_io7hh")
 animation = &"idle"
 frame_progress = 1.0
@@ -301,6 +300,13 @@ offset_top = 33.3333
 offset_right = 13.6667
 offset_bottom = 56.3333
 text = "animation:"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1.66667
+offset_top = 48.3333
+offset_right = 85.6667
+offset_bottom = 71.3333
+text = "z:"
 
 [node name="HurtBox" parent="." instance=ExtResource("67_5cuw5")]
 
