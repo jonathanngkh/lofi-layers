@@ -1,8 +1,10 @@
 extends ElementalistState
 
-var initial_jump_velocity := -18.0
+var initial_jump_velocity := -13.0
 var jump_velocity := initial_jump_velocity # per physics frame
-var gravity_acceleration := 1.2
+var gravity_acceleration := 0.8
+
+var shadow_scale_amount := 0.15
 
 var can_double_jump := true
 var allow_air_stop := false
@@ -42,10 +44,10 @@ func physics_update(_delta: float) -> void:
 	
 	if jump_velocity > 0:
 		elementalist.sprite.play("fall")
-		elementalist.shadow.scale.x += 0.2
+		elementalist.shadow.scale.x += shadow_scale_amount
 	else: # rising
 		if elementalist.shadow.scale.x > 0:
-			elementalist.shadow.scale.x -= 0.2
+			elementalist.shadow.scale.x -= shadow_scale_amount
 	
 	if Input.get_axis("left", "right") > 0:
 		elementalist.sprite.scale.x = 1
