@@ -4,7 +4,8 @@ var initial_jump_velocity := -13.0
 var jump_velocity := initial_jump_velocity # per physics frame
 var gravity_acceleration := 0.8
 
-var shadow_scale_amount := 0.15
+
+var shadow_scale_amount := 0.1
 
 var can_double_jump := true
 var allow_air_stop := false
@@ -23,6 +24,8 @@ func enter(_msg := {}) -> void:
 func handle_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")
+	if Input.is_action_just_pressed("light_attack"):
+		state_machine.transition_to("AirAttack", {"jump_velocity": jump_velocity, "shadow_scale": elementalist.shadow.scale.x})
 
 
 # Corresponds to the `_process()` callback.
@@ -70,6 +73,7 @@ func _on_animation_finished() -> void:
 
 # Called by the state machine before changing the active state. Use this function to clean up the state.
 func exit() -> void:
+	elementalist.shadow.scale.x = 2.292
 	jump_velocity = initial_jump_velocity
 	elementalist.sprite.animation_finished.disconnect(_on_animation_finished)
 	can_double_jump = true

@@ -4,7 +4,6 @@ extends ElementalistState
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	elementalist.sprite.offset.x = 40
 	elementalist.sprite.play("hurt")
 	sprite_flash()
 	elementalist.sprite.animation_finished.connect(_on_animation_finished)

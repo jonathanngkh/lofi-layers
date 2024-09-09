@@ -1,9 +1,13 @@
 extends ElementalistState
 
+var shadow_scale := 1.0
+var shadow_scale_amount := 0.05
+var shadow_loop := 0
 # Called when the node enters the scene tree for the first time.
 func enter(_msg := {}) -> void:
 	elementalist.sprite.animation_finished.connect(_on_animation_finished)
 	elementalist.sprite.play("walk")
+	controls()
 
 
 # Corresponds to the `_process()` callback.
@@ -24,6 +28,7 @@ func physics_update(_delta: float) -> void:
 	elementalist.move_and_slide()
 
 
+
 func _on_animation_finished() -> void:
 	pass
 
@@ -41,7 +46,7 @@ func controls() -> void:
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")
 	# jump
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_pressed("jump"):
 		state_machine.transition_to("Jump")
 	# block
 	if Input.is_action_pressed("block"):
