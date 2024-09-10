@@ -24,7 +24,7 @@ func physics_update(_delta: float) -> void:
 
 func _on_animation_finished() -> void:
 	if elementalist.sprite.animation == "block_start":
-		elementalist.sprite.play("block", 1.2)
+		elementalist.sprite.play("block", 1.8)
 	if elementalist.sprite.animation == "block_hit":
 		elementalist.sprite.play("block", 1.2)
 	if elementalist.sprite.animation == "block_break":

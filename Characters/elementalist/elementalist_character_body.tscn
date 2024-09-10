@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://4snwrvp6duw0"]
+[gd_scene load_steps=94 format=3 uid="uid://4snwrvp6duw0"]
 
 [ext_resource type="Script" path="res://Characters/elementalist/elementalist_character_body.gd" id="1_nvyyi"]
 [ext_resource type="Texture2D" uid="uid://dyedvdup0nece" path="res://Characters/elementalist/Elementalist-SpriteSheet.png" id="2_y0nmb"]
@@ -102,6 +102,18 @@ region = Rect2(384, 672, 192, 112)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6wdgi"]
 atlas = ExtResource("2_y0nmb")
 region = Rect2(576, 672, 192, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b6bx"]
+atlas = ExtResource("2_y0nmb")
+region = Rect2(576, 1120, 192, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s0mr"]
+atlas = ExtResource("2_y0nmb")
+region = Rect2(192, 1120, 192, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js3ix"]
+atlas = ExtResource("2_y0nmb")
+region = Rect2(384, 1120, 192, 112)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kb7rv"]
 atlas = ExtResource("2_y0nmb")
@@ -389,6 +401,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2b6bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s0mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js3ix")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kb7rv")
 }, {
 "duration": 1.0,
@@ -601,7 +627,9 @@ script = ExtResource("1_nvyyi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -40)
 sprite_frames = SubResource("SpriteFrames_44h2c")
-animation = &"block"
+animation = &"dash"
+frame = 2
+frame_progress = 1.0
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 z_index = -1
@@ -641,6 +669,8 @@ script = ExtResource("63_58vkx")
 
 [node name="DashDurationTimer" type="Timer" parent="StateMachine/Dash"]
 one_shot = true
+
+[node name="GhostSpawnTimer" type="Timer" parent="StateMachine/Dash"]
 
 [node name="Block" type="Node2D" parent="StateMachine"]
 script = ExtResource("64_eh7lh")
