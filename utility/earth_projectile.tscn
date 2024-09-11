@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwpctlots3e61"]
+
+[ext_resource type="Texture2D" uid="uid://b0w7ul0k5gs4e" path="res://Characters/elementalist/projectiles_SpriteSheet.png" id="1_wqyod"]
+[ext_resource type="PackedScene" uid="uid://dpkefryb25jky" path="res://hit_box.tscn" id="2_crn5p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wit2x"]
+atlas = ExtResource("1_wqyod")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpt5m"]
+atlas = ExtResource("1_wqyod")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wdc5"]
+atlas = ExtResource("1_wqyod")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etpxe"]
+atlas = ExtResource("1_wqyod")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x1rx"]
+atlas = ExtResource("1_wqyod")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn8rs"]
+atlas = ExtResource("1_wqyod")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ef5v"]
+atlas = ExtResource("1_wqyod")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e5h6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wit2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpt5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wdc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etpxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x1rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn8rs")
+}],
+"loop": false,
+"name": &"impact",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ef5v")
+}],
+"loop": true,
+"name": &"projectile",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2g1tq"]
+radius = 7.0
+
+[node name="EarthProjectile" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_e5h6g")
+animation = &"projectile"
+
+[node name="HitBox" parent="." instance=ExtResource("2_crn5p")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-3.33333, 4.33333)
+shape = SubResource("CircleShape2D_2g1tq")

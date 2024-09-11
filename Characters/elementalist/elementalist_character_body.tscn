@@ -107,13 +107,13 @@ region = Rect2(576, 672, 192, 112)
 atlas = ExtResource("2_y0nmb")
 region = Rect2(576, 1120, 192, 112)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6s0mr"]
-atlas = ExtResource("2_y0nmb")
-region = Rect2(192, 1120, 192, 112)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_js3ix"]
 atlas = ExtResource("2_y0nmb")
 region = Rect2(384, 1120, 192, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s0mr"]
+atlas = ExtResource("2_y0nmb")
+region = Rect2(192, 1120, 192, 112)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kb7rv"]
 atlas = ExtResource("2_y0nmb")
@@ -404,10 +404,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_2b6bx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6s0mr")
+"texture": SubResource("AtlasTexture_js3ix")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_js3ix")
+"texture": SubResource("AtlasTexture_6s0mr")
 }],
 "loop": false,
 "name": &"dash",
@@ -629,7 +629,6 @@ position = Vector2(0, -40)
 sprite_frames = SubResource("SpriteFrames_44h2c")
 animation = &"dash"
 frame = 2
-frame_progress = 1.0
 
 [node name="ShadowAnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 z_index = -1
