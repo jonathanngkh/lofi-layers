@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwpctlots3e61"]
+[gd_scene load_steps=13 format=3 uid="uid://bwpctlots3e61"]
 
 [ext_resource type="Texture2D" uid="uid://b0w7ul0k5gs4e" path="res://Characters/elementalist/projectiles_SpriteSheet.png" id="1_wqyod"]
 [ext_resource type="PackedScene" uid="uid://dpkefryb25jky" path="res://hit_box.tscn" id="2_crn5p"]
+[ext_resource type="Script" path="res://utility/earth_projectile.gd" id="2_rnp8q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wit2x"]
 atlas = ExtResource("1_wqyod")
@@ -62,7 +63,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"projectile",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2g1tq"]
@@ -72,6 +73,7 @@ radius = 7.0
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_e5h6g")
 animation = &"projectile"
+script = ExtResource("2_rnp8q")
 
 [node name="HitBox" parent="." instance=ExtResource("2_crn5p")]
 

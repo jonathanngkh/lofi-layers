@@ -1,5 +1,6 @@
 extends ElementalistState
 
+var earth_projectile_preload := preload("res://utility/earth_projectile.tscn")
 
 # Called by the state machine upon changing the active state. The `msg` parameter is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
@@ -46,6 +47,10 @@ func exit() -> void:
 
 func _on_frame_changed() -> void:
 	if elementalist.sprite.frame == 0:
+		var earth_projectile_instance := earth_projectile_preload.instantiate()
+		earth_projectile_instance.scale = elementalist.scale
+		earth_projectile_instance.global_position = elementalist.global_position + Vector2(80, -100)
+		elementalist.get_parent().add_child(earth_projectile_instance)
 		pass
 	if elementalist.sprite.frame == 1:
 		pass
