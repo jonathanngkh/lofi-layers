@@ -48,8 +48,11 @@ func exit() -> void:
 func _on_frame_changed() -> void:
 	if elementalist.sprite.frame == 0:
 		var earth_projectile_instance := earth_projectile_preload.instantiate()
+		# remember to code when facing left also
 		earth_projectile_instance.scale = elementalist.scale
 		earth_projectile_instance.global_position = elementalist.global_position + Vector2(80, -100)
+		var tween = create_tween()
+		tween.tween_property(earth_projectile_instance, "global_position:x", earth_projectile_instance.global_position.x + 1000, 0.4)
 		elementalist.get_parent().add_child(earth_projectile_instance)
 		pass
 	if elementalist.sprite.frame == 1:
