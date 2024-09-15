@@ -51,13 +51,9 @@ func _on_frame_changed() -> void:
 		# remember to code when facing left also
 		earth_projectile_instance.scale = elementalist.scale
 		earth_projectile_instance.global_position = elementalist.global_position + Vector2(80, 0)
-		var tween = create_tween()
-		tween.tween_property(earth_projectile_instance, "global_position:y", earth_projectile_instance.global_position.y - 90, 0.2)
-		tween.tween_property(earth_projectile_instance, "global_position:x", earth_projectile_instance.global_position.x + 1000, 0.4)
+		earth_projectile_instance.tween.tween_property(earth_projectile_instance, "global_position:y", earth_projectile_instance.global_position.y - 90, 0.2)
+		earth_projectile_instance.tween.tween_property(earth_projectile_instance, "global_position:x", earth_projectile_instance.global_position.x + 1000, 0.4)
 		elementalist.get_parent().add_child(earth_projectile_instance)
-		await tween.finished
-		earth_projectile_instance.play("impact", 1.5)
-		pass
 	if elementalist.sprite.frame == 1:
 		pass
 	if elementalist.sprite.frame == 2:

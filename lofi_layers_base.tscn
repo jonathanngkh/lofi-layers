@@ -22,3 +22,13 @@ offset = Vector2(0, -300)
 zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
+
+[node name="ElementalistCharacterBody2" parent="." instance=ExtResource("2_lsd2c")]
+position = Vector2(1638, 954)
+debug_mode = true
+
+[node name="Camera2D" type="Camera2D" parent="ElementalistCharacterBody2"]
+offset = Vector2(0, -300)
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0

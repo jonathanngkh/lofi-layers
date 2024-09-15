@@ -76,6 +76,7 @@ animation = &"projectile"
 script = ExtResource("2_rnp8q")
 
 [node name="HitBox" parent="." instance=ExtResource("2_crn5p")]
+process_mode = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-3.33333, 4.33333)
