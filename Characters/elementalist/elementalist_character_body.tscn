@@ -676,6 +676,9 @@ script = ExtResource("64_eh7lh")
 [node name="LightAttack1" type="Node2D" parent="StateMachine"]
 script = ExtResource("65_8eg2i")
 
+[node name="HitBoxActivationTimer" type="Timer" parent="StateMachine/LightAttack1"]
+one_shot = true
+
 [node name="AirAttack" type="Node2D" parent="StateMachine"]
 script = ExtResource("12_jwqhe")
 

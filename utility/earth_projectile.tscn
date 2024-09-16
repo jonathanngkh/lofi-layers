@@ -70,14 +70,18 @@ animations = [{
 radius = 7.0
 
 [node name="EarthProjectile" type="AnimatedSprite2D"]
+z_index = 1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_e5h6g")
 animation = &"projectile"
 script = ExtResource("2_rnp8q")
 
 [node name="HitBox" parent="." instance=ExtResource("2_crn5p")]
-process_mode = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-3.33333, 4.33333)
 shape = SubResource("CircleShape2D_2g1tq")
+debug_color = Color(0.825584, 0.359381, 0.454977, 0.42)
+
+[node name="HitBoxActivationTimer" type="Timer" parent="."]
+one_shot = true

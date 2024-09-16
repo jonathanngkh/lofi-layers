@@ -7,8 +7,14 @@ func enter(_msg := {}) -> void:
 	elementalist.sprite.animation_finished.connect(_on_animation_finished)
 	elementalist.sprite.frame_changed.connect(_on_frame_changed)
 	elementalist.sprite.play("light_attack", 1.5)
-	
 	elementalist.hit_box.previously_hit_hurtboxes = []
+	var earth_projectile_instance = earth_projectile_preload.instantiate()
+	earth_projectile_instance.scale = elementalist.scale
+	earth_projectile_instance.global_position.y = elementalist.global_position.y
+	earth_projectile_instance.global_position.x = elementalist.global_position.x + (80 * elementalist.sprite.scale.x)
+	earth_projectile_instance.tween.tween_property(earth_projectile_instance, "global_position:y", earth_projectile_instance.global_position.y - 90, 0.2)
+	earth_projectile_instance.tween.tween_property(earth_projectile_instance, "global_position:x", earth_projectile_instance.global_position.x + (1200 * elementalist.sprite.scale.x), 0.4)
+	elementalist.get_parent().add_child(earth_projectile_instance)
 
 
 func _on_animation_finished() -> void:
@@ -18,8 +24,8 @@ func _on_animation_finished() -> void:
 
 # Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
-	if elementalist.sprite.frame >= 3:
-		elementalist.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
+	#if elementalist.sprite.frame >= 3:
+		#elementalist.hit_box.process_mode = Node.PROCESS_MODE_INHERIT
 	var x_vector := Input.get_axis("left", "right")
 	var y_vector := Input.get_axis("up", "down")
 	var direction_vector := Vector2(x_vector, y_vector)
@@ -47,13 +53,7 @@ func exit() -> void:
 
 func _on_frame_changed() -> void:
 	if elementalist.sprite.frame == 0:
-		var earth_projectile_instance := earth_projectile_preload.instantiate()
-		# remember to code when facing left also
-		earth_projectile_instance.scale = elementalist.scale
-		earth_projectile_instance.global_position = elementalist.global_position + Vector2(80, 0)
-		earth_projectile_instance.tween.tween_property(earth_projectile_instance, "global_position:y", earth_projectile_instance.global_position.y - 90, 0.2)
-		earth_projectile_instance.tween.tween_property(earth_projectile_instance, "global_position:x", earth_projectile_instance.global_position.x + 1000, 0.4)
-		elementalist.get_parent().add_child(earth_projectile_instance)
+		pass
 	if elementalist.sprite.frame == 1:
 		pass
 	if elementalist.sprite.frame == 2:

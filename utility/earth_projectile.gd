@@ -8,6 +8,9 @@ func _ready() -> void:
 	animation = "projectile"
 	animation_finished.connect(_on_animation_finished)
 	hit_box.hit_signal.connect(_on_hit)
+	$HitBoxActivationTimer.start(0.2)
+	$HitBoxActivationTimer.timeout.connect(func() -> void: hit_box.process_mode = Node.PROCESS_MODE_INHERIT)
+	tween.finished.connect(func() -> void: queue_free())
 
 
 func _on_hit(msg) -> void:
