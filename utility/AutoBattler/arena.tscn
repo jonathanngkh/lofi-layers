@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjv1f5fvmr237"]
+
+[sub_resource type="TileSet" id="TileSet_0reem"]
+
+[node name="Arena" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="BackgroundTileMapLayer" type="TileMapLayer" parent="Visuals"]
+tile_set = SubResource("TileSet_0reem")
