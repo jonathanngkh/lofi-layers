@@ -606,21 +606,23 @@ volume_db = 5.0
 autoplay = true
 
 [node name="RogueGoblinCharacterBody2" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(-9921, 1189)
+position = Vector2(-10039, 1180)
 scale = Vector2(4, 4)
+random_notes_mode = false
+note_health = ["La"]
 
 [node name="RogueGoblinCharacterBody3" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(-9711, 1189)
+position = Vector2(-9418, 1177)
 scale = Vector2(4, 4)
 note_health = ["Re"]
 
 [node name="RogueGoblinCharacterBody5" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(-9535, 1189)
+position = Vector2(-9629, 1192)
 scale = Vector2(4, 4)
 note_health = ["Mi"]
 
 [node name="RogueGoblinCharacterBody6" parent="." instance=ExtResource("9_r8jc3")]
-position = Vector2(-9365, 1189)
+position = Vector2(-9218, 1193)
 scale = Vector2(4, 4)
 note_health = ["Fa"]
 
