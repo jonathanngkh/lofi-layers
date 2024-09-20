@@ -16,14 +16,14 @@ func _ready() -> void:
 	hit_box.previously_hit_hurtboxes = []
 	sprite.play("loop")
 
-func _on_fireball_hit(msg) -> void:
+func _on_fireball_hit(_msg) -> void:
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 	sprite.play("hit")
 
 func _on_exit_screen():
 	queue_free()
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	pass
 	
 func _on_animation_finished()-> void:
@@ -34,5 +34,5 @@ func _on_animation_finished()-> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	move_and_slide()

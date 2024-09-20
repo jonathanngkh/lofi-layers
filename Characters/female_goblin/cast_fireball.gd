@@ -18,7 +18,7 @@ func enter(_msg := {}) -> void:
 	female_goblin.sprite.play("cast_fireball")
 	$AudioStreamPlayer2D.stream = cast_sounds[0]
 	$AudioStreamPlayer2D.play()
-	fireball_count = rng.randf_range(1, female_goblin.max_fireball_count)
+	fireball_count = rng.randi_range(1, female_goblin.max_fireball_count)
 
 
 func _on_animation_finished() -> void:

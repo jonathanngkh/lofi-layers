@@ -72,13 +72,13 @@ var minor_scale_index = 0
 const SPEED = 500.0
 const JUMP_VELOCITY = -2100.0
 
-@onready var tween1 = create_tween()
-@onready var tween2 = create_tween()
-@onready var tween3 = create_tween()
-@onready var tween4 = create_tween()
-@onready var tween5 = create_tween()
-@onready var tween6 = create_tween()
-@onready var tween7 = create_tween()
+#@onready var tween1 = create_tween()
+#@onready var tween2 = create_tween()
+#@onready var tween3 = create_tween()
+#@onready var tween4 = create_tween()
+#@onready var tween5 = create_tween()
+#@onready var tween6 = create_tween()
+#@onready var tween7 = create_tween()
 @onready var death_sprite_2d: AnimatedSprite2D = $CanvasLayer/DeathSprite2D
 
 
@@ -101,7 +101,7 @@ func _ready() -> void:
 	update_saved_notes()
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("special_attack"):
 		if not (state_machine.state == $StateMachine/CastFreeze or state_machine.state == $StateMachine/HolySword or state_machine.state == $StateMachine/Heal or state_machine.state == $StateMachine/HolyWave):
 			if can_holy_sword:
@@ -114,7 +114,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				state_machine.transition_to("Heal")
 
 
-func _on_hit(message) -> void:
+func _on_hit(_message) -> void:
 	camera.apply_shake()
 	update_saved_notes()
 
@@ -262,12 +262,12 @@ func check_for_heal_song() -> void:
 			#tween7.tween_property(saved_notes_hbox.get_children()[6].get_children()[0], "self_modulate", Color(0.1, 0.9, 1), 0.3)
 
 func check_for_freeze_song() -> void:
-	tween1.kill()
-	tween2.kill()
-	tween3.kill()
-	tween4.kill()
-	tween5.kill()
-	tween6.kill()
+	#tween1.kill()
+	#tween2.kill()
+	#tween3.kill()
+	#tween4.kill()
+	#tween5.kill()
+	#tween6.kill()
 	can_freeze = false
 	$CanvasLayer/FreezeLabel1.visible = false
 	$CanvasLayer/FreezeLabel2.visible = false

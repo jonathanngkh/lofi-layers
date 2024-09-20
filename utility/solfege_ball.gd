@@ -13,7 +13,7 @@ var solfege_ball_positions := [
 ]
 @export var solfege_ball_positions_index := 0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not position == Vector2(-11, -45) and spinning:
 		var tween = create_tween()
 		tween.tween_property(self, "self_modulate:a", 0.1, tween_duration)

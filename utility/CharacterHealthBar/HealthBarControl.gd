@@ -97,7 +97,7 @@ func _ready():
 		HealthBar.add_child(HealthBarSegment)
 		updateEdgeAnimations()
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_Timer_timeout():
@@ -130,7 +130,7 @@ func _on_Timer_timeout():
 			i.value = LaggingBar.value	
 
 	
-func _input(event:InputEvent) -> void:
+func _input(_event:InputEvent) -> void:
 	pass
 	#if event.is_action_pressed("ui_accept"):
 		#damage(1)
