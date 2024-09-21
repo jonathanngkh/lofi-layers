@@ -1,8 +1,9 @@
-[gd_scene load_steps=94 format=3 uid="uid://4snwrvp6duw0"]
+[gd_scene load_steps=95 format=3 uid="uid://4snwrvp6duw0"]
 
 [ext_resource type="Script" path="res://Characters/elementalist/elementalist_character_body.gd" id="1_nvyyi"]
 [ext_resource type="Texture2D" uid="uid://dyedvdup0nece" path="res://Characters/elementalist/Elementalist-SpriteSheet.png" id="2_y0nmb"]
 [ext_resource type="Script" path="res://Characters/elementalist/air_attack.gd" id="12_jwqhe"]
+[ext_resource type="PackedScene" uid="uid://db7uirthcq6ot" path="res://piano.tscn" id="15_lfle0"]
 [ext_resource type="Texture2D" uid="uid://b6ove03nmd1eb" path="res://assets/characters/shadow/Shadow1.png" id="57_y5ige"]
 [ext_resource type="PackedScene" uid="uid://dpkefryb25jky" path="res://hit_box.tscn" id="58_btc6i"]
 [ext_resource type="PackedScene" uid="uid://m3ibtx1a6nk4" path="res://utility/state_machine.tscn" id="59_54xtw"]
@@ -741,3 +742,6 @@ size_flags_horizontal = 3
 [node name="AspectRatioContainer5" type="AspectRatioContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Piano" parent="." instance=ExtResource("15_lfle0")]
+visible = false
