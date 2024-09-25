@@ -1,3 +1,5 @@
+@tool
+class_name Unit
 extends Area2D
 
 @export var stats : UnitStats : set = set_stats

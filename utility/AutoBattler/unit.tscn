@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ish8a53mdeq3"]
+[gd_scene load_steps=9 format=3 uid="uid://ish8a53mdeq3"]
 
 [ext_resource type="Script" path="res://utility/AutoBattler/unit.gd" id="1_uirvg"]
 [ext_resource type="Texture2D" uid="uid://bjbt5fvlunlrk" path="res://utility/AutoBattler/rogues.png" id="2_3bdp2"]
+[ext_resource type="Resource" uid="uid://3y1fe04n1icx" path="res://utility/AutoBattler/bjorn.tres" id="2_c3y2d"]
+[ext_resource type="PackedScene" uid="uid://buy67jx8exvj" path="res://utility/AutoBattler/drag_drop.tscn" id="3_85ku2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x07r3"]
 size = Vector2(32, 34)
@@ -28,6 +30,7 @@ border_color = Color(0.214683, 0.0953292, 0, 1)
 [node name="Unit" type="Area2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_uirvg")
+stats = ExtResource("2_c3y2d")
 
 [node name="Skin" type="Sprite2D" parent="."]
 texture = ExtResource("2_3bdp2")
@@ -59,3 +62,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_rkco7")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5bhpl")
 value = 50.0
 show_percentage = false
+
+[node name="DragDrop" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_85ku2")]
+target = NodePath("..")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://buy67jx8exvj"]
+
+[ext_resource type="Script" path="res://utility/AutoBattler/drag_drop.gd" id="1_wl4oo"]
+
+[node name="DragDrop" type="Node"]
+script = ExtResource("1_wl4oo")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=2 format=3 uid="uid://3y1fe04n1icx"]
+
+[ext_resource type="Script" path="res://utility/AutoBattler/unit_stats.gd" id="1_3hu3w"]
+
+[resource]
+script = ExtResource("1_3hu3w")
+name = ""
+rarity = 0
+gold_cost = 1
+skin_coordinates = Vector2i(1, 3)
