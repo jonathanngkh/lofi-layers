@@ -5,6 +5,8 @@ const SPEED = 500.0
 const JUMP_VELOCITY = -1900.0
 const BRAKING_SPEED = 400.0
 
+# when left hand hold ACE, go into casting mode. when a minor scale is played, spell is cast
+
 @onready var note_preloads := {
 	"Do": preload("res://utility/do_ui.tscn"),
 	"Re": preload("res://utility/re_ui.tscn"),
