@@ -7,6 +7,8 @@ const BRAKING_SPEED = 400.0
 
 # when left hand hold ACE, go into casting mode. when a minor scale is played, spell is cast
 
+var held_notes := []
+
 @onready var note_preloads := {
 	"Do": preload("res://utility/do_ui.tscn"),
 	"Re": preload("res://utility/re_ui.tscn"),
@@ -29,6 +31,8 @@ const BRAKING_SPEED = 400.0
 @onready var shadow: AnimatedSprite2D = $AnimatedSprite2D/ShadowAnimatedSprite2D
 
 func _ready() -> void:
+	QwertyListener.qwerty_note_on.connect(_note_on)
+	QwertyListener.qwerty_note_off.connect(_note_off)
 	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	for note in note_health:
@@ -39,7 +43,17 @@ func _ready() -> void:
 				break
 
 
-func _physics_process(delta: float) -> void:
+func _note_on(note_played):
+	held_notes.append(note_played)
+	print(held_notes)
+
+
+func _note_off(note_released):
+	held_notes.erase(note_released)
+	print(held_notes)
+
+
+func _physics_process(_delta: float) -> void:
 	if debug_mode:
 		$Label.visible = true
 		$Label.text = "state: " + $StateMachine.state.name
@@ -53,7 +67,7 @@ func _physics_process(delta: float) -> void:
 		$Label3.visible = false
 
 
-func receive_hit(message) -> void:
+func receive_hit(_message) -> void:
 	#$HBoxContainer.get_children()[note_health_number - 1]
 	#note_health.erase(note_health[-1])
 	#if launch_or_not == "launch":

@@ -13,7 +13,7 @@ func _ready() -> void:
 	tween.finished.connect(func() -> void: queue_free())
 
 
-func _on_hit(msg) -> void:
+func _on_hit(_msg) -> void:
 	play("impact", 1.5)
 	tween.kill()
 
