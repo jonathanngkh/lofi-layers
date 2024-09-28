@@ -1,7 +1,7 @@
 extends Node
 
 signal qwerty_note_on(note_played)
-signal qwerty_note_off(note_played)
+signal qwerty_note_off(note_released)
 
 @export var lowest_C := 60 # C4
 
