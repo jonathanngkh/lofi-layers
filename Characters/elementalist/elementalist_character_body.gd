@@ -45,6 +45,8 @@ func _ready() -> void:
 
 func _note_on(note_played):
 	held_notes.append(note_played)
+	if held_notes.has(60) and held_notes.has(64) and held_notes.has(67):
+		state_machine.transition_to("Block")
 	print(held_notes)
 
 
