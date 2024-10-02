@@ -1,6 +1,8 @@
 # really focus on making a loop pedal based game.
 # that's the concept. lofi loop pedal game.
 
+# ... i need a real break from this
+
 class_name Elementalist
 extends CharacterBody2D
 
